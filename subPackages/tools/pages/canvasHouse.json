@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "杭州房小团-房产数据",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "canvas-poster": "/subPackages/tools/components/CanvasPoster/Index"
+    }
+}

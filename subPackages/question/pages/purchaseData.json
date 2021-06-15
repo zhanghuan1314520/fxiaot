@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "杭州房小团-购房资料",
+    "usingComponents": {
+        "purchase-content": "/subPackages/question/pages/components/hangzhou/purchaseData/PurchaseContent",
+        "three-sales-man-card": "/subPackages/question/components/ThreeSalesManCard",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon"
+    }
+}

@@ -1,0 +1,29 @@
+.page-control {
+    position: fixed;
+    right: 0;
+    bottom: 184rpx;
+    z-index: 99;
+    margin-right: 24rpx;
+}
+
+.page-control .btn-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 84rpx;
+    width: 84rpx;
+    margin-top: 20rpx;
+    color: #fff;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.page-control .btn-back .iconnew {
+    line-height: 1;
+}
+
+.page-control .backhome {
+    background: rgba(35,205,148,.98);
+    box-shadow: 0 4rpx 16rpx 0 rgba(35,205,148,.3);
+}

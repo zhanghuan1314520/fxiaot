@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "杭州房小团-常见问题",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "cricle-share-btn": "/subPackages/question/components/CircleShareBtn"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "navigationBarTitleText": "杭州房小团品牌馆",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "brand-pavilion-item": "/subPackages/project/components/BrandPavilionItem/brandPavilionBox"
+    }
+}

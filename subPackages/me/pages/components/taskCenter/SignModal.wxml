@@ -1,0 +1,26 @@
+<view class="signin-hide-bg" wx:if="{{visible}}">
+    <view class="score-content" wx:if="{{sumDay<7}}">
+        <image class="image-title" mode="scaleToFill" src="https://imgcdn.huanjutang.com/file/2021/03/23/257b01f03a2598176bcf6ec8559afddc.png"></image>
+        <text class="signin-success">签到成功</text>
+        <text class="signin-coin-socre">{{''+'积分+'+integral+''}}</text>
+        <text class="signin-feature">明天签到还可获得<text class="color-yellow">{{''+nextDayIntegral+''}}</text>积分</text>
+        <image bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://imgcdn.huanjutang.com/file/2021/03/23/9211784b3b11817b8e5c8fb12931b9e7.png"></image>
+    </view>
+    <view class="score-content__last" wx:else>
+        <image class="image-title__last" mode="scaleToFill" src="https://imgcdn.huanjutang.com/file/2021/03/22/37fdfacb5bd4d196225f343baf4e84b4.png"></image>
+        <text class="signin-last">“福袋有福气，卖房不费力”</text>
+        <text class="signin-prize">恭喜您获得奖励</text>
+        <view class="num-box">
+            <view class="point">
+                <image class="icon-point" src="https://imgcdn.huanjutang.com/file/2021/03/18/0b62bbf1b9f5b3852b42e6f6a379fb54.png"></image>
+                <text>{{'积分+'+integral}}</text>
+            </view>
+            <view class="coin">
+                <image class="icon-coin" src="https://imgcdn.huanjutang.com/file/2021/03/22/c5495c01631188406d8b1300a3590879.png"></image>
+                <text>{{'金币+'+coin}}</text>
+            </view>
+        </view>
+        <text class="signin-feature__last">明天签到还可获得<text class="color-orange">5</text>积分</text>
+        <image bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://imgcdn.huanjutang.com/file/2021/03/23/9211784b3b11817b8e5c8fb12931b9e7.png"></image>
+    </view>
+</view>

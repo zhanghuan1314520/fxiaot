@@ -1,0 +1,10 @@
+<view>
+    <view class="page-control ">
+        <button bindtap="__e" class="{{[ 'share btn '+(isShareShow?'':'moveOut') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-name="分享" data-toggle="open" data-type="button" wx:if="{{userInfo.sales_man_id>0}}">
+            <text class="iconnew new-fenxiang1 fz-22 share__icon"></text>
+        </button>
+        <button bindtap="__e" class="{{[ 'share btn '+(isShareShow?'':'moveOut') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-name="分享" data-toggle="open" data-type="button" openType="share" wx:else>
+            <text class="iconnew new-fenxiang1 fz-23 share__icon"></text>
+        </button>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view class="lottery-result__sk skeletons data-v-7adb2e0a">
+    <view class="sk-container sk-single-animate data-v-7adb2e0a"></view>
+    <view class="sk-project-name sk-single-animate data-v-7adb2e0a"></view>
+    <view class="sk-excel sk-single-animate data-v-7adb2e0a"></view>
+    <view class="sk-bottom sk-single-animate data-v-7adb2e0a"></view>
+</view>

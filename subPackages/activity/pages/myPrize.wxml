@@ -1,0 +1,39 @@
+<view>
+    <view class="myPrize" wx:if="{{projects.length>0}}">
+        <view class="price-title height-level-color fz-17">我的抽奖<text class="fz-12 small-level-color">{{'('+count+'个)'}}</text>
+        </view>
+        <view class="prize-main">
+            <view class="prize_main-col">
+                <navigator class="hot_prize_list" hoverClass="none" url="{{'/subPackages/activity/pages/drawDetails?sku_id='+item.sku_id}}" wx:for="{{projects}}" wx:key="index">
+                    <view class="hot_prize_img">
+                        <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.sku.goods.image}}"></image>
+                    </view>
+                    <view class="hot_prize_left">
+                        <view class="getPrize fz-15">查看</view>
+                    </view>
+                    <view class="hot_prize_info">
+                        <view class="title fz-17">{{''+item.sku.title+''}}</view>
+                        <view class="red-color fz-15" wx:if="{{item.is_win==1}}">您已中奖，恭喜！！</view>
+                        <view class="fz-15 gray-9-color" wx:if="{{item.is_win==0}}">未中奖</view>
+                        <view class="fz-15 price" wx:if="{{item.is_win==2}}">待开奖</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="dui_tabbar">
+        <navigator class="line gray-9-color flow2" hoverClass="none" openType="redirect" url="{{'/subPackages/activity/pages/prizeList?homeType='+type}}">
+            <text class="icon-wode_tuijianyouli iconnew fz-16 font-bold" style="margin-right:10rpx;"></text>
+            <text class="fz-14">今日抽奖推荐</text>
+        </navigator>
+        <view class="alignLine"></view>
+        <navigator class="line blue-color flow2" hoverClass="none" openType="redirect" url="{{'/subPackages/activity/pages/myPrize?homeType='+type}}">
+            <text class="iconnew new-zhiyeguwen fz-16 font-bold" style="margin-right:10rpx;"></text>
+            <text class="fz-14">我的抽奖</text>
+        </navigator>
+    </view>
+    <view class="noCoupon" wx:if="{{projects.length<=0&&loading}}">
+        <image lazyLoad="{{true}}" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20181115/5bed0634de04f.png"></image>
+        <view class="small-level-color fz-14 viewmsg">暂无抽奖</view>
+    </view>
+</view>

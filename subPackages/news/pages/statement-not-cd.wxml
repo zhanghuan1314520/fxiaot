@@ -1,0 +1,106 @@
+<view>
+    <view class="{{[ 'page',[comment_show?'popup':''] ]}}">
+        <view class="statement">
+            <scroll-view class="statement-all-top" scrollX="scroll-x">
+                <view class="content">
+                    <view bindtap="__e" class="{{[ 'item '+(type==''?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'change',['','全部'] ] ] ] ]}}">{{'全部('+count+')'}}<view class="span"></view>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'item '+(type==1?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'change',[1,'楼盘动态'] ] ] ] ]}}" wx:if="{{project_count!=0}}">{{'楼盘动态('+project_count+')'}}<view class="span"></view>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'item '+(type==2?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'change',[2,'$0'],['willSalesName'] ] ] ] ]}}" wx:if="{{near_count!=0}}">{{''+willSalesName+'('+near_count+')'}}<view class="span"></view>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'item '+(type==3?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'change',[3,'开盘'] ] ] ] ]}}" wx:if="{{opening_count!=0}}">{{'开盘('+opening_count+')'}}<view class="span"></view>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'item '+(type==4?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'change',[4,'交房'] ] ] ] ]}}" wx:if="{{house_count!=0}}">{{'交房('+house_count+')'}}<view class="span"></view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="statement-top">
+                <view class="affirming">
+                    <text>动态</text>
+                    <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showState',['$event'] ] ] ] ]}}">免责声明</text>
+                </view>
+            </view>
+            <view class="statement-all">
+                <view class="{{[ 'white-bg statement-item',[item[$orig].skeleton?'skeletons':''] ]}}" wx:for="{{$root.l2}}" wx:for-index="key" wx:key="key">
+                    <view class="statement-info">
+                        <view class="point f-left">
+                            <image src="https://imgcdn.huanjutang.com/assets/img/201910311558528081.png"></image>
+                        </view>
+                        <view class="authors f-left skeletons-rect">{{''+item[$orig].time}}<view class="line"></view>
+                            <text wx:if="{{item[$orig].sales_man_id>0}}">置业顾问-</text>
+                            <text>{{item[$orig].sales_man_name}}</text>
+                        </view>
+                        <view class="icons f-right">
+                            <block wx:if="{{item[$orig].sales_man_id>0}}">
+                                <view bindtap="__e" class="phone-cont" data-event-opts="{{[ [ 'tap',[ [ 'callSalesman',['$0'],[ [ ['statementList','',key,'sales_man_id'] ] ] ] ] ] ]}}" wx:if="{{username}}">
+                                    <image src="https://imgcdn.huanjutang.com/assets/img/201910301737358081.png"></image>
+                                </view>
+                                <button bindgetuserinfo="__e" class="phone-cont" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['$0'],[ [ ['statementList','',key,'sales_man_id'] ] ] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" wx:else>
+                                    <image src="https://imgcdn.huanjutang.com/assets/img/201910301737358081.png"></image>
+                                </button>
+                            </block>
+                            <busi-auth-navigator bind:__l="__l" url="{{urls[key]}}" vueId="{{'4786e186-1-'+key}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].session_id>0}}">
+                                <view class="concat-im mes-cont">
+                                    <image src="https://imgcdn.huanjutang.com/assets/img/201910301737418081.png"></image>
+                                </view>
+                            </busi-auth-navigator>
+                        </view>
+                    </view>
+                    <view class="statement-bodys">
+                        <view class="statement-title skeletons-rect">
+                            <text selectable="selectable">{{''+item[$orig].title+''}}</text>
+                        </view>
+                        <statement-over-flow-item bind:__l="__l" content="{{item[$orig].content}}" vueId="{{'4786e186-2-'+key}}"></statement-over-flow-item>
+                        <view class="statement-images" wx:if="{{item[$orig].thumbnails.length>0}}">
+                            <block wx:if="{{item[$orig].thumbnails.length===1}}">
+                                <view class="image-item-one" wx:for="{{item.l0}}" wx:for-item="imgSrc" wx:key="index">
+                                    <image-loader bind:__l="__l" bind:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'previewImage',[key,index] ] ] ] ]}}" mode="aspectFill" source="{{imgSrc[$orig]}}" styles="{{imgSrc.a0}}" vueId="{{'4786e186-3-'+key+'-'+index}}"></image-loader>
+                                </view>
+                            </block>
+                            <block wx:if="{{item[$orig].thumbnails.length>1}}">
+                                <view class="image-item" wx:for="{{item.l1}}" wx:for-item="imgSrc" wx:key="index">
+                                    <image-loader bind:__l="__l" bind:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'previewImage',[key,index] ] ] ] ]}}" mode="aspectFill" source="{{imgSrc[$orig]}}" styles="{{imgSrc.a1}}" vueId="{{'4786e186-4-'+key+'-'+index}}"></image-loader>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <view class="loading-runing" wx:if="{{more}}">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+                <view class="none-data" wx:else>
+                    <text>我也是有底线的哦~ (๑•́ ₃ •̀๑)</text>
+                </view>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['toState'] ] ] ]}}" isAuthPhone="{{true}}" vueId="4786e186-5" vueSlots="{{['default']}}" wx:if="{{isSealman}}">
+            <view class="footer">
+                <view class="btn">发表动态</view>
+            </view>
+        </authorization>
+        <busi-footer bind:__l="__l" vueId="4786e186-6" vueSlots="{{['default']}}" wx:else>
+            <view class="footer-content fz-16">
+                <footer-share bind:__l="__l" vueId="{{'4786e186-7'+','+'4786e186-6'}}"></footer-share>
+                <view class="btn-wrap">
+                    <contact-salesman bind:__l="__l" class="flex-style" projectId="{{project_id}}" salesmanId="{{project_id}}" vueId="{{'4786e186-8'+','+'4786e186-6'}}" vueSlots="{{['default']}}">联系置业顾问</contact-salesman>
+                    <view bindtap="__e" class="flex-style footer-btn color-right" data-event-opts="{{[ [ 'tap',[ [ 'handleSubscription',['$event'] ] ] ] ]}}">订阅动态提醒</view>
+                </view>
+            </view>
+        </busi-footer>
+        <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" content="{{disclaimer}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','comment_show','$event'],[''] ] ] ] ]}}" data-ref="DialogDisclaimer" isColumnBtn="true" showCancel="{{false}}" submitText="知道了" textAlign="left" title="免责声明" visible="{{comment_show}}" vueId="4786e186-9"></dialog>
+    </view>
+    <dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" class="vue-ref" content="{{callContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','showCallPhone','$event'],[''] ] ] ],[ '^onSubmit',[ ['comfirm'] ] ] ]}}" data-ref="Dialog" dataName="打电话" dataType="button" submitText="拨打" visible="{{showCallPhone}}" vueId="4786e186-10"></dialog>
+    <view class="page-control">
+        <navigator class="backhome btn" openType="switchTab" url="/pages/index" wx:if="{{showHome}}">
+            <text class="iconnew new-huishouye fz-21"></text>
+            <text class="fz-11 font-bold">首页</text>
+        </navigator>
+    </view>
+    <busi-share-icon bind:__l="__l" bottom="{{bottomHeight}}" class="vue-ref" custom="{{true}}" data-ref="share" vueId="4786e186-11"></busi-share-icon>
+</view>

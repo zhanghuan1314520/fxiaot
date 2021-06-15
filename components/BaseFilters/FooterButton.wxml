@@ -1,0 +1,19 @@
+<view class="footer-button">
+    <view class="area-filter-item" wx:if="{{list.length>0}}">
+        <view class="item-button" wx:for="{{list}}" wx:key="index">
+            <text class="text">{{''+item.text+''}}</text>
+            <text bindtap="__e" class="iconnew new-guanbi" data-event-opts="{{[ [ 'tap',[ [ '$emit',['remove','$0'],[ [ ['list','',index] ] ] ] ] ] ]}}"></text>
+        </view>
+        <view class="item-button" wx:if="{{showExtra}}">
+            <text class="iconnew new-gengduo-copy"></text>
+        </view>
+    </view>
+    <block wx:if="{{isNative}}">
+        <cover-view catchtap="__e" class="footer-button__reset" data-event-opts="{{[ [ 'tap',[ [ 'resetHandle',['$event'] ] ] ] ]}}">重置</cover-view>
+        <cover-view catchtap="__e" class="footer-button__submit" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</cover-view>
+    </block>
+    <block wx:else>
+        <button catchtap="__e" class="footer-button__reset" data-event-opts="{{[ [ 'tap',[ [ 'resetHandle',['$event'] ] ] ] ]}}">重置</button>
+        <button catchtap="__e" class="footer-button__submit" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</button>
+    </block>
+</view>

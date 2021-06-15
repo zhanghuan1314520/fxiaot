@@ -1,0 +1,19 @@
+<view>
+    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+        <slot></slot>
+        <scoped-slots-default bind:__l="__l" showName="{{showName}}"></scoped-slots-default>
+    </view>
+    <view bindtap="__e" catchtouchmove="__e" class="{{[ 'picker-container '+(visible?'show':'hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handlecCancel',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"></view>
+    <view class="{{[ 'picker-content '+(visible?'active':'') ]}}">
+        <view class="picker-operate">
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handlecCancel',['$event'] ] ] ] ]}}">取消</text>
+            <text>{{label}}</text>
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleComplete',['$event'] ] ] ] ]}}">确定</text>
+        </view>
+        <picker-view bindchange="__e" class="picker-view" data-event-opts="{{[ [ 'change',[ [ 'handleChange',['$event'] ] ] ] ]}}" indicatorClass="picker-indicator" value="{{pickerVal}}">
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{options}}" wx:key="index">{{''+item.label+''}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

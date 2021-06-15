@@ -1,0 +1,36 @@
+.salesman-college {
+    padding-top: 48rpx;
+}
+
+.college-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 32rpx 40rpx;
+}
+
+.college-title .left {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 32rpx;
+}
+
+.college-title .right {
+    display: inline-block;
+    font-size: 26rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 26rpx;
+}
+
+.college-title .right .iconnew {
+    font-size: 26rpx;
+    margin-left: 4rpx;
+    line-height: 20rpx;
+}
+
+.swiper-wraper {
+    position: relative;
+    margin: 0 32rpx 14rpx;
+}

@@ -1,0 +1,41 @@
+<view class="salesman-info" wx:if="{{recommendSalesMan.length>0}}">
+    <navigator bindtap="__e" class="common-title" data-content="优秀置业顾问" data-event-opts="{{[ [ 'tap',[ [ 'btnEventTrack',['楼盘详情-更多置业顾问'] ] ] ] ]}}" data-name="更多置业顾问" data-type="link" hoverClass="none" id="saleManMore" url="{{'/pages/salesMan/index?id='+projectId+'&title='+baseDetail.name+'&andrees=detail'}}">
+        <view class="title">优秀置业顾问<text catchtap="__e" class="iconnew new-wenhaocopy fz-18 gray-9-color" data-event-opts="{{[ [ 'tap',[ [ 'navigateToHandle',['$0'],['recommendRule'] ] ] ] ]}}" wx:if="{{isSalesMan}}"></text>
+        </view>
+        <view class="more">
+            <text>更多置业顾问</text>
+            <text class="iconnew new-tongyong-gengduo"></text>
+        </view>
+    </navigator>
+    <view class="salesman-tips">
+        <view class="salesman-tips-item">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191219940158081.png"></image>
+            <text>免费咨询</text>
+        </view>
+        <view class="salesman-tips-item">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191219940158081.png"></image>
+            <text>免费电话</text>
+        </view>
+        <view class="salesman-tips-item">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191219940208081.png"></image>
+            <text>专业服务</text>
+        </view>
+        <view class="salesman-tips-item">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191219940288081.png"></image>
+            <text>区域解读</text>
+        </view>
+    </view>
+    <view class="info-container">
+        <view bindtap="__e" class="item" data-content="优秀置业顾问" data-event-opts="{{[ [ 'tap',[ [ 'jumpSaleManCenterUrl',['$0'],[ [ ['recommendSalesMan','',index] ] ] ] ] ] ]}}" data-name="置业顾问详情" data-type="link" id="{{'salesMan'+index}}" item="sales" wx:for="{{$root.l0}}" wx:for-item="sales" wx:key="index">
+            <image-loader bind:__l="__l" class="image" mode="aspectFill" source="{{sales.f0}}" styles="{{sales.a0}}" vueId="{{'2d04e153-1-'+index}}"></image-loader>
+            <view class="only-tag position" wx:if="{{sales[$orig].is_bind&&sales[$orig].is_bind==1}}"></view>
+            <view class="name">{{''+sales[$orig].sales_man_name+''}}</view>
+            <busi-auth-navigator bind:__l="__l" url="{{urls[index]}}" vueId="{{'2d04e153-2-'+index}}" vueSlots="{{['default']}}">
+                <view class="btn">
+                    <text class="iconnew new-zixun fz-13"></text>
+                    <text class="fz-13">咨询</text>
+                </view>
+            </busi-auth-navigator>
+        </view>
+    </view>
+</view>

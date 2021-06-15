@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="sentences">
+        <view class="empty-data" wx:if="{{list.length<1&&loaded}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/2019991441558081.png"></image>
+            <view class="empty-text">暂无常用语，快去添加吧～</view>
+            <button bindtap="__e" catchtouchmove="preventTouchMove" class="add-btn" data-event-opts="{{[ [ 'tap',[ ['editData'] ] ] ]}}">新增常用语</button>
+        </view>
+        <view class="title">
+            <text class="label">{{'我的常用语('+list.length+')'}}</text>
+            <view bindtap="__e" class="add-btn-text" data-event-opts="{{[ [ 'tap',[ ['editData'] ] ] ]}}">
+                <text class="iconnew new-quangengduo fz-22 mr-4"></text>新增常用语</view>
+        </view>
+        <view class="item" wx:for="{{list}}" wx:key="index">
+            <view class="text">{{''+item.content+''}}</view>
+            <view class="tools">
+                <view bindtap="__e" class="f-left" data-event-opts="{{[ [ 'tap',[ [ 'setItemDefault',['$0',index],[ [ ['list','',index] ] ] ] ] ] ]}}">
+                    <text class="iconnew new-queding fz-20 mr-4" style="color:#2F8CEF;" wx:if="{{phrase_id==item.id}}"></text>
+                    <text class="iconnew new-gougouxianxing fz-20 mr-4" wx:if="{{phrase_id!=item.id}}"></text>设置为自动回复</view>
+                <view bindtap="__e" class="f-right" data-event-opts="{{[ [ 'tap',[ [ 'removeItem',['$0',index],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:if="{{item.session_id!==0}}">
+                    <text class="iconnew new-shanchu fz-20 mr-4"></text>删除</view>
+                <view bindtap="__e" class="f-right" data-event-opts="{{[ [ 'tap',[ [ 'editData',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:if="{{item.session_id!==0}}">
+                    <text class="iconnew new-xiepinglun2 fz-20 mr-4"></text>编辑</view>
+            </view>
+        </view>
+    </view>
+    <common-phrases-editer bind:__l="__l" bind:updateList="__e" bind:updateParams="__e" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showDialog','$event'],[''] ] ] ],[ '^updateList',[ [ '__set_sync',['$0','list','$event'],[''] ] ] ],[ '^updateParams',[ [ '__set_sync',['$0','params','$event'],[''] ] ] ] ]}}" list="{{list}}" params="{{params}}" show="{{showDialog}}" vueId="1f2ad35a-1"></common-phrases-editer>
+</view>

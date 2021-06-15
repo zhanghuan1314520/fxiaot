@@ -1,0 +1,40 @@
+.appr-message {
+    border-radius: 10rpx;
+    margin: 0 52rpx 32rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.appr-message__title {
+    padding: 40rpx 32rpx 0;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #333;
+    line-height: 40rpx;
+}
+
+.appr-message__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40rpx 52rpx 56rpx;
+}
+
+.appr-message__content--star {
+    font-size: 64rpx;
+    color: #dfdfdf;
+    line-height: 1;
+}
+
+.appr-message__content--star.active {
+    color: #ffc94f;
+}
+
+.appr-message__button {
+    line-height: 90rpx;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #2d8cf0;
+    text-align: center;
+    background: #fff;
+    border-top: 2rpx solid rgba(48,55,64,.05);
+}

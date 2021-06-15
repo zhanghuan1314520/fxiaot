@@ -1,0 +1,343 @@
+.page {
+    overflow: hidden;
+}
+
+.businessCard-bg {
+    background: rgba(0,0,0,.8);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 995;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.container {
+    min-height: 520rpx;
+    position: relative;
+    margin: 20rpx 36rpx 0;
+    text-align: center;
+}
+
+.container .top-img {
+    position: relative;
+    margin-bottom: 12rpx;
+    width: 100%;
+    height: 100%;
+}
+
+.container .top-img .top-img__bg {
+    width: 100%;
+}
+
+.container .top-img .code-num {
+    font-size: 40rpx;
+    font-weight: 700;
+    color: #972302;
+    position: absolute;
+    top: 232rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container .top-img .code-num--fail {
+    color: #0a1f52;
+}
+
+.container .split {
+    color: #f2f2f2;
+}
+
+.container .split.left {
+    text-align: left;
+    margin: 0 0 16rpx 28rpx;
+}
+
+.container .split.right {
+    width: 100%;
+    text-align: right;
+    margin: 0 20rpx 28rpx 0;
+}
+
+.container .title {
+    margin-bottom: 14rpx;
+    line-height: 1;
+}
+
+.container .title .first {
+    margin-right: 34rpx;
+}
+
+.container .two-line-cont {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+}
+
+.container .two-line-cont .main-title .title {
+    margin-bottom: 0;
+}
+
+.container .two-line-cont .main-title .top {
+    margin-bottom: 24rpx;
+    line-height: 1;
+}
+
+.container .two-line-cont .split-right {
+    display: flex;
+    align-items: flex-end;
+}
+
+.container .radio-num {
+    font-size: 28rpx;
+    color: #96989e;
+    line-height: 40rpx;
+    padding-bottom: 36rpx;
+}
+
+.container .radio-num .orange-color {
+    color: #ff7d4f;
+}
+
+.bottom-cont {
+    border-top: 20rpx solid #f2f2f2;
+    padding: 0 24rpx;
+    text-align: center;
+}
+
+.bottom-cont .project-name {
+    padding: 28rpx 0;
+    display: flex;
+    color: #2d8cf0;
+    align-items: center;
+}
+
+.bottom-cont .project-name .name {
+    font-size: 32rpx;
+    line-height: 50rpx;
+    margin-left: 2rpx;
+}
+
+.bottom-cont .project-data {
+    margin: 0 0 28rpx;
+    align-items: center;
+}
+
+.bottom-cont .project-data .num {
+    margin-bottom: 12rpx;
+}
+
+.bottom-cont .project-data .line {
+    display: flex;
+    background: hsla(0,0%,100%,.03);
+    border-top: 2px solid #f3f3f4;
+    border-left: 2px solid #f3f3f4;
+    border-right: 2px solid #f3f3f4;
+}
+
+.bottom-cont .project-data .line:nth-of-type(1) {
+    background: rgba(21,24,45,.03);
+}
+
+.bottom-cont .project-data .line:last-child {
+    border-bottom: 2px solid #f3f3f4;
+}
+
+.bottom-cont .last-cont {
+    padding-bottom: 50rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-cont .last-cont .qr-code .code-img {
+    width: 130rpx;
+    height: 130rpx;
+    border: 1rpx solid #f2f2f2;
+    padding: 4rpx;
+    margin-bottom: 12rpx;
+}
+
+.bottom-cont .last-cont .right {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-cont .last-cont .right .img-box {
+    color: #ff6b36;
+    line-height: 1;
+    margin-right: 120rpx;
+}
+
+.bottom-cont .last-cont .right .img-box .box-icon {
+    width: 100rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    margin-bottom: 22rpx;
+    border-radius: 100rpx;
+}
+
+.bottom-cont .last-cont .right .img-box .box-icon.new-download {
+    background: rgba(255,125,79,.09);
+}
+
+.bottom-cont .last-cont .right .img-box .box-icon.new-fenxiang8 {
+    background: rgba(47,140,239,.09);
+}
+
+.bottom-cont .last-cont .right .share-icon {
+    margin-left: 56rpx;
+    color: #2d8cf0;
+    line-height: 1;
+    background: transparent;
+}
+
+.hide {
+    display: none;
+}
+
+.result__detail--conf {
+    position: absolute;
+    top: 270rpx;
+    width: 640rpx;
+    left: 50%;
+    margin-left: -320rpx;
+}
+
+.result__detail__main {
+    width: 90%;
+    margin: 60rpx auto 0;
+    height: 60rpx;
+    font-size: 44rpx;
+    font-family: PingFangSC-Semibold,PingFang SC;
+    font-weight: 700;
+    color: #972302;
+    line-height: 60rpx;
+}
+
+.result__detail__normal {
+    margin: 12rpx auto 0;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 44rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #ec6325;
+    line-height: 44rpx;
+}
+
+.result__detail__main--fail {
+    color: #303237;
+}
+
+.result__detail__normal--fail {
+    color: #606266;
+}
+
+.project__title {
+    font-weight: 400;
+    border-right: 2px solid #f3f3f4;
+    color: #96989e;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    line-height: 74rpx;
+    flex: 1;
+}
+
+.project__title:first-child {
+    flex: 0 0 160rpx;
+}
+
+.project__title:last-child {
+    border-right: none;
+}
+
+.project__cont {
+    font-weight: 400;
+    border-right: 2px solid #f3f3f4;
+    color: #303740;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    line-height: 74rpx;
+    flex: 1;
+}
+
+.project__cont:first-child {
+    color: #96989e;
+    flex: 0 0 160rpx;
+}
+
+.project__cont:last-child {
+    border-right: none;
+}
+
+.project__cont--green {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    color: #2f8cef;
+}
+
+.project-name__icon {
+    margin-top: 6rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.result_detail__icon {
+    width: 36rpx;
+    height: 32rpx;
+    margin: 7rpx 12rpx;
+}
+
+.provider {
+    position: absolute;
+    height: 64rpx;
+    background: rgba(47,140,239,.06);
+    border-radius: 0 0 0 16rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16rpx 0 10rpx;
+    top: 0;
+    right: 0;
+}
+
+.provider__img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.provider__txt {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #2f8cef;
+    height: 40rpx;
+    margin-left: 2rpx;
+}
+
+.right__img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.right__wrap--down {
+    background: rgba(255,125,79,.09);
+}
+
+.right__wrap,.right__wrap--down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right__wrap {
+    background: rgba(47,140,239,.09);
+}

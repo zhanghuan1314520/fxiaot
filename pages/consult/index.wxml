@@ -1,0 +1,16 @@
+<view class="page" style="{{'margin-top:'+marginTop+'px'}}">
+    <custom-nav-header bind:__l="__l" title="杭州房小团" vueId="4dc26400-1"></custom-nav-header>
+    <view class="focus-option white-bg" style="{{'top:'+marginTop+'px'}}">
+        <view catchtap="__e" class="focus-option-item" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['$0','$1'],[ [ ['typeFilter','',index,'type'] ],[ ['typeFilter','',index,'name'] ] ] ] ] ] ]}}" wx:for="{{typeFilter}}" wx:key="index">
+            <text class="{{[changeType==item.type?'font-bold blued-color fz-17':'black1a-color fz-15']}}">{{''+item.name+''}}</text>
+            <view class="{{['option-color',changeType==item.type?'color-style':'color-style2']}}"></view>
+        </view>
+    </view>
+    <view class="empty_block"></view>
+    <consult-template articlePlaceHolder="{{articlePlaceHolder}}" articles="{{articles}}" bind:__l="__l" dernResult="{{dernData}}" hotResult="{{hotArticles}}" more="{{more}}" postBanners="{{postBanners}}" vueId="4dc26400-2" wx:if="{{changeType==1}}"></consult-template>
+    <answer-template answerHeaderFix="{{answerHeaderFix}}" bind:__l="__l" bind:filterData="__e" data-event-opts="{{[ [ '^filterData',[ ['filterData'] ] ] ]}}" isShowAll="{{isShowAll}}" more="{{more}}" placeHolder="{{placeHolder}}" questionBanners="{{questionBanners}}" questionItems="{{questionItems}}" questionNavs="{{questionNavs}}" sendData="{{sendData}}" vueId="4dc26400-3" wx:if="{{changeType==2}}"></answer-template>
+    <sharing-template bind:__l="__l" bind:chooseShare="__e" bind:sendInputVal="__e" bind:updateInputValProps="__e" data-event-opts="{{[ [ '^updateInputValProps',[ [ '__set_sync',['$0','keyword','$event'],[''] ] ] ],[ '^updateInputValProps',[ [ '__set_sync',['$0','keyword','$event'],[''] ] ] ],[ '^chooseShare',[ ['chooseShareType'] ] ],[ '^sendInputVal',[ ['sendInputVal'] ] ] ]}}" inputValProps="{{keyword}}" isShowAll="{{isShowAll}}" list="{{items}}" more="{{more}}" shareHeaderFix="{{shareHeaderFix}}" vueId="4dc26400-4" wx:if="{{changeType==3}}"></sharing-template>
+    <soil-taken-template bind:__l="__l" bind:loadData="__e" data-event-opts="{{[ [ '^loadData',[ ['loadData'] ] ] ]}}" more="{{more}}" soilData="{{soilData}}" soilHeaderFix="{{soilHeaderFix}}" vueId="4dc26400-5" wx:if="{{changeType==4}}"></soil-taken-template>
+    <ad-float-window adFloatWindowImg="{{adFloatWindowImg}}" adFloatWindowUrl="{{adFloatWindowUrl}}" bind:__l="__l" bottom="{{AdFloatWindowBottom}}" class="skeletons-rect" vueId="4dc26400-6" wx:if="{{isAdOpen&&changeType==1}}"></ad-float-window>
+    <add-my-program-new bind:__l="__l" bind:updateHideTip="__e" class="vue-ref" data-event-opts="{{[ [ '^updateHideTip',[ [ '__set_sync',['$0','showAddMyProgram','$event'],[''] ] ] ],[ '^updateHideTip',[ [ '__set_sync',['$0','showAddMyProgram','$event'],[''] ] ] ] ]}}" data-ref="addMyProgramRef" hideTip="{{showAddMyProgram}}" vueId="4dc26400-7"></add-my-program-new>
+</view>

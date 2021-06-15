@@ -1,0 +1,64 @@
+.salesman-info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    height: 144rpx;
+    background: #fff;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.salesman-info .left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.salesman-info .left .avatar {
+    width: 96rpx;
+    height: 96rpx;
+    border: 1rpx solid rgba(0,0,0,.07);
+    border-radius: 96rpx;
+}
+
+.salesman-info .left .name-project {
+    margin-left: 16rpx;
+}
+
+.salesman-info .left .name-project .name {
+    color: rgba(0,0,0,.85);
+    font-size: 32rpx;
+    line-height: 40rpx;
+    margin-bottom: 4rpx;
+    font-weight: 700;
+}
+
+.salesman-info .left .name-project .project-name {
+    color: rgba(0,0,0,.85);
+    font-size: 26rpx;
+    line-height: 36rpx;
+    max-width: 200rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.salesman-info .left .item-button {
+    width: 168rpx;
+    height: 100rpx;
+    background: #1bc17b;
+    border-radius: 8rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 32rpx;
+}
+
+.salesman-info .left .phone {
+    background: #2d8cf0;
+    margin-left: 20rpx;
+}

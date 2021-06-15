@@ -1,0 +1,3 @@
+<view class="{{[ 'border-container',[border?'border':'',isFirstItem?'padding-less':''] ]}}">
+    <slot></slot>
+</view>

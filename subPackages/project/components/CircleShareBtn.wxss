@@ -1,0 +1,35 @@
+.cricle-share-btn {
+    position: fixed;
+    right: 0;
+    bottom: 184rpx;
+    z-index: 99;
+    margin-right: 24rpx;
+}
+
+.cricle-share-btn .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 84rpx;
+    width: 84rpx;
+    margin-top: 20rpx;
+    color: #fff;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.cricle-share-btn .btn .iconnew {
+    line-height: 1;
+    color: #999;
+    font-weight: 700;
+}
+
+.cricle-share-btn .share {
+    background: #fff;
+    box-shadow: 0 8px 18px 0 rgba(0,0,0,.14);
+}
+
+.cricle-share-btn .font-bold-500 {
+    font-weight: 500;
+}

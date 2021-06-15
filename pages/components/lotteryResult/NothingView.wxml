@@ -1,0 +1,5 @@
+<view class="nothing" hidden="{{isHidden}}">
+    <image class="nothing__img" src="https://imgcdn.huanjutang.com/assets/img/20201101454208081.png"></image>
+    <slot wx:if="{{$slots.default}}"></slot>
+    <view class="fz-14 nothing__text" wx:else>未查到结果哟，请输入正确的完整信息</view>
+</view>

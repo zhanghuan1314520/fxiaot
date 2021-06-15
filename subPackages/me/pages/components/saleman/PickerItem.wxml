@@ -1,0 +1,25 @@
+<view>
+    <view class="label">
+        <view class="text">{{''+label+''}}</view>
+    </view>
+    <view bindtap="__e" class="cont-line" data-event-opts="{{[ [ 'tap',[ [ 'onTap',['$event'] ] ] ] ]}}">
+        <view class="right">
+            <text>{{''+showName+''}}</text>
+            <text class="iconnew new-tongyong-gengduo right-icon" wx:if="{{!disabled}}"></text>
+        </view>
+    </view>
+    <view class="tip" wx:if="{{tip}}">{{''+tip+''}}</view>
+    <view bindtap="__e" catchtouchmove="__e" class="{{[ 'picker-container '+(visible?'show':'hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handlecCancel',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"></view>
+    <view class="{{[ 'picker-content '+(visible?'active':'') ]}}">
+        <view class="picker-operate">
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handlecCancel',['$event'] ] ] ] ]}}">取消</text>
+            <text>{{label}}</text>
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleComplete',['$event'] ] ] ] ]}}">确定</text>
+        </view>
+        <picker-view bindchange="__e" class="picker-view" data-event-opts="{{[ [ 'change',[ [ 'handleChange',['$event'] ] ] ] ]}}" indicatorClass="picker-indicator" value="{{pickerVal}}">
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{options}}" wx:key="index">{{''+item.label+''}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

@@ -1,0 +1,81 @@
+.focus__fotter {
+    position: fixed;
+    bottom: 156rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 686rpx;
+    height: 128rpx;
+    background: rgba(0,0,0,.65);
+    border-radius: 8rpx;
+    z-index: 990;
+    padding: 20rpx 16rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.focus__fotter__img {
+    height: 88rpx;
+    width: 152rpx;
+    border-radius: 4rpx;
+    object-fit: cover;
+}
+
+.focus__fotter__content {
+    flex: 1;
+    margin-left: 16rpx;
+}
+
+.focus__fotter__content__name {
+    font-size: 28rpx;
+    font-weight: 400;
+    color: hsla(0,0%,100%,.85);
+    width: 282rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.focus__fotter__content__desc {
+    font-size: 28rpx;
+    font-weight: 500;
+    margin-bottom: 18rpx;
+    color: #fff;
+}
+
+.focus__fotter__btn {
+    width: 140rpx;
+    height: 64rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 64rpx;
+    text-align: center;
+    margin-right: 48rpx;
+}
+
+.focus__fotter__close {
+    width: 52rpx;
+    height: 52rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.focus__fotter__close__btn {
+    color: #fff;
+    font-size: 11px!important;
+}
+
+.isPhonex {
+    bottom: calc(constant(safe-area-inset-bottom) + 156rpx);
+    bottom: calc(env(safe-area-inset-bottom) + 156rpx);
+}

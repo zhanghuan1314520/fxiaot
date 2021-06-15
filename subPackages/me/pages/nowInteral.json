@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "积分明细",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "nowInteral-date-picker-default": "/subPackages/me/pages/nowInteral-date-picker-default",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-tab": "/components/UILayout/BusiTab",
+        "date-picker": "/subPackages/me/pages/components/DatePicker",
+        "empty": "/subPackages/me/pages/components/list/Empty",
+        "busi-loading": "/components/UILayout/BusiLoading",
+        "back-to-top": "/subPackages/me/pages/components/BackToTop",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine"
+    }
+}

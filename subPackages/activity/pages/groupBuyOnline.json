@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "no-data": "/subPackages/activity/components/NoData",
+        "banner": "/subPackages/activity/components/Banner",
+        "upload-btn": "/subPackages/activity/components/UploadBtn"
+    }
+}

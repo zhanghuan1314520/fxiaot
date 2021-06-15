@@ -1,0 +1,9 @@
+<view class="map-look">
+    <view class="filter-wraper">
+        <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="vue-ref" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['onFilterReset'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ] ]}}" data-ref="baseFilters" isNative="{{true}}" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" vueId="27dc8060-1"></base-filters>
+    </view>
+    <view catchtap="__e" catchtouchmove="__e" class="filter-bg" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ] ]}}" wx:if="{{tabbarListIndex!==-1}}"></view>
+    <map bindcallouttap="__e" bindlabeltap="__e" bindregionchange="__e" circles="{{circles}}" data-event-opts="{{[ [ 'regionchange',[ [ 'regionChange',['$event'] ] ] ],[ 'labeltap',[ [ 'markerTap',['$event'] ] ] ],[ 'callouttap',[ [ 'markerTap',['$event'] ] ] ] ]}}" data-hidden="{{tabbarListIndex!==-1}}" id="map" includePoints="{{includePoints}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polygons="{{polygons}}" polyline="{{polyline}}" scale="{{scale}}" showLocation="{{true}}"></map>
+    <image bindtap="__e" class="location" data-event-opts="{{[ [ 'tap',[ [ 'getLocationHandle',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/2020841736378081.png"></image>
+    <share-button bind:__l="__l" vueId="27dc8060-2" wx:if="{{enableShare}}"></share-button>
+</view>

@@ -1,0 +1,18 @@
+<view>
+    <view class="list">
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'goDetailPage',['$0'],[ [ ['list','id',item.id] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:for-index="__i0__" wx:key="id">
+            <view class="head-img">
+                <image src="{{item.icon}}"></image>
+            </view>
+            <view class="info">
+                <view class="info-left _div">
+                    <view class="name">{{''+item.title+''}}</view>
+                    <view class="text">{{''+item.intro+''}}</view>
+                </view>
+                <view catchtap="__e" class="btn on" data-event-opts="{{[ [ 'tap',[ [ 'subscription',['$0'],[ [ ['list','id',item.id,'id'] ] ] ] ] ] ]}}" wx:if="{{item.is_subscribe!=1}}">立即订阅</view>
+                <view catchtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'subscription',['$0'],[ [ ['list','id',item.id,'id'] ] ] ] ] ] ]}}" wx:if="{{item.is_subscribe==1&&!item.is_force_subscribe}}">取消订阅</view>
+                <view class="btn b-none _div" wx:else></view>
+            </view>
+        </view>
+    </view>
+</view>

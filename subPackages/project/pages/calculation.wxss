@@ -1,0 +1,20 @@
+page {
+    background: #f7f7f7;
+}
+
+.calculation {
+    padding: 30rpx;
+}
+
+.calculation-content {
+    text-align: center;
+}
+
+.calculation-content image {
+    display: block;
+    width: 100%;
+}
+
+.calculation-footer,.calculation-title {
+    padding: 20rpx 0;
+}

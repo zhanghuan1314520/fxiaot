@@ -1,0 +1,20 @@
+<view class="player data-v-ed009f9a">
+    <view bindtap="__e" class="player-left data-v-ed009f9a" data-event-opts="{{[ [ 'tap',[ [ 'operation',['$event'] ] ] ] ]}}">
+        <view class="icon data-v-ed009f9a" wx:if="{{paused}}">
+            <image class="data-v-ed009f9a" src="https://imgcdn.huanjutang.com/image/2020/07/23/c1d12b69f61797f39c21892c62f4e3d8.png"></image>
+        </view>
+        <view class="icon data-v-ed009f9a" wx:else>
+            <image class="data-v-ed009f9a" src="https://imgcdn.huanjutang.com/image/2020/07/23/7f95e97ecd18640db27f63d4b8bd2198.png"></image>
+        </view>
+        <text class="time data-v-ed009f9a">{{''+currentTime+''}}</text>
+    </view>
+    <view class="player-center _div data-v-ed009f9a">
+        <slider activeColor="#2D8CF0" backgroundColor="#D3E3F5" bindchange="__e" bindchanging="__e" blockSize="18" class="audio-slider data-v-ed009f9a" data-event-opts="{{[ [ 'changing',[ [ 'changing',['$event'] ] ] ],[ 'change',[ [ 'change',['$event'] ] ] ] ]}}" max="{{duration}}" strokeWidth="4" value="{{current}}"></slider>
+    </view>
+    <view class="player-right data-v-ed009f9a">
+        <text class="duration data-v-ed009f9a">{{''+durationTime+''}}</text>
+        <view bindtap="__e" class="close data-v-ed009f9a" data-event-opts="{{[ [ 'tap',[ [ 'hidePlayer',['$event'] ] ] ] ]}}">
+            <image alt class="close-img _img data-v-ed009f9a" src="https://imgcdn.huanjutang.com/image/2020/07/30/f84b12c665b96041db9bdbcbcf846293.png"></image>
+        </view>
+    </view>
+</view>

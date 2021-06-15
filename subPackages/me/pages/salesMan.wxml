@@ -1,0 +1,8 @@
+<view class="sale-man__wrapper">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" isSetNavColor="{{true}}" vueId="361f72f6-1" vueSlots="{{['default']}}">入驻楼盘</busi-nav-header>
+    <image class="img" mode="widthFix" src="{{imgSrc}}"></image>
+    <busi-card-id bind:__l="__l" bind:changePage="__e" data-event-opts="{{[ [ '^changePage',[ ['changePage'] ] ] ]}}" idCard="{{isCardAuth}}" pageControl="{{pageControl}}" vueId="361f72f6-2" wx:if="{{currentPage==1}}"></busi-card-id>
+    <busi-wx-card bind:__l="__l" bind:changePage="__e" data-event-opts="{{[ [ '^changePage',[ ['changePage'] ] ] ]}}" pageControl="{{pageControl}}" retryform="{{retryform}}" vueId="361f72f6-3" wx:if="{{currentPage==2}}"></busi-wx-card>
+    <busi-project bind:__l="__l" bind:changeLotterySubmit="__e" bind:submit="__e" changeLottery="{{changeLottery}}" data-event-opts="{{[ [ '^submit',[ ['submit'] ] ],[ '^changeLotterySubmit',[ ['changeLotterySubmit'] ] ] ]}}" retryform="{{retryform}}" vueId="361f72f6-4" wx:if="{{currentPage==3}}"></busi-project>
+    <busi-relation-lottery bind:__l="__l" bind:submit="__e" data-event-opts="{{[ [ '^submit',[ ['relationLottery'] ] ] ]}}" vueId="361f72f6-5" wx:if="{{currentPage==4}}"></busi-relation-lottery>
+</view>

@@ -1,0 +1,25 @@
+<view>
+    <view class="page">
+        <view class="point-title">
+            <image bindtap="__e" class="avatar" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['bigCoffeeDetails.avatar_url'] ] ] ] ]}}" mode="aspectFill" src="{{bigCoffeeDetails.avatar_url||defaultImg}}"></image>
+            <view class="bigCoffeeCont">
+                <view class="name fz-18">{{''+bigCoffeeDetails.name+''}}</view>
+                <view class="description fz-13 gray-9-color">{{''+(bigCoffeeDetails.intro||'暂无简介')+''}}</view>
+                <button class="share fz-16 white-color" openType="share">分享主页</button>
+                <view class="small-name fz-14">共<text class="fz-14">{{''+bigCoffeeDetails.total+''}}</text>篇文章</view>
+            </view>
+        </view>
+        <view class="blank"></view>
+        <view class="article-list">
+            <view class="article-line" wx:for="{{articleList}}" wx:for-index="i" wx:for-item="article" wx:key="i">
+                <article-style bind:__l="__l" item="{{article}}" titleData="大咖详情-文章列表" vueId="{{'3b5f3ce0-1-'+i}}"></article-style>
+            </view>
+            <view class="not_id_card small-level-color" style="padding-top:80px;font-size:14px;text-align:center;" wx:if="{{articleList.length<=0}}">暂无内容</view>
+        </view>
+        <view class="bottom_tip" wx:if="{{articleList.length>0}}">
+            <view class="bottom_line before"></view>
+            <view class="bottom_tip_text fz-10 gray-9-color">我的底线在这里~</view>
+            <view class="bottom_line after"></view>
+        </view>
+    </view>
+</view>

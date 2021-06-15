@@ -1,0 +1,14 @@
+<view class="project data-v-22660b07">
+    <view class="project-title data-v-22660b07">
+        <image class="project-title__image data-v-22660b07" mode="widthFix" src="{{homeImage.projectTitle}}"></image>
+    </view>
+    <banner bind:__l="__l" class="data-v-22660b07 vue-ref" data-ref="banner" type="singleday_buy_house" vueId="8c9ce1e2-1"></banner>
+    <view class="list-container data-v-22660b07">
+        <view class="project-list data-v-22660b07" wx:if="{{groupList.length}}">
+            <group-item bind:__l="__l" class="data-v-22660b07" item="{{item}}" vueId="{{'8c9ce1e2-2-'+__i0__}}" wx:for="{{groupList}}" wx:for-index="__i0__" wx:key="id"></group-item>
+        </view>
+        <block wx:else>
+            <no-data bind:__l="__l" class="data-v-22660b07" vueId="8c9ce1e2-3" wx:if="{{!loading}}"></no-data>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "置业顾问联盟",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff",
+    "usingComponents": {
+        "project-item": "/subPackages/salesMan/components/ProjectItem",
+        "loading": "/subPackages/salesMan/components/Loading",
+        "custom-nav-header": "/subPackages/salesMan/components/CustomNavHeader"
+    }
+}

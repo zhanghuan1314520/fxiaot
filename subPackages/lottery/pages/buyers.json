@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#3772cc",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "buyer-list": "/subPackages/lottery/pages/components/hangzhou/buyers/BuyerList"
+    }
+}

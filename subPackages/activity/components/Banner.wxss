@@ -1,0 +1,63 @@
+.container {
+    background-color: #4362ff;
+    min-height: 100vh;
+}
+
+.banner-wrap {
+    position: relative;
+    z-index: 2;
+    margin: 0 26rpx;
+}
+
+.banner {
+    width: 686rpx;
+    height: 180rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    background-color: #acbaff;
+    position: relative;
+}
+
+.banner,.banner::before {
+    border: 4rpx solid #002aff;
+}
+
+.banner::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 4rpx;
+    left: 4rpx;
+    background-color: #f5f652;
+}
+
+.pillars {
+    position: relative;
+    height: 47rpx;
+    margin-top: 8rpx;
+}
+
+.pillars::before {
+    left: 146rpx;
+}
+
+.pillars::after,.pillars::before {
+    content: "";
+    width: 14rpx;
+    height: 47rpx;
+    background-color: #0023d3;
+    position: absolute;
+    top: 0;
+}
+
+.pillars::after {
+    right: 158rpx;
+}
+
+.swiper-item {
+    width: 100%;
+    max-width: 100%;
+    height: 172rpx;
+}

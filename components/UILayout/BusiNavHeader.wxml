@@ -1,0 +1,11 @@
+<view style="{{'height:'+44+statusBarHeight+'px'+';'}}" wx:if="{{hasHeight}}"></view>
+<view class="{{['busi-nav-header',className]}}" style="{{'background:'+backgroundColor+';'}}">
+    <view class="header__status" style="{{'height:'+statusBarHeight+'px'+';'}}"></view>
+    <view class="header__navbar">
+        <view class="{{['header__navbar-title',!isTabbarPage?'header__navbar-title__default':'',isTabbarPage?'header__navbar-title__tabbar':'']}}" style="{{'color:'+titleColor+';'}}">
+            <slot wx:if="{{$slots.default}}"></slot>
+            <block wx:else>杭州房小团</block>
+        </view>
+        <view bindtap="__e" class="header__navbar-back iconnew new-tubiaoyanse" data-event-opts="{{[ [ 'tap',[ [ 'goBackHandle',['$event'] ] ] ] ]}}" data-name="返回" style="{{'color:'+iconColor+';'}}" wx:if="{{!isTabbarPage}}"></view>
+    </view>
+</view>

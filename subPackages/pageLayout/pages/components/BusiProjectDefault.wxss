@@ -1,0 +1,388 @@
+.mar-top-12 {
+    margin-top: 12rpx;
+}
+
+.mar-top-16 {
+    margin-top: 16rpx;
+}
+
+.mar-top-8 {
+    margin-top: 8rpx;
+}
+
+.mar-top-10 {
+    margin-top: 10rpx;
+}
+
+.mar-top-24 {
+    margin-top: 24rpx;
+}
+
+.mar-top-18 {
+    margin-top: 18rpx;
+}
+
+.mar-top-22 {
+    margin-top: 22rpx;
+}
+
+.mar-left-10 {
+    margin-left: 10rpx;
+}
+
+.mar-left-12 {
+    margin-left: 12rpx;
+}
+
+.mar-left-8 {
+    margin-left: 8rpx;
+}
+
+.mar-top-30 {
+    margin-top: 30rpx;
+}
+
+.mar-bottom-2 {
+    margin-bottom: 2rpx;
+}
+
+.main {
+    background: #f5f5f7;
+}
+
+.projects__filters {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 98;
+    width: 100%;
+    height: 88rpx;
+}
+
+.projects__filters .projects__filters-title {
+    padding-left: 34rpx;
+    color: rgba(0,0,0,.85);
+    font-weight: 700;
+    line-height: 52rpx;
+    margin-bottom: 8rpx;
+}
+
+.projects__filters .filters__fixed {
+    z-index: 99;
+}
+
+.filters__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity .3s;
+}
+
+.filters__bg.filters__bg-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.relative {
+    position: relative;
+}
+
+.not_id_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 220rpx;
+}
+
+.not_id_card .image {
+    width: 358rpx;
+    height: 224rpx;
+}
+
+.not_id_card .text {
+    margin-top: 46rpx;
+    color: #6a7490;
+    font-size: 32rpx;
+}
+
+.advert {
+    font-size: 18rpx;
+    line-height: 26rpx;
+    background: rgba(0,0,0,.3);
+    width: 50rpx;
+    height: 26rpx;
+    right: 12rpx;
+    bottom: 12rpx;
+    z-index: 222;
+    border-radius: 1rpx;
+    opacity: .4;
+}
+
+.advert,.hot-rank {
+    text-align: center;
+    position: absolute;
+}
+
+.hot-rank {
+    z-index: 5;
+    top: 0;
+    left: 10rpx;
+    width: 44rpx;
+    height: 46rpx;
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 700;
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/2019117104077887.png);
+    background-size: 100% 100%;
+}
+
+.hot-rank--red {
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/2019117104078081.png);
+}
+
+.line {
+    display: inline-block;
+    width: 2rpx;
+    height: 20rpx;
+    margin: 0 10rpx;
+    background: #bfbfbf;
+}
+
+.middle__item {
+    width: 686rpx;
+    box-sizing: border-box;
+    margin-left: 32rpx;
+    padding: 24rpx;
+    border-radius: 12rpx;
+    margin-top: 30rpx;
+    background: #fff;
+}
+
+.middle__item:nth-child(1) {
+    border-top: none;
+    margin-top: 0;
+}
+
+.project__left {
+    position: relative;
+    float: left;
+}
+
+.project__headIcon,.project__left {
+    width: 184rpx;
+    height: 138rpx;
+    border-radius: 4rpx;
+}
+
+.project__headIcon {
+    background: #c5c3c3;
+}
+
+.project__view {
+    position: absolute;
+    display: flex;
+    line-height: 24rpx;
+    bottom: 16rpx;
+    left: 12rpx;
+    opacity: .8;
+}
+
+.project__view__icon {
+    color: #fff;
+    vertical-align: middle;
+}
+
+.project__view__text {
+    color: hsla(0,0%,100%,.8);
+}
+
+.project__info {
+    margin-left: 208rpx;
+}
+
+.project__info__price {
+    display: block;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #f03c50;
+    line-height: 40rpx;
+    margin-top: 4rpx;
+}
+
+.project__info__price:nth-child(1) {
+    margin-top: 0rpx;
+}
+
+.project__info__price--1 {
+    height: 44rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project__info__price--2 {
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    line-height: 36rpx;
+}
+
+.project__info__price--3 {
+    height: 32rpx;
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #f03c50;
+    line-height: 32rpx;
+}
+
+.project__info__location {
+    width: 400rpx;
+}
+
+.project__info__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__info__name {
+    font-size: 34rpx;
+    line-height: 44rpx;
+    color: #2e3135;
+    font-weight: 700;
+    margin-top: 0rpx;
+}
+
+.project__info__location {
+    font-weight: 400;
+    color: rgba(0,0,0,.65);
+    font-size: 24rpx;
+    line-height: 32rpx;
+}
+
+.project__info__bottom,.project__info__bottom--ad {
+    font-size: 22rpx;
+    overflow: hidden;
+    height: 32rpx;
+}
+
+.image__gradient {
+    position: absolute;
+    height: 48rpx;
+    background: linear-gradient(180deg,rgba(48,50,55,0),#303237);
+    border-radius: 0 0 8rpx 8rpx;
+    width: 100%;
+    bottom: 0;
+}
+
+.project__left__tags {
+    position: absolute;
+    right: 12rpx;
+    height: 40rpx;
+    bottom: 16rpx;
+    text-align: center;
+    z-index: 3;
+    display: flex;
+    height: 100%;
+    flex-direction: column-reverse;
+}
+
+.project__left__tags .left__tags__item {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 4rpx 0;
+}
+
+.left__tags__item:nth-child(1) {
+    margin-bottom: 0;
+}
+
+.tags__item__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.item__child__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24rpx;
+    padding: 24rpx 0 6rpx;
+    border-top: 1px solid rgba(0,0,0,.07);
+}
+
+.coupon__info__text {
+    font-size: 26rpx;
+    color: #f03c50;
+    height: 29rpx;
+    font-weight: 700;
+    line-height: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.coupon__info__icon {
+    width: 28rpx;
+    height: 24.5rpx;
+}
+
+.coupon__info__text--remind {
+    font-size: 22rpx;
+    color: rgba(0,0,0,.45);
+    height: 29rpx;
+    line-height: 28rpx;
+}
+
+.coupon__info__text--remind1 {
+    font-size: 22rpx;
+    color: rgba(0,0,0,.45);
+    height: 29rpx;
+    text-align: center;
+}
+
+.coupon__btn {
+    width: 146rpx;
+    height: 56rpx;
+    background: #f03c50;
+    border-radius: 30rpx;
+    color: #fff;
+    font-size: 24rpx;
+    font-weight: 700;
+    text-align: center;
+    line-height: 56rpx;
+}
+
+.coupon__btn--over {
+    background: #d9d9d9;
+}
+
+.coupon__btn--before {
+    background: #fff;
+    border: 2px solid #ee3f4d;
+    color: #fe2042;
+    font-weight: 700;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad3 {
+    position: relative;
+}
+
+.ad__banner__img--big {
+    width: 686rpx;
+    border-radius: 8rpx;
+}

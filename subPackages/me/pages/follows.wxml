@@ -1,0 +1,63 @@
+<view>
+    <view class="tab-bar">
+        <busi-tab activeId="{{nowTab}}" bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['toggleTab'] ] ] ]}}" justifyContent="around" list="{{tabList}}" vueId="0a320f96-1"></busi-tab>
+    </view>
+    <view class="page" style="{{nowTab==4?'margin-top: 90rpx':''}}">
+        <block wx:if="{{nowTab==1}}">
+            <view class="sales-container" wx:if="{{salesList.length>0}}">
+                <salesman-item andrees="{{andrees}}" bind:__l="__l" index="{{index}}" item="{{item}}" project_id="{{item.project_id}}" vueId="{{'0a320f96-2-'+index}}" wx:for="{{salesList}}" wx:key="index"></salesman-item>
+            </view>
+            <block wx:else>
+                <block wx:if="{{loading}}">
+                    <view class="nothing gray-block">
+                        <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190819/5d5a1c21125e7.png"></image>
+                        <view class="fz-13 text gray-96">您还没有关注的置业顾问喔～</view>
+                    </view>
+                    <view class="recommend-list" wx:if="{{topItems.length>0}}">
+                        <view class="title fz-18 font-bold black-30">为您优选的置业顾问：</view>
+                        <view class="sales-container">
+                            <salesman-item andrees="{{andrees}}" bind:__l="__l" index="{{index}}" item="{{item}}" project_id="{{item.project_id}}" vueId="{{'0a320f96-3-'+index}}" wx:for="{{topItems}}" wx:key="index"></salesman-item>
+                            <salesman-item andrees="{{andrees}}" bind:__l="__l" index="{{index}}" item="{{item}}" project_id="{{item.project_id}}" vueId="{{'0a320f96-4-'+index}}" wx:for="{{recommendSalesMan}}" wx:key="index"></salesman-item>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </block>
+        <block wx:if="{{nowTab==2}}">
+            <view class="recommendProject" wx:if="{{projects.length>0}}">
+                <project-items bind:__l="__l" bind:updateItems="__e" content="me_follows" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projects','$event'],[''] ] ] ] ]}}" items="{{projects}}" sourcePosition="我的关注列表" vueId="0a320f96-5"></project-items>
+            </view>
+            <block wx:if="{{projects.length<=0&&loading}}">
+                <view class="nothing gray-block">
+                    <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190819/5d5a1c4844ecb.png"></image>
+                    <view class="fz-13 text gray-96">您还没有关注的楼盘喔～</view>
+                </view>
+                <view class="recommend-list" wx:if="{{recommendProject.length>0}}">
+                    <view class="title fz-18 font-bold black-30">为您推荐的楼盘：</view>
+                    <view class="recommendProject">
+                        <project-items bind:__l="__l" bind:updateItems="__e" content="me_follows_recommend" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','recommendProject','$event'],[''] ] ] ] ]}}" items="{{recommendProject}}" sourcePosition="我的关注推荐列表" vueId="0a320f96-6"></project-items>
+                    </view>
+                </view>
+            </block>
+        </block>
+        <block wx:if="{{nowTab==3}}">
+            <block wx:if="{{articles.length>0}}">
+                <article-style bind:__l="__l" item="{{article}}" titleData="文章收藏" vueId="{{'0a320f96-7-'+i}}" wx:for="{{articles}}" wx:for-index="i" wx:for-item="article" wx:key="i"></article-style>
+            </block>
+            <block wx:if="{{articles.length<=0&&loading}}">
+                <view class="nothing gray-block">
+                    <image class="article-nothing" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+                    <view class="fz-13 content gray-96">还没有收藏文章，再去看看吧～</view>
+                </view>
+                <view bindtap="__e" class="find-other-cont fz-13" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}">去逛逛，发现新内容</view>
+            </block>
+        </block>
+        <block wx:if="{{nowTab==4}}">
+            <brand-pavilion-item bind:__l="__l" itemsData="{{brandData}}" titleData="我的关注-品牌馆" vueId="0a320f96-8"></brand-pavilion-item>
+            <view class="nothing gray-block" wx:if="{{brandData.length===0&&loading}}">
+                <image class="article-nothing" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+                <view class="fz-13 content gray-96">您还没有关注的品牌喔～</view>
+            </view>
+        </block>
+    </view>
+</view>

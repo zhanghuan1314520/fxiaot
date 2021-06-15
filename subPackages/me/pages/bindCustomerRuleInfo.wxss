@@ -1,0 +1,7 @@
+.bind-customer-rule-info__wrapper image {
+    width: 100vw;
+}
+
+.full-screen #spinner {
+    margin-top: -400rpx!important;
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "小团助手",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "question-chunk": "/subPackages/me/pages/components/robot/questionChunk",
+        "chat-item": "/subPackages/me/pages/components/robot/chatItem",
+        "reply-container": "/subPackages/me/pages/components/robot/ReplyContainer/Index"
+    }
+}

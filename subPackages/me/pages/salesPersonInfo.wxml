@@ -1,0 +1,54 @@
+<view class="person-info">
+    <view class="info-list">
+        <view bindtap="__e" class="tip" data-event-opts="{{[ [ 'tap',[ [ 'goTo',['/subPackages/me/pages/salesManAuth'] ] ] ] ]}}" wx:if="{{inputData&&!inputData.is_real_name}}">
+            <view class="text">您还没有实名认证，认证后解锁更多权限</view>
+            <view class="text">立即认证<text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item large" data-event-opts="{{[ [ 'tap',[ [ 'chooseAvatar',['$event'] ] ] ] ]}}">
+            <text>头像</text>
+            <view class="item-right">
+                <image src="{{default_avatar}}"></image>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view class="list-item">
+            <text>姓名</text>
+            <view class="item-right">
+                <text>{{inputData.name}}</text>
+                <text class="block"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'goTo',['/subPackages/me/pages/editJobName?name='+inputData.name] ] ] ] ]}}">
+            <text>工作展示名</text>
+            <view class="item-right">
+                <text>{{inputData.job_name||inputData.name||'请填写'}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'goTo',['/subPackages/me/pages/editWechat'] ] ] ] ]}}">
+            <text>微信号</text>
+            <view class="item-right">
+                <text>{{inputData.wechat_code||inputData.wechat||'请填写'}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'handleChangePhone',['$event'] ] ] ] ]}}">
+            <text>手机号</text>
+            <view class="item-right">
+                <text>{{inputData.phone||'请填写'}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'goTo',['/subPackages/me/pages/editCompany'] ] ] ] ]}}">
+            <text>公司名称</text>
+            <view class="item-right">
+                <text>{{inputData.company_name||'请输入公司全称'}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+    </view>
+    <view class="cropper-view" wx:if="{{showCropper}}">
+        <cropper bind:__l="__l" class="vue-ref" data-ref="cropper" options="{{cropperOpt}}" vueId="e94e366e-1"></cropper>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="{{['box-subject',mode,'num'+index]}}">
+    <view class="context" wx:if="{{info}}">
+        <view class="box-index" wx:if="{{showIndex}}">
+            <label class="index-label _span">{{(index+1>9?'':'0')+index+1}}</label>
+        </view>
+        <label class="type-label _span">{{topicTypeMap[info.type]}}</label>
+        <label class="title _span">{{''+(info.title||'--')+''}}</label>
+        <image bindtap="__e" class="image-remark" data-event-opts="{{[ [ 'tap',[ [ 'showRemark',['$0'],['info.remark'] ] ] ] ]}}" src="{{remarkSrc}}" wx:if="{{info.remark}}"></image>
+    </view>
+    <image class="image-pin" src="{{pinSrc}}" wx:if="{{showPin}}"></image>
+</view>

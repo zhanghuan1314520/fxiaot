@@ -1,0 +1,3 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="70e78862-1" vueSlots="{{['default']}}">
+    <rich-text nodes="{{settings.rich_text[0].content}}"></rich-text>
+</base-layout>

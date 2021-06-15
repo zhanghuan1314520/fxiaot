@@ -1,0 +1,71 @@
+<view class="page">
+    <view class="propertyData-top">
+        <view bindtap="__e" class="{{[ 'top-box '+(toggle=='未使用'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['未使用'] ] ] ] ]}}">
+            <view class="top-btn-text">未使用</view>
+            <view class="line" wx:if="{{toggle=='未使用'}}"></view>
+        </view>
+        <view bindtap="__e" class="{{[ 'top-box '+(toggle=='已使用'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['已使用'] ] ] ] ]}}">
+            <view class="top-btn-text">已使用</view>
+            <view class="line" wx:if="{{toggle=='已使用'}}"></view>
+        </view>
+        <view bindtap="__e" class="{{[ 'top-box '+(toggle=='已过期'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['已过期'] ] ] ] ]}}">
+            <view class="top-btn-text">已过期</view>
+            <view class="line" wx:if="{{toggle=='已过期'}}"></view>
+        </view>
+    </view>
+    <view class="empty-data" wx:if="{{listData.length==0}}">
+        <image src="https://imgcdn.huanjutang.com/image/2020/04/27/1a3cf685d518d5745e73e4c20af2ba54.png"></image>
+        <view class="empty-text">这里还没有优惠券</view>
+        <view class="empty-sub-text">领取的券记得及时使用哦</view>
+    </view>
+    <view class="list">
+        <view class="item" wx:for="{{listData}}" wx:for-index="__i0__" wx:key="id">
+            <block wx:if="{{item.tabText=='未使用'}}">
+                <view bindtap="__e" class="coupon bg-1" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0','$1'],[ [ ['listData','id',item.id,'couponId'] ],[ ['listData','id',item.id,'project_id'] ] ] ] ] ] ]}}">
+                    <view class="item-left type-1">
+                        <text class="value semiBold">{{''+item.discount+''}}</text>
+                        <text class="unit">{{''+item.discountUnit+''}}</text>
+                    </view>
+                    <view class="item-center">
+                        <view class="item-name">{{''+item.couponName+''}}</view>
+                        <view class="item-premise">{{''+(item.premise?'仅限'+item.premise:'详情咨询置业顾问')+''}}</view>
+                        <view class="item-date">{{''+item.dateText+''}}</view>
+                    </view>
+                </view>
+                <view class="range">{{'适用范围：'+item.projectNames+''}}</view>
+            </block>
+            <block wx:if="{{item.tabText=='已使用'}}">
+                <view bindtap="__e" class="coupon bg-2" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0','$1'],[ [ ['listData','id',item.id,'couponId'] ],[ ['listData','id',item.id,'project_id'] ] ] ] ] ] ]}}">
+                    <view class="item-left type-1">
+                        <text class="value semiBold">{{''+item.discount+''}}</text>
+                        <text class="unit">{{''+item.discountUnit+''}}</text>
+                    </view>
+                    <view class="item-center">
+                        <view class="item-name">{{''+item.couponName+''}}</view>
+                        <view class="item-premise">{{''+(item.premise?'仅限'+item.premise:'详情咨询置业顾问')+''}}</view>
+                        <view class="item-date">{{''+item.dateText+''}}</view>
+                    </view>
+                </view>
+                <view class="{{[ 'range '+(item.more?'h-auto':'') ]}}">
+                    <text class="range-text">{{'适用范围：'+item.projectNames+''}}</text>
+                </view>
+            </block>
+            <block wx:if="{{item.tabText=='已过期'}}">
+                <view bindtap="__e" class="coupon bg-3" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0','$1'],[ [ ['listData','id',item.id,'couponId'] ],[ ['listData','id',item.id,'project_id'] ] ] ] ] ] ]}}">
+                    <view class="item-left type-1">
+                        <text class="value semiBold">{{''+item.discount+''}}</text>
+                        <text class="unit">{{''+item.discountUnit+''}}</text>
+                    </view>
+                    <view class="item-center">
+                        <view class="item-name">{{''+item.couponName+''}}</view>
+                        <view class="item-premise">{{''+(item.premise?'仅限'+item.premise:'详情咨询置业顾问')+''}}</view>
+                        <view class="item-date">{{''+item.dateText+''}}</view>
+                    </view>
+                </view>
+                <view class="{{[ 'range '+(item.more?'h-auto':'') ]}}">
+                    <text class="range-text">{{'适用范围：'+item.projectNames+''}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

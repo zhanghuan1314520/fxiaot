@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "个人勋章",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine"
+    }
+}

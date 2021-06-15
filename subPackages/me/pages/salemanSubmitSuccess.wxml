@@ -1,0 +1,31 @@
+<view class="sale-man-sbumit-success__wrapper">
+    <view class="icon iconnew new-gougouxianxing fz-60" wx:if="{{status!==2}}"></view>
+    <view class="icon iconnew new-tishi red fz-60" wx:else></view>
+    <view class="fz-22 txt">{{''+(status==2?'很遗憾，审核未通过':'提交成功')+''}}</view>
+    <view class="fz-13 time">{{''+timeStr+''}}</view>
+    <view class="line fz-15">
+        <text class="color-45">审核楼盘：</text>
+        <text class="color-85">{{''+projectName+''}}</text>
+    </view>
+    <view class="line mar-32 fz-15" wx:if="{{status==0}}">
+        <text class="color-45">审核时间：</text>
+        <text class="color-85">预计在2〜3个工作日内审核完成</text>
+    </view>
+    <view class="tip">入驻成功后，您的专属客服会在3天之内主动添加你为好友</view>
+    <view class="line mar-32 fz-15" wx:if="{{status==2}}">
+        <text class="color-45">未通过原因：</text>
+        <text class="color-85">{{''+reasonStr+''}}</text>
+    </view>
+    <view bindtap="__e" class="subscribe-btn fz-16" data-event-opts="{{[ [ 'tap',[ [ 'jumpServiceUrl',['$event'] ] ] ] ]}}" wx:if="{{status==0}}">关注服务号，接收审核结果通知</view>
+    <view class="subscribe-btn-box fz-16" wx:if="{{status==2}}">
+        <view bindtap="__e" class="retry-btn fz-16" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrl',['$event'] ] ] ] ]}}">重新申请</view>
+        <view bindtap="__e" class="fz-14 no-try" data-event-opts="{{[ [ 'tap',[ [ 'noTryHandler',['$event'] ] ] ] ]}}">不申请了，谢谢</view>
+    </view>
+    <view class="link-kefu flex_layout" wx:if="{{status==0}}">
+        <button class="line-sale flex_layout" data-type="button" hoverClass="none" openType="contact" sessionFrom="{{weapp}}">
+            <text class="gary fz-14">有问题</text>
+            <text class="blue-color-sale mar-right-8 fz-14">联系客服</text>
+            <text class="iconnew new-tongyong-gengduo blue-color-sale fz-12"></text>
+        </button>
+    </view>
+</view>

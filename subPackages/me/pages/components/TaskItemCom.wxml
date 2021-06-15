@@ -1,0 +1,35 @@
+<view class="{{[ 'task-list__item',[item.skeleton?'skeletons':''] ]}}">
+    <image class="task-list__icon skeletons-circle" src="{{item.icon}}"></image>
+    <view class="task-list__item-right">
+        <view class="task-list__detail">
+            <text class="fz-16 font-bold name skeletons-rect">{{''+item.task_name+''}}</text>
+            <view class="task-list__progress" wx:if="{{item.current_score!==undefined&&item.current_score!==null&&item.max_score}}">
+                <view>
+                    <view style="{{'width:'+(item.current_score>item.max_score?210:item.current_score*210/item.max_score+'rpx')+';'}}"></view>
+                </view>
+                <text class="fz-12">{{''+(item.current_score>item.max_score?item.max_score:item.current_score)+'/'+item.max_score+''}}</text>
+            </view>
+            <text class="fz-13 last-time" wx:if="{{item.time_type==2&&item.end_time}}">{{''+(item.start_time?'距开始：':'距结束：')+item.end_time+''}}</text>
+            <text class="fz-13 desc" wx:if="{{item.desc}}">{{''+item.desc+''}}<block wx:if="{{item.code==='LevelClear'&&item.end_time}}">{{'（截止时间'+$root.g0+'）'}}</block>
+            </text>
+            <text class="fz-13 score" wx:if="{{item.score}}">{{''+item.score+''}}</text>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-task-list__button no-shadow skeletons-rect" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleCheck',['$0'],['item'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="557647d4-1" vueSlots="{{['default']}}" wx:if="{{item.code==='DailyCheck'}}">
+            <view bindtap="__e" class="task-list__button fz-13 font-bold" data-done="{{item.is_done}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="{{!item.is_done?item.button:''}}" data-type="button">{{''+(item.is_done?'已签到':item.button)+''}}</view>
+        </authorization>
+        <block wx:else>
+            <view bindtap="__e" class="task-list__button fz-13 font-bold" data-done="{{item.is_done}}" data-event-opts="{{[ [ 'tap',[ [ 'handleOperate',['$0'],['item'] ] ] ] ]}}" data-name="{{!item.is_done?'关注服务号':''}}" data-type="button" wx:if="{{item.code==='SubscribeServiceAccount'}}">{{''+(item.is_done?'已关注':'去关注')+''}}</view>
+            <block wx:else>
+                <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-task-list__button" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleOperate',['$0'],['item'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="557647d4-2" vueSlots="{{['default']}}" wx:if="{{needAuthTel}}">
+                    <view bindtap="__e" class="{{[item.button=='待审核'||item.button=='已完成'?'task-list__button fz-13 font-bold daishenhe':'task-list__button fz-13 font-bold ']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="{{item.button}}" data-type="button">{{''+(item.time_type==2&&item.start_time?'未开始':item.time_type==2&&!item.start_time&&item.button=='未开始'?'去上传':item.button)+''}}</view>
+                </authorization>
+                <block wx:else>
+                    <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-task-list__button" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleOperate',['$0'],['item'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="557647d4-3" vueSlots="{{['default']}}" wx:if="{{item.code==='LevelClear'}}">
+                        <view bindtap="__e" class="task-list__button fz-13 font-bold" data-content="任务中心-答题闯关" data-done="{{!item.is_click}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="答题闯关" data-type="button">{{''+item.button+''}}</view>
+                    </authorization>
+                    <view bindtap="__e" class="{{[item.button=='待审核'||item.button=='已完成'?'task-list__button fz-13 font-bold daishenhe':'task-list__button fz-13 font-bold ']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleOperate',['$0'],['item'] ] ] ] ]}}" data-name="{{item.button}}" data-type="button" wx:else>{{''+(item.time_type==2&&item.start_time?'未开始':item.time_type==2&&!item.start_time&&item.button=='未开始'?'去上传':item.button)+''}}</view>
+                </block>
+            </block>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+.notice-right {
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: 12rpx;
+    width: 100%;
+}
+
+.modify-color {
+    color: rgba(0,0,0,.45);
+    font-weight: 700;
+    font-size: 28rpx;
+}

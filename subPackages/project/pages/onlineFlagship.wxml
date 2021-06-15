@@ -1,0 +1,16 @@
+<view class="flagship">
+    <view class="flagship-top">
+        <image mode="widthFix" src="{{cityObj.logo}}"></image>
+    </view>
+    <view class="flagship-list">
+        <view bindtap="__e" class="flagship-list__item" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$0'],[ [ ['items','',index] ] ] ] ] ] ]}}" wx:for="{{items}}" wx:key="index">
+            <image mode="aspectFill" src="{{item.image}}"></image>
+            <view class="flagship-list__item-name">{{''+item.name+''}}</view>
+            <view class="flagship-list__item-tap" wx:if="{{item.model===1}}">品牌地产</view>
+        </view>
+    </view>
+    <button bindtap="__e" class="flagship-share" data-event-opts="{{[ [ 'tap',[ [ 'handleShare',['$event'] ] ] ] ]}}" hoverClass="none" openType="share">
+        <text class="iconnew new-fenxiang8 fz-21"></text>
+        <text class="fz-11 font-bold">分享</text>
+    </button>
+</view>

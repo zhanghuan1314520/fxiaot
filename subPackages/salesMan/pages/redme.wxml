@@ -1,0 +1,7 @@
+<view>
+    <view class="page">
+        <view class="redme">
+            <image class="img" mode="widthFix" src="{{redmeImg}}"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="thanksgiving">
+    <view class="thanksgiving-top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="450335c3-1" vueSlots="{{['default']}}">{{''+projectName+'-感恩回馈'}}</busi-nav-header>
+        <view class="thanks">
+            <view class="time">{{''+(thanksInfo.annual_day||'-')+''}}</view>
+            <view class="desc">您已入驻房小团<text class="yellow">{{''+(thanksInfo.annual_number||'-')+''}}</text>周年，感谢您对房小团的支持！</view>
+            <view class="desc lg mt14">我们将回馈您<text class="yellow lg">{{''+(thanksInfo.annual_coins||'-')+''}}</text>金币</view>
+            <view class="desc mt18">未来，让我们一起再创辉煌！</view>
+        </view>
+    </view>
+    <view class="poster">
+        <image class="title" src="https://imgcdn.huanjutang.com/file/2021/03/11/8cb7efb96b04f8a979cac4bb2024fa9b.png"></image>
+        <view class="content">
+            <view class="content-item">分享文案:<text class="blue">{{''+shareText+''}}</text>
+                <text class="yellow">(必填)</text>+想说的话<text catchtap="__e" class="btn-yellow" data-event-opts="{{[ [ 'tap',[ [ 'copyText',['$event'] ] ] ] ]}}">复制文案</text>
+            </view>
+            <view class="content-item">转发海报至朋友圈至少2天</view>
+            <view class="content-item">{{'转发海报有效期3天（'+(thanksInfo.annual_day||'')+'—'+(thanksInfo.annual_end_day||'')+'），转发后系统48小时内自动加分（过期转发不加分）'}}</view>
+        </view>
+        <view class="poster-canvas">
+            <image catchtap="__e" class="poster-image" data-event-opts="{{[ [ 'tap',[ [ 'viewPic',['$event'] ] ] ] ]}}" mode="aspectFill" src="{{posterImage}}"></image>
+        </view>
+    </view>
+    <image bindtap="__e" class="btn-save" data-event-opts="{{[ [ 'tap',[ [ 'checkPermissionAndsavePoster',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/file/2021/03/11/1e737b96229dcb9d74e58a5bbd774048.png"></image>
+    <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePoster}}" showSetting="{{showPermissionsSetting}}" txt="保存海报" vueId="450335c3-2"></photo-permissions-settings>
+</view>

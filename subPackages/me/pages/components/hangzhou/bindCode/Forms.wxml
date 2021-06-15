@@ -1,0 +1,23 @@
+<view>
+    <view class="list-box white-bg">
+        <view class="w-cell">
+            <view class="left-key">姓名：</view>
+            <view class="right-value">
+                <input bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputName','$event',[] ] ] ] ] ]}}" placeholder="请输入您的姓名" placeholderClass="gray-9-color" type="text" value="{{inputName}}"></input>
+                <view class="{{[ 'error-tip '+(rules.name?'show':'') ]}}">姓名信息有误</view>
+            </view>
+        </view>
+        <view class="w-cell">
+            <view class="left-key">摇号编码：</view>
+            <view class="right-value">
+                <input bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputCode','$event',[] ] ] ] ] ]}}" placeholder="请输入摇号编码如：B1234" placeholderClass="gray-9-color" value="{{inputCode}}"></input>
+                <view class="{{[ 'error-tip '+(rules.code?'show':'') ]}}">摇号编码信息有误</view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells__tips fz-12 gray-9-color">
+        <view>提示：</view>绑定摇号编码后，可在【我的摇号】中查看摇号进程。</view>
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['submit'] ] ] ]}}" isAuthPhone="{{true}}" vueId="5779f9ea-1" vueSlots="{{['default']}}">
+        <button class="weui-btn white-color fz-16">确认添加</button>
+    </authorization>
+</view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团-讨论",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "vote-result": "/subPackages/comment/components/unifyUI/vote-result",
+        "share-btn": "/components/unifyUI/shareBtn",
+        "authorization": "/components/Authorization"
+    }
+}

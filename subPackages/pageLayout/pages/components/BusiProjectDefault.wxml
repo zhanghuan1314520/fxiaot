@@ -1,0 +1,123 @@
+<view>
+    <base-layout bind:__l="__l" customerPadding="{{left:'0rpx',right:'0rpx'}}" margin="{{margin}}" padding="{{padding}}" vueId="295a452d-1" vueSlots="{{['default']}}">
+        <view class="project">
+            <view class="{{['filter-container projects__filters']}}" style="{{'position:'+(forceFixed?'fixed':'sticky')+';'+'top:'+(hasPureSearch?'128rpx':'')+';'}}" wx:if="{{settings.filter==='开启'}}">
+                <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="{{['vue-ref',tabbarListIndex!==-1?'filters__fixed':'']}}" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['onFilterReset'] ] ],[ '^onSubmit',[ [ 'submitHandle',['$event','$0','$1'],['item','index'] ] ] ] ]}}" data-ref="baseFilters" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" style="{{'top:'+(tabbarListIndex===-1?'':forceFixed?'':'128rpx')+';'}}" vueId="{{'295a452d-2'+','+'295a452d-1'}}"></base-filters>
+                <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+            </view>
+            <view class="not_id_card" wx:if="{{list.length==0&&!isRequesting}}">
+                <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+                <text class="text">暂无楼盘</text>
+            </view>
+            <block wx:else>
+                <block wx:for="{{$root.l0}}" wx:for-item="detail" wx:key="index">
+                    <view class="middle__item" wx:if="{{!detail[$orig].ad_number&&detail[$orig].coupon_name}}">
+                        <navigator bindtap="__e" class="middle__item__child" data-event-opts="{{[ [ 'tap',[ [ 'sendAnalysisHandle',['$event'] ] ] ] ]}}" hoverClass="none" hoverStayTime="{{100}}" url="{{detail[$orig].url}}">
+                            <view class="item__child__top">
+                                <view class="project__left">
+                                    <image class="project__headIcon" mode="aspectFill" src="{{detail[$orig].cover||'https://imgcdn.huanjutang.com/assets/img/20202111520167887.png'}}"></image>
+                                    <view class="image__gradient"></view>
+                                    <view class="icon-618" wx:if="{{detail[$orig].is_activity==1}}"></view>
+                                    <view class="project__view">
+                                        <text class="iconnew new-liulan fz-15 project__view__icon"></text>
+                                        <text class="mar-left-8 fz-11 project__view__text">{{''+detail[$orig].page_views+''}}</text>
+                                    </view>
+                                    <view class="project__left__tags">
+                                        <view class="left__tags__item" wx:if="{{detail[$orig].is_video==1}}">
+                                            <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+                                        </view>
+                                        <view class="left__tags__item" wx:if="{{detail[$orig].has_vr>0}}">
+                                            <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201912191716568081.png"></image>
+                                        </view>
+                                        <view class="left__tags__item" wx:if="{{detail[$orig].has_panorama}}">
+                                            <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201911201049218081.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="project__info">
+                                    <view class="project__info__top">
+                                        <view class="card__info__name ellipsis">{{''+detail[$orig].name+''}}</view>
+                                    </view>
+                                    <view class="mar-top-10 project__info__location ellipsis" wx:if="{{detail[$orig].project_location||detail[$orig].area||biz_circle_name}}">
+                                        <text wx:if="{{detail[$orig].area}}">{{''+detail[$orig].area+''}}</text>
+                                        <text wx:if="{{detail[$orig].biz_circle_name}}">{{''+' / '+detail[$orig].biz_circle_name+''}}</text>
+                                    </view>
+                                    <view class="mar-top-10" wx:if="{{detail[$orig].avg_price.length==1}}">
+                                        <text class="project__info__price project__info__price--1" wx:for="{{detail[$orig].avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                                    </view>
+                                    <view class="mar-top-8" wx:if="{{detail[$orig].avg_price.length==2}}">
+                                        <text class="project__info__price project__info__price--2" wx:for="{{detail[$orig].avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                                    </view>
+                                    <view class="mar-top-10" wx:if="{{detail[$orig].avg_price.length==3}}">
+                                        <text class="project__info__price project__info__price--3" wx:for="{{detail[$orig].avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </navigator>
+                        <view class="item__child__bottom">
+                            <view class="coupon__info">
+                                <view class="coupon__info__text">
+                                    <image class="coupon__info__icon" src="https://imgcdn.huanjutang.com/file/2020/06/09/b34b3a99f70bd99751adf7b82790cbd6.png"></image>
+                                    <text class="mar-left-10">{{''+detail[$orig].coupon_name+''}}</text>
+                                </view>
+                                <view wx:if="{{detail[$orig].is_show_countdown&&detail[$orig].timerState>-1}}">
+                                    <base-timer bind:__l="__l" bind:timerNotify="__e" data-event-opts="{{[ [ '^timerNotify',[ ['timerNotify'] ] ] ]}}" endTime="{{detail[$orig].receive_end_time_num}}" index="{{index}}" startTime="{{detail[$orig].receive_start_time_num}}" vueId="{{'295a452d-3-'+index+','+'295a452d-1'}}"></base-timer>
+                                </view>
+                                <view class="coupon__info__text--remind mar-top-8" wx:else>{{''+detail.f0+'人已领取'}}</view>
+                            </view>
+                            <view>
+                                <view wx:if="{{detail[$orig].is_show_countdown&&detail[$orig].timerState==0}}">
+                                    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'couponOver',['before'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'295a452d-4-'+index+','+'295a452d-1'}}" vueSlots="{{['default']}}">
+                                        <view bindtap="__e" class="coupon__btn coupon__btn--before" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">未开始</view>
+                                    </authorization>
+                                </view>
+                                <block wx:else>
+                                    <view wx:if="{{detail[$orig].coupon_received_num==1&&detail[$orig].coupon_total_num==1}}">
+                                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toCouponDetail',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'295a452d-5-'+index+','+'295a452d-1'}}" vueSlots="{{['default']}}">
+                                            <view bindtap="__e" class="coupon__btn" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="去使用" data-type="link">去使用</view>
+                                        </authorization>
+                                    </view>
+                                    <block wx:else>
+                                        <view wx:if="{{detail[$orig].is_show_countdown&&detail[$orig].timerState==1}}">
+                                            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'couponOver',['end'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'295a452d-6-'+index+','+'295a452d-1'}}" vueSlots="{{['default']}}">
+                                                <view bindtap="__e" class="coupon__btn coupon__btn--over" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">已结束</view>
+                                            </authorization>
+                                        </view>
+                                        <block wx:else>
+                                            <view wx:if="{{detail[$orig].coupon_no_receive_num>0}}">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'coupon',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'295a452d-7-'+index+','+'295a452d-1'}}" vueSlots="{{['default']}}">
+                                                    <view bindtap="__e" class="coupon__btn" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="立即领取" data-type="button">立即领取</view>
+                                                </authorization>
+                                            </view>
+                                            <block wx:else>
+                                                <view wx:if="{{detail[$orig].coupon_received_num==0&&detail[$orig].coupon_total_num==detail[$orig].coupon_received_completed}}">
+                                                    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'couponOver',['over'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'295a452d-8-'+index+','+'295a452d-1'}}" vueSlots="{{['default']}}">
+                                                        <view bindtap="__e" class="coupon__btn coupon__btn--over" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">已领完</view>
+                                                    </authorization>
+                                                </view>
+                                                <view wx:else>
+                                                    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'coupon',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'295a452d-9-'+index+','+'295a452d-1'}}" vueSlots="{{['default']}}">
+                                                        <view bindtap="__e" class="coupon__btn" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="去使用" data-type="button">去使用</view>
+                                                    </authorization>
+                                                </view>
+                                            </block>
+                                        </block>
+                                    </block>
+                                </block>
+                                <view class="coupon__info__text--remind1 mar-top-8" wx:if="{{detail[$orig].is_show_countdown&&detail.g0>-1}}">{{''+detail.f1+'人已领取'}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <block wx:else>
+                        <view wx:if="{{detail[$orig].ad_number}}">
+                            <base-ad-flow bind:__l="__l" detailSource="{{'collection'+settings.assocated_collection.data_uri}}" flowDetail="{{detail[$orig]}}" vueId="{{'295a452d-10-'+index+','+'295a452d-1'}}"></base-ad-flow>
+                        </view>
+                    </block>
+                </block>
+            </block>
+        </view>
+        <base-loading bind:__l="__l" loading="{{ladding}}" more="{{more}}" vueId="{{'295a452d-11'+','+'295a452d-1'}}"></base-loading>
+    </base-layout>
+    <busi-coupon-dialog bind:__l="__l" bind:receive="__e" bind:updateShow="__e" class="vue-ref" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showCouponDialog','$event'],[''] ] ] ],[ '^receive',[ ['receive'] ] ] ]}}" data-ref="coupon" projectId="{{project_id}}" show="{{showCouponDialog}}" vueId="295a452d-12"></busi-coupon-dialog>
+    <base-model bind:__l="__l" bind:confirm="__e" bind:updateShowModel="__e" data-event-opts="{{[ [ '^updateShowModel',[ [ '__set_sync',['$0','showModel','$event'],[''] ] ] ],[ '^updateShowModel',[ [ '__set_sync',['$0','showModel','$event'],[''] ] ] ],[ '^confirm',[ ['toCouponDetail'] ] ] ]}}" showModel="{{showModel}}" vueId="295a452d-13"></base-model>
+</view>

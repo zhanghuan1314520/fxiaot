@@ -1,0 +1,47 @@
+<view class="layout-box data-v-5fc01eb1" style="{{'background:'+setting.background+';'+'min-height:'+minHeight+'px'+';'}}">
+    <view class="uiLayout data-v-5fc01eb1" wx:if="{{pageStatus=='normal'}}">
+        <view class="data-v-5fc01eb1" wx:for="{{setting.components}}" wx:key="id">
+            <busi-background-default bind:__l="__l" class="data-v-5fc01eb1" dataBgColor="{{setting.background}}" settings="{{item.settings}}" vueId="{{'f9c3b572-1-'+index}}" wx:if="{{item.type+'_'+item.variant==='background_image_default'}}"></busi-background-default>
+            <busi-search1 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-2-'+index}}" wx:if="{{item.type+'_'+item.variant==='search_box_default'}}"></busi-search1>
+            <block wx:if="{{item.type+'_'+item.variant==='search_box_variant1'}}">
+                <view class="fixed-search data-v-5fc01eb1">
+                    <busi-search2 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-3-'+index}}"></busi-search2>
+                </view>
+                <view class="h-128 data-v-5fc01eb1"></view>
+            </block>
+            <block wx:if="{{item.type+'_'+item.variant==='search_box_variant2'}}">
+                <view class="fixed-search data-v-5fc01eb1">
+                    <busi-search3 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-4-'+index}}"></busi-search3>
+                </view>
+                <view class="h-128 data-v-5fc01eb1"></view>
+            </block>
+            <busi-cube-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-5-'+index}}" wx:if="{{item.type+'_'+item.variant==='magic_square_default'}}"></busi-cube-default>
+            <busi-cube-variant1 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-6-'+index}}" wx:if="{{item.type+'_'+item.variant==='magic_square_variant1'}}"></busi-cube-variant1>
+            <busi-cube-variant2 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-7-'+index}}" wx:if="{{item.type+'_'+item.variant==='magic_square_variant2'}}"></busi-cube-variant2>
+            <busi-tab-project-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-project-tab-'+index}}" settings="{{item.settings}}" variant="{{item.variant}}" vueId="{{'f9c3b572-8-'+index}}" wx:if="{{''+item.type==='project_tab_collection'}}"></busi-tab-project-default>
+            <busi-project-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-project-default-'+index}}" hasPureSearch="{{hasPureSearch}}" settings="{{item.settings}}" vueId="{{'f9c3b572-9-'+index}}" wx:if="{{item.type+'_'+item.variant==='project_collection_default'}}"></busi-project-default>
+            <busi-project-variant1 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-project-variant1-'+index}}" hasPureSearch="{{hasPureSearch}}" settings="{{item.settings}}" vueId="{{'f9c3b572-10-'+index}}" wx:if="{{item.type+'_'+item.variant==='project_collection_variant1'}}"></busi-project-variant1>
+            <busi-project-variant2 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-project-variant2-'+index}}" hasPureSearch="{{hasPureSearch}}" settings="{{item.settings}}" vueId="{{'f9c3b572-11-'+index}}" wx:if="{{item.type+'_'+item.variant==='project_collection_variant2'}}"></busi-project-variant2>
+            <busi-project-variant3 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-project-variant3-'+index}}" hasPureSearch="{{hasPureSearch}}" settings="{{item.settings}}" vueId="{{'f9c3b572-12-'+index}}" wx:if="{{item.type+'_'+item.variant==='project_collection_variant3'}}"></busi-project-variant3>
+            <busi-banner-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-13-'+index}}" wx:if="{{item.type+'_'+item.variant==='banner_default'}}"></busi-banner-default>
+            <busi-banner-variant1 bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-14-'+index}}" wx:if="{{item.type+'_'+item.variant==='banner_variant1'}}"></busi-banner-variant1>
+            <busi-smart-button-default bind:__l="__l" class="data-v-5fc01eb1" settings="{{item.settings}}" vueId="{{'f9c3b572-15-'+index}}" wx:if="{{item.type+'_'+item.variant==='smart_button_default'||item.type+'_'+item.variant==='smart_button_variant1'||item.type+'_'+item.variant==='smart_button_variant2'}}"></busi-smart-button-default>
+            <busi-motion-button-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="comp-motion" settings="{{item.settings}}" vueId="{{'f9c3b572-16-'+index}}" wx:if="{{item.type+'_'+item.variant==='motion_default'||item.type+'_'+item.variant==='motion_variant1'||item.type+'_'+item.variant==='motion_variant2'}}"></busi-motion-button-default>
+            <busi-rich-text-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-rich-text-'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-17-'+index}}" wx:if="{{item.type+'_'+item.variant==='rich_text_default'}}"></busi-rich-text-default>
+            <busi-video-default bind:__l="__l" class="data-v-5fc01eb1 vue-ref-in-for" data-ref="{{'comp-video-'+index}}" dataIndex="{{id+'_'+index}}" settings="{{item.settings}}" vueId="{{'f9c3b572-18-'+index}}" wx:if="{{item.type+'_'+item.variant==='video_default'}}"></busi-video-default>
+        </view>
+        <view class="uiLayout__fill data-v-5fc01eb1"></view>
+    </view>
+    <block wx:else>
+        <view class="uiLayout__nd data-v-5fc01eb1" wx:if="{{pageStatus=='lose'}}">
+            <image class="uiLayout__nd__img _img data-v-5fc01eb1" src="https://imgcdn.huanjutang.com/file/2020/05/11/e2ebe47619bd9cb0d5d33f0d2e00d124.png"></image>
+            <view class="uiLayout__nd__text data-v-5fc01eb1">暂无内容</view>
+        </view>
+        <block wx:else>
+            <view class="uiLayout__nd data-v-5fc01eb1" wx:if="{{pageStatus=='empty'}}">
+                <image class="uiLayout__nd__img _img data-v-5fc01eb1" src="https://imgcdn.huanjutang.com/file/2020/05/11/e2ebe47619bd9cb0d5d33f0d2e00d124.png"></image>
+                <view class="uiLayout__nd__text data-v-5fc01eb1">暂无内容</view>
+            </view>
+        </block>
+    </block>
+</view>

@@ -1,0 +1,56 @@
+.header_wrap {
+    height: 88rpx;
+    width: 100%;
+    padding-left: 16rpx;
+}
+
+.header_wrap .icon {
+    color: #fff;
+}
+
+.header_wrap .tit {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-right: 96rpx;
+    line-height: 88rpx;
+    height: 88rpx;
+}
+
+.wrap {
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.projects {
+    overflow: hidden;
+}
+
+.projects.default-padding {
+    padding-top: 185rpx;
+}
+
+.projects.fixed-padding {
+    margin-top: 185rpx;
+}
+
+.projects .not_id_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 220rpx;
+}
+
+.projects .not_id_card image {
+    width: 358rpx;
+    height: 224rpx;
+}
+
+.projects .not_id_card text {
+    margin-top: 46rpx;
+    color: #6a7490;
+    font-size: 32rpx;
+}

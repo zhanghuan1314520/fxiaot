@@ -1,0 +1,80 @@
+page {
+    background-color: #f5f7fa;
+}
+
+.human-col {
+    width: 702rpx;
+    height: 244rpx;
+    background: #fff;
+    box-shadow: 0rpx 4rpx 6rpx 0rpx #edeff2;
+    border-radius: 8rpx;
+    margin: 20rpx auto 0;
+}
+
+.human-col image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 100%;
+    float: left;
+    margin: 28rpx 32rpx 0 24rpx;
+    border: 2px solid rgba(237,239,242,.5);
+}
+
+.human-col .left {
+    padding: 28rpx 20rpx 28rpx 0rpx;
+    box-sizing: border-box;
+    margin-left: 175rpx;
+}
+
+.human-col .left .title {
+    height: 44rpx;
+    font-weight: 700;
+    color: #303237;
+    line-height: 44rpx;
+    text-align: left;
+}
+
+.human-col .left .info {
+    height: 68rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #96989e;
+    line-height: 34rpx;
+    margin-top: 14rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.human-col .left .bottom {
+    width: 100%;
+    height: 60rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.human-col .left .bottom .num {
+    height: 34rpx;
+    font-weight: 400;
+    color: #606266;
+    line-height: 34rpx;
+    padding-left: 8rpx;
+}
+
+.human-col .left .bottom .btn {
+    width: 154rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #2d8cf0;
+    border-radius: 33rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.human-col:not(:last-child) .left {
+    border-bottom: 1rpx solid #dfdfdf;
+}

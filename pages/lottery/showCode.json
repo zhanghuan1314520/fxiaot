@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团-摇号结果详情",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "lottery-result": "/pages/components/hangzhou/lotteryResult/lotteryResult",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon"
+    }
+}

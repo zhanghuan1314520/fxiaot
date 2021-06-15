@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "购房百科-搜索",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "wiki-item": "/subPackages/wikis/pages/component/WikiItem"
+    }
+}

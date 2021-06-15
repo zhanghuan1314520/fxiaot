@@ -1,0 +1,5 @@
+.ask-wechat-message {
+    text-align: center;
+    font-size: 26rpx;
+    color: #96989e;
+}

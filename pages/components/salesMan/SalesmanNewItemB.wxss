@@ -1,0 +1,124 @@
+.salesman-item {
+    box-sizing: border-box;
+    padding: 40rpx 0;
+    margin: 0 32rpx;
+    display: flex;
+    position: relative;
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+}
+
+.avatar-box {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+    margin-right: 20rpx;
+}
+
+.avatar-box .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.avatar-box .only-tag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.salesman-main {
+    flex: 1;
+}
+
+.salesman-main .info {
+    display: flex;
+}
+
+.salesman-main .info-name {
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    font-size: 34rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 44rpx;
+    position: relative;
+    max-width: 240rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.salesman-main .info-tag {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.salesman-main .project {
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-top: 16rpx;
+    display: flex;
+    align-items: center;
+}
+
+.salesman-main .project-name {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    margin-left: 8rpx;
+    line-height: 36rpx;
+    width: 280rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.salesman-main .project-image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.salesman-main .target-num {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.salesman-main .target-num .slash {
+    color: rgba(0,0,0,.25);
+}
+
+.advisory {
+    position: absolute;
+    right: 0;
+    top: 50rpx;
+    white-space: nowrap;
+    display: flex;
+}
+
+.advisory-button {
+    width: 108rpx;
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    padding: 0;
+    background: #eff6fe;
+    border-radius: 40rpx;
+    margin-left: 20rpx;
+}
+
+.advisory-button .iconnew {
+    color: #2f8cef;
+}
+
+.advisory-button .new-zixun {
+    font-size: 38rpx;
+}
+
+.advisory-button .new-dianhua {
+    font-size: 44rpx;
+}

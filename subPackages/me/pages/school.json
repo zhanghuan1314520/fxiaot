@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "message-tpl": "/subPackages/me/pages/components/MessageTpl"
+    }
+}

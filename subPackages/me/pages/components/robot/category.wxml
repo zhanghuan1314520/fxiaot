@@ -1,0 +1,10 @@
+<view class="category data-v-4f7ab400">
+    <scroll-view class="wrap data-v-4f7ab400" enableFlex="{{true}}" scrollX="{{true}}">
+        <view bindtap="__e" class="category-item data-v-4f7ab400" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-event-params="{{i:i}}" wx:for="{{categoryList}}" wx:for-index="__i0__" wx:for-item="i" wx:key="id">
+            <view class="item-border data-v-4f7ab400">
+                <image class="category-icon data-v-4f7ab400" mode="aspectFill" src="{{i.icon}}"></image>
+                <view class="category-label data-v-4f7ab400">{{''+i.title+''}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

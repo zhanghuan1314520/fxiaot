@@ -1,0 +1,8 @@
+<view class="text-message">
+    <block wx:for="{{message}}" wx:key="index">
+        <text userSelect="{{true}}" wx:if="{{item.type===1}}">{{''+item.content+''}}</text>
+        <view style="{{'display:'+'inline-block'+';'+'width:'+lineHeight+'px'+';'+'height:'+lineHeight+'px'+';'}}" wx:else>
+            <view class="{{[item.imageClass]}}" style="{{'background-image:'+'url('+emojiSource+')'+';'+'transform-origin:'+'0 0'+';'+'transform:'+'scale('+lineHeight/64+')'+';'}}"></view>
+        </view>
+    </block>
+</view>

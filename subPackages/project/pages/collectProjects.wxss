@@ -1,0 +1,40 @@
+.projects {
+    background-color: #fff;
+    padding: 136rpx 32rpx 22rpx;
+}
+
+.projects.default-padding {
+    padding-top: 185rpx;
+}
+
+.projects.fixed-padding {
+    margin-top: 185rpx;
+}
+
+.projects .not_id_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 220rpx;
+}
+
+.projects .not_id_card image {
+    width: 358rpx;
+    height: 224rpx;
+}
+
+.projects .not_id_card text {
+    margin-top: 46rpx;
+    color: #6a7490;
+    font-size: 32rpx;
+}
+
+.search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}

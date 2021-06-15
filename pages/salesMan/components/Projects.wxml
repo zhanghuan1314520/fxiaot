@@ -1,0 +1,8 @@
+<view class="sales-man-project" wx:if="{{projects.length==1&&projects[0].id||projects.length>1}}">
+    <view class="title">{{''+(isSelf?'我的楼盘':'TA的楼盘')+''}}</view>
+    <scroll-view scrollWithAnimation="scroll-with-animation">
+        <view class="project-list">
+            <project-item bind:__l="__l" items="{{projects}}" vueId="c1d1584a-1"></project-item>
+        </view>
+    </scroll-view>
+</view>

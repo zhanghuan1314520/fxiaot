@@ -1,0 +1,27 @@
+<busi-layout bind:__l="__l" mask="{{dialogMask}}" vueId="99c60962-1" vueSlots="{{['default']}}">
+    <view class="{{['busi-dialog',dialogVisibe&&!hidden?'busi-dialog__show':'']}}" wx:if="{{dialogVisibe}}">
+        <view class="busi-dialog__container">
+            <image catchtap="__e" class="dialog__close" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20208131754428081.png" wx:if="{{showClose}}"></image>
+            <view class="dialog__image">
+                <slot name="image" wx:if="{{$slots.image}}"></slot>
+                <block wx:else>
+                    <image class="dialog__image-picture" mode="widthFix" src="{{dialogImage}}" wx:if="{{dialogImage}}"></image>
+                </block>
+                <image class="dialog__image-icon" src="{{dialogIcon}}" wx:if="{{dialogIcon}}"></image>
+            </view>
+            <view class="{{['dialog__title',!dialogIcon&&!dialogImage?'dialog__title__top':'']}}" wx:if="{{dialogTitle}}">{{''+dialogTitle+''}}</view>
+            <view class="dialog__content" style="{{'padding-top:'+contentTop+';'+'text-align:'+dialogTextAlign+';'}}">
+                <slot wx:if="{{$slots.default}}"></slot>
+                <text wx:else>{{dialogContent}}</text>
+            </view>
+            <view class="{{['dialog__btns__group',dialogIsColumnBtn?'dialog__btns__group-column':'',!dialogIsColumnBtn?'dialog__btns__group-row':'']}}">
+                <slot name="button" wx:if="{{$slots.button}}"></slot>
+                <block wx:else>
+                    <view catchtap="__e" class="dialog__btn__item dialog__btn__cancel" data-event-opts="{{[ [ 'tap',[ [ 'cancelHandle',['$event'] ] ] ] ]}}" style="{{'color:'+dialogCancelColor+';'}}" wx:if="{{dialogShowCancel}}">{{''+dialogCancelText+''}}</view>
+                    <view catchtap="__e" class="dialog__btn__item dialog__btn__submit" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}" data-id="{{dataId}}" data-name="{{dataName}}" data-type="{{dataType}}" style="{{'color:'+dialogSubmitColor+';'}}" wx:if="{{dialogShowSubmit}}">{{''+dialogSubmitText+''}}</view>
+                </block>
+            </view>
+        </view>
+        <view catchtap="__e" class="busi-dialog__bg" data-event-opts="{{[ [ 'tap',[ [ 'maskCloseHandle',['$event'] ] ] ] ]}}" wx:if="{{dialogMask}}"></view>
+    </view>
+</busi-layout>

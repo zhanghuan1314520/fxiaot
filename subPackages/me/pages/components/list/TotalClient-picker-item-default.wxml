@@ -1,0 +1,4 @@
+<view bindtap="__e" class="date" data-content="专属客户-意向度筛选" data-event-opts="{{[ [ 'tap',[ [ 'emptyFn',['$event'] ] ] ] ]}}" data-name="意向度筛选" data-type="link">
+    <text class="text">{{''+showName+''}}</text>
+    <text class="iconnew new-zhankai" style="margin-left:8rpx;"></text>
+</view>

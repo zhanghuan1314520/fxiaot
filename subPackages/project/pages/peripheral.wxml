@@ -1,0 +1,134 @@
+<view class="h-full">
+    <view class="page">
+        <view class="map-container h-less">
+            <map bindmarkertap="__e" bindregionchange="__e" data-event-opts="{{[ [ 'regionchange',[ [ 'regChange',['$event'] ] ] ],[ 'markertap',[ [ 'marktap',['$event'] ] ] ] ]}}" id="localSearchMap" latitude="{{lat}}" longitude="{{long}}" markers="{{markers}}">
+                <cover-view class="consult" style="{{'margin-top:'+marginTop+'px'}}">
+                    <cover-view class="consult-text">在线咨询周边配套，全方位了解楼盘信息</cover-view>
+                    <cover-image bindtap="__e" class="consult-btn" data-event-opts="{{[ [ 'tap',[ [ 'contactSalesHandle',['$event'] ] ] ] ]}}" data-name="咨询" src="https://imgcdn.huanjutang.com/image/2020/07/21/4aa0939b64d7ffdf73440b4e542a152f.png" wx:if="{{userInfo.nickName}}"></cover-image>
+                    <button bindgetuserinfo="__e" class="consult-btn" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" wx:else>
+                        <cover-image src="https://imgcdn.huanjutang.com/image/2020/07/21/4aa0939b64d7ffdf73440b4e542a152f.png"></cover-image>
+                    </button>
+                </cover-view>
+            </map>
+        </view>
+        <view class="{{['footer',showCard==3?'show':'',showCard==1?'hide':'',showCard==2?'middle':'']}}">
+            <view bindtouchend="__e" bindtouchstart="__e" catchtouchmove="__e" class="footer-top _div" data-event-opts="{{[ [ 'touchend',[ [ 'handleTouchEnd',['$event'] ] ] ],[ 'touchstart',[ [ 'handleTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ] ]}}">
+                <view catchtap="__e" class="tap-line" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',[index+1] ] ] ] ]}}" hidden="{{!(indexNum==index)}}" wx:for="{{[1,2,3,2]}}" wx:key="index">
+                    <view class="lines">
+                        <view class="{{[showCard==1?'-left-top':'',showCard==2?'-left-middle':'',showCard==3?'-left-bottom':'']}}"></view>
+                        <view class="{{[showCard==1?'-right-top':'',showCard==2?'-right-middle':'',showCard==3?'-right-bottom':'']}}"></view>
+                    </view>
+                </view>
+                <scroll-view class="scroll-bar" scrollX="scroll-x">
+                    <view class="scroll-bar-container">
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==1?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[1] ] ] ] ]}}" data-name="地铁">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-ditie '+(type==1?'c1':'') ]}}" hidden="{{type!=1}}"></text>
+                                <text class="iconnew new-tianchong-ditie" hidden="{{type==1}}"></text>
+                            </view>
+                            <view class="text">地铁</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==2?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[2] ] ] ] ]}}" data-name="公交">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-gongjiao '+(type==2?'c2':'') ]}}" hidden="{{type!=2}}"></text>
+                                <text class="iconnew new-tianchong-gongjiao" hidden="{{type==2}}"></text>
+                            </view>
+                            <view class="text">公交</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==3?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[3] ] ] ] ]}}" data-name="学校">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-xuexiao '+(type==3?'c3':'') ]}}" hidden="{{type!=3}}"></text>
+                                <text class="iconnew new-tianchong-xuexiao" hidden="{{type==3}}"></text>
+                            </view>
+                            <view class="text">学校</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==4?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[4] ] ] ] ]}}" data-name="医院">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-yiyuan '+(type==4?'c4':'') ]}}" hidden="{{type!=4}}"></text>
+                                <text class="iconnew new-tianchong-yiyuan" hidden="{{type==4}}"></text>
+                            </view>
+                            <view class="text">医院</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==9?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[9] ] ] ] ]}}" data-name="公园">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-gongyuan '+(type==9?'c5':'') ]}}" hidden="{{type!=9}}"></text>
+                                <text class="iconnew new-gongyuan c-default" hidden="{{type==9}}"></text>
+                            </view>
+                            <view class="text">公园</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==5?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[5] ] ] ] ]}}" data-name="银行">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-yinhang '+(type==5?'c6':'') ]}}" hidden="{{type!=5}}"></text>
+                                <text class="iconnew new-tianchong-yinhang" hidden="{{type==5}}"></text>
+                            </view>
+                            <view class="text">银行</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==6?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[6] ] ] ] ]}}" data-name="餐饮">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-canyin '+(type==6?'c7':'') ]}}" hidden="{{type!=6}}"></text>
+                                <text class="iconnew new-tianchong-canyin" hidden="{{type==6}}"></text>
+                            </view>
+                            <view class="text">餐饮</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==7?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[7] ] ] ] ]}}" data-name="购物">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-gouwu '+(type==7?'c8':'') ]}}" hidden="{{type!=7}}"></text>
+                                <text class="iconnew new-tianchong-gouwu" hidden="{{type==7}}"></text>
+                            </view>
+                            <view class="text">购物</view>
+                        </view>
+                        <view bindtap="__e" class="{{[ 'list-btn '+(type==8?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[8] ] ] ] ]}}" data-name="楼盘">
+                            <view class="img-icon">
+                                <text class="{{[ 'iconnew new-tianchong-loupan '+(type==8?'c9':'') ]}}" hidden="{{type!=8}}"></text>
+                                <text class="iconnew new-tianchong-loupan" hidden="{{type==8}}"></text>
+                            </view>
+                            <view class="text">楼盘</view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="school-tab" wx:if="{{type==3&&showCard!=1}}">
+                <view bindtap="__e" class="{{['tab-item',schoolType=='3'?'active':'']}}" data-content="学校" data-event-opts="{{[ [ 'tap',[ [ 'changeSchoolType',['3'] ] ] ] ]}}" data-name="全部">全部</view>
+                <view bindtap="__e" class="{{['tab-item',schoolType=='3_1'?'active':'']}}" data-content="学校" data-event-opts="{{[ [ 'tap',[ [ 'changeSchoolType',['3_1'] ] ] ] ]}}" data-name="幼儿园">幼儿园</view>
+                <view bindtap="__e" class="{{['tab-item',schoolType=='3_2'?'active':'']}}" data-content="学校" data-event-opts="{{[ [ 'tap',[ [ 'changeSchoolType',['3_2'] ] ] ] ]}}" data-name="小学">小学</view>
+                <view bindtap="__e" class="{{['tab-item',schoolType=='3_3'?'active':'']}}" data-content="学校" data-event-opts="{{[ [ 'tap',[ [ 'changeSchoolType',['3_3'] ] ] ] ]}}" data-name="中学">中学</view>
+                <view bindtap="__e" class="{{['tab-item',schoolType=='3_4'?'active':'']}}" data-content="学校" data-event-opts="{{[ [ 'tap',[ [ 'changeSchoolType',['3_4'] ] ] ] ]}}" data-name="大学">大学</view>
+            </view>
+            <scroll-view catchtouchmove="__e" class="scroll-content" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ] ]}}" scrollIntoView="{{toItemView}}" scrollY="scroll-y">
+                <view>
+                    <view class="empty-data" wx:if="{{!list.length}}">
+                        <image src="https://imgcdn.huanjutang.com/image/2020/02/24/db790a4efd8cd8adfa5f90737e0670f0.png"></image>
+                        <view class="empty-text">{{''+emptyText+''}}</view>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'content '+(item.id==currentData.id?'active-item':'') ]}}" data-content="{{types[item.type]}}" data-event-opts="{{[ [ 'tap',[ [ 'itemTap',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="地点" id="{{'item_'+item.id}}" wx:for="{{list}}" wx:key="index">
+                        <view class="content-title">
+                            <view class="content-title-text">{{''+item.title+''}}</view>
+                            <view class="distance">
+                                <image src="https://imgcdn.huanjutang.com/assets/img/20199171042518081.png" wx:if="{{item.id!==currentData.id}}"></image>
+                                <image src="https://imgcdn.huanjutang.com/image/2020/02/24/c772717670af89e840f3ea18cbf31335.png" wx:else></image>
+                                <text>{{item.distance+'m'}}</text>
+                            </view>
+                        </view>
+                        <view class="content-addr">{{''+item.address+''}}</view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view bindtap="__e" class="cover-view" data-event-opts="{{[ [ 'tap',[ [ 'openLocation',['$event'] ] ] ] ]}}" hidden="{{!(showCard!=3)}}">
+                <image class="share-btn _img" src="https://imgcdn.huanjutang.com/assets/img/20211161514478081.png"></image>
+            </view>
+        </view>
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="9385af8e-1" vueSlots="{{['default']}}">
+            <block wx:if="{{pageScroll}}">成都房小团</block>
+        </busi-nav-header>
+        <view class="cover-view-share">
+            <button class="share-btn" openType="share">
+                <image class="_img" src="https://imgcdn.huanjutang.com/image/2020/07/21/363a536f49258466c7c4b70ee3f6c801.png"></image>
+            </button>
+        </view>
+    </view>
+    <view class="toast" wx:if="{{showToast}}">
+        <image src="https://imgcdn.huanjutang.com/assets/img/2019920145498081.png"></image>
+        <view class="text">{{''+toastText+''}}</view>
+    </view>
+    <share bind:__l="__l" vueId="9385af8e-2"></share>
+</view>

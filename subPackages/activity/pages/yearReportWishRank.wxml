@@ -1,0 +1,46 @@
+<view class="year-report-wish-rank">
+    <view class="header-img"></view>
+    <view bindtap="__e" class="tip-icon" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"></view>
+    <view bindtap="__e" catchtouchmove="__e" class="tip-wrapper" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{tipShow}}">
+        <view catchtap="__e" class="tip-text" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">同分情况下，优先达到该分数的用户排名领先，获取更多祈愿值即可超越同分用户</view>
+    </view>
+    <view class="list">
+        <view class="list-title" wx:if="{{list.length>0}}">
+            <view class="title1">排名</view>
+            <view class="title2">用户昵称</view>
+            <view class="title3">祈愿值</view>
+        </view>
+        <view class="list-title list-item" wx:for="{{list}}" wx:key="index">
+            <view class="title1">
+                <view class="{{['icon','icon-'+item.index]}}" wx:if="{{item.index<4}}"></view>
+                <text wx:else>{{''+item.index+''}}</text>
+            </view>
+            <view class="title2">
+                <view class="avatar">
+                    <image class="_img" src="{{item.avatar_url||'https://imgcdn.huanjutang.com/assets/img/2020712180428081.png'}}"></image>
+                </view>
+                <view class="name">{{''+item.nick_name+''}}</view>
+            </view>
+            <view class="title3">{{''+item.accumulated_points+''}}</view>
+        </view>
+        <view class="empty" wx:if="{{list.length===0}}">
+            <image class="_img" src="https://imgcdn.huanjutang.com/file/2020/12/23/e54aef376b6fff6536400f6d9c09d7f3.png"></image>
+            <view class="empty-text">暂时无人祈愿</view>
+        </view>
+    </view>
+    <view class="me">
+        <view class="list-title list-item">
+            <view class="title1">
+                <view class="{{['icon','icon-'+me.index]}}" wx:if="{{me.index<4}}"></view>
+                <text wx:else>{{''+(me.index||'--')+''}}</text>
+            </view>
+            <view class="title2">
+                <view class="avatar">
+                    <image class="_img" src="{{userInfo.avatarUrl||'https://imgcdn.huanjutang.com/assets/img/2020712180428081.png'}}"></image>
+                </view>
+                <view class="name">{{''+userInfo.nickName+''}}</view>
+            </view>
+            <view class="title3">{{''+(me.accumulated_points||'--')+''}}</view>
+        </view>
+    </view>
+</view>

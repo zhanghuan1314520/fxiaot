@@ -1,0 +1,40 @@
+<view class="page">
+    <search-bar bind:__l="__l" bind:clearInput="__e" bind:doSearch="__e" bind:updateButtonType="__e" bind:updateInputPlace="__e" bind:updateInputVal="__e" buttonType="{{buttonType}}" data-event-opts="{{[ [ '^updateInputPlace',[ [ '__set_sync',['$0','inputPlace','$event'],[''] ] ] ],[ '^updateInputPlace',[ [ '__set_sync',['$0','inputPlace','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateButtonType',[ [ '__set_sync',['$0','buttonType','$event'],[''] ] ] ],[ '^updateButtonType',[ [ '__set_sync',['$0','buttonType','$event'],[''] ] ] ],[ '^doSearch',[ ['doSearch'] ] ],[ '^clearInput',[ ['clearInput'] ] ] ]}}" inputPlace="{{inputPlace}}" inputVal="{{inputVal}}" vueId="6d19ff5f-1"></search-bar>
+    <view class="empty_block"></view>
+    <block wx:if="{{!showContent}}">
+        <view class="search-history often-search">
+            <block wx:if="{{historySearch.length>0}}">
+                <view class="search-title">
+                    <view class="gray-96 fz-14">近期搜索</view>
+                    <view bindtap="__e" class="fz-17 iconnew new-shanchu" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}"></view>
+                </view>
+                <view class="search-content">
+                    <view bindtap="__e" class="search-line black-60 fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['historySearch','',index] ] ] ] ] ] ]}}" wx:for="{{historySearch}}" wx:key="index">{{''+item+''}}</view>
+                </view>
+            </block>
+            <block wx:if="{{hotSearchs.length>0}}">
+                <view class="search-title">
+                    <view class="gray-96 fz-14">大家都在搜</view>
+                </view>
+                <view class="search-content">
+                    <view bindtap="__e" class="search-line black-60 fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['hotSearchs','',index,'keyword'] ] ] ] ] ] ]}}" wx:for="{{hotSearchs}}" wx:key="index">{{''+item.keyword+''}}</view>
+                </view>
+            </block>
+        </view>
+        <view class="bottom-logo">
+            <image src="https://imgcdn.huanjutang.com/assets/img/2019425187558081.jpg"></image>
+            <view>
+                <text>选新房 查摇号 就上房小团</text>
+            </view>
+        </view>
+    </block>
+    <view class="question-container" wx:if="{{searchList.length>0}}">
+        <article-style bind:__l="__l" item="{{item}}" vueId="{{'6d19ff5f-2-'+index}}" wx:for="{{searchList}}" wx:key="index"></article-style>
+    </view>
+    <block wx:if="{{searchList.length==0&&showContent}}">
+        <view class="nothing gray-block" wx:if="{{!loading}}">
+            <image class="article-nothing" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+            <view class="fz-13 text gray-96">没有搜索到内容哦～</view>
+        </view>
+    </block>
+</view>

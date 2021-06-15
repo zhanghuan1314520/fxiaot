@@ -1,0 +1,97 @@
+<view class="page">
+    <view class="page__bd haveSearchBar">
+        <view>
+            <view class="search-bar">
+                <view class="search-bar-form">
+                    <image bindtap="__e" class="search-icon" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20190624/5d108a915ccf3.svg"></image>
+                    <input bindconfirm="__e" bindfocus="__e" bindinput="__e" class="search-bar-input" data-event-opts="{{[ [ 'focus',[ [ 'handleOptionVisible',[false,false] ] ] ],[ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doSearch',['$event'] ] ] ] ]}}" focus="{{autoFocus}}" placeholder="{{inputPlace}}" placeholderClass="search-input-placeholder" type="text" value="{{inputVal}}"></input>
+                    <view bindtap="__e" class="iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></view>
+                    <view class="nav-search__line"></view>
+                    <view bindtap="__e" class="search-btn" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}">确定</view>
+                </view>
+            </view>
+            <view class="empty_block"></view>
+            <block wx:if="{{!showContent}}">
+                <view bindtap="__e" class="keyword-index" data-event-opts="{{[ [ 'tap',[ [ 'handleOptionVisible',[false,false] ] ] ] ]}}" wx:if="{{showSearchList}}">
+                    <view bindtap="__e" class="keyword-index-list height-level-color keyword-cont" data-event-opts="{{[ [ 'tap',[ [ 'setHistorySearch',['$0'],['inputVal'] ] ] ] ]}}">
+                        <text class="fz-14">{{'搜索“'+inputVal+'”'}}</text>
+                        <text class="iconnew new-tongyong-gengduo fz-12"></text>
+                    </view>
+                    <navigator bindtap="__e" class="keyword-index-list" data-event-opts="{{[ [ 'tap',[ [ 'setHistorySearch',['$0'],['inputVal'] ] ] ] ]}}" hoverClass="none" url="{{item.url}}" wx:for="{{searchList}}" wx:key="index">
+                        <view class="top">
+                            <rich-text class="title fz-14" nodes="{{item.name}}"></rich-text>
+                            <rich-text class="alias fz-12 gray-9-color" nodes="{{item.alias}}"></rich-text>
+                            <view class="status fz-12 gray-9-color" wx:if="{{item.tags.length>0}}">{{''+item.tags[0]+''}}</view>
+                        </view>
+                        <view class="bottom fz-12 gray-9-color">
+                            <view class="address">{{''+item.project_location+''}}</view>
+                            <view class="price" wx:if="{{item.avg_price.length>0}}">
+                                <view wx:if="{{val}}" wx:for="{{item.avg_price}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{'￥'+val+''}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <block wx:else>
+                    <view bindtap="__e" class="search-content_box" data-event-opts="{{[ [ 'tap',[ [ 'handleOptionVisible',[false,false] ] ] ] ]}}">
+                        <view class="search-banner" wx:if="{{bannerList.list.length>0}}">
+                            <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{bannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{bannerList.list}}" height="{{150}}" source="search" vueId="a260b58a-1"></base-banner>
+                        </view>
+                        <view class="search-history history" wx:if="{{historySearch.length>0}}">
+                            <view class="head">
+                                <view class="title-text">
+                                    <text class="fz-14">近期搜索</text>
+                                </view>
+                                <view></view>
+                                <view bindtap="__e" class="gray-9-color float-right" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}">
+                                    <text class="iconnew new-shanchu fz-20"></text>
+                                </view>
+                            </view>
+                            <view class="list">
+                                <view bindtap="__e" class="tags" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['historySearch','',index] ] ] ] ] ] ]}}" wx:for="{{historySearch}}" wx:key="index">{{''+item+''}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="bottom-logo">
+                        <image src="https://imgcdn.huanjutang.com/assets/img/2019425187558081.jpg"></image>
+                        <view>
+                            <text>选新房 查摇号 就上房小团</text>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </view>
+        <view class="project-cont">
+            <project-item bind:__l="__l" bind:updateItems="__e" content="collect_search_list" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projectsItems','$event'],[''] ] ] ] ]}}" items="{{projectsItems}}" sourceKeyWord="{{inputVal}}" sourcePosition="楼盘合集搜索列表" titleData="搜索" vueId="a260b58a-2" wx:if="{{projectsItems.length>0}}"></project-item>
+            <block wx:if="{{projectsItems.length<1&&loading&&showContent}}">
+                <view class="building_nofind">
+                    <text>未找到合适的房源，换个词再搜搜吧！或者</text>
+                </view>
+                <view class="addBuilding-style">
+                    <navigator class="addBuilding" hoverClass="none" url="/subPackages/project/pages/addDuilding">
+                        <text>向我们反馈未收录的楼盘信息</text>
+                        <text class="iconnew new-tongyong-gengduo"></text>
+                    </navigator>
+                </view>
+                <view>
+                    <view class="recommend-title">热门推荐：</view>
+                    <project-item bind:__l="__l" bind:updateItems="__e" content="collect_search_recommend" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','recommendProjectList','$event'],[''] ] ] ] ]}}" items="{{recommendProjectList}}" sourcePosition="楼盘合集搜索推荐列表" titleData="{{title+'列表'}}" vueId="a260b58a-3"></project-item>
+                </view>
+            </block>
+            <view wx:if="{{showContent&&loading}}">
+                <view class="flex_layout_c" hidden="{{!loading||!more}}" style="width:100%;margin-top:30rpx;margin-bottom:30rpx;">
+                    <view class="loading-runing">
+                        <view class="loading-icon">
+                            <text class="iconnew new-jiazai"></text>
+                        </view>
+                        <view class="left-font">
+                            <text>加载中</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex_layout_c" hidden="{{more&&projectsItems.length>0||projectsItems.length===0}}" style="width:100%;margin-top:30rpx;margin-bottom:30rpx;">
+                    <view class="weui-loadmore__tips gray-color">我也是有底线的哦~ (๑•́ ₃ •̀๑)</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

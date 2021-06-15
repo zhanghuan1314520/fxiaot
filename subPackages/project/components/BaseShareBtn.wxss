@@ -1,0 +1,45 @@
+.page-control {
+    position: fixed;
+    right: 0;
+    bottom: 100rpx;
+    z-index: 999;
+    margin-right: 24rpx;
+}
+
+.page-control .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 84rpx;
+    width: 84rpx;
+    margin-top: 20rpx;
+    color: #fff;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.page-control .btn .iconnew {
+    line-height: 1;
+}
+
+.page-control .btn.moveOut {
+    transform: translateX(80rpx);
+    opacity: .5;
+}
+
+.page-control .share {
+    transform: translateX(0rpx);
+    transition: all .5s ease;
+    background: #fff;
+    box-shadow: 0 8px 18px 0 rgba(0,0,0,.14);
+    opacity: 1;
+}
+
+.page-control-move-up {
+    bottom: 360rpx;
+}
+
+.share__icon {
+    color: #817e81;
+}

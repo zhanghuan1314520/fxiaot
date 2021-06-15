@@ -1,0 +1,134 @@
+view {
+    margin: 0;
+    padding: 0;
+}
+
+page {
+    overflow: hidden;
+}
+
+.container,page {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    background-color: #4445d9;
+}
+
+.container .page {
+    width: 100%;
+    height: 100%;
+    background: #4441db;
+    position: relative;
+    z-index: 1;
+}
+
+.container .page .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-cont {
+    text-align: center;
+    padding: 0 44rpx;
+    position: absolute;
+    top: 270rpx;
+    z-index: 555;
+}
+
+.card-cont .tip-msg {
+    padding-bottom: 110rpx;
+}
+
+.card-cont .tip-msg .p {
+    color: #b0601a;
+    display: inline-block;
+    position: relative;
+}
+
+.card-cont .tip-msg .p .span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 96%;
+    border-bottom: 2rpx solid #b0601a;
+}
+
+.card-cont .quan_cont {
+    position: relative;
+    height: 180rpx;
+}
+
+.card-cont .quan_cont image {
+    width: 100%;
+    height: 180rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.card-cont .quan_cont .left {
+    position: absolute;
+    top: 30rpx;
+    left: 25rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-cont .quan_cont .left .left-price {
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 70rpx;
+    width: 100%;
+    text-align: start;
+    letter-spacing: 3rpx;
+    padding-left: 2rpx;
+}
+
+.card-cont .quan_cont .left .time {
+    font-weight: 500;
+}
+
+.card-cont .rule-tip {
+    padding: 57rpx 0 25rpx;
+    text-align: center;
+    color: #d92c14;
+    letter-spacing: 1rpx;
+    font-weight: 600;
+}
+
+.card-cont .rule {
+    line-height: 40rpx;
+    padding: 0 30rpx;
+    border-radius: 20rpx;
+    display: inline-block;
+    text-align: start;
+    color: #666;
+}
+
+.bottom-btn {
+    padding-top: 50rpx;
+}
+
+.bottom-btn .btn {
+    line-height: 90rpx;
+    width: 600rpx;
+    text-align: center;
+    background: linear-gradient(90deg,#f18a59,#e9444b);
+    border-radius: 50rpx;
+    margin-bottom: 36rpx;
+    color: #fff;
+    letter-spacing: 1rpx;
+    display: inline-block;
+    font-size: 30rpx;
+}

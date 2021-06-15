@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "left-list": "/components/BaseFilters/LeftList",
+        "radio-list": "/components/BaseFilters/RadioList",
+        "range-input": "/components/BaseFilters/RangeInput",
+        "footer-button": "/components/BaseFilters/FooterButton"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团-海报",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "canvas-post": "/subPackages/tools/pages/component/CanvasPost",
+        "canvas-poster": "/subPackages/tools/components/CanvasPoster/Index"
+    }
+}

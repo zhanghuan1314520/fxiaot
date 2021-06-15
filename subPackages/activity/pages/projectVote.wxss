@@ -1,0 +1,646 @@
+page {
+    background: #30077c;
+    padding-bottom: 100rpx;
+}
+
+.banner {
+    width: 100%;
+    height: 746rpx;
+    position: relative;
+}
+
+.banner image {
+    height: 100%;
+    width: 100%;
+}
+
+.banner .rule {
+    width: 150rpx;
+    height: 82rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191122152388081.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 146rpx;
+    font-size: 26rpx;
+    font-weight: 700;
+    color: #fff;
+    line-height: 77rpx;
+    text-indent: 34rpx;
+}
+
+.vote-counter {
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911281022598081.png) no-repeat;
+    background-size: cover;
+    width: 734rpx;
+    height: 184rpx;
+    margin: 0 8rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex: 1;
+}
+
+.vote-counter .vote-line {
+    flex: 1;
+    text-align: center;
+}
+
+.vote-counter .vote-line .vote-num {
+    width: auto;
+    height: 44rpx;
+    font-size: 44rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffe752;
+    line-height: 44rpx;
+    margin-bottom: 20rpx;
+}
+
+.vote-counter .vote-line .vote-num-text {
+    width: auto;
+    height: 28rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #8c8cec;
+    line-height: 28rpx;
+}
+
+.search {
+    width: 702rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    background: rgba(91,30,203,.59);
+    border-radius: 8rpx;
+    margin: 0 24rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #8c8cec;
+}
+
+.search .new-sousuoxianxing {
+    font-size: 32rpx!important;
+    margin-left: 28rpx;
+    margin-right: 12rpx;
+    float: left;
+}
+
+.search .search-inp {
+    height: 76rpx;
+    width: 550rpx;
+    display: inline-block;
+    border: 0;
+}
+
+.search .clearInp {
+    float: right;
+    display: inline-block;
+    font-size: 36rpx!important;
+    margin-right: 20rpx;
+    margin-top: 4rpx;
+    color: #fff;
+}
+
+.empty-data {
+    text-align: center;
+    height: 80rpx;
+    font-size: 28rpx;
+    color: #8c8cec;
+    margin-bottom: 30rpx;
+}
+
+.placeholder {
+    color: #8c8cec!important;
+}
+
+.lottery-item-box {
+    width: 316rpx;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    margin-left: 24rpx;
+    margin-bottom: 18rpx;
+}
+
+.lottery-item-box .lottery-number {
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911221440268081.png) no-repeat;
+    background-size: cover;
+    height: 88rpx;
+    width: 74rpx;
+    position: absolute;
+    left: 14rpx;
+    top: 0;
+    font-size: 26rpx;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+.lottery-item-box .lottery-number .number {
+    margin-top: 6rpx;
+}
+
+.lottery-item-box .lottery-number .number,.lottery-item-box .lottery-number .number-text {
+    width: 54rpx;
+    text-align: center;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-left: 8rpx;
+}
+
+.lottery-item {
+    margin-top: 14rpx;
+    width: 316rpx;
+    height: 430rpx;
+    background: linear-gradient(180deg,#5d20ce,#30077c);
+    border-radius: 8rpx;
+    float: left;
+    text-align: center;
+}
+
+.lottery-item image {
+    width: 296rpx;
+    height: 220rpx;
+    border-radius: 6rpx;
+    margin: 10rpx;
+}
+
+.lottery-item .project-name {
+    width: auto;
+    height: 40rpx;
+    font-weight: 700;
+    color: #f0f0ff;
+    margin: 14rpx 10rpx 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lottery-item .vote-count {
+    width: auto;
+    height: 28rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #04f2fb;
+    line-height: 28rpx;
+    margin-top: 16rpx;
+    margin-bottom: 20rpx;
+}
+
+.lottery-item .want-vote {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191122144798081.png);
+    width: 200rpx;
+    height: 60rpx;
+    background-size: cover;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 60rpx;
+    margin: 0 auto 0 58rpx;
+}
+
+.end-time {
+    margin-top: 20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    width: auto;
+    text-align: center;
+    color: #8c8cec;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-time .red-color {
+    color: #ff41cf;
+    font-size: 36rpx;
+    margin-left: 12rpx;
+    margin-right: 8rpx;
+    font-weight: 700;
+}
+
+.end-time image {
+    width: 24rpx;
+    height: 20rpx;
+}
+
+.end-time image:first-child {
+    margin-right: 16rpx;
+}
+
+.end-time image:last-child {
+    margin-left: 16rpx;
+}
+
+.line {
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911221537248081.png) no-repeat;
+    background-size: cover;
+    height: 2rpx;
+    width: auto;
+    margin: 40rpx 22rpx 26rpx;
+}
+
+.activity-content-box {
+    width: 702rpx;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4rpx 14rpx 0 rgba(31,1,86,.8);
+    border-radius: 10rpx;
+    border: 4rpx solid rgba(127,226,255,.19);
+    margin: 46rpx 24rpx 0;
+}
+
+.activity-content {
+    margin-top: 26rpx;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.activity-content .title {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911221556188081.png) no-repeat;
+    background-size: cover;
+    width: 508rpx;
+    height: 114rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.activity-content .title .flex1 {
+    margin-top: 30rpx;
+    height: auto;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+.activity-content .title image {
+    margin-left: 12rpx;
+    height: 40rpx;
+    width: 40rpx;
+    vertical-align: middle;
+}
+
+.empty {
+    height: 88rpx;
+}
+
+.scroll-box {
+    height: 135rpx;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 28rpx;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.tab-one,.tab-two {
+    height: 56rpx;
+    width: auto;
+    margin-bottom: 16rpx;
+    margin-left: 24rpx;
+}
+
+.tab-two {
+    padding-bottom: 60rpx;
+}
+
+.tabs-item {
+    display: inline-block;
+    min-width: 172rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    background: #4a14ab;
+    border-radius: 4rpx;
+    text-align: center;
+    padding: 0 24rpx;
+    font-size: 28rpx;
+    color: #fff;
+    margin-right: 16rpx;
+}
+
+.tabs-index {
+    width: auto;
+    height: 30rpx;
+    text-align: center;
+}
+
+.tabs-index .tab-index {
+    width: 44rpx;
+    height: 6rpx;
+    background: #5c29b9;
+    border-radius: 3rpx;
+    display: inline-block;
+    margin: 10rpx 5rpx 0;
+}
+
+.tabs-index .active {
+    background: #fff!important;
+}
+
+.current-tab {
+    background: linear-gradient(131deg,#f62f80,#ffa946)!important;
+    font-weight: 700;
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96rpx;
+}
+
+.footer .btn {
+    height: 96rpx;
+    line-height: 96rpx;
+    background: #6412fb;
+    font-size: 34rpx;
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+.footer .btn image {
+    width: 42rpx;
+    height: 42rpx;
+    margin-right: 12rpx;
+    vertical-align: middle;
+    margin-top: -6rpx;
+}
+
+.footer .active {
+    background: linear-gradient(315deg,#fd6b6b,#fb3986);
+}
+
+.disabled {
+    opacity: .55;
+}
+
+.page-rank {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911251727368081.png) top no-repeat;
+    background-size: 100% auto;
+}
+
+.page-rank .types {
+    height: 220rpx;
+    width: auto;
+    overflow: auto;
+    margin-top: 512rpx;
+}
+
+.page-rank .ranks {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.page-rank .rank-item {
+    height: 206rpx;
+    width: auto;
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911281022308081.png) no-repeat;
+    background-size: cover;
+}
+
+.page-rank .rank-item .index {
+    width: 90rpx;
+    height: 90rpx;
+    margin-top: 65rpx;
+    text-align: center;
+    line-height: 110rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #f0f0ff;
+    float: left;
+}
+
+.page-rank .rank-item .index image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-top: 10rpx;
+}
+
+.page-rank .rank-item .cover {
+    width: 172rpx;
+    height: 136rpx;
+    background: linear-gradient(180deg,#5d20ce,#30077c);
+    border-radius: 6rpx;
+    float: left;
+    margin-top: 40rpx;
+}
+
+.page-rank .rank-item .cover image {
+    width: 164rpx;
+    height: 128rpx;
+    margin: 4rpx;
+    border-radius: 4rpx;
+}
+
+.page-rank .rank-item .info {
+    margin-top: 40rpx;
+    width: 454rpx;
+    height: 136rpx;
+    float: left;
+    position: relative;
+    color: #f0f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-rank .rank-item .info .lottery-name {
+    flex: 1;
+    display: inline-block;
+    margin: 0 36rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #f0f0ff;
+    line-height: 44rpx;
+}
+
+.page-rank .rank-item .info .votes {
+    display: inline-block;
+    text-align: right;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #04f2fb;
+    height: 44rpx;
+    margin-right: 36rpx;
+    line-height: 44rpx;
+}
+
+.rules {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191128102578081.png) no-repeat;
+    background-size: contain;
+    width: 730rpx;
+    margin-left: 10rpx;
+    height: 124rpx;
+    margin-bottom: 22rpx;
+}
+
+.dialog {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.65);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.dialog .dialog-title {
+    width: auto;
+    height: 36rpx;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 36rpx;
+    margin-bottom: 28rpx;
+    text-align: center;
+}
+
+.dialog .b {
+    font-weight: 700!important;
+    color: #fff!important;
+}
+
+.dialog .dialog-content {
+    padding: 40rpx 36rpx;
+    width: 564rpx;
+    height: 678rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911282026278081.png) top no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 85rpx;
+    transform: translate(-50%);
+}
+
+.dialog .dialog-content-text {
+    width: auto;
+    height: auto;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: hsla(0,0%,100%,.8);
+    line-height: 40rpx;
+    margin-bottom: 12rpx;
+}
+
+.dialog .close-btn {
+    height: 64rpx;
+    width: 64rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 896rpx;
+}
+
+.dialog .close-btn image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.size {
+    width: 480rpx!important;
+    height: 524rpx!important;
+    top: 136rpx!important;
+}
+
+.top-812 {
+    top: 812rpx!important;
+}
+
+.vote-dialog {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.65);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.vote-dialog .dialog-content {
+    padding: 40rpx 36rpx;
+    width: 564rpx;
+    height: 678rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/201911281036188081.png) top no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 100rpx;
+    transform: translate(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.vote-dialog .dialog-text {
+    width: auto;
+    height: auto;
+    margin-bottom: 12rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: #5e36f5;
+    line-height: 56rpx;
+    letter-spacing: 2rpx;
+    margin-top: 410rpx;
+    text-indent: 40rpx;
+}
+
+.vote-dialog .dialog-text2 {
+    width: auto;
+    height: 32rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 32rpx;
+    margin-top: 90rpx;
+}
+
+.vote-dialog .close-btn {
+    height: 64rpx;
+    width: 64rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 896rpx;
+}
+
+.vote-dialog .close-btn image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.red-color {
+    color: #ff41cf!important;
+}

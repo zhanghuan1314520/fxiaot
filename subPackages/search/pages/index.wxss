@@ -1,0 +1,31 @@
+.search .search__input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    padding: 20rpx 32rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.search .search__home {
+    position: relative;
+    padding-top: 128rpx;
+    z-index: 1;
+}
+
+.search .search__home.scroll-hidden {
+    display: none;
+}
+
+.search .search__suggest {
+    position: fixed;
+    z-index: 2;
+    top: 128rpx;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 128rpx);
+    overflow: scroll;
+    background: #fff;
+}

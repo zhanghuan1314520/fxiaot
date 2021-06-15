@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "为什么要入驻",
+    "usingComponents": {
+        "rule-content": "/subPackages/me/pages/components/hangzhou/inviteIntro/Content"
+    }
+}

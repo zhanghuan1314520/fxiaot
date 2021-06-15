@@ -1,0 +1,14 @@
+.btn-qualification-share-wrap {
+    position: fixed;
+    right: 0;
+    bottom: 100rpx;
+    z-index: 999;
+    margin-right: 24rpx;
+}
+
+.btn-qualification-share-wrap .share__icon {
+    color: #817e81;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+}

@@ -1,0 +1,37 @@
+<view class="recommed-sales" wx:if="{{list.length}}">
+    <view class="title">
+        <view class="t-left">有疑问？和置业专家在线聊聊</view>
+        <view bindtap="__e" class="t-right" data-event-opts="{{[ [ 'tap',[ [ 'more',['$event'] ] ] ] ]}}" data-name="更多置业顾问">
+            <text>更多置业顾问</text>
+            <text class="iconnew new-tongyong-gengduo"></text>
+        </view>
+    </view>
+    <view class="sales-item" wx:for="{{$root.l0}}" wx:key="index">
+        <view bindtap="__e" class="si-left" data-event-opts="{{[ [ 'tap',[ [ 'jumpSaleManCenterUrl',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="置业顾问主页">
+            <image-loader bind:__l="__l" source="{{item[$orig].avatar_url_thumbnail}}" styles="{{item.a0}}" vueId="{{'63c44aa3-1-'+index}}"></image-loader>
+            <view class="exclusive-tag" wx:if="{{item[$orig].is_bind==1}}"></view>
+        </view>
+        <view class="si-center">
+            <view class="name">
+                <text>{{item[$orig].sales_man_name}}</text>
+                <image bindtap="__e" class="icon-wx" data-event-opts="{{[ [ 'tap',[ [ 'copyWx',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="复制微信" src="https://imgcdn.huanjutang.com/assets/img/2021325111418081.png"></image>
+            </view>
+            <view class="pv">
+                <text class="text">{{'活跃度：'+item[$orig].liveness+''}}</text>
+                <text class="text">{{'点赞：'+item[$orig].sales_man_like_num+''}}</text>
+            </view>
+        </view>
+        <view class="si-right">
+            <busi-auth-navigator bind:__l="__l" url="{{urls[index]}}" vueId="{{'63c44aa3-2-'+index}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="btn mr-20" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="微聊">
+                    <text class="iconnew new-zixun"></text>
+                </view>
+            </busi-auth-navigator>
+            <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneSuccess'] ] ] ]}}" vueId="{{'63c44aa3-3-'+index}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="获取手机号">
+                    <text class="iconnew new-dianhua"></text>
+                </view>
+            </base-call-phone>
+        </view>
+    </view>
+</view>

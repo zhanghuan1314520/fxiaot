@@ -1,0 +1,14 @@
+.noData-wrap {
+    text-align: center;
+}
+
+.noData {
+    margin-top: 60px;
+    width: 507rpx;
+}
+
+.backBtn {
+    margin-top: 74rpx;
+    width: 368rpx;
+    height: 80rpx;
+}

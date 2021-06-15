@@ -1,0 +1,18 @@
+<view catchtap="__e" class="answer-detail" data-event-opts="{{[ [ 'tap',[ [ 'hideReportTip',['$event'] ] ] ] ]}}">
+    <view class="content">
+        <personal-info avatar="{{info.original_avatar_url}}" bind:__l="__l" level="{{info.salesman_grade}}" name="{{info.name}}" sales_man_id="{{info.sales_man_id}}" tagImage="{{info.tagImage}}" time="{{fromTime}}" user_id="{{info.user_id}}" vueId="e9409e44-1"></personal-info>
+        <view bindtap="__e" class="body" data-event-opts="{{[ [ 'tap',[ [ 'haddleClickContent',['$0'],['info'] ] ] ] ]}}">{{''+(info.content||'')+''}}</view>
+        <view bindtap="__e" class="back-to-list" data-event-opts="{{[ [ 'tap',[ [ 'backToList',['$event'] ] ] ] ]}}">{{''+lt+' 返回评论列表'}}</view>
+    </view>
+    <white-space bind:__l="__l" color="#F7F7F7" vueId="e9409e44-2"></white-space>
+    <view class="comment">
+        <comment-title bind:__l="__l" num="{{total}}" title="全部回复" vueId="e9409e44-3"></comment-title>
+        <view class="wrap">
+            <reply-content bind:__l="__l" bind:delCommentQuery="__e" bind:reply="__e" data-event-opts="{{[ [ '^reply',[ ['haddleClickContent'] ] ],[ '^delCommentQuery',[ ['delComment'] ] ] ]}}" hideTip="{{hideTip}}" item="{{item}}" project_name="{{project_name}}" vueId="{{'e9409e44-4-'+index}}" wx:for="{{commentList}}" wx:key="index"></reply-content>
+        </view>
+        <no-data bind:__l="__l" text="分享一下想法吧~" vueId="e9409e44-5" wx:if="{{!commentList.length&&!loading}}"></no-data>
+        <loading bind:__l="__l" loading="{{loading}}" vueId="e9409e44-6"></loading>
+    </view>
+    <comment-input bind:__l="__l" bind:comment="__e" bind:like="__e" class="vue-ref" data-event-opts="{{[ [ '^comment',[ ['handleReply'] ] ],[ '^like',[ ['haddleLike'] ] ] ]}}" data-ref="input" isLike="{{info&&info.is_like==1}}" likeNum="{{info.count}}" placeholder="{{'回复 '+replayName}}" vueId="e9409e44-7" wx:if="{{isShowCommentBtn}}"></comment-input>
+    <show-home bind:__l="__l" vueId="e9409e44-8" wx:if="{{showHome}}"></show-home>
+</view>

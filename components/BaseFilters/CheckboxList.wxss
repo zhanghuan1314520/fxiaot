@@ -1,0 +1,34 @@
+.checkbox-list {
+    width: 100%;
+    height: 100%;
+    padding: 0 32rpx 0 48rpx;
+    box-sizing: border-box;
+}
+
+.checkbox-list .checkbox-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+.checkbox-list .checkbox-list__item .checkbox-list__item-text {
+    height: 36rpx;
+    line-height: 36rpx;
+    padding: 26rpx 0;
+    font-size: 28rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 220rpx;
+}
+
+.checkbox-list .checkbox-list__item .checkbox-list__item-button {
+    transform: scale(.7);
+}
+
+.checkbox-list .checkbox-list__item.checkbox-list__item-active .checkbox-list__item-text {
+    color: #2d8cf0;
+    font-weight: 700;
+}

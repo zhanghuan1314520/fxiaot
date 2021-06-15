@@ -1,0 +1,4 @@
+<view class="comment__title">
+    <text class="comment-all">{{''+title+''}}</text>
+    <text class="comment-num">{{'（'+num+'条）'}}</text>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我要回答",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "popup": "/subPackages/question/components/popupWindow",
+        "authorization": "/components/Authorization"
+    }
+}

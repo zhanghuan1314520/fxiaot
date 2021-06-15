@@ -1,0 +1,63 @@
+.cubes {
+    height: 332rpx;
+    width: 100%;
+}
+
+.five,.five__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.five__item {
+    flex-direction: column;
+}
+
+.cube__icon {
+    width: 220rpx;
+    height: 160rpx;
+    border-radius: 8rpx;
+}
+
+.cube__icon--hight {
+    height: 332rpx;
+}
+
+.cube__icon--width {
+    width: 452rpx;
+}
+
+.four {
+    display: flex;
+    justify-content: space-between;
+}
+
+.four__left {
+    width: 220rpx;
+    height: 332rpx;
+}
+
+.four__right {
+    width: 452rpx;
+    height: 332rpx;
+    flex-direction: column;
+}
+
+.four__right,.four__right__up {
+    display: flex;
+    justify-content: space-between;
+}
+
+.four__right__down,.four__right__up {
+    height: 160rpx;
+    width: 100%;
+}
+
+.three {
+    display: flex;
+    justify-content: space-between;
+}
+
+.five__item {
+    width: 220rpx;
+    height: 332rpx;
+}

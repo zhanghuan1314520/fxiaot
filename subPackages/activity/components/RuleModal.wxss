@@ -1,0 +1,112 @@
+.container.data-v-4ce903ee {
+    background-color: #4362ff;
+    min-height: 100vh;
+}
+
+.modal.data-v-4ce903ee {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.modal-mask.data-v-4ce903ee {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease;
+    background: rgba(0,0,0,.7);
+    opacity: 0;
+}
+
+.modal-mask.maskShow.data-v-4ce903ee {
+    opacity: 1;
+}
+
+.modal-mask.maskHide.data-v-4ce903ee {
+    opacity: 0;
+}
+
+.mask-content.data-v-4ce903ee {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all .2s ease;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
+
+.mask-content.contentShow.data-v-4ce903ee {
+    opacity: 1;
+}
+
+.mask-content.contenHide.data-v-4ce903ee {
+    opacity: 0;
+}
+
+.content-title__image.data-v-4ce903ee {
+    width: 412rpx;
+    height: 136rpx;
+    position: relative;
+    left: 109rpx;
+    z-index: 2;
+}
+
+.content-box.data-v-4ce903ee {
+    width: 600rpx;
+    height: 873rpx;
+    position: relative;
+    background-color: #8fa1ff;
+    border-radius: 10rpx;
+    border: 4rpx solid #002aff;
+    margin-top: -62rpx;
+}
+
+.content-box.data-v-4ce903ee::before {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    top: 14rpx;
+    left: 14rpx;
+    background-color: #29ff80;
+    border-radius: 10rpx;
+    border: 4rpx solid #002aff;
+}
+
+.box-text.data-v-4ce903ee {
+    padding: 63rpx 52rpx 52rpx;
+    box-sizing: border-box;
+    font-family: PingFangSC-Semibold;
+    font-size: 30rpx;
+    font-weight: 700;
+    line-height: 48rpx;
+    color: #fff;
+    height: 100%;
+    overflow: scroll;
+}
+
+.modal-close.data-v-4ce903ee {
+    margin-top: 87rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.modal-close .close-image.data-v-4ce903ee {
+    width: 33rpx;
+    height: 33rpx;
+    margin-right: 26rpx;
+}
+
+.modal-close .close-text.data-v-4ce903ee {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    line-height: 36rpx;
+    color: #fff;
+}

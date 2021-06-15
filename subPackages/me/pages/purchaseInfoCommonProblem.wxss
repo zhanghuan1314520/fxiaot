@@ -1,0 +1,169 @@
+page {
+    background-color: #fff;
+    padding-bottom: 150rpx;
+}
+
+.reportType-title {
+    padding: 19rpx 30rpx;
+}
+
+.reportType-line {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-left: 24rpx;
+    padding: 34rpx 34rpx 34rpx 0;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.is-toggle {
+    border-bottom: none;
+}
+
+.right {
+    width: 30rpx;
+    margin-right: 10rpx;
+}
+
+.left {
+    flex: 1;
+    color: #606266;
+    margin-right: 20rpx;
+}
+
+.type-col {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-left: 54rpx;
+    padding: 34rpx 34rpx 34rpx 0;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.type-col:last-of-type {
+    border-bottom: none;
+}
+
+.col-content {
+    position: relative;
+    animation-duration: .2s;
+    box-shadow: inset 0 0 30rpx 0 #f7f7f7,inset 0 0 30rpx 0 #f7f7f7;
+}
+
+.iconnew {
+    vertical-align: middle;
+}
+
+.rotateAngle {
+    transform: rotate(90deg);
+}
+
+.rotateAngle,.rotateBack {
+    transition-duration: .2s;
+}
+
+.box-cont {
+    overflow: hidden;
+}
+
+.box-cont .problem-container {
+    position: fixed;
+    width: 100%;
+    max-height: 900rpx;
+    min-height: 700rpx;
+    overflow-y: scroll;
+    overflow-x: visible;
+    z-index: 4;
+    background: #fff;
+    transition: all .15s ease-in-out;
+    bottom: -100%;
+}
+
+.box-cont .problem-container.active {
+    bottom: 0;
+}
+
+.box-cont .problem-container .title {
+    font-size: 32rpx;
+    color: #303237;
+    border-bottom: 1rpx solid #f2f2f2;
+    padding: 24rpx;
+}
+
+.box-cont .problem-container .main-cont {
+    padding: 40rpx 24rpx 140rpx;
+}
+
+.box-cont .problem-container .main-cont .text {
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #606266;
+    line-height: 44rpx;
+    margin-bottom: 30rpx;
+}
+
+.box-cont .problem-container .main-cont .img-box {
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.box-cont .problem-container .main-cont .img-box .image-1,.box-cont .problem-container .main-cont .img-box .image-2 {
+    border: 2rpx solid #edeff2;
+    width: 320rpx;
+    height: 480rpx;
+    margin-right: 42rpx;
+    border-radius: 4rpx;
+}
+
+.box-cont .problem-container .main-cont .img-box .image-3 {
+    border: 2rpx solid #edeff2;
+    width: 220rpx;
+    height: 340rpx;
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+}
+
+.box-cont .problem-container .main-cont .img-box image:last-child {
+    margin-right: 0;
+}
+
+.box-cont .hide-box {
+    width: 100%;
+    height: 100%;
+    background: rgba(48,50,55,0);
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all .5s linear;
+    display: none;
+}
+
+.box-cont .hide-box.active {
+    display: block;
+    background: rgba(48,50,55,.5);
+}
+
+.advisory-btn {
+    position: fixed;
+    bottom: 40rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240rpx;
+    height: 88rpx;
+    background: #2d8cf0;
+    box-shadow: 0 2rpx 14rpx 0 rgba(45,140,240,.5);
+    border-radius: 44rpx;
+    line-height: 88rpx;
+}
+
+.advisory-btn .iconnew {
+    margin-right: 12rpx;
+}
+
+.advisory-btn .text {
+    font-size: 32rpx;
+    font-weight: 400;
+    color: #fff;
+    line-height: 44rpx;
+}

@@ -1,0 +1,47 @@
+<view>
+    <view class="page">
+        <navigator class="settings-top" hoverClass="none" url="{{'/pages/salesMan/detail?user_id='+session_id}}" wx:if="{{userInfo.is_broker!=''}}">
+            <image mode="aspectFill" src="{{userInfo.avatar_url||avatar}}"></image>
+            <view class="right-info">
+                <view class="sales-man">
+                    <text class="name fz-14 black1a-color">{{''+userInfo.name+''}}</text>
+                    <text class="sign-text fz-10 small-level-color">置业顾问</text>
+                </view>
+                <view class="tags fz-12 small-level-color">
+                    <text class="tag" wx:for="{{userInfo.ext}}" wx:key="index">{{''+item+''}}</text>
+                </view>
+            </view>
+        </navigator>
+        <view class="settings-top" wx:else>
+            <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',[userInfo.avatar_url||avatar] ] ] ] ]}}" mode="aspectFill" src="{{userInfo.avatar_url||avatar}}"></image>
+            <view class="right-info">
+                <view class="sales-man">
+                    <text class="name fz-14 black1a-color">{{''+userInfo.name+''}}</text>
+                    <text class="sign-text fz-10 small-level-color">{{''+userInfo.city+''}}</text>
+                </view>
+                <view class="tags fz-12 small-level-color">
+                    <text class="tag" wx:for="{{userInfo.ext}}" wx:key="index">{{''+item+''}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="settings">
+            <view class="settings-line">
+                <text class="left-txt fz-14 black1a-color">关注联系人</text>
+                <view class="right-icon small-level-color">
+                    <switch bindchange="__e" checked="{{userInfo.is_follow==1}}" color="#3772cc" data-event-opts="{{[ [ 'change',[ [ 'switchChangeFollow',['$event'] ] ] ] ]}}"></switch>
+                </view>
+            </view>
+            <view class="settings-line">
+                <text class="left-txt fz-14 black1a-color">将对方加入黑名单</text>
+                <view class="right-icon small-level-color">
+                    <switch bindchange="__e" checked="{{userInfo.is_blacklist}}" color="#3772cc" data-event-opts="{{[ [ 'change',[ [ 'switchChangeBlacklist',['$event'] ] ] ] ]}}"></switch>
+                </view>
+            </view>
+            <navigator class="settings-line no-border" hoverClass="none" url="{{'/subPackages/project/pages/reportType?type=3&id='+session_id}}">
+                <text class="left-txt fz-14 black1a-color">举报对方</text>
+                <text class="right-icon iconnew new-tongyong-gengduo gray9-color fz-14 small-level-color"></text>
+            </navigator>
+        </view>
+        <view bindtap="__e" class="del-person white-color blue-bg" data-event-opts="{{[ [ 'tap',[ [ 'deleteContact',['$event'] ] ] ] ]}}">删除联系人</view>
+    </view>
+</view>

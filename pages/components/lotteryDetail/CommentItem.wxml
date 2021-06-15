@@ -1,0 +1,45 @@
+<view catchtap="__e" class="{{[ 'comment-container',[border?'border':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleContentClick',['$event'] ] ] ] ]}}" data-name="评论详情">
+    <view class="comment-top">
+        <view catchtap="__e" class="comment-avatar" data-event-opts="{{[ [ 'tap',[ [ 'handleGoUserPage',['$event'] ] ] ] ]}}" data-name="个人主页">
+            <image-loader bind:__l="__l" source="{{item.avatar_url}}" styles="{{width:'72rpx',height:'72rpx'}}" vueId="1bf6cbee-1"></image-loader>
+        </view>
+        <text class="comment-name">{{''+item.name+''}}</text>
+        <image class="comment-level" mode="widthFix" src="{{levelMap[item.salesman_grade]}}" wx:if="{{item.salesman_grade}}"></image>
+        <busi-auth-navigator bind:__l="__l" class="connect-b-rect" url="{{'navigateTo-authphone://subPackages/me/pages/chatInterface?user_id='+item.user_id+'&project_id='+project_id+'&project_name='+project_name+'&project_img='+cover}}" vueId="1bf6cbee-2" vueSlots="{{['default']}}" wx:if="{{'hangzhou'!=='nanjing'&&item.salesman_grade}}">
+            <text class="connect-btn">
+                <text class="iconnew new-zixun icon-zixun"></text>咨询顾问</text>
+        </busi-auth-navigator>
+        <view class="right-icons">
+            <view catchtap="__e" class="{{[ 'comment-like '+(liked?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleAddLike',['$0','$1'],['item.id','item.pid'] ] ] ] ]}}" data-name="点赞" data-type="button" wx:if="{{next}}">
+                <view class="like-image"></view>
+                <text class="comment-num">{{''+(likeNum||'赞')+''}}</text>
+            </view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'goDetail',[1] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="1bf6cbee-3" vueSlots="{{['default']}}" wx:if="{{next}}">
+                <view bindtap="__e" class="comment-icon" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="评论" data-type="button">
+                    <text class="iconnew new-bianzu3"></text>
+                </view>
+            </authorization>
+        </view>
+    </view>
+    <view>
+        <comment-item-content bind:__l="__l" bind:delComment="__e" commentId="{{item.id}}" content="{{item.content}}" data-event-opts="{{[ [ '^delComment',[ ['delCommentHandle'] ] ] ]}}" isNeedDetele="{{true}}" user_id="{{item.user_id}}" vueId="1bf6cbee-4"></comment-item-content>
+    </view>
+    <view class="comment-bottom" style="{{'height:'+height+';'}}">
+        <view class="comment-bottom__left">
+            <text class="comment-bottom__time">{{''+fromTime+''}}</text>
+        </view>
+        <report bind:__l="__l" hideTip="{{hideTip}}" marginTop="{{marginTop}}" reportId="{{item.id}}" vueId="1bf6cbee-5"></report>
+    </view>
+    <white-space bind:__l="__l" height="24rpx" vueId="1bf6cbee-6"></white-space>
+    <view class="reply-content" wx:if="{{item.parent&&showReply}}">
+        <comment-item bind:__l="__l" bind:delCommentQuery="__e" bind:reply="__e" border="{{index+1!==(item.parent.length<3||expand?item.parent.length:3)}}" commentId="{{item.parent.id}}" cover="{{cover}}" data-event-opts="{{[ [ '^reply',[ ['handleReply'] ] ],[ '^delCommentQuery',[ ['delCommentHandle'] ] ] ]}}" hideTip="{{hideTip}}" isNeedDetele="{{true}}" item="{{it}}" jumpToList="{{jumpToList}}" lottery_id="{{lottery_id}}" next="{{false}}" project_id="{{project_id}}" project_name="{{project_name}}" vueId="{{'1bf6cbee-7-'+index}}" wx:if="{{index<3||expand}}" wx:for="{{item.parent}}" wx:for-item="it" wx:key="index"></comment-item>
+        <view catchtap="__e" class="reply-num" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{item.parent.length>3&&!expand}}">
+            <text>{{'- 展开回复 ('+item.parent.length-3+'条)'}}</text>
+            <text class="iconnew new-zhankai"></text>
+        </view>
+        <view catchtap="__e" class="reply-num" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{item.parent.length>3&&expand}}">
+            <text>收起</text>
+            <text class="iconnew new-shouqi"></text>
+        </view>
+    </view>
+</view>

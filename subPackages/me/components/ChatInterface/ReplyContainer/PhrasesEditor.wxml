@@ -1,0 +1,16 @@
+<dialog bind:__l="__l" bind:onCancel="__e" bind:onClose="__e" bind:onSubmit="__e" bind:updateVisible="__e" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','dialogVisible','$event'],[''] ] ] ],[ '^onCancel',[ ['cancel'] ] ],[ '^onSubmit',[ ['submit'] ] ],[ '^onClose',[ ['e0'] ] ] ]}}" isSubmitHook="{{true}}" title="新增常用语" visible="{{dialogVisible}}" vueId="581aae92-1" vueSlots="{{['default']}}">
+    <view catchtouchmove="__e" class="dialog__content" data-event-opts="{{[ [ 'touchmove',[ [ 'stopTouchMove',['$event'] ] ] ] ]}}">
+        <textarea bindblur="__e" bindinput="__e" catchtouchmove="__e" class="textarea" data-event-opts="{{[ [ 'touchmove',[ [ 'stopTouchMove',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '$0','content','$event',['trim'] ],['params'] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" fixed="{{dialogVisible}}" maxlength="100" placeholder="输入您的常用语" value="{{params.content}}"></textarea>
+        <view class="count">{{''+(params.content.length||0)+'/100'}}</view>
+    </view>
+    <view class="editor">
+        <view bindtap="__e" class="editor__reply" data-event-opts="{{[ [ 'tap',[ [ 'autoReplyHandle',['$event'] ] ] ] ]}}">
+            <text class="iconnew new-queding icon" style="color:#2F8CEF;" wx:if="{{params.is_auto_reply}}"></text>
+            <text class="iconnew new-gougouxianxing icon" wx:else></text>设置为自动回复</view>
+        <view class="editor__time">
+            <image bindtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ [ 'decrement',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/04/20/7843ac18d16ddbca159d3e88f278bdca.png"></image>
+            <text class="value">{{''+params.delay_time+'秒'}}</text>
+            <image bindtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ [ 'increment',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/04/20/d88dcbfbe88d3a9d7211f704da7b65db.png"></image>
+        </view>
+    </view>
+</dialog>

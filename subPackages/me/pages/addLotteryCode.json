@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "杭州房小团-添加编码",
+    "usingComponents": {
+        "bind-code-forms": "/subPackages/me/pages/components/hangzhou/bindCode/codeDetail"
+    }
+}

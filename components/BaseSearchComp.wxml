@@ -1,0 +1,17 @@
+<view class="baseSearchComp-cont">
+    <view wx:if="{{type==='doRequest'}}">
+        <form bindsubmit="__e" class="search-bar" data-event-opts="{{[ [ 'submit',[ [ 'doRequest',['$event'] ] ] ] ]}}" reportSubmit="true">
+            <button class="search-btn fz-14 white-color" formType="submit">确定</button>
+            <view class="search-bar-form">
+                <view bindtap="__e" class="weui-icon-clear iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></view>
+                <input bindconfirm="__e" bindinput="__e" class="ui-input search-bar-input" data-event-opts="{{[ [ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doRequest',['$event'] ] ] ] ]}}" focus="{{inputPlace}}" maxlength="50" placeholder="{{articlePlaceHolder}}" placeholderClass="search-input-place" type="text" value="{{inputVal}}"></input>
+            </view>
+        </form>
+    </view>
+    <view wx:if="{{type==='navigator'}}">
+        <navigator bindtap="__e" class="search-bar-navagator" data-event-opts="{{[ [ 'tap',[ [ 'analysisSearch',['$0'],['analysisContent'] ] ] ] ]}}" hoverClass="none" url="{{navigatorUrl}}">
+            <image class="weui-icon-search gray-color" src="https://imgcdn.huanjutang.com/assets/img/20190624/5d108a915ccf3.svg"></image>
+            <text class="search-bar-input search-bar-input-text  fz-13">{{''+articlePlaceHolder+''}}</text>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view catchtap="__e" class="base-prompt" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+    <slot></slot>
+    <view catchtap="__e" class="mask" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{visible}}"></view>
+    <view class="prompt" style="{{'width:'+width+';'+'left:'+left+';'+'bottom:'+bottom+';'}}" wx:if="{{visible}}">{{''+text+''}}<view class="arrow" style="{{'left:'+arrowLeft+';'}}"></view>
+    </view>
+</view>

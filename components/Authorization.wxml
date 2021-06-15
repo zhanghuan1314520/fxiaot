@@ -1,0 +1,13 @@
+<view class="authorization">
+    <button bindgetuserinfo="__e" catchtap="__e" class="authorization__button" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['$event'] ] ] ],[ 'tap',[ [ 'clickHandle',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" wx:if="{{!userInfo.unionId||!userInfo.nickName}}">
+        <slot></slot>
+    </button>
+    <block wx:else>
+        <view catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'toAuthPhonePage',['$event'] ] ] ] ]}}" wx:if="{{!userInfo.phone&&isAuthPhone}}">
+            <slot></slot>
+        </view>
+        <view catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'bindSuccess',['$event'] ] ] ] ]}}" wx:else>
+            <slot></slot>
+        </view>
+    </block>
+</view>

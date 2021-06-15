@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "杭州房小团-添加用户信息",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

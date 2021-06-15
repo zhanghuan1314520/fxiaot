@@ -1,0 +1,85 @@
+.appeal {
+    background: #fff;
+}
+
+.appeal-main {
+    box-sizing: border-box;
+    padding: 56rpx 32rpx;
+}
+
+.appeal-main .textarea {
+    width: 100%;
+    height: 310rpx;
+    border-radius: 8rpx;
+    border: 2rpx solid #e2e2e2;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    box-sizing: border-box;
+    padding: 24rpx;
+    margin-bottom: 56rpx;
+}
+
+.appeal-desc {
+    font-size: 32rpx;
+    color: #bbb;
+    line-height: 56rpx;
+    margin-bottom: 28rpx;
+}
+
+.appeal-upload {
+    display: flex;
+}
+
+.appeal-upload>image {
+    margin-left: 8rpx;
+}
+
+.upload-box {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 8rpx;
+}
+
+.upload {
+    border: 2rpx dashed #e2e2e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload .iconnew {
+    font-size: 56rpx;
+    color: #e2e2e2;
+}
+
+.upload-desc {
+    font-size: 24rpx;
+    margin-top: 6rpx;
+    line-height: 56rpx;
+    color: #999;
+}
+
+.appeal-footer {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.footer-button {
+    width: 686rpx;
+    height: 100rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    margin: 22rpx 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f7f7f7;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    font-size: 32rpx;
+}

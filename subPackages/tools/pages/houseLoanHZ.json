@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "杭州房小团-房贷计算",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "ac-loan-picker": "/subPackages/tools/pages/component/LoanPickerHZ",
+        "bu-loan-picker": "/subPackages/tools/pages/component/LoanPickerHZ",
+        "dialog": "/components/UILayout/BusiDialog",
+        "busi-tab": "/components/UILayout/BusiTab",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon"
+    }
+}

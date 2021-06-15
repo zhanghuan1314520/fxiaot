@@ -1,0 +1,560 @@
+<share-timeline-layout bind:__l="__l" vueId="3eeb0a56-1" vueSlots="{{['default']}}">
+    <view catchtap="__e" class="bg" data-event-opts="{{[ [ 'tap',[ [ 'hideReportTip',['$event'] ] ] ] ]}}">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" vueId="{{'3eeb0a56-2'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}">
+            <block wx:if="{{pageScroll}}">{{''+baseDetailName+''}}</block>
+        </busi-nav-header>
+        <base-add-mini-app bind:__l="__l" vueId="{{'3eeb0a56-3'+','+'3eeb0a56-1'}}"></base-add-mini-app>
+        <view class="back-top" hidden="{{!backTopShow}}" style="{{'top:'+marginTop}}">
+            <horizontal-tabs activeTab="{{actionViewName}}" bind:__l="__l" bind:onTabClick="__e" bind:updateActiveTab="__e" data-event-opts="{{[ [ '^updateActiveTab',[ [ '__set_sync',['$0','actionViewName','$event'],[''] ] ] ],[ '^updateActiveTab',[ [ '__set_sync',['$0','actionViewName','$event'],[''] ] ] ],[ '^onTabClick',[ ['toViewClickEvent'] ] ] ]}}" tabs="{{horizontalTabs}}" vueId="{{'3eeb0a56-4'+','+'3eeb0a56-1'}}"></horizontal-tabs>
+        </view>
+        <view class="{{['page',followSuccessed?'indexFixed':'']}}">
+            <view class="page-preview">
+                <view id="swiper-list">
+                    <swiper-list bind:__l="__l" bind:gotoPhotosEvent="__e" class="skeletons-rect" data-event-opts="{{[ [ '^gotoPhotosEvent',[ ['gotoPhotosHandle'] ] ] ]}}" lotteryId="{{id}}" projectId="{{project_id}}" projectName="{{projectName}}" swiperList="{{swiperList}}" vueId="{{'3eeb0a56-5'+','+'3eeb0a56-1'}}" vueSlots="{{['more']}}">
+                        <view slot="more">
+                            <view class="preview-view">
+                                <image class="pv-icon" src="https://imgcdn.huanjutang.com/image/2020/07/30/eeeb5fd458afa8e1f5369378c98da933.png"></image>
+                                <text class="pv-text">{{''+(baseDetail.page_views||'--')+' 浏览'}}</text>
+                            </view>
+                            <view class="preview-pk fz-15 white-color" style="{{'background: '+(baseDetail.pk.bg&&baseDetail.pk.bg!='0,0,0,0.3'?baseDetail.pk.bg:'rgba(0,0,0,0.5)')}}">
+                                <navigator bindtap="__e" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'changePkColor',['$event'] ] ] ] ]}}" data-name="楼盘PK" data-type="button" hoverClass="none" url="{{baseDetail.pk.url}}">
+                                    <text class="iconnew new-ic_PK" style="font-size:48rpx;"></text>
+                                </navigator>
+                            </view>
+                            <view class="preview-share white-color" wx:if="{{userInfo.sales_man_id>0&&isFromSalesUnion!=='1'}}">
+                                <button bindtap="__e" class="share btn white-color" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-name="生成海报" data-toggle="open" data-type="button">
+                                    <text class="share-icon new-ic_fenxiang iconnew"></text>
+                                </button>
+                            </view>
+                            <view class="preview-share fz-14 white-color" wx:else>
+                                <button bindtap="__e" class="share btn white-color" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="分享" data-toggle="open" data-type="button" openType="share">
+                                    <text class="share-icon new-ic_fenxiang iconnew"></text>
+                                </button>
+                            </view>
+                        </view>
+                    </swiper-list>
+                </view>
+                <sign-timer bind:__l="__l" bind:updateEndTime="__e" bind:updateShow="__e" data-event-opts="{{[ [ '^updateEndTime',[ [ '__set_sync',['$0','sign_end_time','$event'],[''] ] ] ],[ '^updateEndTime',[ [ '__set_sync',['$0','sign_end_time','$event'],[''] ] ] ],[ '^updateShow',[ [ '__set_sync',['$0','showSignTimer','$event'],[''] ] ] ] ]}}" endTime="{{sign_end_time}}" show="{{showSignTimer}}" text="距离登记结束还有" vueId="{{'3eeb0a56-6'+','+'3eeb0a56-1'}}" wx:if="{{showSign}}"></sign-timer>
+                <view class="{{['base-info',lotteryNum.length>1?'show-lottery':'',!(lotteryNum.length>1)?'show-project':'',baseDetail.skeleton?'skeletons':'']}}" id="base-info">
+                    <view class="info-top" id="info-top">
+                        <view class="{{['left',baseDetail.type==1?'word-line':'']}}">
+                            <view class="title fz-18 skeletons-rect">
+                                <view class="project-name">
+                                    <text class="today-tag" wx:if="{{is_today_evidence}}">{{''+todayEvidenceText+''}}</text>
+                                    <text>{{baseDetail.name}}</text>
+                                </view>
+                            </view>
+                            <view class="custom-tags skeletons-rect">
+                                <text class="{{['tag-item2',statusStyles[tag]?statusStyles[tag]:'']}}" wx:if="{{tag}}" wx:for="{{baseDetail.status_text}}" wx:for-item="tag" wx:key="index">{{''+(tag.name?tag.name:tag)+''}}</text>
+                                <text class="tag-item" wx:if="{{index<=2}}" wx:for="{{baseDetail.tags.length}}" wx:key="index">{{''+baseDetail.tags[index]+''}}</text>
+                            </view>
+                        </view>
+                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['lotteryRemindHandle'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-7'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}" wx:if="{{baseDetail.type!=1}}">
+                            <view bindtap="__e" class="auth-remind skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{baseDetail.remind==1?'取消订阅':'订阅楼盘'}}" data-type="button">
+                                <image class="remind-status" src="https://imgcdn.huanjutang.com/image/2020/07/30/4cba71cc725ffd364213a95d87571141.png" wx:if="{{baseDetail.remind!=1}}"></image>
+                                <image class="remind-status" src="https://imgcdn.huanjutang.com/image/2020/07/30/c6baad191bf18278be206ec166436234.png" wx:if="{{baseDetail.remind==1}}"></image>
+                                <text class="remind-text" wx:if="{{isResultedFlag}}">动态通知</text>
+                                <text class="remind-text" wx:else>{{''+(baseDetail.remind==1?'取消提醒':baseDetail.attention_text)+''}}</text>
+                            </view>
+                        </authorization>
+                        <view catchtap="__e" class="address" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'gotoLocationHandle',['$event'] ] ] ] ]}}" data-name="楼盘地址" data-type="link">
+                            <view class="address-left skeletons-rect">
+                                <image class="icon-address" src="https://imgcdn.huanjutang.com/image/2020/07/24/27b767cd1b180dc7d3c5f37e9311b738.png"></image>
+                                <text class="address-text">{{''+baseDetail.area+'-'+(baseDetail.project_location||'')+''}}</text>
+                            </view>
+                            <view class="address-right skeletons-rect">
+                                <text></text>
+                                <text class="iconnew jiantou new-tongyong-gengduo"></text>
+                            </view>
+                        </view>
+                        <block wx:if="{{baseDetail.ranking}}">
+                            <view class="line"></view>
+                            <view catchtap="__e" class="pai-hang-nav" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'sendRankEvent',['$event'] ] ] ] ]}}" data-name="排行榜" data-type="link" hoverClass="none">
+                                <view class="pai-hang skeletons-rect">
+                                    <view class="pai-hang-left">
+                                        <view class="pai-bg"></view>
+                                        <view class="pai-txt">{{''+baseDetail.ranking+''}}</view>
+                                    </view>
+                                    <text class="right-icon iconnew new-tongyong-gengduo"></text>
+                                </view>
+                            </view>
+                        </block>
+                        <view bindtap="__e" class="register-entry skeletons-rect" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'showRegisterEntry',['$event'] ] ] ] ]}}" data-name="登记入口" data-type="link" wx:if="{{iShowRegisterEntry}}">
+                            <view class="left-text">
+                                <text class="frist">【</text>
+                                <text class="name">{{''+baseDetail.name+''}}</text>
+                                <text class="second">】开始报名啦！</text>
+                            </view>
+                            <view class="right-box">马上报名<text class="iconnew new-tongyong-gengduo icon"></text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="info-menu" id="info-menu">
+                        <view class="info-menu-box" wx:if="{{baseDetailLinks}}">
+                            <view bindtap="__e" class="{{['item',link.skeleton?'skeletons':'']}}" data-content="金刚区" data-event-opts="{{[ [ 'tap',[ [ 'toLinksPage',['$0'],[ [ ['baseDetailLinks','',index] ] ] ] ] ] ]}}" data-name="{{link.text}}" data-type="button" id="{{'lotteryDetailTopButton'+index}}" wx:for="{{baseDetailLinks}}" wx:for-item="link" wx:key="index">
+                                <image-loader bind:__l="__l" class="skeletons-rect" source="{{link.icon}}" styles="{{width:'100rpx',height:'100rpx'}}" vueId="{{'3eeb0a56-8-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                                <text class="text skeletons-rect">{{''+(link.text||'')+''}}</text>
+                            </view>
+                        </view>
+                        <view class="marker-box" wx:if="{{!baseDetail.skeleton&&showMarker}}">
+                            <maker bind:__l="__l" bind:markerShow="__e" cacheKey="lottery_detail_menu_tips" data-event-opts="{{[ [ '^markerShow',[ ['handlerShowMaker'] ] ] ]}}" position="bottom" roteLeft="{{400}}" text="点击这里查看更多楼盘图片/视频" timeout="{{3}}" vueId="{{'3eeb0a56-9'+','+'3eeb0a56-1'}}" width="{{470}}"></maker>
+                        </view>
+                    </view>
+                    <view class="sub-menu" wx:if="{{projectInfoTags.length>0}}">
+                        <view catchtap="__e" class="{{['sub-menu-item',tag.skeleton?'skeletons':'']}}" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'toTagsPageHandle',['$0'],[ [ ['projectInfoTags','',index,'url'] ] ] ] ] ] ]}}" data-name="{{tag.text}}" data-type="button" wx:for="{{projectInfoTags}}" wx:for-item="tag" wx:key="index">
+                            <image-loader bind:__l="__l" class="skeletons-rect" source="{{tag.icon}}" styles="{{width:'60rpx',height:'60rpx'}}" vueId="{{'3eeb0a56-10-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                            <text class="fz-13 skeletons-rect">{{''+(tag.text||'')+''}}</text>
+                        </view>
+                    </view>
+                    <swiper autoplay="{{true}}" circular="{{true}}" class="online-regitry" wx:if="{{smallBanner.length>0}}">
+                        <block wx:for="{{smallBanner}}" wx:key="index">
+                            <swiper-item wx:if="{{item.bestBanner==='aerialView'}}">
+                                <view bindtap="__e" data-content="小横幅" data-event-opts="{{[ [ 'tap',[ [ 'navigateToAerialPage',['$event'] ] ] ] ]}}" data-name="小横幅航拍" data-type="link">
+                                    <image-loader bind:__l="__l" mode="aspectFill" source="{{item.cover}}" styles="{{width:'686rpx',height:'128rpx'}}" vueId="{{'3eeb0a56-11-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                                </view>
+                            </swiper-item>
+                            <swiper-item wx:if="{{item.bestBanner==='regsiter'&&baseDetail.is_reservation==1}}">
+                                <navigator bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="线上登记" data-type="link" hoverClass="none" url="{{baseDetail.reservation_url}}">
+                                    <image-loader bind:__l="__l" mode="aspectFill" source="{{item.cover}}" styles="{{width:'686rpx',height:'128rpx'}}" vueId="{{'3eeb0a56-12-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                                </navigator>
+                            </swiper-item>
+                            <swiper-item wx:if="{{item.bestBanner==='coupon'&&projectHasCoupon}}">
+                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['e0'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-13-'+index+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}">
+                                    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="优惠券" data-type="button">
+                                        <image-loader bind:__l="__l" mode="aspectFill" source="{{item.cover}}" styles="{{width:'686rpx',height:'128rpx'}}" vueId="{{'3eeb0a56-14-'+index+','+'3eeb0a56-13-'+index}}"></image-loader>
+                                    </view>
+                                </authorization>
+                            </swiper-item>
+                            <swiper-item wx:if="{{item.bestBanner==='customize'}}">
+                                <navigator bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="自定义banner" data-type="link" hoverClass="none" url="{{item.uri}}">
+                                    <image-loader bind:__l="__l" mode="aspectFill" source="{{item.cover}}" styles="{{width:'686rpx',height:'128rpx'}}" vueId="{{'3eeb0a56-15-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                                </navigator>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['e1'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-16'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}" wx:if="{{entryType==='coupon'&&projectHasCoupon}}">
+                        <view bindtap="__e" class="online-regitry skeletons-rect coupon" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="优惠券" data-type="button">
+                            <image mode="aspectFill" src="{{entryCover}}" style="width:686rpx;height:128rpx;"></image>
+                        </view>
+                    </authorization>
+                </view>
+                <lottery-tab bind:__l="__l" bind:lotteryDataLoad="__e" bind:updateLotteryIndex="__e" bind:updateScrollIndex="__e" data-event-opts="{{[ [ '^updateLotteryIndex',[ [ '__set_sync',['$0','lotteryIndex','$event'],[''] ] ] ],[ '^updateLotteryIndex',[ [ '__set_sync',['$0','lotteryIndex','$event'],[''] ] ] ],[ '^updateScrollIndex',[ [ '__set_sync',['$0','scrollIndex','$event'],[''] ] ] ],[ '^updateScrollIndex',[ [ '__set_sync',['$0','scrollIndex','$event'],[''] ] ] ],[ '^lotteryDataLoad',[ ['lotteryDataLoad'] ] ] ]}}" lotteryIndex="{{lotteryIndex}}" lotteryNum="{{lotteryNum}}" scrollIndex="{{scrollIndex}}" vueId="{{'3eeb0a56-17'+','+'3eeb0a56-1'}}"></lottery-tab>
+                <view class="not-lottery" wx:if="{{notLotteryTotal>0&&notLotteryTotal}}">
+                    <view class="common-title">
+                        <view class="title fz-18">{{'总剩余套数：'+notLotteryTotal+'套'}}<text class="oneHand fz-12" wx:if="{{baseDetail.not_lottery_type==1}}">一手信息</text>
+                        </view>
+                    </view>
+                    <view class="text-desc skeletons-rect">
+                        <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneSuccess'] ] ] ]}}" vueId="{{'3eeb0a56-18'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}" wx:if="{{btnStatus.phone_url.url&&btnStatus.phone_url.type==4}}">
+                            <view class="phoneContact fz-11"></view>
+                        </base-call-phone>
+                        <view class="fz-13 content">{{''+lastProjectNumText+''}}</view>
+                    </view>
+                    <view class="not-lottery-cont" wx:if="{{baseDetail.not_lottery_type==0}}">
+                        <view class="not-lottery-list" wx:if="{{not_lottery_item.show_room_price==1}}" wx:for="{{baseDetail.not_lottery}}" wx:for-item="not_lottery_item" wx:key="index">
+                            <navigator hoverClass="none" url="{{not_lottery_item.url}}">
+                                <view class="top">
+                                    <view class="title">{{''+not_lottery_item.name+''}}</view>
+                                    <view class="num">{{'余'+(not_lottery_item.surplus_count||0)+'套'}}</view>
+                                </view>
+                                <view class="bottom">
+                                    <view class="left">
+                                        <view class="left-item" wx:if="{{not_lottery_item.price}}">
+                                            <text class="title">参考价格：</text>
+                                            <text class="price">{{''+not_lottery_item.price+''}}</text>
+                                        </view>
+                                        <view class="left-item">
+                                            <text class="title">{{''+willSalesName+'：'}}</text>
+                                            <text class="value">{{''+not_lottery_item.pre_order_id+''}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="right">一房一价<text class="iconnew new-tongyong-gengduo"></text>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                <view class="observe-scroll-node" id="open-quotation" wx:if="{{id>0}}">
+                    <lottery-info bind:__l="__l" bind:sendTrackEvent="__e" bind:showRegisterEntryEvent="__e" data-event-opts="{{[ [ '^sendTrackEvent',[ ['emptyFunction'] ] ],[ '^showRegisterEntryEvent',[ ['showRegisterEntry'] ] ] ]}}" hasBtns="{{!(notLotteryTotal>0&&notLotteryTotal&&baseDetail.not_lottery_type==0)}}" is_not_lottery="{{isNotLottery}}" lotteryInfo="{{lotteryInfo}}" vueId="{{'3eeb0a56-19'+','+'3eeb0a56-1'}}" vueSlots="{{['head']}}">
+                        <view slot="head">
+                            <navigator class="common-title" hoverClass="none" style="display:none;" url="{{'/subPackages/project/pages/projectLotteryDetail?project_id='+lotteryInfo.project_id+'&lottery_id='+lotteryInfo.id+'&key=0&name='+baseDetail.name}}" wx:if="{{historyLottery.length>0}}">
+                                <view class="title">摇号信息</view>
+                                <view class="more">
+                                    <text>历史摇号</text>
+                                    <text class="iconnew new-tongyong-gengduo"></text>
+                                </view>
+                            </navigator>
+                            <view class="common-title" style="display:none;" wx:else>
+                                <view class="title">摇号信息</view>
+                            </view>
+                        </view>
+                    </lottery-info>
+                </view>
+                <view id="sales-man" wx:if="{{id&&!baseDetail.skeleton}}">
+                    <view class="observe-scroll-node" id="lottery-result">
+                        <lottery-code bind:__l="__l" ids="{{id}}" myCodes="{{baseDetail.myCodes}}" projectName="{{projectName}}" vueId="{{'3eeb0a56-20'+','+'3eeb0a56-1'}}"></lottery-code>
+                    </view>
+                    <view class="observe-scroll-node" id="lottery-code-down-recommend-sales-man" wx:if="{{isFromSalesUnion!=='1'}}">
+                        <sales-man baseDetail="{{baseDetail}}" bind:__l="__l" isSalesMan="{{isSaleMan}}" projectId="{{project_id}}" recommendRule="{{baseDetail.recommend_rule}}" recommendSalesMan="{{recommendSalesMan}}" vueId="{{'3eeb0a56-21'+','+'3eeb0a56-1'}}"></sales-man>
+                    </view>
+                </view>
+                <view bindtap="__e" class="ad-img" data-event-opts="{{[ [ 'tap',[ [ 'adTapHandle',['$event'] ] ] ] ]}}" wx:if="{{showAd}}">
+                    <image mode="aspectFill" src="{{showAd.image}}"></image>
+                </view>
+                <view class="project-detail observe-scroll-node" id="project-detail">
+                    <navigator bindtap="__e" class="common-title" data-content="楼盘详细信息" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="更多楼盘详情" data-type="link" hoverClass="none" id="projectMoreInfo" url="{{'/subPackages/project/pages/projectDetail?lottery_id='+id+'&project_id='+project_id}}">
+                        <view class="title skeletons-rect">{{''+(!baseDetail.skeleton&&'楼盘详细信息'||'')+''}}</view>
+                        <view class="more skeletons-rect">
+                            <block wx:if="{{!baseDetail.skeleton}}">
+                                <text>更多楼盘详情</text>
+                                <text class="iconnew new-tongyong-gengduo"></text>
+                            </block>
+                        </view>
+                    </navigator>
+                    <view class="detail-container">
+                        <view catchtap="__e" class="qrcode" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],['baseDetail.qr_code_new'] ] ] ] ]}}" wx:if="{{baseDetail.qr_code_new}}">
+                            <image-loader bind:__l="__l" mode="aspectFill" source="{{baseDetail.qr_code_new+'?imageView2/1/w/210/'}}" styles="{{width:'140rpx',height:'140rpx'}}" vueId="{{'3eeb0a56-22'+','+'3eeb0a56-1'}}"></image-loader>
+                        </view>
+                        <view class="ul skeletons">
+                            <block wx:for="{{projectInfoRows}}" wx:key="index">
+                                <view class="{{['item',index>4?'mr-0':'']}}" wx:if="{{item.name==='楼盘地址'}}">
+                                    <view class="gray-9-color left">
+                                        <text class="left-text">{{''+item.name+''}}</text>
+                                        <text class="left-split">:</text>
+                                    </view>
+                                    <text bindtap="__e" class="right address" data-content="楼盘详细信息" data-event-opts="{{[ [ 'tap',[ [ 'gotoLocationHandle',['$event'] ] ] ] ]}}" data-name="楼盘地址" data-type="link" selectable="selectable">
+                                        <text class="iconnew new-tongyong-dingwei1 fz-14"></text>{{item.value+''}}</text>
+                                </view>
+                                <block wx:else>
+                                    <view class="{{['item',index>4?'mr-0':'']}}" wx:if="{{item.name==='参考总价'||item.name==='参考单价'||item.name==='参考均价'}}">
+                                        <view class="gray-9-color left">
+                                            <text class="left-text">{{''+item.name+''}}</text>
+                                            <text class="left-split">:</text>
+                                        </view>
+                                        <view class="right red-color">
+                                            <view wx:for="{{item.value}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">
+                                                <text selectable="selectable">{{''+val+''}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="{{['item',item.skeleton?'skeletons-rect':'',index>4?'mr-0':'']}}" wx:else>
+                                        <view class="gray-9-color left">
+                                            <text class="left-text">{{''+(item.name||'')+''}}</text>
+                                            <text class="left-split" hidden="{{!!item.skeleton}}">:</text>
+                                        </view>
+                                        <view class="right">
+                                            <view wx:for="{{item.value}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">
+                                                <text selectable="selectable">{{''+val+''}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </block>
+                            </block>
+                            <view class="item mr-0" wx:if="{{subwayList.length>0}}">
+                                <view class="gray-9-color left">
+                                    <text class="left-text">地铁交通</text>
+                                    <text class="left-split">:</text>
+                                </view>
+                                <view class="right">
+                                    <view bindtap="__e" class="metro" data-event-opts="{{[ [ 'tap',[ [ 'gotoSubwayHandle',[index] ] ] ] ]}}" wx:if="{{index<3}}" wx:for="{{subwayList}}" wx:for-item="metro" wx:key="index">
+                                        <image class="metro-line" mode="aspectFill" src="{{metro.status==1?'https://imgcdn.huanjutang.com/assets/img/20190702/5d1b1afb70ffd.png':'https://imgcdn.huanjutang.com/assets/img/20190702/5d1b1b3440d4a.png'}}"></image>
+                                        <text selectable="selectable">{{''+metro.type+'号线'+metro.station+'站'+(metro.status==2?'(在建)':'')+'直线距离'+metro.distance+'米'}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="__e" class="sunshine-entry" data-content="楼盘详细信息" data-event-opts="{{[ [ 'tap',[ [ 'handleViewSunshine',['$event'] ] ] ] ]}}" data-name="日照模拟" data-type="link" wx:if="{{showSunshine}}">
+                        <image-loader bind:__l="__l" mode="widthFix" source="https://imgcdn.huanjutang.com/assets/img/2021225142068081.png" styles="{{$root.a0}}" vueId="{{'3eeb0a56-23'+','+'3eeb0a56-1'}}"></image-loader>
+                    </view>
+                </view>
+                <floor-plan baseDetail="{{baseDetail}}" bind:__l="__l" bind:tabHousePlan="__e" data-event-opts="{{[ [ '^tabHousePlan',[ ['tabHousePlan'] ] ] ]}}" houseList="{{houseList}}" id="house-type" lottery_id="{{id}}" project_id="{{project_id}}" vueId="{{'3eeb0a56-24'+','+'3eeb0a56-1'}}" wx:if="{{project_id}}"></floor-plan>
+                <layout-img baseDetail="{{baseDetail}}" bind:__l="__l" id="general-layout" lottery_id="{{id}}" project_id="{{project_id}}" showGeneralLayout="{{showGeneralLayout}}" vueId="{{'3eeb0a56-25'+','+'3eeb0a56-1'}}"></layout-img>
+                <view class="observe-scroll-node" id="recommend-sales-man" wx:if="{{!id&&isFromSalesUnion!=='1'}}">
+                    <sales-man baseDetail="{{baseDetail}}" bind:__l="__l" bind:gotoSalesmanIM="__e" data-event-opts="{{[ [ '^gotoSalesmanIM',[ ['gotoSalesmanIM'] ] ] ]}}" isSalesMan="{{isSaleMan}}" projectId="{{project_id}}" recommendRule="{{baseDetail.recommend_rule}}" recommendSalesMan="{{recommendSalesMan}}" vueId="{{'3eeb0a56-26'+','+'3eeb0a56-1'}}"></sales-man>
+                </view>
+                <view class="observe-scroll-node start_sell_detail" id="start-sell-detail" wx:if="{{baseDetail.start_sell_array.length>0}}">
+                    <view class="common-title">
+                        <view class="title">本次预开盘信息</view>
+                    </view>
+                    <view class="detail_container">
+                        <view class="list fz-14" wx:for="{{baseDetail.start_sell_array}}" wx:key="index">
+                            <text class="left gray-9-color">{{''+item.key+''}}</text>
+                            <text class="right black-3a-color">{{''+item.value+''}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="dynamic-info observe-scroll-node" id="dynamic-info" wx:if="{{dynamics.list.length>0}}">
+                    <view bindtap="__e" class="common-title" data-content="楼盘动态" data-event-opts="{{[ [ 'tap',[ [ 'gotoDynamicsHandle',['$event'] ] ] ] ]}}" data-name="更多动态" data-type="link" id="dynamicsMore">
+                        <view class="title">{{'楼盘动态 ('+dynamics.count+')'}}</view>
+                        <view class="more">
+                            <text>更多动态</text>
+                            <text class="iconnew new-tongyong-gengduo"></text>
+                        </view>
+                    </view>
+                    <view class="dynamic-container statement-all">
+                        <statement-list bind:__l="__l" bind:jumpToStatementList="__e" data-event-opts="{{[ [ '^jumpToStatementList',[ ['jumpToStatementList'] ] ] ]}}" margin="0" statementList="{{dynamicsList}}" vueId="{{'3eeb0a56-27'+','+'3eeb0a56-1'}}" wx:if="{{isChengduCity}}"></statement-list>
+                        <statement-list-not-c-d bind:__l="__l" bind:jumpToStatementList="__e" data-event-opts="{{[ [ '^jumpToStatementList',[ ['jumpToStatementList'] ] ] ]}}" margin="0" statementList="{{dynamicsList}}" vueId="{{'3eeb0a56-28'+','+'3eeb0a56-1'}}" wx:else></statement-list-not-c-d>
+                    </view>
+                    <view bindtap="__e" class="more-news" data-content="楼盘动态" data-event-opts="{{[ [ 'tap',[ [ 'gotoDynamicsHandle',['$event'] ] ] ] ]}}" data-name="更多动态" data-type="button">查看更多楼盘动态</view>
+                </view>
+                <view class="history-lottery observe-scroll-node" id="history-lottery" wx:if="{{historyLottery.length>0}}">
+                    <navigator bindtap="__e" class="common-title" data-content="历史摇号" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="更多历史摇号" data-type="link" hoverClass="none" url="{{'/subPackages/project/pages/projectLotteryDetail?project_id='+project_id+'&lottery_id='+id+'&key=0&name='+baseDetail.name}}">
+                        <view class="title">{{'历史摇号 ('+historyLottery.length+')'}}</view>
+                        <view class="more">
+                            <text>查看更多</text>
+                            <text class="iconnew new-tongyong-gengduo"></text>
+                        </view>
+                    </navigator>
+                    <view class="history_container">
+                        <block wx:if="{{historyLotteryShow}}">
+                            <navigator bindtap="__e" class="item" data-content="历史摇号" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.name}}" data-type="link" hoverClass="none" id="{{'historyLottery'+index}}" url="{{'/subPackages/project/pages/projectLotteryDetail?project_id='+project_id+'&lottery_id='+id+'&key='+index+'&name='+baseDetail.name}}" wx:for="{{historyLottery}}" wx:key="index">
+                                <view class="title fz-15">
+                                    <view class="history-name">{{''+item.name+''}}</view>
+                                    <image class="icon-arrow-right" src="https://imgcdn.huanjutang.com/assets/img/20199231122178081.png"></image>
+                                    <view class="float-right font-bold">
+                                        <view wx:for="{{item.avg_price}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{val}}</view>
+                                    </view>
+                                </view>
+                                <view class="center gray-9-color fz-13" wx:if="{{item.sale_area}}">{{'摇号范围：'+item.sale_area+''}}</view>
+                                <view class="center">
+                                    <text class="gray-9-color fz-13 w-400">{{'摇号时间：'+item.time+''}}</text>
+                                    <text class="gray-9-color fz-13 cut">{{'建面：'+item.huxing+''}}</text>
+                                </view>
+                                <view class="bottom fz-12">
+                                    <view class="left add-circle">
+                                        <image src="https://imgcdn.huanjutang.com/assets/img/20199231122488081.png"></image>
+                                        <text class="ml-15">总套数:</text>
+                                        <text>{{item.total_room_num}}</text>
+                                    </view>
+                                    <view class="right">
+                                        <text>摇中率:</text>
+                                        <text class="rate" wx:for="{{item.rate}}" wx:for-index="index2" wx:for-item="rate" wx:key="index2">{{''+rate.name+rate.value+''}}</text>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </block>
+                        <navigator bindtap="__e" class="item" data-content="历史摇号" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{historyLottery[0].name}}" data-type="link" hoverClass="none" url="{{'/subPackages/project/pages/projectLotteryDetail?project_id='+project_id+'&lottery_id='+id+'&key=0&name='+baseDetail.name}}" wx:else>
+                            <view class="title fz-15">
+                                <view class="history-name">{{''+historyLottery[0].name+''}}</view>
+                                <image class="icon-arrow-right" src="https://imgcdn.huanjutang.com/assets/img/20199231122178081.png"></image>
+                                <view class="float-right font-bold">
+                                    <view wx:for="{{historyLottery[0].avg_price}}" wx:for-item="val" wx:key="index">{{val}}</view>
+                                </view>
+                            </view>
+                            <view class="center gray-9-color fz-13" wx:if="{{historyLottery[0].sale_area}}">{{'摇号范围：'+historyLottery[0].sale_area+''}}</view>
+                            <view class="center">
+                                <text class="gray-9-color fz-13 w-400">{{'摇号时间：'+historyLottery[0].time+''}}</text>
+                                <text class="gray-9-color fz-13 cut">{{'建面：'+historyLottery[0].huxing+''}}</text>
+                            </view>
+                            <view class="bottom fz-12">
+                                <view class="left add-circle">
+                                    <image src="https://imgcdn.huanjutang.com/assets/img/20199231122488081.png"></image>
+                                    <text class="ml-15">总套数:</text>
+                                    <text>{{historyLottery[0].total_room_num}}</text>
+                                </view>
+                                <view class="right">
+                                    <text>摇中率:</text>
+                                    <text class="rate" wx:for="{{historyLottery[0].rate}}" wx:for-item="rate" wx:key="index">{{''+rate.name+rate.value+''}}</text>
+                                </view>
+                            </view>
+                        </navigator>
+                        <view bindtap="__e" class="more color-blue" data-event-opts="{{[ [ 'tap',[ [ 'historyYaoToggleHandle',['$event'] ] ] ] ]}}" wx:if="{{historyLottery.length>1}}">
+                            <text class="fz-13">{{''+(historyLotteryShow?'收起':'展开')+'更多历史摇号'}}</text>
+                            <text class="{{['iconnew '+(historyLotteryShow?'new-shouqijiantou':'new-tongyong-gengduolansexiangxia')+' fz-8']}}"></text>
+                        </view>
+                    </view>
+                </view>
+                <view class="comment observe-scroll-node" id="comment">
+                    <navigator bindtap="__e" class="common-title" data-content="用户评论" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="更多评论" data-type="link" hoverClass="none" url="{{'/subPackages/comment/pages/project_comment?project_id='+project_id+'&project_name='+baseDetail.name+'&lottery_id='+id+'&project_img='+baseDetail.cover}}">
+                        <view class="title">{{'用户评论 ('+comments.count+')'}}</view>
+                        <view class="more">
+                            <text class="fz-13">更多评论</text>
+                            <text class="iconnew fz-12 new-tongyong-gengduo"></text>
+                        </view>
+                    </navigator>
+                    <view class="comment-container">
+                        <view class="list">
+                            <navigator url hoverClass="none">
+                                <official-drainage bind:__l="__l" bind:updateRecommendComment="__e" data-event-opts="{{[ [ '^updateRecommendComment',[ [ '__set_sync',['$0','recommendComment','$event'],[''] ] ] ],[ '^updateRecommendComment',[ [ '__set_sync',['$0','recommendComment','$event'],[''] ] ] ] ]}}" dataContent="用户评论" recommendComment="{{recommendComment}}" vueId="{{'3eeb0a56-29'+','+'3eeb0a56-1'}}"></official-drainage>
+                            </navigator>
+                            <comment-item bind:__l="__l" bind:like="__e" border="{{index+1!==comments.list.length}}" cover="{{baseDetail.cover}}" data-event-opts="{{[ [ '^like',[ ['commentLike'] ] ] ]}}" hideTip="{{reportHideTip}}" item="{{item}}" jumpToList="{{false}}" lottery_id="{{id}}" project_id="{{project_id}}" project_name="{{baseDetail.name}}" showReply="{{true}}" vueId="{{'3eeb0a56-30-'+index+','+'3eeb0a56-1'}}" wx:for="{{comments.list}}" wx:key="index"></comment-item>
+                        </view>
+                        <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-comment-input" data-event-opts="{{[ [ '^onSuccess',[ ['handleComment'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-31'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}" wx:if="{{isShowCommentBtn}}">
+                            <view bindtap="__e" class="comment-input" data-content="用户评论" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="我要评论" data-type="button">
+                                <text class="iconnew new-tianjiapinglun fz-18"></text>
+                                <text class="input fz-16 font-bold">我要评论</text>
+                            </view>
+                        </authorization>
+                    </view>
+                </view>
+                <swiper autoplay="true" class="join-group observe-scroll-node" duration="300" id="join-group" interval="4000" wx:if="{{baseDetail.material.length>0}}">
+                    <swiper-item bindtap="__e" class="join-group__item" data-content="加群轮播" data-event-opts="{{[ [ 'tap',[ [ 'discussionGroups',['$0','$1','$2'],[ [ ['baseDetail.material','',index,'url'] ],[ ['baseDetail.material','',index,'type'] ],[ ['baseDetail.material','',index,'app_id'] ] ] ] ] ] ]}}" data-name="加群" data-type="link" wx:for="{{baseDetail.material}}" wx:key="index">
+                        <image-loader bind:__l="__l" mode="aspectFill" source="{{item.img}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'3eeb0a56-32-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                    </swiper-item>
+                </swiper>
+                <view class="project-article observe-scroll-node" id="project-article" wx:if="{{buildingArticles.list.length>0||articles.list.length>0}}">
+                    <view class="article-tabbar">
+                        <view class="menu">
+                            <view bindtap="__e" class="{{[ 'item '+(articlesIndex==='project'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeArticlesIndex',['project'] ] ] ] ]}}" id="projectArticle" wx:if="{{articles.list.length>0}}">楼盘文章</view>
+                            <view bindtap="__e" class="{{[ 'item '+(articlesIndex==='building'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeArticlesIndex',['building'] ] ] ] ]}}" id="buildingNews" wx:if="{{buildingArticles.list.length>0}}">房企资讯</view>
+                        </view>
+                        <navigator bindtap="__e" class="more" data-content="楼盘文章" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="更多文章" data-type="link" hoverClass="none" id="projectArticleMore" url="{{'/subPackages/project/pages/projectArticles?project_id='+project_id+'&project_name='+baseDetail.name}}">
+                            <text>查看更多</text>
+                            <text class="iconnew new-tongyong-gengduo fz-10"></text>
+                        </navigator>
+                    </view>
+                    <view class="article-container">
+                        <navigator bindtap="__e" class="list" data-content="楼盘文章" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="文章详情" data-type="link" hoverClass="none" url="{{article[$orig].target_url}}" wx:for="{{$root.l0}}" wx:for-item="article" wx:key="index">
+                            <image-loader bind:__l="__l" class="right" mode="aspectFill" source="{{article[$orig].img}}" styles="{{article.a1}}" vueId="{{'3eeb0a56-33-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                            <view class="left">
+                                <view class="title fz-15  ">{{''+article[$orig].title+''}}</view>
+                                <view class="desc gray-9-color">
+                                    <image-loader bind:__l="__l" class="avatar" mode="aspectFill" source="{{article[$orig].avatar_url||defaultAvatar}}" styles="{{article.a2}}" vueId="{{'3eeb0a56-34-'+index+','+'3eeb0a56-1'}}"></image-loader>
+                                    <view class="fz-13 small-level-color">{{''+(article[$orig].user_name||'')+''}}</view>
+                                    <view class="fz-13 time">{{''+(article[$orig].time||'')+''}}</view>
+                                </view>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+                <view class="youlike observe-scroll-node" id="youlike" wx:if="{{youLikeList.length>0}}">
+                    <view class="common-title">
+                        <view class="title">猜你喜欢</view>
+                    </view>
+                    <view class="youlike-container">
+                        <project-item adSource="lotteryDetail" adType="recommend" bind:__l="__l" bind:updateItems="__e" content="detail_bottom_zf" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','youLikeList','$event'],[''] ] ] ] ]}}" items="{{youLikeList}}" sourcePosition="猜你喜欢" titleData="底部找房按钮" vueId="{{'3eeb0a56-35'+','+'3eeb0a56-1'}}"></project-item>
+                    </view>
+                </view>
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['toReport'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-36'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}">
+                    <view bindtap="__e" class="errorCorrection" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="信息纠错" data-type="link">
+                        <text class="iconnew icon new-tishi fz-14"></text>
+                        <text class="fz-12 text">房源有问题？</text>
+                        <text class="fz-12 link">点我信息纠错</text>
+                    </view>
+                </authorization>
+                <view wx:if="{{activityList.bottom_activity&&activityList.bottom_activity.img.length>0}}">
+                    <navigator class="beautiful_buiding" hoverClass="none" url="{{activityList.bottom_activity.url}}">
+                        <image src="{{activityList.bottom_activity.img[0]}}" style="width:234rpx;height:160rpx;"></image>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <register-entry bind:__l="__l" bind:updateIShowRegisterBgCom="__e" data-event-opts="{{[ [ '^updateIShowRegisterBgCom',[ [ '__set_sync',['$0','iShowRegisterBg','$event'],[''] ] ] ],[ '^updateIShowRegisterBgCom',[ [ '__set_sync',['$0','iShowRegisterBg','$event'],[''] ] ] ] ]}}" iShowRegisterBgCom="{{iShowRegisterBg}}" projectId="{{project_id}}" projectName="{{projectName}}" registerBgSrc="{{registerBgSrc}}" signType="{{signType}}" vueId="{{'3eeb0a56-37'+','+'3eeb0a56-1'}}"></register-entry>
+        <block wx:if="{{!(btnStatus.result_url&&btnStatus.result_url.type==2)&&btnStatus.attention!=1}}">
+            <view bindtap="__e" class="lottery-result-tip2" data-event-opts="{{[ [ 'tap',[ [ 'closeFollowTips',['$event'] ] ] ] ]}}" style="{{'bottom:'+layoutHeight+'rpx'}}" wx:if="{{!baseDetail.skeleton&&!followTips}}">
+                <text class="iconnew new-quxiao white-color lottery-result-close-btn"></text>
+                <view class="white-color text">关注楼盘，及时掌握动态，开盘，摇号等信息</view>
+            </view>
+        </block>
+        <busi-footer bind:__l="__l" className="footer" vueId="{{'3eeb0a56-38'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}" wx:if="{{!baseDetail.skeleton&&!btnStatusLoading}}">
+            <block wx:if="{{isFromSalesUnion==='1'}}">
+                <view class="sales-union__info">
+                    <button catchtap="__e" class="sales-union__info--avatar" data-event-opts="{{[ [ 'tap',[ [ 'goUserPage',['$event'] ] ] ] ]}}" data-name="楼盘详情-红盘会置业顾问" data-type="button">
+                        <image class="sales-union__avatar--img" src="{{unionSalesmanInfo.avatar_url}}"></image>
+                    </button>
+                    <view class="sales-union__info--content">
+                        <view class="sales-union__info__salesname">{{''+(unionSalesmanInfo.name||'')+''}}</view>
+                        <view class="sales-union__info__name">{{''+(baseDetail.name||'')+''}}</view>
+                    </view>
+                </view>
+                <view class="sales-union__btns">
+                    <authorization bind:__l="__l" bind:onSuccess="__e" class="sales-union__btns--item" data-event-opts="{{[ [ '^onSuccess',[ [ 'goChatPage',['$0'],['unionSalesmanInfo.session_id'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-39'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}">
+                        <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyHandle'] ] ] ]}}" dataContent="楼盘详情-底部按钮-聊天" dataName="聊天" dataType="button" type="success" vueId="{{'3eeb0a56-40'+','+'3eeb0a56-39'}}" vueSlots="{{['default']}}">聊天</busi-button>
+                    </authorization>
+                    <call-salesman bind:__l="__l" class="sales-union__btns--item" projectId="{{project_id}}" salesmanId="{{union_sales_man_id}}" vueId="{{'3eeb0a56-41'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}">电话</call-salesman>
+                </view>
+            </block>
+            <block wx:else>
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['lotteryRemindHandle'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-42'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}">
+                    <view class="{{[ 'footer__follow',[btnStatus.attention==1?'footer__follow-active':''] ]}}" data-content="底部按钮" data-name="关注楼盘" data-type="button">
+                        <text class="{{[ 'iconnew','footer__follow--icon',[btnStatus.attention==1?'new-yiguanzhu':'',btnStatus.attention!=1?'new-guanzhuxianxing':''] ]}}"></text>
+                        <text class="footer__follow--text">{{''+(btnStatus.attention==1?'已关注':'关注')+''}}</text>
+                    </view>
+                </authorization>
+                <view class="footer__btns">
+                    <view class="footer__btns--item" wx:if="{{btnStatus.salesMan_url&&btnStatus.salesMan_url.showQr}}">
+                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['e2'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-43'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}">
+                            <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['stopMove'] ] ] ]}}" dataContent="底部按钮" dataName="联系置业顾问" dataType="button" type="success" vueId="{{'3eeb0a56-44'+','+'3eeb0a56-43'}}" vueSlots="{{['default']}}">
+                                <slot wx:if="{{$slots.default}}"></slot>
+                                <block wx:else>{{''+contactSalemanBtnText+''}}</block>
+                            </busi-button>
+                        </authorization>
+                    </view>
+                    <contact-salesman bind:__l="__l" class="footer__btns--item vue-ref" data-ref="contactSalesman" projectId="{{project_id}}" salesmanId="{{sales_man_id}}" vueId="{{'3eeb0a56-45'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}" wx:else>{{''+contactSalemanBtnText+''}}</contact-salesman>
+                    <view class="footer__btns--item" wx:if="{{btnStatus.phone_url.showQr}}">
+                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['e3'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'3eeb0a56-46'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}">
+                            <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['stopMove'] ] ] ]}}" dataContent="底部按钮" dataName="免费电话" dataType="button" type="primary" vueId="{{'3eeb0a56-47'+','+'3eeb0a56-46'}}" vueSlots="{{['default']}}">
+                                <slot wx:if="{{$slots.default}}"></slot>
+                                <block wx:else>{{'免费电话'+(btnStatus.result_url&&btnStatus.result_url.type==2||btnStatus.result_url&&btnStatus.result_url.type==3?'':'咨询')+''}}</block>
+                            </busi-button>
+                        </authorization>
+                    </view>
+                    <call-salesman bind:__l="__l" class="footer__btns--item" projectId="{{project_id}}" salesmanId="{{sales_man_id}}" vueId="{{'3eeb0a56-48'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}" wx:if="{{!btnStatus.phone_url.showQr&&btnStatus.phone_url.url&&btnStatus.phone_url.type==4}}">{{'免费电话'+(btnStatus.result_url&&btnStatus.result_url.type==2||btnStatus.result_url&&btnStatus.result_url.type==3?'':'咨询')+''}}</call-salesman>
+                    <busi-auth-navigator bind:__l="__l" class="footer__btns--item" url="{{'navigateTo-authphone:/'+btnStatus.result_url.url}}" vueId="{{'3eeb0a56-49'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}" wx:if="{{btnStatus.result_url&&btnStatus.result_url.type==2}}">
+                        <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyFunction'] ] ] ]}}" dataContent="底部按钮" dataName="摇号结果" dataType="button" type="warning" vueId="{{'3eeb0a56-50'+','+'3eeb0a56-49'}}" vueSlots="{{['default']}}">摇号结果</busi-button>
+                        <view catchtap="__e" class="lottery-result-tip" data-event-opts="{{[ [ 'tap',[ [ 'closeLotteryResult',['$event'] ] ] ] ]}}" wx:if="{{closeLottery&&isNotLottery!=0&&autoCloseLotteryResultTip}}">
+                            <maker bind:__l="__l" position="bottom" roteLeft="{{448}}" text="想要查询摇号结果?点击这里立即查询" vueId="{{'3eeb0a56-51'+','+'3eeb0a56-49'}}" width="{{512}}"></maker>
+                        </view>
+                    </busi-auth-navigator>
+                    <busi-auth-navigator bind:__l="__l" class="footer__btns--item" url="{{'navigateTo-authphone:/'+btnStatus.result_url.url}}" vueId="{{'3eeb0a56-52'+','+'3eeb0a56-38'}}" vueSlots="{{['default']}}" wx:if="{{btnStatus.result_url&&btnStatus.result_url.type==3}}">
+                        <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyFunction'] ] ] ]}}" dataContent="底部按钮" dataName="{{btnStatus.result_url.name}}" dataType="button" type="warning" vueId="{{'3eeb0a56-53'+','+'3eeb0a56-52'}}" vueSlots="{{['default']}}">{{''+btnStatus.result_url.name+''}}</busi-button>
+                    </busi-auth-navigator>
+                </view>
+            </block>
+        </busi-footer>
+        <busi-share-icon bind:__l="__l" bottom="{{bottomHeight}}" class="vue-ref" custom="{{true}}" data-ref="busiShareIcon" vueId="{{'3eeb0a56-54'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}">
+            <button bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-name="生成海报" wx:if="{{salesManId>0&&isFromSalesUnion!=='1'}}"></button>
+            <button bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="分享" data-type="button" openType="share" wx:else></button>
+        </busi-share-icon>
+        <view class="flower-model" wx:if="{{serviceQrCode&&followModelShow&&btnStatus.attention==1}}">
+            <view class="image-box">
+                <image mode="aspectFill" src="{{serviceQrCode}}"></image>
+            </view>
+            <view class="fz-14 black1a-color cont-txt">
+                <text class="txt" style="padding-bottom:25rpx;">扫码关注服务号</text>
+                <text class="txt">更快更及时接收消息通知</text>
+            </view>
+            <view class="model-btn">
+                <view bindtap="__e" class="savecode blue-color fz-14" data-event-opts="{{[ [ 'tap',[ [ 'saveQrcodeHandle',['$event'] ] ] ] ]}}">保存</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="flower-model-bg" data-event-opts="{{[ [ 'tap',[ [ 'e4',['$event'] ] ] ] ]}}" wx:if="{{serviceQrCode&&followModelShow&&btnStatus.attention==1}}"></view>
+        <guide-img bind:__l="__l" itemsData="{{guideImageData}}" vueId="{{'3eeb0a56-55'+','+'3eeb0a56-1'}}"></guide-img>
+        <view class="fixed-comment" style="{{'bottom:'+fixedCommentBottom+'px'}}" wx:if="{{showCommentInput}}">
+            <view bindtap="__e" catchtouchmove="__e" catchtouchstart="__e" class="bg" data-event-opts="{{[ [ 'touchstart',[ [ '',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'toggleCommentInput',['hide'] ] ] ] ]}}" wx:if="{{commentInput.focus}}"></view>
+            <view class="comment-container">
+                <textarea adjustPosition="{{false}}" bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" class="{{[ 'fz-14 btn '+(!commentInput.focus?'active':'') ]}}" data-event-opts="{{[ [ 'blur',[ [ 'loseFocus',['$event'] ] ] ],[ 'input',[ [ 'inputCommentVal',['$event'] ] ] ],[ 'confirm',[ [ 'submitComment',['$event'] ] ] ],[ 'focus',[ [ 'inputCommentFocus',['$event'] ] ] ] ]}}" focus="{{commentInput.focus}}" placeholder="{{commentInput.place}}" showConfirmBar="{{false}}" style="{{'padding: '+textAreaStyle||'24'+'rpx'}}" type="text" value="{{commentInput.val}}"></textarea>
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['submitComment'] ] ] ]}}" vueId="{{'3eeb0a56-56'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}">
+                    <view class="comment-name fz-14">发送</view>
+                </authorization>
+            </view>
+        </view>
+        <view class="lottery-alert" hidden="{{!alertShowFlag}}">
+            <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190620/5d0b4dabb803c.png" wx:if="{{alertShow==='1'}}"></image>
+            <text class="weui-icon-clear iconnew new-shanchu1" wx:if="{{alertShow==='2'}}"></text>
+            <text>{{toastMsg}}</text>
+        </view>
+        <view class="sales_status_dialog" wx:if="{{baseDetail.sale_status==30}}">
+            <view catchtouchmove="__e" class="dialog-hide-bg" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"></view>
+            <view catchtouchmove="__e" class="dialog-main-content" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}">
+                <image class="dialog-icon" src="https://imgcdn.huanjutang.com/assets/img/202012151542498081.png"></image>
+                <view class="dialog-text">该楼盘已售罄，您还可以</view>
+                <navigator class="dialog-btn1" url="/subPackages/project/pages/popularProject?title=热门楼盘">查看其他优质楼盘</navigator>
+                <view bindtap="__e" class="dialog-btn2" data-event-opts="{{[ [ 'tap',[ [ 'gonOnViewPage',['$event'] ] ] ] ]}}">继续浏览</view>
+            </view>
+        </view>
+        <follow-success bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','followSuccessed','$event'],[''] ] ] ] ]}}" followData="{{followData}}" show="{{followSuccessed}}" vueId="{{'3eeb0a56-57'+','+'3eeb0a56-1'}}"></follow-success>
+        <attention-service-number bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','attentionServiceFlag','$event'],[''] ] ] ] ]}}" isResulted="{{isResultedFlag}}" show="{{attentionServiceFlag}}" vueId="{{'3eeb0a56-58'+','+'3eeb0a56-1'}}"></attention-service-number>
+        <view class="semiBold none"></view>
+        <coupon-dialog bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showCouponDialog','$event'],[''] ] ] ] ]}}" projectId="{{project_id}}" show="{{showCouponDialog}}" vueId="{{'3eeb0a56-59'+','+'3eeb0a56-1'}}"></coupon-dialog>
+        <action-sheet bind:__l="__l" bind:optionClick="__e" class="vue-ref" data-event-opts="{{[ [ '^optionClick',[ ['chooseImageType'] ] ] ]}}" data-ref="actionSheet" options="{{optionList}}" showCancel="{{true}}" vueId="{{'3eeb0a56-60'+','+'3eeb0a56-1'}}"></action-sheet>
+        <busi-red-paper bind:__l="__l" bind:clickGet="__e" bind:clickGetOut="__e" bind:updateStatus="__e" data-event-opts="{{[ [ '^updateStatus',[ [ '__set_sync',['$0','finish','$event'],['redpackInfo'] ] ] ],[ '^clickGet',[ ['clickGet'] ] ],[ '^clickGetOut',[ ['clickGetOut'] ] ] ]}}" status="{{redpackInfo.finish}}" vueId="{{'3eeb0a56-61'+','+'3eeb0a56-1'}}" wx:if="{{showRedpack}}"></busi-red-paper>
+        <busi-mask-focus bind:__l="__l" bind:onFocusClick="__e" bind:onMaskClick="__e" data-event-opts="{{[ [ '^onMaskClick',[ ['onMaskClick'] ] ],[ '^onFocusClick',[ ['onFocusClick'] ] ] ]}}" vueId="{{'3eeb0a56-62'+','+'3eeb0a56-1'}}" vueSlots="{{['default']}}" width="{{computedFocusWidth}}" wx:if="{{redEnvelopesAttention}}">
+            <image class="focus-img _img" src="https://imgcdn.huanjutang.com/assets/img/20213291413448081.png"></image>
+        </busi-mask-focus>
+        <red-envelopes-state bind:__l="__l" bind:contactHandle="__e" bind:updateRedpackDetail="__e" bind:updateType="__e" data-event-opts="{{[ [ '^updateType',[ [ '__set_sync',['$0','redpackType','$event'],[''] ] ] ],[ '^updateRedpackDetail',[ [ '__set_sync',['$0','redpackDetail','$event'],[''] ] ] ],[ '^updateRedpackDetail',[ [ '__set_sync',['$0','redpackDetail','$event'],[''] ] ] ],[ '^contactHandle',[ ['contactHandle'] ] ] ]}}" navigateBack="{{navigateBack}}" redpackDetail="{{redpackDetail}}" type="{{redpackType}}" vueId="{{'3eeb0a56-63'+','+'3eeb0a56-1'}}"></red-envelopes-state>
+        <jump-group-code bind:__l="__l" bind:updateIsShowGroupTips="__e" data-event-opts="{{[ [ '^updateIsShowGroupTips',[ [ '__set_sync',['$0','isShowGroupTips','$event'],[''] ] ] ],[ '^updateIsShowGroupTips',[ [ '__set_sync',['$0','isShowGroupTips','$event'],[''] ] ] ] ]}}" isShowGroupTips="{{isShowGroupTips}}" url="{{btnStatus.phone_url.materials.url||''}}" vueId="{{'3eeb0a56-64'+','+'3eeb0a56-1'}}"></jump-group-code>
+    </view>
+</share-timeline-layout>

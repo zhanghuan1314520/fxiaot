@@ -1,0 +1,43 @@
+<view>
+    <view class="photos-tabs" wx:if="{{tabList.length>0}}">
+        <tab activeId="{{activeTabId}}" bind:__l="__l" bind:change="__e" data-event-opts="{{[ [ '^change',[ ['handleTabChange'] ] ] ]}}" fixed="{{false}}" list="{{tabList}}" smallTitle="{{true}}" vueId="5ca4bbd4-1"></tab>
+    </view>
+    <scroll-view class="scroll-content" scrollIntoView="{{scrollId}}" scrollX="true" style="{{tabList.length>0?'':'top: 0'}}" wx:if="{{listData.length>1}}">
+        <text bindtap="__e" class="{{[type==item.id?'scroll-item active':'scroll-item']}}" data-content="{{activeTabId===0?'图片':'视频'}}" data-event-opts="{{[ [ 'tap',[ [ 'switchTabBar',[index] ] ] ] ]}}" data-name="{{item.text}}" id="{{'tabBar_'+item.field_name}}" wx:for="{{listData}}" wx:key="index">{{''+item.text+''}}</text>
+    </scroll-view>
+    <view class="placeholder-view" style="{{'height:'+topNavHeight+'rpx'}}"></view>
+    <view class="container">
+        <swiper bindchange="__e" class="topic-swiper" current="{{activeTabId}}" data-event-opts="{{[ [ 'change',[ [ 'handleSwiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+swiperHeight+';'}}">
+            <swiper-item itemId="0">
+                <view class="pictures swiper-0">
+                    <view class="pictures-box" id="{{item[$orig].field_name}}" wx:for="{{$root.l1}}" wx:key="index">
+                        <view class="title">{{''+item[$orig].text+' ('+item[$orig].count+')'}}</view>
+                        <view class="images">
+                            <image-loader bind:__l="__l" bind:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'preview',[index,cIndex] ] ] ] ]}}" data-name="查看原图" lazyLoad="{{true}}" mode="aspectFill" source="{{val[$orig].image}}" styles="{{val.f0}}" vueId="{{'5ca4bbd4-2-'+index+'-'+cIndex}}" wx:for="{{item.l0}}" wx:for-index="cIndex" wx:for-item="val" wx:key="cIndex"></image-loader>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item itemId="1" wx:if="{{videosData.length>0}}">
+                <view class="swiper-1">
+                    <view class="video-box" id="{{item[$orig].field_name}}" wx:for="{{$root.l3}}" wx:for-index="parentIndex" wx:key="parentIndex">
+                        <view bindtap="__e" class="video" data-event-opts="{{[ [ 'tap',[ [ 'playVideoHandle',[parentIndex,childIndex] ] ] ] ]}}" data-name="播放视频" wx:for="{{item.l2}}" wx:for-index="childIndex" wx:for-item="val" wx:key="childIndex">
+                            <image-loader bind:__l="__l" mode="aspectFill" source="{{val[$orig].video_cover||(val.g0>-1?val[$orig].image+'&vframe/jpg/offset/1/w/400/h/400':val[$orig].image+'?vframe/jpg/offset/1/w/400/h/400')}}" styles="{{val.a0}}" vueId="{{'5ca4bbd4-3-'+parentIndex+'-'+childIndex}}"></image-loader>
+                            <view class="main-content">
+                                <view class="video-type">{{''+item[$orig].text+''}}</view>
+                                <image class="video-play-logo" src="https://imgcdn.huanjutang.com/file/2020/07/20/34e9e071e6549cbd0b9b68ea8a7ad2c2.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <bottom-btns bind:__l="__l" bind:updatePhone="__e" bind:updateProjectId="__e" bind:updateProjectName="__e" data-event-opts="{{[ [ '^updateProjectId',[ [ '__set_sync',['$0','project_id','$event'],[''] ] ] ],[ '^updateProjectId',[ [ '__set_sync',['$0','project_id','$event'],[''] ] ] ],[ '^updatePhone',[ [ '__set_sync',['$0','projectPhone','$event'],[''] ] ] ],[ '^updateProjectName',[ [ '__set_sync',['$0','project_name','$event'],[''] ] ] ],[ '^updateProjectName',[ [ '__set_sync',['$0','project_name','$event'],[''] ] ] ] ]}}" phone="{{projectPhone}}" projectId="{{project_id}}" projectName="{{project_name}}" vueId="5ca4bbd4-4" wx:if="{{project_id}}"></bottom-btns>
+    <view class="no-data-wrap" wx:if="{{!loading&&listData.length===0}}">
+        <view class="no-data">
+            <image class="image" src="https://imgcdn.huanjutang.com/image/2020/06/01/c2e52b08670ade21b2f9127a51438820.png"></image>
+            <view class="text">暂无数据</view>
+        </view>
+    </view>
+</view>

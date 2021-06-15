@@ -1,0 +1,9 @@
+<view class="call-salesman">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['onSuccess'] ] ] ]}}" isAuthPhone="{{true}}" vueId="06a06882-1" vueSlots="{{['default']}}">
+        <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyHandle'] ] ] ]}}" dataContent="{{dataContent}}" dataName="免费电话" dataType="button" type="primary" vueId="{{'06a06882-2'+','+'06a06882-1'}}" vueSlots="{{['default']}}">
+            <slot wx:if="{{$slots.default}}"></slot>
+            <block wx:else>免费电话咨询</block>
+        </busi-button>
+    </authorization>
+    <busi-dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" class="vue-ref" content="{{dialogContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','dialogVisible','$event'],[''] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ] ]}}" data-ref="busiDialog" dataName="打电话" dataType="button" sbumitText="拨打" visible="{{dialogVisible}}" vueId="06a06882-3"></busi-dialog>
+</view>

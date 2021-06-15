@@ -1,0 +1,14 @@
+.myCoupon {
+    overflow: hidden;
+    padding: 25rpx 10rpx 25rpx 30rpx;
+    box-sizing: border-box;
+}
+
+.myCoupon image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+    margin-bottom: 25rpx;
+    border-radius: 100%;
+    float: left;
+}

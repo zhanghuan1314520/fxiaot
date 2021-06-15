@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "vedio-play-end": "/subPackages/tools/pages/component/vedioPlayEnd",
+        "authorization": "/components/Authorization"
+    }
+}

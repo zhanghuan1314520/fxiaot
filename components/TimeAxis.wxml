@@ -1,0 +1,102 @@
+<view class="open-time">
+    <view class="open-time-container">
+        <view class="list" wx:if="{{timeData.length<=4}}">
+            <block wx:for="{{timeData}}" wx:for-item="time" wx:key="index">
+                <view class="open-time-item" wx:if="{{index==0&&time.type==0}}">
+                    <view class="tags" wx:if="{{time.status==1}}"></view>
+                    <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'less-left-active':'less-left-after') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                        <view class="label ml-24">{{''+time.name+''}}</view>
+                        <view class="date ml-24">{{''+time.value+''}}</view>
+                    </view>
+                </view>
+                <view class="open-time-item" wx:if="{{index==0&&time.type==1}}">
+                    <view class="tags" wx:if="{{time.status==1}}"></view>
+                    <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'less-left-active':'less-left-default') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                        <view class="label ml-24">{{''+time.name+''}}</view>
+                        <view class="date ml-24">{{''+time.value+''}}</view>
+                    </view>
+                </view>
+                <view class="open-time-item" wx:if="{{index>0&&index<timeData.length-1&&time.type==0}}">
+                    <view class="tags" wx:if="{{time.status==1}}"></view>
+                    <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'less-center-active':'less-center-after') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                        <view class="label ml-24">{{''+time.name+''}}</view>
+                        <view class="date ml-24">{{''+time.value+''}}</view>
+                    </view>
+                </view>
+                <view class="open-time-item" wx:if="{{index>0&&index<timeData.length-1&&time.type==1}}">
+                    <view class="tags" wx:if="{{time.status==1}}"></view>
+                    <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'less-center-active':'less-center-default') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                        <view class="label ml-24">{{''+time.name+''}}</view>
+                        <view class="date ml-24">{{''+time.value+''}}</view>
+                    </view>
+                </view>
+                <view class="open-time-item" wx:if="{{index==timeData.length-1&&timeData.length>1&&time.type==0}}">
+                    <view class="tags" style="right:-4rpx;" wx:if="{{time.status==1}}"></view>
+                    <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'less-right-active':'less-right-after') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                        <view class="label ml-24">{{''+time.name+''}}</view>
+                        <view class="date ml-24">{{''+time.value+''}}</view>
+                    </view>
+                </view>
+                <view class="open-time-item" wx:if="{{index==timeData.length-1&&timeData.length>1&&time.type==1}}">
+                    <view class="tags" style="right:-4rpx;" wx:if="{{time.status==1}}"></view>
+                    <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'less-right-active':'less-right-default') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                        <view class="label ml-24">{{''+time.name+''}}</view>
+                        <view class="date ml-24">{{''+time.value+''}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <scroll-view class="scroll-bar" scrollIntoView="{{toItemView}}" scrollX="scroll-x" wx:if="{{timeData.length>4}}">
+            <view class="scroll-bar-container" style="{{'width:'+timeData.length*156+14+28+'rpx'+';'}}">
+                <block wx:for="{{timeData}}" wx:for-item="time" wx:key="index">
+                    <view class="open-time-item" id="{{'item_'+index}}" wx:if="{{index==0&&time.type==0}}">
+                        <view class="tags" wx:if="{{time.status==1}}"></view>
+                        <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'more-left-active':'more-left-after') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                            <view class="label ml-24">{{''+time.name+''}}</view>
+                            <view class="date ml-24">{{''+time.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="open-time-item" id="{{'item_'+index}}" wx:if="{{index==0&&time.type==1}}">
+                        <view class="tags" wx:if="{{time.status==1}}"></view>
+                        <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'more-left-active':'more-left-default') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                            <view class="label ml-24">{{''+time.name+''}}</view>
+                            <view class="date ml-24">{{''+time.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="open-time-item" id="{{'item_'+index}}" wx:if="{{index>0&&index<timeData.length-1&&time.type==0}}">
+                        <view class="tags" wx:if="{{time.status==1}}"></view>
+                        <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'more-center-active':'more-center-after') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                            <view class="label ml-24">{{''+time.name+''}}</view>
+                            <view class="date ml-24">{{''+time.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="open-time-item" id="{{'item_'+index}}" wx:if="{{index>0&&index<timeData.length-1&&time.type==1}}">
+                        <view class="tags" wx:if="{{time.status==1}}"></view>
+                        <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'more-center-active':'more-center-default') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                            <view class="label ml-24">{{''+time.name+''}}</view>
+                            <view class="date ml-24">{{''+time.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="open-time-item" id="{{'item_'+index}}" wx:if="{{index==timeData.length-1&&time.type==0}}">
+                        <view class="tags" style="right:-4rpx;" wx:if="{{time.status==1}}"></view>
+                        <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'more-right-active':'more-right-after') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                            <view class="label ml-24">{{''+time.name+''}}</view>
+                            <view class="date ml-24">{{''+time.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="open-time-item" id="{{'item_'+index}}" wx:if="{{index==timeData.length-1&&time.type==1}}">
+                        <view class="tags" style="right:-4rpx;" wx:if="{{time.status==1}}"></view>
+                        <view bindtap="__e" class="{{[ 'box '+(index==currentIndex?'more-right-active':'more-right-default') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tapEvent',[index,'$0'],[ [ ['timeData','',index] ] ] ] ] ] ]}}">
+                            <view class="label ml-24">{{''+time.name+''}}</view>
+                            <view class="date ml-24">{{''+time.value+''}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="__e" class="clearfloat guide-tips" data-event-opts="{{[ [ 'tap',[ [ 'goPages',['$event'] ] ] ] ]}}" wx:if="{{tips.text}}">
+        <text>{{tips.text}}</text>
+        <image class="icon-arrow" src="https://imgcdn.huanjutang.com/image/2020/03/11/b01b0d1decefc9e311822d1b3b66d7c1.png" wx:if="{{tips.url}}"></image>
+    </view>
+</view>

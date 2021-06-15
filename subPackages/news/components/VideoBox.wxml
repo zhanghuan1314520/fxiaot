@@ -1,0 +1,6 @@
+<view class="video-box">
+    <image class="video-box__image" lazyLoad="{{true}}" mode="aspectFill" src="{{videoUrl}}"></image>
+    <view class="video-box__mask">
+        <image class="video-box__play" src="{{playIcon}}"></image>
+    </view>
+</view>

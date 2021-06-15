@@ -1,0 +1,82 @@
+.info-slot {
+    position: relative;
+    flex: 1;
+    height: 84rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.info-name__time {
+    margin-left: 16rpx;
+}
+
+.article-name__time,.info-name__time {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 32rpx;
+    height: 32rpx;
+}
+
+.article-name__time {
+    top: calc(50% + 3rpx);
+}
+
+.article-name__time,.personal-follow {
+    position: absolute;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.personal-follow {
+    font-family: PingFangSC-Regular,PingFang SC;
+    top: 50%;
+    width: 120rpx;
+    height: 56rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32rpx;
+    border: 2rpx solid #2d8cf0;
+    color: #2d8cf0;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    line-height: 36rpx;
+    transition: all .2s ease;
+}
+
+.personal-follow.followed {
+    border-color: rgba(0,0,0,.1);
+    color: rgba(0,0,0,.45);
+}
+
+.content {
+    box-sizing: border-box;
+    padding: 20rpx 32rpx 40rpx;
+    overflow: hidden;
+}
+
+.comment {
+    padding: 0 0 144rpx;
+}
+
+.wrap {
+    padding: 24rpx 32rpx 0;
+}
+
+.body {
+    font-size: 32rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 48rpx;
+}
+
+.back-to-list,.body {
+    font-family: PingFangSC-Regular,PingFang SC;
+}
+
+.back-to-list {
+    margin-top: 16rpx;
+    font-size: 24rpx;
+    color: #2d8cf0;
+    line-height: 32rpx;
+}

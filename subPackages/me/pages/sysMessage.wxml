@@ -1,0 +1,12 @@
+<view>
+    <view class="answer-cont" id="sysMessage">
+        <block wx:for="{{sysInfo}}" wx:key="index">
+            <message-tpl bind:__l="__l" info="{{item}}" vueId="{{'0f0a9d2a-1-'+index}}" wx:if="{{item.content_type==8}}"></message-tpl>
+            <message bind:__l="__l" info="{{item}}" vueId="{{'0f0a9d2a-2-'+index}}" wx:else></message>
+        </block>
+    </view>
+    <view class="empty-data" wx:if="{{sysInfo.length<1&&!loading}}">
+        <image alt class="img _img" src="https://imgcdn.huanjutang.com/image/2020/07/02/4c1516e86f952492dadc3e016ecd801a.png"></image>
+        <view class="text">暂无消息</view>
+    </view>
+</view>

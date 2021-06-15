@@ -1,0 +1,21 @@
+<view>
+    <view class="post-item-picture" wx:if="{{videoData||imgData.length>0}}">
+        <view class="video-img" wx:if="{{videoData}}">
+            <image catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'playVideoHandle',['$0'],['videoData'] ] ] ] ]}}" mode="aspectFill" src="{{videoData+'?vframe/jpg/offset/1/w/400/h/206'}}"></image>
+            <view catchtap="__e" class="img-tags" data-event-opts="{{[ [ 'tap',[ [ 'playVideoHandle',['$0'],['videoData'] ] ] ] ]}}">
+                <view class="img-tag-item">
+                    <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20191017163748081.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="nine-img-box" data-index="{{dataIndex}}" wx:if="{{imgData.length>0}}">
+            <block wx:for="{{$root.l0}}" wx:key="index">
+                <block wx:if="{{lazyload}}">
+                    <image catchtap="__e" class="{{[imgData.length==1?'img-01':'img-box']}}" data-event-opts="{{[ [ 'tap',[ [ 'viewPic',['$0','$1'],[ [ ['imgData','',index] ],'imgData' ] ] ] ] ]}}" mode="aspectFill" src="{{item[$orig]+(item.m0?'|':'?')+'imageView2/1/w/400/h/206/q/75'}}" wx:if="{{isShow}}"></image>
+                    <view class="{{[imgData.length==1?'img-01':'img-box']}}" wx:else></view>
+                </block>
+                <image catchtap="__e" class="{{[imgData.length==1?'img-01':'img-box']}}" data-event-opts="{{[ [ 'tap',[ [ 'viewPic',['$0','$1'],[ [ ['imgData','',index] ],'imgData' ] ] ] ] ]}}" mode="aspectFill" src="{{item[$orig]+(item.m1?'|':'?')+'imageView2/1/w/400/h/206/q/75'}}" wx:else></image>
+            </block>
+        </view>
+    </view>
+</view>

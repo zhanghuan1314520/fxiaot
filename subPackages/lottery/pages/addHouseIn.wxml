@@ -1,0 +1,104 @@
+<view>
+    <view catchtouchmove="ture" class="modalDialog" wx:if="{{dialogShow}}">
+        <view bindtap="__e" class="model-class" data-event-opts="{{[ [ 'tap',[ [ 'changType',['$event'] ] ] ] ]}}">
+            <view class="modalDialog_item">
+                <view class="modalDialog_item1">
+                    <text class="fz-15 font-bold black-3a-color">上传成功，请等待审核</text>
+                    <text class="modalDialog_cont">关注官方服务号，可第一时间收到审核结果信息，以及更多置业顾问相关内容</text>
+                </view>
+                <view class="modalDialog_item2 modalDialog_style">
+                    <view catchtap="__e" class="modalDialog_style2" data-event-opts="{{[ [ 'tap',[ [ 'changType',['$event'] ] ] ] ]}}">
+                        <text class="fz-16 black-3a-color font-bold">取消</text>
+                    </view>
+                    <view catchtap="__e" class="modalDialog_style2" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$0'],['invite_url'] ] ] ] ]}}">
+                        <text class="fz-16 blue-color font-bold">去关注</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="padding-class">
+        <view wx:for="{{dataArr}}" wx:for-index="parentIndex" wx:key="parentIndex">
+            <view>
+                <view class="house_plan_title">
+                    <text class="house_plan_text fz-14">{{'上传户型('+parentIndex+1+')'}}</text>
+                    <text bindtap="__e" class="fz-14 house_plan_del" data-event-opts="{{[ [ 'tap',[ [ 'deleteHouse',[parentIndex] ] ] ] ]}}">删除</text>
+                </view>
+                <view class="hou_plan_from">
+                    <view class="general_style hou_plan_item" wx:if="{{projectShow}}">
+                        <view class="general_style">
+                            <text class="text-weight">选择楼盘</text>
+                        </view>
+                        <view bindtap="__e" class="general_style hou_plan_live" data-event-opts="{{[ [ 'tap',[ [ 'optProject',['$event'] ] ] ] ]}}">
+                            <text class="lottery-name">{{''+projectData[projectIndex].project_name+''}}</text>
+                            <view class="iconnew new-tongyong-gengduo"></view>
+                        </view>
+                    </view>
+                    <view class="general_style hou_plan_item">
+                        <view class="general_style">
+                            <text class="text-weight">户型样式</text>
+                        </view>
+                        <view class="xian">
+                            <view class="general_style">
+                                <input bindinput="__e" class="general_style_font" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','shi','$event',[] ],['dataArr.'+parentIndex+''] ] ] ] ]}}" placeholder="3" placeholderClass="l_placeholder" type="number" value="{{dataArr[parentIndex].shi}}"></input>
+                                <text>室</text>
+                            </view>
+                            <view class="general_style">
+                                <input bindinput="__e" class="general_style_font" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','ting','$event',[] ],['dataArr.'+parentIndex+''] ] ] ] ]}}" placeholder="2" placeholderClass="l_placeholder" type="number" value="{{dataArr[parentIndex].ting}}"></input>
+                                <text>厅</text>
+                            </view>
+                            <view class="general_style">
+                                <input bindinput="__e" class="general_style_font" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','wei','$event',[] ],['dataArr.'+parentIndex+''] ] ] ] ]}}" placeholder="1" placeholderClass="l_placeholder" type="number" value="{{dataArr[parentIndex].wei}}"></input>
+                                <text>卫</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="general_style hou_plan_item">
+                        <view class="general_style">
+                            <text class="text-weight">户型分类</text>
+                        </view>
+                        <view class="general_style hou_plan_live">
+                            <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','house_class','$event',[] ],['dataArr.'+parentIndex+''] ] ] ] ]}}" placeholder="例: A1" placeholderClass="l_placeholder" value="{{dataArr[parentIndex].house_class}}"></input>
+                            <text class="text-color">户型</text>
+                        </view>
+                    </view>
+                    <view class="general_style hou_plan_item">
+                        <view class="general_style">
+                            <text class="text-weight">建面面积</text>
+                        </view>
+                        <view class="general_style hou_plan_live">
+                            <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','house_area','$event',[] ],['dataArr.'+parentIndex+''] ] ] ] ]}}" placeholder="例: 120" placeholderClass="l_placeholder" type="digit" value="{{dataArr[parentIndex].house_area}}"></input>
+                            <text class="text-color">平方米</text>
+                        </view>
+                    </view>
+                    <view class="general_style hou_plan_item hou_plan_item2">
+                        <view class="general_style">
+                            <text class="text-weight">户型图片</text>
+                        </view>
+                        <view class="gray-9-color tip-text fz-15">(单张图片不超过20M)</view>
+                    </view>
+                    <view class="upload-file">
+                        <view bindtap="__e" class="pic" data-event-opts="{{[ [ 'tap',[ [ 'uploadFile',[parentIndex] ] ] ] ]}}" wx:if="{{item.imageList.length!=1}}"></view>
+                        <view class="pic" wx:for="{{item.imageList}}" wx:for-item="img" wx:key="index">
+                            <image bindtap="__e" class="show-image" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['dataArr','',parentIndex],['imageList','',index] ] ] ] ] ] ]}}" mode="aspectFill" src="{{img}}"></image>
+                            <image bindtap="__e" class="dele-icon" data-event-opts="{{[ [ 'tap',[ [ 'deletePic',[parentIndex,index] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20191017161178081.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="general_style3 add_pic_tohouse" data-event-opts="{{[ [ 'tap',[ [ 'appendHouse',['$event'] ] ] ] ]}}">
+            <view class="general_style">
+                <view class="iconnew new-tianjiawodeyaohaobianma shizi_style"></view>
+                <text class="upload-text">增加其他户型</text>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['submit'] ] ] ]}}" isAuthPhone="{{true}}" vueId="2ddbba61-1" vueSlots="{{['default']}}">
+            <view class="add_submit general_style3">
+                <view class="general_style3 add_submit_item">
+                    <text class="add_submit_text">确认提交</text>
+                </view>
+            </view>
+        </authorization>
+    </view>
+</view>

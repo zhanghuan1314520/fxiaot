@@ -1,0 +1,114 @@
+<view>
+    <view class="banner skeletons-rect">
+        <image mode="aspectFill" src="{{item.cover}}"></image>
+        <view class="info">
+            <view class="info-left">{{''+(item.name||'')+''}}</view>
+            <view class="info-right">{{''+(item.area||'')+''}}</view>
+        </view>
+    </view>
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" vueId="bae32286-1" vueSlots="{{['default']}}">楼盘详细信息</busi-nav-header>
+    <view class="{{[ 'page '+(is_complete?'':'skeletons') ]}}">
+        <view class="projectDetail-bg" wx:if="{{main_message.length}}">
+            <view class="common-title skeletons-rect">销售信息</view>
+            <view class="projecDetail-mainInfo-line skeletons-rect" wx:for="{{main_message}}" wx:for-item="row" wx:key="index">
+                <view class="left-key">
+                    <text class="text-val">{{''+row.text+''}}</text>
+                    <text class="text-split">:</text>
+                </view>
+                <block wx:if="{{row.text==='参考单价'||row.text==='参考总价'||row.text==='参考均价'}}">
+                    <view class="right-value" style="color:#EE3F4D;" wx:for="{{row.value}}" wx:for-item="val" wx:key="index">
+                        <text selectable="selectable">{{''+val+''}}</text>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view bindtap="__e" class="right-value c-1" data-event-opts="{{[ [ 'tap',[ [ 'toMapHandle',['$0','$1','$2'],[ 'item.x_axis','item.y_axis',[ ['main_message','',index,'value.__$n0'] ] ] ] ] ] ]}}" data-name="楼盘地址" wx:if="{{row.text==='楼盘地址'}}">
+                        <text class="iconnew new-tongyong-dingwei1 fz-14 c-1"></text>{{row.value+''}}</view>
+                    <block wx:else>
+                        <view bindtap="__e" class="right-value c-1" data-event-opts="{{[ [ 'tap',[ [ 'toMapHandle',['$0','$1','$2'],[ 'item.sell_location_x_axis','item.sell_location_y_axis',[ ['main_message','',index,'value.__$n0'] ] ] ] ] ] ]}}" data-name="售楼地址" wx:if="{{row.text==='售楼地址'}}">
+                            <text class="iconnew new-tongyong-dingwei1 fz-14 c-1"></text>{{row.value+''}}</view>
+                        <view class="right-value" wx:else>
+                            <text selectable="selectable">{{''+row.value+''}}</text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <view class="projectDetail-bg projecDetail-mainInfo-content" wx:if="{{periphery}}">
+            <view class="common-title skeletons-rect">基本信息</view>
+            <view class="qrCode" wx:if="{{qrcode}}">
+                <image bindtap="__e" class="qrcode-img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['qrcode'] ] ] ] ]}}" data-name="查看二维码" mode="aspectFill" src="{{qrcode}}"></image>
+            </view>
+            <block wx:for="{{periphery}}" wx:for-index="pIndex" wx:for-item="row" wx:key="pIndex">
+                <block wx:if="{{row.text=='地铁交通'}}"></block>
+                <block wx:else>
+                    <view class="projecDetail-mainInfo-line skeletons-rect" wx:if="{{row.text=='容积率'}}">
+                        <view class="left-key">
+                            <text class="text-val">{{''+row.text+''}}</text>
+                            <text class="text-split">:</text>
+                        </view>
+                        <view class="right-value" style="display:-webkit-flex;-webkit-justify-content:space-between;">
+                            <text selectable="selectable">{{''+row.value+''}}</text>
+                        </view>
+                    </view>
+                    <view class="projecDetail-mainInfo-line skeletons-rect" wx:else>
+                        <view class="left-key">
+                            <text class="text-val">{{''+row.text+''}}</text>
+                            <text class="text-split">:</text>
+                        </view>
+                        <view class="right-value">
+                            <text selectable="selectable">{{''+row.value+''}}</text>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </view>
+        <view class="projectDetail-bg projecDetail-mainInfo-content" wx:if="{{hasInfoData}}">
+            <view bindtap="__e" class="common-title skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'goPeripheryPage',['$event'] ] ] ] ]}}" data-name="查看周边配套">
+                <text>周边配套</text>
+                <view class="right-btn">
+                    <text class="text">查看地图</text>
+                    <text class="iconnew new-tongyong-gengduo"></text>
+                </view>
+            </view>
+            <view class="projecDetail-mainInfo-line skeletons-rect" wx:if="{{item[$orig].value.length}}" wx:for="{{$root.l0}}" wx:key="index">
+                <view class="left-key">
+                    <text class="text-val">{{''+item[$orig].label+''}}</text>
+                    <text class="text-split">:</text>
+                </view>
+                <view class="right-value line-44">
+                    <block wx:if="{{item[$orig].label==='地铁交通'}}">
+                        <view class="color-3 mb-6" wx:for="{{item[$orig].value}}" wx:for-index="index2" wx:for-item="item2" wx:key="index2">
+                            <text selectable="selectable">{{''+item2+''}}</text>
+                        </view>
+                    </block>
+                    <text class="color-3" selectable="selectable" wx:else>{{''+item.g0+'；'}}</text>
+                </view>
+            </view>
+            <view class="projecDetail-mainInfo-line skeletons-rect" wx:if="{{surrounding}}">
+                <view class="left-key">
+                    <text class="text-val">其他配套</text>
+                    <text class="text-split">:</text>
+                </view>
+                <view class="right-value">
+                    <text selectable="selectable">{{''+surrounding+''}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="projectDetail-bg last" wx:if="{{content}}">
+            <view class="common-title mb-20">楼盘简介</view>
+            <text class="content" selectable="selectable">{{''+content+''}}</text>
+        </view>
+        <view class="white-bg projecDetail-around" wx:if="{{item.near}}">
+            <view class="table-flex" wx:if="{{near[0]!='null'}}" wx:for="{{item.near}}" wx:for-item="near" wx:key="index">
+                <view class="table-col" wx:for="{{near}}" wx:for-index="index2" wx:for-item="col" wx:key="index2">{{''+col+''}}</view>
+            </view>
+        </view>
+        <busi-auth-navigator bind:__l="__l" class="auth-report" url="{{'navigateTo-authphone://subPackages/project/pages/reportType?type=5&id='+project_id}}" vueId="bae32286-2" vueSlots="{{['default']}}">
+            <view class="errorCorrection fz-12">
+                <text>免责声明：本楼盘信息仅供参考，具体以政府部门登记备案为准，如信息有误,点我</text>
+                <text class="blue-color">信息纠错</text>
+            </view>
+        </busi-auth-navigator>
+    </view>
+    <footer-btns bind:__l="__l" projectId="{{project_id}}" showCallBtn="{{attetionList.phone_url.type===4}}" vueId="bae32286-3"></footer-btns>
+</view>

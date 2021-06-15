@@ -1,0 +1,10 @@
+<view wx:if="{{items.length>0}}">
+    <view catchtap="__e" catchtouchmove="__e" class="guide-form" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'hideGuide',['$event'] ] ] ] ]}}" style="{{'top:'+top+'px'}}" wx:for="{{items}}" wx:key="index">
+        <view catchtap="__e" class="closeAll fz-15" data-event-opts="{{[ [ 'tap',[ [ 'hideGuide',['$event'] ] ] ] ]}}" wx:if="{{items.length>1}}">跳过</view>
+        <image catchtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}" mode="widthFix" src="{{items[nowIndex]}}"></image>
+        <view catchtap="__e" class="nextStep fz-12 black1a-color" data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}" wx:if="{{showNextBtn}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20190107/5c330687b345c.png" style="width:300rpx;height:100rpx;" wx:if="{{items.length!=nowIndex+1}}"></image>
+            <image src="https://imgcdn.huanjutang.com/assets/img/20190107/5c3306a4bae74.png" style="width:300rpx;height:100rpx;" wx:if="{{items.length==nowIndex+1}}"></image>
+        </view>
+    </view>
+</view>

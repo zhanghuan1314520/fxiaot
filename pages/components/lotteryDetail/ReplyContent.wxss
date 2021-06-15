@@ -1,0 +1,183 @@
+.comment-container {
+    padding: 24rpx 0 0;
+}
+
+.comment-container.border {
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+}
+
+.comment-top {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.comment-top .connect-b-rect {
+    height: 36rpx;
+    margin-top: -19rpx;
+}
+
+.comment-top .connect-b-rect .connect-btn {
+    display: flex;
+    align-items: center;
+    font-size: 20rpx;
+    width: 124rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    background: #1bc17b;
+    border-radius: 19rpx;
+    color: #fff;
+}
+
+.comment-top .connect-b-rect .connect-btn .icon-zixun {
+    font-size: 22rpx;
+    margin-left: 10rpx;
+    margin-right: 2rpx;
+}
+
+.comment-avatar {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    border: 1rpx solid #eee;
+    margin-right: 20rpx;
+    position: relative;
+    top: -10rpx;
+}
+
+.comment-name {
+    font-size: 30rpx;
+    color: rgba(0,0,0,.45);
+    margin-right: 16rpx;
+    position: relative;
+    top: -10rpx;
+}
+
+.comment-reply {
+    padding-left: 92rpx;
+    box-sizing: border-box;
+}
+
+.comment-level {
+    width: 130rpx;
+    height: 54rpx;
+    margin-top: -8rpx;
+}
+
+.comment-like {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 10rpx);
+    transform: translateY(-50%);
+    color: rgba(0,0,0,.65);
+    display: flex;
+    align-items: center;
+}
+
+.comment-like .like-image {
+    width: 48rpx;
+    height: 48rpx;
+    overflow: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/2020531941308081.png);
+    background-size: cover;
+    background-position: 0 0;
+    transition-property: all;
+    transition-delay: 20/40s;
+    margin-right: 6rpx;
+    vertical-align: middle;
+}
+
+.comment-like .comment-num {
+    font-size: 24rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.comment-like.active .like-image {
+    animation-name: play;
+    animation-duration: 20/40s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(20);
+    background-position: 100%;
+}
+
+@-webkit-keyframes play {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes play {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.comment-content {
+    margin-left: 92rpx;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    font-size: 32rpx;
+    line-height: 48rpx;
+    color: rgba(0,0,0,.85);
+    position: relative;
+    top: -14rpx;
+}
+
+.comment-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32rpx;
+    margin-top: 8rpx;
+    position: relative;
+}
+
+.comment-bottom__left {
+    display: flex;
+    align-items: center;
+    margin-left: 92rpx;
+}
+
+.comment-bottom__time {
+    color: rgba(0,0,0,.45);
+    font-size: 24rpx;
+    margin-right: 24rpx;
+}
+
+.comment-bottom__answer {
+    width: 108rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    background: #f5f5f5;
+    color: rgba(0,0,0,.45);
+    font-size: 24rpx;
+}
+
+.reply-content {
+    box-sizing: border-box;
+}
+
+.reply-content .reply-num {
+    font-size: 24rpx;
+    color: #2d8cf0;
+    box-sizing: border-box;
+    padding-left: 92rpx;
+}
+
+.reply-content .reply-num .iconnew {
+    font-size: 18rpx;
+    margin-left: 2rpx;
+}

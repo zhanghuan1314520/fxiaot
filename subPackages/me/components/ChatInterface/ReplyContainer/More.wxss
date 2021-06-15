@@ -1,0 +1,80 @@
+.more {
+    padding: 36rpx 40rpx 112rpx;
+    background: #f5f7fa;
+    overflow: hidden;
+}
+
+.more__item {
+    float: left;
+    padding-right: 52rpx;
+    text-align: center;
+}
+
+.more__item .icon {
+    margin: 0 auto;
+    width: 92rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    border-radius: 12rpx;
+    padding: 0 15rpx;
+    font-size: 50rpx;
+    color: #303237;
+    background: #fff;
+}
+
+.more__item .text {
+    font-size: 22rpx;
+    color: rgba(0,0,0,.65);
+    line-height: 34rpx;
+    margin-top: 12rpx;
+}
+
+.more .label-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.more .label__item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.more .label__item .icon {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 36rpx;
+    box-sizing: border-box;
+    padding: 8rpx;
+    border: 2rpx solid rgba(0,0,0,.07);
+    background: #fff;
+    transition: all .36s ease-in-out;
+}
+
+.more .label__item .icon::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: #fff;
+    transition: all .36s ease-in-out;
+    transform: scale(.5);
+}
+
+.more .label__item.active .icon {
+    border-color: #2d8cf0;
+}
+
+.more .label__item.active .icon::after {
+    background: #2d8cf0;
+    transform: scale(1);
+}
+
+.more .label__item .text {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+    margin-left: 20rpx;
+}

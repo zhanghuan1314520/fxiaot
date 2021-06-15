@@ -1,0 +1,10 @@
+.confirm-btn {
+    height: 95rpx;
+    line-height: 95rpx;
+    border-radius: 47rpx;
+    background-color: #2d8cf0;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 32rpx;
+}

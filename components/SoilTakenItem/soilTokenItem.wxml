@@ -1,0 +1,23 @@
+<view class="container">
+    <block wx:if="{{soilData.length>0}}">
+        <navigator bindtap="__e" class="soil-item" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="土拍详情" hoverClass="none" url="{{'/subPackages/project/pages/soilTakenDetail?id='+item.id+'&lng='+item.lng+'&lat='+item.lat}}" wx:for="{{soilData}}" wx:key="index">
+            <view class="item-top">
+                <view class="location">{{''+(item.massif_name||item.location)+''}}</view>
+                <view class="type-box">
+                    <view class="{{[ 'house-type '+(val=='住宅'?'green-bg':'blue-bg') ]}}" wx:for="{{item.purpose}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</view>
+                </view>
+            </view>
+            <view class="price">{{''+(item.transaction_floor_price?item.transaction_floor_price:'-')+'元/㎡'}}</view>
+            <view class="address">
+                <view class="name">{{'竞得方：'+item.bidding_result+''}}</view>
+                <view class="date">{{''+item.fixture_date+''}}</view>
+            </view>
+            <view class="price-cont">
+                <view class="price-item" wx:if="{{item.acres&&item.acres>0}}">出让面积：<text>{{item.acres}}</text>㎡</view>
+                <view class="price-item" wx:else>出让面积：-</view>
+                <view class="price-item" wx:if="{{item.total_price&&item.total_price>0}}">成交总价：<text>{{item.total_price}}</text>万元</view>
+                <view class="price-item" wx:else>成交总价：-</view>
+            </view>
+        </navigator>
+    </block>
+</view>

@@ -1,0 +1,11 @@
+<busi-layout bind:__l="__l" mask="{{true}}" vueId="548b7cfa-1" vueSlots="{{['default']}}">
+    <view class="{{['year-report-modal',show?'mask-show':'']}}" wx:if="{{visible}}">
+        <view class="{{['modal-wrapper',show?'modal-show':'']}}" style="{{css}}">
+            <image class="title-img" mode="aspectFit" src="{{titleImg}}" style="{{titleCss}}"></image>
+            <view class="top-cloud"></view>
+            <view class="bottom-cloud"></view>
+            <view bindtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'handleClose',['$event'] ] ] ] ]}}"></view>
+            <slot></slot>
+        </view>
+    </view>
+</busi-layout>

@@ -1,0 +1,74 @@
+<view>
+    <view class="page">
+        <block wx:if="{{type===3}}">
+            <view class="building_search">
+                <view class="search_container">
+                    <view class="iconnew new-sousuoxianxing search_icon fz-16" style="color:#cccccc;"></view>
+                    <input bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'input',[ [ 'valueTyping3',['$event'] ] ] ] ]}}" placeholder="输入楼盘名字搜索" placeholderClass="input_style" value="{{getValue3}}"></input>
+                    <view bindtap="__e" class="iconnew new-shanchu1 delete_icon fz-16" data-event-opts="{{[ [ 'tap',[ [ 'delete_search',['$event'] ] ] ] ]}}" style="color:#cccccc;" wx:if="{{getValue3}}"></view>
+                </view>
+                <text bindtap="__e" class="search_text" data-event-opts="{{[ [ 'tap',[ [ 'searchKeword',['$event'] ] ] ] ]}}">确定</text>
+            </view>
+            <block wx:if="{{!getValue3}}">
+                <view class="building_choose">
+                    <view class="choose_title">
+                        <text class="fz-12" style="color:#8a8a8a;">热门搜索</text>
+                    </view>
+                    <view class="building_list">
+                        <view bindtap="__e" class="building_item" data-event-opts="{{[ [ 'tap',[ [ 'hotListFn',['$0'],[ [ ['hotList','',index] ] ] ] ] ] ]}}" wx:for="{{hotList}}" wx:key="index">
+                            <text class="iconnew new-loupan fz-14"></text>
+                            <text class="fz-14" style="margin-left:30rpx;">{{''+item.name+''}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="building_choose" wx:if="{{hostory_list.length>0}}">
+                    <view class="choose_title" style="overflow:hidden;">
+                        <text class="fz-12" style="color:#8a8a8a;">近期搜索</text>
+                        <text bindtap="__e" class="iconnew new-shanchu fz-13" data-event-opts="{{[ [ 'tap',[ [ 'delete_list',['$event'] ] ] ] ]}}" style="color:#9d9d9d;float:right;"></text>
+                    </view>
+                    <view class="building_list">
+                        <view bindtap="__e" class="building_item" data-event-opts="{{[ [ 'tap',[ [ 'hostory_item',['$0'],[ [ ['hostory_list','',index] ] ] ] ] ] ]}}" wx:for="{{hostory_list}}" wx:key="index">
+                            <text class="iconnew new-loupan fz-14"></text>
+                            <text class="fz-14" style="margin-left:30rpx;">{{''+item+''}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="building_choose" wx:else>
+                <view class="choose_title">
+                    <text class="fz-12" style="color:#8a8a8a;">您可以直接添加</text>
+                </view>
+                <view class="building_list">
+                    <view class="building_item" wx:for="{{building_list}}" wx:key="index">
+                        <text class="iconnew new-loupan fz-14"></text>
+                        <text class="fz-14" style="margin-left:30rpx;">{{''+item.name+''}}</text>
+                        <view bindtap="__e" class="fz-13" data-event-opts="{{[ [ 'tap',[ [ 'add_buidl',['$0'],[ [ ['building_list','',index] ] ] ] ] ] ]}}" style="float:right;">
+                            <text style="color:#5084d2;">添加</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{type===1}}">
+            <view class="building_search">
+                <view class="search_container">
+                    <view class="iconnew new-sousuoxianxing search_icon fz-16" style="color:#cccccc;"></view>
+                    <input bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'input',[ [ 'valueTyping',['$event'] ] ] ] ]}}" placeholder="输入小区名字搜索" placeholderClass="input_style" value="{{getValue}}"></input>
+                    <view bindtap="__e" class="iconnew new-shanchu1 delete_icon fz-16" data-event-opts="{{[ [ 'tap',[ [ 'delete_search2',['$event'] ] ] ] ]}}" style="color:#cccccc;" wx:if="{{getValue}}"></view>
+                </view>
+                <text bindtap="__e" class="search_text" data-event-opts="{{[ [ 'tap',[ [ 'searchKeword2',['$event'] ] ] ] ]}}">确定</text>
+            </view>
+            <view class="building_choose">
+                <view class="choose_title">
+                    <text class="fz-12" style="color:#8a8a8a;">你可以直接选择</text>
+                </view>
+                <view class="building_list">
+                    <view bindtap="__e" class="building_item" data-event-opts="{{[ [ 'tap',[ [ 'get_conmunity',['$0'],[ [ ['community_list','',index] ] ] ] ] ] ]}}" wx:for="{{community_list}}" wx:key="index">
+                        <text class="iconnew new-loupan fz-14"></text>
+                        <text class="fz-14" style="margin-left:30rpx;">{{''+item.resblock_name+''}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

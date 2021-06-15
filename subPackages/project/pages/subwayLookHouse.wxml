@@ -1,0 +1,18 @@
+<view class="map-look">
+    <view class="line-filter">
+        <scroll-view class="line-scroll" scrollX="{{true}}">
+            <view bindtap="__e" class="line" data-active="{{item.id===activeLine.id}}" data-event-opts="{{[ [ 'tap',[ [ 'handleLineChange',['$0'],[ [ ['metroData','',index] ] ] ] ] ] ]}}" data-name="item.name" wx:for="{{metroData}}" wx:key="index">{{''+item.name+''}}</view>
+        </scroll-view>
+        <scroll-view class="{{[true?'station-scroll':'',showStation?'show':'']}}" scrollX="{{true}}">
+            <view bindtap="__e" class="station" data-event-opts="{{[ [ 'tap',[ [ 'handleDeleteStation',[name,'$0','$1'],[ [ ['selectedStation','',name,'id'] ],[ ['selectedStation','',name,'markerId'] ] ] ] ] ] ]}}" wx:for="{{selectedStation}}" wx:for-index="name" wx:for-item="value" wx:key="name">
+                <text>{{value.metro_name}}</text>
+                <text class="iconnew new-quxiao"></text>
+            </view>
+        </scroll-view>
+    </view>
+    <map bindcallouttap="__e" bindlabeltap="__e" bindregionchange="__e" circles="{{circles}}" data-event-opts="{{[ [ 'regionchange',[ [ 'regionChange',['$event'] ] ] ],[ 'labeltap',[ [ 'markerTap',['$event'] ] ] ],[ 'callouttap',[ [ 'markerTap',['$event'] ] ] ] ]}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="{{scale}}" showLocation="{{true}}"></map>
+    <share-button bind:__l="__l" vueId="397f2316-1" wx:if="{{enableShare}}"></share-button>
+    <view class="subway-guide" wx:if="{{showGuide}}">
+        <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/2020810163818081.png"></image>
+    </view>
+</view>

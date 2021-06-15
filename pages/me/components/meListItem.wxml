@@ -1,0 +1,24 @@
+<view bindtap="__e" class="{{['list-item',ele.skeleton?'skeletons':'']}}" data-content="{{title}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{ele.text}}" data-type="link" wx:if="{{ele.url||ele.skeleton}}">
+    <view class="item-info">
+        <image-loader bind:__l="__l" class="skeletons-rect" source="{{ele.icon}}" styles="{{width:'40rpx',height:'40rpx',background:'#fff'}}" vueId="0470b1a2-1"></image-loader>
+        <text class="text skeletons-rect">{{''+(ele.text||'')+''}}</text>
+        <block wx:if="{{!ele.skeleton}}">
+            <view class="todo" wx:if="{{$root.g0}}">待完成</view>
+        </block>
+    </view>
+    <text class="right-text">
+        <block wx:if="{{!ele.skeleton}}">
+            <text wx:if="{{$root.g1}}">积分、活跃度看这里~</text>
+            <text class="iconnew new-tongyong-gengduo"></text>
+        </block>
+    </text>
+</view>
+<button bindtap="__e" class="list-item" data-content="{{title}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{ele.text}}" data-type="link" openType="contact" sessionFrom="{{weapp}}" wx:else>
+    <view class="item-info">
+        <image-loader bind:__l="__l" class="skeletons-rect" source="{{ele.icon}}" styles="{{width:'40rpx',height:'40rpx',background:'#fff'}}" vueId="0470b1a2-2"></image-loader>
+        <text class="text">{{''+ele.text+''}}</text>
+    </view>
+    <text class="right-text">
+        <text class="iconnew new-tongyong-gengduo"></text>
+    </text>
+</button>

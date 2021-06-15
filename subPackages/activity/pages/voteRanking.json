@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#ea2e51",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "back-home": "/subPackages/activity/components/BackHome"
+    }
+}

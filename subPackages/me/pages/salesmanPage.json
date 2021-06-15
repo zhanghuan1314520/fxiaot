@@ -1,0 +1,17 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "base-banner": "/components/BaseBanner",
+        "salesman-info": "/subPackages/me/pages/components/salesmanPage/SalesmanInfo",
+        "salesman-data": "/subPackages/me/pages/components/salesmanPage/SalesmanData",
+        "activity-rank": "/subPackages/me/pages/components/salesmanPage/ActivityRank",
+        "entries": "/subPackages/me/pages/components/salesmanPage/Entries",
+        "common-tools": "/subPackages/me/pages/components/salesmanPage/CommonTools",
+        "sales-tools": "/subPackages/me/pages/components/salesmanPage/SalesTools",
+        "salesman-college": "/subPackages/me/pages/components/salesmanPage/SalesmanCollege",
+        "surprise-modal": "/subPackages/me/pages/components/salesmanPage/SurpriseModal",
+        "white-space": "/subPackages/me/pages/components/WhiteSpace"
+    }
+}

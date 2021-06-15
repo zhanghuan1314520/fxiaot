@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "busi-footer": "/components/UILayout/BusiFooter",
+        "call-salesman": "/components/CallSalesman",
+        "contact-salesman": "/components/ContactSalesman",
+        "footer-share": "/components/FooterShare"
+    }
+}

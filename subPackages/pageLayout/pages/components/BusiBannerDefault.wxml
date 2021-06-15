@@ -1,0 +1,19 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="dea616dc-1" vueSlots="{{['default']}}">
+    <view class="init__banner-block" wx:if="{{settings.banner.length!==1}}">
+        <view class="init__banner-block" wx:if="{{!settings.banner}}"></view>
+        <swiper autoplay="true" circular="{{true}}" class="swiper" duration="300" indicatorActiveColor="#ffffff" indicatorColor="rgba(255,255,255,.4)" indicatorDots="{{settings.banner.length>1}}" interval="4000" wx:if="{{settings.banner&&settings.banner.length>0}}">
+            <swiper-item class="swiperItem" wx:for="{{settings.banner}}" wx:key="index">
+                <image bindtap="__e" class="slide-image gray-bg" data-event-opts="{{[ [ 'tap',[ [ 'swiperNavHandle',['$0'],[ [ ['settings.banner','',index,'link'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{item.img_url}}"></image>
+                <view class="white-color advert">广告</view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="init__banner-block relative" wx:if="{{settings.banner.length===1}}">
+        <view class="banner_worp">
+            <button class="top-banner-image">
+                <image bindtap="__e" class="slide-image gray-bg" data-event-opts="{{[ [ 'tap',[ [ 'swiperNavHandle',['$0'],['settings.banner.__$n0.link'] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{settings.banner[0].img_url}}"></image>
+                <view class="white-color advert">广告</view>
+            </button>
+        </view>
+    </view>
+</base-layout>

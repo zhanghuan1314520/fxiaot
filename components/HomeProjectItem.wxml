@@ -1,0 +1,63 @@
+<view class="project-tab-cont white-bg">
+    <block wx:if="{{list.length>0}}">
+        <view bindtap="__e" class="list" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{item.ad.ad_code}}" data-custom-prop-ad_keyword="{{item.ad.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{item.ad.ad_nike_name}}" data-custom-prop-ad_number="{{item.ad.ad_number}}" data-custom-prop-ad_source="hotRecommend" data-custom-prop-ad_type="order" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['$0'],[ [ ['list','',index,'url'] ] ] ] ] ] ]}}" id="{{item.id}}" wx:for="{{list}}" wx:key="index">
+            <view class="imageContent observe-image" data-index="{{index}}">
+                <view class="view white-color">
+                    <text class="iconnew new-liulan icon fz-15 text"></text>
+                    <text class="fz-11 view-logs text">{{''+item.page_views+''}}</text>
+                </view>
+                <view class="gray-shadow"></view>
+                <image class="img gray-bg" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                <view class="img-tags">
+                    <view class="img-tag-item" wx:if="{{item.is_video===1}}">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+                    </view>
+                    <view class="img-tag-item" wx:if="{{item.has_vr>0}}">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/201912191716568081.png"></image>
+                    </view>
+                    <view class="img-tag-item" wx:if="{{item.has_panorama}}">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/201911201049218081.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="text">
+                <view class="name">{{''+item.name+''}}</view>
+                <view class="fz-10 black-30 area-comment">
+                    <view class="label">{{''+item.area+''}}</view>
+                </view>
+                <view class="mar-top-12 overflow" wx:if="{{item.characteristic.length>0}}">
+                    <view class="feature__tips__item" wx:for="{{item.characteristic}}" wx:for-index="perIndex" wx:for-item="per" wx:key="perIndex">{{''+per+''}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="{{[ 'list '+(list.length>0?'':'init__project') ]}}">
+            <view class="imageContent"></view>
+            <view class="text">
+                <view class="fz-13 name black-30 font-bold"></view>
+                <view class="fz-10 black-30" style="margin-top:10rpx;overflow:hidden;">
+                    <view class="label"></view>
+                </view>
+            </view>
+        </view>
+        <view class="{{[ 'list '+(list.length>0?'':'init__project') ]}}">
+            <view class="imageContent"></view>
+            <view class="text">
+                <view class="fz-13 name black-30 font-bold"></view>
+                <view class="fz-10 black-30" style="margin-top:15rpx;overflow:hidden;">
+                    <view class="label"></view>
+                </view>
+            </view>
+        </view>
+        <view class="{{[ 'list '+(list.length>0?'':'init__project') ]}}">
+            <view class="imageContent"></view>
+            <view class="text">
+                <view class="fz-13 name black-30 font-bold"></view>
+                <view class="fz-10 black-30" style="margin-top:15rpx;overflow:hidden;">
+                    <view class="label"></view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

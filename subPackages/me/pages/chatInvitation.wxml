@@ -1,0 +1,26 @@
+<view class="page">
+    <view class="line"></view>
+    <view class="form-item">
+        <view class="label">看房楼盘</view>
+        <view class="value">
+            <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'bindPickerChange',['$event'] ] ] ] ]}}" mode="selector" range="{{projectList}}" rangeKey="name" value="0">
+                <text class="val-text">{{''+(project.name||'请选择')+''}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </picker>
+        </view>
+    </view>
+    <view class="form-item">
+        <view class="label">看房时间</view>
+        <view class="value">
+            <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'bindPickerDateChange',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{range}}" rangeKey="label" value="{{currentDate}}">
+                <text class="val-text">{{''+(dateTime||'请选择')+''}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </picker>
+        </view>
+    </view>
+    <view class="message-content">
+        <view class="title">短信内容</view>
+        <view class="text">{{'邀请您'+date+' '+time+'周'+weekday+'到'+project.name+'看房。地址：'+project.sell_location+'。到场联系'+salesManName+',电话'+salesManPhone+',我将为您专属服务【杭州房小团】'}}</view>
+    </view>
+    <button bindtap="__e" class="send-message" data-event-opts="{{[ [ 'tap',[ [ 'sendInvitation',['$event'] ] ] ] ]}}">发送邀请</button>
+</view>

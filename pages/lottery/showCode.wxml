@@ -1,0 +1,4 @@
+<view wx:if="{{id}}">
+    <lottery-result bind:__l="__l" bind:updateProjectName="__e" code="{{code}}" data-event-opts="{{[ [ '^updateProjectName',[ [ '__set_sync',['$0','project_name','$event'],[''] ] ] ],[ '^updateProjectName',[ [ '__set_sync',['$0','project_name','$event'],[''] ] ] ] ]}}" ids="{{id}}" listType="{{list_type}}" projectName="{{project_name}}" type="{{type}}" vueId="4b7a4b1d-1"></lottery-result>
+    <busi-share-icon bind:__l="__l" class="vue-ref" data-ref="share" vueId="4b7a4b1d-2"></busi-share-icon>
+</view>

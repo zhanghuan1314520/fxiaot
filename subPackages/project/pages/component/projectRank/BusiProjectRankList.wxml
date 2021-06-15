@@ -1,0 +1,85 @@
+<view class="project">
+    <view class="middle__item" wx:for="{{list}}" wx:for-item="detail" wx:key="index">
+        <navigator catchtap="__e" class="middle__item__child" data-event-opts="{{[ [ 'tap',[ [ 'sendAnalysisHandle',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" hoverClass="none" hoverStayTime="{{100}}" id="{{detail.id}}" url="{{detail.url}}" wx:if="{{!detail.ad_number}}">
+            <view class="project__left">
+                <image class="project__headIcon" src="{{detail.cover||'https://imgcdn.huanjutang.com/assets/img/20202111520167887.png'}}"></image>
+                <view class="{{[ 'hot-rank '+(index<3?' hot-rank--red ':'') ]}}" wx:if="{{type==='hotNum'&&index<20}}">{{''+index+1+''}}</view>
+                <view class="icon-618" wx:if="{{detail.is_activity==1}}"></view>
+                <view class="image__gradient"></view>
+                <view class="project__view">
+                    <text class="iconnew new-liulan fz-15 project__view__icon"></text>
+                    <text class="mar-left-8 fz-11 project__view__text">{{''+detail.page_views+''}}</text>
+                </view>
+                <view class="project__left__tags">
+                    <view class="left__tags__item" wx:if="{{detail.is_video==1}}">
+                        <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+                    </view>
+                    <view class="left__tags__item" wx:if="{{detail.has_vr>0}}">
+                        <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201912191716568081.png"></image>
+                    </view>
+                    <view class="left__tags__item" wx:if="{{detail.has_panorama}}">
+                        <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201911201049218081.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="project__info">
+                <view class="project__info__top ">
+                    <view class="card__info__name ellipsis">{{''+detail.name+''}}</view>
+                </view>
+                <view class="mar-top-8" wx:if="{{detail.avg_price.length==1}}">
+                    <text class="project__info__price project__info__price--1" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                </view>
+                <view class="mar-top-8" wx:if="{{detail.avg_price.length==2}}">
+                    <text class="project__info__price project__info__price--2" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                </view>
+                <view class="mar-top-8" wx:if="{{detail.avg_price.length==3}}">
+                    <text class="project__info__price project__info__price--3" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                </view>
+                <view class="mar-top-10 project__info__location ellipsis" wx:if="{{detail.project_location||detail.area||biz_circle_name}}">
+                    <text wx:if="{{detail.area}}">{{''+detail.area+''}}</text>
+                    <text class="mar-left-12" wx:if="{{detail.biz_circle_name}}">{{''+detail.biz_circle_name+''}}</text>
+                    <text class="mar-left-12">{{''+detail.comment_num+'条评论'}}</text>
+                </view>
+                <view class=" mar-top-10 project__info__bottom " wx:if="{{detail.tips.length}}">
+                    <view class="{{[ 'info__tips__item '+(statusStyles[item]?statusStyles[item]:'') ]}}" wx:for="{{detail.tags}}" wx:key="index">{{''+item+''}}</view>
+                    <view class="feature__tips__item" wx:for="{{detail.characteristic}}" wx:key="index">{{''+item+''}}</view>
+                </view>
+                <view>
+                    <view class="project__info__spot" wx:if="{{detail.time_array&&detail.time_array.type}}">
+                        <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e747696f0b86.png" wx:if="{{detail.time_array['type']==1}}"></image>
+                        <block wx:else>
+                            <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e74776a56cc1.png" wx:if="{{detail.time_array['type']==2}}"></image>
+                            <block wx:else>
+                                <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e7477e5b3434.png" wx:if="{{detail.time_array['type']==3}}"></image>
+                                <block wx:else>
+                                    <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e74779e776f5.png" wx:if="{{detail.time_array['type']==4}}"></image>
+                                </block>
+                            </block>
+                        </block>
+                        <text class="mar-left-10 light__title">{{''+detail.time_array['text']+''}}</text>
+                        <text class="line"></text>
+                        <text class="light__spot ellipsis">{{''+detail.time_array['time']+''}}</text>
+                    </view>
+                    <view class="project__info__spot" wx:if="{{detail.light_spot}}">
+                        <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200317/5e709ad337d9d.png"></image>
+                        <text class="mar-left-10 light__title">楼盘亮点</text>
+                        <text class="line"></text>
+                        <text class="light__spot ellipsis">{{''+detail.light_spot+''}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="rank-img_wrap" wx:if="{{index<=19}}">
+                <image class="rank-img" src="https://imgcdn.huanjutang.com/image/2020/07/24/c94f0050b41f06b40c25dd303507a9e9.png" wx:if="{{index==0}}"></image>
+                <block wx:else>
+                    <image class="rank-img" src="https://imgcdn.huanjutang.com/image/2020/07/24/55fcf1c964c44462e3656965a5fd16ab.png" wx:if="{{index==1}}"></image>
+                    <block wx:else>
+                        <image class="rank-img" src="https://imgcdn.huanjutang.com/image/2020/07/24/3aaa91f5799f4fc2242bef81a8ac1fd3.png" wx:if="{{index==2}}"></image>
+                        <image class="rank-img" src="https://imgcdn.huanjutang.com/image/2020/07/24/57f52810cc7a29e62bfe7fc6e7c9ba16.png" wx:else></image>
+                    </block>
+                </block>
+                <text class="rank-tit fz-15">{{''+index+1+''}}</text>
+            </view>
+        </navigator>
+        <base-ad-flow bind:__l="__l" detailSource="{{adSource}}" flowDetail="{{detail}}" vueId="{{'4245cbe9-1-'+index}}" wx:else></base-ad-flow>
+    </view>
+</view>

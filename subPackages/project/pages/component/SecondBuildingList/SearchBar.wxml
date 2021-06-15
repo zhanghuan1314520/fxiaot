@@ -1,0 +1,12 @@
+<view class="common_search">
+    <view class="common_search-input">
+        <image bindtap="__e" class="search-icon" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/05/18/9bef8839ce3044147520cbc134096918.png"></image>
+        <input bindconfirm="__e" bindinput="__e" catchtap="__e" class="input" data-event-opts="{{[ [ 'tap',[ [ 'handleInputTap',['$event'] ] ] ],[ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doSearch',['$event'] ] ] ] ]}}" disabled="{{noSearch}}" focus="{{autoFocus}}" placeholder="{{inputPlace}}" placeholderClass="common_search-input-place" type="text" value="{{inputVal}}"></input>
+        <text bindtap="__e" class="iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></text>
+    </view>
+    <button bindtap="__e" class="common_search-button" data-event-opts="{{[ [ 'tap',[ [ 'handleShare',['$event'] ] ] ] ]}}" openType="share" wx:if="{{buttonType==='share'}}">
+        <text class="iconnew new-fenxiang8"></text>
+        <text>分享</text>
+    </button>
+    <view bindtap="__e" class="common_search-comfirm" data-event-opts="{{[ [ 'tap',[ [ 'cancelSearch',['$event'] ] ] ] ]}}" wx:else>取消</view>
+</view>

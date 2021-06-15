@@ -1,0 +1,15 @@
+<view catchtap="__e" class="{{['article-style',item.skeleton?'skeletons':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toDetailHandle',['$event'] ] ] ] ]}}">
+    <view class="left-cont">
+        <view class="article-detail font-bold black-30 fz-14 skeletons-rect">{{''+(item.title||'')+''}}</view>
+        <view class="bottom skeletons-rect">
+            <view class="left-name">
+                <image class="avatar" lazyLoad="{{true}}" mode="aspectFill" src="{{item.source.avatar_url||defaultAvatar}}"></image>
+                <text class="name fz-12 gray-9-color">{{''+item.source.name+''}}</text>
+            </view>
+            <view class="time fz-12 gray-9-color">{{''+item.time+''}}</view>
+        </view>
+    </view>
+    <view class="skeletons-rect article-style__cover">
+        <image-loader bind:__l="__l" mode="aspectFill" source="{{item.img}}" styles="{{$root.a0}}" vueId="3b4ca430-1"></image-loader>
+    </view>
+</view>

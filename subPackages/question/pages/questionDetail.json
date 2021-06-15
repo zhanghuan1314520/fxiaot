@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "杭州房小团-问答详情",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "share-template": "/components/shareTemplate",
+        "answers": "/subPackages/question/pages/components/Answers",
+        "authorization": "/components/Authorization",
+        "base-add-mini-app": "/components/BaseAddMiniApp",
+        "busi-salesman-info": "/pages/components/webview/BusiSalesmanInfo"
+    }
+}

@@ -1,0 +1,13 @@
+<view>
+    <cover-view class="permissions-settings" wx:if="{{showPermissionsSetting}}">
+        <cover-view class="tips-content fz-18">请开启保存到相册的权限</cover-view>
+        <cover-view class="fz-18 text">{{''+'开启后需重新点击'+txt+'按钮'+''}}</cover-view>
+        <cover-view class="bottom-btn">
+            <cover-view bindtap="__e" class="cancle fz-18 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'closePemissions',['$event'] ] ] ] ]}}">取消</cover-view>
+            <button bindopensetting="__e" class="sure-btn fz-18 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">
+                <cover-view>去开启</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+    <cover-view class="hide-bg" wx:if="{{showPermissionsSetting}}"></cover-view>
+</view>

@@ -1,0 +1,244 @@
+.vote_ranking_bg {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(#ea2e51,#aa65bc);
+}
+
+.vote_ranking_container {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    padding-bottom: 140rpx;
+    overflow: hidden;
+}
+
+.vote_ranking_container .vote_ranking_title {
+    display: block;
+    width: 291rpx;
+    margin: 64rpx auto;
+}
+
+.vote_ranking_cont {
+    width: 100%;
+    overflow: hidden;
+}
+
+.vote_ranking_cont .vote_ranking_top {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 115rpx;
+    overflow: hidden;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list {
+    position: relative;
+    width: 217rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list>.num,.vote_ranking_cont .vote_ranking_top>.list>.white-color {
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list>.white-color {
+    height: 64rpx;
+    line-height: 32rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list>.num {
+    margin-top: 20rpx;
+    color: #ffca56;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list .avatar {
+    margin-bottom: 40rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list .avatar .card,.vote_ranking_cont .vote_ranking_top>.list .avatar .cover,.vote_ranking_cont .vote_ranking_top>.list .avatar .rank {
+    position: relative;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list .avatar .rank {
+    z-index: 1;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list .avatar .cover {
+    border-radius: 100%;
+    z-index: 2;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list .avatar .cover image {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.vote_ranking_cont .vote_ranking_top>.list .avatar .card {
+    width: 217rpx;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_one .avatar {
+    height: 268rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_three .avatar,.vote_ranking_cont .vote_ranking_top .NO_tow .avatar {
+    height: 212rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_one {
+    top: 0;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_one .rank {
+    left: -14rpx;
+    width: 137rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_one .cover {
+    top: -76rpx;
+    width: 183rpx;
+    height: 183rpx;
+    border: 8rpx solid #bef886;
+    box-sizing: border-box;
+    box-shadow: 0 0 10rpx 0 rgba(222,248,134,.9);
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_one .card {
+    top: -108rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_three,.vote_ranking_cont .vote_ranking_top .NO_tow {
+    top: 86rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_three .rank,.vote_ranking_cont .vote_ranking_top .NO_tow .rank {
+    left: 10rpx;
+    width: 79rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_three .cover,.vote_ranking_cont .vote_ranking_top .NO_tow .cover {
+    top: -65rpx;
+    width: 164rpx;
+    height: 164rpx;
+    border: 6rpx solid #bac1cc;
+    box-sizing: border-box;
+    box-shadow: 0 0 10rpx 0 rgba(185,192,204,.9);
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_three .card,.vote_ranking_cont .vote_ranking_top .NO_tow .card {
+    top: -100rpx;
+}
+
+.vote_ranking_cont .vote_ranking_top .NO_three .cover {
+    border-color: #dbb97f;
+    box-shadow: 0 0 10rpx 0 rgba(222,190,131,.9);
+}
+
+.vote_ranking_list {
+    padding: 0 12rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.vote_ranking_list>.list {
+    width: 100%;
+    padding: 12rpx;
+    border-bottom: 5rpx solid hsla(0,0%,100%,.1);
+    overflow: hidden;
+}
+
+.vote_ranking_list>.list:first-child {
+    border-top: 5rpx solid hsla(0,0%,100%,.1);
+}
+
+.vote_ranking_list>.list .left {
+    float: left;
+    width: 180rpx;
+    overflow: hidden;
+}
+
+.vote_ranking_list>.list .left .num {
+    line-height: 88rpx;
+    width: 92rpx;
+    height: 88rpx;
+    text-align: center;
+    float: left;
+}
+
+.vote_ranking_list>.list .left .avatar {
+    float: right;
+    width: 88rpx;
+    height: 88rpx;
+    border-radius: 100%;
+    box-shadow: 0 0 10rpx 0 rgba(182,84,201,.9);
+}
+
+.vote_ranking_list>.list .left .avatar image {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.vote_ranking_list>.list .title {
+    display: block;
+    float: left;
+    max-width: 320rpx;
+    line-height: 88rpx;
+    margin-left: 20rpx;
+    height: 88rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.vote_ranking_list>.list .like_num {
+    float: right;
+    line-height: 88rpx;
+    max-width: 200rpx;
+    box-sizing: border-box;
+    padding-right: 30rpx;
+    text-overflow: ellipsis;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 0 15rpx 0 rgba(0,0,0,.3);
+    height: 90rpx;
+    width: 100%;
+    z-index: 22;
+    background: #fff;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.footer .line {
+    flex: 1;
+    padding: 15rpx 0;
+    text-align: center;
+}
+
+.footer .line>text {
+    display: block;
+}

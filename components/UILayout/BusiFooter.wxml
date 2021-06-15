@@ -1,0 +1,3 @@
+<view class="{{['busi-footer',[isIphonex?'isPhonex':''],className]}}">
+    <slot></slot>
+</view>

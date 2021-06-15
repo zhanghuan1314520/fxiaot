@@ -1,0 +1,34 @@
+.cropper {
+    z-index: 1;
+}
+
+.cropper-buttons {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: 0 30rpx calc(20rpx + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.cropper-buttons .getCropperImage,.cropper-buttons .upload {
+    width: 180rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    border-radius: 4rpx;
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+}
+
+.cropper-buttons .upload {
+    float: left;
+}
+
+.cropper-buttons .getCropperImage {
+    float: right;
+    background-color: #2d8cf0;
+}

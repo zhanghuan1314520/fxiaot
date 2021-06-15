@@ -1,0 +1,13 @@
+.system-message {
+    position: relative;
+    width: 100%;
+    padding: 0 16rpx;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.system-message__content {
+    font-size: 26rpx;
+    color: #96989e;
+}

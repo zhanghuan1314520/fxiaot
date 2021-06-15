@@ -1,0 +1,5 @@
+<base-layout bind:__l="__l" isReceive="{{isReceive}}" message="{{message}}" vueId="66bae93c-1" vueSlots="{{['default']}}">
+    <view class="{{['text-message',isReceive?'receive':'',!isReceive?'sender':'']}}">
+        <text class="text-message__content" userSelect="{{true}}">{{''+message.content+''}}</text>
+    </view>
+</base-layout>

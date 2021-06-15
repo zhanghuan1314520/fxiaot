@@ -1,0 +1,129 @@
+.project-ranking_wrap {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background: url(https://imgcdn.huanjutang.com/image/2020/07/27/e47cbf0f5d4386b69935e2e519e823ad.png);
+    background-size: 750rpx 2780rpx;
+    background-repeat: no-repeat;
+    background-color: #1b086c;
+    padding-bottom: 50rpx;
+}
+
+.project-ranking_wrap .header_wrap {
+    height: 88rpx;
+    width: 100%;
+    padding-left: 16rpx;
+}
+
+.project-ranking_wrap .header_wrap .icon {
+    color: #fff;
+}
+
+.project-ranking_wrap .header_wrap .tit {
+    color: #fff;
+    margin-left: 166rpx;
+}
+
+.page {
+    width: 100vw;
+    min-height: calc(100vh - 150rpx);
+    position: relative;
+}
+
+.page .rank-bg-img {
+    width: 472rpx;
+    height: 286rpx;
+    margin: 28rpx 48rpx 0;
+    display: block;
+}
+
+.page .rank-txt-img {
+    width: 200rpx;
+    height: 168rpx;
+    position: absolute;
+    top: 252rpx;
+    right: 28rpx;
+}
+
+.page .selet_wrap {
+    height: 68rpx;
+    padding: 14rpx 24rpx 14rpx 34rpx;
+    background: #261796;
+    border-radius: 44rpx;
+    border: 2rpx solid #4731ca;
+    color: #fff;
+    position: absolute;
+    top: -17rpx;
+    right: 22rpx;
+    box-sizing: border-box;
+}
+
+.page .selet_wrap .tit {
+    margin-right: 12rpx;
+    color: #fff;
+}
+
+.page .selet_wrap .icon-zhankai {
+    color: #fff;
+}
+
+.page .selet_wrap .area-list_wrap {
+    position: absolute;
+    top: 76rpx;
+    right: 0rpx;
+    z-index: 8;
+}
+
+.page .tip_wrap {
+    width: 540rpx;
+    height: 144rpx;
+    background-image: url(https://imgcdn.huanjutang.com/image/2020/07/27/533da2849dd7d84adae0a2804eb8d595.png);
+    background-size: cover;
+    margin: -2rpx 0 0 20rpx;
+    padding: 18rpx 16rpx 18rpx 28rpx;
+    box-sizing: border-box;
+    color: hsla(0,0%,100%,.6);
+    line-height: 36rpx;
+}
+
+.page .tab_wrap {
+    margin-top: 30rpx;
+}
+
+.page .tab_wrap .tab-list_wrap {
+    height: 96rpx;
+    width: 100vw;
+    align-items: flex-end;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.page .tab_wrap .tab-list_wrap .tab-list {
+    flex: 1;
+    height: 72rpx;
+    line-height: 72rpx;
+    background: linear-gradient(180deg,#1d0d7b,rgba(29,13,123,.5));
+    box-shadow: inset 0rpx 16rpx 16rpx 0rpx hsla(0,0%,100%,.1);
+    border-radius: 24rpx 24rpx 0rpx 0rpx;
+    color: #fff;
+    text-align: center;
+    font-size: 26rpx;
+    transition: height .2s;
+    overflow: hidden;
+}
+
+.page .tab_wrap .tab-list_wrap .active-tab {
+    height: 96rpx;
+    line-height: 96rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.page .tab-content_wrap {
+    background-color: rgba(29,13,123,.5);
+    overflow: hidden;
+}
+
+.area-list__wrap .area-list__icon {
+    right: 24rpx!important;
+}

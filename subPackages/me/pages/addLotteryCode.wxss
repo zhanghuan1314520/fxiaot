@@ -1,0 +1,245 @@
+page {
+    background-color: #f5f5f5;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.list-box {
+    padding-top: 36rpx;
+    overflow: hidden;
+}
+
+.list-box .w-cell {
+    position: relative;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+    height: 112rpx;
+    font-size: 30rpx;
+}
+
+.list-box .w-cell:last-child {
+    height: 76rpx;
+}
+
+.list-box .w-cell .left-key {
+    float: left;
+    width: 25%;
+    color: rgba(0,0,0,.85);
+    overflow: hidden;
+}
+
+.list-box .w-cell .left-key:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.list-box .w-cell .right-value {
+    width: calc(100vw - 65rpx - 25%);
+    height: 112rpx;
+    float: left;
+}
+
+.list-box .w-cell .right-value input {
+    height: 42rpx;
+    overflow: hidden;
+    margin-top: -4rpx;
+}
+
+.list-box .w-cell .right-value .place-style {
+    color: rgba(0,0,0,.45);
+}
+
+.list-box .w-cell .right-btn {
+    color: #d8d8d8;
+    font-size: 40rpx;
+    float: right;
+}
+
+.list-box .w-cell .error-tip {
+    display: none;
+    margin-top: 0;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #ee3f4d;
+}
+
+.list-box .w-cell .error-tip.show {
+    display: block;
+}
+
+.save-btn {
+    margin-top: 60rpx;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.save-btn .weui-btn {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    text-align: center;
+    font-weight: 700;
+}
+
+.privacy-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 60rpx;
+}
+
+.privacy-cont .checkbox {
+    width: 28rpx;
+    height: 28rpx;
+    border: 2rpx solid #96989e;
+    border-radius: 28rpx;
+    box-sizing: border-box;
+}
+
+.privacy-cont .checkbox.active {
+    border: 10rpx solid #2d8cf0;
+    background: #fff;
+}
+
+.privacy-cont .text {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 12rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 40rpx;
+}
+
+.privacy-cont .url {
+    display: inline;
+    margin: 0 8rpx;
+    color: #6a82c7;
+}
+
+.dialog {
+    position: relative;
+    border-radius: 40rpx 40rpx 0 0;
+    background: #fff;
+    padding-top: 60rpx;
+    box-sizing: border-box;
+    bottom: -70rpx;
+}
+
+.dialog .close-btn {
+    position: absolute;
+    top: 32rpx;
+    right: 32rpx;
+    font-size: 32rpx;
+    color: #d9d9d9;
+}
+
+.dialog .title {
+    text-align: center;
+    color: rgba(0,0,0,.85);
+    font-size: 40rpx;
+    font-weight: 700;
+    margin-bottom: 32rpx;
+}
+
+.dialog .title.range-title {
+    margin-bottom: 48rpx;
+}
+
+.dialog .search-place {
+    background: #f5f5f5;
+    height: 76rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 32rpx 40rpx;
+    padding: 0 28rpx;
+    border-radius: 8rpx;
+}
+
+.dialog .search-place input {
+    width: 100%;
+}
+
+.dialog .search-place .new-sousuo {
+    font-size: 32rpx;
+    margin-right: 12rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.dialog .recomment-tips {
+    color: rgba(0,0,0,.45);
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.dialog .project-box {
+    height: 680rpx;
+    padding-left: 32rpx;
+    box-sizing: border-box;
+}
+
+.dialog .project-box .li {
+    height: 108rpx;
+    line-height: 108rpx;
+    color: rgba(0,0,0,.85);
+    font-size: 32rpx;
+    font-weight: 700;
+    padding-right: 32rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.dialog .project-box .li .choosed-icon {
+    display: none;
+}
+
+.dialog .project-box .li.active {
+    color: #2d8cf0;
+}
+
+.dialog .project-box .li.active .choosed-icon {
+    display: block;
+    float: right;
+    color: #2d8cf0;
+    font-size: 38rpx;
+}
+
+.no-content {
+    height: 680rpx;
+    width: 100%;
+    text-align: center;
+    padding-top: 136rpx;
+    background: #fff;
+}
+
+.no-content image {
+    width: 358rpx;
+    height: 198rpx;
+    margin-bottom: 64rpx;
+}
+
+.no-content .no-result {
+    color: rgba(0,0,0,.45);
+    font-size: 32rpx;
+    margin-bottom: 80rpx;
+    line-height: 40rpx;
+}
+
+.no-content .add-user-tips {
+    color: #2d8cf0;
+    font-size: 28rpx;
+    width: 216rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    border-radius: 8rpx;
+    border: 2rpx solid #2d8cf0;
+    font-weight: 700;
+    display: inline-block;
+}

@@ -1,0 +1,64 @@
+{
+    "rules": [
+        {
+            "action": "disallow",
+            "page": "pages/discovery/index"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/statement"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/pictureEdit"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/answerEdit"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/videoEdit"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/answerDetail"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/pictureDetail"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/commentDetail"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/topicDetail"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/videoDetail"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/userPage"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/topic"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/recommendArticle"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/coffee"
+        },
+        {
+            "action": "disallow",
+            "page": "subPackages/discovery/pages/coffeeDetail"
+        }
+    ]
+}

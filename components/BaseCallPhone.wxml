@@ -1,0 +1,6 @@
+<view class="call-phone">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['onSuccess'] ] ] ]}}" isAuthPhone="{{true}}" vueId="3bde9a72-1" vueSlots="{{['default']}}">
+        <slot></slot>
+    </authorization>
+    <busi-dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" class="vue-ref" content="{{dialogContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','dialogVisible','$event'],[''] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ] ]}}" data-ref="busiDialog" dataContent="{{dataContent}}" dataName="电话咨询" dataType="button" sbumitText="拨打" visible="{{dialogVisible}}" vueId="3bde9a72-2"></busi-dialog>
+</view>

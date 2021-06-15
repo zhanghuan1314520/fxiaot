@@ -1,0 +1,12 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "图文编辑",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "edit-area": "/subPackages/discovery/component/EditArea",
+        "edit-cell": "/subPackages/discovery/component/EditCell",
+        "upload-media": "/subPackages/discovery/component/UploadMedia",
+        "submit-button": "/subPackages/discovery/component/submitButton"
+    }
+}

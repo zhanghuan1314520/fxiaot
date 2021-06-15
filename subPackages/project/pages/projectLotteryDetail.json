@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "杭州房小团-历史摇号",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "time-axis": "/components/TimeAxis",
+        "contact-salesman": "/components/ContactSalesman",
+        "call-salesman": "/components/CallSalesman",
+        "follow-success": "/components/FollowSuccess",
+        "trend": "/pages/components/lotteryDetail/UnsuccessfulTrend",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "lottery-excel": "/components/lotteryExcel"
+    }
+}

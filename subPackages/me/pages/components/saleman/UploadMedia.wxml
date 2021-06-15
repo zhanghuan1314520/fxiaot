@@ -1,0 +1,22 @@
+<view class="upload-media">
+    <block wx:if="{{mediaType==='video'}}">
+        <view class="upload-item-wrap" wx:for="{{fileList}}" wx:key="index">
+            <image class="upload-item" mode="aspectFill" src="{{isTemp?item:item+prefix}}"></image>
+            <image bindtap="__e" class="play" data-event-opts="{{[ [ 'tap',[ [ 'handlePlayVideo',['$0'],[ [ ['fileList','',index] ] ] ] ] ] ]}}" src="{{playIcon}}" wx:if="{{progress===100}}"></image>
+            <image bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'deleteFile',[index] ] ] ] ]}}" src="{{closeIcon}}" wx:if="{{progress===100&&!disabled}}"></image>
+            <view class="progress-mask" style="{{'height:'+100-progress+'%'+';'}}"></view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="upload-item-wrap" wx:for="{{fileList}}" wx:key="index">
+            <image class="upload-item" mode="aspectFill" src="{{item}}"></image>
+            <image bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'deleteFile',[index] ] ] ] ]}}" src="{{closeIcon}}" wx:if="{{!disabled}}"></image>
+        </view>
+    </block>
+    <view bindtap="__e" class="upload-add" data-event-opts="{{[ [ 'tap',[ [ 'haddleAddFile',['$event'] ] ] ] ]}}" wx:if="{{showAdd}}">
+        <text class="iconnew new-tianjiatupian"></text>
+        <text class="upload-add__text">{{''+addText+''}}</text>
+    </view>
+    <view class="upload-item empty" wx:if="{{showEmptyBox}}"></view>
+    <view class="tip" wx:if="{{tip}}">{{''+tip+''}}</view>
+</view>

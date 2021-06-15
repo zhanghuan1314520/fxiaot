@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="page">
+        <image class="bg_img" src="https://imgcdn.huanjutang.com/assets/img/20181115/5bed4213013d2.png"></image>
+        <view class="{{[type?'middle_content2':'middle_content']}}">
+            <view class="title_text">
+                <image class="title_img" src="https://imgcdn.huanjutang.com/assets/img/20190530/5cefe2ed2c1b0.png"></image>
+            </view>
+            <view class="big_container">
+                <view class="input_content">
+                    <input bindblur="__e" bindfocus="__e" bindinput="__e" class="community_input" data-event-opts="{{[ [ 'focus',[ [ 'type_on',['$event'] ] ] ],[ 'blur',[ [ 'type_under',['$event'] ] ] ],[ 'input',[ [ 'inputTyping',['$event'] ] ] ] ]}}" placeholder="输入您要估价的小区名字" placeholderClass="placeholder_style" value="{{getValue}}"></input>
+                    <text bindtap="__e" class="iconnew new-shanchu1 detile" data-event-opts="{{[ [ 'tap',[ [ 'deleteValue',['$event'] ] ] ] ]}}" wx:if="{{getValue}}"></text>
+                </view>
+                <scroll-view class="scroll_foot" scrollY="true" wx:if="{{footType}}">
+                    <view bindtap="__e" class="item_content" data-event-opts="{{[ [ 'tap',[ [ 'getItem',['$0'],[ [ ['community','',index] ] ] ] ] ] ]}}" wx:for="{{community}}" wx:key="index">
+                        <view class="iconnew new-loupan iocn fz-13"></view>
+                        <text class="fz-13">{{''+item.resblock_name+''}}</text>
+                    </view>
+                </scroll-view>
+            </view>
+            <view bindtap="__e" class="estimate_to" data-event-opts="{{[ [ 'tap',[ [ 'guess_price',['$event'] ] ] ] ]}}">
+                <text class="fz-15 white-color">去估价</text>
+            </view>
+        </view>
+    </view>
+</view>

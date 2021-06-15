@@ -1,0 +1,38 @@
+<view class="page">
+    <form bindsubmit="__e" class="search-bar" data-event-opts="{{[ [ 'submit',[ [ 'doSearch',['$event'] ] ] ] ]}}" reportSubmit="true">
+        <button class="search-btn fz-16 white-color" formType="submit">确定</button>
+        <view class="search-bar-form">
+            <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20190624/5d108a915ccf3.svg"></image>
+            <view bindtap="__e" class="weui-icon-clear iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></view>
+            <input bindconfirm="__e" bindinput="__e" class="ui-input black-30 search-bar-input" data-event-opts="{{[ [ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doSearch',['$event'] ] ] ] ]}}" focus="{{inputPlace}}" placeholder="{{inputPlace}}" placeholderClass="search-input-place fz-12" type="text" value="{{inputVal}}"></input>
+        </view>
+    </form>
+    <view class="search-history often-search" wx:if="{{!showContent}}">
+        <block wx:if="{{historySearch.length>0}}">
+            <view class="search-title">
+                <view class="gray-96 fz-14">近期搜索</view>
+                <view bindtap="__e" class="fz-17 iconnew new-shanchu" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}"></view>
+            </view>
+            <view class="search-content">
+                <view bindtap="__e" class="search-line black-60 fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['historySearch','',index] ] ] ] ] ] ]}}" wx:for="{{historySearch}}" wx:key="index">{{''+item+''}}</view>
+            </view>
+        </block>
+        <block wx:if="{{hotSearchs.length>0}}">
+            <view class="search-title">
+                <view class="gray-96 fz-14">大家都在搜</view>
+            </view>
+            <view class="search-content">
+                <view bindtap="__e" class="search-line black-60 fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['hotSearchs','',index,'keyword'] ] ] ] ] ] ]}}" wx:for="{{hotSearchs}}" wx:key="index">{{''+item.keyword+''}}</view>
+            </view>
+        </block>
+    </view>
+    <view class="question-container" wx:if="{{searchList.length>0}}">
+        <soil-item bind:__l="__l" bind:updateSoilData="__e" data-event-opts="{{[ [ '^updateSoilData',[ [ '__set_sync',['$0','searchList','$event'],[''] ] ] ],[ '^updateSoilData',[ [ '__set_sync',['$0','searchList','$event'],[''] ] ] ] ]}}" soilData="{{searchList}}" vueId="1e3e2d45-1"></soil-item>
+    </view>
+    <block wx:if="{{searchList.length==0&&showContent}}">
+        <view class="nothing" wx:if="{{!loading}}">
+            <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+            <view class="fz-13 text gray-96">没有搜索到内容哦～</view>
+        </view>
+    </block>
+</view>

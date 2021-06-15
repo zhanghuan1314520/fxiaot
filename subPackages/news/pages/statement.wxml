@@ -1,0 +1,44 @@
+<view>
+    <view class="{{[ 'page '+(comment_show?'popup':'') ]}}">
+        <view class="statement">
+            <view class="statement-all-top">
+                <busi-tab activeId="{{type}}" bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['change'] ] ] ]}}" isScrollView="{{true}}" list="{{list}}" vueId="12816b64-1"></busi-tab>
+            </view>
+            <view class="statement-top">
+                <view class="affirming">
+                    <text>动态</text>
+                    <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showState',['$event'] ] ] ] ]}}" data-name="免责声明">免责声明</text>
+                </view>
+            </view>
+            <view class="statement-all">
+                <statement-list bind:__l="__l" statementList="{{statementList}}" vueId="12816b64-2" willSalesName="{{willSalesName}}"></statement-list>
+                <loading bind:__l="__l" vueId="12816b64-3" wx:if="{{more}}"></loading>
+                <view class="none-data" wx:else>
+                    <image class="image" src="https://imgcdn.huanjutang.com/image/2020/07/21/a66b5f4357730b2fd69f917c3b1ddae5.png"></image>
+                </view>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['toState'] ] ] ]}}" isAuthPhone="{{true}}" vueId="12816b64-4" vueSlots="{{['default']}}" wx:if="{{isSealman}}">
+            <view class="footer">
+                <view class="btn">发表动态</view>
+            </view>
+        </authorization>
+        <busi-footer bind:__l="__l" vueId="12816b64-5" vueSlots="{{['default']}}" wx:else>
+            <view class="footer-content fz-16">
+                <footer-share bind:__l="__l" vueId="{{'12816b64-6'+','+'12816b64-5'}}"></footer-share>
+                <view class="btn-wrap">
+                    <contact-salesman bind:__l="__l" class="flex-style" projectId="{{project_id}}" salesmanId="{{sales_man_id}}" vueId="{{'12816b64-7'+','+'12816b64-5'}}" vueSlots="{{['default']}}">联系置业顾问</contact-salesman>
+                    <view bindtap="__e" class="flex-style footer-btn color-right" data-event-opts="{{[ [ 'tap',[ [ 'handleSubscription',['$event'] ] ] ] ]}}">订阅动态提醒</view>
+                </view>
+            </view>
+        </busi-footer>
+    </view>
+    <dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" class="vue-ref" content="{{callContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','showCallPhone','$event'],[''] ] ] ],[ '^onSubmit',[ ['comfirm'] ] ] ]}}" data-ref="Dialog" dataName="打电话" dataType="button" submitText="拨打" visible="{{showCallPhone}}" vueId="12816b64-8"></dialog>
+    <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" content="{{disclaimer}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','comment_show','$event'],[''] ] ] ] ]}}" data-ref="DialogDisclaimer" isColumnBtn="true" showCancel="{{false}}" submitText="我知道了" textAlign="left" title="免责声明" visible="{{comment_show}}" vueId="12816b64-9"></dialog>
+    <view class="page-control">
+        <navigator class="backhome btn" openType="switchTab" url="/pages/index" wx:if="{{showHome}}">
+            <text class="iconnew new-huishouye fz-21"></text>
+            <text class="fz-11 font-bold">首页</text>
+        </navigator>
+    </view>
+</view>

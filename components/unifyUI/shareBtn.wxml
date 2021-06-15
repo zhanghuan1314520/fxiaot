@@ -1,0 +1,6 @@
+<view class="unify-ui-share-btn">
+    <button bindtap="__e" class="button" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" id="{{idName}}" openType="share">
+        <text class="fz-18 icon iconnew new-fenxiang8"></text>
+        <text class="fz-14 text">分享</text>
+    </button>
+</view>

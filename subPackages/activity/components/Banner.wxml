@@ -1,0 +1,11 @@
+<view class="banner-wrap" wx:if="{{bannerList.length}}">
+    <view class="banner">
+        <swiper autoplay="{{true}}" circular="{{true}}" class="swiper" duration="{{500}}" indicatorActiveColor="#f5f652" indicatorColor="#fff" indicatorDots="{{true}}" interval="{{2000}}" style="height:180rpx;" wx:if="{{bannerList.length>1}}">
+            <swiper-item wx:for="{{bannerList}}" wx:key="index">
+                <image bindtap="__e" class="swiper-item" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$0'],[ [ ['bannerList','',index,'url'] ] ] ] ] ] ]}}" data-name="{{'banner'+index+1}}" mode="aspectFill" src="{{item.image}}"></image>
+            </swiper-item>
+        </swiper>
+        <image bindtap="__e" class="swiper-item" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$0'],['bannerList.__$n0.url'] ] ] ] ]}}" data-name="banner1" mode="aspectFill" src="{{bannerList[0].image}}" wx:else></image>
+    </view>
+    <view class="pillars"></view>
+</view>

@@ -1,0 +1,97 @@
+<view class="page">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" isTabbarPage="{{true}}" vueId="58a3de7f-1"></busi-nav-header>
+    <scroll-view bindrefresherrefresh="__e" bindrefresherrestore="__e" bindscrolltolower="__e" catchtouchmove="__e" class="advisory skeletons" data-event-opts="{{[ [ 'touchmove',[ [ 'emptyFunction',['$event'] ] ] ],[ 'scrolltolower',[ [ 'onScrollToLower',['$event'] ] ] ],[ 'refresherrefresh',[ [ 'pagePullDownRefresh',['$event'] ] ] ],[ 'refresherrestore',[ [ 'pagePullDownRestore',['$event'] ] ] ] ]}}" refresherEnabled="{{true}}" refresherTriggered="{{triggered}}" scrollIntoView="{{scrollIntoView}}" scrollWithAnimation="{{true}}" scrollY="{{true}}">
+        <view catchtap="__e" class="tip-message" data-event-opts="{{[ [ 'tap',[ [ 'jumpServiceNumberUrl',['$event'] ] ] ] ]}}" wx:if="{{attentionServiceFlag}}">
+            <view class="left fz-14">关注服务号，第一时间获取回复通知</view>
+            <view class="right fz-13">
+                <text>去关注</text>
+                <text class="fz-10 iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view class="read-num" id="top">
+            <text class="fz-13 gray-96">全部消息</text>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['goSubscribePage'] ] ] ]}}" isAuthPhone="{{true}}" vueId="58a3de7f-2" vueSlots="{{['default']}}">
+                <view class="read-btn">
+                    <text class="iconnew new-guanlidingyue fz-12"></text>
+                    <text class="fz-13 font-bold">管理订阅</text>
+                </view>
+            </authorization>
+        </view>
+        <robot bind:__l="__l" vueId="58a3de7f-3"></robot>
+        <block wx:if="{{messageList.length>0}}">
+            <block wx:for="{{$root.l0}}" wx:key="id">
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toMsgDetail',['$0'],[ [ ['messageList','id',item[$orig].id] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'58a3de7f-4-'+index}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].link_type==1}}">
+                    <view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{['advisory-content',chatDelIndex==index?'active':'',chatDelIndex==index&&sureDel?'active-sure':'',index===messageList.length-1?'last':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'touchS',['$event'] ] ] ],[ 'touchmove',[ [ 'touchM',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',[index] ] ] ] ]}}" id="{{'advisory-content-'+index}}">
+                        <view catchtap="__e" class="fz-14 del-btn del-sure-button" data-event-opts="{{[ [ 'tap',[ [ 'delUserHandle',[index] ] ] ] ]}}">确认删除</view>
+                        <view catchtap="__e" class="fz-14 del-btn del-button" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">删除</view>
+                        <view class="advisory-content-box">
+                            <view class="advisory-content-left">
+                                <view class="image">
+                                    <image-loader bind:__l="__l" mode="aspectFill" source="{{item[$orig].link_icon||defaultAvatar}}" styles="{{item.a0}}" vueId="{{'58a3de7f-5-'+index+','+'58a3de7f-4-'+index}}"></image-loader>
+                                </view>
+                                <view class="{{['label','label-'+item[$orig].intention]}}" wx:if="{{item[$orig].intention>0}}">{{''+item.f0+''}}</view>
+                            </view>
+                            <view class="advisory-content-right">
+                                <view class="line top">
+                                    <view class="top-name">{{''+(item[$orig].link_name||'匿名')+''}}</view>
+                                    <text class="time fz-12" wx:if="{{item[$orig].link_name!='系统消息'}}">{{''+item[$orig].show_time+''}}</text>
+                                </view>
+                                <view class="line bottom">
+                                    <text class="red-circle-text white-color" wx:if="{{item[$orig].un_read_num>0&&item[$orig].un_read_num<10}}">{{''+item[$orig].un_read_num+''}}</text>
+                                    <text class="red-circle-text white-color w-99" wx:if="{{item[$orig].un_read_num>9&&item[$orig].un_read_num<100}}">{{''+item[$orig].un_read_num+''}}</text>
+                                    <text class="red-circle-text white-color w-100" wx:if="{{item[$orig].un_read_num>100}}">99+</text>
+                                    <view class="project-produce">
+                                        <block wx:if="{{item[$orig].msg_type!==1}}">{{''+(MSG_TYPE_TIPS[item[$orig].msg_type]||item[$orig].msg_content)+''}}</block>
+                                        <show-emoji bind:__l="__l" message="{{item[$orig].msg_content}}" vueId="{{'58a3de7f-6-'+index+','+'58a3de7f-4-'+index}}" wx:else></show-emoji>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </authorization>
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toMsgDetail',['$0'],[ [ ['messageList','id',item[$orig].id] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'58a3de7f-7-'+index}}" vueSlots="{{['default']}}" wx:else>
+                    <view class="{{['advisory-content',chatDelIndex==index?'active':'',chatDelIndex==index&&sureDel?'active-sure':'']}}" id="{{'advisory-content-'+index}}">
+                        <view class="advisory-content-box">
+                            <view class="advisory-content-left no-border">
+                                <view class="image" wx:if="{{!item[$orig].skeletons}}">
+                                    <image-loader bind:__l="__l" mode="aspectFill" source="{{item[$orig].link_icon||defaultAvatar}}" styles="{{width:'88rpx',height:'88rpx'}}" vueId="{{'58a3de7f-8-'+index+','+'58a3de7f-7-'+index}}"></image-loader>
+                                </view>
+                                <view class="skeletons-rect list__avatar" wx:else></view>
+                            </view>
+                            <view class="advisory-content-right">
+                                <view class="line top">
+                                    <block wx:if="{{!item[$orig].skeletons}}">
+                                        <view class="top-name">{{''+(item[$orig].link_name||'匿名')+''}}</view>
+                                        <text class="time fz-12" wx:if="{{item[$orig].link_name!='系统消息'}}">{{''+item[$orig].show_time+''}}</text>
+                                    </block>
+                                    <view class="skeletons-rect list__username" wx:else></view>
+                                </view>
+                                <view class="line bottom">
+                                    <block wx:if="{{!item[$orig].skeletons}}">
+                                        <text class="red-circle-text white-color" wx:if="{{item[$orig].un_read_num>0&&item[$orig].un_read_num<10}}">{{''+item[$orig].un_read_num+''}}</text>
+                                        <text class="red-circle-text white-color w-99" wx:if="{{item[$orig].un_read_num>9&&item[$orig].un_read_num<100}}">{{''+item[$orig].un_read_num+''}}</text>
+                                        <text class="red-circle-text white-color w-100" wx:if="{{item[$orig].un_read_num>100}}">100</text>
+                                        <view class="project-produce">
+                                            <show-emoji bind:__l="__l" message="{{item[$orig].msg_content}}" vueId="{{'58a3de7f-9-'+index+','+'58a3de7f-7-'+index}}"></show-emoji>
+                                        </view>
+                                    </block>
+                                    <view class="skeletons-rect list__content" wx:else></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </authorization>
+            </block>
+            <view class="weui-loadmore flex_layout_c_style" hidden="{{loading}}" wx:if="{{more}}">
+                <view class="loading-runing">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view>

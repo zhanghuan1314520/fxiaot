@@ -1,0 +1,293 @@
+.text-val {
+    display: inline-block;
+    width: 180rpx;
+    text-align: justify;
+    text-align-last: justify;
+    height: 44rpx;
+}
+
+.text-val::after {
+    width: 100%;
+    content: "";
+}
+
+.new-wenhaocopy,.text-val::after {
+    display: inline-block;
+}
+
+.skeletons .left.skeletons-rect {
+    height: 114rpx;
+    margin-right: 40rpx;
+}
+
+.btn-gray {
+    background: #b2b4b7!important;
+    box-shadow: none!important;
+}
+
+.lottery-info {
+    padding-top: 20rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.lottery-info .info-container {
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.lottery-info .info-container>.info-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lottery-info .info-container>.info-list>.left {
+    flex: 1;
+}
+
+.lottery-info .info-container>.info-list>.left .item {
+    width: 100%;
+    line-height: 44rpx;
+    color: #96989e;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+
+.lottery-info .info-container>.info-list>.left .item .key {
+    float: left;
+    width: 160rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lottery-info .info-container>.info-list>.left .item .price {
+    margin-left: 170rpx;
+    color: #ee3f4d!important;
+    font-weight: 500;
+}
+
+.lottery-info .info-container>.info-list>.right {
+    width: 148rpx;
+    height: 148rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(21,24,45,.03);
+}
+
+.lottery-info .info-container>.info-list>.right .qrcode {
+    display: block;
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.lottery-info .info-container>.table {
+    margin: 20rpx 0 30rpx;
+    border: 2rpx solid #f1f1f1;
+    border-bottom: 0;
+    font-size: 26rpx;
+    display: table;
+    width: 100%;
+}
+
+.lottery-info .info-container>.table>.tr {
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    color: #303237;
+    border-top: 2rpx solid #f1f1f1;
+    background: #fff;
+    display: table-row;
+    width: 100%;
+}
+
+.lottery-info .info-container>.table>.tr:first-child {
+    border-top: none;
+    color: #96989e;
+    background: rgba(21,24,45,.03);
+}
+
+.lottery-info .info-container>.table>.tr:nth-child(4) {
+    color: #2f8cef;
+    font-weight: 500;
+}
+
+.lottery-info .info-container>.table>.tr>.td {
+    border-left: 2rpx solid #f1f1f1;
+    border-bottom: 2rpx solid #f1f1f1;
+    box-sizing: border-box;
+    display: table-cell;
+}
+
+.lottery-info .info-container>.table>.tr>.td:first-child {
+    width: 24%;
+    color: #96989e;
+    font-weight: 400!important;
+    border-left: none;
+    white-space: nowrap;
+}
+
+.lottery-info .info-container>.table .iconnew {
+    display: inline;
+}
+
+.lottery-info .btn-list {
+    height: auto;
+    overflow: hidden;
+    margin: 0 24rpx 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lottery-info .btn-list .navigator {
+    display: block;
+    float: left;
+    flex: 1;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.lottery-info .btn-list .navigator .image {
+    display: block;
+    width: 100%;
+}
+
+.lottery-info .btn-list .navigator:first-child {
+    margin-right: 20rpx;
+}
+
+.open-quotation {
+    padding-top: 30rpx;
+    margin-bottom: 20rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.open-quotation .open_container {
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.open-quotation .open_container>.ul {
+    margin: 30rpx 0 10rpx;
+    overflow: hidden;
+}
+
+.open-quotation .open_container>.ul .list {
+    font-weight: 400;
+    line-height: 44rpx;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.open-quotation .open_container>.ul .left-text {
+    width: 200rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: left;
+}
+
+.open-quotation .open_container>.ul .right {
+    display: block;
+    margin-left: 210rpx;
+    word-break: break-all;
+}
+
+.open-quotation .open_container .btn-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-bottom: 30rpx;
+    box-sizing: border-box;
+}
+
+.open-quotation .open_container .btn-list .btn {
+    width: 100%;
+    margin-right: 12rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-weight: 500;
+    text-align: center;
+    background: #2f8cef;
+    background: linear-gradient(180deg,#4ecfff,#1b7ded);
+    border-radius: 4rpx;
+}
+
+.open-quotation .open_container .btn-list .btn-hover {
+    background: linear-gradient(180deg,#4ecfff,#1b7ded);
+}
+
+.open-quotation .open_container .btn-list .btn:last-child {
+    margin-right: 0;
+}
+
+.open-quotation .open_container .btn-list .wsui-btn__hover_list {
+    background: #2f86f6;
+}
+
+.open-quotation .open_time {
+    padding: 0;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+}
+
+.open-quotation .open_time_container {
+    background: rgba(21,24,45,.03);
+    overflow: hidden;
+    margin: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 240rpx;
+    box-sizing: border-box;
+    padding: 0 10rpx;
+}
+
+.open-quotation .open_time_container .open_time_list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.open-quotation .open_time_container .open_time_list.active .time_list_text {
+    color: #ff7d4f;
+}
+
+.open-quotation .open_time_container .open_time_list.odd .time_list_text {
+    top: 100%;
+}
+
+.open-quotation .open_time_container .open_time_list.even {
+    flex-direction: column-reverse;
+}
+
+.open-quotation .open_time_container .open_time_list.even .time_list_text {
+    top: -100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.open-quotation .open_time_container .time_list_text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    color: #96989e;
+}
+
+.open-quotation .open_time_container .time_list_text .view {
+    white-space: nowrap;
+    text-align: center;
+}

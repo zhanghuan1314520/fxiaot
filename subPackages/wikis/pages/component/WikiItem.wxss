@@ -1,0 +1,90 @@
+.item {
+    clear: both;
+    height: 208rpx;
+    padding-top: 40rpx;
+    width: auto;
+    margin: 0 32rpx;
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+}
+
+.item .item-left {
+    width: 478rpx;
+    height: 100%;
+    float: left;
+}
+
+.item .item-left .item-title {
+    width: auto;
+    height: 104rpx;
+    font-size: 34rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 52rpx;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.item .item-left .item-info {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 24rpx;
+}
+
+.item .item-left .item-info .item-info-type {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    flex: 1;
+}
+
+.item .item-left .item-info .item-info-type .tag-text {
+    display: inline-block;
+    width: auto;
+    height: 40rpx;
+    background: rgba(45,140,240,.12);
+    border-radius: 4rpx;
+    padding: 0 12rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #2d8cf0;
+    line-height: 40rpx;
+}
+
+.item .item-left .item-info .item-info-date {
+    flex: 1;
+    width: auto;
+    height: 40rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.5);
+    line-height: 40rpx;
+    text-align: right;
+}
+
+.item .item-right {
+    float: right;
+    border-radius: 8rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.item .item-right,.item .item-right .item-cover {
+    width: 168rpx;
+    height: 168rpx;
+}
+
+.item .item-right .icon-video {
+    height: 56rpx;
+    width: 56rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+    background: url(https://imgcdn.huanjutang.com/assets/img/201912191719128081.png) 50% no-repeat;
+    background-size: cover;
+}

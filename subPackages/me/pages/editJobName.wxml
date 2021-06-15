@@ -1,0 +1,8 @@
+<view class="wrap">
+    <input-item bind:__l="__l" bind:updateValue="__e" class="vue-ref" data-event-opts="{{[ [ '^updateValue',[ [ '__set_sync',['$0','jobName','$event'],[''] ] ] ] ]}}" data-ref="inputItem" disabled="{{state===0}}" max="{{6}}" placeholder="请输入工作展示名" value="{{jobName}}" vueId="55d0af0c-1"></input-item>
+    <view class="label">上传该楼盘的名片/工牌</view>
+    <upload-media bind:__l="__l" bind:updateValue="__e" data-event-opts="{{[ [ '^updateValue',[ [ '__set_sync',['$0','fileList','$event'],[''] ] ] ] ]}}" disabled="{{state===0}}" limit="{{1}}" mediaType="image" tip="注：需要与名片/工牌上名字保持一致" value="{{fileList}}" vueId="55d0af0c-2"></upload-media>
+    <view class="submit-button">
+        <submit-button bind:__l="__l" bind:comfirm="__e" btnText="{{state!==0?'确认修改':'审核中'}}" data-event-opts="{{[ [ '^comfirm',[ ['modify'] ] ] ]}}" disabled="{{disabled}}" vueId="55d0af0c-3"></submit-button>
+    </view>
+</view>

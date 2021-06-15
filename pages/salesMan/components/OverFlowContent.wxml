@@ -1,0 +1,9 @@
+<view style="{{'padding-bottom:'+(showToggle&&expand?'36rpx':'0')+';'}}">
+    <view class="{{[ 'text',[showToggle&&!expand?'collapsed':''] ]}}">
+        <text>{{content}}</text>
+        <view catchtap="__e" class="toggle" data-event-opts="{{[ [ 'tap',[ [ 'toggleExpand',['$event'] ] ] ] ]}}" style="{{'bottom:'+(expand?'-36rpx':'0')+';'}}" wx:if="{{showToggle}}">
+            <text class="toggle-text">{{''+(expand?'收起':'展开')+''}}</text>
+            <view class="{{['iconnew',expand?'new-shouqi':'new-zhankai']}}"></view>
+        </view>
+    </view>
+</view>

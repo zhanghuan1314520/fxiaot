@@ -1,0 +1,19 @@
+<view>
+    <view id="app">
+        <view class="main-top-cont">
+            <image src="{{logo}}"></image>
+            <view class="app-name">杭州房小团</view>
+            <view class="app-num">{{'v'+version+''}}</view>
+        </view>
+        <view class="scription-box">
+            <view class="line">房小团，一个信息全面、高效、直观，实时更新的新房平台。</view>
+            <view class="line">我们致力于链接购房者、开发商、内容自媒体，打造全新的房产信息服务平台，为用户提供可靠、便捷的找房服务。</view>
+            <view class="line">选新房 查摇号 就上房小团！</view>
+        </view>
+        <view class="footer-cont">
+            <image bindtap="__e" class="qr-code" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['code'] ] ] ] ]}}" src="{{code}}"></image>
+            <image class="circle" src="https://imgcdn.huanjutang.com/assets/img/20190806/5d49395bd1f9b.png"></image>
+            <view class="text">搜索"<text class="app-name-text">摇号管家</text>"或扫描二维码关注公众号</view>
+        </view>
+    </view>
+</view>

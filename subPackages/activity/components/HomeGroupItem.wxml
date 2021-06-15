@@ -1,0 +1,24 @@
+<view bindtap="__e" class="group data-v-2f57b64a" data-content="新房团着买" data-event-opts="{{[ [ 'tap',[ [ 'toProjectDetail',['$event'] ] ] ] ]}}" data-name="{{item.project_names}}" data-type="link">
+    <view class="group-top data-v-2f57b64a">{{''+timeStr+''}}</view>
+    <view class="group-project data-v-2f57b64a">
+        <image class="image data-v-2f57b64a" src="{{item.project_cover}}"></image>
+        <view class="bottom-info data-v-2f57b64a">
+            <view class="info-box data-v-2f57b64a">
+                <image class="avatar data-v-2f57b64a" src="{{ele.avatar_url||defaultAvatar}}" wx:for="{{avatarList}}" wx:for-item="ele" wx:key="index"></image>
+            </view>
+            <view class="info-text data-v-2f57b64a">{{''+(item.user_count>0?'等':'')+$root.m0+'人已参团'}}</view>
+        </view>
+    </view>
+    <view class="group-bottom data-v-2f57b64a">
+        <view class="bottom-name data-v-2f57b64a">{{''+item.project_names+''}}</view>
+        <view class="bottom-status data-v-2f57b64a">
+            <view class="price price-num data-v-2f57b64a">{{''+item.coupon_name+''}}</view>
+            <view class="bottom-button-wrap data-v-2f57b64a">
+                <authorization bind:__l="__l" bind:onSuccess="__e" class="data-v-2f57b64a" data-event-opts="{{[ [ '^onSuccess',[ ['haddleClick'] ] ] ]}}" isAuthPhone="{{true}}" vueId="45fdbd6c-1" vueSlots="{{['default']}}">
+                    <image bindtap="__e" class="bottom-button data-v-2f57b64a" data-content="新房团着买" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{projectStatus[$root.m2].text}}" data-type="button" id="{{item.id}}" src="{{projectStatus[$root.m1].image}}"></image>
+                </authorization>
+            </view>
+        </view>
+    </view>
+    <join-modal bind:__l="__l" bind:success="__e" class="data-v-2f57b64a vue-ref" data-event-opts="{{[ [ '^success',[ ['success'] ] ] ]}}" data-ref="{{'joinModal'+item.id}}" item="{{item}}" vueId="45fdbd6c-2"></join-modal>
+</view>

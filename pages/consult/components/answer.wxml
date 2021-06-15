@@ -1,0 +1,161 @@
+<view>
+    <view class="white-bg search-box">
+        <navigator class="search-bar" hoverClass="none" url="/subPackages/question/pages/questionSearch">
+            <image class="weui-icon-search gray-color" src="https://imgcdn.huanjutang.com/assets/img/20190624/5d108a915ccf3.svg"></image>
+            <input class="search-input gray-96 fz-13" disabled="disabled" placeholder="{{placeHolder}}" placeholderClass="search-input-place" type="text"></input>
+        </navigator>
+    </view>
+    <view class="model-discuss" wx:if="{{questionBanners.length>0}}">
+        <topic-list bind:__l="__l" questionBanners="{{questionBanners}}" vueId="996ccdca-1"></topic-list>
+    </view>
+    <view class="filter-box">
+        <view class="{{[ 'question-head question-head-fix '+(answerHeaderFix?'header-fixed':'') ]}}">
+            <view bindtap="__e" class="{{[ 'fz-13 filter '+(sendData.tag?'orange-color':'black-30') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'openSwitch',['1'] ] ] ] ]}}">
+                <text>{{sendData.tag||'问答类型'}}</text>
+                <text class="iconnew new-zhankai fz-11 i8"></text>
+            </view>
+            <view bindtap="__e" class="{{[ 'fz-13 filter '+(sendData.status?'orange-color':'black-30') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'openSwitch',['2'] ] ] ] ]}}">
+                <text>{{answerType[answerIndex].name||'解决状态'}}</text>
+                <text class="iconnew new-zhankai fz-11 i8"></text>
+            </view>
+            <view bindtap="__e" class="{{[ 'fz-13 sort filter '+(sendData.time_order_by?'orange-color':'black-30') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'openSwitch',['3'] ] ] ] ]}}">
+                <text>{{sortList[sortIndex].name||'默认排序'}}</text>
+                <text class="iconnew new-zhankai fz-11 i8"></text>
+            </view>
+            <share-btn bind:__l="__l" vueId="996ccdca-2"></share-btn>
+        </view>
+    </view>
+    <view class="question-container">
+        <block wx:if="{{questionItems.length>0}}">
+            <view class="{{['question-wrap',item.skeleton&&'skeletons']}}" wx:for="{{questionItems}}" wx:key="index">
+                <view class="tag-essence" wx:if="{{item.is_top===1}}">
+                    <view class="con">精华</view>
+                    <view class="rote"></view>
+                </view>
+                <busi-auth-navigator bind:__l="__l" class="auth-question-list" url="{{'navigateTo-authphone://subPackages/question/pages/questionDetail?id='+item.id+'&identity_tag='+item.identity_tag}}" vueId="{{'996ccdca-3-'+index}}" vueSlots="{{['default']}}">
+                    <view class="{{[ 'question-list '+(item.is_top===1?'mt-10':'') ]}}">
+                        <view class="question-line-top skeletons-rect">
+                            <view class="question-sign">
+                                <view class="ask-for font-bold green-bg fz-12 white-color" wx:if="{{item.status==3}}">已解决</view>
+                                <block wx:else>
+                                    <view class="ask-for active font-bold fz-12 white-color" wx:if="{{!item.skeleton}}">问</view>
+                                </block>
+                                <view class="question-type fz-11" wx:for="{{item.tags}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val.text+''}}</view>
+                            </view>
+                            <view class="person-view">
+                                <text class="view-num">{{''+(!item.skeleton&&item.page_views+' 浏览')+''}}</text>
+                                <text class="circle">{{''+(!item.skeleton&&'.')+''}}</text>
+                                <text class="answer-num">{{''+(!item.skeleton&&item.comment_num+' 回答')+''}}</text>
+                            </view>
+                        </view>
+                        <view class="question-line-middle black-30 fz-14 skeletons-rect">
+                            <text>{{!item.skeleton&&item.content}}</text>
+                        </view>
+                        <share-template bind:__l="__l" bind:updateImgData="__e" data-event-opts="{{[ [ '^updateImgData',[ [ '__set_sync',['$0','img_arr','$event'],[ [ ['questionItems','',index,''] ] ] ] ] ],[ '^updateImgData',[ [ '__set_sync',['$0','img_arr','$event'],[ [ ['questionItems','',index,''] ] ] ] ] ] ]}}" imgData="{{item.img_arr}}" vueId="{{'996ccdca-4-'+index+','+'996ccdca-3-'+index}}"></share-template>
+                        <view class="question-line-bottom skeletons-rect">
+                            <view class="left-person-info">
+                                <image src="{{item.user_avatar_url||avatar_url}}"></image>
+                                <text class="name gray-96 fz-12">{{''+(!item.skeleton&&item.user_name)+''}}</text>
+                                <text class="time gray-96 fz-12">{{''+(!item.skeleton&&item.time)+''}}</text>
+                            </view>
+                            <block wx:if="{{!item.skeleton}}">
+                                <view class="right-answer-btn active" wx:if="{{item.status==3}}">
+                                    <text class="fz-12 font-bold">查看回答</text>
+                                </view>
+                                <block wx:else>
+                                    <block wx:if="{{item.user_id==userInfo.id}}">
+                                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toGo',['/subPackages/question/pages/againAskQuestion?id='+item.id+'&address=index'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'996ccdca-5-'+index+','+'996ccdca-3-'+index}}" vueSlots="{{['default']}}" wx:if="{{!item.is_question_closely}}">
+                                            <view class="right-answer-btn">
+                                                <text class="iconnew new-xiepinglun fz-17"></text>
+                                                <text class="fz-12 font-bold">我要追问</text>
+                                            </view>
+                                        </authorization>
+                                    </block>
+                                    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toGo',['/subPackages/question/pages/answerDetail?id='+item.id+'&&address=index'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'996ccdca-6-'+index+','+'996ccdca-3-'+index}}" vueSlots="{{['default']}}" wx:else>
+                                        <view class="right-answer-btn">
+                                            <text class="iconnew new-xiepinglun fz-17"></text>
+                                            <text class="fz-12 font-bold">我要回答</text>
+                                        </view>
+                                    </authorization>
+                                </block>
+                            </block>
+                        </view>
+                    </view>
+                </busi-auth-navigator>
+            </view>
+        </block>
+        <view class="loading-runing white-bg" wx:if="{{more}}">
+            <view class="loading-icon">
+                <text class="iconnew new-jiazai"></text>
+            </view>
+            <view class="left-font">
+                <text>加载中</text>
+            </view>
+        </view>
+        <view class="nothing" wx:if="{{questionItems.length<=0&&!more}}">
+            <view class="nothing-text fz-13 gray-96">暂无内容</view>
+        </view>
+    </view>
+    <block wx:if="{{optionsIndex>0}}">
+        <view class="filter-container" style="{{'top:'+marginTop+'px'}}">
+            <view class="filter-fixed">
+                <view bindtap="__e" class="{{[ 'fz-13 filter '+(sendData.tag||optionsIndex==1?'orange-color':'black-30') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'openSwitch',['1'] ] ] ] ]}}">
+                    <text>{{sendData.tag||'问答类型'}}</text>
+                    <text class="iconnew new-zhankai fz-10 i8"></text>
+                </view>
+                <view bindtap="__e" class="{{[ 'fz-13 filter '+(sendData.status||optionsIndex==2?'orange-color':'black-30') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'openSwitch',['2'] ] ] ] ]}}">
+                    <text>{{answerType[answerIndex].name||'解决状态'}}</text>
+                    <text class="iconnew new-zhankai fz-10 i8"></text>
+                </view>
+                <view bindtap="__e" class="{{[ 'fz-13 filter '+(sendData.time_order_by||optionsIndex==3?'orange-color':'black-30') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'openSwitch',['3'] ] ] ] ]}}">
+                    <text>{{sortList[sortIndex].name||'默认排序'}}</text>
+                    <text class="iconnew new-zhankai fz-10 i8"></text>
+                </view>
+            </view>
+            <view class="filter-options" wx:if="{{optionsIndex==1}}">
+                <view class="min-height">
+                    <view class="cont-item" wx:for="{{questionNavs_}}" wx:for-index="pIndex" wx:key="pIndex">
+                        <view class="title fz-14 font-bold black-60">{{''+item.type_text+''}}</view>
+                        <view class="area-box">
+                            <view bindtap="__e" class="{{[ 'right-box fz-13 '+(val.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'pickerAnswerType',[pIndex,cIndex] ] ] ] ]}}" wx:for="{{item.tags}}" wx:for-index="cIndex" wx:for-item="val" wx:key="cIndex">{{''+val.name+''}}<view class="choosed" wx:if="{{val.is_toggle}}">
+                                    <view class="white-color new-gougou iconnew"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="filter-bottom-btn">
+                    <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+                    <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                </view>
+            </view>
+            <view catchtouchmove="__e" class="filter-options" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{optionsIndex==2}}">
+                <view class="min-height">
+                    <view bindtap="__e" class="{{[ 'line '+(answerIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'pickerStatus',[index] ] ] ] ]}}" wx:for="{{answerType}}" wx:key="index">{{''+item.name+''}}</view>
+                </view>
+                <view class="filter-bottom-btn">
+                    <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+                    <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                </view>
+            </view>
+            <view catchtouchmove="__e" class="filter-options" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{optionsIndex==3}}">
+                <view class="min-height">
+                    <view bindtap="__e" class="{{[ 'line '+(sortIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'pickerSort',[index] ] ] ] ]}}" wx:for="{{sortList}}" wx:key="index">{{''+item.name+''}}</view>
+                </view>
+                <view class="filter-bottom-btn">
+                    <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+                    <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" catchtouchmove="__e" class="filter-hide-bg" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'closeCancel',['$event'] ] ] ] ]}}" style="{{'top:'+marginTop+'px'}}"></view>
+    </block>
+    <busi-auth-navigator bind:__l="__l" class="auth-create-question" url="navigateTo-authphone://subPackages/question/pages/askQuestion" vueId="996ccdca-7" vueSlots="{{['default']}}">
+        <view class="{{['create-question',isShowAll?'active':'']}}">
+            <view class="circle-btn">
+                <text class="iconnew new-wenda fz-14"></text>
+            </view>
+            <view class="text fz-15 white-color font-bold">我要提问</view>
+        </view>
+    </busi-auth-navigator>
+</view>

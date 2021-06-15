@@ -1,0 +1,36 @@
+.swiper.data-v-4721a30e {
+    height: 70rpx;
+}
+
+.swiper-item.data-v-4721a30e {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.avatar.data-v-4721a30e {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    border: 4rpx solid #002aff;
+    margin-right: 6rpx;
+    margin-left: 46rpx;
+}
+
+.bold-text.data-v-4721a30e {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 7rpx;
+    max-width: 125rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.common-text.data-v-4721a30e {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    color: #8797ff;
+}

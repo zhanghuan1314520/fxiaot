@@ -1,0 +1,104 @@
+page {
+    padding-bottom: 0;
+}
+
+.salesman-privilege {
+    position: relative;
+    padding-bottom: env(safe-area-inset-bottom);
+    background-image: url(https://imgcdn.huanjutang.com/file/2021/03/24/bcafd5a8ca9f2ec93491b1e0c2e0d8d4.png);
+    background-size: cover;
+    background-position: top;
+    z-index: 300;
+}
+
+.top-img {
+    margin: 48rpx 36rpx 68rpx;
+    width: 678rpx;
+    height: 200rpx;
+}
+
+.privilege-list-wrap {
+    position: relative;
+    margin: 0 32rpx;
+    padding: 72rpx 20rpx 20rpx;
+    border-radius: 32rpx;
+    background: linear-gradient(142deg,#e3a052,#f0dab9);
+}
+
+.privilege-list-wrap+.privilege-list-wrap {
+    margin-top: 76rpx;
+}
+
+.privilege-list-wrap .title-img {
+    position: absolute;
+    top: -30rpx;
+    left: 106rpx;
+    width: 476rpx;
+    height: 116rpx;
+}
+
+.privilege-list-wrap .title-img::before {
+    content: "";
+    position: absolute;
+    left: 6rpx;
+    top: 14rpx;
+    width: 462rpx;
+    height: 30rpx;
+    background: linear-gradient(180deg,#a7722a,#935e17);
+    border-radius: 33rpx;
+    z-index: -1;
+}
+
+.privilege-list {
+    padding: 32rpx;
+    border-radius: 20rpx;
+    background: linear-gradient(148deg,#f0cea6,#f8e9d5);
+}
+
+.privilege-item {
+    display: flex;
+}
+
+.privilege-item+.privilege-item {
+    margin-top: 32rpx;
+}
+
+.privilege-item .icon {
+    flex-shrink: 0;
+    margin-right: 20rpx;
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.privilege-item .name-box .name {
+    display: flex;
+    margin-bottom: 8rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #a56315;
+    line-height: 44rpx;
+}
+
+.privilege-item .name-box .desc {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 38rpx;
+}
+
+.privilege-item .name-box .icon-tip {
+    position: relative;
+    top: 4rpx;
+    margin-left: 8rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.tip {
+    padding: 32rpx 0 18rpx;
+    width: 100%;
+    line-height: 24rpx;
+    font-size: 24rpx;
+    text-align: center;
+    color: rgba(238,209,168,.65);
+    background: transparent;
+}

@@ -1,0 +1,53 @@
+.phontos-bottom-btns {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 16rpx 32rpx env(safe-area-inset-bottom) 48rpx;
+    z-index: 998;
+}
+
+.phontos-bottom-btns .share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0,0,0,.85);
+    width: 56rpx;
+    line-height: 1;
+    background: #fff;
+    margin-right: 48rpx;
+    margin-bottom: 16rpx;
+}
+
+.phontos-bottom-btns .share .text {
+    font-size: 28rpx;
+    margin-top: 6rpx;
+}
+
+.phontos-bottom-botton {
+    height: 100rpx;
+    border-radius: 8rpx;
+    line-height: 100rpx;
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 16rpx;
+}
+
+.phontos-bottom-botton.left {
+    background: #1bc17b;
+}
+
+.phontos-bottom-botton.right {
+    background: #2d8cf0;
+    margin-left: 22rpx;
+}

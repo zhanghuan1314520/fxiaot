@@ -1,0 +1,27 @@
+<view class="jackpot data-v-3a6a2f42">
+    <image class="jackpot-top__image data-v-3a6a2f42" mode="widthFix" src="{{topImage}}"></image>
+    <view class="jackpot-content data-v-3a6a2f42">
+        <view class="content-title data-v-3a6a2f42">
+            <image class="data-v-3a6a2f42" src="{{homeImage.jackpot}}"></image>
+        </view>
+        <view class="content-box data-v-3a6a2f42">
+            <view class="box-title data-v-3a6a2f42">
+                <text class="data-v-3a6a2f42">由</text>
+                <text class="title data-v-3a6a2f42">{{''+(detail.project&&detail.project.name||'房小团')+''}}</text>
+                <text class="data-v-3a6a2f42">提供</text>
+            </view>
+            <view class="box-prize data-v-3a6a2f42">
+                <view class="image-view data-v-3a6a2f42">
+                    <image class="image data-v-3a6a2f42" src="{{detail.prize_image}}"></image>
+                </view>
+                <view class="box-text data-v-3a6a2f42">{{''+detail.prize_title+''}}</view>
+            </view>
+            <view class="content-desc data-v-3a6a2f42">
+                <text class="data-v-3a6a2f42" data-text="{{'请添加官方客服微信“'+detail.wechat+'”领取奖品'}}">{{'请添加官方客服微信“'+detail.wechat+'”领取奖品'}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="jackpot-button data-v-3a6a2f42">
+        <image bindtap="__e" class="data-v-3a6a2f42" data-event-opts="{{[ [ 'tap',[ [ 'copyCode',['$event'] ] ] ] ]}}" data-name="复制微信号" src="{{homeImage.copy}}"></image>
+    </view>
+</view>

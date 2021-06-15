@@ -1,0 +1,83 @@
+<view class="page">
+    <image class="back-image" src="https://imgcdn.huanjutang.com/assets/img/2020519101908081.png"></image>
+    <view class="sign-head">
+        <view class="sign-head-detail"></view>
+        <view class="sign-head-img">
+            <image class="sign-head-tittle" mode="aspectFill" src="{{userInfo['avatarUrl']&&userInfo['avatarUrl']!='null'?userInfo['avatarUrl']:defaultAvatar}}"></image>
+            <text class="fz-12 white-color">{{'当前幸运豆 '+grades+''}}</text>
+        </view>
+        <view class="sign-head-Instructions">
+            <navigator class="fz-12 white-color" hoverClass="none" url="{{signExplainPath}}">规则说明</navigator>
+        </view>
+    </view>
+    <view class="sign-tip" style="background:#fff;">
+        <view class="black-color fz-14" wx:if="{{status==1}}">今日<text class="yellow-color">{{'+'+addPoint+''}}</text>！</view>
+        <view class="black-color fz-14">连续签到<text class="yellow-color">{{''+days+''}}</text>天! 已签到<text class="yellow-color">{{''+allDays+''}}</text>天</view>
+        <view class="gray-9-color fz-12">{{'再连续签到'+(10-days>0?10-days:0)+'天! 可额外获取20幸运豆'}}</view>
+    </view>
+    <view class="sign-btn">
+        <button bindtap="__e" class="{{[status==2?'icon-yellow-bg':'gray-bg']}}" data-event-opts="{{[ [ 'tap',[ [ 'signBtn',['$event'] ] ] ] ]}}">
+            <text class="fz-14 white-color">{{''+(status==2?'签到':'今日已签到')+''}}</text>
+        </button>
+    </view>
+    <view>
+        <navigator class="sign-more" hoverClass="none" url="{{pointExplainPath}}">
+            <text class="black1a-color fz-15">赚取更多幸运豆</text>
+            <text class="iconnew new-wenhaocopy small-level-color"></text>
+        </navigator>
+        <view class="sign-share">
+            <view class="sign-share-top">
+                <view class="share-cont">
+                    <text class="black1a-color fz-14 font-bold">评论</text>
+                    <text class="fz-12 black1a-color">在小程序分享堂、楼盘界面评论可获取幸运豆</text>
+                </view>
+                <view bindtap="__e" class="fz-12 blue-color shareNav" data-event-opts="{{[ [ 'tap',[ [ 'share',['$event'] ] ] ] ]}}">去评论</view>
+            </view>
+            <view class="addPoint">
+                <view class="progressBar">
+                    <text class="progress-len" style="{{'width: '+commentProcessLen+'rpx'}}"></text>
+                </view>
+                <view class="fz-12 blue-color progressBar-text">+2幸运豆<text class="small-level-color fz-11">{{'('+commentProgress+'/3)'}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="hot-active" wx:if="{{bannerList.list.length}}">
+        <view class="title">热门活动</view>
+        <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{bannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{bannerList.list}}" source="signIn" vueId="27911c3c-1"></base-banner>
+    </view>
+    <view class="signBox" wx:if="{{status==1&&isShow}}">
+        <view class="signTop">
+            <view class="signTop-avatar">
+                <image src="{{userInfo.avatarUrl}}"></image>
+            </view>
+            <view class="signTop-middle white-color">
+                <text class="fz-13">坚持签到了<text class="fz-14 orange">{{''+allDays+''}}</text>天</text>
+                <text class="fz-11">再接再励，获取更多幸运豆</text>
+            </view>
+            <view class="signTop-last white-color">
+                <text class="fz-13">已经连续</text>
+                <text class="fz-13">签到<text class="fz-14 orange">{{''+days+''}}</text>天</text>
+            </view>
+        </view>
+        <view class="signCont">
+            <view class="signCont-title fz-15 black1a-color">今天加油，相信你是最棒的喔！</view>
+            <view class="signCont-img">
+                <image src="https://imgcdn.huanjutang.com/assets/img/20205191019268081.png"></image>
+            </view>
+            <view class="fz-13 black1a-color today">今日获得<text class="orange fz-14">{{''+addPoint+''}}</text>幸运豆，已有<text class="fz-14 orange">{{''+grades+''}}</text>幸运豆</view>
+            <view class="fz-13 black1a-color more">获得更多幸运豆<view class="rotate">
+                    <text class="fz-20 iconnew new-tishi orange"></text>
+                </view>
+            </view>
+        </view>
+        <view class="signCont-btn">
+            <view bindtap="__e" class="{{['fz-14 '+(touch==1?'green':'black1a-color')+' comment']}}" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[1] ] ] ] ]}}">去评论</view>
+            <view bindtap="__e" class="fz-14  touch == 2?'green':'black1a-color'" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[2] ] ] ] ]}}">去分享</view>
+        </view>
+        <view bindtap="__e" class="closeBtn" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+            <text class="new-quxiao white-color iconnew fz-16"></text>
+        </view>
+    </view>
+    <view bindtap="__e" class="signBg" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{status==1&&isShow}}"></view>
+</view>

@@ -1,0 +1,100 @@
+<view class="page">
+    <view class="header-nav">
+        <header-nav bind:__l="__l" bind:onAskPhone="__e" bind:onAskWeixin="__e" bind:onReplace="__e" data-event-opts="{{[ [ '^onAskPhone',[ ['askPhoneHandle'] ] ],[ '^onAskWeixin',[ ['askWeixinHandle'] ] ],[ '^onReplace',[ ['replaceHandle'] ] ] ]}}" vueId="11cee197-1"></header-nav>
+    </view>
+    <scroll-view bindscrolltoupper="__e" catchtouchmove="__e" class="chatInterface" data-event-opts="{{[ [ 'touchmove',[ [ 'emptyFunction',['$event'] ] ] ],[ 'scrolltoupper',[ [ 'onScrollToUpper',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" scrollIntoView="{{scrollIntoView}}" scrollWithAnimation="{{firstLoad}}" scrollY="{{true}}" style="{{'padding-top:'+headerHeight+';'}}">
+        <block wx:for="{{messageList}}" wx:key="index">
+            <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.TEXT}}">
+                <text-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-2-'+index}}"></text-message>
+            </view>
+            <block wx:else>
+                <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.IMG}}">
+                    <img-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-3-'+index}}"></img-message>
+                </view>
+                <block wx:else>
+                    <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.SYSTEM}}">
+                        <system-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-4-'+index}}"></system-message>
+                    </view>
+                    <block wx:else>
+                        <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.AUTO_REPLY}}">
+                            <auto-reply-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-5-'+index}}"></auto-reply-message>
+                        </view>
+                        <block wx:else>
+                            <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.NOTIFY}}">
+                                <notify-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-6-'+index}}"></notify-message>
+                            </view>
+                            <block wx:else>
+                                <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.INVITE}}">
+                                    <invite-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-7-'+index}}"></invite-message>
+                                </view>
+                                <block wx:else>
+                                    <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.MAP}}">
+                                        <map-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-8-'+index}}"></map-message>
+                                    </view>
+                                    <block wx:else>
+                                        <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.ASK_CALL}}">
+                                            <ask-call-message bind:__l="__l" bind:onChoose="__e" data-event-opts="{{[ [ '^onChoose',[ [ 'chooseHandle',[index,'$0','$event'],[ [ ['messageList','',index,'id'] ] ] ] ] ] ]}}" message="{{item}}" vueId="{{'11cee197-9-'+index}}"></ask-call-message>
+                                        </view>
+                                        <block wx:else>
+                                            <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.ASK_WECHAT}}">
+                                                <ask-we-chat-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-10-'+index}}"></ask-we-chat-message>
+                                            </view>
+                                            <block wx:else>
+                                                <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.RES_CALL}}">
+                                                    <res-call-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-11-'+index}}"></res-call-message>
+                                                </view>
+                                                <block wx:else>
+                                                    <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.RES_WECHAT}}">
+                                                        <res-we-chat-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-12-'+index}}"></res-we-chat-message>
+                                                    </view>
+                                                    <block wx:else>
+                                                        <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.CARD}}">
+                                                            <card-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-13-'+index}}"></card-message>
+                                                        </view>
+                                                        <block wx:else>
+                                                            <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.BUYS}}">
+                                                                <buys-message bind:__l="__l" bind:onAskCallMe="__e" bind:onAskWeixin="__e" bind:onReplace="__e" bind:onWait="__e" data-event-opts="{{[ [ '^onWait',[ ['waitHandle'] ] ],[ '^onAskWeixin',[ ['askWeixinHandle'] ] ],[ '^onAskCallMe',[ ['askCallMeHandle'] ] ],[ '^onReplace',[ ['replaceHandle'] ] ] ]}}" message="{{item}}" vueId="{{'11cee197-14-'+index}}"></buys-message>
+                                                            </view>
+                                                            <block wx:else>
+                                                                <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.APPR}}">
+                                                                    <appr-message bind:__l="__l" bind:onSendStar="__e" data-event-opts="{{[ [ '^onSendStar',[ [ 'sendStarHandle',[index,'$event'] ] ] ] ]}}" message="{{item}}" vueId="{{'11cee197-15-'+index}}"></appr-message>
+                                                                </view>
+                                                                <block wx:else>
+                                                                    <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.LABEL}}">
+                                                                        <label-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-16-'+index}}"></label-message>
+                                                                    </view>
+                                                                    <block wx:else>
+                                                                        <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.SEND_PHONE}}">
+                                                                            <send-phone-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-17-'+index}}"></send-phone-message>
+                                                                        </view>
+                                                                        <block wx:else>
+                                                                            <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.CONTINUE_WAIT}}">
+                                                                                <continue-wait-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-18-'+index}}"></continue-wait-message>
+                                                                            </view>
+                                                                        </block>
+                                                                    </block>
+                                                                </block>
+                                                            </block>
+                                                        </block>
+                                                    </block>
+                                                </block>
+                                            </block>
+                                        </block>
+                                    </block>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </block>
+            <view class="chatInterface__item" id="{{'chatInterface__item-'+index}}" wx:if="{{item.type===MSG_TYPE.AUTO_SEND}}">
+                <auto-send-message bind:__l="__l" message="{{item}}" vueId="{{'11cee197-19-'+index}}"></auto-send-message>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="reply-container" style="{{'z-index:'+(replyFocus?4:2)+';'}}">
+        <reply-container bind:__l="__l" bind:onSend="__e" data-event-opts="{{[ [ '^onSend',[ ['sendMessageHandle'] ] ] ]}}" projectId="{{project_id}}" vueId="11cee197-20"></reply-container>
+    </view>
+    <call-phone-dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" content="{{callDialogContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','callDialogVisible','$event'],[''] ] ] ],[ '^onSubmit',[ ['allowCallPhoneDialog'] ] ] ]}}" dataName="电话咨询" dataType="button" sbumitText="拨打" visible="{{callDialogVisible}}" vueId="11cee197-21"></call-phone-dialog>
+    <tips-dailog bind:__l="__l" bind:updateVisible="__e" content="{{tipsDialogContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','tipsDialogVisible','$event'],[''] ] ] ] ]}}" isColumnBtn="true" showCancel="{{false}}" submitText="知道了" title="小技巧" visible="{{tipsDialogVisible}}" vueId="11cee197-22"></tips-dailog>
+</view>

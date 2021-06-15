@@ -1,0 +1,107 @@
+.search__hotlist {
+    position: relative;
+    width: 416rpx;
+    height: 868rpx;
+    background: #fff;
+    border-radius: 28rpx;
+    box-shadow: 0 12rpx 40rpx 0 rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.search__hotlist .search__hotlist__bg-box {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 120rpx;
+}
+
+.search__hotlist .search__hotlist__bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.search__hotlist .search__hotlist__header {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 96rpx;
+}
+
+.search__hotlist .search__hotlist__list {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 688rpx;
+    padding: 8rpx 32rpx 0;
+    border-radius: 28rpx 28rpx 0 0;
+    background: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.search__hotlist .search__hotlist__list-item {
+    display: block;
+    width: 100%;
+    height: 36rpx;
+    margin-top: 32rpx;
+}
+
+.search__hotlist .search__hotlist__list-item.hotlist__list-item-1 .search__list__item-rank {
+    background: #f03c50!important;
+}
+
+.search__hotlist .search__hotlist__list-item.hotlist__list-item-2 .search__list__item-rank {
+    background: #fa7832!important;
+}
+
+.search__hotlist .search__hotlist__list-item.hotlist__list-item-3 .search__list__item-rank {
+    background: #f7b500!important;
+}
+
+.search__hotlist .search__hotlist__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.search__hotlist .search__list__item-rank {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 16rpx;
+    border-radius: 8rpx;
+    background: #a6a6a6;
+    font-weight: 500;
+    text-align: center;
+}
+
+.search__hotlist .search__list__item-name {
+    display: inline-block;
+    flex: 1;
+    height: 36rpx;
+    line-height: 36rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.search__hotlist .search__list__item-icon {
+    color: #d8d8d8;
+}
+
+.search__hotlist .search__hotlist__more {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 84rpx;
+}
+
+.search__hotlist .search__hotlist__more .search__list__more-text {
+    width: 100%;
+    height: 84rpx;
+    line-height: 84rpx;
+    text-align: center;
+    color: #2d8cf0;
+}

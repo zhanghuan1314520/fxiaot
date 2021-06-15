@@ -1,0 +1,31 @@
+.base-layout {
+    position: relative;
+    z-index: 9;
+}
+
+.btn {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.smartBtn {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1px;
+}
+
+.smartBtn__item {
+    flex: 1;
+}
+
+.smartBtn__item__icon {
+    width: 100%;
+    display: block;
+}

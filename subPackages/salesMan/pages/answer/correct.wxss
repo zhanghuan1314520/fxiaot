@@ -1,0 +1,65 @@
+page {
+    padding-bottom: 0;
+}
+
+.box-answer-correct {
+    width: 750rpx;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow-y: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213221515138081.png) top no-repeat,url(https://imgcdn.huanjutang.com/assets/img/2021322151328081.png) bottom no-repeat,linear-gradient(180deg,#187ef3,#1f90f7);
+    background-size: contain;
+}
+
+.box-answer-correct .box-content {
+    margin-top: 96rpx;
+    position: relative;
+}
+
+.box-answer-correct .box-content .logo {
+    position: absolute;
+    width: 366rpx;
+    height: 106rpx;
+    left: 192rpx;
+    top: -53rpx;
+    z-index: 99;
+}
+
+.box-answer-correct .box-content .info {
+    width: 686rpx;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12rpx;
+    position: relative;
+    padding-top: 66rpx;
+}
+
+.box-answer-correct .box-content .info .question {
+    padding-bottom: 40rpx;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+.box-answer-correct .box-content .info .slogan {
+    height: 24rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 24rpx;
+    text-align: center;
+    margin-top: 48rpx;
+    margin-bottom: 8rpx;
+}
+
+.box-answer-correct .box-content .info .box-question {
+    position: relative;
+}
+
+.box-answer-correct .box-content .info .box-question .wrong-icon {
+    z-index: 99;
+    position: absolute;
+    width: 230rpx;
+    height: 230rpx;
+    right: 0;
+    top: 0;
+}

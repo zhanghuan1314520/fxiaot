@@ -1,0 +1,4 @@
+<view catchtouchmove="__e" class="guide" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}">
+    <image class="image" src="https://imgcdn.huanjutang.com/file/2021/01/14/23afc3e3a96bf0f72332e8f8c76e0970.png" style="{{'margin-top:'+top+';'}}"></image>
+    <view bindtap="__e" class="confirm-btn" data-event-opts="{{[ [ 'tap',[ [ 'comfirm',['$event'] ] ] ] ]}}">我知道了</view>
+</view>

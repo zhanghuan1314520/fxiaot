@@ -1,0 +1,53 @@
+.page {
+    background: #083878;
+    position: relative;
+}
+
+.publicImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.qrcode {
+    top: 360rpx;
+    width: 302rpx;
+    height: 302rpx;
+    margin-left: -151rpx;
+}
+
+.copyCode,.qrcode {
+    position: relative;
+    z-index: 3;
+    left: 50%;
+}
+
+.copyCode {
+    top: 394rpx;
+    width: 460rpx;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 44rpx;
+    color: #fff;
+    font-weight: 500;
+    font-size: 28rpx;
+    margin-left: -230rpx;
+    background: #2d8cf0;
+    box-shadow: 0 4rpx 16rpx 0 rgba(45,140,240,.63);
+}
+
+.copyBack {
+    position: absolute;
+    z-index: 2;
+    top: 712rpx;
+    width: 450rpx;
+    height: 82rpx;
+    border-radius: 44rpx;
+    opacity: .8;
+    left: 50%;
+    margin-left: -221rpx;
+}

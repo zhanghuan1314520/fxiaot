@@ -1,0 +1,83 @@
+.project.data-v-292a78d1 {
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    margin-bottom: 32rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cover.data-v-292a78d1 {
+    position: relative;
+}
+
+.cover .image.data-v-292a78d1 {
+    display: block;
+    width: 232rpx;
+    height: 144rpx;
+    border-radius: 8rpx;
+}
+
+.cover .tab.data-v-292a78d1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 66rpx;
+    height: 60rpx;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/20201292016328081.png);
+}
+
+.cover .tab .text.data-v-292a78d1 {
+    position: relative;
+    font-size: 28rpx;
+    top: -6rpx;
+    left: -2rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.cover .tab.order1.data-v-292a78d1 {
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/20201292014568081.png);
+}
+
+.cover .tab.order2.data-v-292a78d1 {
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/20201292015378081.png);
+}
+
+.cover .tab.order3.data-v-292a78d1 {
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/20201292016108081.png);
+}
+
+.content.data-v-292a78d1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content .name.data-v-292a78d1 {
+    width: 348rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 44rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.content .count.data-v-292a78d1 {
+    display: flex;
+    justify-content: center;
+    height: 44rpx;
+    background: rgba(45,140,240,.1);
+    border-radius: 24rpx;
+    padding: 0 18rpx;
+    color: #2d8cf0;
+    font-size: 28rpx;
+}

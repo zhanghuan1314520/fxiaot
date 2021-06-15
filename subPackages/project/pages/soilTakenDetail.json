@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "杭州房小团-土拍详情",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "dialog": "/components/UILayout/BusiDialog",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon"
+    }
+}

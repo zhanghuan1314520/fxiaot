@@ -1,0 +1,6 @@
+<view catchtap="__e" class="discovery-report" data-event-opts="{{[ [ 'tap',[ [ 'showTip',['$event'] ] ] ] ]}}" style="{{'margin-top:'+marginTop+';'}}">
+    <text class="iconnew new-gengduo-copy"></text>
+    <busi-auth-navigator bind:__l="__l" class="auth-report-text" url="{{'navigateTo-authphone://subPackages/project/pages/reportType?type=6&object_id='+reportId}}" vueId="1b98ada6-1" vueSlots="{{['default']}}" wx:if="{{visible}}">
+        <view class="report-text">举报</view>
+    </busi-auth-navigator>
+</view>

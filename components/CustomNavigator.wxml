@@ -1,0 +1,16 @@
+<navigator appId="{{appId}}" bindtap="__e" class="custom-navigator" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['$event'] ] ] ] ]}}" data-name="{{dataName}}" data-type="{{dataType}}" hoverClass="none" id="{{dataId}}" openType="{{openType}}" url="{{src}}" wx:if="{{appId}}">
+    <slot></slot>
+</navigator>
+<block wx:else>
+    <navigator bindtap="__e" class="custom-navigator" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['$event'] ] ] ] ]}}" data-name="{{dataName}}" data-type="{{dataType}}" hoverClass="none" id="{{dataId}}" openType="{{openType}}" wx:if="{{openType==='navigateBack'}}">
+        <slot></slot>
+    </navigator>
+    <block wx:else>
+        <view bindtap="__e" class="custom-navigator" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['$0'],['url'] ] ] ] ]}}" data-name="{{dataName}}" data-type="{{dataType}}" id="{{dataId}}" wx:if="{{openType==='plugin-private'}}">
+            <slot></slot>
+        </view>
+        <navigator bindtap="__e" class="custom-navigator" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['$event'] ] ] ] ]}}" data-name="{{dataName}}" data-type="{{dataType}}" hoverClass="none" id="{{dataId}}" openType="{{openType}}" url="{{src}}" wx:else>
+            <slot></slot>
+        </navigator>
+    </block>
+</block>

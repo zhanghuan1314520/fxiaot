@@ -1,0 +1,117 @@
+<view>
+    <view class="banner">
+        <image mode="aspectFill" src="{{details.cover}}"></image>
+        <button class="btn-join" openType="contact">
+            <view class="text1">活动</view>
+            <view class="text2">报名</view>
+        </button>
+        <view class="type-name">
+            <text>{{'房小团 • '+typeName}}</text>
+        </view>
+        <view class="bg"></view>
+    </view>
+    <view class="content">
+        <view class="info-box">
+            <view class="number">
+                <view class="number-val">{{''+details.number+''}}</view>
+                <view class="number-text">号</view>
+            </view>
+            <view class="info">
+                <view class="pv">{{''+details.total_page_view+'次浏览'}}</view>
+                <view class="name">
+                    <text>{{details.name}}</text>
+                    <view bindtap="__e" class="more" data-event-opts="{{[ [ 'tap',[ [ 'goDetailPage',['$event'] ] ] ] ]}}">
+                        <text>楼盘详情</text>
+                        <view class="iconnew new-zhankaigengduo1"></view>
+                    </view>
+                </view>
+                <view class="sort">
+                    <text class="f-left">{{''+details.ranking+''}}</text>
+                    <text class="f-right">{{''+details.total_vote+'票'}}</text>
+                </view>
+                <view class="sort-label">
+                    <text class="f-left">当前类别排名</text>
+                    <text class="f-right" wx:if="{{details.before_total_vote<0}}">恭喜登上巅峰</text>
+                    <text class="f-right" wx:else>距上一位还差<text class="font-bold">{{''+details.before_total_vote+''}}</text>票</text>
+                </view>
+            </view>
+        </view>
+        <view class="content-about">
+            <view class="title">楼盘简介</view>
+            <view class="{{[ 'content-about-text '+(type==1?'':'height-auto') ]}}">{{''+details.player_introduce+''}}</view>
+            <view bindtap="__e" class="more-content" data-event-opts="{{[ [ 'tap',[ [ 'openDetails',['$event'] ] ] ] ]}}" wx:if="{{details.player_introduce.length>70}}">
+                <text class="fz-12">{{''+(type==1?'展开':'收起')+'全部'}}</text>
+                <text class="iconnew new-tongyong-gengduolansexiangxia" wx:if="{{type==1}}"></text>
+                <text class="iconnew new-shouqijiantou" wx:if="{{type!=1}}"></text>
+            </view>
+            <view class="more-content" wx:else></view>
+        </view>
+        <view class="content-images">
+            <view class="title">更多风采</view>
+            <view class="image" wx:for="{{details.img}}" wx:for-index="__i0__" wx:key="*this">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['details.img','',__i0__] ] ] ] ] ] ]}}" data-preview="{{item}}" mode="widthFix" src="{{item}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="empty"></view>
+    <view class="footer">
+        <button bindtap="__e" class="btn active" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-toggle="open">为它拉票</button>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'voteIn',['$event'] ] ] ] ]}}" wx:if="{{details.vote_num>0}}">{{'投票（可投'+details.vote_num+'次）'}}</view>
+        <view bindtap="__e" class="btn disabled" data-event-opts="{{[ [ 'tap',[ [ 'voteIn',['$event'] ] ] ] ]}}" wx:else>明日再来</view>
+    </view>
+    <view bindtap="__e" catchtouchmove="__e" class="share-banner" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ],[ 'tap',[ [ 'closeCanvasHandle',['$event'] ] ] ] ]}}" hidden="{{!drawCanvas}}">
+        <view class="create-canvas-box" style="{{'width: '+canvasWidth+'px; height: '+canvasHeight+'px;'}}">
+            <view class="{{[canvasIndex==0?'showCanvas':'hideCanvas']}}" style="{{'position: relative; height:'+canvasHeight+'px;width:'+canvasWidth+'px;overflow: hidden;'}}">
+                <canvas canvasId="myCanvas1" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+            </view>
+        </view>
+        <view class="save-pic" wx:if="{{saved}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/201911271845588081.png"></image>
+        </view>
+        <view bindtap="__e" class="close-canvas-btn" data-event-opts="{{[ [ 'tap',[ [ 'closeChowCanvas',['$event'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191126157188081.png"></image>
+        </view>
+    </view>
+    <view class="fixed-share-view" hidden="{{!shareShow}}">
+        <view class="share-btn-group">
+            <button bindtap="__e" class="share-btn" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-toggle="close" openType="share">
+                <view class="btn-bg btn1">
+                    <text class="iconnew new-weixin1 white-color fz-28"></text>
+                </view>
+                <view class="btn-text small-level-color fz-15">发给朋友</view>
+            </button>
+            <view bindtap="__e" class="share-btn" data-event-opts="{{[ [ 'tap',[ [ 'createPosterHandle',['$event'] ] ] ] ]}}">
+                <view class="btn-bg btn2">
+                    <text class="iconnew new-pengyouquan white-color fz-28"></text>
+                </view>
+                <view class="btn-text small-level-color fz-15">生成楼盘海报</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="fz-15 height-level-color cancel" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-toggle="close">取消</view>
+    </view>
+    <view bindtap="__e" catchtouchmove="__e" class="fixed-share-bg" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ],[ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-toggle="close" hidden="{{!shareShow}}"></view>
+    <view class="dialog" hidden="{{!voteSuccess}}">
+        <view class="dialog-content _div">
+            <view class="dialog-text">投票成功！</view>
+            <view class="dialog-text2" wx:if="{{details.vote_num>0}}">{{'今日你还有'+details.vote_num+'次投票机会'}}</view>
+            <view class="dialog-text2" wx:else>今日投票次数已用完,请明日再来</view>
+        </view>
+        <view bindtap="__e" class="close-btn top-812" data-event-opts="{{[ [ 'tap',[ [ 'hideDialog',['$event'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191126157188081.png"></image>
+        </view>
+    </view>
+    <view bindtap="__e" class="go-index" data-event-opts="{{[ [ 'tap',[ [ 'goActivityIndexPage',['$event'] ] ] ] ]}}" wx:if="{{shared}}">
+        <image src="https://imgcdn.huanjutang.com/assets/img/20191128161458081.png"></image>
+    </view>
+    <cover-view class="permissions-settings" wx:if="{{showPermissionsSetting}}">
+        <cover-view class="tips-content fz-18">请开启保存到相册的权限</cover-view>
+        <cover-view class="fz-18 text">开启后需重新点击生成楼盘海报按钮</cover-view>
+        <cover-view class="bottom-btn">
+            <cover-view bindtap="__e" class="cancle line fz-18 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'closePemissions',['$event'] ] ] ] ]}}">取消</cover-view>
+            <button bindopensetting="__e" class="line sure-btn fz-18 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">
+                <cover-view>去开启</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+    <cover-view class="hide-bg" wx:if="{{showPermissionsSetting}}"></cover-view>
+</view>

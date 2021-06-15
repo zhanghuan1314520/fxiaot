@@ -1,0 +1,38 @@
+<view catchtap="__e" catchtouchmove="__e" class="modal data-v-68e8d887" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{!destroy}}">
+    <view class="{{['data-v-68e8d887','modal-mask',maskClass]}}"></view>
+    <view class="{{['data-v-68e8d887','mask-content',contentClass]}}">
+        <image class="content-title__image data-v-68e8d887" src="{{titleImage}}"></image>
+        <view class="content-box data-v-68e8d887">
+            <view class="box-text data-v-68e8d887">
+                <text class="title data-v-68e8d887" data-text="{{joinText}}">{{''+joinText+''}}</text>
+            </view>
+            <view class="box-auth data-v-68e8d887" wx:if="{{status===1}}">
+                <text class="common data-v-68e8d887">领取专属置业顾问将尽快与您联系</text>
+                <view bindtap="__e" class="checkbox data-v-68e8d887" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                    <view class="circle data-v-68e8d887">
+                        <view class="point data-v-68e8d887" wx:if="{{checked}}"></view>
+                    </view>
+                    <view class="text data-v-68e8d887" data-text="同意授权我的手机号">同意授权我的手机号</view>
+                </view>
+                <image bindtap="__e" class="confirm-image data-v-68e8d887" data-content="参团弹框" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}" data-name="确认授权" src="{{confirmImage}}"></image>
+                <text bindtap="__e" class="common data-v-68e8d887" data-content="参团弹框" data-event-opts="{{[ [ 'tap',[ [ 'toCoupon',['$event'] ] ] ] ]}}" data-name="查看参团资格" data-text="点击查看参团资格 ›">点击查看参团资格 ›</text>
+                <view class="auth-bottom data-v-68e8d887">
+                    <text class="common data-v-68e8d887">添加官方客服了解更多房产信息</text>
+                    <image catchtap="__e" class="bottom-image data-v-68e8d887" data-content="参团弹框" data-event-opts="{{[ [ 'tap',[ [ 'copyWx',['$event'] ] ] ] ]}}" data-name="复制微信号" src="{{copyImage}}"></image>
+                </view>
+            </view>
+            <view class="box-done data-v-68e8d887" wx:else>
+                <view class="done-code data-v-68e8d887">
+                    <image class="qrcode data-v-68e8d887" src="{{item.service_wechat_QRCode}}"></image>
+                </view>
+                <text class="done-text data-v-68e8d887">添加客服微信号，获取更多看房资讯及服务</text>
+                <image bindtap="__e" class="done-button data-v-68e8d887" data-event-opts="{{[ [ 'tap',[ [ 'toProjectDetail',['$event'] ] ] ] ]}}" data-name="楼盘详情" id="{{item.project_id}}" src="{{knowImage}}"></image>
+                <text bindtap="__e" class="done-font data-v-68e8d887" data-content="参团弹框" data-event-opts="{{[ [ 'tap',[ [ 'toCoupon',['$event'] ] ] ] ]}}" data-name="查看参团资格" data-text="点击查看参团资格 ›">点击查看参团资格 ›</text>
+            </view>
+        </view>
+        <view bindtap="__e" class="modal-close data-v-68e8d887" data-content="参团弹框" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" data-name="关闭">
+            <image class="close-image data-v-68e8d887" src="{{closeImage}}"></image>
+            <text class="close-text data-v-68e8d887">关闭</text>
+        </view>
+    </view>
+</view>

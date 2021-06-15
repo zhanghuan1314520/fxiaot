@@ -1,0 +1,11 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-area-list": "/subPackages/project/pages/component/projectRank/BusiAreaList",
+        "busi-project-rank-list": "/subPackages/project/pages/component/projectRank/BusiProjectRankList"
+    }
+}

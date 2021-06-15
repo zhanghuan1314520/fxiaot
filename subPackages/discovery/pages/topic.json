@@ -1,0 +1,11 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "border-container": "/subPackages/discovery/component/BorderContainer",
+        "related-topic": "/subPackages/discovery/component/RelatedTopic",
+        "loading": "/subPackages/discovery/component/Loading",
+        "no-data": "/subPackages/discovery/component/SubNoData",
+        "publish": "/subPackages/discovery/component/Publish"
+    }
+}

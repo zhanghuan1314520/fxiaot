@@ -1,0 +1,7 @@
+<view class="lottery-tab">
+    <scroll-view class="{{['lottery-tab scroll-box-three']}}" scrollWithAnimation="{{true}}" scrollX="{{true}}" wx:if="{{lotteryNum.length>1}}">
+        <view class="flex" style="{{'width:'+lotteryNum.length*288+'rpx'+';'}}">
+            <view bindtap="__e" class="{{[ 'tab-line '+(index==lotteryIndex?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'lotteryTab',[index] ] ] ] ]}}" id="{{'scroll'+index}}" wx:for="{{lotteryNum}}" wx:key="index">{{''+item.name+''}}</view>
+        </view>
+    </scroll-view>
+</view>

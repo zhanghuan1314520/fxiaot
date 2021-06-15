@@ -1,0 +1,14 @@
+<view class="liver data-v-48e05d19">
+    <view class="liver-title data-v-48e05d19">
+        <image class="liver-title__image data-v-48e05d19" mode="widthFix" src="{{homeImage.liverTitle}}"></image>
+    </view>
+    <banner bind:__l="__l" class="data-v-48e05d19 vue-ref" data-ref="banner" type="singleday_live" vueId="086517c2-1"></banner>
+    <view class="liver-container data-v-48e05d19">
+        <view class="liver-list data-v-48e05d19" wx:if="{{liverList.length}}">
+            <liver-item bind:__l="__l" class="data-v-48e05d19" item="{{item}}" vueId="{{'086517c2-2-'+__i0__}}" wx:for="{{liverList}}" wx:for-index="__i0__" wx:key="id"></liver-item>
+        </view>
+        <block wx:else>
+            <no-data bind:__l="__l" class="data-v-48e05d19" vueId="086517c2-3" wx:if="{{!loading}}"></no-data>
+        </block>
+    </view>
+</view>

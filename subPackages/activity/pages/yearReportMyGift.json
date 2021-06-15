@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的抽奖",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "year-report-modal": "/subPackages/activity/components/YearReportModal",
+        "authorization": "/components/Authorization"
+    }
+}

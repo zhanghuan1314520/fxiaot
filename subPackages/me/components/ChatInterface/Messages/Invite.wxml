@@ -1,0 +1,6 @@
+<base-layout bind:__l="__l" message="{{message}}" vueId="1fb8f74a-1" vueSlots="{{['default']}}">
+    <view class="{{['invite-message',isReceive?'receive':'',!isReceive?'sender':'']}}">
+        <text class="invite-message__content" userSelect="{{true}}">{{''+messageContent+''}}</text>
+        <button bindtap="__e" class="invite-message__call" data-content="对方消息" data-event-opts="{{[ [ 'tap',[ [ 'callHandle',['$event'] ] ] ] ]}}" data-name="立即致电" data-type="button" wx:if="{{!hasSalesman}}">立即致电</button>
+    </view>
+</base-layout>

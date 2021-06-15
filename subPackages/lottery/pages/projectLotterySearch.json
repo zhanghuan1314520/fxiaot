@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "摇号结果",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "usingComponents": {
+        "busi-search": "/subPackages/lottery/components/lotterySearch",
+        "buyer-list": "/subPackages/lottery/components/lotteryContent",
+        "image-view": "/pages/components/lotteryResult/ImageView",
+        "nothing-view": "/pages/components/lotteryResult/NothingView",
+        "image-list-view": "/pages/components/lotteryResult/ImageListView",
+        "discription": "/subPackages/lottery/components/description"
+    }
+}

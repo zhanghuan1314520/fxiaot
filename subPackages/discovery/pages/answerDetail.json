@@ -1,0 +1,20 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "问答详情",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "personal-info": "/subPackages/discovery/component/PersonalInfo",
+        "overflow-content": "/subPackages/discovery/component/OverflowContent",
+        "related-project": "/subPackages/discovery/component/RelatedProject",
+        "report": "/subPackages/discovery/component/Report",
+        "comment-item": "/subPackages/discovery/component/CommentItem",
+        "comment-input": "/subPackages/discovery/component/CommentInput",
+        "comment-title": "/subPackages/discovery/component/CommentTitle",
+        "white-space": "/subPackages/discovery/component/WhiteSpace",
+        "bottom-line": "/subPackages/discovery/component/BottomLine",
+        "no-data": "/subPackages/discovery/component/SubNoData",
+        "loading": "/subPackages/discovery/component/Loading",
+        "authorization": "/components/Authorization"
+    }
+}

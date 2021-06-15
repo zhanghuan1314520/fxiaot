@@ -1,0 +1,93 @@
+<view>
+    <view class="page">
+        <view class="container-top">
+            <image mode="scaleToFill" src="https://imgcdn.huanjutang.com/image/2020/04/14/68c7c5dd1c02d47954159e7bbd458d82.png"></image>
+            <view class="phone-total flex_layout">
+                <view class="flex_layout_n_b">
+                    <text class="fz-12 white-color-85">电话</text>
+                    <text class="total-num white-color fz-26">{{''+(totalAndToday.phone.total||0)+''}}</text>
+                    <text class="fz-12 white-color-85">{{'今日'+(totalAndToday.phone.today||0)+''}}</text>
+                </view>
+                <view class="flex_layout_n_b">
+                    <text class="fz-12 white-color-85">微聊</text>
+                    <text class="total-num white-color fz-26">{{''+(totalAndToday.chat.total||0)+''}}</text>
+                    <text class="fz-12 white-color-85">{{'今日'+(totalAndToday.chat.today||0)+''}}</text>
+                </view>
+                <view class="flex_layout_n_b">
+                    <text class="fz-12 white-color-85">专属客户</text>
+                    <text class="total-num white-color fz-26">{{''+(totalAndToday.bindUser.total||0)+''}}</text>
+                    <text class="fz-12 white-color-85">{{'今日'+(totalAndToday.bindUser.today||0)+''}}</text>
+                    <text bindtap="__e" class="icon-wenhao fz-14 new-wenhaocopy iconnew fz-14" data-event-opts="{{[ [ 'tap',[ [ 'jumpRuleUrl',['$event'] ] ] ] ]}}"></text>
+                </view>
+            </view>
+        </view>
+        <view class="focus-option white-bg">
+            <view bindtap="__e" class="focus-option-item" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[1] ] ] ] ]}}">
+                <text class="{{[type==1?'font-bold blued-color fz-16':'black1a-color fz-16']}}">全部通话</text>
+                <view class="{{[ 'option-color '+(type==1?'color-style':'color-style2') ]}}"></view>
+            </view>
+            <view bindtap="__e" class="focus-option-item" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[2] ] ] ] ]}}">
+                <text class="{{[type==2?'font-bold blued-color fz-16':'black1a-color fz-16']}}">未接来电</text>
+                <view class="{{[ 'option-color '+(type==2?'color-style':'color-style2') ]}}"></view>
+                <view class="red-cricle" wx:if="{{unReceiveCall}}"></view>
+            </view>
+            <view bindtap="__e" class="focus-option-item" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[3] ] ] ] ]}}">
+                <text class="{{[type==3?'font-bold blued-color fz-16':'black1a-color fz-16']}}">专属客户</text>
+                <view class="{{[ 'option-color '+(type==3?'color-style':'color-style2') ]}}"></view>
+                <view class="red-cricle" wx:if="{{newBindCustomer}}"></view>
+            </view>
+        </view>
+        <block wx:if="{{type!=3}}">
+            <view class="phone-main-content" wx:if="{{phoneLogList.length>0}}">
+                <view bindtap="__e" class="phone-line" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$0'],[ [ ['phoneLogList','',index,'peer_no'] ] ] ] ] ] ]}}" wx:for="{{phoneLogList}}" wx:key="index">
+                    <view class="top">
+                        <view class="{{[ 'font-bold fz-16 '+(item.time==0?'red-color':'') ]}}">{{''+(isShowPhone?item.peer_no:item.peer_no_replace)+''}}</view>
+                        <view class="name fz-14">{{''+item.call_time+''}}</view>
+                    </view>
+                    <view class="bottom">
+                        <image src="{{item.avatar||'https://imgcdn.huanjutang.com/image/2020/04/15/a77a9136255112728d1f8e902c0f8e55.png'}}"></image>
+                        <view class="name fz-14">{{''+(item.user_name||'客户未授权')+''}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="phoneLog-bg" wx:if="{{phoneLogList.length<=0&&loading}}">
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/image/2020/04/15/b352b28a14d6b58c80040fb101c85c70.png"></image>
+            </view>
+            <view class="full-screen" wx:if="{{!loading&&phoneLogList.length<=0}}">
+                <view id="spinner"></view>
+            </view>
+        </block>
+        <block wx:if="{{type==3}}">
+            <view class="customer-main-content" wx:if="{{bindCustomer.length>0}}">
+                <view class="customer-line flex_layout" wx:for="{{bindCustomer}}" wx:key="index">
+                    <view class="left">
+                        <image src="{{item.avatar||'https://imgcdn.huanjutang.com/image/2020/04/15/a77a9136255112728d1f8e902c0f8e55.png'}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="name-tool__wrapper flex_layout_b">
+                            <view class="name nick-name__wrapper fz-16">{{''+(item.nick_name||'客户未授权')+''}}</view>
+                            <view class="tool-wrapper flex_layout">
+                                <view bindtap="__e" class="chat" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrl',['$0'],[ [ ['bindCustomer','',index,'user_id'] ] ] ] ] ] ]}}" wx:if="{{item.chated==1}}">
+                                    <text class="icon new-zixunxianxing iconnew fz-18"></text>
+                                    <text class="desc fz-13">微聊</text>
+                                </view>
+                                <text class="line" wx:if="{{item.nick_name&&item.chated==1}}"></text>
+                            </view>
+                        </view>
+                        <view class="time fz-14">{{'绑定时间 '+item.bind_time_new+''}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="phoneLog-bg" wx:if="{{bindCustomer.length<=0&&loading}}">
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/image/2020/04/15/b352b28a14d6b58c80040fb101c85c70.png"></image>
+            </view>
+            <view class="full-screen" wx:if="{{!loading&&bindCustomer.length<=0}}">
+                <view id="spinner"></view>
+            </view>
+        </block>
+    </view>
+    <view bindtap="__e" class="tip-bg" data-event-opts="{{[ [ 'tap',[ [ 'closedTip',['$event'] ] ] ] ]}}" wx:if="{{hideTip}}">
+        <view class="fz-14 tip-desc">微信昵称已复制，请关闭小程序，去微信搜索框粘贴发送消息</view>
+        <view class="cha"></view>
+    </view>
+</view>

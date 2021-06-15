@@ -1,0 +1,7 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="7ef4c94f-1" vueSlots="{{['default']}}">
+    <video autoplay="{{true}}" class="init__video-container" controls="{{true}}" id="{{videoId}}" poster="{{videoCover}}" src="{{settings.video[0].video_url}}" wx:if="{{hasPlaying}}"></video>
+    <view class="init__image-container" wx:else>
+        <image bindtap="__e" class="init__image-btn" data-event-opts="{{[ [ 'tap',[ [ 'playHandle',['$event'] ] ] ] ]}}" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+        <image class="init__image-cont" mode="aspectFil" src="{{videoCover}}"></image>
+    </view>
+</base-layout>

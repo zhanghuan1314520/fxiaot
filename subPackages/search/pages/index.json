@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "楼盘搜索",
+    "usingComponents": {
+        "busi-search": "/subPackages/search/components/BusiSearch",
+        "search-home": "/subPackages/search/components/SearchHome",
+        "suggest-list": "/subPackages/search/components/SuggestList"
+    }
+}

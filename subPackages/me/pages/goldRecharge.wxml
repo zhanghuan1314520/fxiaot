@@ -1,0 +1,13 @@
+<view class="points">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="66b5211d-1" vueSlots="{{['default']}}">置业顾问-兑换金币</busi-nav-header>
+        <base-info baseInfo="{{baseInfo}}" bind:__l="__l" vueId="66b5211d-2"></base-info>
+    </view>
+    <view class="points-content">
+        <view class="top_switch_bar">
+            <busi-tab activeId="{{changeType}}" bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['switchBarHandle'] ] ] ]}}" justifyContent="start" list="{{tabList}}" vueId="66b5211d-3"></busi-tab>
+        </view>
+        <exchange baseInfo="{{baseInfo}}" bind:__l="__l" bind:success="__e" class="vue-ref" data-custom-hidden="{{!(changeType===1)}}" data-event-opts="{{[ [ '^success',[ ['reload'] ] ] ]}}" data-ref="exchange" vueId="66b5211d-4"></exchange>
+        <recharge bind:__l="__l" bind:success="__e" data-custom-hidden="{{!(changeType===2)}}" data-event-opts="{{[ [ '^success',[ ['reload'] ] ] ]}}" vueId="66b5211d-5"></recharge>
+    </view>
+</view>

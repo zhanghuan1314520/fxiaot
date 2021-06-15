@@ -1,0 +1,11 @@
+<view class="{{[ 'search',[loading?'skeletons':''] ]}}">
+    <view class="search__input">
+        <busi-search bind:__l="__l" bind:onCancel="__e" bind:onSubmit="__e" bind:onTypeChange="__e" bind:updateInputVal="__e" class="vue-ref" data-event-opts="{{[ [ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ],[ '^onCancel',[ ['onCancel'] ] ],[ '^onTypeChange',[ ['onTypeChange'] ] ] ]}}" data-ref="busiSearch" index="{{searchTypeIndex}}" inputVal="{{inputVal}}" list="{{searchTypeList}}" placeholder="{{placeholder}}" showCancelBtn="{{isShowCancelBtn}}" text="{{selectedText}}" vueId="2d588816-1"></busi-search>
+    </view>
+    <scroll-view bindrefresherrefresh="__e" bindrefresherrestore="__e" class="{{[true?'search__home':'',showSearchProjectList?'scroll-hidden':'']}}" data-event-opts="{{[ [ 'refresherrefresh',[ [ 'pagePullDownRefresh',['$event'] ] ] ],[ 'refresherrestore',[ [ 'pagePullDownRestore',['$event'] ] ] ] ]}}" refresherEnabled="true" refresherTriggered="{{triggered}}" scrollY="{{true}}">
+        <search-home bannerList="{{bannerList}}" bind:__l="__l" bind:clickHistory="__e" class="vue-ref" data-event-opts="{{[ [ '^clickHistory',[ ['clickHistory'] ] ] ]}}" data-ref="searchHome" hotSearchList="{{hotSearchList}}" hotlist="{{hotlist}}" vueId="2d588816-2"></search-home>
+    </scroll-view>
+    <view catchtouchmove="__e" class="search__suggest" data-event-opts="{{[ [ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}" wx:if="{{showSearchProjectList&&inputVal}}">
+        <suggest-list bind:__l="__l" bind:onSubmit="__e" brandData="{{brandData}}" data-event-opts="{{[ [ '^onSubmit',[ ['onSubmit'] ] ] ]}}" groupData="{{groupData}}" keyword="{{inputVal}}" listData="{{searchProjectList}}" vueId="2d588816-3"></suggest-list>
+    </view>
+</view>

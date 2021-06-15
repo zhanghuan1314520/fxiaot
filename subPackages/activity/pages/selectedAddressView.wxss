@@ -1,0 +1,38 @@
+.selectedAddress {
+    font-size: 30rpx;
+    width: 100%;
+    display: flex;
+    z-index: 99;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 40vh;
+}
+
+.btnBox {
+    width: 100%;
+    height: 90rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    line-height: 90rpx;
+    text-align: center;
+    display: flex;
+    background: hsla(0,0%,100%,.8);
+    justify-content: space-between;
+}
+
+.pickerBox {
+    width: 100%;
+    height: 389rpx;
+}
+
+.pickerBox .picker-item {
+    line-height: 70rpx;
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+    text-align: center;
+}

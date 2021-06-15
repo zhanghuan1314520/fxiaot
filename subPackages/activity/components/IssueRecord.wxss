@@ -1,0 +1,138 @@
+.issue {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all .3s cubic-bezier(.7,.3,.1,1);
+    z-index: 4;
+    background: #fff;
+    border-radius: 40rpx 40rpx 0 0;
+    transform: translateY(100%);
+    padding: 60rpx 0 env(safe-area-inset-bottom);
+}
+
+.issue.active {
+    transform: translateY(0);
+}
+
+.issue .close-btn {
+    position: absolute;
+    right: 34rpx;
+    top: 30rpx;
+    width: 40rpx;
+    height: 40rpx;
+    font-size: 46rpx;
+    color: #d9d9d9;
+}
+
+.issue .-title {
+    font-size: 40rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 52rpx;
+    margin-bottom: 32rpx;
+    text-align: center;
+}
+
+.issue .log-title {
+    display: flex;
+    justify-content: flex-start;
+    color: rgba(0,0,0,.45);
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.issue .log-title .time {
+    width: 37%;
+    text-align: left;
+    margin-bottom: 20rpx;
+    line-height: 40rpx;
+}
+
+.issue .log-title .price {
+    width: 38%;
+}
+
+.issue .log-title .log-text,.issue .log-title .price {
+    text-align: center;
+    margin-bottom: 20rpx;
+    line-height: 40rpx;
+}
+
+.issue .log-title .log-text {
+    width: 25%;
+}
+
+.issue .main-content {
+    height: 540rpx;
+}
+
+.issue .log-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgba(0,0,0,.85);
+    height: 108rpx;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    line-height: 1;
+}
+
+.issue .log-item .time {
+    width: 37%;
+    text-align: left;
+}
+
+.issue .log-item .price {
+    width: 38%;
+    text-align: center;
+}
+
+.issue .log-item .log-text {
+    width: 25%;
+    text-align: center;
+}
+
+.issue .log-item .log-text .btn {
+    color: rgba(0,0,0,.85);
+    display: inline-block;
+}
+
+.issue .log-item .log-text .btn.active {
+    padding: 0 18rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    color: #fff;
+    font-weight: 500;
+}
+
+.no-content {
+    height: 600rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-content image {
+    width: 360rpx;
+    height: 268rpx;
+    margin-bottom: 16rpx;
+}
+
+.no-content .text {
+    font-size: 32rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.hide-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 3;
+}

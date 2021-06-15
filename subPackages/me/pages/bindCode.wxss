@@ -1,0 +1,89 @@
+page {
+    background-color: #f2f2f2;
+}
+
+.page__bd>.title {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.list-box {
+    padding-top: 58rpx;
+    overflow: hidden;
+}
+
+.list-box .w-cell {
+    position: relative;
+    padding-left: 24rpx;
+    box-sizing: border-box;
+    height: 104rpx;
+    font-size: 30rpx;
+}
+
+.list-box .w-cell .left-key {
+    float: left;
+    width: 170rpx;
+    height: 104rpx;
+    color: #606266;
+    overflow: hidden;
+}
+
+.list-box .w-cell .left-key:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.list-box .w-cell .right-value {
+    margin-left: 170rpx;
+    overflow: hidden;
+    height: 104rpx;
+}
+
+.list-box .w-cell .right-value input {
+    width: 100%;
+    height: 42rpx;
+    overflow: hidden;
+}
+
+.list-box .w-cell .error-tip {
+    display: none;
+    margin-top: 4rpx;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #ee3f4d;
+}
+
+.list-box .w-cell .error-tip.show {
+    display: block;
+}
+
+.weui-cells__tips {
+    line-height: 35rpx;
+    margin-top: 32rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.weui-btn-area {
+    margin: 0!important;
+    padding: 1.17647059em 15px .3em!important;
+    background-color: #fff!important;
+}
+
+button.weui-btn {
+    position: fixed;
+    bottom: 100rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 576rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #2d8cf0;
+    box-shadow: 0 12rpx 20rpx 0 rgba(45,140,240,.3);
+    border-radius: 44rpx;
+    text-align: center;
+    font-weight: 700;
+}

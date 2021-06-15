@@ -1,0 +1,11 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine",
+        "task-item": "/subPackages/me/pages/components/TaskItemCom",
+        "base-info": "/subPackages/me/pages/components/taskCenter/BaseInfo",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "sign-in": "/subPackages/me/pages/components/taskCenter/SignIn"
+    }
+}

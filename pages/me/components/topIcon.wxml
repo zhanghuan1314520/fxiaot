@@ -1,0 +1,4 @@
+<view class="{{['icon-item',item.skeleton?'skeletons':'']}}">
+    <image-loader bind:__l="__l" class="skeletons-rect" source="{{item.icon}}" styles="{{width:'60rpx',height:'60rpx',background:'#fff'}}" vueId="5bbf527a-1"></image-loader>
+    <text class="text skeletons-rect">{{''+(item.text||'')+''}}</text>
+</view>

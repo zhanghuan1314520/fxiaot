@@ -1,0 +1,7 @@
+<view catchtouchmove="__e" class="enveloper data-v-1acea8d0" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{isShow}}">
+    <view bindtap="__e" class="-image data-v-1acea8d0" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}">
+        <view class="text-1 data-v-1acea8d0">亲，这个页面神奇消失啦</view>
+        <view class="text-2 data-v-1acea8d0">回首页看看其他优质楼盘吧～</view>
+        <view class="btns data-v-1acea8d0">好的</view>
+    </view>
+</view>

@@ -1,0 +1,138 @@
+<view class="task-content data-v-ad5312f6">
+    <view class="task-top data-v-ad5312f6">
+        <custom-nav-header bind:__l="__l" class="data-v-ad5312f6" scrolled="{{pageSrcoll}}" vueId="c11fce24-1" vueSlots="{{['default']}}">
+            <text class="{{['data-v-ad5312f6',pageSrcoll?'top-title':'top-title active']}}">任务详情</text>
+        </custom-nav-header>
+    </view>
+    <view class="top-message data-v-ad5312f6">
+        <view class="message-l1 data-v-ad5312f6">
+            <view class="message-l1-one data-v-ad5312f6">
+                <view class="m1-lf data-v-ad5312f6">
+                    <image class="data-v-ad5312f6" src="{{taskDetail.icon}}"></image>
+                </view>
+                <view class="m1-rt data-v-ad5312f6">
+                    <view class="rt-text1 data-v-ad5312f6">{{''+(taskDetail.name||'')+''}}</view>
+                    <view class="rt-text2 data-v-ad5312f6">{{''+(taskDetail.sub_title||'')+''}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="message-l2 data-v-ad5312f6">
+            <view class="m2-lf data-v-ad5312f6">
+                <view class="t1 data-v-ad5312f6">{{''+(taskDetail.time_type==1?'永久有效':taskDetail.time_type==2&&taskStatus==0?taskDetail.start_time||'':taskDetail.end_time||'')+''}}</view>
+                <view class="t2 data-v-ad5312f6">{{''+(taskStatus==0?'开始时间':'截止时间')+''}}</view>
+            </view>
+            <view class="m2-rt data-v-ad5312f6">
+                <view class="t1 data-v-ad5312f6">{{'+'+(taskDetail.point||'')+'积分'}}</view>
+                <view class="t2 data-v-ad5312f6">
+                    <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/12/45823070c5188c40ee66324fc10569d2.png"></image>任务奖励</view>
+            </view>
+        </view>
+    </view>
+    <view class="task-desc data-v-ad5312f6">
+        <view class="desc-title data-v-ad5312f6">任务描述</view>
+        <view class="desc-cont data-v-ad5312f6">{{''+(taskDetail.description||'')+''}}</view>
+    </view>
+    <view class="tips data-v-ad5312f6">{{'Tips：'+(taskDetail.tips||'')+''}}</view>
+    <view class="is-task-finish data-v-ad5312f6">
+        <view class="common-title finish-title data-v-ad5312f6">
+            <view class="lf-title data-v-ad5312f6">任务完成情况</view>
+            <view bindtap="__e" class="rt-more data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'toList',['$event'] ] ] ] ]}}">
+                <text class="data-v-ad5312f6">查看所有用户</text>
+                <text class="iconnew jiantou new-tongyong-gengduo fz-12 data-v-ad5312f6"></text>
+            </view>
+        </view>
+        <view class="exam data-v-ad5312f6">
+            <view class="ex-item data-v-ad5312f6" wx:for="{{taskCompleteList}}" wx:key="index">
+                <view class="img data-v-ad5312f6">
+                    <image class="data-v-ad5312f6" src="{{item.avatar_url}}"></image>
+                    <text class="sta0 data-v-ad5312f6" wx:if="{{item.is_upload==0||item.is_upload==1&&item.check_status==-1}}">未完成</text>
+                    <text class="sta1 data-v-ad5312f6" wx:if="{{item.is_upload==1&&item.check_status==0}}">已上传</text>
+                    <text class="sta2 data-v-ad5312f6" wx:if="{{item.is_upload==1&&item.check_status==1}}">已完成</text>
+                </view>
+                <view class="name data-v-ad5312f6">{{''+(item.name||'')+''}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="notice data-v-ad5312f6" wx:if="{{!taskDetail.user_completed}}">温馨提示：暂无用户完成任务，请尽快完成任务赚取奖励</view>
+    <view class="audit-list data-v-ad5312f6">
+        <view class="common-title audit-title data-v-ad5312f6" wx:if="{{taskDetail.can_upload?taskDetail.log.check_status==-1:taskDetail.log.check_status==0||taskDetail.log.check_status==1}}">
+            <view class="lf-title data-v-ad5312f6">审核列表</view>
+            <view class="rt-more rt-status data-v-ad5312f6">
+                <text class="iconnew new-daishenhe icon-daishenhe data-v-ad5312f6" wx:if="{{taskDetail.log.check_status==0}}"></text>
+                <text class="status-text data-v-ad5312f6" wx:if="{{taskDetail.log.check_status==0}}">待审核</text>
+                <text class="iconnew new-daishenhe icon-butongguo data-v-ad5312f6" wx:if="{{taskDetail.can_upload&&$root.m0===-1}}"></text>
+                <text class="status-text data-v-ad5312f6" wx:if="{{taskDetail.can_upload&&$root.m1===-1}}">审核不通过</text>
+                <text class="iconnew new-shenhetongguo icon-shenhetongguo data-v-ad5312f6" wx:if="{{taskDetail.log.check_status==1}}"></text>
+                <text class="status-text data-v-ad5312f6" wx:if="{{taskDetail.log.check_status==1}}">审核已通过</text>
+            </view>
+        </view>
+        <view class="notice reject-reason data-v-ad5312f6" wx:if="{{taskDetail.can_upload&&taskDetail.log.check_status===-1&&taskDetail.log.reason}}">{{''+taskDetail.log.reason+''}}</view>
+        <view class="upload-files data-v-ad5312f6" wx:if="{{taskDetail.log}}">
+            <view bindtap="__e" class="upload-file data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'downloadFile',['$0'],[ [ ['fileList','',index,'file'] ] ] ] ] ] ]}}" wx:for="{{fileList}}" wx:key="index">
+                <view class="file-info data-v-ad5312f6">
+                    <view class="file-img data-v-ad5312f6">
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/11/ef83bf732b1f207fe559ea37064f5ab0.png" wx:if="{{item.ext=='ppt'||item.ext=='pptx'}}"></image>
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/13/f8be171049fe644cbec8354edced4a17.png" wx:if="{{item.ext=='doc'||item.ext=='docx'}}"></image>
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/13/be9ecf379e17750be3c7f046edcc6333.png" wx:if="{{item.ext=='zip'}}"></image>
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/13/02bc9cd2d7e2a34dd52e75b45019eba4.png" wx:if="{{item.ext=='pdf'}}"></image>
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/13/10f73f40b5096cf97b7860359cd8f6f6.png" wx:if="{{item.ext=='xls'||item.ext=='xlsx'}}"></image>
+                    </view>
+                    <view class="file-txt data-v-ad5312f6">
+                        <view class="file-name data-v-ad5312f6">{{''+item.filename+''}}</view>
+                        <view class="file-size data-v-ad5312f6">{{''+item.size+''}}</view>
+                    </view>
+                </view>
+                <view class="rt-icon data-v-ad5312f6">
+                    <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/21/0d7a85985e58e5348a427d96a77183d7.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="upload-imgs data-v-ad5312f6" wx:if="{{taskDetail.log}}">
+        <view class="img data-v-ad5312f6" wx:for="{{imageList}}" wx:key="index">
+            <image bindtap="__e" class="data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',[index] ] ] ] ]}}" src="{{item}}"></image>
+            <view bindtap="__e" class="zhezhao data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'showMore',['$event'] ] ] ] ]}}" wx:if="{{imgTotalList.length>3&&index==2}}">{{'+'+imgTotalList.length-3+''}}</view>
+        </view>
+    </view>
+    <view class="upload-btn data-v-ad5312f6">
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="data-v-ad5312f6" data-event-opts="{{[ [ '^onSuccess',[ ['showUploadPop'] ] ] ]}}" isAuthPhone="{{true}}" vueId="c11fce24-2" vueSlots="{{['default']}}">
+            <view class="data-v-ad5312f6" wx:if="{{taskStatus!=0&&taskDetail.can_upload}}">立即上传</view>
+        </authorization>
+        <view class="gray-btn data-v-ad5312f6" wx:if="{{taskStatus==0}}">立即上传</view>
+        <view class="gray-btn data-v-ad5312f6" wx:if="{{taskStatus!=0&&!taskDetail.can_upload&&taskDetail.log.check_status==0}}">已上传待审核</view>
+        <view class="gray-btn data-v-ad5312f6" wx:if="{{taskStatus!=0&&!taskDetail.can_upload&&taskDetail.log.check_status==1}}">已完成任务</view>
+    </view>
+    <view bindtap="__e" catchtouchmove="preventTouchMove" class="uploadPop data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{showPop}}">
+        <view class="inner data-v-ad5312f6">
+            <view class="rect1 data-v-ad5312f6">
+                <view catchtap="__e" class="up-file data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'uploadFile',['$event'] ] ] ] ]}}">
+                    <view class="data-v-ad5312f6">
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/13/c2fb0adf4d173dbfb7ba7ac065f3cda9.png"></image>
+                    </view>
+                    <view class="data-v-ad5312f6">
+                        <text class="data-v-ad5312f6">上传文件</text>
+                    </view>
+                </view>
+                <view catchtap="__e" class="up-img data-v-ad5312f6" data-event-opts="{{[ [ 'tap',[ [ 'uploadImg',['$event'] ] ] ] ]}}">
+                    <view class="data-v-ad5312f6">
+                        <image class="data-v-ad5312f6" src="https://imgcdn.huanjutang.com/file/2020/08/13/5183bcee97096811fd4c8d2eae1db131.png"></image>
+                    </view>
+                    <view class="data-v-ad5312f6">
+                        <text class="data-v-ad5312f6">上传图片</text>
+                    </view>
+                </view>
+            </view>
+            <view class="rect2 data-v-ad5312f6">注意：上传后不可修改哦~</view>
+        </view>
+    </view>
+    <view class="loadBox data-v-ad5312f6" wx:if="{{loading}}">
+        <view class="loading-runing data-v-ad5312f6">
+            <view class="loading-icon data-v-ad5312f6">
+                <text class="iconnew new-jiazai data-v-ad5312f6"></text>
+            </view>
+            <view class="left-font data-v-ad5312f6">
+                <text class="data-v-ad5312f6">加载中</text>
+            </view>
+        </view>
+    </view>
+</view>

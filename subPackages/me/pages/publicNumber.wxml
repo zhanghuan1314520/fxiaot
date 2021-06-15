@@ -1,0 +1,8 @@
+<view>
+    <view class="page">
+        <image class="publicImage" mode="widthFix" src="{{backBg}}"></image>
+        <image bindtap="__e" class="qrcode" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$event'] ] ] ] ]}}" mode="widthFix" src="{{groupInfo.wechat_code}}"></image>
+        <view bindtap="__e" class="copyCode" data-event-opts="{{[ [ 'tap',[ [ 'saveCode',['$event'] ] ] ] ]}}">保存二维码图片</view>
+    </view>
+    <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePhoto}}" showSetting="{{showPermissionsSetting}}" txt="保存二维码" vueId="7956cfdc-1"></photo-permissions-settings>
+</view>

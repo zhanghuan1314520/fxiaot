@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "statement-over-flow-item": "/pages/components/lotteryDetail/StatementOverFlowItem",
+        "base-call-phone": "/components/BaseCallPhone",
+        "image-loader": "/components/ImageLoader"
+    }
+}

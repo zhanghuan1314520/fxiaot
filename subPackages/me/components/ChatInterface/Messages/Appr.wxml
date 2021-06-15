@@ -1,0 +1,7 @@
+<view class="appr-message">
+    <view class="appr-message__title">您对我的服务满意吗？</view>
+    <view class="appr-message__content">
+        <view bindtap="__e" class="{{['appr-message__content--star iconnew new-yishoucang',index<startNum?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'starClickHandle',[index] ] ] ] ]}}" wx:for="{{starList}}" wx:key="index"></view>
+    </view>
+    <button catchtap="__e" class="appr-message__button" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['$event'] ] ] ] ]}}" data-name="匿名评分" data-type="button">{{''+(message.content>0?'感谢您的评分':'匿名评分')+''}}</button>
+</view>

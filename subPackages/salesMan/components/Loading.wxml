@@ -1,0 +1,10 @@
+<view class="weui-loadmore flex_layout_c_style" hidden="{{!loading}}">
+    <view class="loading-runing">
+        <view class="loading-icon">
+            <text class="iconnew new-jiazai"></text>
+        </view>
+        <view class="left-font">
+            <text>加载中</text>
+        </view>
+    </view>
+</view>

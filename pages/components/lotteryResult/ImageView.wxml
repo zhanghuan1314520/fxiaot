@@ -1,0 +1,10 @@
+<view class="image-view">
+    <view class="image-view__img">
+        <image class="image" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20200624/5ef2c08159b70.png"></image>
+    </view>
+    <view class="image-view__content">
+        <view class="image-view__content-title">{{''+titleText+'出来啦'}}</view>
+        <view class="image-view__content-desc">{{'点击下方按钮查看'+titleText+''}}</view>
+        <view bindtap="__e" class="image-view__content-btn fz-14 blue-color" data-event-opts="{{[ [ 'tap',[ [ '$emit',['click'] ] ] ] ]}}">{{'点击查看'+titleText+''}}</view>
+    </view>
+</view>

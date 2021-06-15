@@ -1,0 +1,22 @@
+<view bindtap="__e" class="liver data-v-a7486c6e" data-content="直播底价抢" data-event-opts="{{[ [ 'tap',[ [ 'goPlay',['$event'] ] ] ] ]}}" data-name="{{item.name}}" data-type="link">
+    <view class="liver-left data-v-a7486c6e">
+        <view class="top data-v-a7486c6e" style="{{'background:'+liverStatus[$root.m0].background+';'}}">
+            <image class="image data-v-a7486c6e" src="{{liverStatus[$root.m2].image}}" style="{{'width:'+liverStatus[$root.m1].width+';'}}"></image>
+            <text class="text data-v-a7486c6e" wx:if="{{$root.m3&&!$root.m4}}">{{''+timeStr+''}}</text>
+            <block wx:else>
+                <text class="text data-v-a7486c6e" wx:if="{{$root.m5}}">{{''+$root.m6+''}}</text>
+                <text class="text data-v-a7486c6e" wx:else>{{''+$root.m7+''}}</text>
+            </block>
+        </view>
+        <view class="bottom data-v-a7486c6e">
+            <image class="play data-v-a7486c6e" src="{{bigPlay}}"></image>
+            <image class="cover data-v-a7486c6e" src="{{item.cover_img}}"></image>
+        </view>
+    </view>
+    <view class="liver-right data-v-a7486c6e">
+        <view class="name data-v-a7486c6e">{{''+item.name+''}}</view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="data-v-a7486c6e" data-event-opts="{{[ [ '^onSuccess',[ ['subscribe'] ] ] ]}}" isAuthPhone="{{true}}" vueId="1cdaaec5-1" vueSlots="{{['default']}}">
+            <image bindtap="__e" class="button data-v-a7486c6e" data-content="直播底价抢" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{liverStatus[$root.m9].text}}" id="{{item.id}}" src="{{liverStatus[$root.m8].button}}"></image>
+        </authorization>
+    </view>
+</view>

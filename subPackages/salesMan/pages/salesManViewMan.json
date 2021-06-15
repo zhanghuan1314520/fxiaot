@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "谁看过我",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {}
+}

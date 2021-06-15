@@ -1,0 +1,12 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "scroll-item": "/subPackages/me/pages/components/client/ScrollItem",
+        "total-client": "/subPackages/me/pages/components/list/TotalClient",
+        "empty": "/subPackages/me/pages/components/list/Empty",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine",
+        "busi-loading": "/components/UILayout/BusiLoading",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

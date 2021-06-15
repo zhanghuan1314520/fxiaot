@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator"
+    }
+}

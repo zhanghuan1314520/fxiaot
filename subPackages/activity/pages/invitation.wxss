@@ -1,0 +1,75 @@
+page {
+    background-color: #f7f7f7;
+}
+
+.wrap {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+
+.wrap image {
+    float: left;
+    padding: 0;
+    width: 100%;
+    margin: -1px 0 0;
+}
+
+.tools {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 56rpx;
+    width: 516rpx;
+    height: 84rpx;
+    background: rgba(47,140,239,.98);
+    box-shadow: 0 4rpx 16rpx 0 rgba(47,140,239,.3);
+    border-radius: 42rpx;
+    z-index: 10;
+}
+
+.btn-share {
+    float: left;
+    height: 84rpx;
+    line-height: 84rpx;
+    width: 256rpx;
+    background: transparent;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.btn-share image {
+    height: 36rpx;
+    width: 46rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+    margin-top: -6rpx;
+}
+
+.line {
+    display: inline-block;
+    width: 1px;
+    height: 36rpx;
+    background: #f2f2f2;
+    opacity: .6;
+    margin-top: 26rpx;
+}
+
+.btn-save {
+    float: right;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-top: 18rpx;
+    width: 256rpx;
+    background: transparent;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.btn-save image {
+    height: 50rpx;
+    width: 50rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+    margin-top: -6rpx;
+}

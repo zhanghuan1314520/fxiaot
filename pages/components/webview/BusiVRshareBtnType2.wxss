@@ -1,0 +1,18 @@
+.btn-vr-share-wrap {
+    position: fixed;
+    width: 84rpx;
+    height: 84rpx;
+    right: 40rpx;
+    top: 184rpx;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.btn-vr-share,.share-image {
+    width: 48rpx;
+    height: 48rpx;
+}

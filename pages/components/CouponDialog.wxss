@@ -1,0 +1,309 @@
+.empty-20 {
+    height: 40rpx;
+    width: 100%;
+}
+
+.color-glay {
+    color: rgba(0,0,0,.45)!important;
+}
+
+.lottery-toast {
+    position: fixed;
+    width: auto;
+    padding: 48rpx 60rpx;
+    background: rgba(48,50,55,.77);
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 500rpx;
+    color: #fff;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10000;
+}
+
+.lottery-toast .cont {
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+    font-weight: 700;
+}
+
+.lottery-toast .image {
+    width: 46rpx;
+    height: 46rpx;
+    margin-right: 18rpx;
+}
+
+.lottery-toast .iconnew {
+    font-size: 34rpx;
+    border-radius: 100%;
+    margin-right: 12rpx;
+    color: #fff;
+}
+
+.lottery-toast .tips {
+    width: 332rpx;
+    text-align: center;
+    margin-top: 30rpx;
+}
+
+.comfirm-dialog {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 1005;
+}
+
+.comfirm-dialog .comfirm-dialog-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 40rpx 40rpx 0 0;
+}
+
+.comfirm-dialog .comfirm-dialog-content .content-wrap {
+    width: auto;
+    background: #fff;
+    border-radius: 8rpx;
+    height: auto;
+    overflow: hidden;
+}
+
+.comfirm-dialog .comfirm-dialog-content .content-wrap .tips {
+    text-align: center;
+    margin: 94rpx 18rpx 80rpx;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    font-size: 30rpx;
+    font-weight: 700;
+    color: #303237;
+    line-height: 50rpx;
+}
+
+.comfirm-dialog .comfirm-dialog-content .content-status {
+    height: 144rpx;
+    overflow: hidden;
+    width: auto;
+    position: relative;
+}
+
+.comfirm-dialog .comfirm-dialog-content .content-status .icon-close {
+    font-size: 40rpx!important;
+    color: #d9d9d9;
+    position: absolute;
+    top: 38rpx;
+    right: 40rpx;
+    height: 46rpx;
+    width: 46rpx;
+}
+
+.comfirm-dialog .comfirm-dialog-content .content-status .icon-close .iconnew {
+    font-size: 44rpx!important;
+}
+
+.comfirm-dialog .comfirm-dialog-content .content-status .status-subtext {
+    width: auto;
+    height: 52rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 52rpx;
+    margin-top: 60rpx;
+    text-align: center;
+}
+
+.comfirm-dialog .comfirm-dialog-content .scroll-view {
+    height: 760rpx;
+    width: auto;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item {
+    width: 690rpx;
+    height: 184rpx;
+    margin: 32rpx 30rpx 0;
+    background: url(https://imgcdn.huanjutang.com/image/2020/04/27/b1eb0d35227130ae41f081a6e185fc04.png) 50% no-repeat;
+    background-size: cover;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-left {
+    width: 196rpx;
+    float: left;
+    color: #fff;
+    height: 60rpx;
+    text-align: center;
+    margin-top: 58rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-left .value {
+    font-size: 60rpx;
+    font-weight: 700;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-left .unit {
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 2rpx;
+    margin-top: 20rpx;
+    vertical-align: middle;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-center {
+    width: 370rpx;
+    float: left;
+    height: 100%;
+    margin-left: 36rpx;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-center .item-name {
+    width: auto;
+    height: 40rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+    padding-top: 26rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 36rpx;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-center .item-premise {
+    margin-bottom: 16rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-center .item-date,.comfirm-dialog .comfirm-dialog-content .coupon-item .item-center .item-premise {
+    width: auto;
+    height: 24rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.65);
+    line-height: 24rpx;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-right {
+    width: 86rpx;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-right .text {
+    display: inline-block;
+    width: 28rpx;
+    height: auto;
+    overflow: hidden;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #576cf9;
+    line-height: 32rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.comfirm-dialog .comfirm-dialog-content .coupon-item .item-right .none {
+    color: rgba(0,0,0,.45)!important;
+}
+
+.receiveDialog {
+    position: fixed;
+    width: auto;
+    padding: 36rpx 50rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 500rpx;
+    color: #fff;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10000;
+}
+
+.receiveDialog .cont {
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+    color: #1d1e2c;
+    font-weight: 700;
+}
+
+.receiveDialog .cont--phone {
+    font-size: 56rpx;
+    line-height: 56rpx;
+    margin-top: 36rpx;
+}
+
+.receiveDialog .btn {
+    width: 520rpx;
+    height: 100rpx;
+    margin-top: 30rpx;
+    background: #1677ff;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.receiveDialog .image {
+    width: 46rpx;
+    height: 46rpx;
+    margin-right: 18rpx;
+}
+
+.receiveDialog .iconnew {
+    font-size: 34rpx;
+    border-radius: 100%;
+    margin-right: 12rpx;
+    color: #fff;
+}
+
+.receiveDialog .tips {
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: #bbb;
+    text-align: center;
+    margin-top: 40rpx;
+    font-weight: 700;
+}
+
+.receiveDialog__shade {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 2000;
+}

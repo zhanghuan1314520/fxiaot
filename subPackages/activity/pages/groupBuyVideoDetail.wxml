@@ -1,0 +1,79 @@
+<view class="detail data-v-294001cc">
+    <view class="detail-title data-v-294001cc">
+        <image class="detail-title__image data-v-294001cc" mode="widthFix" src="{{homeImage.onlineTitle}}"></image>
+    </view>
+    <view class="detail-content data-v-294001cc">
+        <view class="detail-project data-v-294001cc">
+            <view class="project-name data-v-294001cc">
+                <text bindtap="__e" class="data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'handleGoProjectDetail',['$event'] ] ] ] ]}}" data-name="楼盘详情" id="{{detail.project_id}}">{{''+(detail.project.name||'')+''}}</text>
+                <button bindtap="__e" class="share-btn data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="分享" openType="share">
+                    <image class="data-v-294001cc" src="{{videoImage.share}}"></image>
+                </button>
+            </view>
+            <view bindtap="__e" class="project-content data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'toPlayVideo',['$0','$1'],['detail.video_url','detail.id'] ] ] ] ]}}" data-name="播放视频">
+                <image class="cover data-v-294001cc" mode="aspectFill" src="{{detail.video_url+'?vframe/jpg/offset/1'}}"></image>
+                <image class="play data-v-294001cc" src="{{homeImage.bigPlay}}"></image>
+            </view>
+            <view class="project-salesman data-v-294001cc" wx:if="{{detail.sales_man}}">
+                <view class="salesman-left data-v-294001cc">
+                    <image bindtap="__e" class="avatar data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'toSalesDetail',['$event'] ] ] ] ]}}" data-name="置业顾问详情" id="{{detail.sales_man.sales_man_id}}" src="{{detail.sales_man.avatar_url}}"></image>
+                    <view class="user data-v-294001cc">
+                        <text class="data-v-294001cc">{{detail.sales_man.sales_name}}</text>
+                        <image class="data-v-294001cc" src="{{videoImage.flag}}"></image>
+                    </view>
+                </view>
+                <view class="salesman-right data-v-294001cc">
+                    <authorization bind:__l="__l" bind:onSuccess="__e" class="data-v-294001cc" data-event-opts="{{[ [ '^onSuccess',[ ['onSuccess'] ] ] ]}}" isAuthPhone="{{true}}" vueId="dea69f48-1" vueSlots="{{['default']}}">
+                        <button bindtap="__e" class="chat data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="微聊">
+                            <image class="data-v-294001cc" src="{{videoImage.chat}}"></image>
+                        </button>
+                    </authorization>
+                    <base-call-phone bind:__l="__l" bind:onSuccess="__e" class="data-v-294001cc" data-event-opts="{{[ [ '^onSuccess',[ [ 'callSalesman',['$event','$0'],['detail.sales_man.sales_man_id'] ] ] ] ]}}" vueId="dea69f48-2" vueSlots="{{['default']}}">
+                        <button bindtap="__e" class="phone data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="打电话">
+                            <image class="data-v-294001cc" src="{{videoImage.phone}}"></image>
+                        </button>
+                    </base-call-phone>
+                </view>
+            </view>
+        </view>
+        <view class="detail-bridge data-v-294001cc">
+            <view class="data-v-294001cc"></view>
+            <view class="data-v-294001cc"></view>
+        </view>
+        <view class="detail-activity data-v-294001cc">
+            <view class="activity-top data-v-294001cc">
+                <image class="circle data-v-294001cc" src="{{videoImage.circle}}"></image>
+                <image class="point data-v-294001cc" src="{{videoImage.point}}"></image>
+            </view>
+            <view class="activity-middle data-v-294001cc">
+                <view class="operate data-v-294001cc">
+                    <view class="left data-v-294001cc">
+                        <image class="data-v-294001cc" src="{{videoImage.like}}"></image>
+                    </view>
+                    <view class="middle data-v-294001cc">{{''+($root.m0||0)+''}}</view>
+                    <view class="right data-v-294001cc">
+                        <image class="data-v-294001cc" src="{{videoImage.count}}"></image>
+                    </view>
+                </view>
+                <view class="operate margin data-v-294001cc">
+                    <view class="left data-v-294001cc">
+                        <image class="data-v-294001cc" src="{{videoImage.play}}"></image>
+                    </view>
+                    <view class="middle data-v-294001cc">{{''+($root.m1||0)+''}}</view>
+                    <view class="right data-v-294001cc">
+                        <image class="data-v-294001cc" src="{{videoImage.count}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="activity-button data-v-294001cc">
+                <view bindtap="__e" class="like data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'likeVideo',['$event'] ] ] ] ]}}" data-name="点赞" style="{{'background-image:'+'url('+buttonImage+')'+';'}}">
+                    <block wx:if="{{showLikeImage}}">
+                        <image class="like-image data-v-294001cc" data-active="{{animate}}" src="{{videoImage.activeLike}}" wx:if="{{!animate}}"></image>
+                        <image class="like-image data-v-294001cc" data-active="true" src="{{videoImage.animateLike}}" wx:else></image>
+                    </block>
+                </view>
+                <image bindtap="__e" class="join data-v-294001cc" data-event-opts="{{[ [ 'tap',[ [ 'toHome',['$event'] ] ] ] ]}}" data-name="参与活动" src="{{videoImage.joinButton}}" wx:if="{{backSwitch}}"></image>
+            </view>
+        </view>
+    </view>
+</view>

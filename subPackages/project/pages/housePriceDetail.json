@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "杭州房小团-户型详情",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "custom-nav-header": "/subPackages/project/pages/component/customNavHeader",
+        "footer-btns": "/components/FooterBtns",
+        "base-call-phone": "/components/BaseCallPhone",
+        "recommed-sales": "/components/RecommedSales",
+        "audio-player": "/components/AudioPlayer"
+    }
+}

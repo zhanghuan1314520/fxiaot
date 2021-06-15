@@ -1,0 +1,16 @@
+<view class="task-info">
+    <view bindtap="__e" class="today-point" data-content="任务中心-今日获得积分" data-event-opts="{{[ [ 'tap',[ [ 'goToPage',['/subPackages/me/pages/nowInteral'] ] ] ] ]}}" data-name="今日获得积分" data-type="link">
+        <text class="label">今日获得积分</text>
+        <text class="num">{{''+(points||0)+''}}</text>
+        <text class="iconnew new-tongyong-gengduo"></text>
+    </view>
+    <view class="today-activity">
+        <view bindtap="__e" class="num-box" data-content="任务中心-当前活跃度" data-event-opts="{{[ [ 'tap',[ [ 'goToPage',['/subPackages/me/pages/vitalityIntegral'] ] ] ] ]}}" data-name="当前活跃度" data-type="link">
+            <text class="label">当前活跃度</text>
+            <text class="num">{{''+(liveness||0)+''}}</text>
+            <text class="iconnew new-tongyong-gengduo"></text>
+        </view>
+    </view>
+    <view class="tip">今日做完任务，积分立涨200+</view>
+    <view bindtap="__e" class="btn" data-content="任务中心-常见问题" data-event-opts="{{[ [ 'tap',[ [ 'goCommonProblem',['$event'] ] ] ] ]}}" data-name="常见问题" data-type="link">常见问题</view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

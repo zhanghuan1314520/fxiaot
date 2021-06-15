@@ -1,0 +1,28 @@
+.busi-grid {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.busi-grid .busi-grid__item {
+    width: 20%;
+}
+
+.busi-grid .busi-grid__item .busi-grid__img {
+    display: block;
+    margin: 0 auto;
+    width: 108rpx;
+    height: 106rpx;
+    overflow: hidden;
+}
+
+.busi-grid .busi-grid__item .busi-grid__name {
+    margin-top: 2rpx;
+    font-size: 26rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 36rpx;
+    height: 36rpx;
+    text-align: center;
+    width: 100%;
+}

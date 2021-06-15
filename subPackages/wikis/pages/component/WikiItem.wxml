@@ -1,0 +1,15 @@
+<view bindtap="__e" class="item" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'goDetailPage',['$0'],['item.id'] ] ] ] ]}}" data-name="百科详情">
+    <view class="item-left">
+        <view class="item-title">{{''+item.title+''}}</view>
+        <view class="item-info">
+            <view class="item-info-type">
+                <text class="tag-text" wx:if="{{item.category.name}}">{{''+item.category.name+''}}</text>
+            </view>
+            <view class="item-info-date">{{'更新于'+(item.publish_date||item.update_at)+''}}</view>
+        </view>
+    </view>
+    <view class="item-right">
+        <image class="item-cover" mode="aspectFill" src="{{item.cover_img}}"></image>
+        <view class="icon-video" wx:if="{{item.medias.length}}"></view>
+    </view>
+</view>

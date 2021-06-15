@@ -1,0 +1,266 @@
+.fz-20 {
+    font-size: 40rpx!important;
+    float: left;
+}
+
+.fz-22 {
+    font-size: 44rpx!important;
+    float: left;
+}
+
+.mr-12 {
+    margin-right: 12rpx;
+}
+
+.mr-8 {
+    margin-right: 8rpx;
+}
+
+.mr-4 {
+    margin-right: 4rpx;
+}
+
+.title {
+    width: auto;
+    padding: 0 24rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.title .label {
+    height: 90rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #303237;
+    float: left;
+}
+
+.title .add-btn-text {
+    float: right;
+    color: #2d8cf0;
+    font-size: 28rpx;
+    font-weight: 400;
+}
+
+.empty-data {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 40rpx;
+}
+
+.empty-data image {
+    margin-top: 272rpx;
+    height: 188rpx;
+    width: 336rpx;
+}
+
+.empty-data .empty-text {
+    width: auto;
+    text-align: center;
+    height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #b5b6bb;
+    line-height: 40rpx;
+    margin-top: 26rpx;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.page,page {
+    background: #f5f7fa;
+}
+
+.page {
+    min-height: 100vh;
+    position: relative;
+}
+
+.sentences {
+    padding-bottom: 110rpx;
+}
+
+.item,.sentences {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+
+.item {
+    clear: both;
+    background: #fff;
+    margin-bottom: 24rpx;
+    padding: 0 24rpx;
+}
+
+.item .text {
+    color: #303237;
+    line-height: 44rpx;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    padding: 24rpx 0;
+}
+
+.item .text,.tools {
+    font-size: 28rpx;
+    font-weight: 400;
+}
+
+.tools {
+    border-top: 2rpx solid rgba(48,55,64,.05);
+    height: 96rpx;
+    color: #96989e;
+    line-height: 96rpx;
+}
+
+.tools image {
+    vertical-align: middle;
+    margin-top: -6rpx;
+}
+
+.tools .f-left {
+    display: inline-block;
+}
+
+.tools .f-left image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.tools .f-right {
+    margin-left: 80rpx;
+    display: inline-block;
+}
+
+.tools .f-right image {
+    height: 36rpx;
+    width: 36rpx;
+}
+
+.set-default {
+    height: 40rpx;
+    width: auto;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #96989e;
+    line-height: 40rpx;
+    margin-top: 28rpx;
+    margin-bottom: 36rpx;
+    margin-left: 40rpx;
+}
+
+.set-default image {
+    height: 36rpx;
+    width: 36rpx;
+    margin-right: 5rpx;
+    vertical-align: middle;
+    margin-top: -6rpx;
+}
+
+.btns {
+    height: 100rpx;
+    width: auto;
+}
+
+.btns button {
+    width: 298rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: inline-block;
+    background: transparent;
+    border-radius: 0;
+    border-right: 1rpx solid #e2e4ea;
+    font-size: 32rpx;
+}
+
+.btns button:last-child {
+    border: 0;
+    color: #2f8cef;
+}
+
+.add-btn {
+    width: 576rpx;
+    height: 88rpx;
+    margin-left: 87rpx;
+    margin-top: 188rpx;
+    background: #2d8cf0;
+    box-shadow: 0 12rpx 20rpx 0 rgba(45,140,240,.3);
+    border-radius: 44rpx;
+    font-size: 32rpx;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    line-height: 88rpx;
+}
+
+.mark {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.65);
+}
+
+.dialog,.mark {
+    position: absolute;
+}
+
+.dialog {
+    height: auto;
+    overflow: hidden;
+    width: 600rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.dialog .dialog-title {
+    width: auto;
+    height: 44rpx;
+    font-size: 36rpx;
+    font-weight: 600;
+    color: #303237;
+    line-height: 44rpx;
+    margin: 24rpx 40rpx;
+}
+
+.dialog .dialog-content {
+    width: auto;
+    height: 426rpx;
+    background: #f5f7fa;
+    border-radius: 8rpx;
+    margin: 0 40rpx;
+}
+
+.dialog .dialog-content textarea {
+    width: auto;
+    padding: 20rpx;
+    height: 300rpx;
+    font-size: 28rpx;
+    line-height: 44rpx;
+}
+
+.dialog .word-count {
+    width: auto;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #96989e;
+    font-size: 28rpx;
+    text-align: right;
+    margin-right: 20rpx;
+}

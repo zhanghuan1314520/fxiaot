@@ -1,0 +1,55 @@
+page {
+    background: #fdecae;
+}
+
+.image {
+    width: 100%;
+    height: 1306rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/2021461143168081.png) no-repeat 100%/cover;
+    position: relative;
+    z-index: 1;
+}
+
+.image .start-time {
+    position: absolute;
+    top: 414rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #f74d28;
+    line-height: 36rpx;
+    letter-spacing: 2rpx;
+    font-family: PingFangSC-Semibold,PingFang SC;
+}
+
+.image .invite-btn {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350rpx;
+    top: 460rpx;
+}
+
+.image .invite-btn,.image .right-btn {
+    position: absolute;
+    height: 88rpx;
+    background: transparent;
+}
+
+.image .right-btn {
+    right: 0;
+    width: 72rpx;
+}
+
+.image .right-btn.rules {
+    top: 64rpx;
+}
+
+.image .right-btn.logs {
+    top: 200rpx;
+}
+
+.project-content {
+    margin-top: -604rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+}

@@ -1,0 +1,8 @@
+<view class="accept-answer">
+    <view class="accept-info">
+        <image class="accept-info__avatar" src="{{avatar}}"></image>
+        <text class="accept-info__name">{{''+name+''}}</text>
+    </view>
+    <view class="accept-flag">已采纳</view>
+    <view class="accept-answer__content">{{''+content+''}}</view>
+</view>

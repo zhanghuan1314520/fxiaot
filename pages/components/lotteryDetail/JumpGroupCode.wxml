@@ -1,0 +1,3 @@
+<view class="group-code" wx:if="{{isShow}}">
+    <view class="tips">该楼盘没有入住的置业顾问，您可以加入楼盘群聊了解更多信息</view>
+</view>

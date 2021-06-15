@@ -1,0 +1,32 @@
+<scroll-view class="suggest" scrollY="{{true}}">
+    <view catchtap="__e" class="suggest__keyword" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['$event'] ] ] ] ]}}">
+        <view class="suggest__keyword-text fz-14">{{'搜索“'+keyword+'”'}}</view>
+        <view class="suggest__keyword-icon iconnew new-tongyong-gengduo fz-18"></view>
+    </view>
+    <view class="suggest__container">
+        <brand-item bind:__l="__l" listData="{{brandData}}" vueId="339ba414-1" wx:if="{{brandData.length>0}}"></brand-item>
+        <view catchtap="__e" class="suggest__group" data-event-opts="{{[ [ 'tap',[ [ 'clickHandleWithParam',['$0'],[ [ ['groupData','',index] ] ] ] ] ] ]}}" wx:for="{{groupData}}" wx:key="index">
+            <view class="group-left">
+                <rich-text class="light" nodes="{{item.height_light}}"></rich-text>
+                <text class="common">· 楼盘筛选</text>
+                <text class="type">{{''+item.type+''}}</text>
+            </view>
+            <view class="group-right">
+                <text class="default">{{'约'+item.total+'个楼盘'}}</text>
+                <text class="suggest__keyword-icon iconnew new-tongyong-gengduo fz-18"></text>
+            </view>
+        </view>
+        <navigator bindtap="__e" class="suggest__item" data-custom-event-name="S_search_imagine_result_click" data-custom-prop-keyword="{{keyword}}" data-custom-prop-order_by="{{index+1}}" data-custom-prop-result_id="{{item.project_id}}" data-custom-prop-result_name="{{item.name}}" data-customProp-search_type="楼盘" data-event-opts="{{[ [ 'tap',[ [ 'handleNavigate',['$event'] ] ] ] ]}}" hoverClass="none" url="{{item.url}}" wx:for="{{listData}}" wx:key="key">
+            <view class="suggest__item-title">
+                <rich-text class="suggest__item-title-text fz-14" nodes="{{item.name}}"></rich-text>
+                <view class="suggest__item-title-tag fz-11" wx:if="{{item.tags.length>0}}">{{''+item.tags[0]+''}}</view>
+            </view>
+            <view class="suggest__item-desc">
+                <view class="suggest__item-desc-text fz-12">{{''+item.project_location+''}}</view>
+                <view class="suggest__item-desc-price fz-12">
+                    <view class="price-text" wx:for="{{item.avg_price}}" wx:for-item="price" wx:key="index">{{''+price+''}}</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</scroll-view>

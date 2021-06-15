@@ -1,0 +1,153 @@
+page {
+    padding-bottom: 0;
+}
+
+.btn-active {
+    opacity: .1;
+}
+
+.box-answer-start {
+    width: 750rpx;
+    height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
+    overflow-y: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213221515138081.png) top no-repeat,url(https://imgcdn.huanjutang.com/assets/img/20213231841488081.png) bottom no-repeat,linear-gradient(180deg,#187ef3,#1f90f7);
+    background-size: contain;
+    position: relative;
+}
+
+.box-answer-start .bg-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 194rpx;
+    height: 224rpx;
+}
+
+.box-answer-start .bg-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 263rpx;
+    height: 323rpx;
+}
+
+@media screen and (min-device-height:812px) {
+    .box-answer-start .bg-left {
+        width: 278rpx;
+        height: 320rpx;
+    }
+
+    .box-answer-start .bg-right {
+        width: 376rpx;
+        height: 462rpx;
+    }
+}
+
+.box-answer-start .box-content {
+    margin-top: 136rpx;
+}
+
+.box-answer-start .box-content .info {
+    width: 686rpx;
+    margin: 0 auto;
+    height: 658rpx;
+    background: #fff;
+    border-radius: 12rpx 12rpx 0rpx 0rpx;
+    position: relative;
+}
+
+.box-answer-start .box-content .info .log {
+    position: absolute;
+    width: 380rpx;
+    height: 102rpx;
+    left: 154rpx;
+    top: -50rpx;
+}
+
+.box-answer-start .box-content .info .detail {
+    padding-top: 58rpx;
+    box-sizing: border-box;
+}
+
+.box-answer-start .box-content .info .detail .title {
+    text-align: center;
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 48rpx;
+}
+
+.box-answer-start .box-content .info .detail .time {
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 44rpx;
+}
+
+.box-answer-start .box-content .info .detail .time .time-title {
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.box-answer-start .box-content .info .detail .box-user {
+    margin: 32rpx auto 0;
+    width: 622rpx;
+    height: 362rpx;
+    background: #eff7ff;
+    border-radius: 12rpx;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-answer-start .box-content .info .detail .box-user .avatar {
+    margin-top: 48rpx;
+    width: 172rpx;
+    height: 172rpx;
+    border: 8rpx solid rgba(0,0,0,.1);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.box-answer-start .box-content .info .detail .box-user .nickname {
+    margin-top: 24rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: #323436;
+    line-height: 44rpx;
+}
+
+.box-answer-start .box-content .info .detail .box-user .icon-begin {
+    width: 452rpx;
+    height: 124rpx;
+    position: absolute;
+    bottom: -62rpx;
+}
+
+.box-answer-start .box-content .tips {
+    width: 686rpx;
+    margin: 0 auto;
+    height: 176rpx;
+    background: #156be8;
+    box-shadow: 0rpx 8rpx 10rpx 0rpx rgba(0,17,45,.17);
+    border-radius: 0rpx 0rpx 12rpx 12rpx;
+    padding: 32rpx;
+    box-sizing: border-box;
+}
+
+.box-answer-start .box-content .tips .tips-context {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: hsla(0,0%,100%,.75);
+    line-height: 40rpx;
+}

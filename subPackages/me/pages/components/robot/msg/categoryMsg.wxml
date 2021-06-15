@@ -1,0 +1,16 @@
+<base-layout bind:__l="__l" isReceive="{{isReceive}}" message="{{message}}" showAvatar="{{false}}" vueId="a01201e6-1" vueSlots="{{['default']}}">
+    <view class="{{['text-message',isReceive?'receive':'',!isReceive?'sender':'']}}">
+        <view class="text-message__content" userSelect="{{true}}">
+            <swiper bindchange="__e" class="swiper-wrap" data-event-opts="{{[ [ 'change',[ [ 'e0',['$event'] ] ] ] ]}}" indicatorDots="{{swiperList.length>1}}" style="{{'height:'+(swiperList.length>1?72*swiperList[current].length+51+'rpx':72*swiperList[current].length+'rpx')+';'}}">
+                <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+                    <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" data-event-params="{{j:j}}" wx:for="{{item}}" wx:for-index="__i0__" wx:for-item="j" wx:key="id">
+                        <text class="list-content">{{''+j.title+''}}</text>
+                        <text class="right-text">
+                            <text class="iconnew new-tongyong-gengduo"></text>
+                        </text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</base-layout>

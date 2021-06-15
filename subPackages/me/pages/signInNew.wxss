@@ -1,0 +1,465 @@
+.main-content {
+    height: 566rpx;
+    width: 100vw;
+    position: relative;
+}
+
+.main-content .bg-box,.main-content image {
+    width: 100%;
+    height: 450rpx;
+}
+
+.main-content .bg-box {
+    padding: 62rpx 24rpx 0;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+}
+
+.main-content .bg-box .desc {
+    margin-left: 12rpx;
+}
+
+.main-content .bg-box .desc text {
+    display: block;
+}
+
+.main-content .bg-box .desc text:nth-of-type(1) {
+    height: 28rpx;
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 28rpx;
+}
+
+.main-content .bg-box .desc text:nth-of-type(2) {
+    height: 50rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 50rpx;
+    margin-top: 16rpx;
+}
+
+.main-content .signin-list {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 360rpx;
+    width: 702rpx;
+}
+
+.main-content .signin-list .up-list {
+    height: 128rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.main-content .signin-list .bottom-sign {
+    height: 232rpx;
+    background: #fff;
+    box-shadow: 0 4px 36px 0 rgba(47,140,239,.18);
+    border-radius: 0 0 12px 12px;
+    box-sizing: border-box;
+}
+
+.main-content .signin-list .bottom-sign-active {
+    background: #fff!important;
+}
+
+.main-content .signin-list .bottom-sign-active text {
+    color: #2f8cef!important;
+}
+
+.main-content .signin-list .list-item {
+    width: 96rpx;
+    height: 128rpx;
+    background: linear-gradient(1turn,#26a1ff,#1175ff);
+    border-radius: 8rpx 8rpx 0rpx 0rpx;
+    box-sizing: border-box;
+    padding: 28rpx 18rpx 0;
+    text-align: center;
+}
+
+.main-content .signin-list .list-item text {
+    display: block;
+}
+
+.main-content .signin-list .list-item text:nth-of-type(1) {
+    height: 24rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #fff;
+    line-height: 24rpx;
+    width: 64rpx;
+}
+
+.main-content .signin-list .list-item text:nth-of-type(2) {
+    margin-top: 24rpx;
+    height: 24rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+    line-height: 24rpx;
+}
+
+.main-content .signin-list .list-item .last-day-img {
+    margin-top: 14rpx;
+    width: 38rpx;
+    height: 44rpx;
+}
+
+.main-content .signin-list .list-item .queding-icon {
+    font-weight: 400;
+    width: 40rpx;
+    box-shadow: 0 4px 8px 0 rgba(47,140,239,.15);
+    margin: 18rpx auto 0;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.main-content .signin-list .bottom-sign {
+    padding: 58rpx 36rpx 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.main-content .signin-list .bottom-sign .left {
+    height: 115rpx;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main-content .signin-list .bottom-sign .sum-sign-score {
+    height: 80rpx;
+    font-size: 80rpx;
+    font-weight: 700;
+    color: #ff7d4f;
+    line-height: 72rpx;
+}
+
+.main-content .signin-list .bottom-sign .next-line .line {
+    height: 24rpx;
+    width: 4rpx;
+    background-color: #f2f2f2;
+    margin: 0 10rpx;
+}
+
+.main-content .signin-list .bottom-sign .next-line text {
+    height: 24rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #606266;
+    line-height: 24rpx;
+}
+
+.main-content .signin-list .bottom-sign .next-line .sum-sign-day {
+    color: #2f8cef;
+    margin-left: 12rpx;
+}
+
+.main-content .signin-list .bottom-sign .right {
+    width: 280rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 8rpx;
+    opacity: .69;
+    border: 3rpx solid #d0d6dd;
+    text-align: center;
+    margin-top: 28rpx;
+}
+
+.main-content .signin-list .bottom-sign .right text {
+    height: 32rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #d0d6dd;
+    line-height: 32rpx;
+}
+
+.main-content .signin-list .bottom-sign .right-active {
+    opacity: 1;
+    background: linear-gradient(55deg,#31c5ff,#1469ff);
+    box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(47,140,239,.35);
+    border: none;
+    border-radius: 8rpx;
+}
+
+.main-content .signin-list .bottom-sign .right-active text {
+    color: #fff;
+}
+
+.rule {
+    padding: 24rpx;
+    position: relative;
+}
+
+.rule .rule-content {
+    width: 702rpx;
+    height: 258rpx;
+    background: #fff;
+    box-shadow: 0rpx 4rpx 36rpx 0rpx rgba(47,140,239,.18);
+    border-radius: 12rpx;
+    padding: 36rpx 0 40rpx 36rpx;
+    box-sizing: border-box;
+}
+
+.rule .rule-content .title {
+    height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #303237;
+    line-height: 40rpx;
+}
+
+.rule .rule-content .desc {
+    margin-top: 36rpx;
+}
+
+.rule .rule-content .desc text {
+    display: block;
+    height: 24rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #96989e;
+    line-height: 24rpx;
+    margin-top: 20rpx;
+}
+
+.rule .rule-img {
+    width: 144rpx;
+    height: 120rpx;
+    position: absolute;
+    right: 40rpx;
+    top: 10rpx;
+}
+
+.hot-active {
+    margin-top: 64rpx;
+    padding: 0 24rpx env(safe-area-inset-bottom);
+    box-sizing: borer-box;
+}
+
+.hot-active .title {
+    height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #303237;
+    line-height: 40rpx;
+}
+
+.hot-active .banner {
+    margin-top: 24rpx;
+    width: 702rpx;
+    height: 188rpx;
+    border-radius: 12rpx;
+    box-shadow: 0rpx 4rpx 12rpx 0rpx rgba(0,0,0,.15);
+}
+
+.hot-active .banner .swiper {
+    width: 702rpx;
+    height: 188rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.hot-active .banner .swiper image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12rpx;
+}
+
+.signin-hide-bg {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.65);
+}
+
+.signin-hide-bg .score-content {
+    position: relative;
+}
+
+.signin-hide-bg .score-content .image-bg {
+    width: 100vw;
+    height: 764rpx;
+}
+
+.signin-hide-bg .score-content .image-bg.last {
+    height: 740rpx;
+}
+
+.signin-hide-bg .score-content .left-img {
+    position: absolute;
+    top: 428rpx;
+    left: 144rpx;
+    width: 24rpx;
+    height: 18rpx;
+}
+
+.signin-hide-bg .score-content .right-img {
+    position: absolute;
+    top: 466rpx;
+    left: 580rpx;
+    width: 24rpx;
+    height: 18rpx;
+}
+
+.signin-hide-bg .score-content .signin-success {
+    letter-spacing: 1rpx;
+}
+
+.signin-hide-bg .score-content .signin-last,.signin-hide-bg .score-content .signin-success {
+    position: absolute;
+    top: 436rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 44rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #000;
+    line-height: 44rpx;
+}
+
+.signin-hide-bg .score-content .signin-last {
+    width: 388rpx;
+    letter-spacing: 2rpx;
+}
+
+.signin-hide-bg .score-content .signin-prize {
+    position: absolute;
+    top: 498rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 36rpx;
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #96989e;
+    line-height: 36rpx;
+}
+
+.signin-hide-bg .score-content .signin-coin-socre {
+    position: absolute;
+    top: 488rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70rpx;
+    font-size: 60rpx;
+    font-weight: 700;
+    color: #ff7d4f;
+    line-height: 70rpx;
+}
+
+.signin-hide-bg .score-content .signin-coin-socre-last {
+    position: absolute;
+    top: 554rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 56rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #ff7d4f;
+    line-height: 56rpx;
+}
+
+.signin-hide-bg .score-content .signin-feature {
+    position: absolute;
+    top: 614rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 40rpx;
+}
+
+.signin-hide-bg .score-content .signin-feature.last {
+    top: 676rpx;
+}
+
+.signin-hide-bg .close,.signin-hide-bg .score-content .signin-feature.last {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.signin-hide-bg .close {
+    top: 798rpx;
+    width: 64rpx;
+    height: 64rpx;
+    font-size: 50rpx;
+    line-height: 64rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.sign-guide-bg {
+    width: 516rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    background: rgba(0,0,0,.8);
+    position: absolute;
+    display: flex;
+    padding: 14rpx 14rpx 14rpx 30rpx;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    top: 118rpx;
+    right: 24rpx;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+.sign-guide-bg::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 14rpx solid transparent;
+    border-bottom-color: rgba(0,0,0,.8);
+    position: absolute;
+    bottom: -26rpx;
+    right: 40rpx;
+    transform: rotate(180deg);
+}
+
+.sign-guide-bg text {
+    display: inline-block;
+    height: 40rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #fff;
+    line-height: 40rpx;
+}
+
+.sign-guide-bg .line {
+    width: 2rpx;
+    height: 24rpx;
+    background: #fff;
+    margin: 10rpx 12rpx;
+}
+
+.sign-guide-bg .cha-icon {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    padding: 2rpx 0 0rpx 14rpx;
+    font-size: 34rpx;
+    box-sizing: content-box;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.fadeOut {
+    opacity: 0;
+}

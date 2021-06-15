@@ -1,0 +1,10 @@
+<cover-view class="btn-vr-share-wrap bottom-btn-share" wx:if="{{showSunshineShare}}">
+    <button bindtap="__e" class="btn-vr-share" data-event-opts="{{[ [ 'tap',[ [ 'sunshineSharedEvent',['$event'] ] ] ] ]}}" openType="share">
+        <cover-image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/2019124114968081.png"></cover-image>
+    </button>
+</cover-view>
+<cover-view class="btn-vr-share-wrap bottom-btn-share" wx:if="{{showPanoramaShare}}">
+    <button bindtap="__e" class="btn-vr-share" data-event-opts="{{[ [ 'tap',[ [ 'panoramaSharedEvent',['$event'] ] ] ] ]}}" openType="share">
+        <cover-image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/2019124114968081.png"></cover-image>
+    </button>
+</cover-view>

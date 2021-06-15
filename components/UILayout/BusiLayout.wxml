@@ -1,0 +1,6 @@
+<view catchtap="__e" catchtouchmove="__e" data-event-opts="{{[ [ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ],[ 'tap',[ [ 'stopHandle',['$event'] ] ] ] ]}}" wx:if="{{mask}}">
+    <slot></slot>
+</view>
+<view wx:else>
+    <slot></slot>
+</view>

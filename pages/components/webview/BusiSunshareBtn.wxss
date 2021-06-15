@@ -1,0 +1,11 @@
+.btn-vr-share-wrap {
+    position: fixed;
+    right: 0;
+    top: 24rpx;
+    z-index: 1000;
+}
+
+.btn-vr-share-wrap,.btn-vr-share-wrap cover-image {
+    width: 128rpx;
+    height: 56rpx;
+}

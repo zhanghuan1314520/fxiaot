@@ -1,0 +1,16 @@
+<view>
+    <view bindtap="__e" class="action-mark" data-event-opts="{{[ [ 'tap',[ [ 'closeForMark',['$event'] ] ] ] ]}}" data-id="action-sheet-mark" wx:if="{{show}}">
+        <view class="action-wrap animated slideInUp">
+            <view class="action-title">{{''+(title||'请选择')+''}}</view>
+            <view class="action-list">
+                <view bindtap="__e" class="action-item" data-event-opts="{{[ [ 'tap',[ [ 'choiceItem',['$0'],[ [ ['itemList','',index] ] ] ] ] ] ]}}" wx:for="{{itemList}}" wx:key="index">
+                    <text>{{item.name}}</text>
+                    <view class="action-tag-wrap" wx:if="{{item.is_master===1}}">
+                        <text class="action-tag">主营楼盘</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="action-cancle" data-event-opts="{{[ [ 'tap',[ [ 'cancle',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,40 @@
+<view class="house-type observe-scroll-node" wx:if="{{houseList.length>0}}">
+    <view class="common-title">
+        <view class="title">户型图</view>
+        <view>
+            <view bindtap="__e" class="house-type-head-more" data-content="户型图" data-event-opts="{{[ [ 'tap',[ [ 'toStrategy',['$event'] ] ] ] ]}}" data-name="户型攻略" data-type="link" wx:if="{{strategyUrl}}">
+                <image class="house-type-head-more-img _img" src="https://imgcdn.huanjutang.com/assets/img/2021461056408081.png"></image>
+            </view>
+        </view>
+    </view>
+    <scroll-view class="house-type-crumbs" scrollX="{{true}}">
+        <view bindtap="__e" class="crumbs-wrap" data-event-opts="{{[ [ 'tap',[ [ 'tabHousePlan',['$0',index],[ [ ['crumbsList','',index] ] ] ] ] ] ]}}" wx:for="{{crumbsList}}" wx:for-item="i" wx:key="index">
+            <text class="crumbs-wrap-split" wx:if="{{index!==0}}">/</text>
+            <view class="{{['house-type-crumbs-item',index===crumbsSelct?'active':'']}}">{{''+i.text+' ('+i.count+')'}}</view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollX="{{true}}">
+        <view class="house-type-container">
+            <view bindtap="__e" class="house-item" data-content="{{!item.vr_url?'查看户型图':''}}" data-event-opts="{{[ [ 'tap',[ [ 'showVr',['$0',index],[ [ ['houseList','',index] ] ] ] ] ] ]}}" data-name="{{!item.vr_url?item.name:''}}" id="{{'housePlanImg'+index}}" wx:for="{{houseList}}" wx:key="index">
+                <view class="house-item-wrap">
+                    <image-loader bind:__l="__l" class="house-item-image" mode="aspectFill" source="{{item.image}}" styles="{{width:'284rpx',height:'284rpx'}}" vueId="{{'ed90e15c-1-'+index}}"></image-loader>
+                    <view class="title" wx:if="{{item.is_completed==1&&item.num_bed_room!=0&&item.num_living_room!=0&&item.num_living_room!=0}}">
+                        <view class="house-item-info-build">{{''+(item.num_bed_room||'0')+'室'+(item.num_living_room||'0')+'厅'+(item.num_rest_room||'0')+'卫'}}</view>
+                        <view class="house-item-info-size">{{'建面：'+(item.outer_square>0&&item.outer_square!==0?item.outer_square+'㎡':'')+''}}</view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="img-bottom-tag h-360" data-event-opts="{{[ [ 'tap',[ [ 'showVr',['$0',index],[ [ ['houseList','',index] ] ] ] ] ] ]}}" wx:if="{{item.vr_url}}">
+                    <image class="img-bottom-tag-item" src="https://imgcdn.huanjutang.com/assets/img/202142165348081.png"></image>
+                </view>
+                <view class="img-bottom-tag img-bottom-tag--black h-360" wx:if="{{item.sales_status===3}}">
+                    <image class="img-bottom-tag-sellout" src="https://imgcdn.huanjutang.com/assets/img/20213251830268081.png"></image>
+                </view>
+                <image class="house-item-opening _img" src="https://imgcdn.huanjutang.com/assets/img/20213251451528081.png" wx:if="{{item.is_this}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+    <navigator bindtap="__e" class="common-title" data-content="户型图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="更多户型图" data-type="link" hoverClass="none" url="{{'/subPackages/project/pages/oldHousePlan?lottery_id='+lottery_id+'&project_id='+project_id+'&project_name='+baseDetail.name}}">
+        <view bindtap="__e" class="watch-all" data-event-opts="{{[ [ 'tap',[ [ 'handleToPlan',['$event'] ] ] ] ]}}">查看全部户型</view>
+    </navigator>
+    <action-sheet bind:__l="__l" bind:optionClick="__e" class="vue-ref" data-event-opts="{{[ [ '^optionClick',[ ['chooseImageType'] ] ] ]}}" data-ref="actionSheet" options="{{optionList}}" showCancel="{{true}}" vueId="ed90e15c-2"></action-sheet>
+</view>

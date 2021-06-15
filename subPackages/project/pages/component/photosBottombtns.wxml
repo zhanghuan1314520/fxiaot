@@ -1,0 +1,15 @@
+<view class="phontos-bottom-btns" wx:if="{{projectId}}">
+    <button class="share" openType="share">
+        <text class="iconnew new-fenxiang2 fz-20"></text>
+        <text class="text">分享</text>
+    </button>
+    <block wx:if="{{isSalesMan==1}}">
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="phontos-bottom-botton left" data-event-opts="{{[ [ '^onSuccess',[ [ 'toUrl',[1] ] ] ] ]}}" vueId="49e97a40-1" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="phontos-bottom-botton left" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="上传视频" data-type="button">上传视频</view>
+        </authorization>
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="phontos-bottom-botton right" data-event-opts="{{[ [ '^onSuccess',[ [ 'toUrl',[2] ] ] ] ]}}" vueId="49e97a40-2" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="phontos-bottom-botton right" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="上传图片" data-type="button">上传图片</view>
+        </authorization>
+    </block>
+    <footer-btns bind:__l="__l" projectId="{{projectId}}" showCallBtn="{{showCallBtn}}" showShareBtn="{{false}}" vueId="49e97a40-3" wx:else></footer-btns>
+</view>

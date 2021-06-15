@@ -1,0 +1,49 @@
+<view class="page">
+    <view class="aeria-item" wx:for="{{list}}" wx:for-item="detail" wx:key="index">
+        <view bindtap="__e" class="image-model" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['aerial','$0','$1'],[ [ ['list','',index,'view_url'] ],[ ['list','',index] ] ] ] ] ] ]}}">
+            <image class="cover" lazyLoad="{{true}}" mode="widthFix" src="{{detail.view_cover||'https://imgcdn.huanjutang.com/assets/img/20202111520167887.png'}}"></image>
+            <view class="view-comment">
+                <view class="view-num">
+                    <image class="page-view-icon" src="https://imgcdn.huanjutang.com/assets/img/202012221556438081.png"></image>
+                    <text class="text">{{''+detail.page_views+''}}</text>
+                </view>
+                <view class="view-num">
+                    <view class="comment-icon"></view>
+                    <text class="text">{{''+detail.comment_num+''}}</text>
+                </view>
+            </view>
+            <view class="aeria-icon"></view>
+        </view>
+        <view bindtap="__e" class="main-content" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['detail','$0'],[ [ ['list','',index,'url'] ] ] ] ] ] ]}}">
+            <view class="title-status">
+                <view class="title">{{''+detail.name+''}}</view>
+                <view class="status-tags" wx:if="{{detail.tags.length||detail.characteristic}}">
+                    <text class="-tag" wx:for="{{detail.tags}}" wx:for-index="cIndex" wx:key="cIndex">{{''+item+''}}</text>
+                    <text class="{{[cIndex<2?'-tag -feature':'dispaly-none']}}" wx:for="{{detail.characteristic}}" wx:for-index="cIndex" wx:key="cIndex">{{''+item+''}}</text>
+                </view>
+            </view>
+            <view class="address-price">
+                <view class="address" wx:if="{{detail.biz_circle_name||detail.area}}">
+                    <text class="name">{{''+detail.area+''}}</text>
+                    <text class="name">{{''+detail.biz_circle_name+''}}</text>
+                </view>
+                <view class="mar-top-10" wx:if="{{detail.avg_price.length==1}}">
+                    <text class="project__info__price project__info__price--1" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                </view>
+                <view class="mar-top-8" wx:if="{{detail.avg_price.length==2}}">
+                    <text class="project__info__price project__info__price--2" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                </view>
+                <view class="mar-top-10 " wx:if="{{detail.avg_price.length==3}}">
+                    <text class="project__info__price project__info__price--3" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                </view>
+            </view>
+            <view class="sales-feature" wx:if="{{detail.light_spot}}">
+                <view class="left">
+                    <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200317/5e709ad337d9d.png"></image>
+                    <text class="text">楼盘卖点</text>
+                </view>
+                <view class="feature-text">{{''+detail.light_spot+''}}</view>
+            </view>
+        </view>
+    </view>
+</view>

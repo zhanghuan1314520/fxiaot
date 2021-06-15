@@ -1,0 +1,25 @@
+<view>
+    <base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="bb281dfa-1" vueSlots="{{['default']}}" wx:if="{{isReceive}}">
+        <view class="notify-message">
+            <view class="notify-message__content">{{''+receiveUserInfo.name+'给你发送了手机号码想进一步沟通，快速拨打'+message.content+'（手机号码）聊起来吧'}}</view>
+        </view>
+        <view class="send-phone">
+            <view class="send-phone__content">
+                <view class="send-phone__content--icon iconnew new-dianhua"></view>
+                <view class="right">
+                    <view class="right__title">{{''+receiveUserInfo.name+'的手机号'}}</view>
+                    <view class="right__content">{{''+message.content+''}}</view>
+                </view>
+            </view>
+            <view class="send-phone__btns">
+                <text catchtap="__e" class="copy" data-content="用户电话" data-event-opts="{{[ [ 'tap',[ [ 'copyHandle',['$event'] ] ] ] ]}}" data-name="复制手机号" data-type="button">复制手机号</text>
+                <text catchtap="__e" class="call" data-content="用户电话" data-event-opts="{{[ [ 'tap',[ [ 'callHandle',['$event'] ] ] ] ]}}" data-name="立即拨打" data-type="button">立即拨打</text>
+            </view>
+        </view>
+    </base-layout>
+    <base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="bb281dfa-2" vueSlots="{{['default']}}" wx:else>
+        <view class="notify-message">
+            <view class="notify-message__content">已将您的手机号发送给顾问，顾问看到后会尽快给您回电联系，请您稍等片刻。</view>
+        </view>
+    </base-layout>
+</view>

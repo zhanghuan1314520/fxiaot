@@ -1,0 +1,27 @@
+<view class="bottom-operate" style="{{'margin-top:'+marginTop+';'}}">
+    <view class="bottom-operate__left">
+        <text class="left-content">{{''+leftContent.content+''}}</text>
+        <block wx:if="{{leftContent.extra}}">
+            <view class="extra-line"></view>
+            <text class="extra-content">{{''+leftContent.extra+''}}</text>
+        </block>
+    </view>
+    <view class="bottom-operate__right">
+        <text class="right-content" wx:if="{{rightContent}}">{{''+rightContent+''}}</text>
+        <block wx:else>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['handleComment'] ] ] ]}}" isAuthPhone="{{true}}" vueId="0e90612a-1" vueSlots="{{['default']}}" wx:if="{{comment.show}}">
+                <view class="operate-comment">
+                    <text class="iconnew new-bianzu3"></text>
+                    <text class="operate-num">{{''+(comment.num?$root.m0:'')+''}}</text>
+                </view>
+            </authorization>
+            <view catchtap="__e" class="{{['operate-like',isLike?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handdleLike',['$event'] ] ] ] ]}}" wx:if="{{like.show}}">
+                <view class="like-image"></view>
+                <text class="operate-num">{{''+(likeNum?$root.m1:'')+''}}</text>
+            </view>
+            <view class="operate-answer" wx:if="{{answer.show}}">
+                <text class="operate-num">{{''+(answer.num?$root.m2:0)+' 回答'}}</text>
+            </view>
+        </block>
+    </view>
+</view>

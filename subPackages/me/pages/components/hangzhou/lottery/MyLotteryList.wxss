@@ -1,0 +1,2325 @@
+@font-face {
+    font-family: iconnew;
+    src: url(https://imgcdn.huanjutang.com/assets/img/202132218058081.ttf) format("truetype");
+}
+
+.iconnew {
+    font-family: iconnew!important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.new-tequan:before {
+    content: "\E68C";
+}
+
+.new-tubiaoyanse:before {
+    content: "\E665";
+}
+
+.new-baisetubiao:before {
+    content: "\E664";
+}
+
+.new-weibiaoti-2_huaban1:before {
+    content: "\E661";
+}
+
+.new-shenhetongguo:before {
+    content: "\E663";
+}
+
+.new-daishenhe:before {
+    content: "\E662";
+}
+
+.new-ic_dingwei:before {
+    content: "\E706";
+}
+
+.new-weibiaoti-1_huaban12:before {
+    content: "\E660";
+}
+
+.new-zhuyishixiang:before {
+    content: "\E65F";
+}
+
+.new-jianyi:before {
+    content: "\E65E";
+}
+
+.new-tuwenneirong:before {
+    content: "\E65D";
+}
+
+.new-youzhi:before {
+    content: "\E65C";
+}
+
+.new-shipin:before {
+    content: "\E65B";
+}
+
+.new-weibiaoti-1_huaban11:before {
+    content: "\E65A";
+}
+
+.new-weibiaoti-1_huaban1:before {
+    content: "\E659";
+}
+
+.new-ic_dingyueloupan:before {
+    content: "\E704";
+}
+
+.new-ic_quxiaodingyue:before {
+    content: "\E705";
+}
+
+.new-ic_liebiaomoshi_qiehuan:before {
+    content: "\E703";
+}
+
+.new-ic_loudongmoshi_qiehuan:before {
+    content: "\E702";
+}
+
+.new-ic_fenxiang:before {
+    content: "\E701";
+}
+
+.new-ic_PK:before {
+    content: "\E700";
+}
+
+.new-ic_vr:before {
+    content: "\E6FF";
+}
+
+.new-ic_shipin:before {
+    content: "\E6FE";
+}
+
+.new-11:before {
+    content: "\E658";
+}
+
+.new-6morenyuanxingdefault:before {
+    content: "\E657";
+}
+
+.new-CombinedShapeCopy:before {
+    content: "\E656";
+}
+
+.new-CombinedShape:before {
+    content: "\E655";
+}
+
+.new-xiala:before {
+    content: "\E6FC";
+}
+
+.new-guanlidingyue:before {
+    content: "\E6FB";
+}
+
+.new-41shezhi:before {
+    content: "\E6FA";
+}
+
+.new-shipinxihuan:before {
+    content: "\E654";
+}
+
+.new-live_head_video:before {
+    content: "\E653";
+}
+
+.new-sousuo-huo:before {
+    content: "\E6F9";
+}
+
+.new-0:before {
+    content: "\E6EE";
+}
+
+.new-1:before {
+    content: "\E6EF";
+}
+
+.new-2:before {
+    content: "\E6F0";
+}
+
+.new-4:before {
+    content: "\E6F1";
+}
+
+.new-3:before {
+    content: "\E6F2";
+}
+
+.new-5:before {
+    content: "\E6F3";
+}
+
+.new-6:before {
+    content: "\E6F4";
+}
+
+.new-7:before {
+    content: "\E6F5";
+}
+
+.new-9:before {
+    content: "\E6F6";
+}
+
+.new-xiaoshudian:before {
+    content: "\E6F7";
+}
+
+.new-8:before {
+    content: "\E6F8";
+}
+
+.new-shipinfenxiang:before {
+    content: "\E652";
+}
+
+.new-shipinpinglun:before {
+    content: "\E651";
+}
+
+.new-shipinbofang1:before {
+    content: "\E64B";
+}
+
+.new-fenxiang2:before {
+    content: "\E64A";
+}
+
+.new-xiangceshipinquxiao:before {
+    content: "\E645";
+}
+
+.new-guanbi:before {
+    content: "\E644";
+}
+
+.new-tianjiatupian:before {
+    content: "\E643";
+}
+
+.new-fabuwenda:before {
+    content: "\E63D";
+}
+
+.new-fabutuwen:before {
+    content: "\E63B";
+}
+
+.new-fabushipin:before {
+    content: "\E638";
+}
+
+.new-dianzan_nor:before {
+    content: "\E634";
+}
+
+.new-dianzan_sel:before {
+    content: "\E635";
+}
+
+.new-bianzu3:before {
+    content: "\E633";
+}
+
+.new-bianzu173x:before {
+    content: "\E632";
+}
+
+.new-huati1:before {
+    content: "\E62F";
+}
+
+.new-jiantoubeifen:before {
+    content: "\E6ED";
+}
+
+.new-kanfangyaoqing:before {
+    content: "\E6EC";
+}
+
+.new-changyongyu:before {
+    content: "\E6EB";
+}
+
+.new-52xianshi:before {
+    content: "\E6E9";
+}
+
+.new-51yincang:before {
+    content: "\E6EA";
+}
+
+.new-weixin2:before {
+    content: "\E6E8";
+}
+
+.new-fenxiang1:before {
+    content: "\E6E7";
+}
+
+.new-jiazai:before {
+    content: "\E631";
+}
+
+.new-pengyouquan:before {
+    content: "\E630";
+}
+
+.new-gongyuan:before {
+    content: "\E6E6";
+}
+
+.new-bianzu:before {
+    content: "\E6E5";
+}
+
+.new-icon-dangqiandingwei:before {
+    content: "\E6E4";
+}
+
+.new-biaodan:before {
+    content: "\E6E3";
+}
+
+.new-bianji:before {
+    content: "\E6E2";
+}
+
+.new-huati:before {
+    content: "\E6E1";
+}
+
+.new-lujing:before {
+    content: "\E623";
+}
+
+.new-zhongbo:before {
+    content: "\E6E0";
+}
+
+.new-fangda:before {
+    content: "\E6DF";
+}
+
+.new-gongshifangan:before {
+    content: "\E6DE";
+}
+
+.new-zhuangxiujiage:before {
+    content: "\E6DD";
+}
+
+.new-yifangyijia1:before {
+    content: "\E6DC";
+}
+
+.new-zixun2:before {
+    content: "\E6DB";
+}
+
+.new-gangxuzige:before {
+    content: "\E6D9";
+}
+
+.new-goufangzige:before {
+    content: "\E6DA";
+}
+
+.new-baomingguize:before {
+    content: "\E6AF";
+}
+
+.new-changjianwenti:before {
+    content: "\E6B1";
+}
+
+.new-fangyuanbiao:before {
+    content: "\E6B3";
+}
+
+.new-goufangliucheng:before {
+    content: "\E6D3";
+}
+
+.new-yaohaojieguo:before {
+    content: "\E6D4";
+}
+
+.new-heyanziliao:before {
+    content: "\E6D5";
+}
+
+.new-fuhemingdan:before {
+    content: "\E6D6";
+}
+
+.new-ziliaomoban:before {
+    content: "\E6D7";
+}
+
+.new-dengjizhiyin:before {
+    content: "\E6D8";
+}
+
+.new-xuanfangjieguo:before {
+    content: "\E6AD";
+}
+
+.new-checked:before {
+    content: "\E6D2";
+}
+
+.new-tianjiapinglun:before {
+    content: "\E6D0";
+}
+
+.new-tianjiawodeyaohaobianma:before {
+    content: "\E6D1";
+}
+
+.new-huidingbu:before {
+    content: "\E6CF";
+}
+
+.new-liebiao:before {
+    content: "\E6CE";
+}
+
+.new-huati_line:before {
+    content: "\E6CD";
+}
+
+.new-gengduo:before {
+    content: "\E6AB";
+}
+
+.new-dianhua:before {
+    content: "\E6AC";
+}
+
+.new-gougou:before {
+    content: "\E6CC";
+}
+
+.new-xianxing-shuoming:before {
+    content: "\E6A8";
+}
+
+.new-tianchong-canyin:before {
+    content: "\E69C";
+}
+
+.new-tianchong-gongjiao:before {
+    content: "\E6A1";
+}
+
+.new-tianchong-gouwu:before {
+    content: "\E6A2";
+}
+
+.new-tianchong-xuexiao:before {
+    content: "\E6A3";
+}
+
+.new-tianchong-yiyuan:before {
+    content: "\E6A4";
+}
+
+.new-tianchong-yinhang:before {
+    content: "\E6A5";
+}
+
+.new-tianchong-loupan:before {
+    content: "\E6A6";
+}
+
+.new-tianchong-ditie:before {
+    content: "\E6A7";
+}
+
+.new-quanquan:before {
+    content: "\E69E";
+}
+
+.new-xiepinglun2:before {
+    content: "\E626";
+}
+
+.new-xingzhuang:before {
+    content: "\E61D";
+}
+
+.new-lou:before {
+    content: "\E62D";
+}
+
+.new-queding:before {
+    content: "\E636";
+}
+
+.new-shanchu1:before {
+    content: "\E639";
+}
+
+.new-shoucangxianxing:before {
+    content: "\E63A";
+}
+
+.new-sousuo:before {
+    content: "\E63E";
+}
+
+.new-tishi1:before {
+    content: "\E63F";
+}
+
+.new-tupian1:before {
+    content: "\E642";
+}
+
+.new-yifangyijia:before {
+    content: "\E646";
+}
+
+.new-yiwen:before {
+    content: "\E647";
+}
+
+.new-zhiyeguwen:before {
+    content: "\E648";
+}
+
+.new-zixun:before {
+    content: "\E649";
+}
+
+.new-zhankaigengduo1:before {
+    content: "\E64C";
+}
+
+.new-zixunxianxing:before {
+    content: "\E64D";
+}
+
+.new-zigechaxun:before {
+    content: "\E64E";
+}
+
+.new-dianhuaxianxing1:before {
+    content: "\E64F";
+}
+
+.new-weixin1:before {
+    content: "\E650";
+}
+
+.new-cuowu:before {
+    content: "\E611";
+}
+
+.new-goufangziliao:before {
+    content: "\E61A";
+}
+
+.new-guanzhu1:before {
+    content: "\E61E";
+}
+
+.new-guanzhuxianxing:before {
+    content: "\E61F";
+}
+
+.new-huishouye:before {
+    content: "\E620";
+}
+
+.new-jia:before {
+    content: "\E621";
+}
+
+.new-jian:before {
+    content: "\E622";
+}
+
+.new-liulan:before {
+    content: "\E627";
+}
+
+.new-shuoming:before {
+    content: "\E6CB";
+}
+
+.new-sousuoxianxing:before {
+    content: "\E6CA";
+}
+
+.new-quxiao2:before {
+    content: "\E610";
+}
+
+.new-wenda:before {
+    content: "\E6C9";
+}
+
+.new-tihuanxianxing-copy:before {
+    content: "\E6FD";
+}
+
+.new-ditie:before {
+    content: "\E68B";
+}
+
+.new-dingwei:before {
+    content: "\E68D";
+}
+
+.new-gougouxianxing:before {
+    content: "\E68E";
+}
+
+.new-huorexianxing:before {
+    content: "\E68F";
+}
+
+.new-jiantouxiangzuo:before {
+    content: "\E690";
+}
+
+.new-nansheng:before {
+    content: "\E691";
+}
+
+.new-kefu:before {
+    content: "\E692";
+}
+
+.new-nvsheng:before {
+    content: "\E693";
+}
+
+.new-paixuxianxing:before {
+    content: "\E694";
+}
+
+.new-quxiaoxianxing:before {
+    content: "\E695";
+}
+
+.new-quangengduo:before {
+    content: "\E696";
+}
+
+.new-rili:before {
+    content: "\E697";
+}
+
+.new-shouqi:before {
+    content: "\E698";
+}
+
+.new-tianqixianxing:before {
+    content: "\E699";
+}
+
+.new-xiepinglun:before {
+    content: "\E69A";
+}
+
+.new-tishi:before {
+    content: "\E69B";
+}
+
+.new-zaobao:before {
+    content: "\E69D";
+}
+
+.new-wenzhangxianxing:before {
+    content: "\E69F";
+}
+
+.new-zhankai:before {
+    content: "\E6A0";
+}
+
+.new-yishoucang:before {
+    content: "\E606";
+}
+
+.new-shoucang:before {
+    content: "\E605";
+}
+
+.new-fenxiang:before {
+    content: "\E604";
+}
+
+.new-dituzhaofang:before {
+    content: "\E603";
+}
+
+.new-erweima:before {
+    content: "\E6C6";
+}
+
+.new-zhuanfa:before {
+    content: "\E6C7";
+}
+
+.new-yizan1:before {
+    content: "\E6C8";
+}
+
+.new-xingzhuangjiehe:before {
+    content: "\E60F";
+}
+
+.new-paimai:before {
+    content: "\E60B";
+}
+
+.new-loupan1:before {
+    content: "\E60C";
+}
+
+.new-fangchan:before {
+    content: "\E60D";
+}
+
+.new-shuju:before {
+    content: "\E60E";
+}
+
+.new-loupan:before {
+    content: "\E6C5";
+}
+
+.new-download:before {
+    content: "\E609";
+}
+
+.new-icon-test:before {
+    content: "\E607";
+}
+
+.new-icon-test1:before {
+    content: "\E608";
+}
+
+.new-shanchujiaobiao:before {
+    content: "\E6C4";
+}
+
+.new-yiguanzhugou:before {
+    content: "\E6C3";
+}
+
+.new-weixin:before {
+    content: "\E6C2";
+}
+
+.new-jiaguanzhu:before {
+    content: "\E6C1";
+}
+
+.new-tupian:before {
+    content: "\E6B8";
+}
+
+.new-shuaxin:before {
+    content: "\E6B7";
+}
+
+.new-pinglun2:before {
+    content: "\E6BB";
+}
+
+.new-iconsliulan:before {
+    content: "\E6BC";
+}
+
+.new-shouye2:before {
+    content: "\E6BD";
+}
+
+.new-fenxiang8:before {
+    content: "\E6BE";
+}
+
+.new-ditie2:before {
+    content: "\E6C0";
+}
+
+.new-fuzhi1:before {
+    content: "\E6B2";
+}
+
+.new-gengduo-copy:before {
+    content: "\E6A9";
+}
+
+.new-zixun1:before {
+    content: "\E6AA";
+}
+
+.new-shouqijiantou:before {
+    content: "\E6AE";
+}
+
+.new-tongyong-gengduolansexiangxia:before {
+    content: "\E6B0";
+}
+
+.new-tongyong-gengduo:before {
+    content: "\E6B4";
+}
+
+.new-wenhaocopy:before {
+    content: "\E6B5";
+}
+
+.new-shipinbofang:before {
+    content: "\E6B6";
+}
+
+.new-weizan:before {
+    content: "\E6B9";
+}
+
+.new-yizan:before {
+    content: "\E6BA";
+}
+
+.new-tongyong-dingwei1:before {
+    content: "\E6BF";
+}
+
+.new-yiguanzhu:before {
+    content: "\E62B";
+}
+
+.new-quxiao:before {
+    content: "\E629";
+}
+
+.new-shanchu:before {
+    content: "\E628";
+}
+
+button::after {
+    display: none;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+.fz-8 {
+    font-size: 16rpx!important;
+}
+
+.fz-9 {
+    font-size: 18rpx!important;
+}
+
+.fz-10 {
+    font-size: 20rpx!important;
+}
+
+.fz-11 {
+    font-size: 22rpx!important;
+}
+
+.fz-12 {
+    font-size: 24rpx!important;
+}
+
+.fz-13 {
+    font-size: 26rpx!important;
+}
+
+.fz-14 {
+    font-size: 28rpx!important;
+}
+
+.fz-15 {
+    font-size: 30rpx!important;
+}
+
+.fz-16 {
+    font-size: 32rpx!important;
+}
+
+.fz-17 {
+    font-size: 34rpx!important;
+}
+
+.fz-18 {
+    font-size: 36rpx!important;
+}
+
+.fz-19 {
+    font-size: 38rpx!important;
+}
+
+.fz-20 {
+    font-size: 40rpx!important;
+}
+
+.fz-21 {
+    font-size: 42rpx!important;
+}
+
+.fz-22 {
+    font-size: 44rpx!important;
+}
+
+.fz-23 {
+    font-size: 46rpx!important;
+}
+
+.fz-24 {
+    font-size: 48rpx!important;
+}
+
+.fz-25 {
+    font-size: 50rpx!important;
+}
+
+.fz-26 {
+    font-size: 52rpx!important;
+}
+
+.fz-27 {
+    font-size: 54rpx!important;
+}
+
+.fz-28 {
+    font-size: 56rpx!important;
+}
+
+.fz-29 {
+    font-size: 58rpx!important;
+}
+
+.fz-30 {
+    font-size: 60rpx!important;
+}
+
+.fz-31 {
+    font-size: 62rpx!important;
+}
+
+.fz-32 {
+    font-size: 64rpx!important;
+}
+
+.fz-33 {
+    font-size: 66rpx!important;
+}
+
+.fz-34 {
+    font-size: 68rpx!important;
+}
+
+.fz-35 {
+    font-size: 70rpx!important;
+}
+
+.fz-36 {
+    font-size: 72rpx!important;
+}
+
+.fz-37 {
+    font-size: 74rpx!important;
+}
+
+.fz-38 {
+    font-size: 76rpx!important;
+}
+
+.fz-39 {
+    font-size: 78rpx!important;
+}
+
+.fz-40 {
+    font-size: 80rpx!important;
+}
+
+.fz-41 {
+    font-size: 82rpx!important;
+}
+
+.fz-42 {
+    font-size: 84rpx!important;
+}
+
+.fz-43 {
+    font-size: 86rpx!important;
+}
+
+.fz-44 {
+    font-size: 88rpx!important;
+}
+
+.fz-45 {
+    font-size: 90rpx!important;
+}
+
+.fz-46 {
+    font-size: 92rpx!important;
+}
+
+.fz-47 {
+    font-size: 94rpx!important;
+}
+
+.fz-48 {
+    font-size: 96rpx!important;
+}
+
+.fz-49 {
+    font-size: 98rpx!important;
+}
+
+.fz-50 {
+    font-size: 100rpx!important;
+}
+
+.fz-51 {
+    font-size: 102rpx!important;
+}
+
+.fz-52 {
+    font-size: 104rpx!important;
+}
+
+.fz-53 {
+    font-size: 106rpx!important;
+}
+
+.fz-54 {
+    font-size: 108rpx!important;
+}
+
+.fz-55 {
+    font-size: 110rpx!important;
+}
+
+.fz-56 {
+    font-size: 112rpx!important;
+}
+
+.fz-57 {
+    font-size: 114rpx!important;
+}
+
+.fz-58 {
+    font-size: 116rpx!important;
+}
+
+.fz-59 {
+    font-size: 118rpx!important;
+}
+
+.fz-60 {
+    font-size: 120rpx!important;
+}
+
+.fz-61 {
+    font-size: 122rpx!important;
+}
+
+.fz-62 {
+    font-size: 124rpx!important;
+}
+
+.fz-63 {
+    font-size: 126rpx!important;
+}
+
+.fz-64 {
+    font-size: 128rpx!important;
+}
+
+.fz-65 {
+    font-size: 130rpx!important;
+}
+
+.fz-66 {
+    font-size: 132rpx!important;
+}
+
+.fz-67 {
+    font-size: 134rpx!important;
+}
+
+.fz-68 {
+    font-size: 136rpx!important;
+}
+
+.fz-69 {
+    font-size: 138rpx!important;
+}
+
+.fz-70 {
+    font-size: 140rpx!important;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.search-input-place {
+    color: grey;
+}
+
+.search-input-place .fz-8 {
+    font-size: 16rpx!important;
+}
+
+.search-input-place .fz-9 {
+    font-size: 18rpx!important;
+}
+
+.search-input-place .fz-10 {
+    font-size: 20rpx!important;
+}
+
+.search-input-place .fz-11 {
+    font-size: 22rpx!important;
+}
+
+.search-input-place .fz-12 {
+    font-size: 24rpx!important;
+}
+
+.search-input-place .fz-13 {
+    font-size: 26rpx!important;
+}
+
+.search-input-place .fz-14 {
+    font-size: 28rpx!important;
+}
+
+.search-input-place .fz-15 {
+    font-size: 30rpx!important;
+}
+
+.search-input-place .fz-16 {
+    font-size: 32rpx!important;
+}
+
+.search-input-place .fz-17 {
+    font-size: 34rpx!important;
+}
+
+.search-input-place .fz-18 {
+    font-size: 36rpx!important;
+}
+
+.search-input-place .fz-19 {
+    font-size: 38rpx!important;
+}
+
+.search-input-place .fz-20 {
+    font-size: 40rpx!important;
+}
+
+.search-input-place .fz-21 {
+    font-size: 42rpx!important;
+}
+
+.search-input-place .fz-22 {
+    font-size: 44rpx!important;
+}
+
+.search-input-place .fz-23 {
+    font-size: 46rpx!important;
+}
+
+.search-input-place .fz-24 {
+    font-size: 48rpx!important;
+}
+
+.search-input-place .fz-25 {
+    font-size: 50rpx!important;
+}
+
+.search-input-place .fz-26 {
+    font-size: 52rpx!important;
+}
+
+.search-input-place .fz-27 {
+    font-size: 54rpx!important;
+}
+
+.search-input-place .fz-28 {
+    font-size: 56rpx!important;
+}
+
+.search-input-place .fz-29 {
+    font-size: 58rpx!important;
+}
+
+.search-input-place .fz-30 {
+    font-size: 60rpx!important;
+}
+
+.search-input-place .fz-31 {
+    font-size: 62rpx!important;
+}
+
+.search-input-place .fz-32 {
+    font-size: 64rpx!important;
+}
+
+.search-input-place .fz-33 {
+    font-size: 66rpx!important;
+}
+
+.search-input-place .fz-34 {
+    font-size: 68rpx!important;
+}
+
+.search-input-place .fz-35 {
+    font-size: 70rpx!important;
+}
+
+.search-input-place .fz-36 {
+    font-size: 72rpx!important;
+}
+
+.search-input-place .fz-37 {
+    font-size: 74rpx!important;
+}
+
+.search-input-place .fz-38 {
+    font-size: 76rpx!important;
+}
+
+.search-input-place .fz-39 {
+    font-size: 78rpx!important;
+}
+
+.search-input-place .fz-40 {
+    font-size: 80rpx!important;
+}
+
+.search-input-place .fz-41 {
+    font-size: 82rpx!important;
+}
+
+.search-input-place .fz-42 {
+    font-size: 84rpx!important;
+}
+
+.search-input-place .fz-43 {
+    font-size: 86rpx!important;
+}
+
+.search-input-place .fz-44 {
+    font-size: 88rpx!important;
+}
+
+.search-input-place .fz-45 {
+    font-size: 90rpx!important;
+}
+
+.search-input-place .fz-46 {
+    font-size: 92rpx!important;
+}
+
+.search-input-place .fz-47 {
+    font-size: 94rpx!important;
+}
+
+.search-input-place .fz-48 {
+    font-size: 96rpx!important;
+}
+
+.search-input-place .fz-49 {
+    font-size: 98rpx!important;
+}
+
+.search-input-place .fz-50 {
+    font-size: 100rpx!important;
+}
+
+.search-input-place .fz-51 {
+    font-size: 102rpx!important;
+}
+
+.search-input-place .fz-52 {
+    font-size: 104rpx!important;
+}
+
+.search-input-place .fz-53 {
+    font-size: 106rpx!important;
+}
+
+.search-input-place .fz-54 {
+    font-size: 108rpx!important;
+}
+
+.search-input-place .fz-55 {
+    font-size: 110rpx!important;
+}
+
+.search-input-place .fz-56 {
+    font-size: 112rpx!important;
+}
+
+.search-input-place .fz-57 {
+    font-size: 114rpx!important;
+}
+
+.search-input-place .fz-58 {
+    font-size: 116rpx!important;
+}
+
+.search-input-place .fz-59 {
+    font-size: 118rpx!important;
+}
+
+.search-input-place .fz-60 {
+    font-size: 120rpx!important;
+}
+
+.search-input-place .fz-61 {
+    font-size: 122rpx!important;
+}
+
+.search-input-place .fz-62 {
+    font-size: 124rpx!important;
+}
+
+.search-input-place .fz-63 {
+    font-size: 126rpx!important;
+}
+
+.search-input-place .fz-64 {
+    font-size: 128rpx!important;
+}
+
+.search-input-place .fz-65 {
+    font-size: 130rpx!important;
+}
+
+.search-input-place .fz-66 {
+    font-size: 132rpx!important;
+}
+
+.search-input-place .fz-67 {
+    font-size: 134rpx!important;
+}
+
+.search-input-place .fz-68 {
+    font-size: 136rpx!important;
+}
+
+.search-input-place .fz-69 {
+    font-size: 138rpx!important;
+}
+
+.search-input-place .fz-70 {
+    font-size: 140rpx!important;
+}
+
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.pink-color {
+    color: #f7776a!important;
+}
+
+.cyan-color {
+    color: #16a5af!important;
+}
+
+.green-color {
+    color: #188038!important;
+}
+
+.red-color {
+    color: #d13c0e!important;
+}
+
+.blue-color {
+    color: #2d8cf0!important;
+}
+
+.dark-blue-color {
+    color: #0053b0;
+}
+
+.dark-blue8-color {
+    color: rgba(0,83,176,.8)!important;
+}
+
+.yellow-color {
+    color: #d78e2e!important;
+}
+
+.black-color {
+    color: #000!important;
+}
+
+.black-3a-color {
+    color: #303237!important;
+}
+
+.height-level-color {
+    color: #333!important;
+}
+
+.small-level-color {
+    color: #666!important;
+}
+
+.gray-9-color {
+    color: #96989e!important;
+}
+
+.gray-color {
+    color: #ccc!important;
+}
+
+.white-color {
+    color: #fff!important;
+}
+
+.black1a-color {
+    color: #1a1a1a!important;
+}
+
+.gold-color {
+    color: #fbd9a4!important;
+}
+
+.price-color {
+    color: #ee3f4d;
+}
+
+.blue-bg {
+    background-color: #2d8cf0!important;
+}
+
+.gray-bg {
+    background-color: #e2e2e2!important;
+}
+
+.white-bg {
+    background-color: #fff!important;
+}
+
+.pale-red-bg {
+    background-color: #fde4e1!important;
+}
+
+.pale-green-bg {
+    background-color: #d0f3ea!important;
+}
+
+.pale-yellow-bg {
+    background-color: #fdf0df!important;
+}
+
+.pale-cyan-bg {
+    background-color: #d0edef!important;
+}
+
+.icon-red-bg {
+    background: #f7776a;
+}
+
+.icon-blue-bg {
+    background: #4da9ea;
+}
+
+.icon-green-bg {
+    background: #16c295;
+}
+
+.icon-yellow-bg {
+    background: #f7b55e;
+}
+
+.icon-pink-bg {
+    background: #eb5a92;
+}
+
+.ui-input {
+    height: 70rpx;
+    line-height: 70rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    padding-left: 20rpx;
+    font-size: 28rpx;
+}
+
+.ui-input::-webkit-input-placeholder {
+    line-height: 70rpx;
+    color: #ccc;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 28rpx;
+}
+
+.gray-block {
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+
+.tag {
+    display: inline-block;
+    height: 34rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    line-height: 36rpx;
+    border: 2rpx solid #2d8cf0;
+    border-radius: 6rpx;
+    font-size: 20rpx;
+    color: #333;
+}
+
+.tag:first-child {
+    margin-left: 0;
+}
+
+.border-radius-100 {
+    border-radius: 100%;
+}
+
+.haveSearchBar {
+    padding-top: 100rpx;
+}
+
+.slide-image {
+    width: 100%;
+    max-width: 100%;
+    height: 350rpx;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.flex_layout {
+    justify-content: flex-start;
+}
+
+.flex_layout,.flex_layout_c {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.flex_layout_c {
+    justify-content: center;
+}
+
+.flex_layout_b {
+    justify-content: space-between;
+}
+
+.flex_layout_a,.flex_layout_b {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.flex_layout_a {
+    justify-content: space-around;
+}
+
+.flex_layout_w {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex_layout_n {
+    justify-content: center;
+}
+
+.flex_layout_n,.flex_layout_n_b {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-direction: column;
+}
+
+.flex_layout_n_b {
+    justify-content: flex-start;
+}
+
+.flex_layout_c_style {
+    margin: 30rpx 0;
+}
+
+.flex_layout_c_style,.loading-runing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.loading-runing {
+    width: 100%;
+    height: 90rpx;
+}
+
+.loading-icon {
+    font-size: 20rpx!important;
+    width: 30rpx;
+    height: 0;
+    line-height: 0;
+    transition: all .5s linear;
+    animation: loading 1.5s linear infinite;
+    color: #999;
+}
+
+@-webkit-keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.left-font {
+    font-size: 30rpx!important;
+    margin-left: 10rpx;
+    color: #999;
+}
+
+.full-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+}
+
+#adjust-huener {
+    height: 45rpx;
+    width: 45rpx;
+    border-color: #2d8cf0 transparent;
+    border-style: solid;
+    border-width: 4rpx;
+    border-radius: 50%;
+    animation: adjust-hue 2s infinite;
+}
+
+@-webkit-keyframes adjust-hue {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(1turn);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes adjust-hue {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(1turn);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.black-30 {
+    color: #303237!important;
+}
+
+.black-60 {
+    color: #606266!important;
+}
+
+.gray-96 {
+    color: #96989e!important;
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+.skeletons .skeletons-rect {
+    background: #f2f2f2!important;
+    color: transparent!important;
+    animation: gradient 1s linear infinite;
+}
+
+.skeletons .skeletons-rect .sk-hide,.skeletons .skeletons-rect>button,.skeletons .skeletons-rect>image,.skeletons .skeletons-rect>swiper,.skeletons .skeletons-rect>text,.skeletons .skeletons-rect>view {
+    visibility: hidden;
+}
+
+.skeletons .skeletons-circle {
+    background: #f2f2f2!important;
+    color: transparent!important;
+    animation: gradient 1s linear infinite;
+    border-radius: 50%!important;
+}
+
+.skeletons .skeletons-circle .sk-hide,.skeletons .skeletons-circle>button,.skeletons .skeletons-circle>image,.skeletons .skeletons-circle>swiper,.skeletons .skeletons-circle>text,.skeletons .skeletons-circle>view {
+    visibility: hidden;
+}
+
+.skeletons .skeletons-margin {
+    margin-left: 24rpx;
+    margin-right: 24rpx;
+}
+
+.sk-single-animate {
+    background: #f2f2f2!important;
+    color: transparent!important;
+    animation: gradient 1s linear infinite;
+}
+
+page {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.relative {
+    position: relative;
+    height: 422rpx;
+    width: auto;
+}
+
+.validate-mark {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.76);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.validate-mark .default-color {
+    color: #b5b6bb!important;
+}
+
+.validate-mark .active-color {
+    color: #2f8cef!important;
+}
+
+.validate-mark .validate-dialog {
+    width: 606rpx;
+    height: 422rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    position: absolute;
+    left: 50%;
+    top: 350rpx;
+    transform: translate(-50%);
+}
+
+.validate-mark .validate-title {
+    width: auto;
+    height: 56rpx;
+    margin: 0 34rpx 24rpx 40rpx;
+    padding-top: 30rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #303237;
+    line-height: 56rpx;
+}
+
+.validate-mark .validate-title .new-quxiao {
+    position: absolute;
+    top: 34rpx;
+    right: 36rpx;
+    float: right;
+    font-size: 36rpx!important;
+    color: #2f8cef;
+}
+
+.validate-mark .validate-subtitle {
+    margin-left: 40rpx;
+    width: auto;
+    height: 34rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(48,55,64,.7);
+    line-height: 34rpx;
+}
+
+.validate-mark .input-val {
+    height: 56rpx;
+    width: auto;
+    justify-content: center;
+    margin: 50rpx 14rpx 0;
+}
+
+.validate-mark .input-val .val {
+    flex: 1;
+    width: 26rpx;
+    height: 56rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: #303237;
+    line-height: 56rpx;
+    text-align: center;
+    margin: 0 31rpx;
+    border-bottom: 4rpx solid #d8d8d8;
+}
+
+.validate-mark .input-val .b-0 {
+    border-bottom-color: transparent;
+}
+
+.validate-mark .err-msg {
+    width: auto;
+    height: 34rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #ee3f4d;
+    line-height: 34rpx;
+    text-align: center;
+    margin-top: 18rpx;
+}
+
+.validate-mark .validate-btns {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex: 1;
+    height: 98rpx;
+    width: auto;
+    border-top: 1px solid rgba(0,0,0,.1);
+    text-align: center;
+}
+
+.validate-mark .validate-btns button:first-child {
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.validate-mark .validate-btns button {
+    height: 98rpx;
+    line-height: 98rpx;
+    flex: 1;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #2f8cef;
+    background: none;
+    border-radius: 0;
+}
+
+.validate-mark .valicode-input {
+    height: 76rpx;
+    width: 400%;
+    text-align: center;
+    position: absolute;
+    left: -300%;
+    top: 175rpx;
+    z-index: 10;
+}
+
+.validate-mark .input-val {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex: 1;
+}
+
+.validate-mark .input-val view {
+    display: flex;
+}
+
+.my-lottery-container {
+    width: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.my-lottery-container scroll-view {
+    width: 100%;
+}
+
+.my-lottery-container .id-list {
+    position: fixed;
+    top: 100rpx;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    overflow-x: scroll;
+    padding: 32rpx 32rpx 24rpx;
+    z-index: 1;
+}
+
+.my-lottery-container .id-list .id-list-box {
+    display: -webkit-box;
+}
+
+.my-lottery-container .id-list .id-list-box .list {
+    height: 56rpx;
+    padding: 0 32rpx;
+    margin-right: 16rpx;
+    border-radius: 28rpx;
+    color: rgba(0,0,0,.65);
+    background: #fff;
+    border: 2rpx solid rgba(0,0,0,.08);
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.my-lottery-container .id-list .id-list-box .list.active {
+    color: #2d8cf0;
+    border-color: rgba(45,140,240,.3);
+    font-weight: 700;
+}
+
+.my-lottery-container .id-list .id-list-box .list:last-child {
+    margin-right: 0;
+}
+
+.my-lottery-container .id-list .id-list-box .last-view {
+    width: 150rpx;
+}
+
+.my-lottery-container .id-list .management {
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+    line-height: 96rpx;
+    width: 156rpx;
+    height: 96rpx;
+    background: linear-gradient(89deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.66) 11%,#fff 23%,#fff);
+    text-align: right;
+    padding-right: 24rpx;
+    color: rgba(0,0,0,.65);
+    font-size: 28rpx;
+}
+
+.my-lottery-container .id-list .management .text {
+    margin-left: 4rpx;
+}
+
+.my-lottery-container .container {
+    margin-top: 212rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.my-lottery-container .update-time {
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #96989e;
+    line-height: 30rpx;
+    text-align: center;
+    padding: 32rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.my-lottery-container .update-time .iconnew {
+    font-size: 26rpx;
+    margin-right: 4rpx;
+}
+
+.my-lottery-container .list-container {
+    padding: 0 32rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.my-lottery-container .list-container .list {
+    position: relative;
+    margin-bottom: 32rpx;
+    padding: 36rpx 32rpx 32rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+    background: #fff;
+}
+
+.my-lottery-container .list-container .list .title {
+    max-width: 520rpx;
+    margin-bottom: 16rpx;
+    color: rgba(0,0,0,.85);
+    font-size: 36rpx;
+    font-weight: 700;
+    line-height: 40rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my-lottery-container .list-container .list .lottery-result {
+    padding-bottom: 24rpx;
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+    color: rgba(0,0,0,.45);
+    font-size: 32rpx;
+    margin-bottom: 24rpx;
+}
+
+.my-lottery-container .list-container .list .lottery-result.active {
+    font-weight: 700;
+    color: #0ab464;
+}
+
+.my-lottery-container .list-container .list .name-code {
+    margin-bottom: 24rpx;
+    display: flex;
+    justify-content: flex-start;
+    line-height: 30rpx;
+}
+
+.my-lottery-container .list-container .list .name-code .name-text {
+    margin-right: 60rpx;
+}
+
+.my-lottery-container .list-container .list .registry-num {
+    line-height: 30rpx;
+}
+
+.my-lottery-container .list-container .list .left {
+    font-size: 26rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.my-lottery-container .list-container .list .right {
+    font-size: 26rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.my-lottery-container .list-container .list>.status {
+    position: absolute;
+    right: -6rpx;
+    top: 24rpx;
+    display: inline-block;
+    max-width: 200rpx;
+    text-overflow: hidden;
+    padding: 0 12rpx 0 18rpx;
+    line-height: 40rpx;
+    border-radius: 40rpx 0 0 40rpx;
+    color: #fff;
+    background: linear-gradient(180deg,#ff6a76,#ee3f4d);
+    text-align: center;
+    font-size: 22rpx;
+}
+
+.my-lottery-container .list-container .list>.status::before {
+    position: absolute;
+    top: -8rpx;
+    right: 0;
+    content: "";
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-color: transparent transparent #c41c29 #c41c29;
+    border-style: solid;
+    border-width: 5rpx;
+}
+
+.my-lottery-container .list-container .list>.status.fuhe {
+    color: rgba(0,0,0,.65);
+    background: linear-gradient(180deg,#f2f2f2,#e5e5e5);
+}
+
+.my-lottery-container .list-container .list>.status.fuhe::before {
+    border-color: transparent transparent #9b9b9b #9b9b9b;
+}
+
+.my-lottery-container .list-container .list>.status.jieguo {
+    color: #fff;
+    background: linear-gradient(180deg,#1dd688,#17b472);
+}
+
+.my-lottery-container .list-container .list>.status.jieguo::before {
+    border-color: transparent transparent #118152 #118152;
+}
+
+.my-lottery-container .list-container .list>.delete {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 68rpx;
+    height: 68rpx;
+    text-align: center;
+}
+
+.my-lottery-container .list-container .list>.delete text {
+    position: absolute;
+    bottom: 8rpx;
+    right: 8rpx;
+    z-index: 2;
+}
+
+.my-lottery-container .list-container .list>.delete:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 68rpx solid #b5b6bb;
+    border-left: 68rpx solid transparent;
+}
+
+.my-lottery-container .sync-dialog {
+    position: fixed;
+    left: 50%;
+    bottom: -100rpx;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transform: translate(-50%);
+    transition: transform .3s ease;
+    transition: transform .3s ease,-webkit-transform .3s ease;
+    width: 222rpx;
+    height: 80rpx;
+    background: rgba(48,50,55,.77);
+    border-radius: 4rpx;
+}
+
+.my-lottery-container .sync-dialog image {
+    width: 36rpx;
+    margin-right: 10rpx;
+}
+
+.my-lottery-container .sync-dialog.show {
+    transform: translate(-50%,-180rpx);
+}
+
+.no-content {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.no-content image {
+    width: 406rpx;
+    height: 224rpx;
+    margin-bottom: 52rpx;
+}
+
+.no-content .no-result {
+    color: rgba(0,0,0,.85);
+    font-size: 36rpx;
+    margin-bottom: 22rpx;
+    line-height: 48rpx;
+    font-weight: 700;
+}
+
+.no-content .add-user-tips {
+    color: rgba(0,0,0,.45);
+    font-size: 28rpx;
+}
+
+.bottom-btns {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+}
+
+.bottom-btns .new-user-tip {
+    width: 570rpx;
+    height: 80rpx;
+    position: absolute;
+    border-radius: 8rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    top: -120rpx;
+}
+
+.bottom-btns .button-add-user {
+    background: #fff;
+    height: 144rpx;
+    margin: 0 32rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.bottom-btns .button-add-user .button {
+    height: 100rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.bottom-btns .button-add-user .button,.full-screen-loading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-screen-loading {
+    flex-direction: row;
+    position: fixed;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+}
+
+.spinner {
+    height: 45rpx;
+    width: 45rpx;
+    border-color: #2d8cf0 transparent;
+    border-style: solid;
+    border-width: 4rpx;
+    border-radius: 50%;
+}
+
+.spinner,.update-btn-loading-icon {
+    animation: spin 2s infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(1turn);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(1turn);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.bottom-tips {
+    text-align: justify;
+    font-size: 28rpx;
+    color: #96989e;
+    line-height: 40rpx;
+    padding-bottom: 180rpx;
+}
+
+.auth-manager button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 24rpx;
+    line-height: 96rpx;
+}

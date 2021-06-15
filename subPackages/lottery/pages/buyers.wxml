@@ -1,0 +1,23 @@
+<view class="page">
+    <view class="page__bd haveSearchBar">
+        <view>
+            <view class="search-bar">
+                <view bindtap="__e" class="search-btn fz-14 white-color" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}">确定</view>
+                <view class="search-bar-form">
+                    <view bindtap="__e" class="weui-icon-search iconnew new-sousuoxianxing" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}"></view>
+                    <view bindtap="__e" class="weui-icon-clear iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></view>
+                    <input bindconfirm="__e" bindinput="__e" class="ui-input search-bar-input" data-event-opts="{{[ [ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doSearch',['$event'] ] ] ] ]}}" placeholder="{{placeholder}}" placeholderClass="search-input-place" type="text" value="{{inputVal}}"></input>
+                </view>
+            </view>
+        </view>
+        <view>
+            <navigator class="fz-15 height-level-color font-bold" style="line-height:3;border-bottom:1rpx solid #f2f2f2;text-align:center;" url="{{'/pages/lotteryDetail?id='+lottery_id}}">{{'【'+lottery_name+'】'+navBarTitle+''}}</navigator>
+            <buyer-list bind:__l="__l" bind:updateItem="__e" data-event-opts="{{[ [ '^updateItem',[ [ '__set_sync',['$0','items','$event'],[''] ] ] ] ]}}" item="{{items}}" vueId="3945fac5-1"></buyer-list>
+        </view>
+        <view>
+            <view class="weui-loadmore" hidden="{{more}}">
+                <view class="weui-loadmore__tips gray-color">我到底咯</view>
+            </view>
+        </view>
+    </view>
+</view>

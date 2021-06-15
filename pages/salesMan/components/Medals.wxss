@@ -1,0 +1,10 @@
+.medals {
+    display: flex;
+    align-items: center;
+}
+
+.medal {
+    margin-left: -8rpx;
+    width: 52rpx;
+    height: 52rpx;
+}

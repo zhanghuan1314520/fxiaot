@@ -1,0 +1,8 @@
+<view>
+    <canvas binderror="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" canvasId="cropper" class="cropper" data-event-opts="{{[ [ 'touchstart',[ [ 'ts',['$event'] ] ] ],[ 'touchmove',[ [ 'tm',['$event'] ] ] ],[ 'touchend',[ [ 'te',['$event'] ] ] ],[ 'error',[ [ 'canvasError',['$event'] ] ] ] ]}}" disableScroll="true" style="{{'width:'+width+'px;height:'+height+'px;background-color: rgba(0, 0, 0, 0.8);z-index:2'}}"></canvas>
+    <canvas canvasId="targetCropper" class="cropper" disableScroll="true" style="{{'position: fixed; top: -'+width*pixelRatio+'px; left: -'+height*pixelRatio+'px; width:'+width*pixelRatio+'px;height:'+height*pixelRatio+'px;z-index:1'}}"></canvas>
+    <cover-view class="cropper-buttons">
+        <cover-view catchtap="__e" catchtouchmove="__e" class="upload" data-event-opts="{{[ [ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ],[ 'tap',[ [ 'uploadTap',['$event'] ] ] ] ]}}">更换图片</cover-view>
+        <cover-view catchtap="__e" catchtouchmove="__e" class="getCropperImage" data-event-opts="{{[ [ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ],[ 'tap',[ [ 'getCropperImage',['$event'] ] ] ] ]}}">确认</cover-view>
+    </cover-view>
+</view>

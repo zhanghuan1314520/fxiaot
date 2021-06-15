@@ -1,0 +1,148 @@
+.overflow-1,.overflow-line-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.overflow-line-1 {
+    width: 400rpx;
+}
+
+.padding-right-32 {
+    padding-right: 82rpx;
+}
+
+.padding-left-32 {
+    padding-left: 32rpx;
+}
+
+.relation-box {
+    margin-right: 20rpx;
+}
+
+.relation-box .cricle {
+    color: #bfbfbf;
+}
+
+.relation-box .cricle .icon-relation {
+    color: #2d8cf0;
+}
+
+.mark {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.7);
+}
+
+.building-bounced {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    height: 880rpx;
+}
+
+.buiding-choose {
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0;
+}
+
+.search {
+    justify-content: space-between;
+    padding: 28rpx 0 12rpx 24rpx;
+}
+
+.search,.search .search-left {
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.search .search-left {
+    position: relative;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 590rpx;
+    background: rgba(21,24,45,.08);
+    border-radius: 10rpx;
+}
+
+.search .search-left .new-sousuo {
+    display: inline-block;
+    width: 38rpx;
+    height: 100%;
+    margin: 0 12rpx 0 20rpx;
+}
+
+.search .search-left .search-bar-input {
+    width: 520rpx;
+    height: 100%;
+    line-height: 100%;
+    box-sizing: border-box;
+    color: rgba(0,0,0,.85);
+    font-size: 32rpx;
+}
+
+.search .search-left .search-input-place {
+    color: rgba(0,0,0,.45);
+    font-size: 32rpx;
+}
+
+.search .search-btn {
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.search-col {
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid rgba(48,55,64,.05);
+    color: #303237;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.h-500 {
+    width: 100%;
+    height: 760rpx;
+}
+
+.none-data-img {
+    margin-left: 4rpx;
+    width: 22rpx;
+}
+
+.active {
+    color: #2d8cf0!important;
+}
+
+.tip {
+    margin-top: 16rpx;
+    width: 100%;
+}
+
+.label .sub,.tip {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.label .sub {
+    margin-left: 12rpx;
+}

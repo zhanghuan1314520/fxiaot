@@ -1,0 +1,375 @@
+.search-box-soil {
+    padding: 30rpx 24rpx 20rpx;
+    border-bottom: 1rpx solid #e2e4ea;
+}
+
+.filter-cont-position {
+    position: relative;
+}
+
+.filter-cont,.filter-cont-blank {
+    height: 80rpx;
+    width: 100vw;
+}
+
+.filter-cont {
+    margin-bottom: 16rpx;
+    align-items: center;
+    background: #fff;
+    padding-left: 24rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+}
+
+.filter-cont.soil-header-fixed {
+    position: fixed;
+    top: 106rpx;
+    z-index: 11;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom: 2rpx solid #f7f7f7;
+}
+
+.filter-cont.position-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+}
+
+.filter-cont .filter-line {
+    color: #303237;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 23%;
+}
+
+.filter-cont .filter-line .tips {
+    color: #2d8cf0;
+    padding-left: 14rpx;
+}
+
+.filter-cont .filter-line.activeTab {
+    color: #2d8cf0;
+}
+
+.filter-cont .filter-line .text {
+    max-width: 200rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter-cont .filter-line .active,.filter-cont .filter-line .active+.new-zhankai {
+    color: #2d8cf0;
+}
+
+.filter-cont .filter-line .new-zhankai {
+    margin-left: 6rpx;
+    color: #dfdfdf;
+}
+
+.project_box_list {
+    margin-top: 332rpx;
+    text-align: center;
+    overflow: hidden;
+}
+
+.project_box_list>.image {
+    width: 336rpx;
+    height: 230rpx;
+    margin-bottom: 38rpx;
+}
+
+.project_box_list .text {
+    font-size: 24rpx;
+    color: #6a7490;
+    line-height: 34rpx;
+    text-align: center;
+}
+
+.container-filter {
+    background: #fff;
+    position: fixed;
+    top: 80rpx;
+    width: 100%;
+    z-index: 99;
+    box-sizing: border-box;
+}
+
+.container-filter .item-cont {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: visible;
+    height: 660rpx;
+    padding: 0 24rpx;
+}
+
+.container-filter .item-cont.padding28 {
+    padding-top: 28rpx;
+}
+
+.container-filter .item-cont.padding40 {
+    padding-top: 40rpx;
+}
+
+.container-filter .item-cont .title {
+    line-height: 40rpx;
+    margin-bottom: 28rpx;
+    margin-top: 12rpx;
+}
+
+.container-filter .item-cont .item-box {
+    overflow: hidden;
+}
+
+.container-filter .item-cont .item-box .line {
+    float: left;
+    margin-right: 34rpx;
+    width: 150rpx;
+    height: 60rpx;
+    background: rgba(150,152,158,.1);
+    border-radius: 8rpx;
+    color: #606266;
+    text-align: center;
+    margin-bottom: 20rpx;
+    line-height: 60rpx;
+}
+
+.container-filter .item-cont .item-box .line:nth-child(4n) {
+    margin-right: 0;
+}
+
+.container-filter .item-cont .item-box .line.active {
+    background: rgba(45,140,240,.1);
+    color: #2d8cf0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-filter .item-cont .item-box .line.active .choosed {
+    width: 60rpx;
+    height: 60rpx;
+    background: #2d8cf0;
+    border-radius: 60rpx;
+    position: absolute;
+    right: -30rpx;
+    top: -30rpx;
+}
+
+.container-filter .item-cont .item-box .line.active .choosed .new-yiguanzhugou {
+    position: absolute;
+    top: 15rpx;
+    left: 8rpx;
+    font-weight: 700;
+    font-size: 18rpx;
+}
+
+.container-filter .item-cont .item-line {
+    line-height: 76rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    font-size: 26rpx;
+}
+
+.container-filter .item-cont .item-line.active {
+    color: #2d8cf0;
+}
+
+.container-filter .soil-bottom-btn {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 18rpx 24rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background: hsla(0,0%,100%,.95);
+    box-shadow: 0 -4rpx 12rpx 0 rgba(21,24,45,.03);
+}
+
+.container-filter .soil-bottom-btn .left {
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 240rpx;
+    border-radius: 4rpx;
+    border: 2rpx solid #dfdfdf;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+    color: #b5b6bb;
+    text-align: center;
+}
+
+.container-filter .soil-bottom-btn .right {
+    width: 440rpx;
+    height: 88rpx;
+    background: #2f8cef;
+    border-radius: 4rpx;
+    line-height: 88rpx;
+    text-align: center;
+}
+
+.soil-hide-bg {
+    background: rgba(26,26,26,.5);
+    position: fixed;
+    top: 80rpx;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+.closeAll {
+    position: fixed;
+    right: 30rpx;
+    top: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60rpx;
+    width: 124rpx;
+    height: 60rpx;
+    border: 1px solid #fff;
+    z-index: 101;
+    color: #fff;
+}
+
+.guide-box {
+    position: fixed;
+    right: 24rpx;
+    top: 118rpx;
+    width: 510rpx;
+    padding: 20rpx 56rpx 20rpx 24rpx;
+    box-sizing: border-box;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    z-index: 12;
+}
+
+.guide-box:before {
+    position: absolute;
+    top: -20rpx;
+    right: 60rpx;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 12rpx solid transparent;
+    border-bottom-color: #2d8cf0;
+}
+
+.guide-box .soil-close-btn {
+    position: absolute;
+    right: 22rpx;
+    top: 26rpx;
+    line-height: 1;
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.hide-tip-hide {
+    background: transparent;
+    z-index: 1;
+}
+
+.floor-price-tip,.hide-tip-hide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.floor-price-tip {
+    z-index: 24;
+}
+
+.floor-price-tip .tip-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 630rpx;
+    height: 504rpx;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    z-index: 24;
+    border-radius: 8rpx;
+}
+
+.floor-price-tip .tip-box .title {
+    padding: 44rpx 0;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 32rpx;
+}
+
+.floor-price-tip .tip-box .tip-content {
+    padding: 0 28rpx 64rpx;
+    box-sizing: border-box;
+    line-height: 44rpx;
+}
+
+.floor-price-tip .tip-box .cancel-btn {
+    margin: 0 12rpx;
+    line-height: 100rpx;
+    border-top: 1rpx solid rgba(0,0,0,.1);
+    color: #2f8cef;
+    text-align: center;
+}
+
+.floor-price-tip .tip-hide-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+    z-index: 23;
+}
+
+.search-bar {
+    border-radius: 50rpx;
+    position: relative;
+    overflow: hidden;
+    background: #f3f3f3;
+    line-height: 66rpx;
+}
+
+.search-bar .weui-icon-search {
+    width: 36rpx;
+    margin-left: 24rpx;
+    float: left;
+    color: #b5b6bb;
+}
+
+.search-bar .weui-icon-clear,.search-bar .weui-icon-search {
+    display: inline-block;
+    height: 66rpx;
+    padding: 0;
+    line-height: 66rpx;
+}
+
+.search-bar .weui-icon-clear {
+    float: right;
+    width: 70rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #96989e;
+}
+
+.search-bar .search-input {
+    width: auto!important;
+    margin: 0 70rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    color: #96989e;
+}
+
+.search-bar .search-input-place {
+    color: #96989e;
+    font-size: 26rpx;
+}

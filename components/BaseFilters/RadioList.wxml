@@ -1,0 +1,3 @@
+<view class="radio-list" style="{{'width:'+width+';'}}">
+    <view catchtap="__e" class="{{[true?'radio-list__item':'',activeIndex===index||item.isChecked&&item.value?'radio-list__item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[index] ] ] ] ]}}" wx:for="{{listData}}" wx:key="index">{{''+item.text+''}}</view>
+</view>

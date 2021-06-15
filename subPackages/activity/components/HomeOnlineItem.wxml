@@ -1,0 +1,14 @@
+<view bindtap="__e" class="proejct data-v-78f21e71" data-content="线上看好房" data-event-opts="{{[ [ 'tap',[ [ 'handleDetail',['$0'],['item'] ] ] ] ]}}" data-name="{{item.name}}" data-type="link">
+    <view class="project-top data-v-78f21e71">
+        <view class="top-left data-v-78f21e71">
+            <image class="crowne data-v-78f21e71" src="{{crowne}}"></image>
+            <image class="font data-v-78f21e71" src="{{popularity}}"></image>
+        </view>
+        <text class="left-text data-v-78f21e71">{{''+$root.f0+''}}</text>
+    </view>
+    <view class="project-bottom data-v-78f21e71">
+        <image class="play data-v-78f21e71" src="{{smallPlay}}"></image>
+        <image class="cover data-v-78f21e71" mode="aspectFill" src="{{item.videos[0].video_url+'?vframe/jpg/offset/1'}}"></image>
+    </view>
+    <view catchtap="__e" class="project-name data-v-78f21e71" data-content="线上看好房" data-event-opts="{{[ [ 'tap',[ [ 'handleProjectDetail',['$event'] ] ] ] ]}}" data-name="item.name" data-type="link" id="{{item.project_id}}">{{''+item.name+''}}</view>
+</view>

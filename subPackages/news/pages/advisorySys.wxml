@@ -1,0 +1,76 @@
+<view>
+    <view class="page">
+        <block wx:if="{{jumpType=='comment'}}">
+            <view bindtap="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{[ 'advisory-content '+(chatDelIndex==index?sureDel?'active-sure':'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'toMsgDetail',['$0'],[ [ ['commentList','',index,'url'] ] ] ] ] ],[ 'touchstart',[ [ 'touchS',['$event'] ] ] ],[ 'touchmove',[ [ 'touchM',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',[index] ] ] ] ]}}" wx:for="{{commentList}}" wx:key="index">
+                <view catchtap="__e" class="fz-14 del-btn del-sure-button" data-event-opts="{{[ [ 'tap',[ [ 'removeItem',['$0',index],[ [ ['commentList','',index] ] ] ] ] ] ]}}">确认删除</view>
+                <view catchtap="__e" class="fz-14 del-btn del-button" data-event-opts="{{[ [ 'tap',[ [ 'delSysButton',['$event'] ] ] ] ]}}">删除</view>
+                <view class="comment-item" hoverClass="none">
+                    <view class="avatar">
+                        <image catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'toSalesManDetail',[index] ] ] ] ]}}" src="{{item.avatar_url||default_avatar}}"></image>
+                    </view>
+                    <view class="comment-content">
+                        <view class="name">
+                            <text class="name-text">{{''+item.nick_name+''}}</text>
+                            <text class="text">{{''+(item.content_type==4?'回答了你的提问':'回复了你的评论')+''}}</text>
+                        </view>
+                        <view class="comment-text cut">{{''+item.content+''}}</view>
+                        <view class="time-ago">{{''+item.show_time+''}}</view>
+                    </view>
+                    <view class="comment-ref">
+                        <image class="image" src="{{item.image}}" wx:if="{{item.image}}"></image>
+                        <view class="text" wx:else>{{''+item.source_content.content+''}}</view>
+                    </view>
+                    <view class="line"></view>
+                </view>
+            </view>
+            <view class="empty-data" wx:if="{{commentList.length<1&&!loading}}">
+                <image alt class="img _img" src="https://imgcdn.huanjutang.com/image/2020/07/02/4c1516e86f952492dadc3e016ecd801a.png"></image>
+                <view class="text">暂无评论消息</view>
+            </view>
+            <view class="weui-loadmore flex_layout_c_style" hidden="{{!loading}}" wx:if="{{more}}">
+                <view class="loading-runing">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view bindtap="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{[ 'advisory-content '+(chatDelIndex==index?sureDel?'active-sure':'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'toMsgDetail',['$0'],[ [ ['commentList','',index,'url'] ] ] ] ] ],[ 'touchstart',[ [ 'touchS',['$event'] ] ] ],[ 'touchmove',[ [ 'touchM',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',[index] ] ] ] ]}}" wx:for="{{commentList}}" wx:key="index">
+                <view catchtap="__e" class="fz-14 del-btn del-sure-button" data-event-opts="{{[ [ 'tap',[ [ 'removeItem',['$0'],[ [ ['commentList','',index] ] ] ] ] ] ]}}">确认删除</view>
+                <view catchtap="__e" class="fz-14 del-btn del-button" data-event-opts="{{[ [ 'tap',[ [ 'delSysButton',['$event'] ] ] ] ]}}">删除</view>
+                <view class="laud-item" hoverClass="none">
+                    <view class="avatar">
+                        <image catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'toSalesManDetail',[index] ] ] ] ]}}" src="{{item.avatar_url||default_avatar}}"></image>
+                    </view>
+                    <view class="comment-content">
+                        <view class="name">{{''+item.nick_name+''}}</view>
+                        <view class="comment-text">{{'赞了你的'+typeMap[item.content_type]+''}}</view>
+                        <view class="time-ago">{{''+item.show_time+''}}</view>
+                    </view>
+                    <view class="comment-ref">
+                        <view class="text">{{''+( item.to_content||typeMap[item.content_type] )+''}}</view>
+                    </view>
+                    <view class="line"></view>
+                </view>
+            </view>
+            <view class="empty-data" wx:if="{{commentList.length<1&&!loading}}">
+                <image alt class="img _img" src="https://imgcdn.huanjutang.com/image/2020/07/02/4c1516e86f952492dadc3e016ecd801a.png"></image>
+                <view class="text">暂无点赞消息</view>
+            </view>
+            <view class="weui-loadmore flex_layout_c_style" hidden="{{!loading}}" wx:if="{{more}}">
+                <view class="loading-runing">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

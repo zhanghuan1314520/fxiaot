@@ -1,0 +1,126 @@
+@-webkit-keyframes showPicker {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes showPicker {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes hidePicker {
+    from {
+        display: block;
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes hidePicker {
+    from {
+        display: block;
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.picker-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+.picker-container.show {
+    animation: showPicker .2s;
+    opacity: 1;
+    display: block;
+}
+
+.picker-container.hide {
+    animation: hidePicker .2s;
+    opacity: 0;
+    display: none;
+}
+
+.picker-content {
+    position: fixed;
+    z-index: 1001;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transition: all .2s ease;
+    transform: translateY(100%);
+    border-radius: 0 0 8rpx 8rpx;
+    background: #fff;
+    padding-bottom: 30rpx;
+}
+
+.picker-content.active {
+    transform: translateY(0);
+}
+
+.picker-view {
+    height: 492rpx;
+    background: #fff;
+}
+
+.picker-indicator {
+    text-align: center;
+    height: 100rpx;
+}
+
+.picker-item {
+    line-height: 100rpx;
+    font-size: 32rpx;
+    color: #303237;
+    text-align: center;
+}
+
+.picker-operate {
+    background: #fff;
+    padding: 36rpx 32rpx;
+    font-size: 32rpx;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 0 0 8rpx 8rpx;
+}
+
+.picker-operate text:nth-child(1) {
+    color: rgba(0,0,0,.45);
+}
+
+.picker-operate text:nth-child(2) {
+    color: rgba(0,0,0,.85);
+    font-weight: 700;
+}
+
+.picker-operate text:nth-child(3) {
+    color: #2d8cf0;
+}

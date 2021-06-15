@@ -1,0 +1,67 @@
+<view>
+    <view catchtouchmove="ture" class="modalDialog" wx:if="{{dialogShow}}">
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'changType',['$event'] ] ] ] ]}}" style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;">
+            <view class="modalDialog_item">
+                <view class="modalDialog_item1">
+                    <text class="fz-15 font-bold black-3a-color">上传成功，请等待审核</text>
+                    <text class="modalDialog_cont">关注官方服务号，可第一时间收到审核结果信息，以及更多置业顾问相关内容</text>
+                </view>
+                <view class="modalDialog_item2 modalDialog_style">
+                    <view catchtap="__e" class="modalDialog_style2" data-event-opts="{{[ [ 'tap',[ [ 'changType',['$event'] ] ] ] ]}}">
+                        <text class="fz-16 black-3a-color font-bold">取消</text>
+                    </view>
+                    <view catchtap="__e" class="modalDialog_style2" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}">
+                        <text class="fz-16 blue-color font-bold">去关注</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page">
+        <view class="image-project" wx:if="{{projectShow}}">
+            <text class="image-project_title">楼盘</text>
+            <view bindtap="__e" class="image-project_name" data-event-opts="{{[ [ 'tap',[ [ 'optProject',['$event'] ] ] ] ]}}">
+                <text>{{projectData[projectIndex].project_name+''}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view class="image-project">
+            <text class="image-project_title">类别</text>
+            <picker bindchange="__e" class="image-project_name" data-event-opts="{{[ [ 'change',[ [ 'switchType',['$event'] ] ] ] ]}}" range="{{houseType}}" rangeKey="text" value="{{houseIndex}}">
+                <text>{{houseType[houseIndex].text}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </picker>
+        </view>
+        <view class="image-upload_box">
+            <view class="image-upload_desc">
+                <text>上传图片</text>
+                <text>(单张图片大小不超过20M)</text>
+            </view>
+            <view class="image-upload_list">
+                <view class="image_item" wx:for="{{imageList}}" wx:key="index">
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$0'],[ [ ['imageList','',index] ] ] ] ] ] ]}}" mode="aspectFill" src="{{item}}"></image>
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'deleteImage',[index] ] ] ] ]}}" src="{{deleteIcon}}"></image>
+                </view>
+                <image bindtap="__e" class="image-upload_button" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" src="{{uploadIcon}}" wx:if="{{imageList.length<maxLength}}"></image>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f2f2f2;"></view>
+        <view class="image-text">
+            <view class="image-text_title">上传建议</view>
+            <view class="image-text_head">1.可以传哪些图片？</view>
+            <view class="image-text_content">（1）楼盘的效果图、区位图、实景图 、鸟瞰图、 样板间等</view>
+            <view class="image-text_head">2.不要传哪些图片？</view>
+            <view class="image-text_content">（1）相册里已经有的图片</view>
+            <view class="image-text_content">（2）带其他平台水印的图片</view>
+            <view class="image-text_content">（3）带有人物的图片</view>
+            <view class="image-text_content">（4）模糊不清晰的图片</view>
+            <view class="image-text_content">（5）不要上传广告图片</view>
+            <view class="image-text_content">（6）与本楼盘无关的图片</view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['upFiles'] ] ] ]}}" isAuthPhone="{{true}}" vueId="5590b56e-1" vueSlots="{{['default']}}">
+            <view class="last-bottom">
+                <view class="upFiles">确定上传</view>
+            </view>
+        </authorization>
+    </view>
+</view>

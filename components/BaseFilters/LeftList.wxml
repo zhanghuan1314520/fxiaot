@@ -1,0 +1,3 @@
+<view class="left-list">
+    <view catchtap="__e" class="{{[true?'left-list__item':'',activeIndex===index?'left-list__item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[index] ] ] ] ]}}" wx:for="{{listData}}" wx:key="index">{{''+item.text+''}}</view>
+</view>

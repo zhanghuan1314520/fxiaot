@@ -1,0 +1,17 @@
+.sort-filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.sort-filter .sort-filter__container {
+    height: 608rpx;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.sort-filter .sort-filter__footer {
+    height: 144rpx;
+}

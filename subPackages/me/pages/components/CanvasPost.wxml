@@ -1,0 +1,33 @@
+<view>
+    <view class="businessCard-bg" wx:if="{{images.length>0}}">
+        <swiper bindchange="__e" class="create-canvas-box" data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ] ]}}" duration="300" style="{{'width: '+canvasWidth+'px; height: '+canvasHeight+'px;'}}" wx:if="{{images.length>1}}">
+            <swiper-item wx:for="{{images}}" wx:key="index">
+                <image class="canvas-image" mode="widthFix" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="create-canvas-box" style="{{'width: '+canvasWidth+'px; height: '+canvasHeight+'px;max-height:'+maxHeight}}" wx:else>
+            <image class="canvas-image" mode="widthFix" src="{{item}}" wx:for="{{images}}" wx:key="index"></image>
+        </view>
+        <view class="swiper-slide">
+            <block wx:if="{{images.length>1}}">
+                <text class="{{['text',canvasIndex==index?'slide-active slide':'slide']}}" wx:for="{{images}}" wx:key="index"></text>
+            </block>
+        </view>
+        <view class="share-btn-group">
+            <button class="canvas-btn fz-16" openType="share">
+                <view class="btn-icon share"></view>
+                <text class="text">分享给好友</text>
+            </button>
+            <button catchtap="__e" class="canvas-btn fz-16" data-event-opts="{{[ [ 'tap',[ [ 'saveBusinessCard',['$event'] ] ] ] ]}}">
+                <view class="btn-icon save">
+                    <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20200326/5e7c7f064fe37.png"></image>
+                </view>
+                <text class="text">保存海报</text>
+            </button>
+        </view>
+    </view>
+    <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePhoto}}" showSetting="{{showPermissionsSetting}}" txt="保存海报" vueId="04996787-1"></photo-permissions-settings>
+    <view class="canvas-box">
+        <canvas canvasId="{{'_canvas-post-'+index}}" style="{{'width: '+canvasWidth+'px; height: '+canvasHeight+'px;position:fixed;top: -100%;left: -100%;overflow: hidden;'}}" wx:for="{{renderQueue}}" wx:for-item="_" wx:key="index"></canvas>
+    </view>
+</view>

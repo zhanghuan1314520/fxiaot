@@ -1,0 +1,13 @@
+<view class="util-type-filter">
+    <scroll-view class="util-type-filter__container" scrollY="true">
+        <button-group-list bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" listData="{{listData}}" vueId="c545df44-1"></button-group-list>
+        <view>
+            <scroll-view class="util-type-scroll" scrollY="true">
+                <view class="util-type-empty"></view>
+            </scroll-view>
+        </view>
+    </scroll-view>
+    <view class="util-type-filter__footer">
+        <footer-button bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" data-event-opts="{{[ [ '^onReset',[ ['resetHandle'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ] ]}}" isNative="{{isNative}}" vueId="c545df44-2"></footer-button>
+    </view>
+</view>

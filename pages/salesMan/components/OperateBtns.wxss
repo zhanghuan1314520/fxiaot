@@ -1,0 +1,55 @@
+.operate-btns {
+    position: relative;
+    float: right;
+    padding: 4rpx;
+}
+
+.operate-btns .iconnew {
+    font-size: 40rpx;
+    color: #d9d9d9;
+}
+
+.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.drop {
+    position: absolute;
+    right: 0;
+    top: 64rpx;
+    padding: 0 20rpx;
+    width: 160rpx;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.7);
+    border-radius: 12rpx;
+    z-index: 2;
+}
+
+.drop:before {
+    content: "";
+    position: absolute;
+    top: -20rpx;
+    right: 14rpx;
+    border: 10rpx solid transparent;
+    border-bottom-color: rgba(0,0,0,.7);
+}
+
+.drop .drop-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 82rpx;
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 36rpx;
+}
+
+.drop .drop-item+.drop-item {
+    border-top: 1rpx solid #646464;
+}

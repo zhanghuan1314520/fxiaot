@@ -1,0 +1,4 @@
+<view class="area-list__wrap">
+    <view catchtap="__e" class="{{['area-list fz-13',item.areaid==areaId?'active':'']}}" data-content="区域筛选" data-event-opts="{{[ [ 'tap',[ [ 'selectArea',['$0'],[ [ ['areaList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.area}}" wx:for="{{areaList}}" wx:for-index="__i0__" wx:key="id">{{''+item.area+''}}</view>
+    <view class="area-list__icon iconnew new-zhankai"></view>
+</view>

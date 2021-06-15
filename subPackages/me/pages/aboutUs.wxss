@@ -1,0 +1,77 @@
+.settings-line-son .settings-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-left: 30rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    padding-right: 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+}
+
+.none-border {
+    border: none!important;
+}
+
+.settings-line.line-bottom {
+    overflow: hidden;
+    margin-left: 36rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    padding-right: 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+    display: block;
+    background: transparent;
+}
+
+.settings-line.line-bottom:last-child {
+    border-bottom: none;
+}
+
+.settings-line.line-bottom.last-line {
+    height: 158rpx;
+}
+
+.right {
+    float: right;
+}
+
+.right.iconnew,.right .iconnew {
+    color: #b5b6bb;
+    opacity: .6;
+}
+
+.right .name {
+    margin-right: 8rpx;
+    color: #b5b6bb;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+
+button.right {
+    padding: 0;
+    border-radius: none;
+    background: transparent!important;
+}
+
+.left {
+    float: left;
+    font-size: 30rpx;
+    color: #303237;
+    line-height: 112rpx;
+}
+
+.settings-small-line {
+    margin-left: 50rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    padding-right: 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+    overflow: hidden;
+}
+
+.split-cont {
+    background: #f2f2f2;
+    height: 16rpx;
+}

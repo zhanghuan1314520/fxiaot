@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="section-title" wx:if="{{priceIndex==1}}">{{''+(highPrice>=maxNum&&lowPrice==0?'':lowPrice+'万-')+(highPrice>=maxNum?'不限':highPrice+'万')+''}}</view>
+    <view class="section-title" wx:else>{{''+(highPrice>=maxNum&&lowPrice==0?'':lowPrice*100+'-')+(highPrice>=maxNum?'不限':highPrice*100+'元')+''}}</view>
+    <view class="move-num">
+        <text class="font-bold" wx:for="{{priceIndex==1?totalPrice:price}}" wx:key="index">{{''+item+''}}</text>
+    </view>
+    <image class="slide-bg" src="https://imgcdn.huanjutang.com/assets/img/20190717/5d2ef7ef0cc92.png"></image>
+    <view class="slide-container">
+        <view class="slider-body left" style="{{'width:'+leftValue+'rpx;'}}"></view>
+        <view class="slider-body main-body" style="{{'width:'+rightValue-leftValue+'rpx;'}}"></view>
+        <view class="slider-body right" style="{{'width:'+totalLength-rightValue+'rpx;'}}"></view>
+    </view>
+    <view class="move-btn">
+        <view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="img-box" data-event-opts="{{[ [ 'touchstart',[ [ 'moveStart',[1] ] ] ],[ 'touchend',[ [ 'moveEnd',[1] ] ] ],[ 'touchmove',[ [ 'minMove',['$event'] ] ] ] ]}}" style="{{'left:'+leftValue-20+'rpx;z-index:'+(leftValue>totalLength-20?'1':'0')+';'}}">
+            <image class="slider-item" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190814/5d53bf1054bdb.png" wx:if="{{isLeftChangeImg}}"></image>
+            <image class="slider-item" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190703/5d1c2351955bb.png" style="{{'opacity: '+(!isLeftChangeImg?'1':'0')}}"></image>
+        </view>
+        <view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="img-box right" data-event-opts="{{[ [ 'touchstart',[ [ 'moveStart',[2] ] ] ],[ 'touchend',[ [ 'moveEnd',[2] ] ] ],[ 'touchmove',[ [ 'maxMove',['$event'] ] ] ] ]}}" style="{{'left:'+rightValue-20+'rpx;'}}">
+            <image class="slider-item" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190814/5d53bf1054bdb.png" wx:if="{{isRightChangeImg}}"></image>
+            <image class="slider-item" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190703/5d1c2351955bb.png" style="{{'opacity: '+(!isRightChangeImg?'1':'0')}}"></image>
+        </view>
+    </view>
+</view>

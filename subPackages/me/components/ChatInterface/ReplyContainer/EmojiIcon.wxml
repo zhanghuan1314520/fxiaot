@@ -1,0 +1,20 @@
+<view class="weui-emoji_area data-v-ce3c1856" style="{{'height:'+height+'px'+';'+'background-color:'+backgroundColor+';'}}">
+    <scroll-view class="{{['data-v-ce3c1856','weui-emotion_list',hasSafeBottom?'weui-emoji_area__has-safe-bottom':'']}}" scrollY="{{true}}" style="{{'padding-left:'+padding+'px'+';'+'padding-right:'+padding+'px'+';'}}">
+        <view class="data-v-ce3c1856" wx:if="{{showHistory&&history.length>0}}">
+            <view class="weui-emotion_head data-v-ce3c1856">最近使用</view>
+            <view bindtap="__e" class="weui-emotion_item data-v-ce3c1856" data-event-opts="{{[ [ 'tap',[ [ 'insertEmoji',['$event'] ] ] ] ]}}" data-idx="{{item}}" style="{{'margin-right:'+( (index+1)%perLine?extraPadding:0 )+'px'+';'}}" wx:for="{{history}}" wx:key="index">
+                <view class="{{['data-v-ce3c1856','weui-icon_emotion',emotions[item].style]}}" style="{{'background-image:'+'url('+source+')'+';'}}"></view>
+            </view>
+        </view>
+        <view class="weui-emotion_head data-v-ce3c1856" style="margin-top:8px;">所有表情</view>
+        <view bindtap="__e" class="weui-emotion_item data-v-ce3c1856" data-event-opts="{{[ [ 'tap',[ [ 'insertEmoji',['$event'] ] ] ] ]}}" data-idx="{{index}}" style="{{'padding-right:'+( (index+1)%perLine?extraPadding:0 )+'px'+';'}}" wx:for="{{emotions}}" wx:key="index">
+            <view class="{{['data-v-ce3c1856','weui-icon_emotion',item.style]}}" style="{{'background-image:'+'url('+source+')'+';'}}"></view>
+        </view>
+    </scroll-view>
+    <view class="weui-emoji__operation data-v-ce3c1856">
+        <view bindtap="__e" class="weui-emoji__operation__delete data-v-ce3c1856" data-event-opts="{{[ [ 'tap',[ [ 'deleteEmoji',['$event'] ] ] ] ]}}" wx:if="{{showDel}}">
+            <image class="weui-emotion_del_btn data-v-ce3c1856" src="https://imgcdn.huanjutang.com/assets/img/20213171553328081.png"></image>
+        </view>
+        <view bindtap="__e" class="weui-emoji__operation__send data-v-ce3c1856" data-event-opts="{{[ [ 'tap',[ [ 'send',['$event'] ] ] ] ]}}" wx:if="{{showSend}}">发送</view>
+    </view>
+</view>

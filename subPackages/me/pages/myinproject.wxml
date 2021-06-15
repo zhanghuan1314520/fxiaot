@@ -1,0 +1,35 @@
+<view class="my-in-project__wrapper">
+    <view class="tool-box flex_layout_b">
+        <text class="fz-20 tit">我的楼盘</text>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['changelottery'] ] ] ]}}" isAuthPhone="{{true}}" vueId="581279e0-1" vueSlots="{{['default']}}">
+            <view class="tool flex_layout">
+                <text class="{{['icon iconnew new-tihuanxianxing-copy fz-24',hasCommutation?'no-gary':'']}}"></text>
+                <text class="{{['fz-14',hasCommutation?'no-gary-txt':'']}}">{{''+(!hasCommutation?'更换楼盘':'交换审核中')+''}}</text>
+            </view>
+        </authorization>
+    </view>
+    <view bindtap="__e" class="{{[ 'lottery-card',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrl',['$0'],[ [ ['projectInfo','id',item.id,'project_id'] ] ] ] ] ] ]}}" wx:for="{{projectInfo}}" wx:for-index="__i0__" wx:key="id">
+        <view class="main-info">
+            <view class="main-tag" wx:if="{{item.is_default}}">主营</view>
+            <image class="img skeletons-rect" src="{{item.cover}}"></image>
+            <view class="info-box">
+                <view class="name fz-18 skeletons-rect">{{''+item.name+''}}</view>
+                <view class="location fz-14 skeletons-rect">{{''+item.project_location+''}}</view>
+            </view>
+        </view>
+        <view catchtap="__e" class="operate" data-event-opts="{{[ [ 'tap',[ [ 'setMain',['$0'],[ [ ['projectInfo','id',item.id] ] ] ] ] ] ]}}">
+            <text class="text">选择此楼盘作为我的主营楼盘</text>
+            <text class="iconnew new-checked" wx:if="{{item.is_default}}"></text>
+            <text class="iconnew new-quanquan" wx:else></text>
+        </view>
+    </view>
+    <view class="tip">说明：
+        1、若同时入驻2个及以上项目，只能选择其中一个项目作为主营楼盘，其余为关联楼盘；
+        2、主营楼盘才可被展示到首页/楼盘详情页推荐位；
+        3、关联楼盘可通过金币竞价上楼盘详情页推荐位。</view>
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['jumpRelationUrl'] ] ] ]}}" isAuthPhone="{{true}}" vueId="581279e0-2" vueSlots="{{['default']}}" wx:if="{{isRelevance}}">
+        <view class="relation-btn flex_layout">
+            <view class="btn fz-16">关联项目下其他楼盘</view>
+        </view>
+    </authorization>
+</view>

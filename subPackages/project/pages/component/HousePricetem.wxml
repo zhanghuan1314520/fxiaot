@@ -1,0 +1,47 @@
+<navigator bindtap="__e" class="house-price-item" data-event-opts="{{[ [ 'tap',[ [ 'stopPerpagation',['$event'] ] ] ] ]}}" data-name="户型详情" hoverClass="none" url="{{'/subPackages/project/pages/housePriceDetail?roomId='+item.id+'&lotteryId='+item.lottery_id+'&price='+item.decoration_price+'&p_id='+projectId}}">
+    <view class="{{['sales_status',item.sale_status==1?'sale-in':'',item.sale_status==2?'sign-text':'',item.sale_status==4?'sale-out':'']}}" wx:if="{{item.sale_status&&showSaleStatus}}"></view>
+    <view class="house-price-box">
+        <view class="item-header">
+            <view class="fz-17 font-bold title">{{''+item.name+''}}</view>
+            <view class="{{['building-mark layout-center',item.label=='住宅'?'back-color':'',item.label=='公寓'?'green-bg-color':'']}}" wx:if="{{item.label=='住宅'||item.label=='公寓'}}">
+                <text class="fz-12">{{''+item.label+''}}</text>
+            </view>
+            <view class="building-mark layout-center" wx:if="{{item.decoration_type}}">
+                <text class="fz-12">{{''+item.decoration_type+''}}</text>
+            </view>
+            <view catchtap="__e" class="icon-content" data-event-opts="{{[ [ 'tap',[ [ 'toastSwitch',['$0'],['item.id'] ] ] ] ]}}" wx:if="{{item.usage_type=='公寓'}}">
+                <text class="iconnew new-wenhaocopy fz-14"></text>
+                <view class="toastContent" wx:if="{{item.id==toggleIndex}}">
+                    <text class="iconnew new-quxiao white-color lottery-result-close-btn fz-15"></text>
+                    <view class="white-color text">这里的公寓指的是：
+                            冬至日当天，日照时长不足2小时的住宅，同样是70年产权。</view>
+                </view>
+            </view>
+            <view class="{{[ 'building-mark layout-center '+(item.is_talent_house==1?'active-rencai':'') ]}}" wx:if="{{item.is_talent_house==1}}">
+                <text class="fz-12">人才房</text>
+            </view>
+        </view>
+        <view class="item-price">
+            <view class="price">
+                <text class="fz-17" wx:if="{{item.rough_unit_price}}">{{''+item.rough_unit_price+''}}</text>
+            </view>
+            <view class="total-price fz-12">{{'总价 '+(item.price_text||'')+''}}</view>
+        </view>
+        <view class="item-house-type">
+            <view class="building-type" wx:if="{{item.house_type&&item.house_type!=='暂无'&&item.house_type!=='不详'&&item.house_type!=='-'}}">
+                <text class="fz-11">{{''+item.house_type+''}}</text>
+            </view>
+            <view class="building-type" wx:if="{{item.total_square&&item.total_square>0}}">{{''+item.total_square+'㎡'}}</view>
+            <view class="building-type" wx:if="{{item.decoration_type=='精装'&&params['price']}}">{{'装修:'+params['price']+''}}</view>
+            <block wx:else>
+                <view class="building-type" wx:if="{{item.decoration_price_text}}">{{'装修:'+item.decoration_price_text+''}}</view>
+            </block>
+        </view>
+        <view class="item-bottom">
+            <view class="left">
+                <view class="{{[ 'rate '+(index2==0?'active':'') ]}}" wx:if="{{val.price!='0'}}" wx:for="{{item.pay_rate}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{'首付'+val.rate+'成：'+val.price+''}}</view>
+            </view>
+            <navigator catchtap="__e" class="mortgage-in" data-event-opts="{{[ [ 'tap',[ [ 'stopPerpagation',['$event'] ] ] ] ]}}" data-name="算房贷" hoverClass="none" url="{{'/subPackages/tools/pages/houseLoan'+(cityName==='chengdu'?'':'HZ')+'?totalPrice='+item.price+'&loan=1'}}">算房贷</navigator>
+        </view>
+    </view>
+</navigator>

@@ -1,0 +1,675 @@
+page {
+    background: #fff;
+}
+
+.search-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 102rpx;
+    box-sizing: border-box;
+    padding: 8px 20rpx 0;
+    background-color: #2d8cf0;
+    z-index: 999;
+}
+
+.search-bar-form {
+    z-index: 1;
+    overflow: hidden;
+    width: auto;
+    height: 76rpx;
+    background: hsla(0,0%,96.1%,.2);
+    border-radius: 38rpx;
+    border: 1px solid hsla(0,0%,100%,.4);
+    margin: 0 32rpx;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.search-bar-form .search-bar-input {
+    width: auto!important;
+    margin: 0 76rpx 0 66rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    color: #fff;
+    padding-left: 0;
+}
+
+.search-bar-form .searchClose {
+    position: absolute;
+    font-size: 32rpx;
+    right: 24rpx;
+    top: 22rpx;
+    z-index: 55;
+}
+
+.search-bar .search-bar-icon {
+    width: 70rpx;
+    text-align: center;
+    z-index: 2;
+    line-height: 1;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.search-bar .float-left {
+    float: left;
+}
+
+.search-bar .float-right {
+    float: right;
+}
+
+.search-bar .search-bar-icon button.e_btn {
+    width: 100%;
+    height: 44rpx;
+    line-height: 44rpx;
+    padding: 0;
+    background-color: transparent;
+    font-size: 44rpx;
+}
+
+.search-bar .search-bar-icon text {
+    line-height: 1;
+}
+
+.search-bar .search-bar-icon button::after {
+    display: none;
+}
+
+.search-input-place {
+    color: #96989e;
+}
+
+.search-bar .search-btn {
+    float: right;
+    height: 70rpx;
+    width: 80rpx;
+    line-height: 70rpx;
+    text-align: center;
+    padding-left: 15rpx;
+}
+
+.search-bar-form {
+    margin: 0 10rpx 20rpx;
+}
+
+.search-bar-form image {
+    width: 32rpx;
+    height: 32rpx;
+    float: left;
+    margin-top: 22rpx;
+    margin-left: 20rpx;
+    margin-right: 18rpx;
+}
+
+.page__bd {
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-top: 102rpx;
+}
+
+.hot-tab-box {
+    overflow: hidden;
+    background: #f7f7f7;
+    border-top: 20rpx solid #fff;
+}
+
+.hot-tab-box .sales-man-title:before {
+    height: 22rpx;
+    width: 6rpx;
+    content: "";
+    display: inline-block;
+    background: #5878e1;
+    position: absolute;
+    left: 30rpx;
+    top: 34rpx;
+}
+
+.hot-tab-box .sales-man-title {
+    padding: 28rpx 30rpx 34rpx 45rpx;
+    position: relative;
+}
+
+.hot-tab-box .tab-list {
+    width: 100%;
+    height: 60rpx;
+    margin-bottom: 10rpx;
+    border-bottom: 4rpx solid #f2f2f2;
+}
+
+.hot-tab-box .tab-list .tab-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+    float: left;
+}
+
+.hot-tab-box .tab-list .tab-list-item .text {
+    color: #999;
+    line-height: 1;
+    margin-bottom: 30rpx;
+}
+
+.hot-tab-box .tab-list .tab-list-item .line {
+    background-color: transparent;
+    height: 6rpx;
+    width: 66rpx;
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-list .tab-list-item.active .text {
+    color: #3772cc;
+}
+
+.hot-tab-box .tab-list .tab-list-item.active .line {
+    background-color: #3772cc;
+}
+
+.hot-tab-box .tab-content {
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-content .item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-content .item+.item {
+    margin-bottom: 10rpx;
+}
+
+.hot-tab-box .tab-content .user-content {
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    background: #fff;
+    padding: 28rpx 24rpx 24rpx 28rpx;
+    box-sizing: border-box;
+}
+
+.hot-tab-box .tab-content .item .avatar,.hot-tab-box .tab-content .item .ranking {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+}
+
+.hot-tab-box .tab-content .item .avatar {
+    width: 80rpx;
+    position: relative;
+    margin: 0 16rpx 0 20rpx;
+}
+
+.hot-tab-box .tab-content .item .avatar image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.COM-color {
+    color: #96989e!important;
+}
+
+.hot-tab-box .tab-content .item .userinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 216rpx;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username {
+    margin-bottom: 20rpx;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box {
+    width: 34rpx;
+    height: 34rpx;
+    display: inline-block;
+    top: 8rpx;
+    position: relative;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191629558081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box-1 {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191631318081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box-2 {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191629558081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box-3 {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191631118081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo>view {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hot-tab-box .tab-content .item .userinfo .weixin-num {
+    margin-bottom: 8rpx;
+    line-height: 34rpx;
+    width: 320rpx;
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-content .item .userinfo .weixin-num text:first-child {
+    margin-right: 10rpx;
+}
+
+.hot-tab-box .tab-content .item .userinfo .project_name {
+    line-height: 34rpx;
+}
+
+.hot-tab-box .tab-content .item .like-next {
+    position: absolute;
+    top: 20rpx;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right;
+    height: 164rpx;
+    padding-right: 30rpx;
+    text-align: right;
+    z-index: 3;
+}
+
+.wechat-phone {
+    overflow: hidden;
+    margin-top: 20rpx;
+}
+
+.wechat-phone .left {
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.wechat-phone .left image {
+    width: 38rpx;
+    height: 38rpx;
+    display: inline-block;
+}
+
+.wechat-phone .left .txt {
+    margin-left: 8rpx;
+    display: inline-block;
+    position: relative;
+    top: -10rpx;
+}
+
+.wechat-phone .first {
+    width: 30%;
+    position: relative;
+}
+
+.wechat-phone .first:after {
+    content: "";
+    display: inline-block;
+    width: 2rpx;
+    height: 20rpx;
+    background: rgba(21,24,45,.08);
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+}
+
+.wechat-phone .middle {
+    width: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.wechat-phone .right {
+    text-align: right;
+}
+
+.wechat-phone .chat {
+    position: relative;
+    background: transparent;
+}
+
+.wechat-phone .chat:after {
+    content: "";
+    display: inline-block;
+    width: 2rpx;
+    height: 20rpx;
+    background: rgba(21,24,45,.08);
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+}
+
+.wechat-phone .chat .authorization__button {
+    text-align: left;
+}
+
+.good {
+    width: 30%;
+    text-align: right;
+    position: relative;
+}
+
+.good .orange-color {
+    color: #f7776a!important;
+}
+
+.good>text {
+    display: inline-block;
+    padding-left: 50rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.good .pinglun-icon {
+    width: 42rpx;
+    height: 42rpx;
+    transition: all .3s ease;
+    position: absolute;
+}
+
+.good .pinglun-icon,.good .pinglun-icon.top-layout {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.good .pinglun-icon.top-layout {
+    z-index: 2;
+}
+
+.good .pinglun-icon.bottom-layout {
+    opacity: .3;
+    z-index: 1;
+    transform: scale(0);
+}
+
+.rank-top-list {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg,#2d8cf0,#2378f5);
+    position: relative;
+    padding: 40rpx 24rpx 0;
+    align-items: flex-end;
+}
+
+.rank-top-list .second-sales-man {
+    position: relative;
+    width: 222rpx;
+    text-align: center;
+    background: linear-gradient(180deg,#98c8ff,#116ef2);
+    height: 290rpx;
+    border-top-left-radius: 16rpx;
+}
+
+.rank-top-list .second-sales-man:after {
+    content: "";
+    display: inline-block;
+    opacity: .8;
+    position: absolute;
+    top: 87rpx;
+    right: -90rpx;
+    width: 0;
+    height: 0;
+    transform: rotate(-90deg);
+    border-color: transparent rgba(44,139,240,.8) rgba(44,139,240,.8) transparent;
+    border-style: solid;
+    border-width: 10rpx 0 10rpx 194rpx;
+}
+
+.rank-top-list .second-sales-man .avatar {
+    width: 120rpx;
+    height: 120rpx;
+    background: linear-gradient(180deg,#ecedf1,#b9c0d4);
+    border-radius: 120rpx;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 26rpx;
+    display: inline-block;
+    padding: 6rpx;
+}
+
+.rank-top-list .second-sales-man .avatar .avatar-url {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.rank-top-list .second-sales-man .avatar .sales-man-rank {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40rpx;
+    width: 48rpx;
+    height: 54rpx;
+}
+
+.rank-top-list .second-sales-man .sales-man-name {
+    margin-top: 46rpx;
+    line-height: 40rpx;
+}
+
+.rank-top-list .second-sales-man .active-num {
+    margin-top: 6rpx;
+    line-height: 34rpx;
+}
+
+.rank-top-list .first-sales-man {
+    width: 256rpx;
+    height: 322rpx;
+    background: linear-gradient(180deg,#98c8ff,#116ef2);
+    border-radius: 16rpx 16rpx 0 0;
+    text-align: center;
+}
+
+.rank-top-list .first-sales-man .avatar {
+    display: inline-block;
+    width: 140rpx;
+    height: 140rpx;
+    background: linear-gradient(180deg,#ffed7d,#ffc672);
+    border-radius: 140rpx;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 40rpx;
+    padding: 6rpx;
+}
+
+.rank-top-list .first-sales-man .avatar .avatar-url {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.rank-top-list .first-sales-man .avatar .sales-man-rank {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40rpx;
+    width: 48rpx;
+    height: 54rpx;
+}
+
+.rank-top-list .first-sales-man .sales-man-name {
+    margin-top: 46rpx;
+    line-height: 40rpx;
+}
+
+.rank-top-list .first-sales-man .active-num {
+    margin-top: 6rpx;
+    line-height: 34rpx;
+}
+
+.rank-top-list .third-sales-man {
+    position: relative;
+    width: 222rpx;
+    text-align: center;
+    background: linear-gradient(180deg,#98c8ff,#116ef2);
+    height: 290rpx;
+    border-top-right-radius: 16rpx;
+}
+
+.rank-top-list .third-sales-man:after {
+    content: "";
+    display: inline-block;
+    opacity: .8;
+    position: absolute;
+    top: 93rpx;
+    left: -94rpx;
+    width: 0;
+    height: 0;
+    transform: rotate(90deg);
+    border-color: transparent rgba(44,139,240,.8);
+    border-style: solid;
+    border-width: 10rpx 0 0 194rpx;
+}
+
+.rank-top-list .third-sales-man .avatar {
+    display: inline-block;
+    width: 120rpx;
+    height: 120rpx;
+    background: linear-gradient(180deg,#ffd0ae,#fb9f5b);
+    border-radius: 120rpx;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 26rpx;
+    padding: 6rpx;
+}
+
+.rank-top-list .third-sales-man .avatar .avatar-url {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.rank-top-list .third-sales-man .avatar .sales-man-rank {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40rpx;
+    width: 48rpx;
+    height: 54rpx;
+}
+
+.rank-top-list .third-sales-man .sales-man-name {
+    margin-top: 46rpx;
+    line-height: 40rpx;
+}
+
+.rank-top-list .third-sales-man .active-num {
+    margin-top: 6rpx;
+    line-height: 34rpx;
+}
+
+.tab-change {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border-bottom: 1px solid rgba(48,55,64,.05);
+    position: relative;
+}
+
+.tab-change .short-line {
+    width: 0rpx;
+    height: 6rpx;
+    background: transparent;
+    border-radius: 4rpx;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    background: #2f8cef;
+    transition: width .2s;
+}
+
+.tab-change .tab-text {
+    width: 100%;
+    color: #303237;
+}
+
+.tab-change .active {
+    font-weight: 700;
+    font-size: 32rpx!important;
+    position: relative;
+    color: #2d8cf0;
+}
+
+.tab-change .active .short-line {
+    width: 72rpx;
+}
+
+.active-tips-box {
+    background: #fff;
+    padding-top: 30rpx;
+}
+
+.active-tips-box .active-tips {
+    display: inline-block;
+    height: 60rpx;
+    background: #ffeedf;
+    border-radius: 30rpx;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ce7c33;
+    font-size: 24rpx;
+    line-height: 60rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.active-tips-box .active-tips text {
+    display: inline-block;
+}
+
+.active-tips-box .active-tips .close-btn {
+    margin-left: 22rpx;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    bottom: 64rpx;
+    width: 100%;
+    background: transparent;
+    z-index: 99;
+}
+
+.footer .become {
+    width: 576rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #2f8cef;
+    box-shadow: 0 10rpx 20rpx 0 rgba(47,140,239,.25);
+    border-radius: 44rpx;
+    font-weight: 500;
+    text-align: center;
+}
+
+button::after {
+    border: 0;
+}
+
+.t-left {
+    text-align: left!important;
+}
+
+.msg-btn {
+    width: 38rpx;
+    height: 38rpx;
+    display: inline-block;
+}

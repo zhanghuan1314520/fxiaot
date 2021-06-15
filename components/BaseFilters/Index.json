@@ -1,0 +1,12 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tabbar": "/components/BaseFilters/Tabbar",
+        "area-filter": "/components/BaseFilters/Filters/AreaFilter",
+        "price-filter": "/components/BaseFilters/Filters/PriceFilter",
+        "util-type-filter": "/components/BaseFilters/Filters/UtilTypeFilter",
+        "more-filter": "/components/BaseFilters/Filters/MoreFilter",
+        "sort-filter": "/components/BaseFilters/Filters/SortFilter",
+        "date-filter": "/components/BaseFilters/Filters/DateFilter"
+    }
+}

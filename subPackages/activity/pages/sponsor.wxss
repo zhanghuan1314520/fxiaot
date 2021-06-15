@@ -1,0 +1,27 @@
+.advisory-content {
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.advisory-content .advisory-content-left {
+    width: 80rpx;
+    height: 80rpx;
+    float: left;
+}
+
+.advisory-content .advisory-content-left image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 80rpx;
+}
+
+.advisory-content .advisory-content-center {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 80rpx;
+    margin-left: 115rpx;
+}

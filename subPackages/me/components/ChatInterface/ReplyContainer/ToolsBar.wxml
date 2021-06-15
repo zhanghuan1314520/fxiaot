@@ -1,0 +1,13 @@
+<view class="tools">
+    <view catchtap="__e" class="tools__item" data-content="底部按钮" data-event-opts="{{[ [ 'tap',[ [ 'phrasesHandle',['$event'] ] ] ] ]}}" data-name="常用语" data-type="button">
+        <text class="icon iconnew new-changyongyu"></text>常用语</view>
+    <block wx:if="{{hasSalesman}}">
+        <view catchtap="__e" class="tools__item" data-content="底部按钮" data-event-opts="{{[ [ 'tap',[ [ 'locationHandle',['$event'] ] ] ] ]}}" data-name="发位置" data-type="button" wx:if="{{hasLocationPromise}}">
+            <text class="icon iconnew new-tongyong-dingwei1"></text>发位置</view>
+        <button class="tools__item" openType="openSetting" wx:else>
+            <text class="icon iconnew new-tongyong-dingwei1"></text>发位置</button>
+        <view catchtap="__e" class="tools__item" data-content="底部按钮" data-event-opts="{{[ [ 'tap',[ [ 'inviteHandle',['$event'] ] ] ] ]}}" data-name="看房邀请" data-type="button">
+            <text class="icon iconnew new-kanfangyaoqing"></text>看房邀请</view>
+    </block>
+    <view bindtap="__e" class="tools__item" data-content="底部按钮" data-event-opts="{{[ [ 'tap',[ [ 'goActivityReport',['$event'] ] ] ] ]}}" data-name="年度活动" data-type="link" wx:if="{{reportBtn}}">{{''+reportBtn.title+''}}</view>
+</view>

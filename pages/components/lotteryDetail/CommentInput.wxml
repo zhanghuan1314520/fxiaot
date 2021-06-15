@@ -1,0 +1,28 @@
+<view class="comment-input" style="{{'bottom:'+bottom+'px'+';'}}">
+    <view class="comment-input__box-focus" wx:if="{{focus||inputVal.length>0}}">
+        <view class="comment-focus__input">
+            <input adjustPosition="{{false}}" bindfocus="__e" bindinput="__e" bindkeyboardheightchange="__e" catchblur="__e" class="input" cursorSpacing="20" data-event-opts="{{[ [ 'focus',[ [ 'handleFocus',['$event'] ] ] ],[ 'blur',[ [ 'handleblur',['$event'] ] ] ],[ 'keyboardheightchange',[ [ 'haddleKeyboardHeightChange',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ] ] ] ]}}" focus="{{focus}}" maxlength="{{200}}" placeholder="{{placeholder}}" value="{{inputVal}}"></input>
+            <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-send" data-event-opts="{{[ [ '^onSuccess',[ ['handleSend'] ] ] ]}}" isAuthPhone="{{true}}" vueId="664111d6-1" vueSlots="{{['default']}}">
+                <view class="{{['send',inputVal.length>0?'active':'']}}">发送</view>
+            </authorization>
+        </view>
+    </view>
+    <view class="comment-input__box" wx:else>
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-comment-default__box" data-event-opts="{{[ [ '^onSuccess',[ ['triggerFocus'] ] ] ]}}" isAuthPhone="{{true}}" vueId="664111d6-2" vueSlots="{{['default']}}">
+            <view class="comment-default__box">{{''+placeholder+''}}</view>
+        </authorization>
+        <view class="comment-default__operate">
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['handleLike'] ] ] ]}}" vueId="664111d6-3" vueSlots="{{['default']}}">
+                <view class="{{[ 'like '+(liked?'active':'') ]}}">
+                    <view class="like-image" wx:if="{{liked}}"></view>
+                    <image class="image-default" src="https://imgcdn.huanjutang.com/image/2020/06/16/4e47d72d478f760cb2eada2e9405e5cb.png" wx:else></image>
+                    <text class="num">{{''+(calcLikeNum||'赞')+''}}</text>
+                </view>
+            </authorization>
+            <button class="share" hoverClass="none" openType="share">
+                <image class="image-default" src="https://imgcdn.huanjutang.com/image/2020/06/16/e0b6b97fc678feb0f2ce0a6979f0507d.png"></image>
+                <text class="num">{{''+(shareNum||'分享')+''}}</text>
+            </button>
+        </view>
+    </view>
+</view>

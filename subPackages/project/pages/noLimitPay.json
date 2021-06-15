@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "杭州房小团-不限购",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "project-items": "/components/ProjectItem/ProjectItem",
+        "base-banner": "/components/BaseBanner",
+        "busi-search": "/components/UILayout/BusiSearch",
+        "base-filters": "/components/BaseFilters/Index",
+        "busi-search-swiper": "/pages/components/BusiSearchSwiper"
+    }
+}

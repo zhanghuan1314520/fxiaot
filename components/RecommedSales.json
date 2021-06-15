@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "base-call-phone": "/components/BaseCallPhone",
+        "image-loader": "/components/ImageLoader"
+    }
+}

@@ -1,0 +1,16 @@
+<view>
+    <view class="myCoupon">
+        <view wx:if="{{sku_id}}">
+            <block wx:if="{{projects.length>0}}">
+                <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.session_info.avatar_url}}" wx:for="{{projects}}" wx:key="index"></image>
+            </block>
+            <view class="nothing-container fz-14 height-level-color" style="width:100%;padding:60rpx 0;text-align:center;" wx:if="{{projects.length<1&&loading}}">暂无内容</view>
+        </view>
+        <view wx:if="{{userBoostId}}">
+            <block wx:if="{{friendProjects.length>0}}">
+                <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.user.avatar_url}}" wx:for="{{friendProjects}}" wx:key="index"></image>
+            </block>
+        </view>
+        <view class="nothing-container fz-14 height-level-color" style="width:100%;padding:60rpx 0;text-align:center;" wx:if="{{friendProjects.length<=0&&projects.length<=0}}">暂无内容</view>
+    </view>
+</view>

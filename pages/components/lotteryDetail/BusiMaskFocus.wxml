@@ -1,0 +1,6 @@
+<view bindtap="__e" catchtouchmove="__e" class="focus-wrapper" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'maskClick',['$event'] ] ] ] ]}}" style="{{'--focus-w:'+width+'rpx'+';'+'--bottom:'+positionObj.bottom+';'+'--top:'+positionObj.top+';'+'--left:'+positionObj.left+';'+'--right:'+positionObj.right+';'}}">
+    <slot></slot>
+    <authorization bind:__l="__l" catch:onSuccess="__e" class="focus-area" data-event-opts="{{[ [ '^onSuccess',[ [ 'onSuccess',['$event'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="71903e18-1" vueSlots="{{['default']}}">
+        <view class="inner-area"></view>
+    </authorization>
+</view>

@@ -1,0 +1,36 @@
+<view class="paper-container data-v-85e30d3c">
+    <view class="paper data-v-85e30d3c">
+        <busi-nav-header bind:__l="__l" class="data-v-85e30d3c vue-ref" data-ref="busiNavHeader" vueId="298c9212-1" vueSlots="{{['default']}}">每日早报</busi-nav-header>
+        <image class="paper-bg data-v-85e30d3c" src="https://imgcdn.huanjutang.com/assets/img/20211261838198081.png"></image>
+        <view class="paper-header data-v-85e30d3c">
+            <image class="header-title data-v-85e30d3c" src="https://imgcdn.huanjutang.com/assets/img/2021127145308081.png"></image>
+            <view class="header-date data-v-85e30d3c">
+                <text class="date-year data-v-85e30d3c">{{''+serverDate.year+'年'+serverDate.month+'月'}}</text>
+                <text class="date-day data-v-85e30d3c">
+                    <text class="day-number data-v-85e30d3c">{{''+serverDate.day+''}}</text>
+                    <text class="day-text data-v-85e30d3c">日</text>
+                </text>
+                <text class="date-weekday data-v-85e30d3c">{{''+weekday+''}}</text>
+            </view>
+        </view>
+        <view class="paper-table data-v-85e30d3c">
+            <table-block bind:__l="__l" bordKey="{{['new_house','second_house','soil']}}" class="data-v-85e30d3c" emptyText="{{loading?'加载中...':'暂无房产数据'}}" fields="{{tradFields}}" firstDark="{{true}}" header="{{['新房成交','二手房成交','土拍成交']}}" hide="{{!showTrade}}" list="{{yesterdayTrade}}" showTotal="{{false}}" title="成都昨日房产数据" vueId="298c9212-2"></table-block>
+            <table-block bind:__l="__l" bordKey="{{['project_name']}}" class="data-v-85e30d3c" emptyText="{{loading?'加载中...':'今日无正在登记楼盘'}}" extra="{{extra}}" fields="{{signFields}}" header="{{['区域','楼盘名','均价(元/m²)','登记时间']}}" leftKey="project_name" list="{{signing.list||[]}}" noPadding="{{true}}" showTotal="{{true}}" title="正在登记" total="{{signing.total||0}}" vueId="298c9212-3"></table-block>
+            <table-block bind:__l="__l" bordKey="{{['project_name']}}" class="data-v-85e30d3c" emptyText="{{loading?'加载中...':'今日无摇号楼盘'}}" fields="{{lotteryFields}}" header="{{['区域','楼盘名','均价(元/m²)']}}" leftKey="project_name" list="{{lottery.list||[]}}" noPadding="{{true}}" showTotal="{{true}}" title="今日摇号" total="{{lottery.total||0}}" vueId="298c9212-4"></table-block>
+        </view>
+        <view class="paper-tip data-v-85e30d3c">内容仅供参考，实际信息以官方发布为准</view>
+        <busi-share-icon bind:__l="__l" class="data-v-85e30d3c vue-ref" data-ref="share" vueId="298c9212-5" vueSlots="{{['default']}}">
+            <button bindtap="__e" class="share data-v-85e30d3c" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" wx:if="{{isSalesMan}}"></button>
+            <button bindtap="__e" class="share data-v-85e30d3c" data-event-opts="{{[ [ 'tap',[ [ 'normalShareHandle',['$event'] ] ] ] ]}}" openType="share" wx:else></button>
+        </busi-share-icon>
+    </view>
+    <view class="paper-bottom data-v-85e30d3c">
+        <image bindtap="__e" class="code data-v-85e30d3c" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$event'] ] ] ] ]}}" mode="aspectFill" src="{{qrCode}}"></image>
+        <view class="bottom-right data-v-85e30d3c">
+            <image class="bottom-logo data-v-85e30d3c" mode="aspectFill" src="{{logo}}"></image>
+            <text class="bottom-text data-v-85e30d3c">{{''+morningText+''}}</text>
+        </view>
+    </view>
+    <create-poster-and-share bind:__l="__l" bind:createPoster="__e" bind:updateShareShow="__e" class="data-v-85e30d3c" data-event-opts="{{[ [ '^updateShareShow',[ [ '__set_sync',['$0','shareShow','$event'],[''] ] ] ],[ '^updateShareShow',[ [ '__set_sync',['$0','shareShow','$event'],[''] ] ] ],[ '^createPoster',[ ['createPoster'] ] ] ]}}" shareShow="{{shareShow}}" vueId="298c9212-6"></create-poster-and-share>
+    <canvas-poster bind:__l="__l" class="data-v-85e30d3c vue-ref" data-ref="canvasPoster" height="{{canvasHeight}}" vueId="298c9212-7" width="{{canvasWidth}}"></canvas-poster>
+</view>

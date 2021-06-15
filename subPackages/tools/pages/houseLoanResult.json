@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "share-btn": "/components/unifyUI/shareBtn",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

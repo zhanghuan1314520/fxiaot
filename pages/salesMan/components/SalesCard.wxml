@@ -1,0 +1,39 @@
+<view style="height:328rpx;">
+    <view class="{{['card-wrap NO'+item.grade||1]}}">
+        <view class="card-detail">
+            <view class="top-info">
+                <image catchtap="__e" class="{{[ 'left-avatar',[!item.avatar_url?'skeletons-circle':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'previewOnce',[item.avatar_url||defaultAvatar] ] ] ] ]}}" lazyLoad="lazy-load" mode="aspectFill" src="{{item.avatar_url||defaultAvatar}}"></image>
+                <view class="right-cont">
+                    <view class="{{[ 'name',[!name?'skeletons-rect':''] ]}}">
+                        <text class="left big_size-color">{{''+name+''}}</text>
+                        <medals bind:__l="__l" medalItems="{{item.medals.medals}}" userId="{{userId}}" vueId="54271aeb-1"></medals>
+                    </view>
+                    <view catchtap="__e" class="{{['weixin','normal_size-color']}}" data-event-opts="{{[ [ 'tap',[ [ 'weixinCopy',['$0'],['item.wechat_code'] ] ] ] ]}}" data-name="复制微信号" data-type="button">
+                        <text>{{'微信号：'+(wechat||'--')}}</text>
+                        <text class="iconnew new-weibiaoti-1_huaban1 fz-14"></text>
+                    </view>
+                    <view class="{{['default-project','normal_size-color']}}" data-name="主营楼盘" data-type="link">
+                        <text>{{'主营楼盘：'+(defaultProjectName||'--')}}</text>
+                    </view>
+                </view>
+                <view class="right-btns" wx:if="{{showContactBtns}}">
+                    <contact-btns bind:__l="__l" contactParam="{{contactParam}}" level="{{item.grade}}" salesmanId="{{salesId}}" vueId="54271aeb-2"></contact-btns>
+                </view>
+            </view>
+        </view>
+        <view class="self-log line-color">
+            <view class="line">
+                <view class="top big_size-color">{{''+(item.sales_man_page_views||0)+''}}</view>
+                <view class="bottom normal_size-color">浏览量</view>
+            </view>
+            <view class="line">
+                <view class="top big_size-color">{{''+(item.liveness||0)+''}}</view>
+                <view class="bottom normal_size-color">活跃度</view>
+            </view>
+            <view class="line">
+                <view class="top big_size-color">{{''+(item.sales_man_like_num||0)+''}}</view>
+                <view class="bottom normal_size-color">点赞数</view>
+            </view>
+        </view>
+    </view>
+</view>

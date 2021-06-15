@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "official-drainage": "/components/CommonSmallCompont",
+        "comment-item": "/pages/components/lotteryDetail/CommentItem",
+        "white-space": "/subPackages/comment/components/WhiteSpace",
+        "loading": "/subPackages/comment/components/Loading",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine",
+        "project-head": "/subPackages/comment/components/ProjectHead",
+        "show-home": "/subPackages/comment/components/ShowHome",
+        "authorization": "/components/Authorization",
+        "call-salesman": "/components/CallSalesman",
+        "contact-salesman": "/components/ContactSalesman"
+    }
+}

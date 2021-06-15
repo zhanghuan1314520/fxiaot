@@ -1,0 +1,10 @@
+<view bindtap="__e" class="hide-bg" data-event-opts="{{[ [ 'tap',[ [ 'closed',['$event'] ] ] ] ]}}" wx:if="{{visible}}">
+    <view catchtap="__e" class="upload-demo" data-event-opts="{{[ [ 'tap',[ [ 'nullFn',['$event'] ] ] ] ]}}">
+        <view class="header">
+            <text class="fz-20 tit">{{''+headTitle[mode]+''}}</text>
+            <text bindtap="__e" class="iconnew fz-22 icon-demo new-quxiao" data-event-opts="{{[ [ 'tap',[ [ 'closed',['$event'] ] ] ] ]}}"></text>
+        </view>
+        <image class="img" src="{{imgArr[mode]}}"></image>
+        <view bindtap="__e" class="upload-btn fz-16" data-event-opts="{{[ [ 'tap',[ [ 'uploadFile',['$event'] ] ] ] ]}}" wx:if="{{!showuploadBtn}}">我知道了，立即上传</view>
+    </view>
+</view>

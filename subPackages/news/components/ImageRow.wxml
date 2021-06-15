@@ -1,0 +1,5 @@
+<view class="image-row">
+    <image catchtap="__e" class="item-image" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0'],[ [ ['showList','',index,'url'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{item.compressImage}}" style="{{'margin-bottom:'+(rows!==1?'10rpx':0)+';'}}" wx:for="{{showList}}" wx:key="index"></image>
+    <view catchtap="__e" class="image-mask" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0'],['list.__$n2'] ] ] ] ]}}" wx:if="{{rows===1&&list.length>3}}">{{'+'+list.length-3+''}}</view>
+    <view class="item-image empty" wx:if="{{showEmptyBlock}}"></view>
+</view>

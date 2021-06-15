@@ -1,0 +1,127 @@
+page {
+    background: #bd242d url(https://imgcdn.huanjutang.com/file/2020/12/22/45927cc02485b996b1ad50dd11d11fe2.png) 0 0 repeat-y;
+    background-size: 100%;
+}
+
+.year-report-wish-value {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/45927cc02485b996b1ad50dd11d11fe2.png) 0 0 repeat-y;
+    background-size: 100%;
+    padding-bottom: calc(30rpx + env(safe-area-inset-bottom));
+    position: relative;
+    box-sizing: border-box;
+}
+
+.year-report-wish-value .header-img {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/23/e01353e4e638e15c291fa3973480f3cf.png) 0 0 no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 265rpx;
+}
+
+.year-report-wish-value .my-wish-value {
+    position: absolute;
+    top: 130rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #ffdfb6;
+    display: flex;
+    align-items: center;
+}
+
+.year-report-wish-value .my-wish-value .my-value {
+    font-size: 30rpx;
+    font-weight: 600;
+    margin-left: 10rpx;
+}
+
+.year-report-wish-value .list {
+    margin-top: -20rpx;
+    padding: 0 32rpx;
+}
+
+.year-report-wish-value .list-item {
+    padding: 28rpx 40rpx;
+    box-sizing: border-box;
+    height: 140rpx;
+    background: rgba(167,22,30,.58);
+    border-radius: 12rpx;
+    border: 3rpx solid #d1363f;
+    margin-bottom: 16rpx;
+    display: flex;
+}
+
+.year-report-wish-value .left {
+    flex: none;
+    margin-right: 20rpx;
+}
+
+.year-report-wish-value .left ._img {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    border: 2rpx solid rgba(250,238,201,.3);
+    box-sizing: border-box;
+}
+
+.year-report-wish-value .left2 {
+    flex: none;
+    align-self: center;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #faeec9;
+}
+
+.year-report-wish-value .right {
+    flex: 1;
+    flex-direction: column;
+}
+
+.year-report-wish-value .line1,.year-report-wish-value .line2,.year-report-wish-value .right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.year-report-wish-value .nick-name,.year-report-wish-value .wish-value {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #faeec9;
+}
+
+.year-report-wish-value .wish-value {
+    font-size: 32rpx;
+    font-weight: 600;
+    font-family: SFUIText-Semibold,SFUIText;
+}
+
+.year-report-wish-value .line2 {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(250,238,201,.6);
+}
+
+.year-report-wish-value .empty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 262rpx;
+}
+
+.year-report-wish-value .empty ._img {
+    width: 358rpx;
+    height: 180rpx;
+}
+
+.year-report-wish-value .empty .empty-text {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 500;
+    color: #faeec9;
+    text-align: center;
+    margin-top: 34rpx;
+}

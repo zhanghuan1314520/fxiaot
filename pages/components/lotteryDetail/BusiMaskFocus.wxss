@@ -1,0 +1,27 @@
+.focus-wrapper {
+    --z-index: 1000;
+    --focus-h: 120rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: var(--z-index);
+}
+
+.focus-wrapper .focus-area {
+    position: absolute;
+    z-index: calc(var(--z-index) + 1);
+    box-shadow: 0 0 0 9999rpx rgba(0,0,0,.5);
+    left: 142rpx;
+    right: auto;
+    top: auto;
+    bottom: calc(6rpx + constant(safe-area-inset-bottom));
+    bottom: calc(6rpx + env(safe-area-inset-bottom));
+    border-radius: 8rpx;
+}
+
+.focus-wrapper .focus-area,.focus-wrapper .inner-area {
+    width: var(--focus-w);
+    height: var(--focus-h);
+}

@@ -1,0 +1,5 @@
+<view class="page">
+    <view class="imageBox">
+        <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['wechatQrCode'] ] ] ] ]}}" mode="widthFix" src="{{wechatQrCode}}"></image>
+    </view>
+</view>

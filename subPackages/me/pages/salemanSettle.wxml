@@ -1,0 +1,18 @@
+<view class="sale-man-sbumit-success__wrapper">
+    <view class="icon iconnew new-gougouxianxing fz-50"></view>
+    <view class="fz-22 txt">申请关联成功</view>
+    <view class="fz-13 des">请等待客服进行关联审核，最终结果以服务号及站内消息为准</view>
+    <view class="fz-13 time">{{''+timeStr+''}}</view>
+    <view class="line fz-15">
+        <text class="color-45">关联楼盘：</text>
+        <text class="color-85">{{''+projectName+''}}</text>
+    </view>
+    <view bindtap="__e" class="subscribe-btn fz-16" data-event-opts="{{[ [ 'tap',[ [ 'backMyProject',['$event'] ] ] ] ]}}">返回我的楼盘</view>
+    <view class="link-kefu flex_layout">
+        <button class="line-sale flex_layout" data-type="button" hoverClass="none" openType="contact" sessionFrom="{{weapp}}">
+            <text class="gary fz-14">有问题</text>
+            <text class="blue-color-sale mar-right-8 fz-14">联系客服</text>
+            <text class="iconnew new-tongyong-gengduo blue-color-sale fz-12"></text>
+        </button>
+    </view>
+</view>

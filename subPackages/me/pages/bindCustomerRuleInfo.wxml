@@ -1,0 +1,6 @@
+<view class="bind-customer-rule-info__wrapper">
+    <image bindload="__e" data-event-opts="{{[ [ 'load',[ [ 'loadImage',['$event'] ] ] ] ]}}" mode="widthFix" src="{{imgSrc}}"></image>
+    <view class="full-screen" wx:if="{{loading}}">
+        <view id="spinner"></view>
+    </view>
+</view>

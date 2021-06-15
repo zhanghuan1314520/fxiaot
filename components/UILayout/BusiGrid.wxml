@@ -1,0 +1,10 @@
+<view class="busi-grid">
+    <view class="busi-grid__item skeletons-rect" index="{{index}}" wx:for="{{listData}}" wx:key="index">
+        <custom-navigator bind:__l="__l" class="vue-ref-in-for" data-ref="customNaviagtor" dataContent="{{analysis}}" dataId="{{'data-'+item.type}}" dataName="{{item.name}}" dataType="button" url="{{item.url}}" vueId="{{'3193f251-1-'+index}}" vueSlots="{{['default']}}">
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'navigatorTo',['$0',index],[ [ ['listData','',index,'url'] ] ] ] ] ] ]}}" vueId="{{'3193f251-2-'+index+','+'3193f251-1-'+index}}" vueSlots="{{['default']}}">
+                <image bindtap="__e" class="busi-grid__img sk-hide" data-content="{{analysis}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="{{item.name}}" data-type="button" mode="aspectFill" src="{{item.icon}}"></image>
+                <view bindtap="__e" class="busi-grid__name sk-hide" data-content="{{analysis}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="{{item.name}}" data-type="button">{{''+item.name+''}}</view>
+            </authorization>
+        </custom-navigator>
+    </view>
+</view>

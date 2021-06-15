@@ -1,0 +1,8 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "base-call-phone": "/components/BaseCallPhone",
+        "authorization": "/components/Authorization"
+    }
+}

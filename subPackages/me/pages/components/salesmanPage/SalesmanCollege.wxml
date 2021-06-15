@@ -1,0 +1,15 @@
+<view class="salesman-college">
+    <view class="college-title">
+        <text class="left">小团学院</text>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['handleCheckMore'] ] ] ]}}" isAuthPhone="{{true}}" vueId="7728c0b0-1" vueSlots="{{['default']}}">
+            <text bindtap="__e" class="right" data-content="小团学院" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="更多小团学院" data-type="link">
+                <text>进入学院</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </text>
+        </authorization>
+    </view>
+    <view class="swiper-wraper" wx:if="{{bannerList.list.length}}">
+        <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{bannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{bannerList.list}}" height="{{180}}" source="salesmanPageSchool" vueId="7728c0b0-2"></base-banner>
+    </view>
+    <college-article bind:__l="__l" item="{{item}}" vueId="{{'7728c0b0-3-'+index}}" wx:for="{{collegeList}}" wx:key="index"></college-article>
+</view>

@@ -1,0 +1,11 @@
+.filters {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+}
+
+.filters .filters__container {
+    width: 100%;
+    overflow: hidden;
+}

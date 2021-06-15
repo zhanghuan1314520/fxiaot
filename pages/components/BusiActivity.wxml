@@ -1,0 +1,9 @@
+<view>
+    <view class="activity" wx:if="{{existActivity}}">
+        <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{activity.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{activity.list}}" height="{{212}}" source="home" swiperDots="{{false}}" vueId="9cc4f344-1"></base-banner>
+    </view>
+    <view class="activity-fix" wx:if="{{isShow&&existActivityFix}}">
+        <image bindtap="__e" class="activity-fix__img" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{activityFix.ad_code}}" data-custom-prop-ad_keyword="{{activityFix.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{activityFix.ad_nike_name}}" data-custom-prop-ad_number="{{activityFix.ad_number}}" data-custom-prop-ad_source="home" data-custom-prop-ad_type="hover" data-event-opts="{{[ [ 'tap',[ [ 'goToUrlHandleFix',['$event'] ] ] ] ]}}" mode="aspectFill" src="{{activityFix.image}}"></image>
+        <view bindtap="__e" class="iconnew new-shanchu1 activity-fix__close" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"></view>
+    </view>
+</view>

@@ -1,0 +1,1 @@
+<view class="whitespace" style="{{'background-color:'+color+';'+'height:'+height+';'}}"></view>

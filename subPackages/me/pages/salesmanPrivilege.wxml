@@ -1,0 +1,35 @@
+<view class="salesman-privilege">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="efe9b5d6-1" vueSlots="{{['default']}}">活跃度特权介绍</busi-nav-header>
+    <image class="top-img" src="https://imgcdn.huanjutang.com/file/2021/03/24/c3b7b42353e70b43f4a43f1cc957dfcf.png"></image>
+    <view class="privilege-list-wrap">
+        <image class="title-img" src="https://imgcdn.huanjutang.com/file/2021/03/24/0ea845b909deddbee08cb543fd282835.png"></image>
+        <view class="privilege-list">
+            <view class="privilege-item" wx:if="{{!item.pro}}" wx:for="{{privilegeList}}" wx:for-index="__i0__" wx:key="name">
+                <image class="icon" src="{{item.icon}}"></image>
+                <view class="name-box">
+                    <view class="name">{{''+item.name+''}}<base-prompt bind:__l="__l" text="{{item.tip}}" vueId="{{'efe9b5d6-2-'+__i0__}}" vueSlots="{{['default']}}" width="330rpx" wx:if="{{item.tip}}">
+                            <image class="icon-tip" src="https://imgcdn.huanjutang.com/file/2021/03/19/fa20b1e060e91ca9901f397a19db3a4b.png"></image>
+                        </base-prompt>
+                    </view>
+                    <view class="desc">{{''+item.desc+''}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="privilege-list-wrap">
+        <image class="title-img" src="https://imgcdn.huanjutang.com/file/2021/03/24/646a6f3b0e67fd2d8c0a4c9df278b21c.png"></image>
+        <view class="privilege-list">
+            <view class="privilege-item" wx:for="{{privilegeList}}" wx:for-index="__i1__" wx:key="name">
+                <image class="icon" src="{{item.icon}}"></image>
+                <view class="name-box">
+                    <view class="name">{{''+item.name+''}}<base-prompt bind:__l="__l" text="{{item.tip}}" vueId="{{'efe9b5d6-3-'+__i1__}}" vueSlots="{{['default']}}" width="330rpx" wx:if="{{item.tip}}">
+                            <image class="icon-tip" src="https://imgcdn.huanjutang.com/file/2021/03/19/fa20b1e060e91ca9901f397a19db3a4b.png"></image>
+                        </base-prompt>
+                    </view>
+                    <view class="desc">{{''+item.desc+''}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tip">敬请期待更多特权~</view>
+</view>

@@ -1,0 +1,61 @@
+<view class="container data-v-228199a8">
+    <view class="{{['data-v-228199a8',true?'lottery':'',typeTab!==4?'white-container':'']}}">
+        <view class="lottery-title data-v-228199a8">
+            <navigator bindtap="__e" class="title-detail data-v-228199a8" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" hoverClass="none" url="{{'/pages/lotteryDetail?id='+lottery_id+'&project_id='+project_id}}">{{''+title+''}}<text class="iconnew new-tongyong-gengduo fz-16 project-btn data-v-228199a8"></text>
+            </navigator>
+            <navigator class="title-rule data-v-228199a8" url="{{'/subPackages/tools/pages/webview?redirect='+$root.m0}}">摇号流程</navigator>
+        </view>
+        <view class="tab-container data-v-228199a8">
+            <view class="excel data-v-228199a8">
+                <lottery-excel bind:__l="__l" class="data-v-228199a8" isExceedTriple="{{lotteryInfo.is_exceed_triple}}" lotteryRate="{{lotteryInfo.lottery_rate}}" tableData="{{lotteryInfo.room_num_info}}" vueId="03f1e4d0-1"></lottery-excel>
+            </view>
+            <view class="tab data-v-228199a8">
+                <view bindtap="__e" class="{{['data-v-228199a8',true?'tab-item':'',tab==index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'isToggle',[index,'$0'],[ [ ['tabBar','',index] ] ] ] ] ] ]}}" data-name="{{bar.name}}" wx:for="{{tabBar}}" wx:for-item="bar" wx:key="index">{{''+bar.name+''}}</view>
+            </view>
+            <view bindtap="__e" class="search data-v-228199a8" data-event-opts="{{[ [ 'tap',[ [ 'handleSearch',['$event'] ] ] ] ]}}">
+                <view class="search-box data-v-228199a8">
+                    <text class="placeholder data-v-228199a8">请输入姓名、购房证明号、报名序号</text>
+                    <image class="search-icon data-v-228199a8" src="https://imgcdn.huanjutang.com/assets/img/20213111557318081.png"></image>
+                </view>
+            </view>
+        </view>
+        <button-list activeIndex="{{inventoryIndex}}" bind:__l="__l" bind:buttonClick="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^buttonClick',[ [ 'handleButtonClick',['inventoryIndex','$event'] ] ] ] ]}}" list="{{inventoryList}}" listKey="inventory" vueId="03f1e4d0-2" wx:if="{{tab==2&&inventoryList.length>0}}"></button-list>
+        <button-list activeIndex="{{turnIndex}}" bind:__l="__l" bind:buttonClick="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^buttonClick',[ [ 'handleButtonClick',['turnIndex','$event'] ] ] ] ]}}" list="{{turnList}}" listKey="turn" vueId="03f1e4d0-3" wx:if="{{tab==1&&turnList.length>0}}"></button-list>
+        <view class="lottery-content data-v-228199a8">
+            <image-list-view bind:__l="__l" class="data-v-228199a8" listData="{{lotteryList}}" vueId="03f1e4d0-4" wx:if="{{lotteryList.length>0}}"></image-list-view>
+            <block wx:else>
+                <view class="list_container data-v-228199a8" wx:if="{{dataSource.length>0}}">
+                    <buyer-list bind:__l="__l" bind:updateItems="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','dataSource','$event'],[''] ] ] ] ]}}" items="{{dataSource}}" tab="{{$root.m1}}" vueId="03f1e4d0-5"></buyer-list>
+                    <discription bind:__l="__l" class="data-v-228199a8" defaultText="{{defaultText}}" serviceQrCode="{{serviceQrCode}}" shortTitle="{{shortTitle}}" showDataSomeFlag="{{showDataSomeFlag}}" switchPage="{{switchPage}}" vueId="03f1e4d0-6"></discription>
+                </view>
+                <block wx:else>
+                    <image-view bind:__l="__l" bind:click="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^click',[ [ 'toRules',['$0'],['pdfUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="03f1e4d0-7" wx:if="{{pdfUrl}}"></image-view>
+                    <block wx:else>
+                        <image-view bind:__l="__l" bind:click="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^click',[ [ 'navUrlFn',['$0'],['navUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="03f1e4d0-8" wx:if="{{navUrl}}"></image-view>
+                        <nothing-view bind:__l="__l" class="data-v-228199a8" isHidden="{{loading}}" vueId="03f1e4d0-9" vueSlots="{{['default']}}" wx:else>
+                            <block wx:if="{{tab!=3}}">
+                                <view class="fz-14 nothing__text data-v-228199a8" wx:if="{{hasResults}}">未查到结果哟，请输入正确的完整信息</view>
+                                <block wx:else>
+                                    <view class="fz-14 nothing__text data-v-228199a8">暂无内容结果</view>
+                                    <view class="nothing__timer data-v-228199a8" wx:if="{{timers}}">{{'预计'+timers+'出'+tabBar[tab]+''}}</view>
+                                    <view bindtap="__e" class="nothing__subscribe data-v-228199a8" data-event-opts="{{[ [ 'tap',[ ['lotteryRemindHandle'] ] ] ]}}" wx:if="{{!isSubscribed}}">立即订阅，及时获取结果通知</view>
+                                    <view class="nothing__subscribed data-v-228199a8" wx:if="{{isSubscribed}}">已订阅，出结果会第一时间通知您</view>
+                                </block>
+                            </block>
+                        </nothing-view>
+                    </block>
+                </block>
+            </block>
+        </view>
+        <review-model bind:__l="__l" bind:bindTabChangeEvent="__e" bind:updateShowModel="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^updateShowModel',[ [ '__set_sync',['$0','showReviewModel','$event'],[''] ] ] ],[ '^updateShowModel',[ [ '__set_sync',['$0','showReviewModel','$event'],[''] ] ] ],[ '^bindTabChangeEvent',[ ['bindTabChangeEvent'] ] ] ]}}" showModel="{{showReviewModel}}" vueId="03f1e4d0-10"></review-model>
+        <official-account class="data-v-228199a8"></official-account>
+        <attention-service-number bind:__l="__l" bind:updateIsResulted="__e" bind:updateShow="__e" class="data-v-228199a8" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','attentionServiceFlag','$event'],[''] ] ] ],[ '^updateIsResulted',[ [ '__set_sync',['$0','isResultedFlag','$event'],[''] ] ] ],[ '^updateIsResulted',[ [ '__set_sync',['$0','isResultedFlag','$event'],[''] ] ] ] ]}}" isResulted="{{isResultedFlag}}" show="{{attentionServiceFlag}}" vueId="03f1e4d0-11"></attention-service-number>
+    </view>
+    <view bindtap="__e" class="back-top data-v-228199a8" data-event-opts="{{[ [ 'tap',[ [ 'handleBackTop',['$event'] ] ] ] ]}}" wx:if="{{showBackTop}}">
+        <image class="image data-v-228199a8" src="https://imgcdn.huanjutang.com/assets/img/20213161031458081.png"></image>
+    </view>
+    <busi-share-icon bind:__l="__l" bottom="200" class="data-v-228199a8 vue-ref" custom="{{true}}" data-ref="share" vueId="03f1e4d0-12" vueSlots="{{['default']}}">
+        <button bindtap="__e" class="share data-v-228199a8" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" wx:if="{{userInfo.sales_man_id>0&&tab!=3}}"></button>
+        <button bindtap="__e" class="share data-v-228199a8" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" openType="share" wx:else></button>
+    </busi-share-icon>
+</view>

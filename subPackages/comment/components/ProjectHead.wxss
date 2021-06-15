@@ -1,0 +1,32 @@
+.project {
+    justify-content: space-between;
+    height: 88rpx;
+    padding: 0 32rpx;
+    background: #fff;
+}
+
+.project,.project-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.project-title {
+    font-size: 36rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 48rpx;
+    margin-right: 24rpx;
+}
+
+.project-area {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: rgba(0,0,0,.45);
+    line-height: 28rpx;
+}
+
+.icon-right {
+    font-size: 32rpx;
+    color: rgba(0,0,0,.45);
+}

@@ -1,0 +1,17 @@
+<view class="tools">
+    <view class="title">常用工具</view>
+    <view class="wrap">
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="{{[ 'data-item',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleNext',['$0'],[ [ ['toolsData','',index] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'434dd07e-1-'+index}}" vueSlots="{{['default']}}" wx:for="{{toolsData}}" wx:key="index">
+            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.title}}" data-type="link" wx:if="{{item.title==='我的客服'}}">
+                <button bindtap="__e" class="tools-item skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="我的客服" openType="contact" sessionFrom="{{sessionFrom}}">
+                    <image class="img" src="{{item.icon}}"></image>
+                    <text class="item-text">{{''+item.title+''}}</text>
+                </button>
+            </view>
+            <view bindtap="__e" class="tools-item skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.title}}" data-type="link" wx:else>
+                <image class="img" src="{{item.icon}}"></image>
+                <text class="item-text">{{''+item.title+''}}</text>
+            </view>
+        </authorization>
+    </view>
+</view>

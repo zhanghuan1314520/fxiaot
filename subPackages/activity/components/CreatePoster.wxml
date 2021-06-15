@@ -1,0 +1,19 @@
+<view>
+    <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePhoto}}" showSetting="{{showPermissionsSetting}}" txt="保存海报" vueId="007ba754-1"></photo-permissions-settings>
+    <view catchtouchmove="__e" class="modal" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{showContent}}">
+        <view class="container">
+            <image bindtap="__e" class="close" data-content="海报弹窗" data-event-opts="{{[ [ 'tap',[ [ 'hideHandler',['$event'] ] ] ] ]}}" data-name="关闭" src="https://imgcdn.huanjutang.com/assets/img/20201214163188081.png"></image>
+            <block wx:if="{{visible}}">
+                <image class="image" src="{{item.preview}}" wx:for="{{images}}" wx:key="index"></image>
+                <view class="save" wx:if="{{saveSuccess}}">
+                    <image class="save-image" src="https://imgcdn.huanjutang.com/assets/img/20201217336208081.png"></image>
+                    <view class="save-text">已保存至相册</view>
+                </view>
+            </block>
+            <image class="logo" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20201215149538081.png" wx:else></image>
+        </view>
+    </view>
+    <view class="canvas-box">
+        <canvas canvasId="_canvas-poster" style="{{'width:'+width+'px'+';'+'height:'+height+'px'+';'+'position:'+'fixed'+';'+'top:'+'-9999px'+';'+'left:'+'-9999px'+';'+'overflow:'+'hidden'+';'}}"></canvas>
+    </view>
+</view>

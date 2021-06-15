@@ -1,0 +1,8 @@
+<view class="contact-salesman">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['onSuccess'] ] ] ]}}" isAuthPhone="{{true}}" vueId="d415b83a-1" vueSlots="{{['default']}}">
+        <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyHandle'] ] ] ]}}" dataContent="{{dataContent}}" dataName="联系置业顾问" dataType="button" type="success" vueId="{{'d415b83a-2'+','+'d415b83a-1'}}" vueSlots="{{['default']}}">
+            <slot wx:if="{{$slots.default}}"></slot>
+            <block wx:else>联系置业顾问</block>
+        </busi-button>
+    </authorization>
+</view>

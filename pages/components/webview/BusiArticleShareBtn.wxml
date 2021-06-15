@@ -1,0 +1,22 @@
+<block wx:if="{{showShareBtn&&articleId}}">
+    <block wx:if="{{!isSalesMan}}">
+        <cover-view class="bottom-btn-cont">
+            <cover-image bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'collectionHandle',['$event'] ] ] ] ]}}" src="{{collectionStatus==0?'https://imgcdn.huanjutang.com/image/2020/06/12/8b0091c7722b14d6ff6cb1a193bae977.png':'https://imgcdn.huanjutang.com/image/2020/06/12/ea40192aefaca13c3bcf2bc56c694d22.png'}}"></cover-image>
+        </cover-view>
+        <cover-view class="bottom-btn-cont bottom-btn-share">
+            <cover-image bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'shareTo',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/06/12/dd0a80957cb0ed8218a491c821ea3410.png"></cover-image>
+        </cover-view>
+    </block>
+    <cover-view class="sale-man__wrapper flex_layout" wx:else>
+        <cover-view bindtap="__e" class="collect__wrapper flex_layout_n" data-event-opts="{{[ [ 'tap',[ [ 'collectionHandle',['$event'] ] ] ] ]}}">
+            <cover-image class="icon-img-sale" src="{{collectionStatus==0?'https://imgcdn.huanjutang.com/image/2020/06/11/65eeebc88f6e1a2cf7ab8e1037d8217a.png':'https://imgcdn.huanjutang.com/image/2020/06/11/22ad70e58c07ce6fc7bd3c4f4e34e9a1.png'}}"></cover-image>
+            <cover-view class="fz-14 txt mar-top-12">收藏</cover-view>
+        </cover-view>
+        <cover-view bindtap="__e" class="mar-left-32 btn__wrapper fz-16" data-event-opts="{{[ [ 'tap',[ [ 'shareTo',['$event'] ] ] ] ]}}">转发获客</cover-view>
+    </cover-view>
+    <cover-view class="collection-tips" wx:if="{{!isIosOrAndroid&&showCollectionTips}}">
+        <cover-image class="gougou" src="https://imgcdn.huanjutang.com/assets/img/20190920/5d842c9d81484.png"></cover-image>
+        <cover-view class="top-text fz-14 white-color">收藏成功</cover-view>
+        <cover-view class="bottom-text fz-14 white-color">在"我的-关注"查看</cover-view>
+    </cover-view>
+</block>

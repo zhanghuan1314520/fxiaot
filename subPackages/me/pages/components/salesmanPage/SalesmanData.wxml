@@ -1,0 +1,16 @@
+<view class="salesman-data">
+    <authorization bind:__l="__l" bind:onSuccess="__e" class="data-item" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleNext',['$0'],[ [ ['scoreData','',index,'url'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'9fe25f9a-1-'+index}}" vueSlots="{{['default']}}" wx:for="{{$root.l0}}" wx:key="index">
+        <busi-red-dot bind:__l="__l" class="vue-ref-in-for" data-ref="{{'busiRedDot_'+item[$orig].fieldName}}" fieldName="{{item[$orig].fieldName}}" vueId="{{'9fe25f9a-2-'+index+','+'9fe25f9a-1-'+index}}" vueSlots="{{['default','redDot']}}">
+            <view slot="redDot">
+                <view class="red-dot"></view>
+            </view>
+            <view bindtap="__e" class="data-item" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item[$orig].name}}" data-type="link">
+                <view class="item-num">{{''+item.f0+''}}</view>
+                <view class="item-text">{{''+item[$orig].name+''}}<base-prompt bind:__l="__l" bottom="12rpx" left="-106rpx" text="近30天获得积分" vueId="{{'9fe25f9a-3-'+index+','+'9fe25f9a-2-'+index}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].name==='活跃度'}}">
+                        <view class="iconnew new-xianxing-shuoming"></view>
+                    </base-prompt>
+                </view>
+            </view>
+        </busi-red-dot>
+    </authorization>
+</view>

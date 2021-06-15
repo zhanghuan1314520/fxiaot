@@ -1,0 +1,81 @@
+<view wx:if="{{detailSource}}">
+    <view bindtap="__e" class="ad sk-hide" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{detail.ad_code}}" data-custom-prop-ad_keyword="{{detail.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{detail.ad_nike_name}}" data-custom-prop-ad_number="{{detail.ad_number}}" data-custom-prop-ad_source="{{detailSource}}" data-custom-prop-ad_type="flow" data-event-opts="{{[ [ 'tap',[ [ 'jumpTo',['$0'],['detail'] ] ] ] ]}}" wx:if="{{detail.style_id===6}}">
+        <view class="ad__banner">
+            <view class="ad__banner__item">
+                <image class="ad__banner__img ad__banner__img--st1" src="{{detail.image}}"></image>
+            </view>
+            <view class="ad__banner__item">
+                <image class="ad__banner__img" src="{{detail.image1}}"></image>
+            </view>
+            <view class="ad__banner__item">
+                <image class="ad__banner__img ad__banner__img--st2" src="{{detail.image2}}"></image>
+                <view class="white-color advert">广告</view>
+            </view>
+        </view>
+        <view class="ad__cont">
+            <view class="project__info__top ">
+                <view class="card__info__name ellipsis">{{''+detail.project_info.name+''}}</view>
+                <view class="project__info__bottom--ad" wx:if="{{detail.project_info.tags.length+detail.project_info.characteristic.length>0}}">
+                    <view class="{{[ 'info__tips__item '+(statusStyles[item]?statusStyles[item]:'') ]}}" wx:for="{{detail.project_info.tags}}" wx:key="index">{{''+item+''}}</view>
+                    <view class="feature__tips__item" wx:for="{{detail.project_info.characteristic}}" wx:key="index">{{''+item+''}}</view>
+                </view>
+            </view>
+            <view class="mar-top-12 " wx:if="{{detail.project_info.avg_price}}">
+                <text class="project__info__price" wx:for="{{detail.project_info.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+            </view>
+            <view class="project__info__location ellipsis mar-top-8" wx:if="{{detail.project_info.project_location}}">
+                <text>{{detail.project_info.project_location}}</text>
+            </view>
+            <view>
+                <view class="project__info__spot project__info__spot--sm" wx:if="{{detail.project_info.time_array&&detail.project_info.time_array.type}}">
+                    <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e747696f0b86.png" wx:if="{{detail.project_info.time_array['type']==1}}"></image>
+                    <block wx:else>
+                        <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e74776a56cc1.png" wx:if="{{detail.project_info.time_array['type']==2}}"></image>
+                        <block wx:else>
+                            <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e7477e5b3434.png" wx:if="{{detail.project_info.time_array['type']==3}}"></image>
+                            <block wx:else>
+                                <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e74779e776f5.png" wx:if="{{detail.project_info.time_array['type']==4}}"></image>
+                            </block>
+                        </block>
+                    </block>
+                    <text class="mar-left-10 light__title">{{''+detail.project_info.time_array['text']+''}}</text>
+                    <text class="line"></text>
+                    <text class="light__spot ellipsis">{{''+detail.project_info.time_array['time']+''}}</text>
+                </view>
+                <view class="project__info__spot project__info__spot--sm" wx:if="{{detail.project_info.light_spot}}">
+                    <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200317/5e709ad337d9d.png"></image>
+                    <text class="mar-left-10 light__title">楼盘亮点</text>
+                    <text class="line"></text>
+                    <text class="light__spot ellipsis">{{''+detail.project_info.light_spot+''}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:else>
+        <view bindtap="__e" class="ad2 sk-hide" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{detail.ad_code}}" data-custom-prop-ad_keyword="{{detail.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{detail.ad_nike_name}}" data-custom-prop-ad_number="{{detail.ad_number}}" data-custom-prop-ad_source="{{detailSource}}" data-custom-prop-ad_type="flow" data-event-opts="{{[ [ 'tap',[ [ 'jumpTo',['$0'],['detail'] ] ] ] ]}}" wx:if="{{detail.style_id===5}}">
+            <view class="project__left">
+                <image class="project__headIcon" src="{{detail.image}}"></image>
+            </view>
+            <view class="ad__right">
+                <view class="ad__right__item">
+                    <view class="heng"></view>
+                    <view class="ad__right__title--top">{{''+detail.sub_title+''}}</view>
+                    <view class="heng"></view>
+                </view>
+                <view class="mar-top-30 ad__right__item ">
+                    <text class="ad__right__title--main ">{{''+detail.title+''}}</text>
+                </view>
+                <view class="mar-top-30 ad__right__item">
+                    <view class="ad__right__tips">{{''+detail.text+''}}</view>
+                </view>
+                <view class="white-color advert">广告</view>
+            </view>
+        </view>
+        <block wx:else>
+            <view bindtap="__e" class="ad3 sk-hide" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{detail.ad_code}}" data-custom-prop-ad_keyword="{{detail.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{detail.ad_nike_name}}" data-custom-prop-ad_number="{{detail.ad_number}}" data-custom-prop-ad_source="{{detailSource}}" data-custom-prop-ad_type="flow" data-event-opts="{{[ [ 'tap',[ [ 'jumpTo',['$0'],['detail'] ] ] ] ]}}" wx:if="{{detail.style_id===2}}">
+                <image class="ad__banner__img ad__banner__img--big" mode="widthFix" src="{{detail.image}}"></image>
+                <view class="white-color advert">广告</view>
+            </view>
+        </block>
+    </block>
+</view>

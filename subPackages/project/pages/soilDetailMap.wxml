@@ -1,0 +1,31 @@
+<map bindcallouttap="__e" bindregionchange="__e" bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'closeProject',['$event'] ] ] ],[ 'regionchange',[ [ 'regionChange',['$event'] ] ] ],[ 'callouttap',[ [ 'markerTapHandle',['$event'] ] ] ] ]}}" id="map" latitude="{{lat}}" longitude="{{long}}" markers="{{markers}}" scale="{{scale}}" style="{{'height:'+mapHeight+'px;'}}" subkey="XDKBZ-2Y5YX-RRZ4L-7OD3P-FEO5S-VSF7V">
+    <cover-view class="share-btn">
+        <button class="blue-bg fz-13 white-color" openType="share">
+            <cover-image class="share-icon" src="https://imgcdn.huanjutang.com/assets/img/20190522/5ce4ebe9f16c0.png"></cover-image>
+            <cover-view class="text">分享</cover-view>
+        </button>
+    </cover-view>
+    <cover-view class="back-home" wx:if="{{showHome}}">
+        <cover-view bindtap="__e" class="navigator" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+            <cover-view class="backHome fz-12 white-color">返回</cover-view>
+            <cover-view class="backHome fz-12 white-color">首页</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="filter-type">
+        <cover-view bindtap="__e" class="{{[ 'filter-type-line fz-16 '+(switchIndex===index?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchType',[index] ] ] ] ]}}" wx:for="{{houseType}}" wx:key="index">{{item.name}}</cover-view>
+    </cover-view>
+    <cover-view bindtap="__e" class="project-info" data-event-opts="{{[ [ 'tap',[ [ 'gotoProjectDetail',['$event'] ] ] ] ]}}" wx:if="{{projectShow}}">
+        <cover-image class="project-img" mode="aspectFill" src="{{projectInfo.cover}}"></cover-image>
+        <cover-image class="project-status fz-13 white-color" src="https://imgcdn.huanjutang.com/assets/img/20190521/5ce3a7a683950.png" wx:if="{{projectInfo.tags[0]}}"></cover-image>
+        <cover-view class="project-status fz-13 white-color" style="line-height:54rpx;" wx:if="{{projectInfo.tags[0]}}">{{projectInfo.tags[0]}}</cover-view>
+        <cover-view class="project-name">
+            <cover-view class="name fz-16 black-30 font-bold">{{projectInfo.name}}</cover-view>
+            <cover-view class="last-num fz-12 gray-96" wx:if="{{projectInfo.surplus_count}}">{{'余'+projectInfo.surplus_count+'套'}}</cover-view>
+            <cover-view class="price red-color fz-14">{{projectInfo.price?'¥'+projectInfo.price:''}}</cover-view>
+        </cover-view>
+        <cover-view class="project-address">
+            <cover-view class="address-name fz-12 black-60" wx:if="{{projectInfo.address}}">{{'地址：'+projectInfo.address}}</cover-view>
+            <cover-view catchtap="__e" class="{{['attention '+(projectInfo.is_attention?'gray-96':'blue-color attention-active')+' fz-12']}}" data-event-opts="{{[ [ 'tap',[ [ 'followHandle',['$event'] ] ] ] ]}}" wx:if="{{projectShow}}">{{projectInfo.is_attention?'已关注':'+关注'}}</cover-view>
+        </cover-view>
+    </cover-view>
+</map>

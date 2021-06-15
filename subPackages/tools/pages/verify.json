@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "usingComponents": {
+        "ne-captcha": "plugin://wxb7c8f9ea9ceb4663/ne-captcha"
+    }
+}

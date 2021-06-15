@@ -1,0 +1,25 @@
+<view>
+    <view class="attention-service-number">
+        <view bindtap="__e" class="hide-model-bg" data-event-opts="{{[ [ 'tap',[ [ 'hideModelBg',[0] ] ] ] ]}}" wx:if="{{show}}">
+            <view class="f-content" style="{{'background: url( '+fContentBg+' ) 100% 100% no-repeat !important; background-size: cover !important;'}}">
+                <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'attentionserviceEvent',['$event'] ] ] ] ]}}">立即关注</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="hide-model-bg" data-event-opts="{{[ [ 'tap',[ [ 'hideModelBg',[1] ] ] ] ]}}" wx:if="{{secondShow&&!iShowAttentionOrQrCode}}">
+            <view class="s-content">
+                <image class="qr-code" src="{{qrcode}}"></image>
+            </view>
+        </view>
+    </view>
+    <cover-view class="permissions-settings" wx:if="{{showPermissionsSetting}}">
+        <cover-view class="tips-content fz-18">请开启保存到相册的权限</cover-view>
+        <cover-view class="fz-18 text">开启后需重新点击立即关注按钮</cover-view>
+        <cover-view class="bottom-btn">
+            <cover-view bindtap="__e" class="cancle fz-18 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'closePemissions',['$event'] ] ] ] ]}}">取消</cover-view>
+            <button bindopensetting="__e" class="sure-btn fz-18 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">
+                <cover-view>去开启</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+    <cover-view class="hide-bg" wx:if="{{showPermissionsSetting}}"></cover-view>
+</view>

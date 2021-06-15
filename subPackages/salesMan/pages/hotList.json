@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "置业顾问排行榜",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "dialog": "/components/UILayout/BusiDialog",
+        "base-call-phone": "/components/BaseCallPhone",
+        "authorization": "/components/Authorization"
+    }
+}

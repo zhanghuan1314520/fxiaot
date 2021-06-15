@@ -1,0 +1,134 @@
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(.3,.3,.3);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(.3,.3,.3);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.zoomOut {
+    animation-name: zoomOut;
+}
+
+@-webkit-keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(100%,0,0);
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(100%,0,0);
+    }
+}
+
+.fadeOutRight {
+    animation-name: fadeOutRight;
+}
+
+.tip-bg {
+    box-sizing: border-box;
+    background: transparent;
+    z-index: 1000;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 510rpx;
+    left: inherit!important;
+}
+
+.tip-bg.show {
+    display: block;
+}
+
+.tip-bg .tip-bar {
+    float: right;
+    width: 440rpx;
+    height: 68rpx;
+    background: rgba(0,0,0,.8);
+    border-radius: 34rpx;
+    line-height: 30rpx;
+    padding: 0 24rpx;
+    position: relative;
+    margin-top: 16rpx;
+    margin-right: 18rpx;
+}
+
+.tip-bg .tip-bar:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-left: 16rpx solid transparent;
+    border-right: 16rpx solid transparent;
+    border-bottom: 16rpx solid rgba(0,0,0,.8);
+    display: inline-block;
+    position: absolute;
+    top: -16rpx;
+    right: 120rpx;
+}
+
+.tip-bg .tip-text {
+    line-height: 68rpx;
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.tip-bg .tip-lottery {
+    padding-right: 20rpx;
+    color: #fff;
+}
+
+.tip-bg .tip-close {
+    color: #fff;
+    float: right;
+    line-height: 1;
+    padding-top: 20rpx;
+}
+
+.tip-bg .tip-box {
+    background: #3772cc;
+    overflow: hidden;
+    height: 185rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}

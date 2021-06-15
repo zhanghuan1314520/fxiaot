@@ -1,0 +1,109 @@
+.projects {
+    margin: 40rpx 0;
+}
+
+.recommendProject {
+    margin-top: 40rpx;
+}
+
+.more {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.column,.more {
+    width: 100%;
+}
+
+.column__nav-box {
+    padding: 0 32rpx;
+    position: sticky;
+    z-index: 99;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 5px -5px hsla(0,0%,80%,.3);
+}
+
+.column__nav {
+    height: 80rpx;
+    line-height: 72rpx;
+    background: #fff;
+    overflow-x: hidden;
+    white-space: nowrap;
+    overflow-y: hidden;
+    transition: all .2s ease;
+}
+
+.column__nav__item {
+    font-size: 32rpx;
+    margin-left: 36rpx;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    transition: all .2s ease;
+}
+
+.column__nav__item:nth-child(1) {
+    margin-left: 0rpx;
+}
+
+.column__nav__item--active {
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.column__nav__item--active:after {
+    height: 6rpx;
+    width: 40rpx;
+    background: #2d8cf0;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: -8rpx;
+    left: 50%;
+    margin-left: -20rpx;
+    border-radius: 4rpx;
+}
+
+.column_cont__nd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50rpx;
+}
+
+.column_cont__nd .cont__nd__img {
+    width: 358rpx;
+    height: 224rpx;
+}
+
+.column_cont__nd .cont__nd__text {
+    margin-top: 46rpx;
+    color: #6a7490;
+    font-size: 32rpx;
+}
+
+.nothing {
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.nothing .image {
+    display: inline-block;
+    width: 276rpx;
+    height: 144rpx;
+}
+
+.nothing .image.article-nothing {
+    width: 276rpx;
+    height: 176rpx;
+}
+
+.nothing .text {
+    padding-bottom: 24rpx;
+}
+
+.nothing .content,.nothing .text {
+    margin-top: 48rpx;
+}

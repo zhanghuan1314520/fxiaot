@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "photo-permissions-settings": "/components/photoPermissionsSettings",
+        "skeletons": "/pages/components/LotteryResultSkeleton"
+    }
+}

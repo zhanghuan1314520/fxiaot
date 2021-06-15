@@ -1,0 +1,10 @@
+<view catchtap="__e" catchtouchmove="__e" class="modal data-v-57988acc" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{!destroy}}">
+    <view bindtap="__e" class="{{['data-v-57988acc','modal-mask',maskClass]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleMaskClick',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['data-v-57988acc','mask-content',contentClass]}}">
+        <image class="title-image data-v-57988acc" src="https://imgcdn.huanjutang.com/assets/img/20201210145468081.png"></image>
+        <view class="rank data-v-57988acc">
+            <text class="{{['data-v-57988acc','text',rest>10?'short':'long']}}">{{''+rest+''}}</text>
+        </view>
+        <image catchtap="__e" class="button data-v-57988acc" data-content="投票成功" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}" data-name="继续投票" src="https://imgcdn.huanjutang.com/assets/img/2020121015678081.png"></image>
+    </view>
+</view>

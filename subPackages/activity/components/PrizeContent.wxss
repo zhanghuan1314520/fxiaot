@@ -1,0 +1,63 @@
+.prize.data-v-f23002f0 {
+    margin-top: 45rpx;
+}
+
+.box.data-v-f23002f0,.prize-countdown.data-v-f23002f0 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box.data-v-f23002f0 {
+    width: 48rpx;
+    height: 58rpx;
+    background-color: #4362ff;
+    border: 4rpx solid #002aff;
+    color: #fff;
+    margin-right: 6rpx;
+}
+
+.box.data-v-f23002f0,.text.data-v-f23002f0 {
+    font-family: PingFangSC-Semibold;
+    font-size: 30rpx;
+    font-weight: 700;
+}
+
+.text.data-v-f23002f0 {
+    margin-right: 4rpx;
+    color: #002aff;
+}
+
+.prize-content.data-v-f23002f0 {
+    margin-top: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prize-box.data-v-f23002f0 {
+    width: 120rpx;
+    height: 120rpx;
+    background-color: #acbaff;
+    border: 4rpx solid #002aff;
+    margin-right: 19rpx;
+}
+
+.prize-image.data-v-f23002f0 {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.prize-name.data-v-f23002f0 {
+    font-size: 24rpx;
+    font-family: PingFangSC-Semibold;
+    line-height: 30rpx;
+    height: 60rpx;
+    width: 247rpx;
+    color: #002aff;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

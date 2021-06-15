@@ -1,0 +1,415 @@
+page {
+    height: 90%;
+    background: #fff;
+}
+
+.upload-file .pic {
+    width: 140rpx;
+    height: 140rpx;
+    box-sizing: border-box;
+    border-radius: 10rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAMAAACZHrEMAAAAS1BMVEUAAADi4uLl5eXg4ODg4ODf39/g4OD////i4uLg4ODg4ODg4ODg4ODg4ODg4ODh4eHf39/s7Ozg4ODj4+Pf39/g4ODg4ODf39/Y2NhLQ2/+AAAAF3RSTlMAThNi7LGdBDf03deliplVRA3nGrJzIe2t6WYAAAFZSURBVHja7dzLbsIwFEXRk5TWIQ8I0Nb9/y/t9aCVCzFIFcgX2GtgJpHYcjJILMv60fVxgY7c4pr1MG6D/vhc1YpJ+ka5sK8YY6agzFA3pm+VCapk121iHA7yYn5vBdy9tm39PMnRyAtiiCHmChrjJiYaYoghhpgMMSVPELMycsDLpBBDDDFX9WoEAItY0ztFTAkxl3wZYkoxbtb0UoybL0piiCGGGGLuPmZl3MT8788vI4YYtw/ww8e8GjcxCTE5YkqIKfEb0xo3MV7e9Ih5rhhXC4wPF8M+PWKIIeYIMSXEnMM+vSXElBBTQsx57NMDcG/Yp0cMMcQcYU1vwRPErG3YqbqdZaw12Nipus4yBo02blTdxjJGbdP8VJ+aOZqtQm8/+8o1894i+iA10YyqJx0TlDQyk92ng3Iv8dSbdNtrJiVhih+qHvN7tNQcasf0jTL1YrLjyL4BxXiBQQ/mtYYAAAAASUVORK5CYII=) 50%/100% no-repeat;
+    overflow: hidden;
+}
+
+.search-input-place {
+    color: #96989e;
+}
+
+.submit-btn {
+    box-shadow: 0 12rpx 20rpx 0 rgba(45,140,240,.3);
+    background: #2d8cf0;
+    box-sizing: border-box;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 44rpx;
+    width: 704rpx;
+    margin: 0 auto 60rpx;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.model {
+    position: fixed;
+    background: #fff;
+    border-radius: 8rpx;
+    width: 450rpx;
+    padding: 20rpx 50rpx 0;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.model-tip {
+    padding: 30rpx 0;
+}
+
+.model-text1 {
+    padding-bottom: 15rpx;
+}
+
+.input-box {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-box,.model-btn {
+    display: flex;
+    padding: 15rpx 0;
+}
+
+.model-btn {
+    justify-content: space-around;
+    border-top: 1rpx solid #f7f7f7;
+}
+
+.model-btn button {
+    background: transparent;
+}
+
+.model-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    top: 0;
+    z-index: 999;
+}
+
+.general_style {
+    height: 100rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.general_style>text {
+    float: left;
+}
+
+.general_style>.small-level-color {
+    float: left;
+    line-height: 100rpx;
+    color: #606266!important;
+}
+
+.hou_plan_item {
+    padding-right: 24rpx;
+    margin-left: 24rpx;
+    background: #fff;
+    border-bottom: 2rpx solid rgba(48,55,64,.05);
+}
+
+.hou_plan_item,.hou_plan_live {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.hou_plan_live {
+    margin-left: 142rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: right;
+}
+
+.hou_plan_live .picker {
+    width: 145rpx;
+    float: right;
+    display: inline-block;
+}
+
+.hou_plan_live input {
+    padding-right: 28rpx;
+    font-size: 28rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    box-sizing: border-box;
+}
+
+.hou_plan_live .new-zhankai {
+    float: right;
+    font-size: 14rpx;
+    margin-left: 10rpx;
+}
+
+.layout_display {
+    padding: 64rpx 0 68rpx;
+    overflow: hidden;
+}
+
+.layout_display .up-header {
+    margin: 0 24rpx;
+    color: #606266;
+}
+
+.layout_display .up-header .star {
+    position: relative;
+    margin-right: 20rpx;
+}
+
+.layout_display .upload-content {
+    display: flex;
+    justify-items: center;
+    padding-left: 24rpx;
+    margin-top: 70rpx;
+    background: #fff;
+}
+
+.layout_display .w-cell_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 58rpx;
+}
+
+.code_style {
+    font-size: 26rpx;
+}
+
+input {
+    width: 100%;
+}
+
+.modalDialog {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+    z-index: 9;
+}
+
+.modalDialog .modalDialog_item {
+    width: 606rpx;
+    border-radius: 8rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.modalDialog .modalDialog_item1 {
+    padding: 50rpx 48rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalDialog .modalDialog_item2 {
+    width: 100%;
+    height: 100rpx;
+    border-top: 2rpx solid rgba(0,0,0,.1);
+}
+
+.modalDialog .modalDialog_style {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modalDialog .modalDialog_style2 {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    border-left: 2rpx solid rgba(0,0,0,.1);
+    justify-content: center;
+    align-items: center;
+}
+
+.code_lianxi {
+    margin-top: 0rpx;
+    margin-left: 14rpx;
+    margin-bottom: 36rpx;
+}
+
+.step_one .hou_plan_live input {
+    text-align: right!important;
+}
+
+.step_two .info-rule {
+    padding: 60rpx 0 28rpx 24rpx;
+    font-weight: 700;
+    line-height: 44rpx;
+    color: #303237;
+    overflow: hidden;
+}
+
+.step_two .hou_plan_live {
+    border-bottom: 2rpx solid rgba(48,55,64,.05);
+}
+
+.step_two .hou_plan_live input {
+    text-align: left;
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.step_two .hou_plan_item {
+    border-bottom: none;
+}
+
+.step_two .hou_plan_item .general_style {
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.step_two .hou_plan_item .general_style>.small-level-color {
+    line-height: 110rpx;
+}
+
+.step_two .hou_plan_item .hou_plan_live {
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.step_two .pre {
+    display: flex;
+    align-items: center;
+    margin: 50rpx 0 140rpx 20rpx;
+    color: #2d8cf0;
+}
+
+.step_two .tips {
+    margin-top: 0;
+}
+
+.tips {
+    margin: 24rpx 0 50rpx;
+    overflow: hidden;
+    padding: 0 30rpx;
+}
+
+.tips .tips-right {
+    line-height: 40rpx;
+}
+
+.lottery-msg .up-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 30rpx;
+    overflow: hidden;
+}
+
+.font-bold-normal {
+    color: rgba(150,152,158,.7);
+}
+
+.identifyCode {
+    display: inline-block;
+    float: right;
+    width: 170rpx;
+    height: 68rpx;
+    border-radius: 36rpx;
+    line-height: 66rpx;
+    text-align: center;
+    border: 2rpx solid #2d8cf0;
+    color: #2d8cf0;
+    margin-top: 20rpx;
+}
+
+.identifyCode.active {
+    border-color: #96989e;
+    color: #96989e;
+}
+
+.building-bounced {
+    left: 0;
+    z-index: 10001;
+    height: 100%;
+    background-color: rgba(48,50,55,.46);
+}
+
+.buiding-choose,.building-bounced {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.buiding-choose {
+    z-index: 10002;
+}
+
+.search {
+    display: flex;
+    padding: 28rpx 0 12rpx 24rpx;
+}
+
+.search,.search .search-left {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.search .search-left {
+    position: relative;
+    float: left;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 590rpx;
+    background: rgba(21,24,45,.08);
+    border-radius: 10rpx;
+}
+
+.search .search-left .new-sousuoxianxing {
+    position: absolute;
+    left: 25rpx;
+}
+
+.search .search-left .search-bar-input {
+    width: 520rpx;
+    height: 100%;
+    line-height: 100%;
+    box-sizing: border-box;
+    padding-left: 70rpx;
+}
+
+.search .search-btn {
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.search-col {
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid rgba(48,55,64,.05);
+    color: #303237;
+}
+
+.weui-icon-search {
+    float: right;
+    width: 56rpx;
+    height: 86rpx;
+    line-height: 86rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #ccc;
+    padding: 0;
+}
+
+.popup {
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact-button {
+    display: block;
+    line-height: 1;
+    color: #2d8cf0;
+    margin-top: 20rpx;
+    background: transparent;
+}
+
+.rule {
+    float: right;
+    color: #2f8cef;
+    line-height: 100rpx;
+}

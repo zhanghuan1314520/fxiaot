@@ -1,0 +1,5 @@
+<view class="submit-wraper">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['confirm'] ] ] ]}}" isAuthPhone="{{true}}" vueId="ee86024e-1" vueSlots="{{['default']}}">
+        <view class="{{['submit-buttom',disabled?'disabled':'']}}">{{''+btnText+''}}</view>
+    </authorization>
+</view>

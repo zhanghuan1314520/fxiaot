@@ -1,0 +1,28 @@
+<view class="page" style="{{'margin-bottom:'+(showContactBtns?'140rpx':0)+';'}}">
+    <view class="detail-top skeletons">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="53495dbd-1" vueSlots="{{['default']}}">{{''+projectName+'-置业顾问详情'}}</busi-nav-header>
+        <sales-card bind:__l="__l" contactParam="{{user_id:user_id,project_id:project_id,project_name:project_name,project_img:project_img}}" item="{{item}}" salesId="{{sales_id}}" salesManName="{{salesManName}}" showContactBtns="{{showContactBtns}}" userId="{{user_id}}" vueId="53495dbd-2"></sales-card>
+    </view>
+    <entries bind:__l="__l" bind:likeSuccess="__e" class="vue-ref" data-event-opts="{{[ [ '^likeSuccess',[ ['likeSuccess'] ] ] ]}}" data-ref="entries" item="{{item}}" salesId="{{sales_id}}" vueId="53495dbd-3"></entries>
+    <view class="tip">房小团承诺：咨讯服务 不收取任何费用 欢迎咨询</view>
+    <projects bind:__l="__l" isSelf="{{isSelf}}" projects="{{item.projects}}" vueId="53495dbd-4"></projects>
+    <share bind:__l="__l" class="vue-ref" data-ref="share" isSelf="{{isSelf}}" sessionId="{{user_id}}" vueId="53495dbd-5"></share>
+    <busi-footer bind:__l="__l" vueId="53495dbd-6" vueSlots="{{['default']}}" wx:if="{{showContactBtns}}">
+        <view class="footer-wrap">
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['follow'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'53495dbd-7'+','+'53495dbd-6'}}" vueSlots="{{['default']}}">
+                <view class="{{[ 'footer__follow',[item.attention==1?'footer__follow-active':''] ]}}" data-content="底部按钮" data-name="关注楼盘" data-type="button">
+                    <text class="{{[ 'iconnew','footer__follow--icon',[item.attention==1?'new-yiguanzhu':'',item.attention!=1?'new-guanzhuxianxing':''] ]}}"></text>
+                    <text class="footer__follow--text">{{''+(item.attention==1?'已关注':'关注')+''}}</text>
+                </view>
+            </authorization>
+            <authorization bind:__l="__l" bind:onSuccess="__e" class="footer-btn" data-event-opts="{{[ [ '^onSuccess',[ ['contact'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'53495dbd-8'+','+'53495dbd-6'}}" vueSlots="{{['default']}}">
+                <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyHandle'] ] ] ]}}" dataContent="联系置业顾问" dataName="联系置业顾问" dataType="button" type="success" vueId="{{'53495dbd-9'+','+'53495dbd-8'}}" vueSlots="{{['default']}}">联系置业顾问</busi-button>
+            </authorization>
+            <view class="footer-btn">
+                <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneSuccess'] ] ] ]}}" vueId="{{'53495dbd-10'+','+'53495dbd-6'}}" vueSlots="{{['default']}}">
+                    <busi-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['emptyHandle'] ] ] ]}}" dataContent="免费电话咨询" dataName="免费电话咨询" dataType="button" type="primary" vueId="{{'53495dbd-11'+','+'53495dbd-10'}}" vueSlots="{{['default']}}">免费电话咨询</busi-button>
+                </base-call-phone>
+            </view>
+        </view>
+    </busi-footer>
+</view>

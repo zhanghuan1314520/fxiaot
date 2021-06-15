@@ -1,0 +1,7 @@
+<view class="_div">
+    <view class="projects__search">
+        <busi-search bind:__l="__l" inputValue="{{inputPlace}}" toUrl="{{settings.jumpUri}}" vueId="14fdbe5d-1" vueSlots="{{['default']}}">
+            <busi-search-swiper bind:__l="__l" list="{{[ {text:settings.tip||''} ]}}" style="flex:1;" vueId="{{'14fdbe5d-2'+','+'14fdbe5d-1'}}"></busi-search-swiper>
+        </busi-search>
+    </view>
+</view>

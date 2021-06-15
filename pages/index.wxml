@@ -1,0 +1,83 @@
+<share-timeline-layout bind:__l="__l" vueId="18efaafd-1" vueSlots="{{['default']}}">
+    <view class="{{[isNewYearTheme?'newYear-theme':'']}}" style="{{'--status-bar-h:'+statusBarHeight+'rpx'+';'}}">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" isTabbarPage="{{true}}" style="{{'--opacity-top:'+opacityTop+';'}}" vueId="{{'18efaafd-2'+','+'18efaafd-1'}}"></busi-nav-header>
+        <base-add-mini-app bind:__l="__l" bind:onAdd="__e" data-event-opts="{{[ [ '^onAdd',[ ['addMyProgramHandle'] ] ] ]}}" vueId="{{'18efaafd-3'+','+'18efaafd-1'}}"></base-add-mini-app>
+        <view wx:if="{{showedAddMyprogram}}">
+            <add-desktop bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showAddDesktop','$event'],[''] ] ] ] ]}}" show="{{showAddDesktop}}" vueId="{{'18efaafd-4'+','+'18efaafd-1'}}"></add-desktop>
+        </view>
+        <view class="home__search" style="{{'--opacity-top:'+opacityTop+';'+'top:'+marginTop+'rpx'+';'}}">
+            <busi-search analysis="{{dataName:'首页-搜索框'}}" bind:__l="__l" class="index-top-search" customUrl="/subPackages/project/pages/mapLookHouse" inputValue="{{inputPlace}}" toUrl="/subPackages/search/pages/index?from=home" vueId="{{'18efaafd-5'+','+'18efaafd-1'}}" vueSlots="{{['default','searchIcon']}}">
+                <view slot="searchIcon" style="display:flex;">
+                    <image class="nav-search__icon" src="{{isNewYearTheme?'https://imgcdn.huanjutang.com/file/2021/01/27/fb0dbae5c4886aca2839cd8b9efcb1b3.png':'https://imgcdn.huanjutang.com/image/2020/05/18/9bef8839ce3044147520cbc134096918.png'}}"></image>
+                </view>
+                <busi-search-swiper bind:__l="__l" config="{{hotSearchList.config}}" list="{{hotSearchList.list}}" style="flex:1;" vueId="{{'18efaafd-6'+','+'18efaafd-5'}}"></busi-search-swiper>
+            </busi-search>
+        </view>
+        <view class="page">
+            <view class="bannerModule">
+                <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{banners.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{banners.list}}" source="home" vueId="{{'18efaafd-7'+','+'18efaafd-1'}}"></base-banner>
+            </view>
+            <view class="activityModule" wx:if="{{activity}}">
+                <busi-activity bind:__l="__l" bind:close="__e" data-event-opts="{{[ [ '^close',[ ['closeHandle'] ] ] ]}}" dataApi="{{activity}}" vueId="{{'18efaafd-8'+','+'18efaafd-1'}}"></busi-activity>
+            </view>
+            <view class="grid-middle">
+                <busi-grid bind:__l="__l" dataApi="{{grids}}" topApi="{{top}}" vueId="{{'18efaafd-9'+','+'18efaafd-1'}}"></busi-grid>
+            </view>
+            <view class="news">
+                <busi-news bind:__l="__l" dataApi="{{listData}}" vueId="{{'18efaafd-10'+','+'18efaafd-1'}}"></busi-news>
+            </view>
+            <view class="cube" wx:if="{{cube.code&&cube.detail.length>0}}">
+                <busi-cube bind:__l="__l" dataApi="{{cube}}" vueId="{{'18efaafd-11'+','+'18efaafd-1'}}"></busi-cube>
+            </view>
+            <view class="project-hot-new" wx:if="{{hasShowHotRecommend}}">
+                <view class="select-title select-title--sb">
+                    <text class="fz-21 font-bold">热门推荐</text>
+                    <view bindtap="__e" data-content="热门推荐" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrlHandle',['/subPackages/project/pages/hotRecommend?type=hotRecommend&title=热门推荐','热门推荐-更多'] ] ] ] ]}}" data-name="更多热门推荐" data-type="link" id="hotRecommendMore" wx:if="{{recommendList.length>3}}">
+                        <text class="fz-12 gray-96">查看更多</text>
+                        <text class="iconnew new-tongyong-gengduo fz-10 gray-96"></text>
+                    </view>
+                </view>
+                <view class="hot_recommend__list">
+                    <project-item adSource="hotRecommend" adType="order" bind:__l="__l" content="index_hot_top" items="{{tabContentNew}}" sourcePosition="home" titleData="热门推荐" vueId="{{'18efaafd-12'+','+'18efaafd-1'}}"></project-item>
+                </view>
+                <home-project-item bind:__l="__l" content="index_hot_bottom" itemsData="{{tabContent}}" titleData="热门推荐" vueId="{{'18efaafd-13'+','+'18efaafd-1'}}" wx:if="{{tabContent.length>0}}"></home-project-item>
+            </view>
+            <view class="sales_man block-bottom-bg" wx:if="{{sales_man_data.length>0}}">
+                <navigator class="select-title sales-man-title" hoverClass="none" url="{{recommend_rule}}" wx:if="{{recommend_rule&&is_sales_man_id>0}}">
+                    <text class="fz-21 font-bold">优秀顾问推荐</text>
+                    <text class="iconnew new-wenhaocopy fz-18 gray-9-color"></text>
+                </navigator>
+                <view class="select-title sales-man-title" wx:else>
+                    <text class="fz-21 font-bold">优秀顾问推荐</text>
+                </view>
+                <view class="sales_man_cont">
+                    <mini-sales-card bind:__l="__l" list="{{sales_man_data}}" showIcon="{{false}}" style="width:100%;" vueId="{{'18efaafd-14'+','+'18efaafd-1'}}"></mini-sales-card>
+                </view>
+            </view>
+            <view class="recommendBanner" wx:if="{{recommendBanners.list.length>0}}">
+                <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{recommendBanners.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{recommendBanners.list}}" height="{{136}}" source="home" swiperDots="{{false}}" vueId="{{'18efaafd-15'+','+'18efaafd-1'}}"></base-banner>
+            </view>
+            <block wx:if="{{!isShowActivity}}">
+                <busi-share-icon bind:__l="__l" bottom="{{100}}" class="vue-ref" custom="{{true}}" data-ref="share" vueId="{{'18efaafd-16'+','+'18efaafd-1'}}" wx:if="{{enableShare}}"></busi-share-icon>
+            </block>
+            <view class="columnModule" wx:if="{{sectionsUpdate&&sections.length>0}}">
+                <busi-column bind:__l="__l" bind:updateDataApi="__e" class="vue-ref" data-event-opts="{{[ [ '^updateDataApi',[ [ '__set_sync',['$0','sections','$event'],[''] ] ] ],[ '^updateDataApi',[ [ '__set_sync',['$0','sections','$event'],[''] ] ] ] ]}}" data-ref="column" dataApi="{{sections}}" marginTop="{{marginTop}}" titleData="{{'首页-'+latestOpeningObj.titleStr}}" vueId="{{'18efaafd-17'+','+'18efaafd-1'}}"></busi-column>
+            </view>
+            <view catchtap="__e" catchtouchmove="ture" class="advertise-hide" data-event-opts="{{[ [ 'tap',[ [ 'closeHideHandle',['$event'] ] ] ] ]}}" wx:if="{{isShow}}">
+                <view class="adertise-wrap" style="{{'height:'+adWrapHeight+'px; top:'+marginTop-12+'rpx'}}">
+                    <view class="adertise-box">
+                        <view class="white-color">广告</view>
+                        <view catchtap="__e" class="advertise_close-button" data-event-opts="{{[ [ 'tap',[ [ 'closeHideHandle',['$event'] ] ] ] ]}}">{{'跳过 '+second+''}}</view>
+                        <view catchtap="__e" class="advertise" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{advertisingBanner.ad_code}}" data-custom-prop-ad_keyword="{{advertisingBanner.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{advertisingBanner.ad_nike_name}}" data-custom-prop-ad_number="{{advertisingBanner.ad_number}}" data-custom-prop-ad_source="home" data-custom-prop-ad_type="mask" data-event-opts="{{[ [ 'tap',[ [ 'goToUrlHandle',['$0'],['advertisingBanner.url'] ] ] ] ]}}">
+                            <image class="gray-bg" mode="widthFix" src="{{advertisingBanner.image}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <ad-float-window adFloatWindowImg="{{adFloatWindowImg}}" adFloatWindowUrl="{{adFloatWindowUrl}}" bind:__l="__l" bottom="{{AdFloatWindowBottom}}" class="skeletons-rect" vueId="{{'18efaafd-18'+','+'18efaafd-1'}}" wx:if="{{isAdOpen}}"></ad-float-window>
+        </view>
+        <view catchtouchmove="stopMove" class="guide" wx:if="{{guideImg.length>0}}">
+            <image catchtap="__e" class="backImg gray-bg" data-event-opts="{{[ [ 'tap',[ [ 'nextGuideImage',['$event'] ] ] ] ]}}" lazyLoad="true" mode="widthFix" src="{{guideImg[guideImgIndex]}}" style="{{'z-index:'+100-guideImgIndex+';'}}"></image>
+        </view>
+    </view>
+</share-timeline-layout>

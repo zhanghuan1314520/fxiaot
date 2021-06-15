@@ -1,0 +1,14 @@
+<view>
+    <view class="charge-content white-bg">
+        <block wx:for="{{money}}" wx:key="index">
+            <view bindtap="__e" class="{{[ 'charge-box fz-20 '+(item.toggle?'active':'normal') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeMoney',[index] ] ] ] ]}}" wx:if="{{item.value!='其他金额'}}">{{'￥'+item.value+''}}</view>
+            <view bindtap="__e" class="{{[ 'charge-box fz-16 '+(item.toggle?'active':'normal') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'showModel',['$event'] ] ] ] ]}}" wx:if="{{item.value=='其他金额'}}">{{''+item.value+''}}</view>
+        </block>
+        <view class="charge-tip">注：充值金额1元=1金币</view>
+    </view>
+    <white-space bind:__l="__l" color="#F7F7F7" vueId="0f9b782e-1"></white-space>
+    <view style="padding:48rpx 32rpx;">
+        <comfirm-btn bind:__l="__l" bind:confirm="__e" data-event-opts="{{[ [ '^confirm',[ ['submit'] ] ] ]}}" isAuthPhone="{{true}}" vueId="0f9b782e-2" vueSlots="{{['default']}}">立即充值</comfirm-btn>
+    </view>
+    <recharge-modal bind:__l="__l" bind:success="__e" class="vue-ref" data-event-opts="{{[ [ '^success',[ ['success'] ] ] ]}}" data-ref="rechargeModal" vueId="0f9b782e-3"></recharge-modal>
+</view>

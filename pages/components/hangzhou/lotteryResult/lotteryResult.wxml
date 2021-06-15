@@ -1,0 +1,74 @@
+<view>
+    <skeletons bind:__l="__l" vueId="39f2d33c-1" wx:if="{{loading}}"></skeletons>
+    <view class="page" wx:else>
+        <view class="provider">
+            <image class="provider__img _img" src="https://imgcdn.huanjutang.com/image/2020/06/03/d4c2845b2a63ba14dfd893483c1e9d61.png"></image>
+            <view class="provider__txt">{{''+appName+''}}</view>
+        </view>
+        <view class="container">
+            <block wx:if="{{item.status===1}}">
+                <view class="top-img">
+                    <image class="top-img__bg" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20212261043138081.png"></image>
+                    <text class="code-num" wx:if="{{item.code}}">{{''+item.code+''}}</text>
+                </view>
+                <view class="result__detail--conf">
+                    <view class="result__detail__main" style="{{'font-size:'+item.mainFSize+';'}}">{{''+item.type_item+''}}</view>
+                    <view class="result__detail__normal">{{''+item.percent+''}}<image class="result_detail__icon _img" src="https://imgcdn.huanjutang.com/assets/img/20200110/5e181b619e336.png"></image>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <block wx:if="{{item.status===0}}">
+                    <view class="top-img">
+                        <image class="top-img__bg" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20212261046238081.png"></image>
+                        <text class="code-num code-num--fail" wx:if="{{item.code}}">{{''+item.code+''}}</text>
+                    </view>
+                    <view class="result__detail--conf">
+                        <view class="result__detail__main result__detail__main--fail" style="{{'font-size:'+item.mainFSize+';'}}">{{''+item.type_item+''}}</view>
+                        <view class="result__detail__normal result__detail__normal--fail">{{''+item.percent+''}}</view>
+                    </view>
+                </block>
+            </block>
+            <block wx:if="{{item.status===-1}}">
+                <view class="left fz-16 iconnew new-icon-test split"></view>
+                <view class="title">
+                    <text class="gray-96 first fz-30">暂无摇号结果哦</text>
+                </view>
+                <view class="right fz-16 iconnew new-icon-test1 split"></view>
+            </block>
+        </view>
+        <view class="bottom-cont" wx:if="{{item.status!==undefined}}">
+            <navigator class="project-name" hoverClass="none" url="{{'/pages/lotteryDetail?id='+id+'&project_id='+item.project_id}}">
+                <image class="project-name__icon _img" src="https://imgcdn.huanjutang.com/assets/img/20200113/5e1c3ab5a84d2.png"></image>
+                <text class="name font-bold">{{''+(item.name||'')+''}}</text>
+                <image class="project-name__icon _img" src="https://imgcdn.huanjutang.com/assets/img/20200110/5e1834925c733.png"></image>
+            </navigator>
+            <view class="project-data">
+                <block wx:for="{{item.lottery_rate}}" wx:for-item="row" wx:key="index">
+                    <view class="line" wx:if="{{index===0}}">
+                        <view class="project__title" wx:for="{{row}}" wx:for-index="per_index" wx:for-item="per" wx:key="per_index">{{''+per+''}}</view>
+                    </view>
+                    <view class="line" wx:else>
+                        <view class="{{[ 'project__cont '+(row[0]==='摇中概率'?'project__cont--green':'') ]}}" wx:for="{{row}}" wx:for-index="per_index" wx:for-item="per" wx:key="per_index">{{''+per+''}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="last-cont">
+                <view class="qr-code">
+                    <image bindtap="__e" class="code-img" data-event-opts="{{[ [ 'tap',[ [ 'showCode',['$event'] ] ] ] ]}}" src="{{item.qr_code}}"></image>
+                    <view class="text fz-12 gray-96">微信扫码查看</view>
+                </view>
+                <view class="right">
+                    <view class="img-box">
+                        <view bindtap="__e" class="box-icon iconnew font-bold right__wrap--down" data-event-opts="{{[ [ 'tap',[ [ 'saveShareImage',['$event'] ] ] ] ]}}">
+                            <image class="right__img _img" src="https://imgcdn.huanjutang.com/assets/img/20200113/5e1c4c2024eff.png"></image>
+                        </view>
+                        <view class="text fz-12 gray-96">保存图片</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePhoto}}" showSetting="{{showPermissionsSetting}}" txt="保存图片" vueId="39f2d33c-2"></photo-permissions-settings>
+    </view>
+    <canvas canvasId="myCanvas" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden;position:fixed;left: 100%;top: 0;'}}"></canvas>
+</view>

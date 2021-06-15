@@ -1,0 +1,37 @@
+<view class="box-weekly">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" vueId="1c5457ce-1" vueSlots="{{['default']}}">顾问周报</busi-nav-header>
+    <image class="image-header" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20213241713488081.png"></image>
+    <view class="time" wx:if="{{detail.title}}">{{''+detail.title+''}}</view>
+    <view class="box-content">
+        <view class="user-info" wx:if="{{levelInfo&&levelInfo.name}}">
+            <view class="info">
+                <image class="avatar" src="{{levelInfo.avatar_url}}"></image>
+                <text class="nickname">{{''+levelInfo.name+''}}</text>
+            </view>
+            <view class="star">
+                <medals bind:__l="__l" medalItems="{{levelInfo.medals.medals}}" userId="{{userInfo.id}}" vueId="1c5457ce-2"></medals>
+            </view>
+        </view>
+        <view class="core" wx:if="{{core}}">
+            <image class="core-image" src="{{coreImageLogo}}"></image>
+            <view class="item" wx:for="{{core}}" wx:for-index="key" wx:for-item="value" wx:key="key">
+                <view class="detail">
+                    <text class="label">{{''+value.label+''}}</text>
+                    <text class="remark">{{''+value.remark+''}}</text>
+                </view>
+                <view class="value" wx:if="{{value.remark}}">{{''+value.value+''}}</view>
+            </view>
+        </view>
+        <view class="chat" wx:if="{{chat}}">
+            <image class="chat-image" src="{{chatImageLogo}}"></image>
+            <view class="item" wx:for="{{$root.l0}}" wx:for-index="key" wx:for-item="value" wx:key="key">
+                <view class="detail">
+                    <text class="label">{{''+value[$orig].label+''}}</text>
+                    <text class="remark" wx:if="{{value[$orig].remark}}">{{''+value[$orig].remark+''}}</text>
+                </view>
+                <view class="{{['value',value.g0?'w320':'']}}">{{''+value[$orig].value+''}}</view>
+            </view>
+        </view>
+        <view class="other"></view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="info-container" style="{{'margin-bottom:'+marginBottom+';'}}">
+    <view catchtap="__e" class="info-avatar" data-event-opts="{{[ [ 'tap',[ [ 'handleGoUserPage',[true] ] ] ] ]}}">
+        <image class="avatar" src="{{defaultAvatar}}"></image>
+        <image class="avatar-tag" src="{{tagImage}}" wx:if="{{tagImage}}"></image>
+    </view>
+    <view catchtap="__e" class="info-content" data-event-opts="{{[ [ 'tap',[ [ 'handleGoUserPage',[false] ] ] ] ]}}">
+        <view class="info-name">
+            <text class="info-name__text">{{''+formatName+''}}</text>
+            <text class="info-name__time2" wx:if="{{time}}">{{''+time+''}}</text>
+        </view>
+        <image class="info-level" src="{{levelMap[level]}}" wx:if="{{level}}"></image>
+    </view>
+    <slot></slot>
+</view>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "提问",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "share-template": "/components/shareTemplate"
+    }
+}

@@ -1,0 +1,9 @@
+<scroll-view bindrefresherrefresh="__e" bindrefresherrestore="__e" bindscrolltolower="__e" class="container" data-event-opts="{{[ [ 'refresherrefresh',[ [ 'onRefresh',['$event'] ] ] ],[ 'refresherrestore',[ [ 'onRestore',['$event'] ] ] ],[ 'scrolltolower',[ [ 'reachBottom',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" refresherEnabled="{{true}}" refresherTriggered="{{triggered}}" scrollY="{{true}}" style="{{'height:'+height+';'}}">
+    <slot name="top"></slot>
+    <slot name="cache"></slot>
+    <slot name="main"></slot>
+    <scoped-slots-main bind:__l="__l" list="{{list}}"></scoped-slots-main>
+    <no-data bind:__l="__l" image="{{noDataParams.image}}" isSelf="{{noDataParams.isSelf}}" pageUrl="{{noDataParams.pageUrl}}" text="{{noDataParams.text||'暂无数据'}}" vueId="2c135afb-1" wx:if="{{!loading&&!list.length}}"></no-data>
+    <bottom-line bind:__l="__l" show="{{!loading&&end&&list.length&&canScroll}}" vueId="2c135afb-2"></bottom-line>
+    <loading bind:__l="__l" loading="{{loading}}" vueId="2c135afb-3"></loading>
+</scroll-view>

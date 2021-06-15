@@ -1,0 +1,5 @@
+<view class="salesman-list">
+    <view class="salesman-list__container" wx:for="{{listData}}" wx:key="index">
+        <salesman-item andrees="{{andrees}}" bind:__l="__l" index="{{index}}" item="{{item}}" project_id="{{projectId}}" vueId="{{'531a18ab-1-'+index}}"></salesman-item>
+    </view>
+</view>

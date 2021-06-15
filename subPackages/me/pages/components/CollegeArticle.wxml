@@ -1,0 +1,12 @@
+<authorization bind:__l="__l" bind:onSuccess="__e" class="auth-college-article" data-event-opts="{{[ [ '^onSuccess',[ ['goDetail'] ] ] ]}}" isAuthPhone="{{true}}" vueId="011b53c0-1" vueSlots="{{['default']}}">
+    <view bindtap="__e" class="{{[ 'college-article',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyHandle',['$event'] ] ] ] ]}}" data-name="{{item.title}}" data-type="link">
+        <view class="left">
+            <view class="content skeletons-rect">{{''+item.title+''}}</view>
+            <view class="bottom">
+                <view class="view skeletons-rect">{{''+item.category.name+''}}</view>
+                <text class="text skeletons-rect">{{''+item.publish_date+''}}</text>
+            </view>
+        </view>
+        <image-loader bind:__l="__l" mode="widthFix" source="{{$root.f0}}" styles="{{$root.a0}}" vueId="{{'011b53c0-2'+','+'011b53c0-1'}}"></image-loader>
+    </view>
+</authorization>

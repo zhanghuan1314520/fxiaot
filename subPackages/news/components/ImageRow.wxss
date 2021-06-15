@@ -1,0 +1,36 @@
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.item-image {
+    width: 222rpx;
+    height: 222rpx;
+    border-radius: 8rpx;
+    margin-top: 16rpx;
+}
+
+.item-image.empty {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.image-mask {
+    width: 222rpx;
+    height: 222rpx;
+    border-radius: 8rpx;
+    margin-top: 16rpx;
+    background: linear-gradient(270deg,rgba(0,0,0,.6),rgba(0,0,0,.2));
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60rpx;
+    line-height: 72rpx;
+    color: hsla(0,0%,100%,.85);
+}

@@ -1,0 +1,227 @@
+page {
+    background-color: #fff;
+}
+
+.top {
+    background-image: url(https://imgcdn.huanjutang.com/file/2021/04/07/ed31297586c1119cfc7fb2aca18d89f7.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.user-info {
+    justify-content: space-between;
+    padding: 12rpx 32rpx 0;
+}
+
+.user-info,.user-info .info {
+    display: flex;
+}
+
+.user-info .info .avatar {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 50rpx;
+}
+
+.user-info .btn {
+    margin-top: 14rpx;
+    margin-right: -4rpx;
+    padding-left: 64rpx;
+    width: 230rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    box-sizing: border-box;
+    background-image: url(https://imgcdn.huanjutang.com/image/2021/01/12/1248fd2a82418d21e10896d2b8beafc3.png);
+    background-size: 230rpx 72rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.name-box {
+    margin-left: 20rpx;
+    margin-top: 6rpx;
+}
+
+.name-box .name {
+    height: 52rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+    line-height: 52rpx;
+}
+
+.name-box .current-point {
+    margin-top: 2rpx;
+    height: 32rpx;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 32rpx;
+}
+
+.name-box .current-point .num {
+    margin-left: 10rpx;
+}
+
+.name-box .today-point {
+    margin-top: 8rpx;
+    height: 32rpx;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 32rpx;
+}
+
+.name-box .today-point .num {
+    margin-left: 12rpx;
+    height: 40rpx;
+    font-size: 44rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffef7f;
+    line-height: 40rpx;
+}
+
+.tip {
+    margin: 24rpx 32rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: linear-gradient(270deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.12) 47%,hsla(0,0%,100%,0));
+}
+
+.tip .orange {
+    color: #ffef7f;
+}
+
+.current-activity {
+    position: relative;
+    margin-top: 30rpx;
+}
+
+.activity-info {
+    height: 86rpx;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.activity-info .label {
+    position: relative;
+    bottom: 28rpx;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 24rpx;
+}
+
+.activity-info .num {
+    position: relative;
+    bottom: 24rpx;
+    margin-left: 12rpx;
+    font-size: 44rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffe2aa;
+    line-height: 40rpx;
+}
+
+.activity-info .sub {
+    position: relative;
+    bottom: 28rpx;
+    font-size: 24rpx;
+    color: hsla(0,0%,100%,.5);
+    line-height: 24rpx;
+}
+
+.activity-info .iconnew {
+    position: relative;
+    bottom: 22rpx;
+    font-size: 32rpx;
+    color: hsla(0,0%,100%,.5);
+}
+
+.activity-link {
+    padding-top: 18rpx;
+    padding-bottom: 24rpx;
+    text-align: center;
+}
+
+.activity-link,.activity-link .text {
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 24rpx;
+}
+
+.activity-link .text.golden {
+    margin-left: 20rpx;
+    color: #ffe2aa;
+}
+
+.activity-link .iconnew {
+    margin-left: 4rpx;
+    font-size: 24rpx;
+    color: #ffe2aa;
+}
+
+.content {
+    padding: 0 32rpx;
+}
+
+.content .title {
+    padding: 40rpx 0 28rpx;
+    height: 28rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 28rpx;
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+}
+
+.content .detail {
+    position: relative;
+}
+
+.process {
+    margin-top: 32rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.process .label {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 24rpx;
+}
+
+.process .value-box {
+    position: relative;
+    width: 518rpx;
+    height: 28rpx;
+    background: #e8e8e8;
+    border-radius: 16rpx;
+}
+
+.process .value-box .value {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 34rpx;
+    height: 28rpx;
+    line-height: 16rpx;
+    text-align: center;
+    box-sizing: border-box;
+    background: linear-gradient(90deg,#427aff,#32b0ff);
+    border-radius: 16rpx;
+}
+
+.process .value-box .value .text {
+    left: 12rpx;
+    top: 0;
+    font-size: 22rpx;
+    font-weight: 500;
+    color: hsla(0,0%,100%,.8);
+    line-height: 28rpx;
+}

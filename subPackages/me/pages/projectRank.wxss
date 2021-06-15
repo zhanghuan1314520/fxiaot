@@ -1,0 +1,155 @@
+page {
+    background-color: #f2f2f2;
+}
+
+.top {
+    padding-bottom: 348rpx;
+    background-image: url(https://imgcdn.huanjutang.com/image/2021/02/24/bbf1bf931aedc0a7bd179c2c55703d71.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.tip {
+    margin: 20rpx 32rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: linear-gradient(270deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.12) 47%,hsla(0,0%,100%,0));
+}
+
+.project-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    margin-top: 8rpx;
+    padding: 0 32rpx;
+    line-height: 52rpx;
+    font-family: PingFangSC-Semibold,PingFang SC;
+    font-weight: 700;
+    color: #fff;
+    font-size: 48rpx;
+    text-align: center;
+}
+
+.main {
+    margin-top: -348rpx;
+}
+
+.current-rank {
+    padding: 20rpx 32rpx 8rpx;
+    line-height: 32rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.current-rank .main-text {
+    font-size: 28rpx;
+    color: hsla(0,0%,100%,.85);
+}
+
+.current-rank .main-text .num {
+    line-height: 40rpx;
+    font-size: 48rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffef7f;
+}
+
+.current-rank .sub-text {
+    font-size: 24rpx;
+    color: hsla(0,0%,100%,.5);
+    line-height: 28rpx;
+}
+
+.rank-list {
+    padding: 0 24rpx;
+}
+
+.rank-item {
+    position: relative;
+    margin-top: 20rpx;
+    padding: 32rpx 36rpx 36rpx 52rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 12rpx;
+}
+
+.rank-item.border {
+    border: 2rpx solid rgba(45,140,240,.8);
+}
+
+.rank-item .left {
+    display: flex;
+    align-items: center;
+}
+
+.rank-item .avatar {
+    margin-right: 28rpx;
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 56rpx;
+}
+
+.rank-item .name {
+    font-size: 36rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 36rpx;
+}
+
+.rank-item .right {
+    text-align: right;
+}
+
+.rank-item .right .desc {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 28rpx;
+}
+
+.rank-item .right .link {
+    padding-top: 12rpx;
+    font-size: 24rpx;
+    color: #2d8cf0;
+    line-height: 28rpx;
+}
+
+.rank-item .right .link .iconnew {
+    font-size: 24rpx;
+}
+
+.rank-item .level {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.rank-item .level .num {
+    position: relative;
+    width: 46rpx;
+    line-height: 44rpx;
+    font-size: 30rpx;
+    font-family: SFUIText-Medium,SFUIText;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+}
+
+.rank-item .level .level-icon {
+    position: absolute;
+    left: -8rpx;
+    top: -7rpx;
+    width: 74rpx;
+    height: 66rpx;
+    z-index: 1;
+}

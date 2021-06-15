@@ -1,0 +1,16 @@
+<view catchtouchmove="__e" class="popup" data-event-opts="{{[ [ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}" wx:if="{{!destroy}}">
+    <view bindtap="__e" class="{{['popup-mask',maskStyle,maskClass]}}" data-content="分享弹窗" data-event-opts="{{[ [ 'tap',[ [ 'handleMaskClick',['$event'] ] ] ] ]}}" data-name="关闭"></view>
+    <view class="{{['popup-content','bottom',contentClass]}}">
+        <view bindtap="__e" class="{{['popup-close','right']}}" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+            <slot name="close"></slot>
+        </view>
+        <view class="title" wx:if="{{title}}">{{''+title+''}}</view>
+        <view class="content" wx:if="{{content}}">{{''+content+''}}</view>
+        <view class="content-buttons">
+            <button bindtap="__e" class="popup-button" data-content="分享弹窗" data-event-opts="{{[ [ 'tap',[ [ 'handleButtonClick',['$0'],[ [ ['buttons','',index] ] ] ] ] ] ]}}" data-name="{{item.name}}" hoverClass="none" openType="{{item.type}}" wx:for="{{buttons}}" wx:key="index">
+                <image class="button-image" src="{{item.icon}}"></image>
+                <text class="button-text">{{''+item.name+''}}</text>
+            </button>
+        </view>
+    </view>
+</view>

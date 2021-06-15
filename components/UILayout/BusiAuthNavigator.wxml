@@ -1,0 +1,3 @@
+<authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['navigateTo'] ] ] ]}}" isAuthPhone="{{isAuthPhone}}" redirectURL="{{src}}" vueId="d73cc214-1" vueSlots="{{['default']}}">
+    <slot></slot>
+</authorization>

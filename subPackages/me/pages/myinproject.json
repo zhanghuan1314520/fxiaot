@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "我的楼盘",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "顾问周报",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "medals": "/pages/salesMan/components/Medals"
+    }
+}

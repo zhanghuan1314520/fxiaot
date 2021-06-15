@@ -1,0 +1,127 @@
+<view>
+    <view class="{{[ 'page '+(showActionSheet?'indexFixed':'') ]}}">
+        <view class="card-container white-color">
+            <view class="name fz-12">我的金币</view>
+            <view class="number">{{''+coins+''}}</view>
+            <view bindtap="__e" class="rule" data-event-opts="{{[ [ 'tap',[ [ 'toggleRulesHandle',['$event'] ] ] ] ]}}" data-toggle="open">
+                <text class="fz-12">竞价规则</text>
+                <text class="iconnew new-wenhaocopy fz-14"></text>
+            </view>
+            <view bindtap="__e" class="get-gold" data-event-opts="{{[ [ 'tap',[ [ 'gotoTransformGold',['$event'] ] ] ] ]}}">
+                <text class="fz-12">获取金币</text>
+                <text class="iconnew new-tongyong-gengduo fz-12"></text>
+            </view>
+        </view>
+        <view class="home-container">
+            <view class="common-title">
+                <text class="title fz-18 black-3a-color">我要上首页</text>
+            </view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['gotoHomeBidding'] ] ] ]}}" isAuthPhone="{{true}}" vueId="f87861c8-1" vueSlots="{{['default']}}">
+                <view class="auth-home-content list-items">
+                    <view class="top">
+                        <image class="cover" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/2019991432108081.png"></image>
+                        <view class="right-info">
+                            <view class="title fz-16">{{''+(indexList.result.name||'--')+''}}</view>
+                            <view class="time fz-12">
+                                <block wx:if="{{showJoinInp}}">距下一轮竞价：<text>{{time}}</text>
+                                </block>
+                                <block wx:else>今晚23:00结束</block>
+                            </view>
+                            <view class="bidding fz-12">
+                                <view class="max">当前最高：<text class="gold">{{''+(indexList.result.current_integral||0)+'金币'}}</text>
+                                </view>
+                                <view class="bidding-btn default" wx:if="{{!showJoinInp}}">立即出价</view>
+                                <view class="bidding-btn disable" wx:if="{{showJoinInp&&settlementing}}">结算中...</view>
+                                <block wx:if="{{showJoinInp&&settlementEnd}}">
+                                    <block wx:if="{{indexList.result.joined}}">
+                                        <view class="bidding-btn success" wx:if="{{indexList.result.is_winner}}">竞价成功</view>
+                                        <view class="bidding-btn default" wx:if="{{!indexList.result.is_winner}}">竞价失败</view>
+                                    </block>
+                                    <view class="bidding-btn disable" wx:if="{{!indexList.result.joined}}">竞价结束</view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="{{[ 'bottom '+(indexList.result.is_winner?'success':'fail') ]}}" wx:if="{{indexList.result.joined&&settlementEnd}}">
+                        <text class="iconnew new-shuoming fz-14"></text>
+                        <text class="fz-11">{{''+(indexList.result.is_winner?'恭喜您，竞价成功，即将登上推荐':'很遗憾，竞价失败，明日再来一次')+''}}</text>
+                    </view>
+                </view>
+            </authorization>
+        </view>
+        <view class="project-container">
+            <view class="common-title">
+                <text class="title fz-18 black-3a-color">我要上楼盘</text>
+            </view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'gotoBiddingPage',['$0'],[ [ ['projectList.result','',index] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'f87861c8-2-'+index}}" vueSlots="{{['default']}}" wx:for="{{projectList.result}}" wx:key="index">
+                <view class="{{[ 'project-content list-items',[item.skeleton?'skeletons':''] ]}}">
+                    <view class="top">
+                        <image class="cover skeletons-rect" mode="aspectFill" src="{{item.cover}}"></image>
+                        <view class="main-tag" wx:if="{{item.is_default}}">主营</view>
+                        <view class="right-info">
+                            <view class="title fz-16 skeletons-rect">{{''+item.name+''}}</view>
+                            <view class="time fz-12 skeletons-rect">
+                                <block wx:if="{{showJoinInp}}">距下一轮竞价：<text>{{time}}</text>
+                                </block>
+                                <block wx:else>今晚23:00结束</block>
+                            </view>
+                            <view class="bidding fz-12 skeletons-rect">
+                                <view class="max">当前最高：<text class="gold">{{''+item.current_integral+'金币'}}</text>
+                                </view>
+                                <view class="bidding-btn default" wx:if="{{!showJoinInp}}">立即出价</view>
+                                <view class="bidding-btn disable" wx:if="{{showJoinInp&&settlementing}}">结算中...</view>
+                                <block wx:if="{{showJoinInp&&settlementEnd}}">
+                                    <block wx:if="{{item.joined}}">
+                                        <view class="bidding-btn success" wx:if="{{item.is_winner}}">竞价成功</view>
+                                        <view class="bidding-btn default" wx:if="{{!item.is_winner}}">竞价失败</view>
+                                    </block>
+                                    <view class="bidding-btn disable" wx:if="{{!item.joined}}">竞价结束</view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="{{[ 'bottom '+(item.is_winner?'success':'fail') ]}}" wx:if="{{item.joined&&settlementEnd}}">
+                        <text class="iconnew new-shuoming fz-14"></text>
+                        <text class="fz-11">{{''+(item.is_winner?'恭喜您，竞价成功，即将登上推荐':'很遗憾，竞价失败，明日再来一次')+''}}</text>
+                    </view>
+                </view>
+            </authorization>
+        </view>
+        <view class="why-container">
+            <view class="common-title">
+                <text class="title fz-18 black-3a-color">为什么要上推荐位</text>
+            </view>
+            <view class="why-content">
+                <view class="icons-group">
+                    <view class="item">
+                        <image class="icon" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAAAjVBMVEUAAABFRUVFRUVERERHR0dZl9ZERERPT09ERERISEhERERFRUVFRUVFRUVFRUVFRUVFRUVGRkYujfJJSUlERERGRkZEREQtjfBERERERERERERERERFRUUujPBFRUVERERGRkZFRUVGRkZHR0dJSUkyjvNJSUlMTExKSkpFRUVFRUVFRUVEREREREQtjPBJOubEAAAALXRSTlMAhbLwSAP6CuAg2sj15qVpWlJOFNND9N3BurCXi4p9cGI7Mi4qKBwbD8yem3sshm8KAAAA8UlEQVQ4y+2S2RKCMAxFg1BbQBH3fd8X+P/P81JkHA0UHnxSzwNkwpkSciGOWHieJakCp1EE/G65eexFGs8tM3cK2riGS3NrNtc2pECIK25232S261BmBCwU9bDYbCXmktWM7CT2Bo646PnY3NyU6VfzbbAwuj7aPTdnx+e3MFxPJ8STY2FsmmhNZM5Yk2SszbPRH6AxFbkfO8WjgfOylgUVcEtW2H7M2UC9okJWOKnhprmgcsiAg7NaWUg1MoKVWz+l7ufzfUV1GMfDaqqIgfirX6dSB3ziJ/QdI36mhlEFQq1KVW4qSZpDoGwjKjhAuwPmtj7Kid2LgAAAAABJRU5ErkJggg=="></image>
+                        <text>优先展示</text>
+                    </view>
+                    <view class="item">
+                        <image class="icon" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAAAmVBMVEUAAABERERHR0dFRUVcl9RTU1NERERERERFRUVERERERERERERERERERERFRUVJSUlFRUVERERERERGRkZERERERERFRUVGRkZFRUVGRkZHR0dKSkpMTExJSUlERERERERFRUVGRkYujvJHR0dFRUVERERFRUVERERFRUVFRUUujfFEREQujfNAlf9GRkZERERKSkpEREQtjPBmsaZ0AAAAMXRSTlMA8EiFAwfitGXn3M+9sYkb/femHvvEXUQ+LikWDwvTyX5STTfzoZFxbUrEmVMMV1YNBLup1wAAAX5JREFUOMvNlNl2gjAURXEAAREF5xnqbLXt9v8/rnTVpGQAX3ue4LDJzR0SR5M7jaNN4HWjuOk6dXLPAVKNbF1N9rso8uZV5NCj0Dj289xvjUc/C88qom+BzkL+eACCpRU9A3HZ8AeQ2sh2ANu2YrVgsLCgO2CubSmAluLIJbq6dxSeqjHEupfDyNKJED6N8gF9E93DVPfWgCUvYGdURZiqEmjq3tK+aggn3Zva00qhp3uZvViTYoWlGeloQVcJZKrVlFmZrUmGSl9DEV9XP4FxefDfgYtj1QmIXIUUidrGgIl4uQDhqoLME0rNnQH7ivjnAUoXMmDg28gYSD6USo+wjbabWg7odA8cXK3+EeA9J+N+u91/n+YeECm5DTdAVwzx9fG4lj9sxAf585cY0kehthJuLsvSEFtSUTOJZSATNdFC8d8t48vymai8ZXxxAXScOtTpFFEF2vtXqPNWyKlBTdnRbbNWW4FOeCV5ONYhLxWun0c19Rq18tJ+gX0DEXFNVvjcfRUAAAAASUVORK5CYII="></image>
+                        <text>精准客户</text>
+                    </view>
+                    <view class="item">
+                        <image class="icon" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAAAq1BMVEUAAABFRUVFRUUujfAvjvFERERJSUlFRUVJSUlERERFRUVERERkZGRERERERERFRUVISEhSUlJERERFRUVFRUVFRUVFRUVHR0dFRUVEREQujfFERERERERFRUVERERFRUVFRUVFRUVGRkZHR0dGRkZERERERERFRUVFRUVERERFRUVFRUVHR0dOaohERERERERFRUUujfAujfFEREQujPFFRUVHR0dEREQtjPCBvUXIAAAAN3RSTlMAqZysbPgQ5RbzvqIE7d5zHQnTypBnYT876NTPsJd5WlVMMy8Lw7WCa0dFKSYG8NjXm4+HWYZTOpD+YwAAAW5JREFUOMul09lSwkAQheGDCgkkQhIIO8oui6As2r7/k9npghrC9KCl3xVUegj5Z4I/KKVBQRGkJVzxE3LoXc/2yamAnBYRVe4UFb7Qzo32iLyp+ggdojouNHltE6qULz2br1OPqAddmPANY5y98MoWHJZ88QknUZGoD6c5Udk/fQ6Iiq9wWvMv3UGMiagBtjk+XDluwAY8MJHRGdGj7Mjuy7KTndxydLAhr1kg07VHu8jUeGQExFWit/DW6HnmtELs7y17wNw5kf/xk1m2R56UuE0ieAjMZrgt5Cz6njkPLqMi94yASZmo2MIN42yiLechW7OGU9Qhok9zWqu+8/1858u1y0NYn0IVz+SInEmGeQhNgfInNMzetgEUh+yGce4PJXreVHmMSPKqQa1Tb/JaQS0ryWsFHcJi8tpBDT3vpiJBbXbeQILa7LwfVlBh5dWD6nmXSlA9rxZUz7tVg+p57aC6GrEDfqXdaKzwL9/jb1MiSpuV/AAAAABJRU5ErkJggg=="></image>
+                        <text>更多曝光</text>
+                    </view>
+                    <view class="item">
+                        <image class="icon" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAAAwFBMVEUAAABERERERERERERERERVVVVFRUVudX1ERERERERGRkZFRUVJSUlNTU1ERERFRUVERERHR0dFRUVFRUVFRUVFRUVFRUVFRUVFRUUujfFFRUVGRkZFRUVFRUVHR0dNTU1ERERERERFRUVGRkZERERFRUUtjfEtjPFFRUVERERFRUVFRUUvjvFFRUUxkfNGRkZGRkYujPEtjPFFRUVEREREREQtjfAujPFFRUVFRUUxkPZOTk5FRUUvjvBEREQtjPCh5bWbAAAAPnRSTlMAZdrW/AfUA/j0RTgYEt+afCns583IjYFwbGxbV1MwDbSuTjLAu7SpopWGYVxBKSEd6dzFt6WdlZR4HAujVm+dWXQAAAHdSURBVDjLpZTndoJAFIQXBZFiRcXeYxKN6UaNyfX93yqzRSBHWM3J/NBRvsPO3h1g/9Os169dBXp5ghpXwG2ThIq9S6RLUL3O2eEFtEkUuIwNHKKJnvSJqC9yEDm2fk9AR9zUYJ616BCEfzIlLWoViZbc3GFeGk4hDhI8Y2RVPflUx6iwnRLuXj4P4A+tkx0VEHHAXRdmbke5ZmIDFSy5k8dojyla9x62Im2t4gjfJaGxi/9aMBsmZd/gRxtmCsPVZTlSKhgGPptRmBKumIOuvM6jszKWDANSKvssUq1OSkG1ytEJ0R2zVg3icn5VxJUla/Zs9sUr0eY8tJ6YWC/m1BjMjcddmeeeRYf9ZHhnlTR8eQnQjNkYxMUW92TP3sXM9KpgmvjaE+UvoZjYXlUUp/2w3XZsTeE91TvsvHM8HjsZaB9nYHEzJ2ox9gj0NQNFH+bChLLFL2A/01H0LTw9zybafAv0IZUsIaor3MGEk2E/UtEp7nWInv2lLmwLPYjtmy5sA/uOFyha2WFHCDhNxF5nh3XFGcXDqMqwixR0SVRIjviGIcFi8Z2CvhHtkgfn2LoXTv+sDqlaq9dYXLIgp5SPVeAKiHIsVkhahck87zpybLGkvJWRoZXH/qwf4EpmYQ0OYG8AAAAASUVORK5CYII="></image>
+                        <text>平台认可</text>
+                    </view>
+                </view>
+                <view class="desc fz-12 gray-9-color">{{''+(indexList.text||'')+''}}</view>
+            </view>
+        </view>
+    </view>
+    <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','commentShow','$event'],[''] ] ] ] ]}}" data-ref="Dialog" visible="{{commentShow}}" vueId="f87861c8-3" vueSlots="{{['default']}}">
+        <scroll-view class="comment-box" scrollY="{{true}}">
+            <view class="fz-14" wx:for="{{auctionRules.rules}}" wx:key="index">
+                <view class="line">
+                    <text>{{item}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </dialog>
+    <action-sheet bind:__l="__l" bind:actionSheetSelected="__e" bind:updateItemList="__e" bind:updateShowTemp="__e" data-event-opts="{{[ [ '^updateShowTemp',[ [ '__set_sync',['$0','showActionSheet','$event'],[''] ] ] ],[ '^updateShowTemp',[ [ '__set_sync',['$0','showActionSheet','$event'],[''] ] ] ],[ '^updateItemList',[ [ '__set_sync',['$0','itemList','$event'],[''] ] ] ],[ '^updateItemList',[ [ '__set_sync',['$0','itemList','$event'],[''] ] ] ],[ '^actionSheetSelected',[ ['actionSheetSelected'] ] ] ]}}" itemList="{{itemList}}" showTemp="{{showActionSheet}}" title="请选择您要上【首页推荐位】的楼盘" vueId="f87861c8-4"></action-sheet>
+</view>

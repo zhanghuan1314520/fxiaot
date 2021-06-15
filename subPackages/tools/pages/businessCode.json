@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "show-code": "/subPackages/tools/pages/component/showCode"
+    }
+}

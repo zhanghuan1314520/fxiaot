@@ -1,0 +1,160 @@
+<view>
+    <view class="page" wx:if="{{page=='home'}}">
+        <view class="banner">
+            <image src="{{banner}}"></image>
+            <view bindtap="__e" class="rule" data-event-opts="{{[ [ 'tap',[ [ 'showDialog',['showActivityRule'] ] ] ] ]}}">活动规则</view>
+        </view>
+        <view class="vote-counter">
+            <view class="vote-line">
+                <view class="vote-num">{{''+top_data.total_participant+''}}</view>
+                <view class="vote-num-text">参与数</view>
+            </view>
+            <view class="vote-line">
+                <view class="vote-num">{{''+top_data.total_vote+''}}</view>
+                <view class="vote-num-text">总投票数</view>
+            </view>
+            <view class="vote-line">
+                <view class="vote-num">{{''+top_data.total_page_view+''}}</view>
+                <view class="vote-num-text">总访问数</view>
+            </view>
+        </view>
+        <view class="end-time">
+            <image src="https://imgcdn.huanjutang.com/assets/img/201911221529568081.png"></image>
+            <view wx:if="{{day==0&&hour==0&&minutes==0&&second==0}}">活动结束已结束</view>
+            <block wx:else>距离活动结束还有<text class="red-color">{{''+day+''}}</text>天<text class="red-color">{{''+hour+''}}</text>时<text class="red-color">{{''+minutes+''}}</text>分<text class="red-color">{{''+second+''}}</text>秒</block>
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191122153018081.png"></image>
+        </view>
+        <view class="line"></view>
+        <view class="search">
+            <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'sure',['$event'] ] ] ] ]}}" reportSubmit="true">
+                <text class="iconnew fz-16 new-sousuoxianxing"></text>
+                <input bindconfirm="__e" bindinput="__e" class="search-inp" data-event-opts="{{[ [ 'confirm',[ [ 'sure',['$event'] ] ] ],[ 'input',[ [ 'oInpChange',['$event'] ] ] ] ]}}" placeholder="输入编号或者楼盘名字" placeholderClass="placeholder" type="text" value="{{keywords}}"></input>
+                <view bindtap="__e" class="clearInp iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{keywords}}"></view>
+            </form>
+        </view>
+        <view class="scroll-box" wx:if="{{!tempCurrentTab}}">
+            <scroll-view bindscroll="scroll" bindscrolltolower="scrollRight" bindscrolltoupper="scrollLeft" scrollIntoView="{{toView}}" scrollX="true" style="{{'width:'+width+'px;display: initial;'}}">
+                <view id="home-left"></view>
+                <view class="tab-one">
+                    <view bindtap="__e" class="{{[ 'tabs-item '+(currentTab.id==item.id?'current-tab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceType',['$0'],[ [ ['tabsOne','',index] ] ] ] ] ] ]}}" wx:for="{{tabsOne}}" wx:key="index">{{''+item.title+''}}</view>
+                </view>
+                <view class="tab-two">
+                    <view bindtap="__e" class="{{[ 'tabs-item '+(currentTab.id==item.id?'current-tab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceType',['$0'],[ [ ['tabsTwo','',index] ] ] ] ] ] ]}}" wx:for="{{tabsTwo}}" wx:key="index">{{''+item.title+''}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="tabs-index" wx:if="{{!tempCurrentTab}}">
+            <view class="{{[ 'tab-index '+(currentIndex==index?'active':'') ]}}" wx:for="{{tabs}}" wx:key="index"></view>
+        </view>
+        <view class="activity-content">
+            <view class="title">
+                <view class="flex1">快为你看好的楼盘投票吧<image src="https://imgcdn.huanjutang.com/assets/img/201911221555238081.png"></image>
+                </view>
+            </view>
+            <view class="activity-content-box">
+                <view class="empty"></view>
+                <block wx:if="{{projects.length>0}}">
+                    <view bindtap="__e" class="lottery-item-box" data-event-opts="{{[ [ 'tap',[ [ 'goDetailPage',['$0'],[ [ ['projects','',index] ] ] ] ] ] ]}}" wx:for="{{projects}}" wx:key="index">
+                        <view class="lottery-number">
+                            <view class="number">{{''+item.number+''}}</view>
+                            <view class="number-text">号</view>
+                        </view>
+                        <view class="lottery-item">
+                            <image class="gray-bg" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                            <view class="project-name">{{''+item.name+''}}</view>
+                            <view class="vote-count">{{''+item.total_vote+'票'}}</view>
+                            <button catchtap="__e" class="{{[ 'want-vote '+(item.vote_status==1?'':'disabled') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'vote',[index] ] ] ] ]}}" formType="submit">{{''+(item.vote_status==1?'我要投票':'明日再来')+''}}</button>
+                        </view>
+                    </view>
+                </block>
+                <view class="empty-data" wx:else>
+                    <view>{{'未在该榜单下搜索到“'+keywords+'”'}}</view>
+                    <view>切换其他榜单搜搜看</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page-rank" wx:if="{{page=='rank'}}">
+        <view class="types">
+            <view class="scroll-box">
+                <scroll-view bindscroll="scroll" bindscrolltolower="scrollRight" bindscrolltoupper="scrollLeft" scrollIntoView="{{toView}}" scrollX="true" style="{{'width:'+width+'px;display: initial;'}}">
+                    <view id="rank-left"></view>
+                    <view class="tab-one">
+                        <view bindtap="__e" class="{{[ 'tabs-item '+(currentTab.title=='年度之星总榜'?'current-tab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceTotalType',['年度之星总榜'] ] ] ] ]}}">年度之星总榜</view>
+                        <view bindtap="__e" class="{{[ 'tabs-item '+(currentTab.title==item.title?'current-tab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceType',['$0'],[ [ ['tabsOne','',index] ] ] ] ] ] ]}}" wx:if="{{index<tabsOne.length-1}}" wx:for="{{tabsOne}}" wx:key="index">{{''+item.title+''}}</view>
+                    </view>
+                    <view class="tab-two">
+                        <view bindtap="__e" class="{{[ 'tabs-item '+(currentTab.title==tabsOne[tabsOne.length-1].title?'current-tab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceType',['$0'],['tabsOne.'+tabsOne.length-1+''] ] ] ] ]}}">{{''+tabsOne[tabsOne.length-1].title+''}}</view>
+                        <view bindtap="__e" class="{{[ 'tabs-item '+(currentTab.id==item.id?'current-tab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceType',['$0'],[ [ ['tabsTwo','',index] ] ] ] ] ] ]}}" wx:for="{{tabsTwo}}" wx:key="index">{{''+item.title+''}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="tabs-index">
+                <view class="{{[ 'tab-index '+(currentIndex==index?'active':'') ]}}" wx:for="{{tabs}}" wx:key="index"></view>
+            </view>
+        </view>
+        <view class="ranks">
+            <view bindtap="__e" class="rank-item" data-event-opts="{{[ [ 'tap',[ [ 'goDetailPage',['$0'],[ [ ['rankDatas','',index] ] ] ] ] ] ]}}" wx:for="{{rankDatas}}" wx:key="index">
+                <view class="index">
+                    <image src="https://imgcdn.huanjutang.com/assets/img/201911251728458081.png" wx:if="{{index==0}}"></image>
+                    <image src="https://imgcdn.huanjutang.com/assets/img/201911251728498081.png" wx:if="{{index==1}}"></image>
+                    <image src="https://imgcdn.huanjutang.com/assets/img/201911251728528081.png" wx:if="{{index==2}}"></image>
+                    <block wx:if="{{index>2}}">{{''+index+1+''}}</block>
+                </view>
+                <view class="cover">
+                    <image class="gray-bg" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                </view>
+                <view class="info">
+                    <text class="lottery-name">{{''+item.name+''}}</text>
+                    <view class="votes">{{''+item.total_vote+'票'}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <view bindtap="__e" class="{{[ 'btn '+(page=='home'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changePage',['home'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/201911251731118081.png"></image>活动首页</view>
+        <view bindtap="__e" class="{{[ 'btn '+(page=='rank'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changePage',['rank'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/201911251731168081.png"></image>投票排行</view>
+    </view>
+    <view bindtap="__e" catchtouchmove="preventTouchMove" class="dialog" data-event-opts="{{[ [ 'tap',[ [ 'closeMark',['showRankRule'] ] ] ] ]}}" data-id="dialog" wx:if="{{showRankRule}}">
+        <view class="dialog-content">
+            <view class="dialog-title">规则说明</view>
+            <view class="dialog-content-text b">奖项：</view>
+            <view class="dialog-content-text ">第一名：首页开屏广告10天，首页banner15天，找房banner轮播10天，摇号管家公众号推文一篇（价值200000元）</view>
+            <view class="dialog-content-text">第二名：首页开屏广告7天，首页banner10天，找房banner轮播10天，摇号管家公众号 推文一篇（价值150000元）</view>
+            <view class="dialog-content-text">第三名：首页banner10天，找房banner轮播10天（价值90000元）</view>
+            <view class="dialog-content-text b">奖励说明：</view>
+            <view class="dialog-content-text">*总投票排行榜前三可获得奖励</view>
+            <view class="dialog-content-text">*奖励有效期截至2020年05月01日之前</view>
+            <view class="dialog-content-text">*请活动结束后联系平台</view>
+        </view>
+        <view bindtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['showRankRule'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191126157188081.png"></image>
+        </view>
+    </view>
+    <view bindtap="__e" catchtouchmove="preventTouchMove" class="dialog" data-event-opts="{{[ [ 'tap',[ [ 'closeMark',['showActivityRule'] ] ] ] ]}}" data-id="dialog" wx:if="{{showActivityRule}}">
+        <view class="dialog-content size">
+            <view class="dialog-title">活动规则</view>
+            <view class="dialog-content-text">{{'1.“2019房地产年度之星”万人评选活动由'+projectName+'官方举办。'}}</view>
+            <view class="dialog-content-text">2.本次评选活动采用投票形式进行评选；公平、公正、公开。</view>
+            <view class="dialog-content-text">3.每人每天可投票5次，可投同一参与者，也可投不同参与者。</view>
+            <view class="dialog-content-text">4.活动进行中也可参与，参与活动请联系官方客服。</view>
+            <view class="dialog-content-text">5.每个类别投票数最多的将获得荣耀牌匾，后续将由我们官方工作人员发出。</view>
+        </view>
+        <view bindtap="__e" class="close-btn top-812" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['showActivityRule'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191126157188081.png"></image>
+        </view>
+    </view>
+    <view class="vote-dialog" hidden="{{!voteSuccess}}">
+        <view class="dialog-content _div">
+            <view class="dialog-text">投票成功！</view>
+            <view class="dialog-text2" wx:if="{{RemainNum>0}}">{{'今日你还有'+RemainNum+'次投票机会'}}</view>
+            <view class="dialog-text2" wx:else>今日投票次数已用完,请明日再来</view>
+        </view>
+        <view bindtap="__e" class="close-btn top-812" data-event-opts="{{[ [ 'tap',[ [ 'hideDialog',['$event'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20191126157188081.png"></image>
+        </view>
+    </view>
+    <back-to-top-button bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showScrollTop','$event'],[''] ] ] ] ]}}" show="{{showScrollTop}}" vueId="a69ab1c4-1"></back-to-top-button>
+</view>

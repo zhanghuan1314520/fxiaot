@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "article-style": "/components/articleStyle",
+        "base-search-comp": "/components/BaseSearchComp",
+        "hot-article-item": "/pages/consult/components/HotArticleItem",
+        "dern-item": "/pages/consult/components/DernItem"
+    }
+}

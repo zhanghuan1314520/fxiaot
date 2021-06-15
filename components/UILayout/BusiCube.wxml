@@ -1,0 +1,13 @@
+<view class="cubes" wx:if="{{listData.detail.length}}">
+    <view class="three">
+        <view class="three__item skeletons-rect">
+            <image bindtap="__e" class="cube__icon _img" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['listData.detail.__$n0'] ] ] ] ]}}" data-name="{{listData.detail[0].data_name}}" data-type="link" src="{{listData.detail[0].img_url}}"></image>
+        </view>
+        <view class="three__item skeletons-rect">
+            <image bindtap="__e" class="cube__icon _img" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['listData.detail.__$n1'] ] ] ] ]}}" data-name="{{listData.detail[1].data_name}}" data-type="link" src="{{listData.detail[1].img_url}}"></image>
+        </view>
+        <view class="three__item skeletons-rect">
+            <image bindtap="__e" class="cube__icon _img" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['listData.detail.__$n2'] ] ] ] ]}}" data-name="{{listData.detail[2].data_name}}" data-type="link" src="{{listData.detail[2].img_url}}"></image>
+        </view>
+    </view>
+</view>

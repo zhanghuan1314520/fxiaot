@@ -1,0 +1,27 @@
+<view>
+    <search-bar bind:__l="__l" bind:sharePage="__e" bind:updateButtonType="__e" bind:updateInputPlace="__e" bind:updateInputVal="__e" bind:updateNoSearch="__e" buttonType="{{buttonType}}" data-event-opts="{{[ [ '^updateButtonType',[ [ '__set_sync',['$0','buttonType','$event'],[''] ] ] ],[ '^updateButtonType',[ [ '__set_sync',['$0','buttonType','$event'],[''] ] ] ],[ '^updateNoSearch',[ [ '__set_sync',['$0','noSearch','$event'],[''] ] ] ],[ '^updateNoSearch',[ [ '__set_sync',['$0','noSearch','$event'],[''] ] ] ],[ '^updateInputPlace',[ [ '__set_sync',['$0','inputPlace','$event'],[''] ] ] ],[ '^updateInputPlace',[ [ '__set_sync',['$0','inputPlace','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^sharePage',[ ['sharePage'] ] ] ]}}" inputPlace="{{inputPlace}}" inputVal="{{inputVal}}" noSearch="{{noSearch}}" vueId="0124c32c-1"></search-bar>
+    <view class="empty_block"></view>
+    <view class="page">
+        <swiper autoplay="true" class="banner" duration="300" indicatorDots="{{false}}" interval="4000" wx:if="{{banners&&banners.length>0}}">
+            <swiper-item class="item" wx:for="{{banners}}" wx:key="index">
+                <view class="white-color advert">广告</view>
+                <navigator bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'bannerAdClickHandle',['$0',index],[ [ ['banners','',index] ] ] ] ] ] ]}}" hoverClass="weui-cell_active" url="{{item.url}}">
+                    <image class="slide-image gray-bg" layzLoad="{{true}}" mode="widthFix" src="{{item.image}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+        <view class="project-nav-position">
+            <view class="project-nav-blank"></view>
+            <view class="{{[ 'project-nav '+(bannerFixedFlag?'project-nav-fixed':'')+' '+(showSelect?'fixed-top':'') ]}}">
+                <filters-comp bind:__l="__l" bind:clickHook="__e" bind:filterOutput="__e" bind:hideHook="__e" data-event-opts="{{[ [ '^filterOutput',[ ['submitHandle'] ] ],[ '^clickHook',[ ['filterClick'] ] ],[ '^hideHook',[ ['filterHideClick'] ] ] ]}}" limitItem="priceSort" multiple="area" vueId="0124c32c-2"></filters-comp>
+            </view>
+        </view>
+        <view class="projects">
+            <project-items bind:__l="__l" bind:updateItems="__e" content="home_all_project" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projects','$event'],[''] ] ] ] ]}}" items="{{projects}}" sourcePosition="全部楼盘列表" titleData="全部楼盘" vueId="0124c32c-3" wx:if="{{projects.length>0}}"></project-items>
+            <view class="not_id_card" wx:if="{{!more&&projects.length<1}}">
+                <image mode="aspectFit" src="https://imgcdn.huanjutang.com/assets/img/20205191017118081.png" style="height:140rpx;display:block;margin:0 auto;"></image>
+                <text class="small-level-color" style="margin-top:30px;font-size:14px;">小主人~还没有楼盘信息</text>
+            </view>
+        </view>
+    </view>
+</view>

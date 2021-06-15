@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "评论",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

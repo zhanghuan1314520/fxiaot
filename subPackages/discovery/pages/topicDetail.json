@@ -1,0 +1,12 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "hot": "/subPackages/discovery/component/Hot",
+        "new": "/subPackages/discovery/component/New",
+        "tab": "/subPackages/discovery/component/Tab",
+        "comment": "/subPackages/discovery/component/Comment",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "comment-input": "/subPackages/discovery/component/CommentInput"
+    }
+}

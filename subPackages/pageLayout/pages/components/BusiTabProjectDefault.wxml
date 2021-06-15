@@ -1,0 +1,34 @@
+<base-layout bind:__l="__l" customerPadding="{{left:'0rpx',right:'0rpx'}}" margin="{{margin}}" padding="{{padding}}" vueId="44b74eaa-1" vueSlots="{{['default']}}">
+    <view class="tabProject">
+        <view class="tab__nav-box" style="{{'background-color:'+settings.tab_bg+';'}}">
+            <scroll-view class="tab__nav" scrollIntoView="{{'tab_'+activeIndex}}" scrollX="true" wx:if="{{settings.tabs.length>4}}">
+                <view bindtap="__e" class="{{[ 'tab__nav__item '+(index==activeIndex?'tab__nav__item--active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleCheck',[index] ] ] ] ]}}" id="{{'tab_'+index}}" style="{{'color:'+(index==activeIndex?settings.tab_sel_color:settings.tab_normal_color)+';'}}" wx:for="{{settings.tabs}}" wx:key="index">{{''+item.tab_name+''}}<view class="tab__nav__item--active-block" style="{{'background-color:'+settings.tab_sel_color+';'}}" wx:if="{{index==activeIndex}}"></view>
+                </view>
+            </scroll-view>
+            <view class="tab__nav tab__nav--normal" wx:else>
+                <view bindtap="__e" class="{{[ 'tab__nav__item--normal '+(index==activeIndex?'tab__nav__item--active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleCheck',[index] ] ] ] ]}}" style="{{'color:'+(index==activeIndex?settings.tab_sel_color:settings.tab_normal_color)+';'}}" wx:for="{{settings.tabs}}" wx:key="index">{{''+item.tab_name+''}}<view class="tab__nav__item--active-block" style="{{'background-color:'+settings.tab_sel_color+';'}}" wx:if="{{index==activeIndex}}"></view>
+                </view>
+            </view>
+        </view>
+        <view class="projectList" style="{{'margin-top:'+settings.child_margin+'rpx'+';'}}">
+            <view wx:if="{{variant=='default'&&showProject}}">
+                <busi-project-default bind:__l="__l" class="vue-ref" data-ref="project_default" settings="{{projectSettings}}" vueId="{{'44b74eaa-2'+','+'44b74eaa-1'}}"></busi-project-default>
+            </view>
+            <block wx:else>
+                <view wx:if="{{variant=='variant1'&&showProject}}">
+                    <busi-project-variant1 bind:__l="__l" class="vue-ref" data-ref="project_variant1" settings="{{projectSettings}}" vueId="{{'44b74eaa-3'+','+'44b74eaa-1'}}"></busi-project-variant1>
+                </view>
+                <block wx:else>
+                    <view wx:if="{{variant=='variant2'&&showProject}}">
+                        <busi-project-variant2 bind:__l="__l" class="vue-ref" data-ref="project_variant2" settings="{{projectSettings}}" vueId="{{'44b74eaa-4'+','+'44b74eaa-1'}}"></busi-project-variant2>
+                    </view>
+                    <block wx:else>
+                        <view wx:if="{{variant=='variant3'&&showProject}}">
+                            <busi-project-variant3 bind:__l="__l" class="vue-ref" data-ref="project_variant3" settings="{{projectSettings}}" vueId="{{'44b74eaa-5'+','+'44b74eaa-1'}}"></busi-project-variant3>
+                        </view>
+                    </block>
+                </block>
+            </block>
+        </view>
+    </view>
+</base-layout>

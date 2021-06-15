@@ -1,0 +1,19 @@
+<view class="container data-v-3903de01">
+    <view class="saler-item data-v-3903de01" wx:for="{{taskCompleteList}}" wx:key="index">
+        <view class="lf-info data-v-3903de01">
+            <view class="img data-v-3903de01">
+                <image class="data-v-3903de01" src="{{item.avatar_url}}"></image>
+            </view>
+            <view class="data-v-3903de01">
+                <view class="sale-name data-v-3903de01">{{''+item.name+''}}</view>
+                <view class="data-v-3903de01">
+                    <text class="status-icon sta0 data-v-3903de01" wx:if="{{item.is_upload==0||item.is_upload==1&&item.check_status==-1}}">未完成</text>
+                    <text class="status-icon sta1 data-v-3903de01" wx:if="{{item.is_upload==1&&item.check_status==0}}">已上传</text>
+                    <text class="status-icon sta2 data-v-3903de01" wx:if="{{item.is_upload==1&&item.check_status==1}}">已完成</text>
+                    <text class="date data-v-3903de01" wx:if="{{item.is_upload==1&&item.check_status!=-1}}">{{''+item.time+''}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="rt-num data-v-3903de01" wx:if="{{item.is_upload==1&&item.check_status==1}}">{{'+'+item.point+''}}</view>
+    </view>
+</view>

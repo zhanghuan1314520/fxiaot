@@ -1,0 +1,10 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "楼盘详情信息",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "footer-btns": "/components/FooterBtns"
+    }
+}

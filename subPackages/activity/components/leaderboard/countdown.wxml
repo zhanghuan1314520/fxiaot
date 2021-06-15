@@ -1,0 +1,6 @@
+<view class="countdown data-v-536e18a7">
+    <text class="common data-v-536e18a7">离活动结束还剩</text>
+    <text class="colorful data-v-536e18a7">
+        <block wx:for="{{showArray}}" wx:for-item="ele" wx:key="index">{{''+ele.value1+ele.value2+ele.text+''}}</block>
+    </text>
+</view>

@@ -1,0 +1,10 @@
+<base-layout bind:__l="__l" message="{{message}}" vueId="35b124e3-1" vueSlots="{{['default']}}">
+    <navigator bindtap="__e" class="{{['card-message',isReceive?'receive':'',!isReceive?'sender':'']}}" data-content="{{isReceive?'对方消息':'我的消息'}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" data-type="link" hoverClass="none" url="{{'/pages/lotteryDetail?project_id='+content[1]}}">
+        <image class="card-message__img" mode="aspectFill" src="{{content[2]}}"></image>
+        <view class="card-message__content">
+            <view class="card-message__content--name">{{''+content[0]+''}}</view>
+            <view class="card-message__content--address">{{''+(content[3]||'')+''}}</view>
+            <view class="card-message__content--price">{{''+(content[4]||'待定')+''}}</view>
+        </view>
+    </navigator>
+</base-layout>

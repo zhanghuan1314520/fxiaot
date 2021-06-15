@@ -1,0 +1,13 @@
+<view class="base-layout">
+    <view class="base-layout__time">
+        <view class="base-layout__time--text">{{''+message.created_at+''}}</view>
+    </view>
+    <view class="{{['base-layout__container',isReceive?'receive':'']}}">
+        <view bindtap="__e" class="base-layout__avatar" data-event-opts="{{[ [ 'tap',[ [ 'preview',[avatar||defaultAvatar] ] ] ] ]}}" wx:if="{{showAvatar}}">
+            <image class="image" mode="aspectFill" src="{{avatar||defaultAvatar}}"></image>
+        </view>
+        <view class="base-layout__content">
+            <slot></slot>
+        </view>
+    </view>
+</view>

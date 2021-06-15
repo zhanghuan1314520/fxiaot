@@ -1,0 +1,8 @@
+<view class="sort-filter">
+    <scroll-view class="sort-filter__container" scrollY="true">
+        <select-list bind:__l="__l" bind:updateListIndex="__e" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','activeIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','activeIndex','$event'],[''] ] ] ] ]}}" listData="{{listData}}" listIndex="{{activeIndex}}" vueId="e1392468-1"></select-list>
+    </scroll-view>
+    <view class="sort-filter__footer">
+        <footer-button bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" data-event-opts="{{[ [ '^onReset',[ ['resetHandle'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ] ]}}" isNative="{{isNative}}" vueId="e1392468-2"></footer-button>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="base-layout">
+    <view class="base-layout__time">
+        <view class="base-layout__time--text">{{''+message.created_at+''}}</view>
+    </view>
+    <view class="{{['base-layout__container',isReceive?'receive':'']}}">
+        <navigator bindtap="__e" class="base-layout__avatar" data-content="{{isReceive?'对方消息':'我的消息'}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="置业顾问详情" data-type="link" hoverClass="none" url="{{salemanCenterUrl}}" wx:if="{{info.has_to_center&&showAvatar}}">
+            <image class="image" mode="aspectFill" src="{{info.avatar_url||defaultAvatar}}"></image>
+        </navigator>
+        <block wx:else>
+            <view bindtap="__e" class="base-layout__avatar" data-event-opts="{{[ [ 'tap',[ [ 'preview',[info.avatar_url||defaultAvatar] ] ] ] ]}}" wx:if="{{showAvatar}}">
+                <image class="image" mode="aspectFill" src="{{info.avatar_url}}"></image>
+            </view>
+        </block>
+        <view class="base-layout__content">
+            <slot></slot>
+        </view>
+    </view>
+</view>

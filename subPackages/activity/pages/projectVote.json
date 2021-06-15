@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#30077C",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "2019年度盘点评选活动",
+    "usingComponents": {
+        "back-to-top-button": "/subPackages/activity/components/BackToTopButton"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "活跃度明细",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine",
+        "empty": "/subPackages/me/pages/components/list/Empty",
+        "busi-loading": "/components/UILayout/BusiLoading",
+        "base-prompt": "/subPackages/me/pages/components/BasePrompt"
+    }
+}

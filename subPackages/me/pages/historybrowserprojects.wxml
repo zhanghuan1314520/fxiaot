@@ -1,0 +1,14 @@
+<view class="history-browser-projects">
+    <view class="page">
+        <view class="projects">
+            <block wx:if="{{projects.length>0}}">
+                <project-items bind:__l="__l" bind:updateItems="__e" content="me_history" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projects','$event'],[''] ] ] ] ]}}" items="{{projects}}" sourcePosition="浏览记录列表" titleData="我的-浏览记录" vueId="9aa756d4-1"></project-items>
+                <view class="bottom-line">我也是有底线的哦~ (๑•́ ₃ •̀๑)</view>
+            </block>
+            <view class="nothing gray-block" wx:if="{{!more&&projects.length<1}}">
+                <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190819/5d5a1c4844ecb.png"></image>
+                <view class="fz-13 text gray-96">您还没有浏览的楼盘信息喔～</view>
+            </view>
+        </view>
+    </view>
+</view>

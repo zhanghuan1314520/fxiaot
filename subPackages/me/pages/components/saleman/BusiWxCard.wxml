@@ -1,0 +1,40 @@
+<view class="busi-component__wrapper">
+    <view class="form">
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>填写微信号</text>
+            </view>
+            <view class="content">
+                <input bindinput="__e" class="input-item fz-15" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','wechat','$event',[] ],['form'] ] ] ] ]}}" maxlength="25" placeholder="请输入微信号" placeholderClass="placeholder-input-item" value="{{form.wechat}}"></input>
+            </view>
+        </view>
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>工作展示名</text>
+            </view>
+            <view class="content">
+                <input bindinput="__e" class="input-item fz-15" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','job_name','$event',[] ],['form'] ] ] ] ]}}" maxlength="6" placeholder="请输入工作展示名" placeholderClass="placeholder-input-item" value="{{form.job_name}}"></input>
+            </view>
+        </view>
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>上传微信二维码</text>
+                <text bindtap="__e" class="fz-14 blue-color mar-left-24" data-event-opts="{{[ [ 'tap',[ [ 'openUploadDemo',['$event'] ] ] ] ]}}">查看示例</text>
+            </view>
+            <view class="content">
+                <view bindtap="__e" class="upload-pic flex_layout_n" data-event-opts="{{[ [ 'tap',[ [ 'openUploadDemo',['$event'] ] ] ] ]}}" wx:if="{{!form.wechat_qrcode}}">
+                    <text class="iconnew fz-30 icon-upload new-tianjiatupian"></text>
+                    <text class="txt mar-top-32 fz-14">添加图片</text>
+                </view>
+                <view class="img-box" wx:else>
+                    <image bindtap="__e" class="img" data-event-opts="{{[ [ 'tap',[ [ 'previewImageHandler',['$event'] ] ] ] ]}}" mode="scaleToFill" src="{{form.wechat_qrcode}}"></image>
+                    <image bindtap="__e" class="icon-img-position" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/file/2020/07/02/619b4df259cfd7fc8175fafeef49e5e5.png"></image>
+                </view>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['gotoNext'] ] ] ]}}" isAuthPhone="{{true}}" vueId="174c16a9-1" vueSlots="{{['default']}}">
+            <view class="{{['item-btn fz-16 mar-top-100',!isShow?'gary':'']}}">下一步</view>
+        </authorization>
+    </view>
+    <busi-upload-demo bind:__l="__l" bind:updateVisible="__e" bind:uploadSuccess="__e" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','visible','$event'],[''] ] ] ],[ '^uploadSuccess',[ ['uploadSuccess'] ] ] ]}}" mode="{{1}}" showuploadBtn="{{showuploadBtn}}" visible="{{visible}}" vueId="174c16a9-2"></busi-upload-demo>
+</view>

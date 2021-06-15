@@ -1,0 +1,15 @@
+.list__container {
+    padding: 16rpx 24rpx 24rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.list__item {
+    padding-bottom: 20rpx;
+}
+
+.list__item .list__item__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+}

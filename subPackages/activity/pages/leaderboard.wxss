@@ -1,0 +1,308 @@
+page {
+    padding-bottom: 0!important;
+}
+
+.input-placeholder {
+    color: hsla(0,0%,100%,.8);
+}
+
+@font-face {
+    font-family:Alibaba-PuHuiTi-R;src:url(https://imgcdn.huanjutang.com/assets/img/2020121515858081.ttf);
+}
+
+.iphonex-padding.data-v-458dc46b,.leaderboard-backtop.data-v-458dc46b,.leaderboard-tab.data-v-458dc46b,.leaderboard.data-v-458dc46b {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.margin.data-v-458dc46b {
+    margin: 0 32rpx;
+}
+
+.leaderboard.data-v-458dc46b {
+    font-family: Alibaba-PuHuiTi-R;
+    background: #5465ff;
+}
+
+.leaderboard-top.data-v-458dc46b {
+    width: 100%;
+    height: 852rpx;
+    background-size: cover;
+    position: relative;
+}
+
+.top-base.data-v-458dc46b {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 556rpx;
+}
+
+.top-countdown.data-v-458dc46b {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 174rpx;
+}
+
+.leaderboard-middle.data-v-458dc46b {
+    box-sizing: border-box;
+    padding: 0 32rpx;
+    top: -150rpx;
+    display: none;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.leaderboard-middle[data-show="true"].data-v-458dc46b {
+    position: relative;
+    display: block;
+    opacity: 1;
+}
+
+.hotnum-item.data-v-458dc46b {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 14rpx;
+}
+
+.hotnum-item.data-v-458dc46b::after {
+    content: "";
+    position: absolute;
+    width: 2rpx;
+    height: 33rpx;
+    background: #fbd9af;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hotnum-item.total_vote_number.data-v-458dc46b {
+    color: #1bc3fc;
+}
+
+.hotnum-item.total_vote_number.data-v-458dc46b::after {
+    display: none;
+}
+
+.hotnum-item .value.data-v-458dc46b {
+    font-size: 44rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 60rpx;
+}
+
+.hotnum-item .text.data-v-458dc46b {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 33rpx;
+}
+
+.middle-search.data-v-458dc46b {
+    display: flex;
+    align-items: center;
+    height: 76rpx;
+    background: hsla(0,0%,100%,.3);
+    border-radius: 44rpx;
+    border: 1rpx solid hsla(0,0%,100%,.8);
+    margin: 20rpx 0;
+}
+
+.middle-search .search-input.data-v-458dc46b {
+    flex: 1;
+    font-size: 27rpx;
+    color: #fff;
+    line-height: 37rpx;
+    margin-left: 13rpx;
+}
+
+.middle-search .search-icon.data-v-458dc46b {
+    width: 27rpx;
+    height: 27rpx;
+    margin-left: 38rpx;
+}
+
+.middle-search .clear-box.data-v-458dc46b {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 76rpx;
+}
+
+.middle-search .clear-icon.data-v-458dc46b {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 31rpx;
+}
+
+.middle-project.data-v-458dc46b {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-empty.data-v-458dc46b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 83rpx;
+    flex: 1;
+}
+
+.project-empty .empty-image.data-v-458dc46b {
+    width: 358rpx;
+    height: 267rpx;
+}
+
+.project-empty .empty-text.data-v-458dc46b {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: hsla(0,0%,100%,.45);
+    line-height: 42rpx;
+    margin-top: 27rpx;
+}
+
+.middle-rank.data-v-458dc46b {
+    margin-top: 20rpx;
+}
+
+.middle-rank .slot-box.data-v-458dc46b {
+    padding-top: 32rpx;
+}
+
+.slot-box.data-v-458dc46b {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 78rpx;
+    padding-bottom: 30rpx;
+}
+
+.middle-rule .slot-box.data-v-458dc46b {
+    padding-left: 32rpx;
+    padding-right: 32rpx;
+    position: relative;
+}
+
+.middle-rule .contact.data-v-458dc46b {
+    position: absolute;
+    top: 74rpx;
+    right: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10rpx 18rpx;
+    background: #2d8cf0;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: #fff;
+    line-height: 27rpx;
+}
+
+.leaderboard-logo.data-v-458dc46b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 57rpx;
+    position: relative;
+    top: -150rpx;
+    padding-bottom: 20rpx;
+}
+
+.leaderboard-logo .logo.data-v-458dc46b {
+    width: 304rpx;
+    display: block;
+}
+
+.leaderboard-tab.data-v-458dc46b {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    background: #fff;
+}
+
+.leaderboard-tab .item.data-v-458dc46b {
+    flex: 1;
+    height: 110rpx;
+    background-color: #fff;
+    transition: all .2s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leaderboard-tab .item[data-active="true"].data-v-458dc46b {
+    background: linear-gradient(315deg,#2573f7,#1bc3fc);
+}
+
+.leaderboard-tab .item[data-active="true"] .text.data-v-458dc46b {
+    color: #fff;
+}
+
+.leaderboard-tab .icon.data-v-458dc46b {
+    transition: all .2s linear;
+    width: 40rpx;
+    height: 40rpx;
+    background-size: cover;
+}
+
+.leaderboard-tab .text.data-v-458dc46b {
+    transition: all .2s linear;
+    font-size: 26rpx;
+    color: #2d8cf0;
+    line-height: 36rpx;
+    margin-top: 6rpx;
+}
+
+.leaderboard-backtop.data-v-458dc46b {
+    position: fixed;
+    bottom: 170rpx;
+    z-index: 99;
+    right: 32rpx;
+    transition: all .2s linear;
+    transform: translateX(150%);
+}
+
+.leaderboard-backtop[data-show="true"].data-v-458dc46b {
+    transform: translateX(0);
+}
+
+.leaderboard-backtop .circle.data-v-458dc46b {
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 50%;
+    background: rgba(0,0,0,.6);
+    box-shadow: 0 2rpx 14rpx 0 rgba(89,28,13,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.leaderboard-backtop .circle .image.data-v-458dc46b {
+    width: 36rpx;
+    height: 36rpx;
+    margin-bottom: 2px;
+}
+
+.leaderboard-backtop .circle .text.data-v-458dc46b {
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: #fff;
+    line-height: 31rpx;
+    text-shadow: 0 2rpx 14rpx rgba(89,28,13,.5);
+}

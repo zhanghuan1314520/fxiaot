@@ -1,0 +1,133 @@
+.empty-data {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 260rpx;
+}
+
+.empty-data .img {
+    width: 322rpx;
+    height: 190rpx;
+}
+
+.empty-data .text {
+    width: auto;
+    height: 40rpx;
+    font-size: 32rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 40rpx;
+    margin-top: 54rpx;
+}
+
+.history-message {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    margin: 0 32rpx;
+    padding-bottom: 50rpx;
+}
+
+.b-68 {
+    border-bottom: 68rpx!important;
+}
+
+.page {
+    background: #f2f2f2;
+    height: 100vh;
+    padding-bottom: 10rpx;
+    overflow: auto;
+}
+
+.school-info {
+    width: auto;
+    height: 300rpx;
+    padding: 44rpx 40rpx;
+    background: #fff;
+    display: flex;
+}
+
+.school-info .logo {
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 8rpx;
+}
+
+.school-info .logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.school-info .info-desc {
+    margin-left: 36rpx;
+    flex: 1;
+    height: auto;
+    overflow: hidden;
+    width: auto;
+}
+
+.school-info .info-desc .info-name {
+    width: auto;
+    height: 52rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 52rpx;
+    margin-bottom: 16rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.school-info .info-desc .info-desc-text {
+    height: 96rpx;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.school-info .info-desc .info-desc-text .text {
+    width: 452rpx;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    line-height: 48rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.school-info .info-desc .info-count {
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+    margin-top: 16rpx;
+    margin-right: 34rpx;
+}
+
+.school-info .info-desc .info-count .text-fans {
+    flex: 1;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.school-info .info-desc .info-tools {
+    width: auto;
+    height: 52rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #7488c1;
+    line-height: 52rpx;
+    margin-top: 28rpx;
+}
+
+.school-info .info-desc .info-tools text:first-child {
+    margin-right: 100rpx;
+}

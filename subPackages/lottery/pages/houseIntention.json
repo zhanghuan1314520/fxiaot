@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "购房意向",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "slider": "/components/sliding",
+        "sliders": "/components/sliding"
+    }
+}

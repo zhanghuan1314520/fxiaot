@@ -1,0 +1,43 @@
+<view class="data-v-138ed35c">
+    <view bindtap="__e" class="lottery-result data-v-138ed35c" data-event-opts="{{[ [ 'tap',[ [ 'goPage',['$0'],[ [ ['items','',index,'url'] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="index">
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-add data-v-138ed35c" data-event-opts="{{[ [ '^onSuccess',[ [ 'addBuyers',['$0'],[ [ ['items','',index,'button_value.__$n0'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'cbf395fa-1-'+index}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].button_value.length}}">
+            <view class="auth-fz-14 data-v-138ed35c">
+                <text class="iconnew new-jiaguanzhu data-v-138ed35c"></text>添加</view>
+        </authorization>
+        <view class="row data-v-138ed35c">
+            <view class="name-column data-v-138ed35c">
+                <text class="name data-v-138ed35c">{{''+item.f0+''}}</text>
+                <view class="label-button success data-v-138ed35c" wx:if="{{tab===0}}">{{''+item[$orig].status.value+''}}</view>
+                <view class="label-button success data-v-138ed35c" wx:if="{{tab===1&&item[$orig].status.key===1}}">{{''+item[$orig].status.value+''}}</view>
+                <view class="label-button default data-v-138ed35c" wx:if="{{tab===2}}">{{''+item[$orig].status.value+''}}</view>
+            </view>
+            <view class="column fz-14 data-v-138ed35c" wx:for="{{item[$orig].data}}" wx:for-index="lineIndex" wx:for-item="line" wx:key="lineIndex">
+                <view class="label data-v-138ed35c">{{''+line.key+''}}</view>
+                <text class="symbol data-v-138ed35c">:</text>
+                <block wx:for="{{line.value}}" wx:for-index="valIndex" wx:for-item="val" wx:key="valIndex">
+                    <block wx:if="{{line.key=='审核状态'}}">
+                        <view class="value data-v-138ed35c" style="color:#0ABF79;" wx:if="{{val}}">{{''+val+''}}</view>
+                    </block>
+                    <block wx:else>
+                        <view class="value data-v-138ed35c" wx:if="{{val}}">{{''+val+''}}</view>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <view class="detail data-v-138ed35c" wx:if="{{item[$orig].url}}">
+            <text class="font data-v-138ed35c">查看详情</text>
+            <text class="iconnew new-tongyong-gengduo show-code data-v-138ed35c"></text>
+        </view>
+        <view class="order-label data-v-138ed35c" wx:if="{{tab===0}}">{{'选房顺序: '+item[$orig].final_result+''}}</view>
+        <view class="{{['data-v-138ed35c',true?'turn-label':'',item[$orig].status.key===2?'success':'']}}" wx:if="{{tab===1&&item[$orig].status.key!==1}}">{{''+item[$orig].status.value+''}}</view>
+    </view>
+    <view bindtap="__e" class="tip-cont data-v-138ed35c" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{showTip}}">
+        <view class="container data-v-138ed35c">
+            <image class="image data-v-138ed35c" src="http://imgcdn.huanjutang.com/assets/img/20190724/5d37e0c6f3d66.png"></image>
+            <view class="success data-v-138ed35c">编码添加成功！</view>
+            <view class="result data-v-138ed35c">{{''+('hangzhou'!='nanjing'?'可在【我的摇号】-【我添加的编码】列表查看摇号进程':'可在【我的摇号】列表查看摇号进程')+''}}</view>
+            <view class="cancel font-bold data-v-138ed35c">我知道了</view>
+        </view>
+        <view class="hide-bg data-v-138ed35c"></view>
+    </view>
+</view>

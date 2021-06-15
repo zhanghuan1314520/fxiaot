@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "杭州房小团-官方公众号",
+    "usingComponents": {
+        "photo-permissions-settings": "/components/photoPermissionsSettings"
+    }
+}

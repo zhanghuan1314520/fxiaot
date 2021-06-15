@@ -1,0 +1,63 @@
+<view class="{{['top-swiper',swiperList.skeleton?'skeletons':'']}}">
+    <swiper autoplay="{{false}}" bindchange="__e" class="swiper" current="{{swiperIndex}}" data-event-opts="{{[ [ 'change',[ [ 'onSlideChangeEnd',['$event'] ] ] ] ]}}" wx:if="{{swiperList.cover}}">
+        <swiper-item wx:for="{{$root.l0}}" wx:key="index">
+            <block wx:if="{{item[$orig].type==='直播'&&swiperList.live_cover}}">
+                <view catchtap="__e" class="video-pre" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link">
+                    <image-loader bind:__l="__l" mode="aspectFill" source="{{swiperList.live_cover}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'2ff2262a-1-'+index}}"></image-loader>
+                </view>
+                <view bindtap="__e" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'jumpToLive',['$0'],[ [ ['dataList','',index,'model'] ] ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link" wx:if="{{item[$orig].liveType==='living'}}">
+                    <view class="liver liver--living">
+                        <view bindtap="__e" class="liver__img--avatar" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}">
+                            <image-loader bind:__l="__l" mode="aspectFill" source="{{item[$orig].model&&item[$orig].model.anchor_avatar_url}}" styles="{{item.a0}}" vueId="{{'2ff2262a-2-'+index}}"></image-loader>
+                        </view>
+                        <image class="liver__love__img" src="https://imgcdn.huanjutang.com/file/2020/05/19/fe26adff74a18ea25174c0e51c212bc9.png"></image>
+                        <view class="liver__btn">
+                            <image class="liver__img--xinhao" src="https://imgcdn.huanjutang.com/file/2020/05/19/b69f4398aa32c7de009a1c1f0d4f9577.png"></image>直播中</view>
+                    </view>
+                </view>
+                <view bindtap="__e" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'jumpToLive',['$0'],[ [ ['dataList','',index,'model'] ] ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link" wx:else>
+                    <view class="liver liver--advance">
+                        <image class="liver__img" mode="aspectFill" src="https://imgcdn.huanjutang.com/file/2020/06/05/733bb82175aded704bf457e382e1c646.png"></image>
+                        <view class="liver__text liver__text--time" wx:if="{{item[$orig].model&&item[$orig].model.started_at}}">{{''+(item[$orig].model&&item[$orig].model.started_at_text)+''}}</view>
+                        <view class="liver__text liver__text--title">直播预告</view>
+                    </view>
+                </view>
+            </block>
+            <view bindtap="__e" class="image-container" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link" wx:if="{{item[$orig].type==='航拍'&&swiperList.aerial_view_cover}}">
+                <image-loader bind:__l="__l" mode="aspectFill" source="{{swiperList.aerial_view_cover}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'2ff2262a-3-'+index}}"></image-loader>
+                <view class="aerial-icon"></view>
+            </view>
+            <view catchtap="__e" class="image-container" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link" wx:if="{{item[$orig].type==='VR'&&swiperList.vr_video_cover}}">
+                <image-loader bind:__l="__l" mode="aspectFill" source="{{swiperList.vr_video_cover}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'2ff2262a-4-'+index}}"></image-loader>
+                <view class="video-img-icon">
+                    <text class="iconnew new-ic_vr"></text>
+                </view>
+            </view>
+            <view catchtap="__e" class="image-container" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link" wx:if="{{item[$orig].type==='全景'&&swiperList.panoramic_video_cover}}">
+                <image-loader bind:__l="__l" mode="aspectFill" source="{{swiperList.panoramic_video_cover}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'2ff2262a-5-'+index}}"></image-loader>
+                <view class="video-img-icon">
+                    <text class="iconnew new-ic_shipin"></text>
+                </view>
+            </view>
+            <view catchtap="__e" class="image-container" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}" data-name="{{item[$orig].type}}" data-type="link" wx:if="{{(item[$orig].type==='讲房'||item[$orig].type==='视频')&&swiperList.video_cover}}">
+                <image-loader bind:__l="__l" mode="aspectFill" source="{{swiperList.video_cover}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'2ff2262a-6-'+index}}"></image-loader>
+                <view class="video-img-icon">
+                    <text class="iconnew new-ic_shipin"></text>
+                </view>
+            </view>
+            <view catchtap="__e" class="swiper-img" data-content="轮播图" data-event-opts="{{[ [ 'tap',[ [ 'clickEvent',['$0','$1'],[ [ ['dataList','',index] ],'activeIndex' ] ] ] ] ]}}" data-index="{{index}}" data-name="{{item[$orig].type}}" data-type="link" wx:if="{{item[$orig].type==='图片'}}">
+                <image-loader bind:__l="__l" mode="aspectFill" source="{{item[$orig].url}}" styles="{{width:'100%',height:'100%'}}" vueId="{{'2ff2262a-7-'+index}}"></image-loader>
+            </view>
+        </swiper-item>
+    </swiper>
+    <block wx:else>
+        <image-loader bind:__l="__l" source="https://imgcdn.huanjutang.com/assets/img/202011251732138081.png" styles="{{width:'100%',height:'600rpx'}}" vueId="2ff2262a-8" wx:if="{{!swiperList.skeleton}}"></image-loader>
+    </block>
+    <view class="default-image skeletons-rect"></view>
+    <slot name="more"></slot>
+    <slot name="evidence"></slot>
+    <view class="{{['navs',navTypeLen==1?'bg-none':'']}}" wx:if="{{!swiperList.skeleton}}">
+        <view bindtap="__e" class="{{['nav-item',currentType==nav.text?'nav-item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',['$0'],[ [ ['navTypes','',index] ] ] ] ] ] ]}}" wx:for="{{navTypes}}" wx:for-item="nav" wx:key="index">{{''+nav.text+''}}</view>
+    </view>
+    <image class="preview-shadow" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/201952915418081.svg"></image>
+</view>

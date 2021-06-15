@@ -1,0 +1,20 @@
+<view>
+    <view class="ios" wx:if="{{os==='ios'}}">
+        <view class="{{['tip-bg',close?'animated':'',close?'fadeOutRight':'']}}" style="{{'top:'+util.navHeaderHeight+';'}}" wx:if="{{show}}">
+            <view class="tip-bar">
+                <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20199181042438081.png"></image>
+                <text class="tip-text">还没看够？点击“浮窗”随时继续</text>
+                <text catchtap="__e" class="iconnew new-quxiao fz-14 tip-close" data-event-opts="{{[ [ 'tap',[ [ 'closeTipHandle',['$event'] ] ] ] ]}}"></text>
+            </view>
+        </view>
+    </view>
+    <view class="android" wx:if="{{os!=='ios'}}">
+        <view class="{{['tip-bg',close?'animated':'',close?'fadeOutRight':'']}}" style="{{'top:'+util.navHeaderHeight+';'}}" wx:if="{{show}}">
+            <view class="tip-bar">
+                <text class="tip-text">点击这里“添加到桌面”吧</text>
+                <text catchtap="__e" class="iconnew new-quxiao fz-14 tip-close" data-event-opts="{{[ [ 'tap',[ [ 'closeTipHandle',['$event'] ] ] ] ]}}" style="padding-top:8px;"></text>
+                <view class="sub-tip-text">选楼盘、查摇号、看房价、杭州房小团更方便</view>
+            </view>
+        </view>
+    </view>
+</view>

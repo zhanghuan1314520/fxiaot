@@ -1,0 +1,10 @@
+<view class="search">
+    <view class="search__form">
+        <image class="search__form__icon" src="https://imgcdn.huanjutang.com/image/2020/05/18/9bef8839ce3044147520cbc134096918.png"></image>
+        <input bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" class="search__form__input" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'submitHandle',['$event'] ] ] ],[ 'focus',[ [ 'onFocus',['$event'] ] ] ],[ 'blur',[ [ 'onBlur',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" focus="{{focusStatus}}" placeholder="{{placeholder}}" placeholderClass="search__form__placeholder" value="{{value}}"></input>
+        <view bindtap="__e" class="search__form__close iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'cancelHandle',['close'] ] ] ] ]}}" wx:if="{{value!==''}}"></view>
+    </view>
+    <view class="search__cancel" wx:if="{{showCancelBtn}}">
+        <button bindtap="__e" class="search__cancel-btn" data-event-opts="{{[ [ 'tap',[ [ 'cancelHandle',['cancel'] ] ] ] ]}}">取消</button>
+    </view>
+</view>

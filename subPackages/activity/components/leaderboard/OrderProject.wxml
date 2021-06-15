@@ -1,0 +1,12 @@
+<view bindtap="__e" class="project data-v-292a78d1" data-content="{{item.object_name}}" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$event'] ] ] ] ]}}" data-name="楼盘信息" data-type="楼盘排行" id="{{item.id}}">
+    <view class="cover data-v-292a78d1">
+        <image class="image data-v-292a78d1" lazyLoad="{{true}}" mode="aspectFill" src="{{compressCover}}"></image>
+        <view class="{{['data-v-292a78d1','tab',className]}}">
+            <text class="text data-v-292a78d1">{{''+(item.rank||1)+''}}</text>
+        </view>
+    </view>
+    <view class="content data-v-292a78d1">
+        <view class="name data-v-292a78d1">{{''+(item.object_name||'')+''}}</view>
+        <view class="count data-v-292a78d1">{{''+(item.total_vote_number||0)+'票'}}</view>
+    </view>
+</view>

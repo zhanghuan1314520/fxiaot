@@ -1,0 +1,191 @@
+.housePlan {
+    padding-bottom: 130rpx;
+}
+
+.top-swiper {
+    height: 400rpx;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background: #fff;
+}
+
+.top-swiper .swiper-img {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.top-swiper .swiper-img,.top-swiper swiper {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+}
+
+.top-swiper swiper {
+    height: 400rpx;
+}
+
+.top-swiper .preview-pic_count {
+    position: absolute;
+    bottom: 30rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: 99;
+    max-width: 300rpx;
+}
+
+.top-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 30rpx 30rpx 42rpx;
+    height: 40rpx;
+}
+
+.top-title .title-status {
+    background: #5f95ff;
+    height: 36rpx;
+    border-radius: 5rpx;
+    line-height: 36rpx;
+    padding: 0 16rpx;
+    margin-left: 18rpx;
+    display: inline-block;
+}
+
+.houseType {
+    padding: 0 70rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.houseType .line {
+    float: left;
+    width: 33%;
+    border-right: 1rpx solid #f2f2f2;
+}
+
+.houseType .notFirst {
+    text-align: center;
+}
+
+.houseType .no-border {
+    border: none;
+}
+
+.projecDetail-mainInfo {
+    margin: 0 24rpx;
+    position: relative;
+}
+
+.projecDetail-mainInfo .small-title {
+    padding: 60rpx 0 30rpx;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content {
+    position: relative;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .qrCode {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .qrCode .qrcode-img {
+    width: 130rpx;
+    height: 140rpx;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .qrCode .qrText {
+    margin: 0 auto;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .projecDetail-mainInfo-line {
+    padding-bottom: 30rpx;
+    overflow: hidden;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .projecDetail-mainInfo-line .left-key {
+    float: left;
+    width: 160rpx;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .projecDetail-mainInfo-line .right-value {
+    margin-left: 160rpx;
+    overflow: hidden;
+    word-break: normal;
+    word-wrap: break-word;
+    color: #666;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .swiper-box {
+    display: flex;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .swiper-box .cont-line {
+    width: 280rpx;
+    padding-right: 40rpx;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .swiper-box .cont-line image {
+    width: 100%;
+    height: 200rpx;
+    margin-bottom: 20rpx;
+    border-radius: 16rpx;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .swiper-box .cont-line .housePlanStyle,.projecDetail-mainInfo .projecDetail-mainInfo-content .swiper-box .cont-line .square {
+    padding-bottom: 14rpx;
+}
+
+.projecDetail-mainInfo .projecDetail-mainInfo-content .swiper-box .cont-line .housePlanStyle .style {
+    height: 32rpx;
+    line-height: 32rpx;
+    padding: 0 10rpx;
+    color: #0053b0;
+    margin-right: 8rpx;
+    border-radius: 8rpx;
+    display: inline-block;
+    background: #f0f5fa;
+}
+
+.bottom-btn {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    padding: 17rpx 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px #e6e6e6;
+}
+
+.bottom-btn .button {
+    height: 90rpx;
+    line-height: 90rpx;
+    border-radius: 45rpx;
+    text-align: center;
+}
+
+.bottom-btn .btn1 {
+    background: linear-gradient(90deg,#2d8cf0,#1068eb);
+}
+
+.bottom-btn .btn2 {
+    background: linear-gradient(90deg,#f7b55d,#ed9c33);
+}
+
+.red-color {
+    color: #ff454e!important;
+}
+
+.preview-col {
+    position: absolute;
+    z-index: 2;
+    right: 30rpx;
+    bottom: 30rpx;
+    display: inline-block;
+}

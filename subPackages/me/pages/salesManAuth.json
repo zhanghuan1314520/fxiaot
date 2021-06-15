@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "实名认证",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "authorization": "/components/Authorization",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

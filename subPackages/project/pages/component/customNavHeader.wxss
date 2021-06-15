@@ -1,0 +1,32 @@
+.pos {
+    position: fixed;
+    z-index: 9999;
+}
+
+.header-tools__warpper {
+    position: relative;
+    z-index: 500;
+}
+
+.header-tools__warpper.scroll-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.header-tools__warpper .capsule-bar,.header-tools__warpper .status_bar {
+    text-align: center;
+    width: 100vw;
+    position: relative;
+}
+
+.header-tools__warpper .capsule-bar {
+    display: flex;
+    align-items: center;
+}
+
+.header-tools__warpper .capsule-bar .back-icon {
+    padding: 20rpx;
+    color: #fff;
+}

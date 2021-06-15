@@ -1,0 +1,128 @@
+<view>
+    <view class="area-container filters-comp-content__wrapper" wx:if="{{optionsIndex==='area'}}">
+        <view class="filter-top-box">
+            <view class="filter-cont-left">
+                <view bindtap="__e" class="{{['left-line fz-14',areasIndex==index?'blue-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'areaFilterSwitch',[index] ] ] ] ]}}" wx:for="{{areasDatas}}" wx:key="index">{{''+item.title+''}}</view>
+            </view>
+            <view class="filter-cont-right no-flex" wx:if="{{areasIndex==0}}">
+                <view bindtap="__e" class="{{['right-line fz-14',item.is_toggle?'blue-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'aroundSwitch',[index,'$0'],[ [ ['nearbyList','',index] ] ] ] ] ] ]}}" wx:for="{{nearbyList}}" wx:key="index">{{''+item.key+''}}</view>
+            </view>
+            <view class="filter-cont-right no-padding-top" scrollY="scroll-y" wx:if="{{areasIndex==1}}">
+                <block wx:if="{{!areaCircleShow}}">
+                    <scroll-view class="subway-left padding-top-20" scrollY="scroll-y">
+                        <view bindtap="__e" class="{{['subway-left-line fz-14',item.is_toggle?'blue-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickAreaHandle',[index,'$0'],[ [ ['areaList','',index] ] ] ] ] ] ]}}" wx:for="{{areaList}}" wx:key="index">{{''+item.key+''}}</view>
+                    </scroll-view>
+                    <scroll-view class="subway-right padding-top-20" scrollY="scroll-y" wx:if="{{areaSecondList.length}}">
+                        <view bindtap="__e" class="subway-right-line flex_layout_b" data-event-opts="{{[ [ 'tap',[ [ 'clickMulAreaHandle',[childIndex,'$0'],[ [ ['areaSecondList','',childIndex] ] ] ] ] ] ]}}" wx:for="{{areaSecondList}}" wx:for-index="childIndex" wx:for-item="val" wx:key="childIndex">
+                            <text class="{{['txt fz-14',val.is_toggle?'blue-color':'']}}">{{''+val.name+''}}</text>
+                            <checkbox checked="{{val.is_toggle}}" class="checkbox" color="#2D8CF0"></checkbox>
+                        </view>
+                    </scroll-view>
+                </block>
+                <scroll-view class="subway-right padding-top-20 no-border" scrollY="scroll-y" wx:else>
+                    <view bindtap="__e" class="subway-right-line flex_layout_b" data-event-opts="{{[ [ 'tap',[ [ 'clickAreaMutipHandle',[index,'$0'],[ [ ['areaList','',index] ] ] ] ] ] ]}}" wx:for="{{areaList}}" wx:key="index">
+                        <text class="{{['txt fz-14',item.is_toggle?'blue-color':'']}}">{{''+item.key+''}}</text>
+                        <checkbox checked="{{item.is_toggle}}" class="checkbox" color="#2D8CF0"></checkbox>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="filter-cont-right no-padding-top" wx:if="{{areasIndex==2}}">
+                <scroll-view class="subway-left padding-top-20" scrollY="scroll-y">
+                    <view bindtap="__e" class="{{['subway-left-line fz-14',item.is_toggle?'blue-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickLineHandle',['$0'],[ [ ['trainList','',index] ] ] ] ] ] ]}}" wx:for="{{trainList}}" wx:key="index">{{''+item.title+''}}</view>
+                </scroll-view>
+                <scroll-view class="subway-right padding-top-20" scrollY="scroll-y" wx:if="{{trainSecondList.length}}">
+                    <view bindtap="__e" class="subway-right-line flex_layout_b" data-event-opts="{{[ [ 'tap',[ [ 'clickMulTubeHandle',[childIndex,'$0'],[ [ ['trainSecondList','',childIndex] ] ] ] ] ] ]}}" wx:for="{{trainSecondList}}" wx:for-index="childIndex" wx:for-item="val" wx:key="childIndex">
+                        <text class="{{['txt fz-14',val.is_toggle?'blue-color':'']}}">{{''+val.metro_name+''}}</text>
+                        <checkbox checked="{{val.is_toggle}}" class="checkbox" color="#2D8CF0"></checkbox>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="filter-bottom-btn">
+            <view bindtap="__e" class="left-cancle fz-16" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+            <view bindtap="__e" class="right-sure fz-16" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+    </view>
+    <view class="price-container filters-comp-content__wrapper" wx:if="{{optionsIndex==='price'}}">
+        <view class="filter-top-box">
+            <view class="filter-cont-left">
+                <view bindtap="__e" class="{{['left-line fz-14',item.is_toggle?'blue-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'priceSwitch',[index] ] ] ] ]}}" wx:for="{{pricesDatas}}" wx:key="index">{{''+item.title+''}}</view>
+            </view>
+            <scroll-view class="filter-cont-right no-flex" scrollY="scroll-y">
+                <view class="right-top">
+                    <view class="select-input flex_layout_b">
+                        <input bindinput="__e" class="{{['input',minPrice?'font-bold':'']}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','minPrice','$event',[] ] ],[ 'inputPriceHandleMin',['$event'] ] ] ] ]}}" placeholder="最低价格" placeholderClass="gray-color-input fz-14" type="number" value="{{minPrice}}"></input>
+                        <text class="select__text fz-14" wx:if="{{pricesIndex===1}}">万</text>
+                        <text class="line select__text"></text>
+                        <input bindinput="__e" class="{{['input',maxPrice?'font-bold':'']}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','maxPrice','$event',[] ] ],[ 'inputPriceHandleMax',['$event'] ] ] ] ]}}" placeholder="最高价格" placeholderClass="gray-color-input fz-14" type="number" value="{{maxPrice}}"></input>
+                        <text class="fz-14 select__text" wx:if="{{pricesIndex===1}}">万</text>
+                    </view>
+                </view>
+                <view bindtap="__e" class="{{['right-line fz-14',item.is_toggle?'blue-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'priceChoose',[index,'$0'],[ [ ['priceList','',index] ] ] ] ] ] ]}}" wx:for="{{priceList}}" wx:key="index">{{''+item.key+''}}</view>
+                <view class="blank-box"></view>
+            </scroll-view>
+        </view>
+        <view class="filter-bottom-btn">
+            <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+            <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+    </view>
+    <view class="house-container filters-comp-content__wrapper" wx:if="{{optionsIndex==='housePlan'}}">
+        <view class="filter-top-box content-padding">
+            <view class="title fz-17">房屋户型</view>
+            <view bindtap="__e" class="{{['right-box fz-13',item.is_toggle?'blue-color active':'',(index+1)%4==0&&(index+1)/4>0?'no-margin-right':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'housePlanHandle',[index,'$0'],[ [ ['housePlanList','',index] ] ] ] ] ] ]}}" wx:for="{{housePlanList}}" wx:key="index">{{''+item.key+''}}</view>
+        </view>
+        <view class="filter-bottom-btn">
+            <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+            <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+    </view>
+    <view class="square-container filters-comp-content__wrapper" wx:if="{{optionsIndex==='square'}}">
+        <view class="filter-top-box content-padding">
+            <view class="title fz-17">面积</view>
+            <view bindtap="__e" class="{{['right-box fz-13',item.is_toggle?'blue-color active':'',(index+1)%4==0&&(index+1)/4>0?'no-margin-right':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'squareMultipleChoose',[index,'$0'],[ [ ['squareList','',index] ] ] ] ] ] ]}}" wx:for="{{squareList}}" wx:key="index">{{''+item.key+''}}</view>
+        </view>
+        <view class="filter-bottom-btn">
+            <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+            <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+    </view>
+    <view class="more-container filters-comp-content__wrapper" wx:if="{{optionsIndex==='others'}}">
+        <scroll-view class="filter-top-box content-padding other-top-box" scrollY="scroll-y">
+            <view class="clearfloat" wx:if="{{showSquare}}">
+                <block wx:if="{{!squareSpecialShow}}">
+                    <view class="title fz-17">面积</view>
+                    <view bindtap="__e" class="{{['right-box fz-13',item.is_toggle?'blue-color active':'',(index+1)%4==0&&(index+1)/4>0?'no-margin-right':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'squareMultipleChoose',[index,'$0','othersSquare'],[ [ ['squareList','',index] ] ] ] ] ] ]}}" wx:for="{{squareList}}" wx:key="index">{{''+item.key+''}}</view>
+                </block>
+            </view>
+            <view class="blank-box" wx:if="{{showSquare}}"></view>
+            <view class="title fz-17">类型</view>
+            <view class="clearfloat">
+                <view bindtap="__e" class="{{['right-box fz-13',item.is_toggle?'blue-color active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'othersHandle',['othersProperty',index2,'$0'],[ [ ['fTypeList','',index2] ] ] ] ] ] ]}}" wx:for="{{fTypeList}}" wx:for-index="index2" wx:key="index2">{{''+item.key+''}}</view>
+            </view>
+            <view class="blank-box"></view>
+            <view class="title fz-17 font-bold">装修</view>
+            <view class="clearfloat">
+                <view bindtap="__e" class="{{['right-box fz-13',item.is_toggle?'blue-color active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'othersHandle',['othersDecorated',index2,'$0'],[ [ ['decoratedList','',index2] ] ] ] ] ] ]}}" wx:for="{{decoratedList}}" wx:for-index="index2" wx:key="index2">{{''+item.key+''}}</view>
+            </view>
+            <view class="blank-box"></view>
+            <view class="blank-box"></view>
+        </scroll-view>
+        <view class="filter-bottom-btn">
+            <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+            <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+    </view>
+    <view class="sort-container filters-comp-content__wrapper" wx:if="{{optionsIndex==='priceSort'}}">
+        <view class="filter-top-box content-padding">
+            <view bindtap="__e" class="flex_layout_b" data-event-opts="{{[ [ 'tap',[ [ 'priceSortHandle',[index,'$0'],[ [ ['sortList','',index] ] ] ] ] ] ]}}" wx:for="{{sortList}}" wx:key="index">
+                <view class="{{['right-line no-padding-left fz-14',item.is_toggle?'blue-color':'']}}">{{''+item.title+''}}</view>
+                <text class="fz-18 blue-color new-gougou iconnew normal-weight" wx:if="{{item.is_toggle}}"></text>
+            </view>
+        </view>
+        <view class="filter-bottom-btn">
+            <view bindtap="__e" class="left-cancle" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</view>
+            <view bindtap="__e" class="right-sure" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+    </view>
+</view>

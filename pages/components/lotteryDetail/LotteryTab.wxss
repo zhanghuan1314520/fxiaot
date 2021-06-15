@@ -1,0 +1,101 @@
+.flex {
+    display: flex;
+    padding: 0rpx 12rpx;
+}
+
+.scroll-box-two {
+    border-bottom: 1px solid rgba(48,55,64,.05);
+    max-height: 132rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: #303237;
+    background: #fff;
+}
+
+.scroll-box-two .tab-line {
+    width: 375rpx;
+    display: inline-block;
+    font-size: 28rpx;
+    color: #888;
+    font-weight: 700;
+    padding: 28rpx;
+    box-sizing: border-box;
+    position: relative;
+    border: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scroll-box-two .tab-line:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0rpx;
+    height: 6rpx;
+    content: "";
+    display: inline-block;
+    background: #2d8cf0;
+    transition: width .2s;
+}
+
+.scroll-box-two .tab-line .cont.skeletons-rect {
+    min-width: 100rpx;
+}
+
+.scroll-box-two .active {
+    font-size: 28rpx;
+    color: #303237;
+    position: relative;
+}
+
+.scroll-box-two .active:after {
+    width: calc(100% - 56rpx);
+}
+
+.scroll-box-three {
+    border-bottom: 1px solid rgba(48,55,64,.05);
+    max-height: 132rpx;
+    overflow: hidden;
+    color: #303237;
+    background: #fff;
+}
+
+.scroll-box-three .tab-line {
+    padding: 24rpx 16rpx;
+    font-size: 28rpx;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scroll-box-three .active,.scroll-box-three .tab-line {
+    color: rgba(0,0,0,.85);
+    line-height: 51rpx;
+    position: relative;
+}
+
+.scroll-box-three .active {
+    font-weight: 700;
+    font-size: 36rpx;
+}
+
+.scroll-box-three .active:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 116rpx);
+    height: 6rpx;
+    content: "";
+    display: inline-block;
+    background: #2d8cf0;
+    transition: none;
+    min-width: 20rpx;
+}

@@ -1,0 +1,103 @@
+.empty_block {
+    height: 100rpx;
+    background: #f2f2f2;
+}
+
+.nothing-text {
+    line-height: 200rpx;
+    text-align: center;
+}
+
+.search-history {
+    margin: 0 24rpx;
+    min-height: calc(100vh - 264rpx);
+}
+
+.search-history .search-title {
+    margin-top: 44rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+    overflow: hidden;
+    padding-bottom: 32rpx;
+}
+
+.search-history .search-title.often-search {
+    padding-bottom: 20rpx;
+}
+
+.search-history .search-title .iconnew {
+    color: #b5b6bb;
+}
+
+.search-history .search-content {
+    overflow: hidden;
+}
+
+.search-history .search-content .search-line {
+    height: 52rpx;
+    background: rgba(48,55,64,.05);
+    line-height: 52rpx;
+    padding: 0 16rpx;
+    border-radius: 4rpx;
+    margin-right: 16rpx;
+    margin-bottom: 20rpx;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.question-container {
+    padding: 2rpx 0 24rpx;
+    background: #fff;
+}
+
+.nothing {
+    margin-top: 200rpx;
+    text-align: center;
+}
+
+.nothing image {
+    display: inline-block;
+    width: 276rpx;
+    height: 144rpx;
+}
+
+.nothing image.article-nothing {
+    width: 276rpx;
+    height: 176rpx;
+}
+
+.nothing .text {
+    margin-top: 48rpx;
+    padding-bottom: 124rpx;
+}
+
+.bottom-logo {
+    margin-right: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #fff;
+}
+
+.bottom-logo image {
+    width: 88rpx;
+    height: 88rpx;
+    margin-right: 30rpx;
+}
+
+.bottom-logo view {
+    color: #b5b6bb;
+    font-size: 24rpx;
+}
+
+.bottom-logo view text {
+    display: block;
+}
+
+.bottom-logo view text:first-child {
+    margin-bottom: 6rpx;
+}

@@ -1,0 +1,44 @@
+<view class="column">
+    <view class="column__nav-box" style="{{'top:'+marginTop+128+'rpx'}}">
+        <scroll-view class="column__nav" scrollIntoView="{{'column_'+selIndex}}" scrollX="true">
+            <view bindtap="__e" class="{{[ 'column__nav__item '+(index==activeIndex?'column__nav__item--active':'') ]}}" data-content="栏目标签" data-event-opts="{{[ [ 'tap',[ [ 'handleCheck',[index] ] ] ] ]}}" data-name="{{item.section_name}}" id="{{'column_'+index}}" wx:for="{{dataApi}}" wx:key="index">{{''+item.section_name+''}}</view>
+        </scroll-view>
+    </view>
+    <view class="projects">
+        <swiper bindchange="__e" currentItemId="{{'project'+selContIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+swiperHieght+';'}}">
+            <swiper-item itemId="{{'project'+index}}" wx:for="{{dataApi}}" wx:key="index">
+                <view class="{{['project'+index]}}" wx:if="{{item.request_uri_id==2&&recommendProejectState}}">
+                    <view class="nothing gray-block">
+                        <image class="image" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190819/5d5a1c4844ecb.png"></image>
+                        <view class="fz-13 text gray-96">您还没有关注的楼盘喔～</view>
+                    </view>
+                    <view class="recommend-list" wx:if="{{projectsAll[index].length>0}}">
+                        <view class="title fz-18 font-bold black-30">为您推荐的楼盘：</view>
+                        <view class="recommendProject">
+                            <project-item adSource="{{'collection'+collection_id}}" adType="flow" bind:__l="__l" content="collect_list" items="{{projectsAll[index]}}" sourcePosition="{{'首页'+dataApi[activeIndex].section_name}}" titleData="{{titleData}}" vueId="{{'5e0dd637-1-'+index}}"></project-item>
+                        </view>
+                    </view>
+                </view>
+                <view class="{{['project'+index]}}" wx:else>
+                    <project-item adSource="{{'collection'+collection_id}}" adType="flow" bind:__l="__l" content="collect_list" items="{{projectsAll[index]}}" sourcePosition="{{'首页'+dataApi[activeIndex].section_name}}" titleData="{{titleData}}" vueId="{{'5e0dd637-2-'+index}}"></project-item>
+                    <view class="column_cont__nd" wx:if="{{!more&&projectsAll[index].length<1}}">
+                        <image class="cont__nd__img" src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+                        <text class="cont__nd__text">暂无楼盘</text>
+                    </view>
+                    <view wx:if="{{more}}">
+                        <view class="flex_layout_c more" hidden="{{!loading}}">
+                            <view class="loading-runing">
+                                <view class="loading-icon">
+                                    <text class="iconnew new-jiazai"></text>
+                                </view>
+                                <view class="left-font">
+                                    <text>加载中</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

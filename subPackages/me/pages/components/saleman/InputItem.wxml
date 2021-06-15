@@ -1,0 +1,4 @@
+<view class="input-wrap">
+    <input bindinput="__e" class="input vue-ref" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','textValue','$event',[] ] ] ] ] ]}}" data-ref="input" disabled="{{disabled}}" focus="{{focus}}" maxlength="{{max}}" placeholder="{{placeholder}}" placeholderClass="placeholder" value="{{textValue}}"></input>
+    <view bindtap="__e" class="iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{textValue&&!disabled}}"></view>
+</view>

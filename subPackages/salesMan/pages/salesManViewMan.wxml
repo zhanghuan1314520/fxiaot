@@ -1,0 +1,7 @@
+<view>
+    <view class="view-man">
+        <view class="person" wx:for="{{personList}}" wx:key="index">
+            <image mode="aspectFill" src="{{item.avatar_url}}"></image>
+        </view>
+    </view>
+</view>

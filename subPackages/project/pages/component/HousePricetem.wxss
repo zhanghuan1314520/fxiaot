@@ -1,0 +1,216 @@
+.house-price-item {
+    position: relative;
+    padding: 0 32rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.house-price-item .sales_status {
+    position: absolute;
+    left: 32rpx;
+    top: 1rpx;
+    height: 28rpx;
+    display: none;
+}
+
+.house-price-item .sales_status.sale-in {
+    display: block;
+    width: 44rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213311447581847.png) no-repeat 100%/cover;
+}
+
+.house-price-item .sales_status.sign-text {
+    display: block;
+    width: 74rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213311447584059.png) no-repeat 100%/cover;
+}
+
+.house-price-item .sales_status.sale-out {
+    display: block;
+    width: 44rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213311447588081.png) no-repeat 100%/cover;
+}
+
+.house-price-item .house-price-box {
+    position: relative;
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+    padding: 40rpx 0 41rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.house-price-item .house-price-box .item-price {
+    margin-bottom: 16rpx;
+    color: #f03c50;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.house-price-item .house-price-box .item-price .price {
+    margin-right: 20rpx;
+    line-height: 40rpx;
+    font-weight: 700;
+}
+
+.house-price-item .house-price-box .item-price .total-price {
+    line-height: 32rpx;
+}
+
+.house-price-item .house-price-box .item-house-type {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 18rpx;
+}
+
+.house-price-item .house-price-box .item-house-type .building-type {
+    height: 44rpx;
+    padding: 0 16rpx;
+    border: 1rpx solid #dfdfdf;
+    border-radius: 24rpx;
+    line-height: 42rpx;
+    margin-right: 12rpx;
+    color: rgba(0,0,0,.65);
+    font-size: 22rpx;
+    box-sizing: border-box;
+}
+
+.house-price-item .house-price-box .item-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    color: rgba(0,0,0,.85);
+}
+
+.house-price-item .house-price-box .item-bottom .price-radio {
+    display: inline-block;
+    border-right: 1px solid #dfdfdf;
+    height: 20rpx;
+    line-height: 20rpx;
+    padding-right: 32rpx;
+    color: #f62f54;
+}
+
+.house-price-item .house-price-box .item-bottom .rate {
+    font-size: 26rpx;
+    display: inline-block;
+    height: 20rpx;
+    line-height: 20rpx;
+    padding-left: 18rpx;
+    position: relative;
+    top: -1rpx;
+}
+
+.house-price-item .house-price-box .item-bottom .rate.active {
+    border-right: 1px solid rgba(0,0,0,.1);
+    padding-right: 16rpx;
+    padding-left: 0;
+}
+
+.house-price-item .house-price-box .item-bottom .price-num {
+    padding: 0 4rpx;
+}
+
+.house-price-item .house-price-box .item-bottom .mortgage-in {
+    width: 112rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.85);
+    border-radius: 24rpx;
+    background: rgba(0,0,0,.05);
+}
+
+.house-price-item .item-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16rpx;
+    line-height: 44rpx;
+}
+
+.house-price-item .item-header .icon-content {
+    position: relative;
+}
+
+.house-price-item .item-header .icon-content .new-wenhaocopy {
+    margin-left: 10rpx;
+}
+
+.house-price-item .item-header .icon-content .toastContent {
+    padding: 14rpx 50rpx 22rpx 22rpx;
+    box-sizing: border-box;
+    position: absolute;
+    top: 55rpx;
+    left: -224rpx;
+    width: 480rpx;
+    background: #2d8cf0;
+    border-radius: 4rpx;
+    font-weight: 400;
+    z-index: 3;
+}
+
+.house-price-item .item-header .icon-content .toastContent:after {
+    position: absolute;
+    top: -20rpx;
+    left: 50%;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 12rpx solid transparent;
+    border-bottom-color: #2d8cf0;
+}
+
+.house-price-item .item-header .icon-content .toastContent .lottery-result-close-btn {
+    position: absolute;
+    right: 10rpx;
+    top: 10rpx;
+    line-height: 1;
+}
+
+.house-price-item .item-header .icon-content .toastContent .text {
+    text-align: left;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 36rpx;
+}
+
+.house-price-item .item-header .title {
+    margin-right: 20rpx;
+    max-width: 500rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.house-price-item .item-header .building-mark {
+    padding: 0 8rpx;
+    height: 36rpx;
+    text-align: center;
+    line-height: 36rpx;
+    background: rgba(47,140,239,.15);
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+    color: #2f8cef;
+}
+
+.house-price-item .item-header .back-bg-color {
+    background-color: #2d8cf0;
+    color: #fff;
+}
+
+.house-price-item .item-header .green-bg-color {
+    background-color: #0ab464;
+    color: #fff;
+}
+
+.house-price-item .item-header .gray-bg-color {
+    background-color: #bfbfbf;
+    color: #fff;
+}
+
+.house-price-item .item-header .active-rencai,.house-price-item .item-header .orange-bg-color {
+    background-color: #ff7d4f;
+    color: #fff;
+}

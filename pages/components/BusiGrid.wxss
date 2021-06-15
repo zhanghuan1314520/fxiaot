@@ -1,0 +1,118 @@
+.grid {
+    padding: 0 32rpx;
+}
+
+.swiper {
+    height: 128rpx;
+}
+
+.grid__container {
+    overflow: hidden;
+}
+
+.grid__list {
+    float: left;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.grid__item {
+    position: relative;
+    float: left;
+    width: 136rpx;
+    line-height: 1;
+    background: transparent;
+    overflow: hidden;
+    margin-bottom: 40rpx;
+}
+
+.grid__item--sm {
+    margin-bottom: 36rpx;
+}
+
+.grid__img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.grid__img--sm {
+    display: block;
+    margin: 0 auto 16rpx;
+    width: auto;
+    height: 58rpx;
+}
+
+.grid__num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    line-height: 106rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.grid__name,.grid__num {
+    width: 100%;
+    text-align: center;
+}
+
+.grid__name {
+    height: 36rpx;
+    line-height: 36rpx;
+    font-size: 26rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.grid__bar {
+    display: flex;
+    justify-content: center;
+}
+
+.grid__bar__item {
+    width: 16rpx;
+    background: rgba(45,140,240,.2);
+    height: 6rpx;
+}
+
+.grid__bar__item--f {
+    border-radius: 4rpx 0 0 4rpx;
+}
+
+.grid__bar__item--e {
+    border-radius: 0 4rpx 4rpx 0;
+}
+
+.grid__bar__item--active {
+    width: 16rpx;
+    height: 6rpx;
+    border-radius: 4rpx;
+    background: #4b9ef5;
+}
+
+.skeletons .grid__img.skeletons-rect {
+    display: block;
+    width: 80rpx;
+    height: 80rpx!important;
+    margin-bottom: 26rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skeletons .grid__name.skeletons-rect {
+    display: block;
+    width: 120rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skeletons .grid__img--sm.skeletons-rect {
+    display: block;
+    width: 58rpx;
+    margin-left: auto;
+    margin-right: auto;
+}

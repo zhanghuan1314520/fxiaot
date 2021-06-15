@@ -1,0 +1,24 @@
+<view bindtap="__e" class="{{['shadow',showEntries?'show':'hide']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleModal',['$event'] ] ] ] ]}}">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['toggleModal'] ] ] ]}}" isAuthPhone="{{true}}" vueId="5d716274-1" vueSlots="{{['default']}}">
+        <view class="publish">
+            <view class="img-group">
+                <image class="outer" src="https://imgcdn.huanjutang.com/image/2020/05/26/d444d5e09d8e109cc97f2a0113b6dbc5.png"></image>
+                <image class="inner" src="{{innerImg}}"></image>
+            </view>
+        </view>
+    </authorization>
+    <view class="{{[ 'entries',[showEntries?'transition':''] ]}}">
+        <navigator bindtap="__e" class="{{[showEntries?'in':'out']}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="发布视频" hoverClass="none" url="{{'/subPackages/discovery/pages/videoEdit?projectId='+projectId+'&projectName='+projectName}}">
+            <view class="{{[ 'entry','video',[showEntries?'transition':''] ]}}">
+                <image class="image" src="https://imgcdn.huanjutang.com/image/2020/05/26/602b978dd8a37a01c430451132efa66d.png"></image>视频</view>
+        </navigator>
+        <navigator bindtap="__e" class="{{[showEntries?'in':'out']}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="发布图文" hoverClass="none" url="{{'/subPackages/discovery/pages/pictureEdit?projectId='+projectId+'&projectName='+projectName}}">
+            <view class="{{[ 'entry','pic',[showEntries?'transition':''] ]}}">
+                <image class="image" src="https://imgcdn.huanjutang.com/image/2020/05/26/e0ce7317bd97258869b2fb16667c288e.png"></image>图文</view>
+        </navigator>
+        <navigator bindtap="__e" class="{{[showEntries?'in':'out']}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="发布问答" hoverClass="none" url="{{'/subPackages/discovery/pages/answerEdit?projectId='+projectId+'&projectName='+projectName}}">
+            <view class="{{[ 'entry','answer',[showEntries?'transition':''] ]}}">
+                <image class="image" src="https://imgcdn.huanjutang.com/image/2020/05/26/310f119d93475afd49c1e0c1f725b3eb.png"></image>问答</view>
+        </navigator>
+    </view>
+</view>

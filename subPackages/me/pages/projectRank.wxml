@@ -1,0 +1,35 @@
+<view>
+    <view class="rank">
+        <view class="top">
+            <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="0658ef1a-1" vueSlots="{{['default']}}">{{''+projectName+'-楼盘排名'}}</busi-nav-header>
+            <view class="project-name">{{''+name+''}}</view>
+            <view class="tip">主营楼盘活跃度排名（近30天积分总和）</view>
+        </view>
+        <view class="main">
+            <view class="current-rank">
+                <view class="main-text">当前排名：<text class="num">{{''+currentRanking+''}}</text>
+                </view>
+                <text class="sub-text">排名实时更新</text>
+            </view>
+            <view class="rank-list">
+                <view class="{{[ 'rank-item',[item[$orig].is_me?'border':'',item[$orig].skeleton?'skeletons':''] ]}}" wx:for="{{$root.l0}}" wx:key="index">
+                    <view class="level">
+                        <view class="num">{{''+index+1+''}}</view>
+                        <image class="level-icon" src="{{item.m0}}"></image>
+                    </view>
+                    <view class="left">
+                        <image-loader bind:__l="__l" source="{{item.f0}}" styles="{{item.a0}}" vueId="{{'0658ef1a-2-'+index}}"></image-loader>
+                        <view class="name skeletons-rect">{{''+item[$orig].name+''}}</view>
+                    </view>
+                    <view class="right">
+                        <view class="desc skeletons-rect">{{'活跃度 '+item[$orig].liveness+''}}</view>
+                        <view bindtap="__e" class="link" data-event-opts="{{[ [ 'tap',[ [ 'goTaskCenter',['$0'],[ [ ['rankList','',index,'id'] ] ] ] ] ] ]}}" data-name="楼盘排名-立即去赚积分" data-type="link" wx:if="{{item[$orig].is_me}}">立即去赚积分<text class="iconnew new-tongyong-gengduo"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <busi-loading bind:__l="__l" loading="{{loading}}" vueId="0658ef1a-3"></busi-loading>
+            <busi-bottom-line bind:__l="__l" vueId="0658ef1a-4" vueSlots="{{['default']}}" wx:if="{{rankList.length&&!loading&&end}}">没有更多了 ~</busi-bottom-line>
+        </view>
+    </view>
+</view>

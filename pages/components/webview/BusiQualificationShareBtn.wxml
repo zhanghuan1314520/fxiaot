@@ -1,0 +1,5 @@
+<cover-view class="btn-qualification-share-wrap" wx:if="{{qualificationShare}}">
+    <button bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'qualificationSharedEvent',['$event'] ] ] ] ]}}" openType="share">
+        <cover-image bindtap="__e" class="share__icon" data-event-opts="{{[ [ 'tap',[ [ 'qualificationSharedEvent',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20200429/5ea948ff9c11a.png"></cover-image>
+    </button>
+</cover-view>

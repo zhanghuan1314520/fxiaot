@@ -1,0 +1,28 @@
+{
+    "navigationBarTitleText": "我的聊天",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "call-phone-dialog": "/components/UILayout/BusiDialog",
+        "tips-dailog": "/components/UILayout/BusiDialog",
+        "header-nav": "/subPackages/me/components/ChatInterface/HeaderNav",
+        "text-message": "/subPackages/me/components/ChatInterface/Messages/Text",
+        "img-message": "/subPackages/me/components/ChatInterface/Messages/Img",
+        "system-message": "/subPackages/me/components/ChatInterface/Messages/System",
+        "auto-reply-message": "/subPackages/me/components/ChatInterface/Messages/AutoReply",
+        "notify-message": "/subPackages/me/components/ChatInterface/Messages/Notify",
+        "invite-message": "/subPackages/me/components/ChatInterface/Messages/Invite",
+        "map-message": "/subPackages/me/components/ChatInterface/Messages/Map",
+        "ask-call-message": "/subPackages/me/components/ChatInterface/Messages/AskCall",
+        "ask-we-chat-message": "/subPackages/me/components/ChatInterface/Messages/AskWeChat",
+        "res-call-message": "/subPackages/me/components/ChatInterface/Messages/ResCall",
+        "res-we-chat-message": "/subPackages/me/components/ChatInterface/Messages/ResWeChat",
+        "card-message": "/subPackages/me/components/ChatInterface/Messages/Card",
+        "appr-message": "/subPackages/me/components/ChatInterface/Messages/Appr",
+        "buys-message": "/subPackages/me/components/ChatInterface/Messages/Buys",
+        "send-phone-message": "/subPackages/me/components/ChatInterface/Messages/SendPhone",
+        "label-message": "/subPackages/me/components/ChatInterface/Messages/Label",
+        "continue-wait-message": "/subPackages/me/components/ChatInterface/Messages/ContinueWait",
+        "auto-send-message": "/subPackages/me/components/ChatInterface/Messages/AutoSend",
+        "reply-container": "/subPackages/me/components/ChatInterface/ReplyContainer/Index"
+    }
+}

@@ -1,0 +1,20 @@
+<view class="{{['container '+hideOption]}}">
+    <view catchtouchmove="__e" class="slider-item min" data-event-opts="{{[ [ 'touchmove',[ [ 'minMove',['$event'] ] ] ] ]}}" style="{{'left:'+leftValue+'rpx;'}}">
+        <view class="maxMove_item">
+            <view class="shuxian"></view>
+            <view class="shuxian"></view>
+            <view class="shuxian"></view>
+        </view>
+    </view>
+    <view catchtouchmove="__e" class="slider-item max" data-event-opts="{{[ [ 'touchmove',[ [ 'maxMove',['$event'] ] ] ] ]}}" style="{{'left:'+rightValue+'rpx;'}}">
+        <view class="maxMove_item" style="display:flex;align-items:center;justify-content:center;">
+            <view class="shuxian"></view>
+            <view class="shuxian"></view>
+            <view class="shuxian"></view>
+        </view>
+    </view>
+    <view class="slider-body left" style="{{'left:'+sliderLength+'rpx; width:'+leftValue+'rpx;height:10rpx; background-color:'+backgroundColor+';'}}"></view>
+    <view class="slider-body body" style="{{'left:'+leftValue+'rpx; width:'+rightValue-leftValue+'rpx;height:10rpx;background-color:'+selectedColor+';'}}"></view>
+    <view class="slider-body right" style="{{'left:'+rightValue+'rpx; width:'+totalLength-rightValue+'rpx;height:10rpx;background-color:'+backgroundColor+';'}}"></view>
+    <slot></slot>
+</view>

@@ -1,0 +1,28 @@
+.activity,.activity__img {
+    width: 100%;
+    height: 212rpx;
+}
+
+.activity__img {
+    display: block;
+}
+
+.activity-fix {
+    position: fixed;
+    bottom: 72rpx;
+    right: 38rpx;
+    z-index: 100;
+}
+
+.activity-fix__img {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.activity-fix__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 40rpx;
+    color: rgba(0,0,0,.25);
+}

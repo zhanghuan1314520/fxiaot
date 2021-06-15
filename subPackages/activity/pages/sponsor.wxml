@@ -1,0 +1,11 @@
+<view>
+    <view wx:if="{{projects.length>0}}">
+        <navigator class="advisory-content" hoverClass="none" url="/pages/me/personalMsg" wx:for="{{projects}}" wx:key="index">
+            <view class="advisory-content-left">
+                <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+            </view>
+            <view class="advisory-content-center fz-13">{{''+item.name+''}}</view>
+        </navigator>
+    </view>
+    <view class="nothing-container fz-14 height-level-color" style="width:100%;padding:60rpx 0;text-align:center;" wx:if="{{projects.length<1&&loading}}">暂无内容</view>
+</view>

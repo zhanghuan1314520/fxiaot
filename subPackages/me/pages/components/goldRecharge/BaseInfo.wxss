@@ -1,0 +1,57 @@
+.user-info {
+    justify-content: space-between;
+    padding: 12rpx 32rpx 0;
+}
+
+.user-info,.user-info .info {
+    display: flex;
+}
+
+.user-info .info .avatar {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 50rpx;
+}
+
+.name-box {
+    margin-left: 20rpx;
+}
+
+.name-box .name {
+    height: 52rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.name-box .today-point {
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.name-box .today-point .label {
+    height: 32rpx;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 32rpx;
+}
+
+.name-box .today-point .num {
+    margin-left: 12rpx;
+    height: 40rpx;
+    font-size: 44rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffef7f;
+    line-height: 40rpx;
+}
+
+.name-box .today-point .split {
+    position: relative;
+    top: -6rpx;
+    margin: 0 22rpx 0 18rpx;
+    width: 2rpx;
+    height: 25rpx;
+    background: hsla(0,0%,100%,.3);
+}

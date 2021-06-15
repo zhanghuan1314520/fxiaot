@@ -1,0 +1,135 @@
+.container.data-v-6c829194 {
+    background-color: #4362ff;
+    min-height: 100vh;
+}
+
+.modal.data-v-6c829194 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.modal-mask.data-v-6c829194 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease;
+    background: rgba(0,0,0,.7);
+    opacity: 0;
+}
+
+.modal-mask.maskShow.data-v-6c829194 {
+    opacity: 1;
+}
+
+.modal-mask.maskHide.data-v-6c829194 {
+    opacity: 0;
+}
+
+.mask-content.data-v-6c829194 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all .2s ease;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+}
+
+.mask-content.contentShow.data-v-6c829194 {
+    opacity: 1;
+}
+
+.mask-content.contenHide.data-v-6c829194 {
+    opacity: 0;
+}
+
+.content-title.data-v-6c829194 {
+    position: relative;
+}
+
+.content-title__image.data-v-6c829194 {
+    width: 420rpx;
+    height: 747rpx;
+    z-index: 2;
+    position: relative;
+    display: block;
+}
+
+.modal-main.data-v-6c829194 {
+    width: 694rpx;
+    height: 344rpx;
+    background-image: url(https://imgcdn.huanjutang.com/file/2020/10/12/00384ccb3291cde679981515a185cd62.png);
+    background-size: cover;
+    margin-top: -60rpx;
+    padding-top: 90rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.modal-main .font.data-v-6c829194 {
+    width: 533rpx;
+    height: 70rpx;
+}
+
+.modal-main .button.data-v-6c829194 {
+    width: 108rpx;
+    height: 131rpx;
+    display: block;
+    margin-top: 30rpx;
+}
+
+.operate.data-v-6c829194 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 140rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.operate .share.data-v-6c829194 {
+    background: transparent;
+    padding: 0;
+    line-height: normal;
+}
+
+.content-qrcode.data-v-6c829194 {
+    width: 90rpx;
+    height: 90rpx;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 67rpx;
+    z-index: 9;
+}
+
+.modal-close.data-v-6c829194 {
+    margin-top: 24rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 650rpx;
+}
+
+.modal-close .close-image.data-v-6c829194 {
+    width: 33rpx;
+    height: 33rpx;
+    margin-right: 26rpx;
+}
+
+.modal-close .close-text.data-v-6c829194 {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    line-height: 36rpx;
+    color: #fff;
+}

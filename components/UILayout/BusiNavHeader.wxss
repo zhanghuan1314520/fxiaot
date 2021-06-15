@@ -1,0 +1,57 @@
+.busi-nav-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: transparent;
+    z-index: 999;
+    transition: background .2s ease;
+}
+
+.busi-nav-header,.busi-nav-header .header__status {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.busi-nav-header .header__navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 44px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.busi-nav-header .header__navbar-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 24rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.busi-nav-header .header__navbar-title {
+    width: 100vw;
+    font-size: 34rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.busi-nav-header .header__navbar-title__default {
+    padding: 0 92rpx;
+}
+
+.busi-nav-header .header__navbar-title__tabbar {
+    text-align: left;
+    text-indent: 32rpx;
+    font-size: 40rpx;
+}

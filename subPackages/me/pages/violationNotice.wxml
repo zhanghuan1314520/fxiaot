@@ -1,0 +1,45 @@
+<view>
+    <view class="message">
+        <view class="message-header">{{''+info.send_msg_data.title+''}}</view>
+        <view class="message-content">
+            <block wx:if="{{msgType==2}}">
+                <view class="text">{{''+info.send_msg_data.detail+''}}</view>
+                <view bindtap="__e" class="statement mt-32" data-event-opts="{{[ [ 'tap',[ [ 'goRulesPage',['$event'] ] ] ] ]}}" wx:if="{{against.value}}">{{'查看《'+against.key+'》'}}</view>
+            </block>
+            <block wx:if="{{msgType==1}}">
+                <view class="text-images">
+                    <view class="reason-tips">违规内容：</view>
+                    <view class="text">{{''+info.user_punish_info.description+''}}</view>
+                    <view class="images" wx:if="{{info.user_punish_info.imgList&&info.user_punish_info.imgList.length}}">
+                        <image bindtap="__e" class="img" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$0',index],['info.user_punish_info.imgList'] ] ] ] ]}}" src="{{item}}" wx:for="{{info.user_punish_info.imgList}}" wx:key="index"></image>
+                    </view>
+                </view>
+                <view class="line"></view>
+                <view class="info">
+                    <view class="info-item">
+                        <view class="label">违规类型：</view>
+                        <view class="value">{{''+info.user_punish_info.against_type_text+''}}</view>
+                    </view>
+                    <view class="info-item">
+                        <view class="label">处理结果：</view>
+                        <view class="value">{{''+info.user_punish_info.user_now_punish.punish_name+''}}</view>
+                    </view>
+                    <view class="info-item">
+                        <view class="label">累计处罚次数：</view>
+                        <view class="value red">{{''+info.user_punish_info.against_now_count+'次'}}</view>
+                    </view>
+                    <view class="info-item">
+                        <view class="label">处罚时间：</view>
+                        <view class="value">{{''+info.user_punish_info.user_now_punish.start_time+'至'+info.user_punish_info.user_now_punish.end_time+''}}</view>
+                    </view>
+                </view>
+                <view class="line"></view>
+                <view class="tips-info">累计违规将会受到加重处罚，包括永久关小黑屋请您保持良好行为，与我们共同营造健康和谐的网络环境！</view>
+                <view bindtap="__e" class="statement" data-event-opts="{{[ [ 'tap',[ [ 'goRulesPage',['$event'] ] ] ] ]}}" wx:if="{{against.value}}">{{'查看《'+against.key+'》'}}</view>
+            </block>
+        </view>
+        <view class="message-footer">
+            <button class="contact-me" openType="contact">联系客服</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="chat">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="a82af10e-1" vueSlots="{{['default']}}">{{''+projectName+'-专属客户'}}</busi-nav-header>
+    </view>
+    <view class="main">
+        <total-client bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" fixTop="{{scrolled}}" item="{{clientTotal}}" text="专属客户" vueId="a82af10e-2"></total-client>
+        <view class="chat-scroll">
+            <scroll-item bind:__l="__l" item="{{ele}}" vueId="{{'a82af10e-3-'+index}}" wx:for="{{clientList}}" wx:for-item="ele" wx:key="index"></scroll-item>
+            <empty bind:__l="__l" image="https://imgcdn.huanjutang.com/file/2021/01/06/97aae0e212ae5fd8037d34b86f0d0625.png" text="无专属客户" vueId="a82af10e-4" wx:if="{{!loading&&!clientList.length}}"></empty>
+            <busi-bottom-line bind:__l="__l" vueId="a82af10e-5" vueSlots="{{['default']}}" wx:if="{{clientList.length&&end&&!loading}}">没有更多了 ~</busi-bottom-line>
+            <busi-loading bind:__l="__l" loading="{{loading}}" vueId="a82af10e-6"></busi-loading>
+        </view>
+    </view>
+</view>

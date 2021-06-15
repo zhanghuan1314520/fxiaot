@@ -1,0 +1,33 @@
+<view class="page">
+    <view class="content">
+        <block wx:if="{{projects.length>0}}">
+            <view class="content-box" wx:for="{{projects}}" wx:key="index">
+                <view class="firstname">{{''+item.name[0]+''}}</view>
+                <view class="self-info">
+                    <view class="name">
+                        <text class="text">{{''+item.name+''}}</text>
+                        <text class="phone">{{''+item.phone+''}}</text>
+                    </view>
+                    <view class="idcard">{{'身份证：'+item.id_card+''}}</view>
+                </view>
+                <viwe bind:__l="__l" class="right-operations" vueId="{{'41f4f1cd-1-'+index}}" vueSlots="{{['default']}}">
+                    <text class="line-split"></text>
+                    <text bindtap="__e" class="iconnew new-shanchu fz-20" data-event-opts="{{[ [ 'tap',[ [ 'removeSingle',[index] ] ] ] ]}}"></text>
+                    <text bindtap="__e" class="iconnew new-xiepinglun2 fz-20" data-event-opts="{{[ [ 'tap',[ [ 'navigatoHandle',['/subPackages/me/pages/bindIDCard?id='+item.id] ] ] ] ]}}"></text>
+                </viwe>
+            </view>
+        </block>
+        <view class="no-content" wx:if="{{projects.length<1&&loading}}">
+            <image mode="widthFix" src="https://imgcdn.huanjutang.com/file/2020/06/19/7dd2cef2848f4b98edad862c32a51a29.png"></image>
+            <view class="no-result">点击下方按钮添加新用户</view>
+            <view class="add-user-tips">添加身份信息可以直接查询摇号结果哟</view>
+        </view>
+    </view>
+    <view class="bottom-btns">
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'gotoUrlHandle',['/subPackages/me/pages/bindIDCard?type=1'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="41f4f1cd-2" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="button-add-user" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-type="button">
+                <view class="button">添加新用户</view>
+            </view>
+        </authorization>
+    </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="page">
+    <search-bar bind:__l="__l" bind:clearInput="__e" bind:doSearch="__e" bind:updateButtonType="__e" bind:updateInputPlace="__e" bind:updateInputVal="__e" buttonType="{{buttonType}}" data-event-opts="{{[ [ '^updateInputPlace',[ [ '__set_sync',['$0','inputPlace','$event'],[''] ] ] ],[ '^updateInputPlace',[ [ '__set_sync',['$0','inputPlace','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateButtonType',[ [ '__set_sync',['$0','buttonType','$event'],[''] ] ] ],[ '^updateButtonType',[ [ '__set_sync',['$0','buttonType','$event'],[''] ] ] ],[ '^doSearch',[ ['doSearch'] ] ],[ '^clearInput',[ ['clearInput'] ] ] ]}}" inputPlace="{{inputPlace}}" inputVal="{{inputVal}}" vueId="bbd47ce4-1"></search-bar>
+    <view class="empty_block"></view>
+    <view class="search-history often-search" wx:if="{{!showContent}}">
+        <block wx:if="{{historySearch.length>0}}">
+            <view class="search-title">
+                <view class="gray-96 miniTit">近期搜索</view>
+                <view bindtap="__e" class="fz-17 iconnew new-shanchu" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}"></view>
+            </view>
+            <view class="search-content">
+                <view bindtap="__e" class="search-line black-60 fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['historySearch','',index] ] ] ] ] ] ]}}" wx:for="{{historySearch}}" wx:key="index">{{''+item+''}}</view>
+            </view>
+        </block>
+        <block wx:if="{{hotSearchs.length>0}}">
+            <view class="search-title">
+                <view class="gray-96 miniTit">大家都在搜</view>
+            </view>
+            <view class="search-content">
+                <view bindtap="__e" class="search-line black-60 fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['hotSearchs','',index,'keyword'] ] ] ] ] ] ]}}" wx:for="{{hotSearchs}}" wx:key="index">{{''+item.keyword+''}}</view>
+            </view>
+        </block>
+    </view>
+    <soil-item bind:__l="__l" bind:updateSoilData="__e" data-event-opts="{{[ [ '^updateSoilData',[ [ '__set_sync',['$0','searchList','$event'],[''] ] ] ],[ '^updateSoilData',[ [ '__set_sync',['$0','searchList','$event'],[''] ] ] ] ]}}" soilData="{{searchList}}" vueId="bbd47ce4-2"></soil-item>
+    <block wx:if="{{searchList.length==0&&showContent}}">
+        <view class="nothing" wx:if="{{!loading}}">
+            <view class="nothing-text fz-13 small-level-color">暂无内容</view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,68 @@
+page {
+    padding-bottom: 0;
+}
+
+.btn-hover {
+    opacity: .6;
+}
+
+.box-answer-process {
+    width: 750rpx;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding-bottom: calc(48px + env(safe-area-inset-bottom));
+    overflow-y: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213221515138081.png) top no-repeat,url(https://imgcdn.huanjutang.com/assets/img/2021322151328081.png) bottom no-repeat,linear-gradient(180deg,#187ef3,#1f90f7);
+    background-size: contain;
+}
+
+.box-answer-process .box-topic .indicator {
+    text-align: right;
+    padding: 0 36rpx;
+    margin-top: 48rpx;
+    margin-bottom: 28rpx;
+    height: 44rpx;
+    font-size: 32rpx;
+    color: #ffe057;
+    line-height: 44rpx;
+}
+
+.box-operate {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background: #fff;
+    width: 676rpx;
+    padding: 48rpx 28rpx;
+    margin: 0 auto;
+    border-radius: 0 0 12rpx 12rpx;
+}
+
+.box-operate.center {
+    justify-content: center;
+}
+
+.box-operate .btn-base {
+    line-height: 84rpx;
+    width: 288rpx;
+    height: 84rpx;
+    font-size: 36rpx;
+    border-radius: 50rpx;
+}
+
+.box-operate .btn-second {
+    border-radius: 42rpx;
+    border: 2rpx solid #f6960b;
+    background: #fff;
+    color: #f6960b;
+}
+
+.box-operate .btn-primary {
+    background: #f6960b;
+    color: #fff;
+}
+
+.box-operate .btn-primary.disabled {
+    pointer-events: none;
+    opacity: .3;
+}

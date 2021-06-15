@@ -1,0 +1,58 @@
+.article-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.article-main {
+    width: 360rpx;
+    margin-right: 50rpx;
+}
+
+.article-image {
+    width: 276rpx;
+    height: 196rpx;
+    border-radius: 8rpx;
+}
+
+.article-topic {
+    font-size: 30rpx;
+    color: #2d8cf0;
+    line-height: 44rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.article-bottom {
+    margin-top: 44rpx;
+    justify-content: space-between;
+}
+
+.article-bottom,.article-bottom__info {
+    display: flex;
+    align-items: center;
+}
+
+.article-bottom__info .image {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 50%;
+    margin-right: 16rpx;
+}
+
+.article-bottom__info .text {
+    color: rgba(0,0,0,.85);
+    font-size: 28rpx;
+    width: 180rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.article-bottom__text {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: rgba(0,0,0,.45);
+    line-height: 32rpx;
+}

@@ -1,0 +1,17 @@
+<busi-layout bind:__l="__l" mask="{{maskClose}}" vueId="5203fdbc-1" vueSlots="{{['default']}}">
+    <view class="actionsheet" wx:if="{{!destroy}}">
+        <view bindtap="__e" class="{{['actionsheet-mask',visible?'show':'hide']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleMaskClick',['$event'] ] ] ] ]}}"></view>
+        <view class="{{['actionsheet__container',visible?'show':'hide']}}">
+            <view class="actionsheet-top" wx:if="{{title||description}}">
+                <view class="actionsheet-title" wx:if="{{title}}">{{''+title+''}}</view>
+                <view class="actionsheet-description" wx:if="{{description}}">{{''+description+''}}</view>
+            </view>
+            <view bindtap="__e" class="actionsheet-option" data-content="{{item.dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'handleOptionClick',['$0'],[ [ ['options','',index] ] ] ] ] ] ]}}" data-name="{{item.dataName}}" wx:for="{{options}}" wx:key="index">
+                <text class="{{[item.status]}}">{{''+item.text+''}}</text>
+                <text class="desc" wx:if="{{item.desc}}">{{''+item.desc+''}}</text>
+            </view>
+            <view class="actionsheet-split" wx:if="{{showCancel}}"></view>
+            <view bindtap="__e" class="actionsheet-cancel" data-event-opts="{{[ [ 'tap',[ [ 'handleCancel',['$event'] ] ] ] ]}}" wx:if="{{showCancel}}">取消</view>
+        </view>
+    </view>
+</busi-layout>

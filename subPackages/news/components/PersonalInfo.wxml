@@ -1,0 +1,14 @@
+<view catchtap="__e" class="info-container" data-event-opts="{{[ [ 'tap',[ [ 'haddleClick',['$event'] ] ] ] ]}}" style="{{'margin-bottom:'+marginBottom+';'}}">
+    <view class="info-avatar">
+        <image class="avatar" src="{{defaultAvatar}}"></image>
+        <image class="avatar-tag" src="{{tagImage}}" wx:if="{{tagImage&&!level}}"></image>
+    </view>
+    <view class="info-content">
+        <view class="info-name">
+            <text class="info-name__text">{{''+formatName+''}}</text>
+            <text class="info-name__time" wx:if="{{time}}">{{''+time+''}}</text>
+        </view>
+        <image class="info-level" mode="widthFix" src="{{levelMap[level]}}" wx:if="{{level}}"></image>
+    </view>
+    <slot></slot>
+</view>

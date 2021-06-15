@@ -1,0 +1,7 @@
+official-account {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    padding-bottom: env(safe-area-inset-bottom);
+}

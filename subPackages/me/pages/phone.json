@@ -1,0 +1,13 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "scroll-item": "/subPackages/me/pages/components/phone/ScrollItem",
+        "total": "/subPackages/me/pages/components/list/Total",
+        "empty": "/subPackages/me/pages/components/list/Empty",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine",
+        "busi-loading": "/components/UILayout/BusiLoading",
+        "guide": "/subPackages/me/pages/components/phone/Guide"
+    }
+}

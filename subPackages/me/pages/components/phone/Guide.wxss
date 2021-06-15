@@ -1,0 +1,28 @@
+.guide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    background: rgba(0,0,0,.7);
+}
+
+.guide .image {
+    width: 750rpx;
+    height: 486rpx;
+}
+
+.guide .confirm-btn {
+    margin: 48rpx auto 0;
+    width: 272rpx;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40rpx;
+    border: 2rpx solid hsla(0,0%,100%,.7);
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 40rpx;
+}

@@ -1,0 +1,20 @@
+<view class="search">
+    <view class="search__form">
+        <view catchtap="__e" class="search-type" data-event-opts="{{[ [ 'tap',[ [ 'handleOptionVisible',[true,true] ] ] ] ]}}">
+            <text class="search-type_content">{{''+text+''}}</text>
+            <text class="iconnew new-zhankai"></text>
+        </view>
+        <image class="search__form__icon" src="https://imgcdn.huanjutang.com/image/2020/05/18/9bef8839ce3044147520cbc134096918.png"></image>
+        <input bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" class="search__form__input" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'submitHandle',['$event'] ] ] ],[ 'focus',[ [ 'onFocus',['$event'] ] ] ],[ 'blur',[ [ 'onBlur',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" focus="{{focusStatus}}" holdKeyboard="{{true}}" placeholder="{{placeholder}}" placeholderClass="search__form__placeholder" value="{{value}}"></input>
+        <view bindtap="__e" class="search__form__close iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'cancelHandle',['close'] ] ] ] ]}}" wx:if="{{value!==''}}"></view>
+        <view class="{{[ 'select-options '+(optionVisible?'show':'hide') ]}}">
+            <view class="select-options_triangle"></view>
+            <view class="select-options_triangle_cover"></view>
+            <view catchtap="__e" class="{{[ 'select-options_item '+(i===index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleTypeChange',[i] ] ] ] ]}}" wx:for="{{list}}" wx:for-index="i" wx:key="i">{{''+item.text+''}}</view>
+        </view>
+        <view bindtap="__e" class="select-option__bg" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{optionVisible}}"></view>
+    </view>
+    <view class="search__cancel" wx:if="{{showCancelBtn}}">
+        <button bindtap="__e" class="search__cancel-btn" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">搜索</button>
+    </view>
+</view>

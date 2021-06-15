@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "动态",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-footer": "/components/UILayout/BusiFooter",
+        "contact-salesman": "/components/ContactSalesman",
+        "footer-share": "/components/FooterShare",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "statement-over-flow-item": "/pages/components/lotteryDetail/StatementOverFlowItem",
+        "dialog": "/components/UILayout/BusiDialog",
+        "authorization": "/components/Authorization",
+        "image-loader": "/components/ImageLoader"
+    }
+}

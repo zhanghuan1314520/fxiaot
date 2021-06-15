@@ -1,0 +1,194 @@
+page {
+    background: #bd242d url(https://imgcdn.huanjutang.com/file/2020/12/22/45927cc02485b996b1ad50dd11d11fe2.png) 0 0 repeat-y;
+    background-size: 100%;
+}
+
+.year-report-wish-rank {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/45927cc02485b996b1ad50dd11d11fe2.png) 0 0 repeat-y;
+    background-size: 100%;
+    padding-bottom: 110rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.year-report-wish-rank .header-img {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/a01323e7bff10748c0ab1a1d58c8f2d3.png) 0 0 no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 265rpx;
+}
+
+.year-report-wish-rank .tip-icon {
+    position: absolute;
+    top: 24rpx;
+    right: 28rpx;
+    width: 40rpx;
+    height: 40rpx;
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/24/9481c2fe4d3ac06afbac97e37779d6ea.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.year-report-wish-rank .tip-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.year-report-wish-rank .tip-wrapper .tip-text {
+    padding: 20rpx;
+    background: rgba(0,0,0,.7);
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #fff;
+    line-height: 36rpx;
+    width: 490rpx;
+    position: absolute;
+    top: 74rpx;
+    right: 20rpx;
+    box-sizing: border-box;
+}
+
+.year-report-wish-rank .list {
+    margin-top: -30rpx;
+}
+
+.year-report-wish-rank .empty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 262rpx;
+}
+
+.year-report-wish-rank .empty ._img {
+    width: 358rpx;
+    height: 180rpx;
+}
+
+.year-report-wish-rank .empty .empty-text {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 500;
+    color: #faeec9;
+    text-align: center;
+    margin-top: 34rpx;
+}
+
+.year-report-wish-rank .list-title {
+    display: flex;
+    padding: 0 42rpx 8rpx;
+}
+
+.year-report-wish-rank .title1,.year-report-wish-rank .title2,.year-report-wish-rank .title3 {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(250,238,201,.6);
+}
+
+.year-report-wish-rank .title1 {
+    width: 92rpx;
+    text-align: center;
+}
+
+.year-report-wish-rank .title2 {
+    margin-left: 90rpx;
+    width: 182rpx;
+}
+
+.year-report-wish-rank .title3 {
+    margin-left: 181rpx;
+    width: 90rpx;
+    text-align: center;
+}
+
+.year-report-wish-rank .list-item {
+    height: 86rpx;
+    align-items: center;
+}
+
+.year-report-wish-rank .list-item .title1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.year-report-wish-rank .list-item .title2 {
+    display: flex;
+    align-items: center;
+}
+
+.year-report-wish-rank .list-item .title3 {
+    font-size: 32rpx;
+    font-family: SFUIText-Semibold,SFUIText;
+    font-weight: 600;
+    color: #faeec9;
+}
+
+.year-report-wish-rank .list-item .icon {
+    width: 92rpx;
+    height: 86rpx;
+}
+
+.year-report-wish-rank .list-item .icon-1 {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/38931be8083179f95955faafd1672538.png) 50% no-repeat;
+    background-size: 100%;
+}
+
+.year-report-wish-rank .list-item .icon-2 {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/d007bb55913b34f0181fcc75e96202fa.png) 50% no-repeat;
+    background-size: 100%;
+}
+
+.year-report-wish-rank .list-item .icon-3 {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/9f212c34cdfe4485ea91068fac676ea7.png) 50% no-repeat;
+    background-size: 100%;
+}
+
+.year-report-wish-rank .list-item .avatar {
+    width: 56rpx;
+    height: 56rpx;
+    border: 2rpx solid rgba(250,238,201,.3);
+    box-sizing: border-box;
+    margin-right: 20rpx;
+    flex: none;
+    border-radius: 56rpx;
+    overflow: hidden;
+}
+
+.year-report-wish-rank .list-item .avatar ._img {
+    width: 100%;
+    height: 100%;
+}
+
+.year-report-wish-rank .list-item .name {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #faeec9;
+}
+
+.year-report-wish-rank .me {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 100rpx;
+    background: #d4323c;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.year-report-wish-rank .me .title2 {
+    margin-left: 90rpx;
+    width: 282rpx;
+}
+
+.year-report-wish-rank .me .title3 {
+    margin-left: 81rpx;
+    width: 90rpx;
+    text-align: center;
+}

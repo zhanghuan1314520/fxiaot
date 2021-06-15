@@ -1,0 +1,36 @@
+<view class="more">
+    <view class="more__item">
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['openPhotoHandle'] ] ] ]}}" vueId="0e7c412e-1" vueSlots="{{['default']}}">
+            <button bindtap="__e" class="icon iconnew new-tupian" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="打开相册" data-type="button"></button>
+            <view class="text">相册</view>
+        </authorization>
+    </view>
+    <view class="more__item" wx:if="{{showPrivilege}}">
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['goToSalesPrivilege'] ] ] ]}}" vueId="0e7c412e-2" vueSlots="{{['default']}}">
+            <button bindtap="__e" class="icon iconnew new-tequan" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="跳转活跃度特权" data-type="button"></button>
+            <view class="text">活跃度特权</view>
+        </authorization>
+    </view>
+    <view class="more__item" wx:if="{{showLabel}}">
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['e0'] ] ] ]}}" vueId="0e7c412e-3" vueSlots="{{['default']}}">
+            <button bindtap="__e" class="icon iconnew new-yishoucang" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="客户标记" data-type="button"></button>
+            <view class="text">客户标记</view>
+        </authorization>
+    </view>
+    <dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','visible','$event'],[''] ] ] ],[ '^onSubmit',[ ['submit'] ] ] ]}}" title="标记该客户的购房意向" visible="{{visible}}" vueId="0e7c412e-4" vueSlots="{{['default']}}">
+        <view class="label-wrap">
+            <view bindtap="__e" class="{{['label__item',intention===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickLabelHandle',[1] ] ] ] ]}}">
+                <view class="icon"></view>
+                <view class="text">无效</view>
+            </view>
+            <view bindtap="__e" class="{{['label__item',intention===2?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickLabelHandle',[2] ] ] ] ]}}">
+                <view class="icon"></view>
+                <view class="text">潜在</view>
+            </view>
+            <view bindtap="__e" class="{{['label__item',intention===3?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickLabelHandle',[3] ] ] ] ]}}">
+                <view class="icon"></view>
+                <view class="text">意向</view>
+            </view>
+        </view>
+    </dialog>
+</view>

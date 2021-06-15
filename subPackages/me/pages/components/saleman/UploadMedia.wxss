@@ -1,0 +1,84 @@
+.upload-media {
+    margin: 0 32rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.upload-add {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    margin-bottom: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3rpx dashed #d9d9d9;
+}
+
+.upload-add .iconnew {
+    font-size: 60rpx;
+    color: #d9d9d9;
+}
+
+.upload-add__text {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.25);
+    line-height: 36rpx;
+    margin-top: 30rpx;
+}
+
+.upload-item {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    margin-bottom: 28rpx;
+}
+
+.upload-item.empty {
+    opacity: 0;
+    background: transparent;
+    visibility: hidden;
+}
+
+.upload-item-wrap {
+    width: 220rpx;
+    height: 220rpx;
+    position: relative;
+}
+
+.upload-item-wrap .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 56.58rpx;
+    height: 50.28rpx;
+}
+
+.upload-item-wrap .play {
+    position: absolute;
+    left: 66.67rpx;
+    top: 66.67rpx;
+    width: 86.66rpx;
+    height: 86.66rpx;
+}
+
+.upload-item-wrap .progress-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+    border-radius: 0 0 8rpx 8rpx;
+}
+
+.tip {
+    width: 100%;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 24rpx;
+}

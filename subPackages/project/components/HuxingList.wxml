@@ -1,0 +1,24 @@
+<view class="huxing__list">
+    <view bindtap="__e" class="huxing__item" data-event-opts="{{[ [ 'tap',[ [ 'previewHandle',[index] ] ] ] ]}}" wx:for="{{huxingList}}" wx:key="index">
+        <image class="huxing__item-left" mode="aspectFill" src="{{item.image}}"></image>
+        <view class="huxing__item-right">
+            <view class="huxing__item--room">{{''+item.room+''}}</view>
+            <view class="huxing__item--name">{{'户型：'+item.name+''}}</view>
+            <view class="huxing__item--name">{{'建面：'+item.outer_square+''}}</view>
+            <view class="huxing__item--btn">
+                <view catchtap="__e" class="huxing--btn-audio" data-event-opts="{{[ [ 'tap',[ [ 'audioPlayerHandle',[index] ] ] ] ]}}" wx:if="{{item.voice_url}}">
+                    <image class="huxing--btn--img" src="https://imgcdn.huanjutang.com/image/2020/07/29/6d03073b239d2cd05f178672ae0ac788.png" wx:if="{{item.paused}}"></image>
+                    <image class="huxing--btn--img playing" src="https://imgcdn.huanjutang.com/image/2020/07/31/f2bd6f8b2d120e3344c08fce44adddec.png" wx:else></image>
+                    <view class="huxing--btn--text">语音讲房</view>
+                </view>
+                <view catchtap="__e" class="huxing--btn-vr" data-event-opts="{{[ [ 'tap',[ [ 'gotoVrPage',['$0'],[ [ ['huxingList','',index,'vr_url'] ] ] ] ] ] ]}}" wx:if="{{item.vr_url}}">
+                    <image class="huxing--btn--img" src="https://imgcdn.huanjutang.com/image/2020/07/29/1bc8f9a0d6bfe3134069cb8e1aeecee0.png"></image>
+                    <view class="huxing--btn--text">VR看房</view>
+                </view>
+            </view>
+        </view>
+        <view class="huxing__item-player" hidden="{{!(item.voice_url&&item.showPlayer)}}">
+            <audio-player bind:__l="__l" bind:updateCurrent="__e" bind:updatePaused="__e" bind:updateShow="__e" current="{{item.current}}" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showPlayer','$event'],[ [ ['huxingList','',index,''] ] ] ] ] ],[ '^updatePaused',[ [ '__set_sync',['$0','paused','$event'],[ [ ['huxingList','',index,''] ] ] ] ] ],[ '^updateCurrent',[ [ '__set_sync',['$0','current','$event'],[ [ ['huxingList','',index,''] ] ] ] ] ] ]}}" paused="{{item.paused}}" show="{{item.showPlayer}}" src="{{item.voice_url}}" title="{{item.name}}" uniqueId="{{item.id}}" vueId="{{'692fdd24-1-'+index}}"></audio-player>
+        </view>
+    </view>
+</view>

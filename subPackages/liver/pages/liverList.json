@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-tab": "/components/UILayout/BusiTab",
+        "busi-liver-info-advance": "/subPackages/liver/pages/components/BusiLiverInfoAdvance"
+    }
+}

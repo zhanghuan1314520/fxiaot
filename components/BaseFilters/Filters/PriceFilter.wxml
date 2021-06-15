@@ -1,0 +1,27 @@
+<view class="price-filter">
+    <view class="price-filter__container">
+        <scroll-view class="price-filter__left" scrollY="true">
+            <left-list bind:__l="__l" bind:updateListIndex="__e" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','priceMenuListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','priceMenuListIndexData','$event'],[''] ] ] ] ]}}" listData="{{priceMenuListData}}" listIndex="{{priceMenuListIndexData}}" vueId="40a8ff09-1"></left-list>
+        </scroll-view>
+        <view class="price-filter__right">
+            <scroll-view class="price__right__first" scrollY="true" wx:if="{{priceMenuListIndexData===0}}">
+                <view class="price__right__input">
+                    <range-input bind:__l="__l" bind:updateRangeLeftValue="__e" bind:updateRangeRightValue="__e" data-event-opts="{{[ [ '^updateRangeLeftValue',[ [ '__set_sync',['$0','priceLeftValueData','$event'],[''] ] ] ],[ '^updateRangeLeftValue',[ [ '__set_sync',['$0','priceLeftValueData','$event'],[''] ] ] ],[ '^updateRangeRightValue',[ [ '__set_sync',['$0','priceRightValueData','$event'],[''] ] ] ],[ '^updateRangeRightValue',[ [ '__set_sync',['$0','priceRightValueData','$event'],[''] ] ] ] ]}}" rangeLeftValue="{{priceLeftValueData}}" rangePlaceholders="{{pricePlaceHolder}}" rangeRightValue="{{priceRightValueData}}" vueId="40a8ff09-2"></range-input>
+                </view>
+                <radio-list bind:__l="__l" bind:updateListIndex="__e" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','priceListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','priceListIndexData','$event'],[''] ] ] ] ]}}" listData="{{priceListData}}" listIndex="{{priceListIndexData}}" vueId="40a8ff09-3"></radio-list>
+            </scroll-view>
+            <scroll-view class="price__right__second" scrollY="true" wx:if="{{priceMenuListIndexData===1}}">
+                <view class="price__right__input">
+                    <range-input bind:__l="__l" bind:updateRangeLeftValue="__e" bind:updateRangeRightValue="__e" class="price__right__input" data-event-opts="{{[ [ '^updateRangeLeftValue',[ [ '__set_sync',['$0','totalPriceLeftValueData','$event'],[''] ] ] ],[ '^updateRangeLeftValue',[ [ '__set_sync',['$0','totalPriceLeftValueData','$event'],[''] ] ] ],[ '^updateRangeRightValue',[ [ '__set_sync',['$0','totalPriceRightValueData','$event'],[''] ] ] ],[ '^updateRangeRightValue',[ [ '__set_sync',['$0','totalPriceRightValueData','$event'],[''] ] ] ] ]}}" rangeLeftValue="{{totalPriceLeftValueData}}" rangePlaceholders="{{pricePlaceHolder}}" rangeRightValue="{{totalPriceRightValueData}}" vueId="40a8ff09-4" vueSlots="{{['rangeLeft','rangeRight']}}">
+                        <text class="fz-14" slot="rangeLeft">万</text>
+                        <text class="fz-14" slot="rangeRight">万</text>
+                    </range-input>
+                </view>
+                <radio-list bind:__l="__l" bind:updateListIndex="__e" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','totalPriceListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','totalPriceListIndexData','$event'],[''] ] ] ] ]}}" listData="{{totalPriceListData}}" listIndex="{{totalPriceListIndexData}}" vueId="40a8ff09-5"></radio-list>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="price-filter__footer">
+        <footer-button bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" data-event-opts="{{[ [ '^onReset',[ ['resetHandle'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ] ]}}" isNative="{{isNative}}" vueId="40a8ff09-6"></footer-button>
+    </view>
+</view>

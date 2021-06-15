@@ -1,0 +1,6 @@
+<view class="{{['toast',visible?'show':'hide']}}" wx:if="{{!destroy}}">
+    <image class="toast-icon" src="{{icon}}" wx:if="{{toastType==='tip'&&icon}}"></image>
+    <text class="toast-text">{{''+text+''}}</text>
+    <image bindtap="__e" class="toast-close" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20208161626158081.png" wx:if="{{showClose&&toastType==='callout'}}"></image>
+    <image class="{{['toast-arrow',position,vertical]}}" mode="widthFix" src="{{calloutIcon}}" wx:if="{{toastType==='callout'}}"></image>
+</view>

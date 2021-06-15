@@ -1,0 +1,33 @@
+.btn {
+    width: 198rpx;
+    height: 64rpx;
+    display: flex;
+    align-items: center;
+    background: hsla(0,0%,100%,.6);
+    border-radius: 32rpx;
+    line-height: 28rpx;
+    font-size: 28rpx;
+}
+
+.btn.level1 {
+    color: #754832;
+}
+
+.btn.level2 {
+    color: #405472;
+}
+
+.btn.level3 {
+    color: #7a4f15;
+}
+
+.btn .icon {
+    margin-left: 4rpx;
+    margin-right: 8rpx;
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.mt20 {
+    margin-top: 20rpx;
+}

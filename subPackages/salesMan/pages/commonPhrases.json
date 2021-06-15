@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "常用语设置",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "common-phrases-editer": "/subPackages/salesMan/components/commonPhrasesEditer"
+    }
+}

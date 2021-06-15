@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "杭州房小团-全部评论",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

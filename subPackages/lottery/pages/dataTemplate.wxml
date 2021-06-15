@@ -1,0 +1,37 @@
+<view>
+    <view class="page">
+        <view class="header-text">
+            <text>提示：
+                此模版仅供参考，部分楼盘存在差异，最终以该楼盘的要求为准，如果存在疑问可以联系该楼盘的置业顾问询问详情。</text>
+        </view>
+        <view class="download_item">
+            <view class="download_item_content" wx:for="{{data_list}}" wx:key="index">
+                <view bindtap="__e" class="content_left" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}">
+                    <image class="preview-img" src="{{item.image}}"></image>
+                </view>
+                <view class="content_right">
+                    <block wx:if="{{item.name}}">
+                        <text class="name font-bold">{{''+item.name+''}}</text>
+                        <text class="text">(仅供参考)</text>
+                    </block>
+                    <view class="item_bottom">
+                        <view bindtap="__e" class="preview-img" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}">点击预览大图</view>
+                        <view bindtap="__e" class="item_btn" data-event-opts="{{[ [ 'tap',[ [ 'downLoadFileImg',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}">
+                            <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190719/5d3164f74642a.png"></image>
+                            <text>下载图片</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="permissions-settings" wx:if="{{showPermissionsSetting}}">
+        <view class="tips-content fz-18">请开启保存到相册的权限</view>
+        <view class="fz-18 text">开启后需重新点击下载按钮</view>
+        <view class="bottom-btn">
+            <view bindtap="__e" class="cancle line fz-18 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'closePermissionsHandle',['$event'] ] ] ] ]}}">取消</view>
+            <button bindopensetting="__e" class="line sure-btn fz-18 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">去开启</button>
+        </view>
+    </view>
+    <view class="hide-bg" wx:if="{{showPermissionsSetting}}"></view>
+</view>

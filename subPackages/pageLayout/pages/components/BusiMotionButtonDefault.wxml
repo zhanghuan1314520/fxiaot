@@ -1,0 +1,7 @@
+<view class="{{[ 'btn '+(show?'btn--show':'btn--hide') ]}}" style="{{'bottom:'+(settings&&settings[0]&&settings[0].bottom?settings[0].bottom+'rpx':'0')+';'+'z-index:'+motionBtnIndex+';'}}">
+    <view class="smartBtn" wx:for="{{settings}}" wx:key="index">
+        <view class="smartBtn__item" wx:for="{{item.motion}}" wx:for-index="index_" wx:for-item="per" wx:key="index_">
+            <image bindtap="__e" class="smartBtn__item__icon" data-content="悬浮按钮" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],[ [ ['settings','',index],['motion','',index_] ] ] ] ] ] ]}}" data-name="{{per.link.data_name}}" mode="widthFix" src="{{per.img_url}}"></image>
+        </view>
+    </view>
+</view>

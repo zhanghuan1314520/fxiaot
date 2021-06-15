@@ -1,0 +1,7 @@
+<view class="range-input">
+    <input bindblur="__e" bindinput="__e" class="range-input__item" data-event-opts="{{[ [ 'blur',[ [ 'leftValueBlur',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','leftValue','$event',[] ] ] ] ] ]}}" placeholder="{{rangePlaceholders.left}}" type="digit" value="{{leftValue}}"></input>
+    <slot name="rangeLeft"></slot>
+    <view class="range-input__line"></view>
+    <input bindblur="__e" bindinput="__e" class="range-input__item" data-event-opts="{{[ [ 'blur',[ [ 'rightValueBlur',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','rightValue','$event',[] ] ] ] ] ]}}" placeholder="{{rangePlaceholders.right}}" type="digit" value="{{rightValue}}"></input>
+    <slot name="rangeRight"></slot>
+</view>

@@ -1,0 +1,26 @@
+<view>
+    <view class="brandPavilionBox" wx:if="{{itemsDataCopy.length>0}}">
+        <navigator bindtap="__e" class="brand-pavilion-item" data-event-opts="{{[ [ 'tap',[ [ 'clickAnalysis',['$event'] ] ] ] ]}}" hoverClass="none" url="{{'/subPackages/project/pages/brandPavilion?brandId='+item.id}}" wx:for="{{itemsDataCopy}}" wx:key="index">
+            <image class="left-image" mode="aspectFit" src="{{item.image}}"></image>
+            <view class="right-info">
+                <view class="brand-top">
+                    <view class="brand-name">
+                        <text class="name fz-16 black-30 font-bold">{{''+item.name+''}}</text>
+                        <image src="https://imgcdn.huanjutang.com/assets/img/20190924/5d8979c63959c.png"></image>
+                    </view>
+                    <view catchtap="__e" class="attention" data-event-opts="{{[ [ 'tap',[ [ 'attention',['$event'] ] ] ] ]}}" data-index="{{index}}">
+                        <text class="{{[ 'iconnew fz-18 new-yiguanzhu '+(item.is_collection==1?'active':'') ]}}"></text>
+                        <text class="fz-12 gray-96">{{''+(item.is_collection==1?'已关注':'关注')+''}}</text>
+                    </view>
+                </view>
+                <view class="brand-bottom">
+                    <view class="pages-view">
+                        <view class="view-person fz-12 gray-96">{{'平台楼盘（'+(item.project_nums||0)+'）'}}</view>
+                        <view class="view-person attention-num fz-12 gray-96">{{'关注（'+(item.invented_follow_nums||0)+'）'}}</view>
+                    </view>
+                    <view class="enter-brand-btn fz-12 white-color">进入品牌</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

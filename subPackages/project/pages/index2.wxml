@@ -1,0 +1,4 @@
+<view>
+    <second-building-list baseParam="{{baseParam}}" bind:__l="__l" bind:updateBaseParam="__e" buttonType="{{buttonType}}" class="vue-ref" data-event-opts="{{[ [ '^updateBaseParam',[ [ '__set_sync',['$0','baseParam','$event'],[''] ] ] ],[ '^updateBaseParam',[ [ '__set_sync',['$0','baseParam','$event'],[''] ] ] ] ]}}" data-ref="secondBuilding" searchType="已摇号" vueId="07b1a3d6-1"></second-building-list>
+    <official-account></official-account>
+</view>

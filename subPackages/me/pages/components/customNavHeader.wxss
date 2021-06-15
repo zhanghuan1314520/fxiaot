@@ -1,0 +1,27 @@
+.header-tools__warpper.data-v-83d7e02c {
+    position: relative;
+    z-index: 500;
+}
+
+.header-tools__warpper.scroll-fixed.data-v-83d7e02c {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.header-tools__warpper .capsule-bar.data-v-83d7e02c,.header-tools__warpper .status_bar.data-v-83d7e02c {
+    text-align: center;
+    width: 100vw;
+    position: relative;
+}
+
+.header-tools__warpper .capsule-bar.data-v-83d7e02c {
+    display: flex;
+    align-items: center;
+}
+
+.header-tools__warpper .capsule-bar .back-icon.data-v-83d7e02c {
+    padding: 20rpx;
+    color: #fff;
+}

@@ -1,0 +1,5 @@
+<view class="list__container">
+    <view class="list__item" wx:for="{{listData}}" wx:key="index">
+        <image bindtap="__e" class="list__item__img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['listData','',index] ] ] ] ] ] ]}}" mode="widthFix" src="{{item}}"></image>
+    </view>
+</view>

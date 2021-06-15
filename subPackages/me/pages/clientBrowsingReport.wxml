@@ -1,0 +1,47 @@
+<view class="report">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="27c7cfc4-1" vueSlots="{{['default']}}">顾客浏览报告</busi-nav-header>
+    <view class="title">
+        <text class="color-yellow">{{''+(topInfo.name||'--')+''}}</text>楼盘浏览报告</view>
+    <view class="date">{{''+(topInfo.date||'--')+''}}</view>
+    <view class="report-main">
+        <image class="buildings" src="https://imgcdn.huanjutang.com/file/2021/04/02/752f1de7c47220d0022cf5dd4291e412.png"></image>
+        <view class="report-main-bg">
+            <view class="report-list">
+                <view class="report-item" wx:for="{{reportList}}" wx:for-index="__i0__" wx:key="label">
+                    <view class="label">{{''+item.label+''}}</view>
+                    <view class="value">{{''+item.value+''}}</view>
+                </view>
+            </view>
+            <view class="report-list area">
+                <block wx:for="{{reportListArea}}" wx:for-index="__i1__" wx:key="label">
+                    <block wx:if="{{item.type==='area'}}">
+                        <view class="report-item area" wx:if="{{item.value.length}}">
+                            <view class="label">{{''+item.label+''}}</view>
+                            <view class="area-box">
+                                <view class="area-item" wx:for="{{item.value}}" wx:for-item="it" wx:key="index">
+                                    <image class="icon" src="{{rankIcon[index]}}"></image>
+                                    <view class="area-value">{{''+it.area_name+''}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="report-item" wx:else>
+                            <view class="label">{{''+item.label+''}}</view>
+                            <view class="value">--</view>
+                        </view>
+                    </block>
+                    <view class="report-item" wx:else>
+                        <view class="label">{{''+item.label+''}}</view>
+                        <view class="value">{{''+item.value+''}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="report-list sales">
+                <view class="report-item" wx:for="{{reportListSales}}" wx:for-index="__i2__" wx:key="label">
+                    <view class="label">{{''+item.label+''}}</view>
+                    <view class="value">{{''+item.value+''}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <image class="character" src="https://imgcdn.huanjutang.com/file/2021/04/02/dd5b81d4ac6c6ba1e6a83915fbbf270b.png"></image>
+</view>

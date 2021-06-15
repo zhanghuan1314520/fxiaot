@@ -1,0 +1,423 @@
+page {
+    background: #fff;
+}
+
+.search-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx 20rpx 0;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.search-bar-form {
+    width: 590rpx;
+    background: #fff;
+    height: 84rpx;
+    line-height: 84rpx;
+    color: #ccc;
+    position: relative;
+    margin: 0 80rpx 20rpx;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 hsla(0,0%,89.8%,.6);
+    border-radius: 8rpx;
+    border: 2rpx solid #e8e8e8;
+}
+
+.search-bar-form .search-bar-input {
+    font-size: 30rpx;
+    width: auto!important;
+    margin: 0 76rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    color: rgba(0,0,0,.85);
+    padding-left: 0;
+    font-weight: 700;
+}
+
+.search-bar-form .searchClose {
+    position: absolute;
+    font-size: 36rpx;
+    right: 24rpx;
+    z-index: 55;
+    color: rgba(0,0,0,.25);
+}
+
+.search-bar .search-bar-icon {
+    width: 70rpx;
+    text-align: center;
+    z-index: 2;
+    line-height: 1;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.search-bar .float-left {
+    float: left;
+}
+
+.search-bar .float-right {
+    float: right;
+}
+
+.search-bar .search-bar-icon button.e_btn {
+    width: 100%;
+    height: 44rpx;
+    line-height: 44rpx;
+    padding: 0;
+    background-color: transparent;
+    font-size: 44rpx;
+}
+
+.search-bar .search-bar-icon text {
+    line-height: 1;
+}
+
+.search-bar .search-bar-icon button::after {
+    display: none;
+}
+
+.search-input-place {
+    font-size: 30rpx;
+    color: rgba(0,0,0,.45);
+    font-weight: 700;
+}
+
+.search-bar .search-btn {
+    float: right;
+    height: 88rpx;
+    width: 80rpx;
+    line-height: 88rpx;
+    text-align: center;
+    padding-left: 15rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    font-size: 32rpx;
+}
+
+.search-bar-form {
+    margin: 0 10rpx 20rpx;
+}
+
+.search-bar-form image {
+    width: 32rpx;
+    height: 32rpx;
+    float: left;
+    margin-left: 28rpx;
+    margin-top: 27rpx;
+}
+
+.page__bd {
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-top: 102rpx;
+}
+
+.hot-tab-box {
+    overflow: hidden;
+    background: #f7f7f7;
+    padding-bottom: 138rpx;
+    border-top: 20rpx solid #fff;
+}
+
+.hot-tab-box .sales-man-title:before {
+    height: 22rpx;
+    width: 6rpx;
+    content: "";
+    display: inline-block;
+    background: #5878e1;
+    position: absolute;
+    left: 30rpx;
+    top: 34rpx;
+}
+
+.hot-tab-box .sales-man-title {
+    padding: 28rpx 30rpx 34rpx 45rpx;
+    position: relative;
+}
+
+.hot-tab-box .tab-list {
+    width: 100%;
+    height: 60rpx;
+    margin-bottom: 10rpx;
+    border-bottom: 4rpx solid #f2f2f2;
+}
+
+.hot-tab-box .tab-list .tab-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+    float: left;
+}
+
+.hot-tab-box .tab-list .tab-list-item .text {
+    color: #999;
+    line-height: 1;
+    margin-bottom: 30rpx;
+}
+
+.hot-tab-box .tab-list .tab-list-item .line {
+    background-color: transparent;
+    height: 6rpx;
+    width: 66rpx;
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-list .tab-list-item.active .text {
+    color: #3772cc;
+}
+
+.hot-tab-box .tab-list .tab-list-item.active .line {
+    background-color: #3772cc;
+}
+
+.hot-tab-box .tab-content {
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-content .item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 240rpx;
+    margin-bottom: 10rpx;
+}
+
+.hot-tab-box .tab-content .user-content {
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    background: #fff;
+    padding: 28rpx 24rpx 0 28rpx;
+    box-sizing: border-box;
+}
+
+.hot-tab-box .tab-content .item .avatar {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rpx;
+    height: 80rpx;
+    position: relative;
+    margin-right: 16rpx;
+}
+
+.hot-tab-box .tab-content .item .avatar image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.COM-color {
+    color: #96989e!important;
+}
+
+.hot-tab-box .tab-content .item .userinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 216rpx;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username {
+    margin-bottom: 20rpx;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box {
+    width: 34rpx;
+    height: 34rpx;
+    display: inline-block;
+    top: 8rpx;
+    position: relative;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191629558081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box-1 {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191631318081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box-2 {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191629558081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo .username .level-box-3 {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20196191631118081.png) 50%/100% no-repeat;
+}
+
+.hot-tab-box .tab-content .item .userinfo>view {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hot-tab-box .tab-content .item .userinfo .weixin-num {
+    padding-bottom: 8rpx;
+    line-height: 34rpx;
+    width: 320rpx;
+    overflow: hidden;
+}
+
+.hot-tab-box .tab-content .item .userinfo .weixin-num text:first-child {
+    margin-right: 10rpx;
+}
+
+.hot-tab-box .tab-content .item .userinfo .project_name {
+    line-height: 34rpx;
+}
+
+.hot-tab-box .tab-content .item .like-next {
+    position: absolute;
+    top: 20rpx;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right;
+    height: 164rpx;
+    padding-right: 30rpx;
+    text-align: right;
+    z-index: 3;
+}
+
+.wechat-phone {
+    overflow: hidden;
+    padding-top: 20rpx;
+}
+
+.wechat-phone .left {
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding-bottom: 24rpx;
+}
+
+.wechat-phone .left image {
+    width: 38rpx;
+    height: 38rpx;
+    display: inline-block;
+}
+
+.wechat-phone .left .txt {
+    margin-left: 8rpx;
+    display: inline-block;
+    position: relative;
+    top: -10rpx;
+}
+
+.wechat-phone .first {
+    width: 30%;
+    position: relative;
+}
+
+.wechat-phone .first:after {
+    content: "";
+    display: inline-block;
+    width: 2rpx;
+    height: 20rpx;
+    background: rgba(21,24,45,.08);
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+}
+
+.wechat-phone .middle {
+    width: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.wechat-phone .right {
+    text-align: right;
+}
+
+.wechat-phone .chat {
+    position: relative;
+    background: transparent;
+}
+
+.wechat-phone .chat:after {
+    content: "";
+    display: inline-block;
+    width: 2rpx;
+    height: 20rpx;
+    background: rgba(21,24,45,.08);
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+}
+
+.good {
+    width: 30%;
+    text-align: right;
+    position: relative;
+}
+
+.good .orange-color {
+    color: #f7776a!important;
+}
+
+.good>text {
+    display: inline-block;
+    padding-left: 50rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.good .pinglun-icon {
+    width: 42rpx;
+    height: 42rpx;
+    transition: all .3s ease;
+    position: absolute;
+}
+
+.good .pinglun-icon,.good .pinglun-icon.top-layout {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.good .pinglun-icon.top-layout {
+    z-index: 2;
+}
+
+.good .pinglun-icon.bottom-layout {
+    opacity: .3;
+    z-index: 1;
+    transform: scale(0);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    bottom: 64rpx;
+    width: 100%;
+    background: transparent;
+    z-index: 99;
+}
+
+.footer .become {
+    width: 576rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #2f8cef;
+    box-shadow: 0 10rpx 20rpx 0 rgba(47,140,239,.25);
+    border-radius: 44rpx;
+    font-weight: 500;
+    text-align: center;
+}
+
+button::after {
+    border: 0;
+}
+
+.t-left {
+    text-align: left!important;
+}

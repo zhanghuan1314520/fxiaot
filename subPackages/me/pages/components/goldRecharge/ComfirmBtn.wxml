@@ -1,0 +1,5 @@
+<authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['confirm'] ] ] ]}}" isAuthPhone="{{true}}" vueId="90ad3f90-1" vueSlots="{{['default']}}">
+    <view class="confirm-btn">
+        <slot></slot>
+    </view>
+</authorization>

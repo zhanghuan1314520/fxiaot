@@ -1,0 +1,28 @@
+<view class="person-info">
+    <view class="info-list">
+        <view bindtap="__e" class="list-item large" data-event-opts="{{[ [ 'tap',[ [ 'chooseAvatar',['$event'] ] ] ] ]}}">
+            <text>头像</text>
+            <view class="item-right">
+                <image src="{{default_avatar}}"></image>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['nickName','$0'],['inputData.nick_name'] ] ] ] ]}}">
+            <text>昵称</text>
+            <view class="item-right">
+                <text>{{inputData.nick_name}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['content','$0'],['inputData.content'] ] ] ] ]}}">
+            <text>个人介绍</text>
+            <view class="item-right">
+                <text>{{inputData.content||'未填写'}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+    </view>
+    <view class="cropper-view" wx:if="{{showCropper}}">
+        <cropper bind:__l="__l" class="vue-ref" data-ref="cropper" options="{{cropperOpt}}" vueId="6cdf35a1-1"></cropper>
+    </view>
+</view>

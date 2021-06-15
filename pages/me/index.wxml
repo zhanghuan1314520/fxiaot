@@ -1,0 +1,52 @@
+<view class="me">
+    <view class="me-top" style="{{'height:'+imageHeight+'px'+';'}}">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" isTabbarPage="{{true}}" vueId="9f91bc1c-1" vueSlots="{{['default']}}">
+            <block wx:if="{{pageScroll}}">我的</block>
+        </busi-nav-header>
+        <view class="top-info">
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['handleEditInfo'] ] ] ]}}" vueId="9f91bc1c-2" vueSlots="{{['default']}}" wx:if="{{userInfo.is_wechat_authorization}}">
+                <view class="info-detail">
+                    <view class="avatar-wraper">
+                        <image class="avatar" src="{{defaultAvatar}}"></image>
+                    </view>
+                    <view class="info-desc">
+                        <text>{{'Hi～'+(nameFormat||'')}}</text>
+                        <text class="short" wx:if="{{!isSalesMan}}">{{''+(userInfo.individual_resume||'房小团，让买房更简单')+''}}</text>
+                        <view class="info-tag" wx:else>
+                            <image src="{{salesManLevel[userInfo.sales_man.level]||'https://imgcdn.huanjutang.com/assets/img/202076155008081.png'}}"></image>
+                            <image src="https://imgcdn.huanjutang.com/assets/img/202072851548081.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </authorization>
+            <block wx:else>
+                <view class="login-text">
+                    <text>欢迎使用房小团</text>
+                    <text>点击登录，享受更多优质服务</text>
+                </view>
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['emptyFunction'] ] ] ]}}" vueId="9f91bc1c-3" vueSlots="{{['default']}}">
+                    <view bindtap="__e" class="info-button" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="立即登录">立即登录</view>
+                </authorization>
+            </block>
+        </view>
+    </view>
+    <view class="me-content" wx:if="{{topIcon.length>0}}">
+        <view class="top-icon">
+            <busi-auth-navigator bind:__l="__l" url="{{item.url}}" vueId="{{'9f91bc1c-4-'+index}}" vueSlots="{{['default']}}" wx:for="{{topIcon}}" wx:key="index">
+                <top-icon bind:__l="__l" item="{{item}}" vueId="{{'9f91bc1c-5-'+index+','+'9f91bc1c-4-'+index}}"></top-icon>
+            </busi-auth-navigator>
+        </view>
+        <view class="swiper-wraper" wx:if="{{myBanners.list.length>0}}">
+            <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{myBanners.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{myBanners.list}}" height="{{184}}" source="me" vueId="9f91bc1c-6"></base-banner>
+        </view>
+        <view class="me-list">
+            <view class="{{['list-content',item.skeleton?'skeletons':'']}}" wx:for="{{listIcon}}" wx:key="index">
+                <view class="list-title skeletons-rect">{{''+(item.title||'')+''}}</view>
+                <busi-auth-navigator bind:__l="__l" url="{{ele.url}}" vueId="{{'9f91bc1c-7-'+index+'-'+index1}}" vueSlots="{{['default']}}" wx:for="{{item.content}}" wx:for-index="index1" wx:for-item="ele" wx:key="index1">
+                    <me-list-item bind:__l="__l" ele="{{ele}}" title="{{item.title}}" vueId="{{'9f91bc1c-8-'+index+'-'+index1+','+'9f91bc1c-7-'+index+'-'+index1}}"></me-list-item>
+                </busi-auth-navigator>
+                <view class="me-split" wx:if="{{index!==listIcon.length-1}}"></view>
+            </view>
+        </view>
+    </view>
+</view>

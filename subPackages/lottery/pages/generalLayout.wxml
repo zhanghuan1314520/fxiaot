@@ -1,0 +1,80 @@
+<view>
+    <view class="general-layout" style="{{selectedUnit?'height:'+pageHeight+'px;overflow:hidden;':''}}" wx:if="{{!loading}}">
+        <movable-area class="scale-view">
+            <movable-view class="move-view" direction="all" outOfBounds="out-of-bounds" style="{{'height:'+imgSize.h+'px;width:'+imgSize.w+'px;'}}" x="{{x}}" y="{{y}}">
+                <image mode="widthFix" src="{{imgUrl}}" style="{{'height:'+imgSize.h+'px;width:'+imgSize.w+'px;'}}"></image>
+                <view class="points">
+                    <view bindtap="__e" class="{{[ 'point delay'+index+' '+(point.type==1?'big':'small')+' '+(point.toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickPointHandle',[index] ] ] ] ]}}" style="{{'transform:translate('+point.x+'px, '+point.y+'px);'}}" wx:for="{{points}}" wx:for-item="point" wx:key="index">{{''+point.mark+''}}</view>
+                </view>
+            </movable-view>
+        </movable-area>
+        <view class="control-view">
+            <view class="house-plan">
+                <swiper bindchange="__e" class="list" current="{{buildIndex}}" data-event-opts="{{[ [ 'change',[ [ 'changeSwiperHandle',['$event'] ] ] ] ]}}" duration="300" nextMargin="16rpx" previousMargin="16rpx">
+                    <swiper-item bindtap="__e" class="{{[ 'item '+(buildIndex==index?'':'scale') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickPointHandle',[index] ] ] ] ]}}" wx:for="{{buildDatas}}" wx:key="index">
+                        <view class="title">
+                            <text>{{item.mark+' '+item.project_name}}</text>
+                        </view>
+                        <view class="info">
+                            <view class="info-item">
+                                <text class="left">{{''+showDateName+''}}</text>
+                                <text class="right">{{''+item.pre_order_time+''}}</text>
+                            </view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="build-content" style="{{'display:'+(selectedUnit?'none':'block')}}">
+                <view bindtap="__e" class="build-item" data-event-opts="{{[ [ 'tap',[ [ 'clickUnitHandle',[index] ] ] ] ]}}" wx:for="{{unitDatas}}" wx:for-item="unit" wx:key="index">
+                    <view class="build-name">{{''+unit.unit_name+'单元'}}</view>
+                    <view class="tihu">
+                        <text class="name">梯户比</text>
+                        <text class="value">{{''+(unit.elevator||'-')+''}}</text>
+                    </view>
+                    <view class="bottom">
+                        <view class="hushu">
+                            <text class="name">户数</text>
+                            <text class="value">{{''+unit.total+'户'}}</text>
+                        </view>
+                        <view class="cengshu">
+                            <text class="name">层数</text>
+                            <text class="value">{{''+unit.max_floor+'层'}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="rooms-content" style="{{'display:'+(selectedUnit?'block':'none')}}">
+                <view class="pager">
+                    <view bindtap="__e" class="back-unit" data-event-opts="{{[ [ 'tap',[ [ 'backUnitHandle',['$event'] ] ] ] ]}}">
+                        <image class="icon" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAhCAMAAAD03JuvAAAAeFBMVEUAAAAujPAph/Aph/QAd9ItjfEvjPAvjfArju0vjO8vjPAujPAujO8ukPQvjPAujfAujfAvjPAvjPAvjfIvjfAwkPIujPAujPAujPAujO8vjPAwjvMvjPAvjO8vjfAvje8vjPAvjPAxjPEtj/AujvEvjO8vjPEvjO8mWG7yAAAAJ3RSTlMA+AsGAy3fixD28uhvFvvWpZt1YUsm7M7DtVMavZ2Ugn5rSUA0r4H2ZV0IAAAA0ElEQVQoz3WSWRKCQAxEh2VkR1bZBETQ3P+GJvhB1TT05+tJqieJQmlvsU+wU0ZEM3I3fhCRd/I+IEpbaJV4FpGVJya3c+aU+yb3R8YB9tcd8zCG/kObcv/SMXl9J6Koh/hv4bfKNY31JnwzuVMFzJsavruP4akhZxEy/wzIGaeZD9xuJKdWqBcb1uifOZLJ6GWkAqeXmrZWqDWSnx8Ozgod/XcUamhkH72jrjcISjJxZoWyM7mS6ajBu8KaRZzupMbdl+NdXfsXsNRsU8GT/gFRrRV6+jra/gAAAABJRU5ErkJggg=="></image>
+                        <text>选择单元</text>
+                    </view>
+                    <scroll-view scrollX="scroll-x">
+                        <view class="pager-box">
+                            <view bindtap="__e" class="{{[ 'item '+(roomIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickRoomHandle',[index] ] ] ] ]}}" wx:for="{{roomDatas}}" wx:key="index">{{''+item.mark+'号房'}}</view>
+                        </view>
+                    </scroll-view>
+                </view>
+                <swiper bindchange="__e" class="rooms-list" current="{{roomIndex}}" data-event-opts="{{[ [ 'change',[ [ 'changeRoomHandle',['$event'] ] ] ] ]}}" duration="300">
+                    <swiper-item class="rooms-item" wx:for="{{roomDatas}}" wx:key="index">
+                        <view class="room-container">
+                            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'previewHandle',['$0'],[ [ ['roomDatas','',index],['list','',index2,'image'] ] ] ] ] ] ]}}" wx:for="{{item.list}}" wx:for-index="index2" wx:for-item="room" wx:key="index2">
+                                <image class="cover" mode="aspectFill" src="{{room.image}}"></image>
+                                <view class="right _div">
+                                    <view class="title">{{''+room.num_bed_room+'室'+room.num_living_room+'厅'+room.num_rest_room+'户'}}<text>{{room.outer_square+'㎡'}}</text>
+                                    </view>
+                                    <view class="huxing">{{''+room.name+''}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <navigator class="see-house" url="{{'/subPackages/project/pages/oneHouseOnePrice?lottery_id='+lotteryId+'&houseTypeId='+roomDatas[roomIndex].list[0].id+'&p_id='+projectId+'&name='+projectName}}">查看该户型的一房一价表</navigator>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <view class="full-screen" wx:else>
+        <view class="full-screen-small" id="spinner"></view>
+    </view>
+    <busi-share-icon bind:__l="__l" class="vue-ref" data-ref="share" vueId="18885fb6-1"></busi-share-icon>
+</view>

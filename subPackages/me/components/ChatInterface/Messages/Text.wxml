@@ -1,0 +1,5 @@
+<base-layout bind:__l="__l" message="{{message}}" vueId="067424e6-1" vueSlots="{{['default']}}">
+    <view class="{{['text-message',isReceive?'receive':'',!isReceive?'sender':'']}}">
+        <show-emoji bind:__l="__l" message="{{message.content}}" vueId="{{'067424e6-2'+','+'067424e6-1'}}"></show-emoji>
+    </view>
+</base-layout>

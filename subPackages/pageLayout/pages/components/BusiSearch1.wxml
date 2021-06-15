@@ -1,0 +1,8 @@
+<view class="search-bg-box">
+    <image alt srcset class="bg-image" mode="widthFix" src="{{settings.background}}"></image>
+    <view bindtap="__e" class="search-box" data-event-opts="{{[ [ 'tap',[ [ 'goSearchPage',['$event'] ] ] ] ]}}" data-name="搜索" style="{{'background:'+(settings.inputBgColor||'rgba(245,245,245,0.2)')+';'}}">
+        <image class="icon-search" src="https://imgcdn.huanjutang.com/image/2020/06/16/f4eb4f3f754ce71456beba96820d9bef.png"></image>
+        <view class="input" type="text">{{''+(settings.tip||'')+''}}</view>
+    </view>
+    <view class="shadow"></view>
+</view>

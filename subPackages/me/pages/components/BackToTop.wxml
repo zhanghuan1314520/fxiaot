@@ -1,0 +1,4 @@
+<view bindtap="__e" class="{{[ 'wrap',[show?'show':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'backToTop',['$event'] ] ] ] ]}}" style="{{'bottom:'+(custom?bottom+'rpx':defaultBottom+'rpx')+';'}}">
+    <view class="iconnew new-huidingbu"></view>
+    <text class="text">顶部</text>
+</view>

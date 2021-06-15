@@ -1,0 +1,23 @@
+<view bindtap="__e" class="project-ranking_wrap" data-event-opts="{{[ [ 'tap',[ [ 'hideAreaBox',['$event'] ] ] ] ]}}">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="42fb2bc2-1"></busi-nav-header>
+    <view class="page">
+        <image class="rank-bg-img" mode="scaleToFill" src="https://imgcdn.huanjutang.com/image/2020/07/27/3b22f14ef5129b01c945db51ab932765.png"></image>
+        <image class="rank-txt-img" mode="scaleToFill" src="https://imgcdn.huanjutang.com/file/2021/02/02/d3779dce816db101bf31fae6586ec607.png"></image>
+        <view catchtap="__e" class="selet_wrap flex_layout_c" data-event-opts="{{[ [ 'tap',[ [ 'changeAreaBoxState',['$event'] ] ] ] ]}}">
+            <text class="fz-14 tit">{{''+params.area_name+''}}</text>
+            <text class="iconnew icon-zhankai new-zhankai fz-13"></text>
+            <view class="area-list_wrap" wx:if="{{ishowRank}}">
+                <busi-area-list areaId="{{params.area_id}}" areaList="{{areaList}}" bind:__l="__l" bind:changeAreaHandler="__e" bind:updateAreaId="__e" data-event-opts="{{[ [ '^updateAreaId',[ [ '__set_sync',['$0','area_id','$event'],['params'] ] ] ],[ '^updateAreaId',[ [ '__set_sync',['$0','area_id','$event'],['params'] ] ] ],[ '^changeAreaHandler',[ ['changeAreaHandler'] ] ] ]}}" vueId="42fb2bc2-2"></busi-area-list>
+            </view>
+        </view>
+        <view class="tip_wrap fz-12">排行榜根据近30天楼盘的点击量、评论量、转发量等数据，综合统计后进行排名。不一定完全贴合时下市场真实情况，仅供参考。</view>
+        <view class="tab_wrap">
+            <view class="tab-list_wrap flex_layout">
+                <view bindtap="__e" class="{{['tab-list',item.id==activeTab?'active-tab':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeActiveTab',['$0'],[ [ ['tabList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.name}}" data-type="button" wx:for="{{tabList}}" wx:for-index="__i0__" wx:key="id">{{''+item.name+''}}</view>
+            </view>
+            <view class="tab-content_wrap">
+                <busi-project-rank-list adSource="projectRank" adType="order" bind:__l="__l" items="{{projectList}}" tabName="{{tabList[activeTab].name}}" vueId="42fb2bc2-3"></busi-project-rank-list>
+            </view>
+        </view>
+    </view>
+</view>

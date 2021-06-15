@@ -1,0 +1,12 @@
+{
+    "component": true,
+    "usingComponents": {
+        "busi-tab": "/components/UILayout/BusiTab",
+        "share-template": "/pages/salesMan/components/shareTemplate",
+        "busi-bottom-line": "/components/UILayout/BusiBottomLine",
+        "operate-btns": "/pages/salesMan/components/OperateBtns",
+        "busi-loading": "/components/UILayout/BusiLoading",
+        "related-project": "/pages/salesMan/components/RelatedProject",
+        "over-flow-content": "/pages/salesMan/components/OverFlowContent"
+    }
+}

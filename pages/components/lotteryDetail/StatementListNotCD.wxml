@@ -1,0 +1,47 @@
+<view class="wrap">
+    <view class="{{[ 'white-bg statement-item',[item.skeleton?'skeletons':''] ]}}" wx:for="{{list}}" wx:for-index="key" wx:key="key">
+        <view class="statement-info">
+            <view class="point f-left">
+                <image class="point__image" src="https://imgcdn.huanjutang.com/assets/img/201910311558528081.png"></image>
+            </view>
+            <view catchtap="__e" class="authors f-left skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ '$emit',['jump-to-statement-list'] ] ] ] ]}}">{{''+item.time}}<view class="line"></view>
+                <text wx:if="{{item.sales_man_id>0}}">置业顾问-</text>
+                <text>{{item.sales_man_name}}</text>
+            </view>
+            <view class="icons f-right">
+                <block wx:if="{{item.sales_man_id>0}}">
+                    <view bindtap="__e" class="phone-cont" data-event-opts="{{[ [ 'tap',[ [ 'callSalesman',['$0'],[ [ ['list','',key,'sales_man_id'] ] ] ] ] ] ]}}" data-name="获取手机号" wx:if="{{username}}">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/201910301737358081.png"></image>
+                    </view>
+                    <button bindgetuserinfo="__e" class="phone-cont" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['$0'],[ [ ['list','',key,'sales_man_id'] ] ] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" wx:else>
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/201910301737358081.png"></image>
+                    </button>
+                </block>
+                <busi-auth-navigator bind:__l="__l" url="{{urls[key]}}" vueId="{{'2e09e40c-1-'+key}}" vueSlots="{{['default']}}" wx:if="{{item.session_id>0}}">
+                    <view class="mes-cont">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/201910301737418081.png"></image>
+                    </view>
+                </busi-auth-navigator>
+            </view>
+        </view>
+        <view catchtap="__e" class="statement-bodys" data-event-opts="{{[ [ 'tap',[ [ '$emit',['jump-to-statement-list'] ] ] ] ]}}">
+            <view class="statement-title  skeletons-rect">
+                <text selectable="selectable">{{''+item.title+''}}</text>
+            </view>
+            <statement-over-flow-item bind:__l="__l" content="{{item.content}}" vueId="{{'2e09e40c-2-'+key}}" wx:if="{{!item.skeleton}}"></statement-over-flow-item>
+            <view class="statement-images" wx:if="{{item.thumbnails&&item.thumbnails.length>0}}">
+                <block wx:if="{{item.thumbnails.length===1}}">
+                    <view class="image-item-one" wx:for="{{item.thumbnails}}" wx:for-item="imgSrc" wx:key="index">
+                        <image catchtap="__e" class="image__one__img" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',[key,index] ] ] ] ]}}" data-name="查看原图" mode="aspectFill" src="{{imgSrc}}"></image>
+                    </view>
+                </block>
+                <block wx:if="{{item.thumbnails.length>1}}">
+                    <view class="image-item" wx:for="{{item.thumbnails}}" wx:for-item="imgSrc" wx:key="index">
+                        <image catchtap="__e" class="image__item__img" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',[key,index] ] ] ] ]}}" data-name="查看原图" mode="aspectFill" src="{{imgSrc}}"></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" class="vue-ref" content="{{callContent}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','showCallPhone','$event'],[''] ] ] ],[ '^onSubmit',[ ['comfirm'] ] ] ]}}" data-ref="Dialog" dataName="打电话" dataType="button" submitText="拨打" visible="{{showCallPhone}}" vueId="2e09e40c-3"></dialog>
+</view>

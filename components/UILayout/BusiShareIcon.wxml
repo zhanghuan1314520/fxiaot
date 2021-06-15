@@ -1,0 +1,4 @@
+<view class="{{[ 'share-icon iconnew new-fenxiang1 fz-24 '+(isShowShareBtn?' ':'moveOut') ]}}" style="{{'bottom:'+(custom?bottom+'rpx':defaultBottom+'rpx')+';'}}">
+    <slot wx:if="{{$slots.default}}"></slot>
+    <button class="share__button" data-type="button" openType="share" wx:else></button>
+</view>

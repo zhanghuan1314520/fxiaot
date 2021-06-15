@@ -1,0 +1,11 @@
+<view class="horizontal-tabs">
+    <view catchtap="__e" class="horizontal-tabs__title" data-event-opts="{{[ [ 'tap',[ [ 'topClickHandle',['$event'] ] ] ] ]}}">
+        <text class="text">楼盘详情</text>
+        <text class="icon new-huidingbu iconnew"></text>
+    </view>
+    <view class="horizontal-tabs__content">
+        <scroll-view class="scroll-view-tag" scrollIntoView="{{intoView}}" scrollX="{{true}}">
+            <view catchtap="__e" class="{{['scroll-view-item',intoView==='data-'+item.actionView?'is-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'tabClickHandle',['$0'],[ [ ['tabs','',index] ] ] ] ] ] ]}}" id="{{'data-'+item.actionView}}" wx:for="{{tabs}}" wx:key="index">{{''+item.name+''}}</view>
+        </scroll-view>
+    </view>
+</view>

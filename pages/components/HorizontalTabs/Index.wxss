@@ -1,0 +1,64 @@
+.horizontal-tabs {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 88rpx;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(21,24,45,.05);
+}
+
+.horizontal-tabs__title {
+    width: 176rpx;
+    height: 88rpx;
+    background: #fff;
+    box-shadow: 4rpx 0rpx 8rpx 0rpx rgba(21,24,45,.05);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.horizontal-tabs__title .text {
+    font-size: 28rpx;
+    font-weight: blod;
+    color: #303237;
+    line-height: 86rpx;
+    font-weight: 700;
+}
+
+.horizontal-tabs__title .icon {
+    font-size: 24rpx;
+    margin-left: 8rpx;
+    color: #2f8cef;
+    font-weight: 700;
+}
+
+.horizontal-tabs__content {
+    width: calc(100vw - 176rpx);
+    height: 88rpx;
+}
+
+.horizontal-tabs__content .scroll-view-tag {
+    height: 88rpx;
+    white-space: nowrap;
+}
+
+.horizontal-tabs__content .scroll-view-item {
+    display: inline-block;
+    padding-left: 30rpx;
+    font-size: 28rpx;
+    max-width: 112rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: content-box;
+    color: #96989e;
+    line-height: 88rpx;
+    text-align: center;
+}
+
+.horizontal-tabs__content .scroll-view-item:last-child {
+    padding-right: 30rpx;
+}
+
+.horizontal-tabs__content .scroll-view-item.is-active {
+    color: #2f8cef;
+}

@@ -1,0 +1,31 @@
+<view>
+    <view class="recharge-content">
+        <view class="points-content">
+            <view class="left-input conmmon-input">
+                <input bindinput="__e" class="fz-20" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputPoint','$event',[] ] ] ] ] ]}}" disabled="{{true}}" placeholderClass="fz-14 small-level-color" type="number" value="{{inputPoint}}"></input>
+                <text class="label">积分</text>
+            </view>
+            <view class="center-input">
+                <view>兑换</view>
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/file/2021/03/18/62f2bbdf7727c20a41014e9935f6b666.png" style="width:94rpx;height:16rpx;"></image>
+            </view>
+            <view class="right-input conmmon-input">
+                <input bindinput="__e" class="fz-20" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputCoin','$event',[] ] ],[ 'coinChange',['$event'] ] ] ] ]}}" placeholderClass="fz-20 small-level-color" type="number" value="{{inputCoin}}"></input>
+                <text class="label">金币</text>
+            </view>
+        </view>
+        <view class="tip">
+            <view>{{'注: '+currency+'积分=1金币'}}</view>
+            <view>{{'当前最多兑换'+maxCoin+'金币'}}</view>
+        </view>
+        <view style="margin:40rpx 0;">
+            <comfirm-btn bind:__l="__l" bind:confirm="__e" data-event-opts="{{[ [ '^confirm',[ ['coinsCharge'] ] ] ]}}" vueId="34c2939c-1" vueSlots="{{['default']}}">确认兑换</comfirm-btn>
+        </view>
+        <button class="getCoin-btn fz-16 white-bg" hoverClass="none" openType="contact" sessionFrom="{{weapp}}">获取更多金币(回复"3")</button>
+    </view>
+    <white-space bind:__l="__l" color="#F7F7F7" vueId="34c2939c-2"></white-space>
+    <view class="goldRule white-bg" wx:if="{{currency_rules.length>0}}">
+        <view class="rule-title">金币兑换规则:</view>
+        <view class="rule-content" wx:for="{{currency_rules}}" wx:key="index">{{''+index+1+'、'+item+''}}</view>
+    </view>
+</view>

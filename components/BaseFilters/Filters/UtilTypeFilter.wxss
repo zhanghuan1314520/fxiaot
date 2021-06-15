@@ -1,0 +1,21 @@
+.util-type-filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.util-type-filter .util-type-filter__container {
+    min-height: 608rpx;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.util-type-filter .util-type-filter__footer,.util-type-scroll {
+    height: 144rpx;
+}
+
+.util-type-scroll .util-type-empty {
+    height: 100vh;
+}

@@ -1,0 +1,7 @@
+<view class="{{[ 'related-topic '+(hasPadding?'padding':'') ]}}">
+    <view class="related-topic__content">
+        <image class="img" src="{{discussImage}}"></image>
+        <text class="related-topic__name">{{''+formatName+''}}</text>
+    </view>
+    <text class="iconnew new-tongyong-gengduo fz-12"></text>
+</view>

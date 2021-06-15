@@ -1,0 +1,8 @@
+<view class="button-group data-v-cadbf2b4">
+    <view class="button-group__list data-v-cadbf2b4" wx:for="{{list}}" wx:for-index="groupIndex" wx:for-item="group" wx:key="groupIndex">
+        <view class="group__list__header data-v-cadbf2b4" wx:if="{{group.title}}">{{''+group.title+''}}</view>
+        <view class="group__list__container data-v-cadbf2b4" wx:if="{{group.list}}">
+            <view catchtap="__e" class="{{['data-v-cadbf2b4',true?'group__list__item':'',item.isChecked?'group__list__item-active':'',(index+1)%4===0&&index!==0?'not-right-margin':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[groupIndex,index] ] ] ] ]}}" wx:for="{{group.list}}" wx:key="index">{{''+item.text+''}}</view>
+        </view>
+    </view>
+</view>

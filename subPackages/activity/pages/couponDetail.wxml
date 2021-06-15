@@ -1,0 +1,86 @@
+<view wx:if="{{loaded}}">
+    <view class="unclaimed none" wx:if="{{item.btnStatus==1||item.btnStatus==3||item.btnStatus==4||item.btnStatus==5}}">
+        <view class="info-top">
+            <view class="info-left type-1">
+                <text class="value semiBold">{{''+item.discount+''}}</text>
+                <text class="unit">{{''+item.discountUnit+''}}</text>
+            </view>
+            <view class="info-center">
+                <view class="item-name">{{''+item.couponName+''}}</view>
+                <view class="item-premise">{{''+(item.premise?'仅限'+item.premise:'详情咨询置业顾问')+''}}</view>
+                <view class="item-date">{{''+item.dateText+''}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="{{[ 'info has '+(item.detailStatus=='expire'?'bg-2':'bg-1') ]}}" wx:else>
+        <view class="info-top">
+            <view class="info-left type-1">
+                <text class="value semiBold">{{''+item.discount+''}}</text>
+                <text class="unit">{{''+item.discountUnit+''}}</text>
+            </view>
+            <view class="info-center">
+                <view class="item-name">{{''+item.couponName+''}}</view>
+                <view class="item-premise">{{''+(item.premise?'仅限'+item.premise:'详情咨询置业顾问')+''}}</view>
+                <view class="item-date">{{''+item.dateText+''}}</view>
+            </view>
+        </view>
+        <view class="info-footer" wx:if="{{item.btnStatus!=1}}">
+            <view class="phone-info" wx:if="{{item.detailStatus=='available'}}">
+                <view class="phone">{{''+userPhone+''}}</view>
+                <view class="show-eye" wx:if="{{!showPhone}}">
+                    <text bindtap="__e" class="iconnew new-51yincang" data-event-opts="{{[ [ 'tap',[ [ 'handleShowPhone',[true] ] ] ] ]}}"></text>
+                </view>
+                <view class="hide-eye" wx:if="{{showPhone}}">
+                    <text bindtap="__e" class="iconnew new-52xianshi" data-event-opts="{{[ [ 'tap',[ [ 'handleShowPhone',[false] ] ] ] ]}}"></text>
+                </view>
+                <view class="tip">使用时提供您的手机号给置业顾问即可</view>
+            </view>
+            <view class="used" wx:if="{{item.detailStatus=='used'}}">优惠券已使用</view>
+            <view class="used" wx:if="{{item.detailStatus=='expire'}}">优惠券已过期</view>
+        </view>
+    </view>
+    <view class="range">{{'* 仅适用于'+item.projectNames+''}}</view>
+    <view class="salesman-info" wx:if="{{recommendSalesMan.length>0}}">
+        <navigator class="common-title" hoverClass="none" id="saleManMore" url="{{'/pages/salesMan/index?id='+project_id+'&title='+baseDetail.name+'&andrees=coupon'}}">
+            <view class="title">联系置业顾问获取优惠信息</view>
+            <view class="more">
+                <text>更多置业顾问</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </navigator>
+        <view class="info-container">
+            <navigator bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'btnEventTrack',['楼盘详情-置业顾问'+index] ] ] ] ]}}" id="{{'salesMan'+index}}" item="sales" url="{{'/pages/salesMan/detail?user_id='+sales[$orig].session_id+'&project_id='+project_id+'&andrees=detail&title='+baseDetail.name+'&project_img='+baseDetail.cover}}" wx:for="{{$root.l0}}" wx:for-item="sales" wx:key="index">
+                <image lazyLoad="lazy-load" mode="aspectFill" src="{{sales[$orig].sales_man_avatar+(sales.m0?'|':'?')+'imageView2/1/w/200/q/75'}}"></image>
+                <view class="only-tag position" wx:if="{{sales[$orig].is_bind&&sales[$orig].is_bind==1}}"></view>
+                <view class="name">{{''+sales[$orig].sales_man_name+''}}</view>
+                <busi-auth-navigator bind:__l="__l" url="{{urls[index]}}" vueId="{{'06d048a4-1-'+index}}" vueSlots="{{['default']}}">
+                    <view class="btn">
+                        <text class="iconnew new-zixun fz-13"></text>
+                        <text class="fz-13">咨询</text>
+                    </view>
+                </busi-auth-navigator>
+            </navigator>
+        </view>
+    </view>
+    <view class="desc">
+        <rich-text nodes="{{item.couponDesc}}"></rich-text>
+    </view>
+    <view class="footer" wx:if="{{item.btnStatus==1}}">
+        <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'handleOperate',['$0'],['item'] ] ] ] ]}}">{{''+item.btnText+''}}</button>
+    </view>
+    <view class="lottery-toast" wx:if="{{alertShowFlag}}">
+        <view class="cont">
+            <image class="image" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190620/5d0b4dabb803c.png" wx:if="{{alertShow=='1'}}"></image>
+            <text class="weui-icon-clear iconnew new-shanchu1" wx:if="{{alertShow=='2'}}"></text>
+            <text>{{toastMsg||'领取成功'}}</text>
+        </view>
+        <view class="fz-13 tips" wx:if="{{alertShow=='1'}}">前往"我的 > 优惠券 >"查看</view>
+    </view>
+    <view class="receiveDialog" wx:if="{{receiveDialog&&userInfo&&userInfo.phone}}">
+        <view class="cont">领取优惠券</view>
+        <view class="cont cont--phone">{{''+$root.f0+''}}</view>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'receiveConfirm',['$event'] ] ] ] ]}}">立即领取</view>
+        <view class="tips">领取后专属置业顾问将尽快与您联系</view>
+    </view>
+    <view bindtap="__e" class="receiveDialog__shade" data-event-opts="{{[ [ 'tap',[ [ 'receiveClose',['$event'] ] ] ] ]}}" wx:if="{{receiveDialog}}"></view>
+</view>

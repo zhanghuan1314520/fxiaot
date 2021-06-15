@@ -1,0 +1,6 @@
+<view>
+    <view style="{{'height:'+padding.top+';'}}"></view>
+    <view class="base-layout" style="{{'padding-left:'+(customerPadding.left||padding.left)+';'+'padding-right:'+(customerPadding.right||padding.right)+';'}}">
+        <slot></slot>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-tab": "/components/UILayout/BusiTab",
+        "base-info": "/subPackages/me/pages/components/goldRecharge/BaseInfo",
+        "exchange": "/subPackages/me/pages/components/goldRecharge/Exchange",
+        "recharge": "/subPackages/me/pages/components/goldRecharge/Recharge"
+    }
+}

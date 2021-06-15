@@ -1,0 +1,26 @@
+<view class="table-box data-v-725a6357" wx:if="{{!hide}}">
+    <view class="{{['data-v-725a6357','title',list.length>0?'':'no-margin']}}">
+        <text class="title-font data-v-725a6357">{{''+title+''}}</text>
+        <text class="total data-v-725a6357" wx:if="{{showTotal}}">{{'（'+total+'个）'}}</text>
+        <text class="extra data-v-725a6357">{{''+extra+''}}</text>
+    </view>
+    <block wx:if="{{list.length>0}}">
+        <view class="{{['data-v-725a6357','header',noPadding?'no-padding':'has-padding']}}">
+            <text class="{{['data-v-725a6357',true?'header-text':'',fields[index].key===leftKey?'left':'',fields[index].noFlex?'no-flex':'',fields[index].paddingLeft?'padding-left':'']}}" style="{{'width:'+fields[index].width+';'}}" wx:for="{{header}}" wx:key="index">{{''+item+''}}</text>
+        </view>
+        <view class="table data-v-725a6357">
+            <view class="{{['data-v-725a6357','column',noPadding?'no-padding':'has-padding',firstDark&&index%2===0?'dark':'',!firstDark&&index%2===1?'dark':'']}}" wx:for="{{$root.l4}}" wx:key="index">
+                <text class="{{['data-v-725a6357',true?'table-text':'',text.g0?'bord':'',leftKey===text[$orig].key?'left':'']}}" style="{{'width:'+text[$orig].width+';'}}" wx:if="{{item[$orig][text[$orig].key]&&!item[$orig].items||item[$orig][text[$orig].key]===0}}" wx:for="{{item.l0}}" wx:for-index="tIndex" wx:for-item="text" wx:key="tIndex">{{''+item[$orig][text[$orig].key]+''}}</text>
+                <block wx:if="{{item[$orig].items}}">
+                    <view class="{{['data-v-725a6357','column-item',cIndex===0?'no-margin':'']}}" wx:for="{{item.l3}}" wx:for-index="cIndex" wx:for-item="c" wx:key="cIndex">
+                        <text class="{{['data-v-725a6357','table-text',cIndex!==0?'hide':'',text.g1?'bord':'',leftKey===text[$orig].key?'left':'']}}" style="{{'width:'+text[$orig].width+';'}}" wx:if="{{item[$orig][text[$orig].key]}}" wx:for="{{c.l1}}" wx:for-index="tIndex" wx:for-item="text" wx:key="tIndex">{{''+item[$orig][text[$orig].key]+''}}</text>
+                        <text bindtap="__e" class="{{['data-v-725a6357','table-text',text.g2?'bord':'',leftKey===text[$orig].key?'left':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$0'],[ [ ['list','',index],['items','',cIndex] ] ] ] ] ] ]}}" style="{{'width:'+text[$orig].width+';'}}" wx:if="{{c[$orig][text[$orig].key]}}" wx:for="{{c.l2}}" wx:for-index="tIndex" wx:for-item="text" wx:key="tIndex">{{''+c[$orig][text[$orig].key]+''}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+    <view class="empty data-v-725a6357" wx:else>
+        <text class="text data-v-725a6357">{{''+emptyText+''}}</text>
+    </view>
+</view>

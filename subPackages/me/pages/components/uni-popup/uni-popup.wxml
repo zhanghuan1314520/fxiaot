@@ -1,0 +1,8 @@
+<view catchtouchmove="__e" class="{{['uni-popup',popupstyle]}}" data-event-opts="{{[ [ 'touchmove',[ [ 'clear',['$event'] ] ] ] ]}}" wx:if="{{showPopup}}">
+    <uni-transition bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onTap'] ] ] ]}}" duration="{{duration}}" modeClass="{{['fade']}}" show="{{showTrans}}" styles="{{maskClass}}" vueId="424d3f8e-1" wx:if="{{maskShow}}"></uni-transition>
+    <uni-transition bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['onTap'] ] ] ]}}" duration="{{duration}}" modeClass="{{ani}}" show="{{showTrans}}" styles="{{transClass}}" vueId="424d3f8e-2" vueSlots="{{['default']}}">
+        <view catchtap="__e" class="uni-popup__wrapper-box" data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}">
+            <slot></slot>
+        </view>
+    </uni-transition>
+</view>

@@ -1,0 +1,11 @@
+{
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#f7f7f7",
+    "usingComponents": {
+        "busi-footer": "/components/UILayout/BusiFooter",
+        "huxing-list": "/subPackages/project/components/HuxingList",
+        "contact-salesman": "/components/ContactSalesman",
+        "call-salesman": "/components/CallSalesman",
+        "focus-footer": "/subPackages/project/pages/component/projectPlanar/focusFooter"
+    }
+}

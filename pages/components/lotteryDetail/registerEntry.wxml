@@ -1,0 +1,20 @@
+<view>
+    <view bindtap="__e" class="register-entry-bg" data-event-opts="{{[ [ 'tap',[ [ 'hideRegisterEntry',['$event'] ] ] ] ]}}" wx:if="{{iShowRegisterBgCom}}">
+        <view class="entry-con">
+            <view class="content" style="{{'background: url('+dialogBg+') no-repeat center / 100% 100%'}}">
+                <text class="project-name text" selectable="selectable">{{''+projectName+''}}</text>
+                <view class="wrapper">
+                    <image class="wrappper__img" src="{{registerBgSrc}}"></image>
+                </view>
+                <text class="qr-name" selectable="selectable text">二维码已保存至相册</text>
+                <text class="qr-register" selectable="selectable text">快去扫描二维码报名吧</text>
+                <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" data-toggle="open" openType="share">
+                    <text class="text">邀请好友报名</text>
+                </button>
+            </view>
+            <image bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'hideRegisterEntry',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d803e424e8ac.png"></image>
+        </view>
+        <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePhoto}}" showSetting="{{showPermissionsSetting}}" txt="保存海报" vueId="59961b4c-1"></photo-permissions-settings>
+    </view>
+    <canvas canvasId="registerCanvas" class="canvas" disableScroll="true" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}" wx:if="{{iShowRegisterBgCom}}"></canvas>
+</view>

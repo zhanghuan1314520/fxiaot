@@ -1,0 +1,244 @@
+page {
+    background-color: #fff;
+}
+
+.top {
+    padding-bottom: 24rpx;
+    background-image: url(https://imgcdn.huanjutang.com/image/2021/02/24/e10c7d117dd14d7a5a17e69845a354c1.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.top_switch_bar {
+    padding-bottom: 30rpx;
+    background: #fff;
+}
+
+.top_switch_bar .tab__container {
+    border-bottom: none;
+}
+
+.user-info {
+    justify-content: space-between;
+    padding: 12rpx 32rpx 0;
+}
+
+.user-info,.user-info .info {
+    display: flex;
+}
+
+.user-info .info .avatar {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 50rpx;
+}
+
+.user-info .btn {
+    margin-top: 14rpx;
+    margin-right: -4rpx;
+    padding-left: 64rpx;
+    width: 230rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    box-sizing: border-box;
+    background-image: url(https://imgcdn.huanjutang.com/image/2021/01/12/1248fd2a82418d21e10896d2b8beafc3.png);
+    background-size: 230rpx 72rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.name-box {
+    margin-left: 20rpx;
+}
+
+.name-box .name {
+    height: 52rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.name-box .current-point {
+    height: 32rpx;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 32rpx;
+}
+
+.name-box .current-point .num {
+    margin-left: 10rpx;
+}
+
+.name-box .today-point {
+    margin-top: 8rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: flex-end;
+}
+
+.name-box .today-point .label {
+    height: 32rpx;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 32rpx;
+}
+
+.name-box .today-point .num {
+    margin-left: 12rpx;
+    height: 40rpx;
+    font-size: 44rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffef7f;
+    line-height: 40rpx;
+}
+
+.point-title {
+    padding: 0 32rpx;
+    height: 80rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.point-title .left {
+    font-size: 28rpx;
+    color: hsla(0,0%,100%,.85);
+    line-height: 32rpx;
+}
+
+.point-title .right {
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #fff;
+    line-height: 28rpx;
+}
+
+.point-title .iconnew {
+    position: relative;
+    top: -2rpx;
+    color: #fff;
+    font-size: 20rpx;
+}
+
+.content {
+    padding-bottom: 12rpx;
+    background: #fff;
+}
+
+.points-content {
+    position: relative;
+    margin-top: -24rpx;
+    border-radius: 24rpx 24rpx 0rpx 0rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #fff;
+}
+
+.points-content .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68rpx;
+    background: #f2f2f2;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 28rpx;
+}
+
+.points-content .title .icon {
+    margin-left: 36rpx;
+    display: inline-block;
+}
+
+.points-content .title .iconnew {
+    font-size: 24rpx;
+}
+
+.points-content .points-col {
+    padding: 28rpx 32rpx;
+}
+
+.points-content .points-col+.points-col {
+    border-top: 1rpx solid rgba(0,0,0,.07);
+}
+
+.points-content .points-col .left {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 28rpx;
+}
+
+.points-content .points-col .right {
+    font-size: 28rpx;
+    color: #2d8cf0;
+    line-height: 28rpx;
+}
+
+.points-content .points-col .right .red {
+    color: #f03c50;
+}
+
+.points-content .points-col .time {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 24rpx;
+}
+
+.points-content .avatar {
+    margin: 24rpx 0 0 30rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+}
+
+.noData {
+    text-align: center;
+}
+
+.noData image {
+    width: 600rpx;
+    height: 300rpx;
+    margin-top: 150rpx;
+}
+
+.noData view {
+    margin-top: 10rpx;
+}
+
+.or-color {
+    color: #ee3f4d;
+}
+
+.line {
+    margin-bottom: 10rpx;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.points-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.heightLight {
+    color: #2d8cf0;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+}
+
+.loadMore {
+    height: 66rpx;
+    padding-top: 36rpx;
+    color: #91b3d7;
+    text-align: center;
+}

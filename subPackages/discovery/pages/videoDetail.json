@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom",
+    "disableScroll": true,
+    "usingComponents": {
+        "video-item": "/subPackages/discovery/component/VideoItem",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

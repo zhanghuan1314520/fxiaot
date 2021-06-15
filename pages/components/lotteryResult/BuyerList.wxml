@@ -1,0 +1,36 @@
+<view>
+    <view class="lottery-result" wx:for="{{items}}" wx:key="index">
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-add" data-event-opts="{{[ [ '^onSuccess',[ [ 'addBuyers',['$0'],[ [ ['items','',index,'button_value.__$n0'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'a5187704-1-'+index}}" vueSlots="{{['default']}}" wx:if="{{item.button_value.length}}">
+            <view class="auth-fz-14">
+                <text class="fz-12 iconnew new-jiaguanzhu"></text>添加</view>
+        </authorization>
+        <view class="row">
+            <view bindtap="__e" class="column fz-14" data-event-opts="{{[ [ 'tap',[ [ 'goPage',['$0'],[ [ ['items','',index,'url'] ] ] ] ] ] ]}}" wx:for="{{item.data}}" wx:for-index="lineIndex" wx:for-item="line" wx:key="lineIndex">
+                <view class="label">{{''+line.key+''}}</view>
+                <block wx:for="{{line.value}}" wx:for-index="valIndex" wx:for-item="val" wx:key="valIndex">
+                    <block wx:if="{{line.key=='审核状态'}}">
+                        <view class="value" style="color:#0ABF79;" wx:if="{{val}}">{{''+val+''}}</view>
+                    </block>
+                    <block wx:else>
+                        <block wx:if="{{line.key=='选房结果'}}">
+                            <view class="value" style="color:#2F8CEF;" wx:if="{{val}}">{{''+val+''}}</view>
+                        </block>
+                        <block wx:else>
+                            <view class="value" wx:if="{{val}}">{{''+val+''}}</view>
+                        </block>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <text class="iconnew new-tongyong-gengduo show-code" wx:if="{{item.url}}"></text>
+    </view>
+    <view bindtap="__e" class="tip-cont" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{showTip}}">
+        <view class="container">
+            <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20190724/5d37e0c6f3d66.png"></image>
+            <view class="success">编码添加成功！</view>
+            <view class="result">{{''+('hangzhou'!='nanjing'?'可在【我的摇号】-【我添加的编码】列表查看摇号进程':'可在【我的摇号】列表查看摇号进程')+''}}</view>
+            <view class="cancel font-bold">我知道了</view>
+        </view>
+        <view class="hide-bg"></view>
+    </view>
+</view>

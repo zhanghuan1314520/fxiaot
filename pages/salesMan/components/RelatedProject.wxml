@@ -1,0 +1,7 @@
+<view catchtap="__e" class="related-project" data-content="{{postType}}" data-event-opts="{{[ [ 'tap',[ [ 'haddleClick',['$event'] ] ] ] ]}}" data-name="{{name}}" data-type="link">
+    <view class="related-project__content">
+        <image class="img" src="https://imgcdn.huanjutang.com/image/2020/06/03/10a08cf1f29afb6cf36753e1a6c0f359.png"></image>
+        <text class="related-project__name fz-14" style="{{'max-width:'+contentWidth}}">{{''+name+''}}</text>
+    </view>
+    <text class="iconnew new-tongyong-gengduo fz-12"></text>
+</view>

@@ -1,0 +1,19 @@
+<view class="page data-v-da51734e">
+    <scroll-view bindscrolltoupper="__e" bindtouchend="__e" bindtouchstart="__e" catchtouchmove="__e" class="chatInterface data-v-da51734e" data-event-opts="{{[ [ 'touchmove',[ [ 'emptyFunction',['$event'] ] ] ],[ 'scrolltoupper',[ [ 'onScrollToUpper',['$event'] ] ] ],[ 'touchstart',[ [ 'allowGetHistory',[true] ] ] ],[ 'touchend',[ [ 'allowGetHistory',[false] ] ] ] ]}}" enableBackToTop="{{true}}" scrollIntoView="{{intoEleId}}" scrollWithAnimation="{{showAni}}" scrollY="{{true}}">
+        <view class="scrool-wrap data-v-da51734e">
+            <view class="chatInterface__item data-v-da51734e" id="{{i.id}}" wx:for="{{historyList}}" wx:for-index="__i0__" wx:for-item="i" wx:key="createdTime">
+                <chat-item bind:__l="__l" class="data-v-da51734e" item="{{i}}" vueId="{{'c3bea7f4-1-'+__i0__}}"></chat-item>
+            </view>
+            <view class="chatInterface__item data-v-da51734e" id="initLocation">
+                <question-chunk bind:__l="__l" class="data-v-da51734e" vueId="c3bea7f4-2"></question-chunk>
+            </view>
+            <view class="chatInterface__item data-v-da51734e" id="{{i.id}}" wx:for="{{chatList}}" wx:for-index="__i1__" wx:for-item="i" wx:key="createdTime">
+                <chat-item bind:__l="__l" class="data-v-da51734e" item="{{i}}" vueId="{{'c3bea7f4-3-'+__i1__}}"></chat-item>
+            </view>
+        </view>
+        <view class="data-v-da51734e" id="bottom-ele"></view>
+    </scroll-view>
+    <view class="reply-container data-v-da51734e" style="{{'z-index:'+(replyFocus?4:2)+';'}}">
+        <reply-container bind:__l="__l" bind:onSend="__e" class="data-v-da51734e" data-event-opts="{{[ [ '^onSend',[ ['askWord'] ] ] ]}}" vueId="c3bea7f4-4"></reply-container>
+    </view>
+</view>

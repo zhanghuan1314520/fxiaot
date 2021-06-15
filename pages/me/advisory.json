@@ -1,0 +1,12 @@
+{
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "杭州房小团",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "authorization": "/components/Authorization",
+        "image-loader": "/components/ImageLoader",
+        "robot": "/pages/me/components/chatRobot",
+        "show-emoji": "/pages/me/components/showEmoji"
+    }
+}

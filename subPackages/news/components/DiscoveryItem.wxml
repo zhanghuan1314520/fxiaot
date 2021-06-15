@@ -1,0 +1,19 @@
+<view bindtap="__e" class="discovery-container__item" data-event-opts="{{[ [ 'tap',[ [ 'haddleClickItem',['$event'] ] ] ] ]}}" data-name="{{typeMap[item.type]}}" id="{{item.id}}">
+    <border-container bind:__l="__l" border="{{!isLastItem}}" isFirstItem="{{isFirstItem}}" vueId="10e48b60-1" vueSlots="{{['default']}}">
+        <personal-info articleUrl="{{item.url}}" avatar="{{item.creatorAvatar}}" bind:__l="__l" contentType="{{item.type}}" level="{{item.creatorLevel}}" name="{{item.creatorName}}" tagImage="{{tagImage}}" userId="{{item.creatorId}}" vueId="{{'10e48b60-2'+','+'10e48b60-1'}}" vueSlots="{{['default']}}" wx:if="{{showPersonal&&item.type!=='import'}}">
+            <view class="info-slot">
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['subscribeHandler'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'10e48b60-3'+','+'10e48b60-2'}}" vueSlots="{{['default']}}" wx:if="{{showFollow&&userId!==item.creatorId&&item.type!=='import'}}">
+                    <view class="{{[ 'personal-follow '+(item.hasFollow||hasFollow?'followed':'') ]}}">{{''+(item.hasFollow||hasFollow?'已关注':'关注')+''}}</view>
+                </authorization>
+            </view>
+        </personal-info>
+        <overflow-content bind:__l="__l" content="{{item.title}}" hideTopic="{{hideTopic}}" postId="{{item.id}}" rows="{{contentRows}}" topic="{{formatTopic}}" topicId="{{item.topicId}}" type="{{item.type}}" vueId="{{'10e48b60-4'+','+'10e48b60-1'}}" wx:if="{{item.type!=='import'}}"></overflow-content>
+        <image-row bind:__l="__l" list="{{item.assets}}" rows="{{1}}" vueId="{{'10e48b60-5'+','+'10e48b60-1'}}" wx:if="{{item.type==='article'}}"></image-row>
+        <video-box bind:__l="__l" postId="{{item.id}}" url="{{item.assets[0]}}" vueId="{{'10e48b60-6'+','+'10e48b60-1'}}" wx:if="{{item.type==='video'&&item.assets[0]}}"></video-box>
+        <accept-answer avatar="{{item.acceptedCommentAuthorAvatar}}" bind:__l="__l" content="{{item.acceptedCommentBody}}" name="{{item.acceptedCommentAuthorName}}" vueId="{{'10e48b60-7'+','+'10e48b60-1'}}" wx:if="{{item.type==='qa'&&item.acceptedCommentId}}"></accept-answer>
+        <related-project bind:__l="__l" margin="{{projectMargin}}" name="{{item.projectName}}" postType="{{typeMap[item.type]}}" projectId="{{item.projectId}}" vueId="{{'10e48b60-8'+','+'10e48b60-1'}}" wx:if="{{item.projectId&&item.type!=='import'}}"></related-project>
+        <related-topic bind:__l="__l" name="{{item.topicContent}}" vueId="{{'10e48b60-9'+','+'10e48b60-1'}}" wx:if="{{item.type==='topic'}}"></related-topic>
+        <article-content bind:__l="__l" content="{{item.title}}" image="{{item.assets[0]}}" info="{{$root.a0}}" postId="{{item.id}}" target_url="{{item.url}}" time="{{fromTime}}" vueId="{{'10e48b60-10'+','+'10e48b60-1'}}" wx:if="{{item.type==='import'}}"></article-content>
+        <bottom-operate answer="{{answerProps}}" bind:__l="__l" bind:comment="__e" comment="{{commentProps}}" data-event-opts="{{[ [ '^comment',[ ['handleBottomComment'] ] ] ]}}" leftContent="{{leftProps}}" like="{{likeProps}}" marginTop="{{bottomMargin}}" postId="{{item.id}}" rightContent="{{item.rightContent}}" type="{{item.type}}" vueId="{{'10e48b60-11'+','+'10e48b60-1'}}" wx:if="{{item.type!=='import'}}"></bottom-operate>
+    </border-container>
+</view>

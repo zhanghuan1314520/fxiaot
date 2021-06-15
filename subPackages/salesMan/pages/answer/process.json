@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "答题闯关",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "subject": "/subPackages/salesMan/components/answer/topic-types/subject",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "answer-select": "/subPackages/salesMan/components/answer/topic-types/answerSelect"
+    }
+}

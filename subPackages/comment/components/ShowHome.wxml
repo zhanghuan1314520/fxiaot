@@ -1,0 +1,6 @@
+<view class="page-control">
+    <navigator class="backhome btn" openType="switchTab" url="/pages/index">
+        <text class="iconnew new-shouye2 fz-18"></text>
+        <text class="fz-11">首页</text>
+    </navigator>
+</view>

@@ -1,0 +1,18 @@
+<view class="box-answer-correct">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="c99e3efe-1" vueSlots="{{['default']}}">{{''+projectName+'-答题闯关'}}</busi-nav-header>
+    <view class="box-content">
+        <image class="logo" src="{{imageSrcTitle}}"></image>
+        <view class="info">
+            <view class="question" style="{{'height:'+contentHeight+'px'+';'}}">
+                <view class="box-question" wx:for="{{question}}" wx:key="index">
+                    <subject bind:__l="__l" info="{{item}}" mode="view" vueId="{{'c99e3efe-2-'+index}}"></subject>
+                    <answer-select bind:__l="__l" info="{{item}}" mode="view" questionIndex="{{index}}" questionLength="{{question.length}}" type="{{item.type}}" vueId="{{'c99e3efe-3-'+index}}"></answer-select>
+                    <image class="wrong-icon" src="{{wrongImageSrc}}" wx:if="{{!item.right}}"></image>
+                </view>
+                <view class="slogan">
+                    <text>相信努力和幸运成正比~</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "优惠券详情",
+    "usingComponents": {
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator"
+    }
+}

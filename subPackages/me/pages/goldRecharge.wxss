@@ -1,0 +1,21 @@
+.points .points-content {
+    margin-top: -24rpx;
+    box-sizing: border-box;
+    border-radius: 24rpx 24rpx 0rpx 0rpx;
+    overflow: hidden;
+}
+
+.top {
+    background-image: url(https://imgcdn.huanjutang.com/file/2020/12/24/dcff9ac18e69519fbf7b9b4baceae530.png);
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 58rpx;
+}
+
+.top_switch_bar {
+    background: #fff;
+}
+
+.top_switch_bar .tab__container {
+    border-bottom: none;
+}

@@ -1,0 +1,13 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "table-block": "/subPackages/news/pages/components/morningPaper/TableBlock",
+        "create-poster-and-share": "/subPackages/news/pages/components/unifyUI/createPosterAndShare",
+        "canvas-poster": "/subPackages/news/components/CanvasPoster/Index"
+    }
+}

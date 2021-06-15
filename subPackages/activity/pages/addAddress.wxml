@@ -1,0 +1,31 @@
+<view>
+    <view class="title small-level-color fz-15">请在<text class="red-color">{{''+date+''}}</text>之前填写，超时作废</view>
+    <view class="address">
+        <view class="{{[ 'address-col '+(borderColor?'border-gray':'border-blue') ]}}">
+            <view class="name fz-16">姓名</view>
+            <view class="general_style fz-16">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputName',['$event'] ] ] ] ]}}" placeholder="收货人姓名" placeholderClass="holderColor" value="{{addressMes.contact_name}}"></input>
+            </view>
+        </view>
+        <view class="{{[ 'address-col '+(borderColor?'border-gray':'border-blue') ]}}">
+            <view class="name fz-16">联系电话</view>
+            <view class="general_style fz-16">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputPhone',['$event'] ] ] ] ]}}" maxlength="11" placeholder="11位手机号" placeholderClass="holderColor" type="text" value="{{addressMes.contact_phone}}"></input>
+            </view>
+        </view>
+        <view catchtap="__e" class="{{[ 'address-col '+(borderColor?'border-gray':'border-blue') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selecteHandle',['$event'] ] ] ] ]}}">
+            <view class="name fz-16">选择省市区</view>
+            <view class="{{[ 'general_style fz-16 '+(togggle?'holderColor':'') ]}}" wx:if="{{hideLocal}}">{{''+local+''}}</view>
+            <view class="general_style fz-16" wx:if="{{showLocal}}">{{''+addressMes.province+addressMes.city+addressMes.district+''}}</view>
+        </view>
+        <view class="{{[ 'address-col '+(borderColor?'border-gray':'border-blue') ]}}">
+            <view class="name fz-16">详细地址</view>
+            <text bindtap="__e" class="iconnew fz-20 gray-9-color new-quxiao delete" data-event-opts="{{[ [ 'tap',[ [ 'clearValue',['$event'] ] ] ] ]}}" wx:if="{{showToggle}}"></text>
+            <view class="general_style fz-16 street">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'setValue',['$event'] ] ] ] ]}}" placeholder="街道门牌信息" placeholderClass="holderColor" value="{{addressMes.address}}"></input>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="btn blue-bg white-color fz-15" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">{{''+sure+''}}</view>
+    <selected-address-view areas="{{areas}}" bind:__l="__l" bind:cancel="__e" bind:sure="__e" bind:updateAreas="__e" bind:updateCitys="__e" bind:updateIsShow="__e" bind:updateProvinces="__e" bind:updateValue="__e" citys="{{citys}}" data-event-opts="{{[ [ '^updateIsShow',[ [ '__set_sync',['$0','isShow','$event'],[''] ] ] ],[ '^updateIsShow',[ [ '__set_sync',['$0','isShow','$event'],[''] ] ] ],[ '^updateProvinces',[ [ '__set_sync',['$0','provinces','$event'],[''] ] ] ],[ '^updateCitys',[ [ '__set_sync',['$0','citys','$event'],[''] ] ] ],[ '^updateAreas',[ [ '__set_sync',['$0','areas','$event'],[''] ] ] ],[ '^updateValue',[ [ '__set_sync',['$0','value','$event'],[''] ] ] ],[ '^cancel',[ ['cancelHandle'] ] ],[ '^sure',[ ['sureHandle'] ] ] ]}}" isShow="{{isShow}}" provinces="{{provinces}}" value="{{value}}" vueId="52df7168-1"></selected-address-view>
+</view>

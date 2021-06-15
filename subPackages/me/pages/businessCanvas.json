@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "名片",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "usingComponents": {
+        "canvas-post": "/subPackages/me/pages/components/CanvasPost"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "second-building-list": "/subPackages/project/pages/component/SecondBuildingList/Index"
+    }
+}

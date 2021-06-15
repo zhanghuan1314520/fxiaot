@@ -1,0 +1,92 @@
+.filters-comp__wrapper .house-type {
+    width: 100vw;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 2rpx solid rgba(0,0,0,.07);
+    justify-content: space-between;
+    position: relative;
+    z-index: 22;
+}
+
+.filters-comp__wrapper .house-type,.filters-comp__wrapper .house-type .house-type-list {
+    height: 88rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filters-comp__wrapper .house-type .house-type-list .iconnew {
+    color: #d9d9d9;
+    font-size: 20rpx;
+}
+
+.filters-comp__wrapper .house-type .house-type-list .house-type-text {
+    margin-right: 12rpx;
+    color: rgba(0,0,0,.85);
+    max-width: 100rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filters-comp__wrapper .house-type .house-type-list:first-child {
+    margin-left: 28rpx;
+}
+
+.filters-comp__wrapper .house-type .house-type-list:last-child {
+    margin-right: 28rpx;
+}
+
+.filters-comp__wrapper .active,.filters-comp__wrapper .active .house-type-text,.filters-comp__wrapper .active .iconnew {
+    color: #0d78f7!important;
+}
+
+.filters-comp__wrapper .fliter-map__tab {
+    position: relative;
+    width: 100%;
+    height: 92rpx;
+    z-index: 22;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters-comp__wrapper .fliter-map__tab .view {
+    flex: 1;
+    margin-left: 12rpx;
+    height: 56rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    border-radius: 4rpx;
+    color: #303740;
+    font-size: 24rpx;
+}
+
+.filters-comp__wrapper .fliter-map__tab .view.active {
+    background: rgba(47,140,239,.15);
+    color: #2f8cef;
+}
+
+.filters-comp__wrapper .fliter-map__tab .view:first-child {
+    margin-left: 0;
+}
+
+.filters-comp__wrapper .filters-content__wrapper {
+    position: relative;
+    z-index: 22;
+}
+
+.filters-comp__wrapper .hide-bg {
+    position: fixed;
+    width: 100%;
+    top: 78rpx;
+    background: rgba(0,0,0,.2);
+    overflow: hidden;
+    height: 100%;
+    z-index: 21;
+}

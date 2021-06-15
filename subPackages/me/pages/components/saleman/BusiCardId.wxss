@@ -1,0 +1,4 @@
+.color-045 {
+    color: rgba(0,0,0,.45);
+    font-weight: 400;
+}

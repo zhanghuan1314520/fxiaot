@@ -1,0 +1,21 @@
+<view>
+    <view class="page">
+        <view class="top">
+            <view class="fz-16 title black1a-color">{{''+name+''}}</view>
+            <navigator bindtap="__e" class="house-origin-image blue-color" data-event-opts="{{[ [ 'tap',[ [ 'btnEventTrack',['房源表-进入一房一价'] ] ] ] ]}}" data-name="一房一价" data-type="link" hoverClass="none" url="{{'/subPackages/project/pages/oneHouseOnePrice?lottery_id='+lotteryId+'&name='+name+'&p_id='+projectId}}">
+                <text class="iconnew new-biaodan fz-18"></text>
+                <text class="fz-13 text">一房一价表</text>
+                <text class="iconnew new-tongyong-gengduo fz-14"></text>
+            </navigator>
+            <view bindtap="__e" class="toastTips" data-event-opts="{{[ [ 'tap',[ [ 'closeToast',['$event'] ] ] ] ]}}" wx:if="{{housePriceRoot}}">点击可直接查看一房一价表<text class="iconnew new-quxiao fz-18"></text>
+            </view>
+        </view>
+        <view class="imgContain">
+            <view class="image-col" wx:for="{{imgData}}" wx:key="index">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',[index] ] ] ] ]}}" data-name="查看大图" data-type="button" lazyLoad="{{true}}" mode="aspectFill" src="{{item}}"></image>
+            </view>
+        </view>
+        <footer-btns bind:__l="__l" projectId="{{projectId}}" showShareBtn="{{false}}" vueId="41f56f08-1"></footer-btns>
+    </view>
+    <busi-share-icon bind:__l="__l" bottom="{{bottomHeight}}" class="vue-ref" custom="{{true}}" data-ref="share" vueId="41f56f08-2"></busi-share-icon>
+</view>

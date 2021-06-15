@@ -1,0 +1,91 @@
+.brandPavilionBox {
+    margin: 24rpx;
+}
+
+.brand-pavilion-item {
+    height: 176rpx;
+    background: #fff;
+    box-shadow: 0 2rpx 12rpx 0 rgba(11,96,210,.1);
+    border-radius: 12rpx;
+    padding: 32rpx 18rpx 24rpx 24rpx;
+    box-sizing: border-box;
+    margin-bottom: 22rpx;
+}
+
+.brand-pavilion-item .left-image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 4rpx;
+    float: left;
+}
+
+.brand-pavilion-item .right-info {
+    margin: 6rpx 0 0 136rpx;
+    height: 114rpx;
+}
+
+.right-info .brand-top {
+    padding-bottom: 24rpx;
+    line-height: 40rpx;
+}
+
+.right-info .brand-top,.right-info .brand-top .brand-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-info .brand-top .brand-name .name {
+    margin-right: 10rpx;
+    line-height: 40rpx;
+}
+
+.right-info .brand-top .brand-name image {
+    width: 28rpx;
+    height: 24rpx;
+    position: relative;
+    top: -2rpx;
+}
+
+.right-info .brand-top .attention {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-info .brand-top .attention .iconnew {
+    margin-right: 6rpx;
+    color: #dfdfdf;
+}
+
+.right-info .brand-top .attention .active {
+    color: #ee3f4d;
+}
+
+.right-info .brand-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.right-info .brand-bottom .pages-view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-info .brand-bottom .view-person {
+    line-height: 32rpx;
+}
+
+.right-info .brand-bottom .attention-num {
+    margin-left: 18rpx;
+}
+
+.right-info .brand-bottom .enter-brand-btn {
+    height: 50rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    padding: 0 18rpx;
+    line-height: 50rpx;
+}

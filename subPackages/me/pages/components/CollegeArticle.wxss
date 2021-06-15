@@ -1,0 +1,59 @@
+.college-article {
+    height: 232rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0 32rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.college-article .cover {
+    width: 188rpx;
+    height: 148rpx;
+    border-radius: 8rpx;
+}
+
+.college-article .left {
+    width: 450rpx;
+}
+
+.college-article .content {
+    height: 96rpx;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 48rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    font-family: PingFangSC-Medium,PingFang SC;
+    margin-bottom: 24rpx;
+}
+
+.college-article .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.college-article .bottom .text {
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.college-article .bottom .view {
+    font-size: 24rpx;
+    color: #2d8cf0;
+    width: 120rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    background: rgba(45,140,240,.12);
+}
+
+.auth-college-article button {
+    text-align: left;
+}

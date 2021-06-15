@@ -1,0 +1,20 @@
+<view>
+    <view class="status-notices">
+        <view class="timer" wx:if="{{text!='已结束'}}">
+            <text class="title">{{''+text+''}}</text>
+            <text class="timeout">{{''+timeHour+''}}</text>
+            <text class="cut">:</text>
+            <text class="timeout">{{''+timeMin+''}}</text>
+            <text class="cut">:</text>
+            <text class="timeout">{{''+timeSecond+''}}</text>
+        </view>
+        <view class="timer" wx:else>
+            <text class="title--gray">{{''+text+''}}</text>
+            <text class="timeout--gray">{{''+timeHour+''}}</text>
+            <text class="cut--gray">:</text>
+            <text class="timeout--gray">{{''+timeMin+''}}</text>
+            <text class="cut--gray">:</text>
+            <text class="timeout--gray">{{''+timeSecond+''}}</text>
+        </view>
+    </view>
+</view>

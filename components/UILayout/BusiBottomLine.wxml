@@ -1,0 +1,4 @@
+<view class="bottom-line">
+    <slot wx:if="{{$slots.default}}"></slot>
+    <block wx:else>暂无数据</block>
+</view>

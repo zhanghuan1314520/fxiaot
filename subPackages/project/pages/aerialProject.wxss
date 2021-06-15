@@ -1,0 +1,22 @@
+.project {
+    padding-top: 34rpx;
+}
+
+.not_id_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 220rpx;
+}
+
+.not_id_card .image {
+    width: 358rpx;
+    height: 224rpx;
+}
+
+.not_id_card .text {
+    margin-top: 46rpx;
+    color: #6a7490;
+    font-size: 32rpx;
+}

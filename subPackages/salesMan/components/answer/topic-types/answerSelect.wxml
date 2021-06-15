@@ -1,0 +1,16 @@
+<view class="{{['box-single',mode]}}">
+    <view wx:if="{{topicData&&topicData.options}}">
+        <view class="box-answer" wx:if="{{showAnswer}}">
+            <text class="right">{{'正确答案: '+$root.g0+''}}</text>
+            <text class="wrong" wx:if="{{isWrong}}">{{'您的选择: '+info.user_answer+''}}</text>
+        </view>
+        <view bindtap="__e" class="{{['option',val.g1?'selected':'',typeClassMap[type],mode]}}" data-event-opts="{{[ [ 'tap',[ [ 'onSelect',[key] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:for-index="key" wx:for-item="val" wx:key="key">
+            <view class="symbol"></view>
+            <view class="number">
+                <text>{{key}}</text>
+            </view>
+            <view class="context">{{''+val[$orig]+''}}</view>
+        </view>
+    </view>
+    <view class="line" wx:if="{{showAnswer&&questionIndex!==questionLength-1}}"></view>
+</view>

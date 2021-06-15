@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "authorization": "/components/Authorization",
+        "base-call-phone": "/components/BaseCallPhone"
+    }
+}

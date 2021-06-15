@@ -1,0 +1,22 @@
+<view>
+    <view class="recommend-item" wx:if="{{recommendComment.content}}">
+        <image class="avatar" mode="aspectFill" src="{{recommendComment.avatar_url||'https://imgcdn.huanjutang.com/assets/img/202051995218081.png'}}"></image>
+        <view class="right-comment">
+            <view class="avatar_nickname">
+                <view class="nickname">
+                    <text class="fz-15">{{''+recommendComment.name+''}}</text>
+                </view>
+            </view>
+            <view class="content">
+                <view class="text">
+                    <text selectable="selectable">{{''+recommendComment.content+''}}</text>
+                </view>
+                <view class="official-drainage">
+                    <view catchtap="__e" class="content-wechat" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'copyNumber',['$0'],['recommendComment.wechat_code'] ] ] ] ]}}" data-name="复制微信号" data-type="button" wx:if="{{!url}}">{{'复制客服微信:【'+recommendComment.wechat_code+'】'}}</view>
+                    <view wx:else></view>
+                    <view catchtap="__e" class="join-group-chat" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'navigateGroup',['$event'] ] ] ] ]}}" data-name="加入群聊" data-type="button">加入群聊</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

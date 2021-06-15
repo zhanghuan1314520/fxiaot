@@ -1,0 +1,81 @@
+.lottery-result {
+    position: relative;
+}
+
+.lottery-result .add {
+    position: absolute;
+    right: 30rpx;
+    top: 28rpx;
+    display: inline-block;
+    color: #2f8cef;
+    z-index: 100;
+}
+
+.tip-cont .container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 660rpx;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background: #fff;
+    text-align: center;
+    border-radius: 8rpx;
+}
+
+.tip-cont .container .image {
+    width: 102rpx;
+    height: 100rpx;
+    margin-bottom: 28rpx;
+    padding-top: 52rpx;
+}
+
+.tip-cont .container .success {
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #303237;
+    line-height: 36rpx;
+    margin-bottom: 24rpx;
+}
+
+.tip-cont .container .result {
+    padding: 0 32rpx 24rpx;
+    font-size: 28rpx;
+    color: #b5b6bb;
+    line-height: 44rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.tip-cont .container .cancel {
+    padding: 30rpx 0 28rpx;
+    font-size: 32rpx;
+    color: #2f8cef;
+}
+
+.tip-cont .hide-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+}
+
+.auth-add {
+    position: absolute;
+    right: 30rpx;
+    top: 28rpx;
+    display: inline-block;
+    z-index: 100;
+}
+
+.auth-add button {
+    line-height: normal;
+}
+
+.auth-fz-14 {
+    color: #2f8cef;
+    font-size: 28rpx;
+}

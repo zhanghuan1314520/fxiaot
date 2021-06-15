@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "编辑工作展示名",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "upload-media": "/subPackages/me/pages/components/saleman/UploadMedia",
+        "submit-button": "/subPackages/me/pages/components/saleman/SubmitButton",
+        "input-item": "/subPackages/me/pages/components/saleman/InputItem"
+    }
+}

@@ -1,0 +1,37 @@
+<view>
+    <view class="page__bd">
+        <view class="list-box white-bg">
+            <view class="w-cell">
+                <view class="left-key">姓名</view>
+                <view class="right-value">
+                    <input bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ 'bindNameChange',['$event'] ] ] ] ]}}" placeholder="请输入您的姓名" placeholderClass="place-style" type="text" value="{{inputName}}"></input>
+                    <view class="{{[ 'error-tip '+(rules.name?'show':'') ]}}">姓名信息有误</view>
+                </view>
+            </view>
+            <view class="w-cell">
+                <view class="left-key">身份证</view>
+                <view class="right-value">
+                    <input bindblur="validate('idCard')" bindfocus="clearValidate('idCard')" bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ 'bindIdCardChange',['$event'] ] ] ] ]}}" maxlength="18" placeholder="请输入您的身份证号码" placeholderClass="place-style" type="idcard" value="{{inputIdCard}}"></input>
+                    <view class="{{[ 'error-tip '+(rules.id?'show':'') ]}}">身份信息有误</view>
+                </view>
+            </view>
+            <view class="w-cell">
+                <view class="left-key">手机号码</view>
+                <view class="right-value">
+                    <input bindblur="validate('phone')" bindfocus="clearValidate('phone')" bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ 'bindPhoneChange',['$event'] ] ] ] ]}}" maxlength="11" placeholder="请输入您的手机号码" placeholderClass="place-style" type="number" value="{{inputPhone}}"></input>
+                    <view class="{{[ 'error-tip '+(rules.phone?'show':'') ]}}">手机号码信息有误</view>
+                </view>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['submit'] ] ] ]}}" isAuthPhone="{{true}}" vueId="56de411c-1" vueSlots="{{['default']}}">
+            <view class="save-btn">
+                <button class="weui-btn white-color fz-16">{{''+(id?'确认修改':'保存')+''}}</button>
+            </view>
+        </authorization>
+        <view bindtap="__e" class="privacy" data-event-opts="{{[ [ 'tap',[ [ 'checkboxClick',['$event'] ] ] ] ]}}">
+            <text class="{{[ 'checkbox '+(allow?'active':'') ]}}"></text>
+            <view class="text">同意并遵守<view catchtap="__e" class="url" data-event-opts="{{[ [ 'tap',[ [ 'gotoUrlHandle',['$event'] ] ] ] ]}}">用户隐私协议</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<view class="page">
+    <bind-code-forms bind:__l="__l" bind:updateIds="__e" data-event-opts="{{[ [ '^updateIds',[ [ '__set_sync',['$0','id','$event'],[''] ] ] ] ]}}" ids="{{id}}" vueId="d7577be2-1"></bind-code-forms>
+</view>

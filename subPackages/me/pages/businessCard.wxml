@@ -1,0 +1,19 @@
+<view>
+    <view wx:if="{{loading}}">
+        <view class="projectList" wx:if="{{salesManInfo.projects.length>0}}">
+            <view class="line fz-13 gray-9-color">请选择楼盘生成专属名片</view>
+            <view bindtap="__e" class="line fz-14 black1a-color" data-event-opts="{{[ [ 'tap',[ [ 'shareTo',['$0'],[ [ ['salesManInfo.projects','',index,'name'] ] ] ] ] ] ]}}" wx:for="{{salesManInfo.projects}}" wx:key="index">{{''+item.name+''}}</view>
+        </view>
+        <block wx:else>
+            <view class="achieve" style="padding:200rpx 90rpx 100rpx;">
+                <image mode="widthFit" src="https://imgcdn.huanjutang.com/assert/img/15530691630624542.jpg"></image>
+            </view>
+            <view style="width:100%;padding:0 30rpx;position:absolute;bottom:200rpx;box-sizing:border-box;">
+                <navigator class="fz-14 white-color" hoverClass="none" style="background:linear-gradient(to right, #4677e7 , #3753cc);height:90rpx;line-height:90rpx;border-radius:90rpx;text-align:center;" url="/subPackages/lottery/pages/claimProject">前去认领楼盘</navigator>
+            </view>
+        </block>
+    </view>
+    <view class="full-screen" wx:else>
+        <view class="full-screen-big" id="spinner"></view>
+    </view>
+</view>

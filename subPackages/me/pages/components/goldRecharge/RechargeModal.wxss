@@ -1,0 +1,79 @@
+.application-from {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    z-index: 198;
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 44%;
+    margin-left: -339rpx;
+    margin-top: -252rpx;
+    padding: 60rpx 32rpx 62rpx;
+    width: 678rpx;
+    height: 504rpx;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    background-color: #fff;
+    z-index: 199;
+}
+
+.modal .modal-close {
+    position: absolute;
+    right: 32rpx;
+    top: 32rpx;
+    color: #d8d8d8;
+    font-size: 40rpx;
+}
+
+.modal .modal-title {
+    line-height: 52rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    text-align: center;
+}
+
+.modal .input-item {
+    position: relative;
+    margin-top: 32rpx;
+    padding: 0 32rpx 0 108rpx;
+    width: 614rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    border-radius: 52rpx;
+    border: 2rpx solid rgba(0,0,0,.03);
+    box-sizing: border-box;
+    font-size: 40rpx;
+    color: rgba(0,0,0,.85);
+    background: #f2f2f2;
+}
+
+.modal .input-item::before {
+    content: "\FFE5";
+    position: absolute;
+    left: 48rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.modal .placeholder {
+    color: rgba(0,0,0,.15);
+}
+
+.modal .modal-tip {
+    margin-top: 30rpx;
+    margin-bottom: 40rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+}
+
+.modal image {
+    width: 100%;
+    height: 346rpx;
+}

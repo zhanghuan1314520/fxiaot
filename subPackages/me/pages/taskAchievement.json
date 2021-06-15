@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "任务完成情况",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "usingComponents": {}
+}

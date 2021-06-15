@@ -1,0 +1,32 @@
+<view class="page">
+    <view catchtouchmove="__e" class="{{[isShow?'issue active':'issue']}}" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}">
+        <view bindtap="__e" class="close-btn iconnew new-quxiao" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}"></view>
+        <view class="-title">红包发放记录</view>
+        <block wx:if="{{redPacks.length>0}}">
+            <view class="log-title">
+                <view class="time">时间</view>
+                <view class="price">金额 (元)</view>
+                <view class="log-text">发放记录</view>
+            </view>
+            <scroll-view class="main-content" scrollY="{{true}}">
+                <view class="log-item" wx:for="{{redPacks}}" wx:key="index">
+                    <view class="time">{{''+item.created_at+''}}</view>
+                    <view class="price">{{''+item.per_amount+''}}</view>
+                    <view class="log-text" wx:if="{{item.status==1}}">
+                        <text class="btn">已发放</text>
+                    </view>
+                    <view class="log-text" wx:else>
+                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'submitHandle',['$0'],[ [ ['redPacks','',index,'id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16f01195-1-'+index}}" vueSlots="{{['default']}}">
+                            <text class="btn active">点击发放</text>
+                        </authorization>
+                    </view>
+                </view>
+            </scroll-view>
+        </block>
+        <view class="no-content" wx:else>
+            <image src="https://imgcdn.huanjutang.com/assets/img/2021411550158081.png"></image>
+            <view class="text">暂无红包发放记录</view>
+        </view>
+    </view>
+    <view bindtap="__e" catchtouchmove="emptyHandle" class="hide-bg" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}" wx:if="{{isShow}}"></view>
+</view>

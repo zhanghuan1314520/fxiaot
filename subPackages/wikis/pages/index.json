@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "购房百科",
+    "navigationBarBackgroundColor": "#457dff",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "wiki-item": "/subPackages/wikis/pages/component/WikiItem"
+    }
+}

@@ -1,0 +1,29 @@
+<view class="page">
+    <view class="empty"></view>
+    <view bindtap="__e" class="search-box" data-event-opts="{{[ [ 'tap',[ [ 'goSearchPage',['$event'] ] ] ] ]}}" data-name="搜索">
+        <image class="icon-search" src="https://imgcdn.huanjutang.com/image/2020/06/16/f4eb4f3f754ce71456beba96820d9bef.png"></image>
+        <view class="input" type="text">{{''+keywords+''}}</view>
+    </view>
+    <view class="{{['nav-box',moreNav?'':'h-234']}}">
+        <swiper bindchange="__e" class="swiper" data-event-opts="{{[ [ 'change',[ [ 'changeIndex',['$event'] ] ] ] ]}}" indicatorActiveColor="#2D8CF0" indicatorColor="rgba(0,0,0,0.1)" indicatorDots="{{false}}">
+            <swiper-item wx:for="{{navList}}" wx:key="index">
+                <view bindtap="__e" class="nav-item" data-content="轮播" data-event-opts="{{[ [ 'tap',[ [ 'goListPage',['$0'],[ [ ['navList','',index],['','id',nav.id] ] ] ] ] ] ]}}" data-name="{{nav.name}}" wx:for="{{item}}" wx:for-index="__i0__" wx:for-item="nav" wx:key="id">
+                    <image class="nav-icon" src="{{nav.icon}}"></image>
+                    <view class="nav-txt">{{''+nav.name+''}}</view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="swiper-slide" wx:if="{{morePage}}">
+            <text class="{{['text',currentIndex==index?'slide-active slide':'slide']}}" wx:for="{{navList}}" wx:key="index"></text>
+        </view>
+    </view>
+    <swiper autoplay="{{true}}" class="ad" indicatorActiveColor="#2D8CF0" indicatorColor="rgba(0,0,0,0.1)" indicatorDots="{{false}}" wx:if="{{banners.length}}">
+        <swiper-item wx:for="{{banners}}" wx:key="index">
+            <image bindtap="__e" class="ad-img" data-content="banner" data-event-opts="{{[ [ 'tap',[ [ 'goPage',['$0'],[ [ ['banners','',index] ] ] ] ] ] ]}}" data-name="{{item.title}}" src="{{item.image}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="title">热门问题</view>
+    <view class="list">
+        <wiki-item bind:__l="__l" dataContent="热门问题" item="{{item}}" vueId="{{'73ff584b-1-'+__i1__}}" wx:for="{{list}}" wx:for-index="__i1__" wx:key="id"></wiki-item>
+    </view>
+</view>

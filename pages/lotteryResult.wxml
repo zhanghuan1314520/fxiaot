@@ -1,0 +1,135 @@
+<view class="data-v-576e8f0b">
+    <view class="{{['page data-v-576e8f0b',typeTab!==4?'white-container':'']}}">
+        <view class="haveSearchBar data-v-576e8f0b">
+            <view class="title-cont data-v-576e8f0b">
+                <navigator bindtap="__e" class="fz-18 font-bold white-color data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" hoverClass="none" style="width:600rpx;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" url="{{'/pages/lotteryDetail?id='+lottery_id+'&project_id='+project_id}}">{{''+title+''}}<text class="iconnew new-tongyong-gengduo fz-16 project-btn data-v-576e8f0b"></text>
+                </navigator>
+                <navigator class="lottery-rule data-v-576e8f0b" url="{{'/subPackages/tools/pages/webview?redirect='+$root.m0}}">摇号流程</navigator>
+            </view>
+            <view class="navigate_bar data-v-576e8f0b">
+                <view class="tabbar-content white-bg  data-v-576e8f0b">
+                    <view bindtap="__e" class="{{[ 'data-v-576e8f0b','tabbar-list '+(tab==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'isToggle',[index,'$0'],[ [ ['tabBar','',index] ] ] ] ] ] ]}}" data-name="{{bar.name}}" wx:for="{{tabBar}}" wx:for-item="bar" wx:key="index">{{''+bar.name+''}}</view>
+                </view>
+                <block wx:if="{{hasResults}}">
+                    <view bindtap="__e" class="search-bar-cont data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'getFocus',['$event'] ] ] ] ]}}" wx:if="{{list.length>0||items.length>0||houseList.length>0||typeTab==4}}">
+                        <view class="search-bar-input fz-14 data-v-576e8f0b">{{''+(inputVal||placeholder)+''}}</view>
+                        <view class="right-btn data-v-576e8f0b">
+                            <image catchtap="__e" class="weui-icon-clear data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" data-name="清除搜索" src="https://imgcdn.huanjutang.com/assets/img/20190723/5d36f0b63665e.png" wx:if="{{inputVal.length>0}}"></image>
+                            <text catchtap="__e" class="search-btn iconnew new-sousuo fz-20 data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" data-name="搜索"></text>
+                        </view>
+                    </view>
+                </block>
+                <view class="select-content white-bg data-v-576e8f0b" wx:if="{{(list.length>0||items.length>0||houseList.length>0||typeTab==4)&&houseType&&typeTexts}}">
+                    <view bindtap="__e" class="{{[ 'data-v-576e8f0b','select-list fz-14 font-bold '+(switchTab==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchTabFn',[index] ] ] ] ]}}" data-name="{{typeText}}" wx:for="{{typeTexts}}" wx:for-item="typeText" wx:key="index">{{''+typeText+''}}</view>
+                </view>
+                <view class="lottery-excel data-v-576e8f0b">
+                    <lottery-excel bind:__l="__l" class="data-v-576e8f0b" isExceedTriple="{{lotteryInfo.is_exceed_triple}}" lotteryRate="{{lotteryInfo.lottery_rate}}" tableData="{{lotteryInfo.room_num_info}}" vueId="3ab8ca89-1"></lottery-excel>
+                </view>
+                <view class="{{[ 'data-v-576e8f0b','search-fixed '+(showSearchHistory?'active':'') ]}}">
+                    <view class="search-bar-cont data-v-576e8f0b">
+                        <input bindconfirm="__e" bindinput="__e" class="search-bar-input fz-14 data-v-576e8f0b" data-event-opts="{{[ [ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doSearch',['$event'] ] ] ] ]}}" focus="{{isFocus}}" placeholder="{{placeholder}}" placeholderClass="search-input-place" type="text" value="{{inputVal}}"></input>
+                        <view class="right-btn data-v-576e8f0b">
+                            <image bindtap="__e" class="weui-icon-clear data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" data-name="清除搜索" src="https://imgcdn.huanjutang.com/assets/img/20190723/5d36f0b63665e.png" wx:if="{{inputVal.length>0}}"></image>
+                            <text bindtap="__e" class="search-btn iconnew new-sousuo fz-20 data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" data-name="搜索" wx:if="{{inputVal}}"></text>
+                            <view bindtap="__e" class="fz-14 cancel-btn data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'closeSearch',['$event'] ] ] ] ]}}" data-name="取消" wx:else>取消</view>
+                        </view>
+                    </view>
+                    <view class="search-history data-v-576e8f0b" wx:if="{{historySearch.length>0}}">
+                        <view class="title data-v-576e8f0b">
+                            <text class="fz-12 data-v-576e8f0b">历史搜索</text>
+                            <text bindtap="__e" class="iconnew new-shanchu fz-14 data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}" data-name="清除历史搜索"></text>
+                        </view>
+                        <view class="history-cont data-v-576e8f0b">
+                            <view bindtap="__e" class="line data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['historySearch','',index] ] ] ] ] ] ]}}" data-name="历史搜索" wx:for="{{historySearch}}" wx:key="index">{{''+item+''}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="hide-bg data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{showSearchHistory}}"></view>
+            </view>
+        </view>
+        <view class="show-some-data data-v-576e8f0b" wx:if="{{!switchPage&&showDataSomeFlag}}">
+            <view class="tit data-v-576e8f0b">当前页面仅展示部分结果数据</view>
+        </view>
+        <block wx:if="{{tab==0}}">
+            <view class="lotteryResult data-v-576e8f0b" wx:if="{{items.length>0}}">
+                <buyer-list bind:__l="__l" bind:updateItems="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','items','$event'],[''] ] ] ] ]}}" items="{{items}}" vueId="3ab8ca89-2"></buyer-list>
+                <discription bind:__l="__l" class="data-v-576e8f0b" defaultText="{{defaultText}}" hideText="{{true}}" more="{{more}}" serviceQrCode="{{serviceQrCode}}" shortTitle="{{shortTitle}}" showDataSomeFlag="{{showDataSomeFlag}}" switchPage="{{switchPage}}" vueId="3ab8ca89-3"></discription>
+            </view>
+            <block wx:else>
+                <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'toRules',['$0'],['pdfUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-4" wx:if="{{pdfUrl}}"></image-view>
+                <block wx:else>
+                    <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'navUrlFn',['$0'],['navUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-5" wx:if="{{navUrl}}"></image-view>
+                    <nothing-view bind:__l="__l" class="data-v-576e8f0b" isHidden="{{loading}}" vueId="3ab8ca89-6" wx:else></nothing-view>
+                </block>
+            </block>
+        </block>
+        <block wx:if="{{tab==1}}">
+            <image-list-view bind:__l="__l" class="data-v-576e8f0b" listData="{{lotteryList}}" vueId="3ab8ca89-7" wx:if="{{lotteryList.length>0}}"></image-list-view>
+            <block wx:else>
+                <view class="list_container data-v-576e8f0b" wx:if="{{list.length>0}}">
+                    <buyer-list bind:__l="__l" bind:updateItems="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','list','$event'],[''] ] ] ] ]}}" items="{{list}}" vueId="3ab8ca89-8"></buyer-list>
+                    <discription bind:__l="__l" class="data-v-576e8f0b" defaultText="{{defaultText}}" hideText="{{true}}" more="{{more}}" serviceQrCode="{{serviceQrCode}}" shortTitle="{{shortTitle}}" showDataSomeFlag="{{showDataSomeFlag}}" switchPage="{{switchPage}}" vueId="3ab8ca89-9"></discription>
+                </view>
+                <block wx:else>
+                    <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'toRules',['$0'],['pdfUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-10" wx:if="{{pdfUrl}}"></image-view>
+                    <block wx:else>
+                        <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'navUrlFn',['$0'],['navUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-11" wx:if="{{navUrl}}"></image-view>
+                        <nothing-view bind:__l="__l" class="data-v-576e8f0b" isHidden="{{loading}}" vueId="3ab8ca89-12" vueSlots="{{['default']}}" wx:else>
+                            <view class="fz-14 nothing__text data-v-576e8f0b" wx:if="{{hasResults}}">未查到结果哟，请输入正确的完整信息</view>
+                            <block wx:else>
+                                <view class="fz-14 nothing__text data-v-576e8f0b">暂无内容结果</view>
+                                <view class="nothing__timer data-v-576e8f0b" wx:if="{{timers}}">{{'预计'+timers+'出'+tabBar[tab]+''}}</view>
+                                <view bindtap="__e" class="nothing__subscribe data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ ['lotteryRemindHandle'] ] ] ]}}" wx:if="{{!isSubscribed}}">立即订阅，及时获取结果通知</view>
+                                <view class="nothing__subscribed data-v-576e8f0b" wx:if="{{isSubscribed}}">已订阅，出结果会第一时间通知您</view>
+                            </block>
+                        </nothing-view>
+                    </block>
+                </block>
+            </block>
+        </block>
+        <block wx:if="{{tab==2}}">
+            <view class="lotteryResult data-v-576e8f0b" wx:if="{{items.length>0}}">
+                <buyer-list bind:__l="__l" bind:updateItems="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','items','$event'],[''] ] ] ] ]}}" items="{{items}}" vueId="3ab8ca89-13"></buyer-list>
+                <discription bind:__l="__l" class="data-v-576e8f0b" defaultText="{{defaultText}}" hideText="{{true}}" more="{{more}}" serviceQrCode="{{serviceQrCode}}" shortTitle="{{shortTitle}}" showDataSomeFlag="{{showDataSomeFlag}}" switchPage="{{switchPage}}" vueId="3ab8ca89-14"></discription>
+            </view>
+            <block wx:else>
+                <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'toRules',['$0'],['pdfUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-15" wx:if="{{pdfUrl}}"></image-view>
+                <block wx:else>
+                    <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'navUrlFn',['$0'],['navUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-16" wx:if="{{navUrl}}"></image-view>
+                    <nothing-view bind:__l="__l" class="data-v-576e8f0b" isHidden="{{loading}}" vueId="3ab8ca89-17" vueSlots="{{['default']}}" wx:else>
+                        <view class="fz-14 nothing__text data-v-576e8f0b" wx:if="{{hasResults}}">未查到结果哟，请输入正确的完整信息</view>
+                        <block wx:else>
+                            <view class="fz-14 nothing__text data-v-576e8f0b">暂无内容结果</view>
+                            <view class="nothing__timer data-v-576e8f0b" wx:if="{{timers}}">{{'预计'+timers+'出'+tabBar[tab]+''}}</view>
+                            <view bindtap="__e" class="nothing__subscribe data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ ['lotteryRemindHandle'] ] ] ]}}" wx:if="{{!isSubscribed}}">立即订阅，及时获取结果通知</view>
+                            <view class="nothing__subscribed data-v-576e8f0b" wx:if="{{isSubscribed}}">已订阅，出结果会第一时间通知您</view>
+                        </block>
+                    </nothing-view>
+                </block>
+            </block>
+        </block>
+        <block wx:if="{{tab==3}}">
+            <image-list-view bind:__l="__l" class="data-v-576e8f0b" listData="{{lotteryList}}" vueId="3ab8ca89-18" wx:if="{{lotteryList.length>0}}"></image-list-view>
+            <block wx:else>
+                <view class="list_container data-v-576e8f0b" wx:if="{{houseList.length>0}}">
+                    <buyer-list bind:__l="__l" bind:updateItems="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','houseList','$event'],[''] ] ] ] ]}}" items="{{houseList}}" vueId="3ab8ca89-19"></buyer-list>
+                    <discription bind:__l="__l" class="data-v-576e8f0b" defaultText="{{defaultText}}" hideText="{{false}}" more="{{more}}" serviceQrCode="{{serviceQrCode}}" shortTitle="{{shortTitle}}" showDataSomeFlag="{{showDataSomeFlag}}" switchPage="{{switchPage}}" vueId="3ab8ca89-20"></discription>
+                </view>
+                <block wx:else>
+                    <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'toRules',['$0'],['pdfUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-21" wx:if="{{pdfUrl}}"></image-view>
+                    <block wx:else>
+                        <image-view bind:__l="__l" bind:click="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^click',[ [ 'navUrlFn',['$0'],['navUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="3ab8ca89-22" wx:if="{{navUrl}}"></image-view>
+                        <nothing-view bind:__l="__l" class="data-v-576e8f0b" isHidden="{{loading}}" vueId="3ab8ca89-23" wx:else></nothing-view>
+                    </block>
+                </block>
+            </block>
+        </block>
+        <review-model bind:__l="__l" bind:bindTabChangeEvent="__e" bind:updateShowModel="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^updateShowModel',[ [ '__set_sync',['$0','showReviewModel','$event'],[''] ] ] ],[ '^updateShowModel',[ [ '__set_sync',['$0','showReviewModel','$event'],[''] ] ] ],[ '^bindTabChangeEvent',[ ['bindTabChangeEvent'] ] ] ]}}" showModel="{{showReviewModel}}" vueId="3ab8ca89-24"></review-model>
+        <official-account class="data-v-576e8f0b"></official-account>
+        <attention-service-number bind:__l="__l" bind:updateIsResulted="__e" bind:updateShow="__e" class="data-v-576e8f0b" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','attentionServiceFlag','$event'],[''] ] ] ],[ '^updateIsResulted',[ [ '__set_sync',['$0','isResultedFlag','$event'],[''] ] ] ],[ '^updateIsResulted',[ [ '__set_sync',['$0','isResultedFlag','$event'],[''] ] ] ] ]}}" isResulted="{{isResultedFlag}}" show="{{attentionServiceFlag}}" vueId="3ab8ca89-25"></attention-service-number>
+    </view>
+    <busi-share-icon bind:__l="__l" class="data-v-576e8f0b vue-ref" data-ref="share" vueId="3ab8ca89-26" vueSlots="{{['default']}}">
+        <button bindtap="__e" class="share data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" wx:if="{{userInfo.sales_man_id>0&&tab!=3}}"></button>
+        <button bindtap="__e" class="share data-v-576e8f0b" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" openType="share" wx:else></button>
+    </busi-share-icon>
+</view>

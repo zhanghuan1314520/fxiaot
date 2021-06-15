@@ -1,0 +1,83 @@
+.common_search {
+    height: 100rpx;
+    background: #2d8cf0;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.common_search,.common_search-input {
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    display: flex;
+    align-items: center;
+}
+
+.common_search-input {
+    flex: 1;
+    height: 66rpx;
+    background: #fff;
+    border-radius: 33rpx;
+}
+
+.common_search-input>.input {
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 28rpx;
+    color: #303237;
+    flex: 1;
+}
+
+.common_search-input .search-icon {
+    width: 36rpx;
+    height: 36rpx;
+    color: #dfdfdf;
+    margin-right: 12rpx;
+}
+
+.common_search-input .new-shanchu1 {
+    font-size: 48rpx;
+    color: #ccc;
+    width: 66rpx;
+    height: 66rpx;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.common_search-input-place {
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 28rpx;
+    color: #96989e;
+}
+
+.common_search-comfirm {
+    color: #fff;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+}
+
+.common_search-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    color: #fff;
+    font-size: 24rpx;
+    background: transparent;
+    line-height: normal;
+    margin-left: 20rpx;
+}
+
+.common_search-button>.iconnew {
+    font-size: 48rpx;
+    position: relative;
+    top: 6rpx;
+}

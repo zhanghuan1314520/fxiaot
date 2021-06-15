@@ -1,0 +1,156 @@
+.prizeList .prizeSwiper {
+    height: 400rpx;
+}
+
+.prizeList .prizeSwiper swiper-item image {
+    height: 400rpx;
+    width: 100%;
+}
+
+.prizeList .prize_main-col {
+    padding-bottom: 96rpx;
+}
+
+.prizeList .prize_main-col .fz-17 {
+    font-size: 34rpx;
+}
+
+.prizeList .prize_main-col .fz-15 {
+    font-size: 30rpx!important;
+}
+
+.prizeList .prize_main-col .hot_prize_list:first-child {
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.prizeList .prize_main-col .hot_prize_list {
+    padding: 30rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_img {
+    float: left;
+    width: 230rpx;
+    height: 130rpx;
+    overflow: hidden;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_img image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_info {
+    margin: 0 100rpx 0 250rpx;
+    height: 130rpx;
+    overflow: hidden;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_info .title {
+    width: 300rpx;
+    padding: 20rpx 0 30rpx;
+    line-height: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_info .price {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    color: #fc7100;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_left {
+    float: right;
+    margin-top: 38rpx;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_left .getPrize {
+    border-radius: 4rpx;
+    line-height: 52rpx;
+    height: 50rpx;
+    width: 80rpx;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #fc7100;
+    color: #fc7100;
+}
+
+.prizeList .prize_main-col .hot_prize_list .hot_prize_left .check {
+    border-radius: 4rpx;
+    line-height: 52rpx;
+    height: 50rpx;
+    width: 80rpx;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #3772cc;
+    color: #3772cc;
+}
+
+.noCoupon {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.noCoupon .viewmsg {
+    margin: 32rpx auto 25rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+}
+
+.noCoupon image {
+    width: 280rpx;
+    height: 180rpx;
+    margin-top: 350rpx;
+}
+
+.noCoupon .look {
+    margin: 100rpx auto;
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 260rpx;
+    text-align: center;
+    border: 1px solid #666;
+}
+
+.dui_tabbar {
+    bottom: 0;
+    height: 98rpx;
+    position: fixed;
+    width: 100%;
+    z-index: 22;
+    background: #fff;
+    padding: 0 30rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.dui_tabbar .alignLine {
+    float: left;
+    height: 34rpx;
+    width: 1px;
+    background-color: #ccc;
+    margin-top: 38rpx;
+}
+
+.dui_tabbar .line {
+    line-height: 98rpx;
+    box-sizing: border-box;
+    text-align: center;
+    float: left;
+}
+
+.dui_tabbar .flow2 {
+    width: 49.8%;
+}

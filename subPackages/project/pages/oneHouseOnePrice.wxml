@@ -1,0 +1,118 @@
+<view class="page">
+    <view class="image-box" style="{{'height: '+imageBoxHeight+'px'}}">
+        <image class="project-image" mode="scaleToFill" src="{{cover}}"></image>
+        <view class="image-blur"></view>
+    </view>
+    <view class="project-top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="77bdffd0-1" vueSlots="{{['default']}}">房小团</busi-nav-header>
+        <view class="top-info">
+            <navigator bindtap="__e" class="project-name" data-content="总平图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="房源表楼栋" data-type="link" hoverClass="none" url="{{'/pages/lotteryDetail?id='+lotteryId+'&project_id='+projectId}}">
+                <tex bind:__l="__l" class="text" vueId="77bdffd0-2" vueSlots="{{['default']}}">{{''+title+''}}</tex>一房一价</navigator>
+            <view class="project-info">
+                <navigator class="btn house-price-btn" hoverClass="none" url="{{'/subPackages/project/pages/sourceList?project_id='+projectId+'&lottery_id='+lotteryId+'&name='+title}}">
+                    <text class="text">{{''+toHouseOrigin+''}}</text>
+                    <text class="iconnew new-tongyong-gengduo"></text>
+                </navigator>
+                <navigator bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="房源表楼栋-总平图" data-type="link" hoverClass="none" url="{{'/subPackages/project/pages/projectPlanar/index?projectId='+projectId+'&projectName='+title}}" wx:if="{{isShowProjectPlan}}">
+                    <text class="text">总平图</text>
+                    <text class="iconnew new-tongyong-gengduo"></text>
+                </navigator>
+            </view>
+            <view class="call-phone-item" wx:if="{{isShowFilterOption}}">
+                <text class="left-text">装修价格或其他问题，可致电售楼部咨询</text>
+                <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callProjectPhone'] ] ] ]}}" vueId="77bdffd0-3" vueSlots="{{['default']}}">
+                    <view bindtap="__e" class="phone-circle" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">
+                        <text class="text">小团将对您
+                            的电话保密</text>
+                        <text class="phone-icon"></text>
+                    </view>
+                </base-call-phone>
+            </view>
+        </view>
+    </view>
+    <view class="container">
+        <view class="filter-content" wx:if="{{isShowFilterOption}}">
+            <view class="left-content">
+                <view bindtap="__e" class="filter-item" data-event-opts="{{[ [ 'tap',[ [ 'tabbarHandle',[1] ] ] ] ]}}">
+                    <text class="{{['style-plan',params.price||tabbarListIndex>0?'active':'']}}">{{''+(decorationList[decorationIndex].text||'装修价格')+''}}</text>
+                    <text class="{{['iconnew new-zhankai',params.price||tabbarListIndex>0?'active':'']}}"></text>
+                </view>
+            </view>
+        </view>
+        <view class="project-nav">
+            <view class="filter-select">
+                <view class="sort-filter vue-ref" data-ref="decorationFilter" wx:if="{{tabbarListIndex===1}}">
+                    <scroll-view class="sort-filter__container" scrollY="true">
+                        <select-list bind:__l="__l" bind:updateListIndex="__e" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','decorationIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','decorationIndex','$event'],[''] ] ] ] ]}}" listData="{{decorationList}}" listIndex="{{decorationIndex}}" vueId="77bdffd0-4"></select-list>
+                    </scroll-view>
+                    <view class="sort-filter__footer">
+                        <view class="footer-button">
+                            <button catchtap="__e" class="footer-button__reset" data-event-opts="{{[ [ 'tap',[ [ 'resetData',['$event'] ] ] ] ]}}">重置</button>
+                            <button catchtap="__e" class="footer-button__submit" data-event-opts="{{[ [ 'tap',[ [ 'onFilterSubmit',['$event'] ] ] ] ]}}">确定</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}" wx:if="{{tabbarListIndex!==-1}}"></view>
+        </view>
+        <block wx:if="{{buildUnitList.length>0}}">
+            <scroll-view class="building-unit" scrollX="true">
+                <view bindtap="__e" class="{{[index==floorUnitIndex?'li active':'li']}}" data-content="楼栋切换" data-event-opts="{{[ [ 'tap',[ [ 'buildingUnitHandle',[index] ] ] ] ]}}" data-name="{{item.text}}" wx:for="{{buildUnitList}}" wx:key="index">
+                    <text class="text">{{''+item.text+''}}</text>
+                    <text class="tab-bg" wx:if="{{index==floorUnitIndex}}"></text>
+                </view>
+            </scroll-view>
+            <view class="excel-house-Detail" style="{{'height:'+sysHeight+'px'}}" wx:if="{{houseData.length>0}}">
+                <view class="title-left" wx:if="{{houseData[0].floor>0}}">
+                    <view class="floor-num" wx:if="{{item.floor&&item.floor!=0}}" wx:for="{{houseData}}" wx:key="index">
+                        <text class="floor-text">{{''+item.floor+''}}</text>层</view>
+                </view>
+                <view class="{{[ 'line-house-detail '+(houseData[0].floor>0?'':'hasFloor') ]}}">
+                    <view class="line-house-box" wx:for="{{houseData}}" wx:key="index">
+                        <view bindtap="__e" class="{{[val.sale_status==0||val.sale_status==4||val.sale_status==2?'house-cont gray':'house-cont']}}" data-event-opts="{{[ [ 'tap',[ [ 'toDetail',[index,cIndex] ] ] ] ]}}" data-name="户型详情" data-type="link" id="housePriceDetailBuild" wx:for="{{item.house}}" wx:for-index="cIndex" wx:for-item="val" wx:key="cIndex">
+                            <view class="{{['sales_status',val.sale_status==1?'sale-in':'',val.sale_status==2?'sign-text':'',val.sale_status==4?'sale-out':'']}}" wx:if="{{val.sale_status&&showSaleStatus}}"></view>
+                            <view class="house-type">
+                                <text class="'house-type-item fz-10'+(val.is_talent_house == 1 ? 'active-3' : '')" wx:if="{{val.is_talent_house==1}}">人才房</text>
+                                <text class="{{['house-type-item fz-10',val.label=='住宅'?'active-1':'',val.label=='公寓'?'active-2':'']}}" wx:if="{{val.label=='住宅'||val.label=='公寓'}}">{{''+val.label+''}}</text>
+                            </view>
+                            <text class="house-num">{{''+val.room_num+''}}</text>
+                            <text class="house-square">{{''+(val.total_square&&val.total_square!=0?val.total_square+'㎡':'')+''}}</text>
+                            <text class="house-price-one">{{''+(val.avg_price&&val.avg_price!=0?val.avg_price+'元/㎡':'')+''}}</text>
+                            <view class="house-price">
+                                <text>{{''+(val.total_price&&val.total_price!=0?val.total_price:'')+''}}</text>
+                                <text wx:if="{{val.total_price&&val.total_price!=0}}">万元</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="nothing gray-block" wx:if="{{loading}}">
+                    <image class="article-nothing" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+                    <view class="fz-13 content">暂无数据~</view>
+                </view>
+                <view class="full-screen" wx:else>
+                    <view class="full-screen-small" id="spinner"></view>
+                </view>
+            </block>
+        </block>
+        <block wx:else>
+            <view class="nothing gray-block" wx:if="{{loading}}">
+                <image class="article-nothing" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+                <view class="fz-13 content" wx:if="{{params.price}}">该楼栋暂无此装修价格</view>
+                <view class="fz-13 content" wx:else>暂无数据~</view>
+            </view>
+            <view class="full-screen" wx:else>
+                <view class="full-screen-big" id="spinner"></view>
+            </view>
+        </block>
+    </view>
+    <busi-share-icon bind:__l="__l" bottom="{{bottomHeight}}" custom="{{true}}" vueId="77bdffd0-5" vueSlots="{{['default']}}" wx:if="{{loading}}">
+        <button bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" wx:if="{{buildUnitList.length>0&&isSaleMan}}"></button>
+        <button class="share" data-type="button" openType="share" wx:else></button>
+    </busi-share-icon>
+    <view bindtap="__e" class="toggle-list iconnew new-ic_liebiaomoshi_qiehuan fz-26" data-event-opts="{{[ [ 'tap',[ [ 'switchMode',['$event'] ] ] ] ]}}" data-name="切换模式" data-type="button" openType="redirect" style="{{isPhoneX?'bottom:160rpx':'bottom:96rpx'}}" wx:if="{{loading}}"></view>
+    <view catchtouchmove="stopMove" class="guide" wx:if="{{showGuide&&guideImg.length>0}}">
+        <image catchtap="__e" class="backImg" data-event-opts="{{[ [ 'tap',[ [ 'nextGuideImage',['$event'] ] ] ] ]}}" lazyLoad="true" src="{{guideImg[guideImgIndex]}}" style="{{'z-index:'+100-guideImgIndex+';'}}"></image>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+<view>
+    <view class="lottery-result" wx:for="{{items}}" wx:key="index">
+        <view class="row">
+            <view bindtap="__e" class="add blue-color fz-14" data-event-opts="{{[ [ 'tap',[ [ 'addBuyers',[index] ] ] ] ]}}">添加</view>
+            <view class="column fz-14">
+                <view class="label">公证摇号编码</view>
+                <view class="value">{{''+item.code+''}}</view>
+            </view>
+            <view class="column fz-14">
+                <view class="label">姓名</view>
+                <view class="value" wx:for="{{item.name}}" wx:for-index="index2" wx:for-item="item1" wx:key="index2">{{''+item1+''}}</view>
+            </view>
+            <view class="column fz-14" wx:if="{{item.reg_num.length>=0}}">
+                <view class="label">购房登记号</view>
+                <view class="value">{{''+item.reg_num+''}}</view>
+            </view>
+            <view class="column fz-14">
+                <view class="label">身份证号</view>
+                <view class="value" wx:for="{{item.id_num}}" wx:for-index="index2" wx:for-item="item1" wx:key="index2">{{''+item1+''}}</view>
+            </view>
+        </view>
+    </view>
+</view>

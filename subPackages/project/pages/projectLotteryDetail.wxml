@@ -1,0 +1,129 @@
+<view>
+    <view class="top-contain">
+        <view class="left">
+            <navigator bindtap="__e" class="title" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" hoverClass="none" openType="reLaunch" url="{{'/pages/lotteryDetail?project_id='+project_id+'&lottery_id='+lottery_id}}">
+                <text class="name">{{''+(title||'')+''}}</text>
+                <text class="iconnew new-tongyong-gengduo c-1"></text>
+            </navigator>
+            <view bindtap="__e" class="address" data-event-opts="{{[ [ 'tap',[ [ 'toLocation',['$event'] ] ] ] ]}}" data-name="楼盘地址">
+                <text class="name">{{''+(baseDetail.project_location||'')+''}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+    </view>
+    <trend bind:__l="__l" bind:updateErTrendData="__e" canvasToImage="{{canvasToImage}}" data-event-opts="{{[ [ '^updateErTrendData',[ [ '__set_sync',['$0','erTrendData','$event'],[''] ] ] ],[ '^updateErTrendData',[ [ '__set_sync',['$0','erTrendData','$event'],[''] ] ] ] ]}}" erTrendData="{{erTrendData}}" vueId="15fc1c98-1"></trend>
+    <view class="page white-bg">
+        <scroll-view class="scroll-view white-bg" scrollIntoView="{{'target'+activeIndex}}" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="scroll-x">
+            <view class="tabBar" style="{{'width:'+scrollwidth+'px'}}">
+                <view bindtap="__e" class="{{[ 'tabBar-list '+(activeIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[index] ] ] ] ]}}" data-name="{{item}}" id="{{'target'+index}}" wx:for="{{historyDate}}" wx:key="index">{{''+(item||'')+''}}</view>
+            </view>
+        </scroll-view>
+        <swiper autoplay="{{false}}" bindchange="__e" class="swiper" current="{{activeIndex}}" data-event-opts="{{[ [ 'change',[ [ 'onSlideChangeEnd',['$event'] ] ] ] ]}}" style="{{'height:'+swiperHeight+'rpx'}}" wx:if="{{lotteryList.length>1}}">
+            <swiper-item wx:for="{{lotteryList}}" wx:key="index">
+                <scroll-view class="scroll-view2" scrollY="scroll-y">
+                    <view class="info-list">
+                        <view class="left">
+                            <view class="head-title">历史摇号</view>
+                            <block wx:if="{{item.price&&item.price.length>0}}">
+                                <view class="item" wx:for="{{item.price}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">
+                                    <text class="fz-13 leftText">{{''+val.key+'：'}}</text>
+                                    <view class="fz-15 price">{{''+val.value+''}}</view>
+                                </view>
+                            </block>
+                            <view class="item" wx:for="{{item.rows}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">
+                                <text class="fz-13 leftText">{{''+val.key+'：'}}</text>
+                                <text class="fz-13 normal">{{''+val.value+''}}</text>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <image bindtap="__e" class="qrcode" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['lotteryList','',index,'qr_code'] ] ] ] ] ] ]}}" data-name="查看二维码" mode="widthFix" src="{{item.qr_code}}"></image>
+                        </view>
+                    </view>
+                    <view class="lottery-excel">
+                        <lottery-excel bind:__l="__l" isExceedTriple="{{item.is_exceed_triple}}" lotteryRate="{{item.lottery_rate}}" tableData="{{item.room_num_info}}" vueId="{{'15fc1c98-2-'+index}}"></lottery-excel>
+                    </view>
+                    <view class="btnList">
+                        <navigator bindtap="__e" class="house-price" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{col.name}}" hoverClass="none" url="{{col.url}}" wx:for="{{item.tags}}" wx:for-index="index2" wx:for-item="col" wx:key="index2">
+                            <image mode="widthFix" src="{{col.img}}"></image>
+                        </navigator>
+                    </view>
+                    <block wx:if="{{cityName=='chengdu'}}">
+                        <view class="tips-bar fz-12" wx:if="{{item.is_resulted==3}}">该楼盘由开发商自行组织有序选房，请注意登记时间，选房时间</view>
+                        <view class="tips-bar fz-12" wx:if="{{item.is_resulted==2}}">该楼盘由开发商自行摇号，准确时间以项目公告为准</view>
+                    </block>
+                    <time-axis bind:__l="__l" timeData="{{item.time_line}}" vueId="{{'15fc1c98-3-'+index}}"></time-axis>
+                    <view class="open_container">
+                        <view class="btn-list white-color fz-12">
+                            <view bindtap="__e" class="{{[ 'btn  '+(item.type===0?'btn-gray':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'shake',[index,btnIndex] ] ] ] ]}}" data-name="{{item.text}}" hoverClass="btn-hover" wx:for="{{item.button_list}}" wx:for-index="btnIndex" wx:key="btnIndex">{{''+(item.text||'')+''}}</view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+        <view class="container" style="{{'height:'+swiperHeight+'rpx'}}" wx:if="{{lotteryList.length==1}}">
+            <block wx:for="{{lotteryList}}" wx:key="index">
+                <view class="info-list">
+                    <view class="left">
+                        <view class="head-title">历史摇号</view>
+                        <block wx:if="{{item.price&&item.price.length>0}}">
+                            <view class="item" wx:for="{{item.price}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">
+                                <text class="fz-13 leftText">{{''+val.key+'：'}}</text>
+                                <view class="fz-15 price">{{''+val.value+''}}</view>
+                            </view>
+                        </block>
+                        <view class="item" wx:for="{{item.rows}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">
+                            <text class="fz-13 leftText">{{''+val.key+'：'}}</text>
+                            <text class="fz-13 normal">{{''+val.value+''}}</text>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <image bindtap="__e" class="qrcode" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['lotteryList','',index,'qr_code'] ] ] ] ] ] ]}}" mode="widthFix" src="{{item.qr_code}}"></image>
+                    </view>
+                </view>
+                <view class="lottery-excel">
+                    <lottery-excel bind:__l="__l" isExceedTriple="{{item.is_exceed_triple}}" lotteryRate="{{item.lottery_rate}}" tableData="{{item.room_num_info}}" vueId="{{'15fc1c98-4-'+index}}"></lottery-excel>
+                </view>
+                <view class="btnList">
+                    <navigator class="house-price" hoverClass="none" url="{{col.url}}" wx:for="{{item.tags}}" wx:for-index="index2" wx:for-item="col" wx:key="index2">
+                        <image mode="widthFix" src="{{col.img}}"></image>
+                    </navigator>
+                </view>
+                <block wx:if="{{cityName=='chengdu'}}">
+                    <view class="tips-bar fz-12" wx:if="{{item.is_resulted==3}}">该楼盘由开发商自行组织有序选房，请注意登记时间，选房时间</view>
+                    <view class="tips-bar fz-12" wx:if="{{item.is_resulted==2}}">该楼盘由开发商自行摇号，准确时间以项目公告为准</view>
+                </block>
+                <time-axis bind:__l="__l" timeData="{{item.time_line}}" vueId="{{'15fc1c98-5-'+index}}"></time-axis>
+                <view class="open_container">
+                    <view class="btn-list white-color fz-12">
+                        <view bindtap="__e" class="{{[ 'btn  '+(item.type===0?'btn-gray':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'shake',['0',btnIndex] ] ] ] ]}}" data-name="{{item.text}}" hoverClass="btn-hover" wx:for="{{item.button_list}}" wx:for-index="btnIndex" wx:key="btnIndex">{{''+(item.text||'')+''}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="h-62"></view>
+        <view class="footer-link">
+            <view class="group-btns">
+                <navigator bindtap="__e" class="icon" data-event-opts="{{[ [ 'tap',[ [ 'btnEventTrack',['楼盘详情-底部评论按钮'] ] ] ] ]}}" data-name="楼盘评论" hoverClass="none" url="{{'/subPackages/comment/pages/project_comment?project_id='+project_id+'&project_name='+baseDetail.name+'&lottery_id='+id}}">
+                    <text class="iconnew new-zixunxianxing"></text>
+                    <text class="fz-14 text">{{''+(commentsCount||0)+''}}</text>
+                </navigator>
+                <view bindtap="__e" class="{{[ 'icon '+(btnStatus.attention==1?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'lotteryRemindHandle',['$event'] ] ] ] ]}}" data-name="关注楼盘">
+                    <text class="{{[ 'iconnew '+(btnStatus.attention==1?'new-yiguanzhu':'new-guanzhuxianxing') ]}}"></text>
+                    <text class="fz-14 text">{{''+(btnStatus.attention==1?'已关注':'关注')+''}}</text>
+                </view>
+                <view class="button-group">
+                    <contact-salesman bind:__l="__l" class="flex-1" projectId="{{project_id}}" salesmanId="{{sales_man_id}}" vueId="15fc1c98-6" vueSlots="{{['default']}}">{{''+(hasResutBtn.type!=0?'':'联系')+'置业顾问'}}</contact-salesman>
+                    <call-salesman bind:__l="__l" bind:phoneModalChange="__e" bind:updateProjectId="__e" bind:updateSalesManId="__e" class="flex-1 ml18" data-event-opts="{{[ [ '^updateProjectId',[ [ '__set_sync',['$0','project_id','$event'],[''] ] ] ],[ '^updateProjectId',[ [ '__set_sync',['$0','project_id','$event'],[''] ] ] ],[ '^updateSalesManId',[ [ '__set_sync',['$0','sales_man_id','$event'],[''] ] ] ],[ '^updateSalesManId',[ [ '__set_sync',['$0','sales_man_id','$event'],[''] ] ] ],[ '^phoneModalChange',[ ['phoneModalChange'] ] ] ]}}" projectId="{{project_id}}" salesManId="{{sales_man_id}}" vueId="15fc1c98-7" vueSlots="{{['default']}}" wx:if="{{lotteryList[activeIndex]&&lotteryList[activeIndex].project&&lotteryList[activeIndex].project.official_phone}}">{{'免费电话'+(hasResutBtn.type!=0?'':'咨询')+''}}</call-salesman>
+                    <navigator bindtap="__e" class="fz-16 button lottery-result-btn font-bold active ml18 bgs" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="摇号结果" hoverClass="none" url="{{hasResutBtn.url}}" wx:if="{{hasResutBtn.type!=0}}">摇号结果</navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lottery-alert" wx:if="{{alertShowFlag}}">
+        <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190620/5d0b4dabb803c.png" wx:if="{{alertShow==='1'}}"></image>
+        <text class="weui-icon-clear iconnew new-shanchu1" wx:if="{{alertShow==='2'}}"></text>
+        <text>{{toastMsg}}</text>
+    </view>
+    <follow-success bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','followSuccessed','$event'],[''] ] ] ] ]}}" show="{{followSuccessed}}" vueId="15fc1c98-8"></follow-success>
+    <busi-share-icon bind:__l="__l" bottom="{{bottomHeight}}" class="vue-ref" custom="{{true}}" data-ref="share" vueId="15fc1c98-9"></busi-share-icon>
+</view>

@@ -1,0 +1,20 @@
+<view class="advisory-wrap">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toMsgDetail',['$0'],['item'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="22f155ff-1" vueSlots="{{['default']}}">
+        <view class="advisory-content">
+            <view class="advisory-content-wrap">
+                <view class="advisory-content-left">
+                    <image class="image" mode="aspectFill" src="{{defaultAvatar}}"></image>
+                </view>
+                <view class="advisory-content-right">
+                    <view class="line top">
+                        <view class="top-name">小团助手</view>
+                    </view>
+                    <view class="line bottom">
+                        <text class="red-circle-text white-color" wx:if="{{!readStatus}}">1</text>
+                        <text class="project-produce">有购房问题？小团助手快速帮你解答</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </authorization>
+</view>

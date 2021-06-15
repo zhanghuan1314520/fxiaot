@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我要上推荐",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "action-sheet": "/subPackages/lottery/pages/components/ActionSheet",
+        "dialog": "/components/UILayout/BusiDialog",
+        "authorization": "/components/Authorization"
+    }
+}

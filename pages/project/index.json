@@ -1,0 +1,17 @@
+{
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "杭州房小团",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-search": "/components/UILayout/BusiSearch",
+        "busi-grid": "/components/UILayout/BusiGrid",
+        "busi-cube": "/components/UILayout/BusiCube",
+        "busi-column": "/components/UILayout/BusiColumn",
+        "base-filters": "/components/BaseFilters/Index",
+        "project-item": "/components/ProjectItem/ProjectItem",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "ad-float-window": "/components/AdFloatWindow",
+        "busi-search-swiper": "/pages/components/BusiSearchSwiper"
+    }
+}

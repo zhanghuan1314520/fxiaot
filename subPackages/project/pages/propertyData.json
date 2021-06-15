@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "房产数据",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "soil-item": "/components/SoilTakenItem/soilTokenItem",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "toast": "/components/UILayout/BusiToast"
+    }
+}

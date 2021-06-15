@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "杭州房小团-话题",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "authorization": "/components/Authorization",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator"
+    }
+}

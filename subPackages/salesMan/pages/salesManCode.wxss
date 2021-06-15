@@ -1,0 +1,56 @@
+page {
+    background: linear-gradient(180deg,#2d8cf0,#5036f0 70%);
+}
+
+.top-img {
+    padding: 0 20rpx;
+    top: 86rpx;
+}
+
+.background,.top-img {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 11;
+}
+
+.background {
+    padding: 100rpx 30rpx 0;
+}
+
+.content {
+    position: absolute;
+    z-index: 222;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    top: 160rpx;
+}
+
+.content .sales-man-name,.content .text {
+    line-height: 1;
+}
+
+.content .sales-man-tag {
+    padding-top: 30rpx;
+    line-height: 1;
+}
+
+.content .code {
+    padding-top: 70rpx;
+    width: 420rpx;
+    height: 420rpx;
+}
+
+.content .save-handle {
+    line-height: 90rpx;
+    padding: 0 124rpx;
+    background: linear-gradient(90deg,#2d8cf0,#1068eb);
+    border-radius: 45rpx;
+    margin-top: 60rpx;
+    display: inline-block;
+}
+
+.content .text {
+    padding-top: 52rpx;
+}

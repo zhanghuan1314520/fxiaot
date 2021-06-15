@@ -1,0 +1,55 @@
+<view class="page">
+    <view class="page__bd haveSearchBar">
+        <view>
+            <view class="search-bar">
+                <view class="search-bar-form">
+                    <view class="input-area">
+                        <image bindtap="__e" class="search-icon" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/05/18/9bef8839ce3044147520cbc134096918.png"></image>
+                        <input bindconfirm="__e" bindinput="__e" class="search-bar-input" data-event-opts="{{[ [ 'confirm',[ [ 'doSearch',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ] ] ] ]}}" focus="{{autoFocus}}" placeholder="{{inputPlace}}" placeholderClass="search-input-placeholder" type="text" value="{{inputVal}}"></input>
+                        <view bindtap="__e" class="iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></view>
+                    </view>
+                    <view bindtap="__e" class="search-btn" data-event-opts="{{[ [ 'tap',[ [ 'goBack',['$event'] ] ] ] ]}}">取消</view>
+                </view>
+            </view>
+            <view class="empty_block"></view>
+            <block wx:if="{{!showContent}}">
+                <block wx:if="{{showSearchList}}">
+                    <block wx:if="{{list.length}}">
+                        <wiki-item bind:__l="__l" item="{{item}}" vueId="{{'500e3392-1-'+__i0__}}" wx:for="{{list}}" wx:for-index="__i0__" wx:key="id"></wiki-item>
+                    </block>
+                    <view class="empty-data" wx:else>
+                        <image class="empty-image" src="https://imgcdn.huanjutang.com/image/2020/06/08/b14b6b723fdadd219950a03bacd6cfc1.png"></image>
+                        <view class="empty-text">暂无数据</view>
+                    </view>
+                </block>
+                <view class="search-content_box" wx:else>
+                    <view class="search-history history" wx:if="{{historySearch.length>0}}">
+                        <view class="head">
+                            <view class="title-text">
+                                <text class="miniTit">近期搜索</text>
+                            </view>
+                            <view></view>
+                            <view bindtap="__e" class="gray-9-color float-right" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}">
+                                <text class="iconnew new-shanchu fz-20"></text>
+                            </view>
+                        </view>
+                        <view class="list recent">
+                            <view bindtap="__e" class="tags" data-event-opts="{{[ [ 'tap',[ [ 'setInputVal',['$0'],[ [ ['historySearch','',index] ] ] ] ] ] ]}}" wx:for="{{historySearch}}" wx:key="index">{{''+item+''}}</view>
+                        </view>
+                    </view>
+                    <view class="hot-history history" wx:if="{{false}}">
+                        <view class="head-color">
+                            <text class="miniTit">大家都在搜</text>
+                        </view>
+                        <view class="list">
+                            <navigator hoverClass="none" url="{{item.jump_url}}" wx:for="{{hotSearchs}}" wx:key="index">
+                                <view class="{{[ 'tags',[item.style+''==='2'?'highlight':''] ]}}" wx:if="{{index<10}}">
+                                    <image class="tags-img" src="{{item.icon_url}}" wx:if="{{item.style+''==='2'}}"></image>{{item.name+''}}</view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

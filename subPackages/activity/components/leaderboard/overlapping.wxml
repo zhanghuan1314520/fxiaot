@@ -1,0 +1,19 @@
+<view class="overlapping data-v-b2186d0c" style="{{'height:'+height+';'}}">
+    <view class="hotnum-box data-v-b2186d0c">
+        <view class="tabs data-v-b2186d0c">
+            <image class="font data-v-b2186d0c" mode="aspectFit" src="{{font}}" wx:if="{{fontType==='link'}}"></image>
+            <block wx:else>
+                <text class="text data-v-b2186d0c" wx:if="{{fontType==='text'}}">{{''+font+''}}</text>
+            </block>
+        </view>
+        <view class="top-point data-v-b2186d0c">
+            <view class="point data-v-b2186d0c"></view>
+            <view class="point data-v-b2186d0c"></view>
+        </view>
+        <slot></slot>
+        <view class="bottom-point data-v-b2186d0c">
+            <view class="point data-v-b2186d0c"></view>
+            <view class="point data-v-b2186d0c"></view>
+        </view>
+    </view>
+</view>

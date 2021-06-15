@@ -1,0 +1,6 @@
+<view class="list data-v-082e096d">
+    <view class="inventory data-v-082e096d">
+        <view bindtap="__e" class="{{['data-v-082e096d',true?'inventory-button':'',activeIndex===index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',[index] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">{{''+(listKey==='turn'?item.batch_text:item.type_text)+''}}</view>
+    </view>
+    <view class="extra data-v-082e096d" wx:if="{{listKey==='turn'&&list[activeIndex]}}">{{''+list[activeIndex].batch_describe+''}}</view>
+</view>

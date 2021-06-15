@@ -1,0 +1,73 @@
+<view class="planar">
+    <view class="planar__container">
+        <movable-area class="planar__stage" scaleArea="true">
+            <movable-view bindscale="__e" class="stage__container" data-event-opts="{{[ [ 'scale',[ [ 'scaleHandle',['$event'] ] ] ] ]}}" direction="all" outOfBounds="out-of-bounds" scale="{{true}}" scaleMax="4" scaleMin="1" style="{{'width:'+areaWidth+'px'+';'+'height:'+areaHeight+'px'+';'}}" x="{{areaX}}" y="{{areaY}}">
+                <view style="{{'width:'+areaWidth+'px'+';'+'height:'+areaHeight+'px'+';'}}">
+                    <image class="stage__image" src="{{areaImage}}"></image>
+                </view>
+                <view bindtap="__e" class="{{[ 'stage__item',[index===swiperIndex?'stage__item-active':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[index] ] ] ] ]}}" style="{{'top:'+item.point_y+'px'+';'+'left:'+item.point_x+'px'+';'+'transform:'+'translate3d(-50%, -50%, 0) scale('+markerSacle+')'+';'}}" wx:for="{{swiperList}}" wx:key="id">{{''+item.name}}<text class="stage__item--line"></text>{{item.status_text+''}}</view>
+            </movable-view>
+        </movable-area>
+        <view class="planar__compass" style="{{'transform:'+'rotate('+compassAngle+'deg)'+';'}}" wx:if="{{compassStatus===1}}">
+            <view class="planar__compass-text" style="{{'transform:'+'rotate(-'+compassAngle+'deg)'+';'}}">北</view>
+            <image class="planar__compass-point" src="https://imgcdn.huanjutang.com/assets/img/2020911185438081.png"></image>
+            <image class="planar__compass-bg" src="https://imgcdn.huanjutang.com/assets/img/2020911185288081.png"></image>
+        </view>
+        <view class="planar__navbar">
+            <view bindtap="__e" class="{{[ 'planar__navbar--item',[navbarText==='在售'?'planar__navbar--item-active':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeSwiperList',['在售',0] ] ] ] ]}}">在售</view>
+            <view bindtap="__e" class="{{[ 'planar__navbar--item',[navbarText==='未开盘'?'planar__navbar--item-active':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeSwiperList',['未开盘',0] ] ] ] ]}}">未开盘</view>
+            <view bindtap="__e" class="{{[ 'planar__navbar--item',[navbarText==='售罄'?'planar__navbar--item-active':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeSwiperList',['售罄',0] ] ] ] ]}}">售罄</view>
+        </view>
+        <view bindtap="__e" class="planar__aviation _div" data-content="总平图跳转航拍" data-event-opts="{{[ [ 'tap',[ [ 'redictAviation',['$event'] ] ] ] ]}}" data-name="总平图" data-type="link" wx:if="{{swiperListRes.aerial_view_url}}">
+            <image class="planar__aviation--plane" src="https://imgcdn.huanjutang.com/assets/img/20213231836178081.png"></image>看航景实拍</view>
+        <image class="planar__tips" src="https://imgcdn.huanjutang.com/assets/img/2021411516228081.png" wx:if="{{hasShowTips}}"></image>
+    </view>
+    <view class="planar__swiper">
+        <swiper bindchange="__e" class="swiper__container" current="{{swiperIndex}}" data-event-opts="{{[ [ 'change',[ [ 'chagneHandle',['$event'] ] ] ] ]}}" nextMargin="44rpx" previousMargin="44rpx" wx:if="{{!hideSwiperList}}">
+            <swiper-item class="swiper__item" wx:for="{{swiperList}}" wx:for-index="__i0__" wx:key="id">
+                <view class="swiper__title">{{''+item.name+''}}</view>
+                <view class="swiper__list">
+                    <view class="swiper__list-item swiper__list-item-left">
+                        <view class="swiper__list--label">层数：</view>
+                        <view class="swiper__list--value">{{''+(item.floors?item.floors+'层':'-')+''}}</view>
+                    </view>
+                    <view class="swiper__list-item">
+                        <view class="swiper__list--label">{{''+presaleStr+'：'}}</view>
+                        <view class="swiper__list--value">{{''+(item.presale_at||'-')+''}}</view>
+                    </view>
+                    <view class="swiper__list-item swiper__list-item-left">
+                        <view class="swiper__list--label">单元：</view>
+                        <view class="swiper__list--value">{{''+(item.units?item.units+'个单元':'-')+''}}</view>
+                    </view>
+                    <view class="swiper__list-item">
+                        <view class="swiper__list--label">梯户比：</view>
+                        <view class="swiper__list--value">{{''+(item.lift_house_ratio||'-')+''}}</view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="swiper__empty" wx:else>{{'暂无“'+navbarText+'”相关楼栋信息'}}</view>
+    </view>
+    <view class="{{['planar__huxing',hideHuxingList?'planar__huxing-no-bottom':'']}}">
+        <block wx:if="{{!hideHuxingList}}">
+            <view class="huxing__title">{{''+(swiperList[swiperIndex]?swiperList[swiperIndex].name:'')+'\n                户型图'}}</view>
+            <view class="huxing__container">
+                <huxing-list bind:__l="__l" bind:previewImage="__e" data-event-opts="{{[ [ '^previewImage',[ ['previewImage'] ] ] ]}}" listData="{{huxingList}}" vueId="cbfe5a1e-1"></huxing-list>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="huxing__empty" wx:if="{{!hideSwiperList}}">小团正在抓紧添加户型图唷~</view>
+        </block>
+    </view>
+    <focus-footer bind:__l="__l" lottery_id="{{lottery_id}}" projectId="{{projectId}}" vueId="cbfe5a1e-2"></focus-footer>
+    <busi-footer bind:__l="__l" class="planar__footer" className="planar__footer" vueId="cbfe5a1e-3" vueSlots="{{['default']}}">
+        <button class="footer__left" openType="share">
+            <view class="footer__left-icon iconnew new-fenxiang2"></view>
+            <view class="footer__left-text">分享</view>
+        </button>
+        <view class="footer__right">
+            <contact-salesman bind:__l="__l" class="footer__right-button" projectId="{{projectId}}" vueId="{{'cbfe5a1e-4'+','+'cbfe5a1e-3'}}"></contact-salesman>
+            <call-salesman bind:__l="__l" class="footer__right-button" projectId="{{projectId}}" vueId="{{'cbfe5a1e-5'+','+'cbfe5a1e-3'}}"></call-salesman>
+        </view>
+    </busi-footer>
+</view>

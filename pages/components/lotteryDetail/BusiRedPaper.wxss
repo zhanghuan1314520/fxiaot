@@ -1,0 +1,107 @@
+.red-paper {
+    position: fixed;
+    right: 10rpx;
+    bottom: 360rpx;
+    bottom: calc(360rpx + constant(safe-area-inset-bottom));
+    bottom: calc(360rpx + env(safe-area-inset-bottom));
+    z-index: 900;
+}
+
+.red-paper .rd-img-wrapper {
+    position: relative;
+    font-size: 0;
+}
+
+.red-paper .rd-img-wrapper .image {
+    width: 180rpx;
+    height: 144rpx;
+}
+
+.red-paper .paper-text {
+    font-size: 18rpx;
+    font-family: PingFangSC-Semibold,PingFang SC;
+    font-weight: 600;
+    color: #fff8d8;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 88rpx;
+    width: 100%;
+    text-align: center;
+}
+
+.red-paper .entryAni {
+    animation: scale .5s ease-in-out;
+}
+
+.red-paper .attentionAni {
+    animation: tada 1s;
+}
+
+@-webkit-keyframes scale {
+    from {
+        transform: scale3d(0,0,0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale3d(0,0,0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes tada {
+    from {
+        transform: scaleX(1);
+    }
+
+    10%,20% {
+        transform: scale3d(.9,.9,.9) rotate(-3deg);
+    }
+
+    30%,50%,70%,90% {
+        transform: scale3d(1.1,1.1,1.1) rotate(3deg);
+    }
+
+    40%,60%,80% {
+        transform: scale3d(1.1,1.1,1.1) rotate(-3deg);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes tada {
+    from {
+        transform: scaleX(1);
+    }
+
+    10%,20% {
+        transform: scale3d(.9,.9,.9) rotate(-3deg);
+    }
+
+    30%,50%,70%,90% {
+        transform: scale3d(1.1,1.1,1.1) rotate(3deg);
+    }
+
+    40%,60%,80% {
+        transform: scale3d(1.1,1.1,1.1) rotate(-3deg);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}

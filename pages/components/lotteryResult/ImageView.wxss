@@ -1,0 +1,43 @@
+.image-view__img {
+    width: 100%;
+    margin-top: 112rpx;
+    text-align: center;
+    background: #fff;
+}
+
+.image-view__img .image {
+    display: block;
+    width: 406rpx;
+    overflow: hidden;
+    margin: 0 auto 52rpx;
+}
+
+.image-view__content {
+    text-align: center;
+}
+
+.image-view__content-title {
+    margin-bottom: 22rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: rgba(39,25,25,.85);
+}
+
+.image-view__content-desc {
+    margin-bottom: 52rpx;
+    color: rgba(0,0,0,.45);
+    font-size: 28rpx;
+}
+
+.image-view__content-btn {
+    width: 360rpx;
+    height: 86rpx;
+    border-radius: 43rpx;
+    border: 2px solid #2d8cf0;
+    display: inline-block;
+    text-align: center;
+    line-height: 86rpx;
+    box-sizing: border-box;
+    color: #2d8cf0;
+    font-size: 32rpx;
+}

@@ -1,0 +1,23 @@
+<view catchtouchmove="__e" class="modal data-v-6c829194" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{!destroy}}">
+    <create-poster bind:__l="__l" class="data-v-6c829194 vue-ref" data-ref="canvasPoster" height="{{1920}}" vueId="aed56702-1" width="{{1080}}"></create-poster>
+    <view bindtap="__e" class="{{['data-v-6c829194','modal-mask',maskClass]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleMaskClick',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['data-v-6c829194','mask-content',contentClass]}}">
+        <view class="content-title data-v-6c829194">
+            <image class="content-title__image data-v-6c829194" src="{{titleImage}}"></image>
+            <image class="content-qrcode data-v-6c829194" src="{{image}}"></image>
+        </view>
+        <view class="modal-main data-v-6c829194">
+            <image class="font data-v-6c829194" src="{{fontImage}}"></image>
+            <view class="operate data-v-6c829194">
+                <button bindtap="__e" class="share data-v-6c829194" data-content="海报弹窗" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="分享好友" hoverClass="none" openType="share">
+                    <image class="button data-v-6c829194" src="{{shareImage}}"></image>
+                </button>
+                <image bindtap="__e" class="button data-v-6c829194" data-content="海报弹窗" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}" data-name="保存海报" src="{{saveImage}}"></image>
+            </view>
+        </view>
+        <view bindtap="__e" class="modal-close data-v-6c829194" data-content="海报弹窗" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" data-name="关闭">
+            <image class="close-image data-v-6c829194" src="{{closeImage}}"></image>
+            <text class="close-text data-v-6c829194">关闭</text>
+        </view>
+    </view>
+</view>

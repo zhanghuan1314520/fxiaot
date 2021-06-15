@@ -1,0 +1,7 @@
+<view class="wrap">
+    <input-item bind:__l="__l" bind:updateValue="__e" class="vue-ref" data-event-opts="{{[ [ '^updateValue',[ [ '__set_sync',['$0','companyName','$event'],[''] ] ] ] ]}}" data-ref="inputItem" disabled="{{state===0}}" max="{{30}}" placeholder="请输入公司全称" value="{{companyName}}" vueId="2681e505-1"></input-item>
+    <picker-item bind:__l="__l" bind:updateValue="__e" data-event-opts="{{[ [ '^updateValue',[ [ '__set_sync',['$0','teamType','$event'],[''] ] ] ] ]}}" disabled="{{state===0}}" label="所属团队类型" options="{{[ {label:'自销团队',value:1},{label:'代理团队',value:2} ]}}" tip="注：自销团队为开发商自有团队，代理为第三方公司团队" value="{{teamType}}" vueId="2681e505-2"></picker-item>
+    <view class="submit-button">
+        <submit-button bind:__l="__l" bind:comfirm="__e" btnText="{{state!==0?'确认修改':'审核中'}}" data-event-opts="{{[ [ '^comfirm',[ ['modify'] ] ] ]}}" disabled="{{disabled}}" vueId="2681e505-3"></submit-button>
+    </view>
+</view>

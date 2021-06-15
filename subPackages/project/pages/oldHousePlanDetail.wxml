@@ -1,0 +1,101 @@
+<view style="position:relative;">
+    <view class="banner">
+        <swiper autoplay="{{false}}" bindchange="__e" class="swiper" current="{{swiperIndex}}" data-event-opts="{{[ [ 'change',[ [ 'onSlideChanged',['$event'] ] ] ] ]}}">
+            <swiper-item wx:if="{{info.vr_cover}}">
+                <view bindtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ ['goVrPage'] ] ] ]}}">
+                    <image mode="aspectFill" src="{{info.vr_cover}}"></image>
+                    <view class="video-img-icon">
+                        <text class="iconnew new-ic_vr"></text>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item wx:for="{{info.image}}" wx:key="index">
+                <view bindtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ [ 'prevImage',['$0',index],['info.image'] ] ] ] ]}}">
+                    <image mode="aspectFill" src="{{item}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="tools">
+            <view class="tool-wrap">
+                <view bindtap="__e" class="{{['btn',showType=='VR'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ ['showVrItem'] ] ] ]}}" wx:if="{{info.vr_url}}">VR</view>
+                <view bindtap="__e" class="{{['btn',showType=='IMG'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ ['showImage'] ] ] ]}}">户型图</view>
+            </view>
+        </view>
+    </view>
+    <custom-nav-header bind:__l="__l" scrolled="{{pageSrcoll}}" vueId="abb1abbc-1" vueSlots="{{['default']}}">
+        <view class="name-box fz-16" wx:if="{{pageSrcoll}}">户型详情</view>
+    </custom-nav-header>
+    <view class="info-box" style="{{'margin-top:'+marginTop+'px'}}">
+        <view class="title">
+            <view class="t-left">{{''+info.house_type+''}}<text class="active1" wx:if="{{info.sales_status==3}}">售罄</text>
+            </view>
+            <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ ['goOneHouseOnePrice'] ] ] ]}}" wx:if="{{info.price}}">
+                <text>一房一价</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view class="info-text">
+            <view class="item">
+                <view class="val">{{''+info.usage_type+''}}</view>
+                <view class="key">房源类型</view>
+            </view>
+            <view class="line"></view>
+            <view class="item">
+                <view class="val">{{''+info.outer_square+'㎡'}}</view>
+                <view class="key">建面区间</view>
+            </view>
+            <view class="line"></view>
+            <view class="item">
+                <view class="val">{{''+info.name+''}}</view>
+                <view class="key">户型</view>
+            </view>
+        </view>
+        <view class="price" wx:if="{{info.price}}">{{'约'+totalPrice+'万元/套'}}</view>
+        <view class="loan" wx:if="{{false}}">
+            <view class="loan-left">
+                <text class="text">首付<text class="num">3</text>成<text class="num">{{''+firstPay+''}}</text>万</text>
+                <text class="text">首付<text class="num">6</text>成<text class="num">{{''+sixPay+''}}</text>万</text>
+            </view>
+            <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'goCountPage',['$event'] ] ] ] ]}}">算房贷</button>
+        </view>
+        <view class="info-props">
+            <view class="props-item" wx:for="{{info.rows}}" wx:key="index">
+                <view class="props-key">
+                    <text class="props-key-text">{{''+item.key+''}}</text>
+                    <text class="props-key-split">:</text>
+                </view>
+                <view class="props-val">{{''+item.value+''}}</view>
+            </view>
+            <view class="props-item" wx:if="{{info.decoration_price&&info.decoration_style.length&&cityName!=='hangzhou'}}">
+                <view class="props-key">
+                    <text class="props-key-text">装修价格</text>
+                    <text class="props-key-split">:</text>
+                </view>
+                <view bindtap="__e" class="props-val" data-event-opts="{{[ [ 'tap',[ [ 'switchDecorationStyle',['$event'] ] ] ] ]}}">{{''+defaultDecorationStyle+''}}<text class="iconnew new-zhankai"></text>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="props-item" wx:if="{{info.decoration_price&&cityName!=='hangzhou'}}">
+                    <view class="props-key">装修价格 :</view>
+                    <view class="props-val">{{''+(info.decoration_price||'暂无')+''}}</view>
+                </view>
+            </block>
+            <view class="qrcode" wx:if="{{qrcode}}">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'zoomPic',['$0'],['qrcode'] ] ] ] ]}}" src="{{qrcode}}"></image>
+            </view>
+        </view>
+        <view class="player-box" wx:if="{{info.voice_url}}">
+            <audio-player bind:__l="__l" src="{{info.voice_url}}" vueId="abb1abbc-2"></audio-player>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="page">
+        <view class="photos">
+            <view class="photos-content">
+                <recommed-sales bind:__l="__l" projectId="{{params.project_id}}" vueId="abb1abbc-3"></recommed-sales>
+                <view class="empty-box _div"></view>
+                <footer-btns bind:__l="__l" callText="免费电话" contactText="在线咨询" projectId="{{params.project_id}}" vueId="abb1abbc-4"></footer-btns>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,37 @@
+.select-list {
+    width: 100%;
+    height: 100%;
+    padding: 20rpx 32rpx 0;
+    box-sizing: border-box;
+}
+
+.select-list .select-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.select-list .select-list__item .select__item__text {
+    padding: 26rpx 48rpx 26rpx 0;
+    line-height: 36rpx;
+    height: 36rpx;
+    font-size: 28rpx;
+    box-sizing: content-box;
+    color: rgba(0,0,0,.85);
+}
+
+.select-list .select-list__item .select__item__icon {
+    display: none;
+    font-size: 36rpx;
+    font-weight: 400;
+}
+
+.select-list .select-list__item.select-list__item-active .select__item__icon {
+    display: inherit;
+}
+
+.select-list .select-list__item.select-list__item-active .select__item__icon,.select-list .select-list__item.select-list__item-active .select__item__text {
+    color: #2d8cf0;
+    font-weight: 700;
+}

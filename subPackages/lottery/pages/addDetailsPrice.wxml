@@ -1,0 +1,78 @@
+<view>
+    <view class="page">
+        <view class="details_title_container">
+            <view class="details_title">
+                <text class="details_title_left font-bold">估价</text>
+                <text bindtap="__e" class="details_title_right font-bold" data-event-opts="{{[ [ 'tap',[ [ 'reset_all',['$event'] ] ] ] ]}}" style="color:#6995d9;">重置</text>
+            </view>
+        </view>
+        <navigator class="details_title_container" url="/subPackages/lottery/pages/findBuilding?type=1">
+            <view class="details_title" style="margin-top:20rpx;margin-bottom:20rpx;">
+                <text class="details_title_left font-bold">小区名字</text>
+                <view class="details_title_right">
+                    <text class="fz-14" style="margin-right:20rpx;">{{''+community_name+''}}</text>
+                    <text class="fz-14 iconnew new-tongyong-gengduo" style="color:#c1c1c1;"></text>
+                </view>
+            </view>
+        </navigator>
+        <view class="details_title_container">
+            <view class="details_title boder_style">
+                <text class="details_title_left font-bold">面积</text>
+                <view class="details_title_right float_bu">
+                    <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'get_area',['$event'] ] ] ] ]}}" placeholder="请输入数字(大于0)" type="number" value="{{area}}"></input>
+                    <text>平方米</text>
+                </view>
+            </view>
+        </view>
+        <picker bindchange="__e" class="details_title_container" data-event-opts="{{[ [ 'change',[ [ 'columns_hanlde',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{simulation2}}" value="{{arr_value}}">
+            <view class="details_title boder_style">
+                <text class="details_title_left font-bold">户型</text>
+                <view class="details_title_right">
+                    <text class="fz-14" style="margin-right:20rpx;color:#bfbfbf;" wx:if="{{!house}}">请选择</text>
+                    <text class="fz-14" style="margin-right:20rpx;" wx:else>{{''+house+''}}</text>
+                    <text class="fz-14 iconnew new-tongyong-gengduo" style="color:#c1c1c1;"></text>
+                </view>
+            </view>
+        </picker>
+        <picker bindchange="__e" class="details_title_container" data-event-opts="{{[ [ 'change',[ [ 'towardHanlde',['$event'] ] ] ] ]}}" range="{{fangxiang}}" value="{{index}}">
+            <view class="details_title boder_style">
+                <text class="details_title_left font-bold">朝向</text>
+                <view class="details_title_right">
+                    <text class="fz-14" style="margin-right:20rpx;color:#bfbfbf;" wx:if="{{!value_fang2}}">请选择</text>
+                    <text class="fz-14" style="margin-right:20rpx;" wx:else>{{''+value_fang2+''}}</text>
+                    <text class="fz-14 iconnew new-tongyong-gengduo" style="color:#c1c1c1;"></text>
+                </view>
+            </view>
+        </picker>
+        <view class="details_title_container">
+            <view class="details_title boder_style">
+                <text class="details_title_left font-bold">楼层</text>
+                <view class="details_title_right float_bu">
+                    <text>共</text>
+                    <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'get_layer',['$event'] ] ] ] ]}}" placeholder="输入数字" style="width:110rpx !important;" type="number" value="{{get_layers}}"></input>
+                    <text>层</text>
+                </view>
+                <view class="details_title_right float_bu" style="margin-right:100rpx;">
+                    <text>第</text>
+                    <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'all_layer',['$event'] ] ] ] ]}}" placeholder="输入数字" style="width:110rpx !important;" type="number" value="{{all_layers}}"></input>
+                    <text>层</text>
+                </view>
+            </view>
+        </view>
+        <picker bindchange="__e" class="details_title_container" data-event-opts="{{[ [ 'change',[ [ 'towardHanlde3',['$event'] ] ] ] ]}}" range="{{manwuweiyi}}" value="{{index3}}">
+            <view class="details_title">
+                <text class="details_title_left font-bold">税费情况</text>
+                <view class="details_title_right">
+                    <text class="fz-14" style="margin-right:20rpx;color:#bfbfbf;" wx:if="{{!value33}}">请选择</text>
+                    <text class="fz-14" style="margin-right:20rpx;" wx:else>{{''+value33+''}}</text>
+                    <text class="fz-14 iconnew new-tongyong-gengduo" style="color:#c1c1c1;"></text>
+                </view>
+            </view>
+        </picker>
+    </view>
+    <view class="find_detail_style">
+        <view bindtap="__e" class="find_detail" data-event-opts="{{[ [ 'tap',[ [ 'set_list',['$event'] ] ] ] ]}}">
+            <text>查看估价详情</text>
+        </view>
+    </view>
+</view>

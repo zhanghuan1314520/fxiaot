@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "摇号结果",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "usingComponents": {
+        "buyer-list": "/pages/components/lotteryResult/BuyerList",
+        "review-model": "/pages/components/hangzhou/lotteryResult/ReviewModel",
+        "attention-service-number": "/pages/components/lotteryDetail/attentionServiceNumber",
+        "image-view": "/pages/components/lotteryResult/ImageView",
+        "nothing-view": "/pages/components/lotteryResult/NothingView",
+        "image-list-view": "/pages/components/lotteryResult/ImageListView",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "lottery-excel": "/components/lotteryExcel",
+        "discription": "/pages/components/lotteryResult/Discription"
+    }
+}

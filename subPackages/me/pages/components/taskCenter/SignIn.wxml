@@ -1,0 +1,31 @@
+<view class="sign-in-box">
+    <view class="sign-in">
+        <view class="sign-in__top">
+            <text class="text" wx:if="{{sumDay<7}}">再签到<text class="blue-color">{{''+7-sumDay+'天'}}</text>可开启福袋</text>
+            <text class="text" wx:else>恭喜您，已开启福袋！</text>
+            <text class="desc">若断签需重新开始签到</text>
+        </view>
+        <view class="sign-in__main">
+            <view class="sign-in__form">
+                <view class="{{[ 'form-item',[index<sumDay?'active':''] ]}}" wx:for="{{formItems}}" wx:key="index">
+                    <view class="score-box">
+                        <text class="score">{{'+'+item.score+''}}</text>
+                        <image class="icon" src="https://imgcdn.huanjutang.com/file/2021/03/18/85b581af65fd64280cbd1cf8a5a119c2.png" wx:if="{{index<sumDay}}"></image>
+                        <image class="icon" src="https://imgcdn.huanjutang.com/file/2021/03/18/0b62bbf1b9f5b3852b42e6f6a379fb54.png" wx:else></image>
+                    </view>
+                    <view class="label">{{''+item.label+''}}</view>
+                    <image class="lucky-bag" src="https://imgcdn.huanjutang.com/file/2021/03/18/704e2d0793d452d5f273463143f70d87.png" wx:if="{{index===6}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="sign-in__bottom">
+            <text class="text">签到累计积分<text class="blue-color">{{''+sumScore+''}}</text>
+            </text>
+            <view bindtap="__e" class="switch-box" data-content="任务中心-签到提醒" data-event-opts="{{[ [ 'tap',[ [ 'emptyFn',['$event'] ] ] ] ]}}" data-name="签到提醒" data-type="link">
+                <text class="text">签到提醒</text>
+                <switch bindchange="__e" checked="{{isRemind}}" color="#2D8CF0" data-event-opts="{{[ [ 'change',[ [ 'switchChange',['$event'] ] ] ] ]}}"></switch>
+            </view>
+        </view>
+    </view>
+    <sign-modal bind:__l="__l" class="vue-ref" coin="{{coin}}" data-ref="signModal" integral="{{integral}}" nextDayIntegral="{{nextDayIntegral}}" sumDay="{{sumDay}}" vueId="d44d9ff4-1"></sign-modal>
+</view>

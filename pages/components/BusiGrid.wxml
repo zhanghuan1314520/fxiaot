@@ -1,0 +1,23 @@
+<view class="grid">
+    <view class="grid__container">
+        <view class="{{['grid__list',item.skeleton?'skeletons':'']}}" index="{{index}}" wx:for="{{topApi}}" wx:key="index">
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'jumpUrlHandle',['$0','$1'],[ [ ['topApi','',index,'url'] ],[ ['topApi','',index,'name'] ] ] ] ] ] ]}}" vueId="{{'9db6bff2-1-'+index}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="grid__item" data-content="金刚区" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.name}}" data-type="button" id="{{'data-'+item.type}}">
+                    <image class="grid__img skeletons-rect" mode="aspectFit" src="{{item.icon.src}}" style="{{'height:'+(item.icon.iconHeight||106)+'rpx'+';'}}"></image>
+                    <view class="grid__num" style="{{'line-height:'+(item.icon.fontLineHeight||92)+'rpx'+';'+'color:'+(item.icon&&item.icon.color)+';'}}">{{''+(item.newCount||'')+''}}</view>
+                    <view class="grid__name skeletons-rect">{{''+(item.name||'')+''}}</view>
+                </view>
+            </authorization>
+        </view>
+    </view>
+    <view class="grid__container">
+        <view class="{{['grid__list',item.skeleton?'skeletons':'']}}" index="{{index}}" wx:for="{{dataApi}}" wx:key="index">
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'jumpUrlHandle',['$0','$1'],[ [ ['dataApi','',index,'url'] ],[ ['dataApi','',index,'name'] ] ] ] ] ] ]}}" vueId="{{'9db6bff2-2-'+index}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="grid__item grid__item--sm" data-content="金刚区" data-custom-event-name="{{item.ad?'AD_click':''}}" data-custom-prop-ad_code="{{item.ad&&item.ad.ad_code}}" data-custom-prop-ad_keyword="{{item.ad&&item.ad.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{item.ad&&item.ad.ad_nike_name}}" data-custom-prop-ad_number="{{item.ad&&item.ad.ad_number}}" data-custom-prop-ad_source="home" data-custom-prop-ad_type="entrance" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.name}}" data-type="button">
+                    <image class="grid__img--sm skeletons-rect" mode="aspectFit" src="{{item.icon_class}}"></image>
+                    <view class="grid__name skeletons-rect">{{''+(item.name||'')+''}}</view>
+                </view>
+            </authorization>
+        </view>
+    </view>
+</view>

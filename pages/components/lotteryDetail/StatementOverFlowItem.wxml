@@ -1,0 +1,8 @@
+<view class="skeletons">
+    <view class="{{[ 'text',[showToggle&&!expand?'collapsed':'',!content?'skeletons-rect':''] ]}}">
+        <text>{{content}}</text>
+    </view>
+    <view class="toggle" wx:if="{{showToggle}}">
+        <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'toggleExpand',['$event'] ] ] ] ]}}">{{''+(expand?'收起':'全文')+''}}</text>
+    </view>
+</view>

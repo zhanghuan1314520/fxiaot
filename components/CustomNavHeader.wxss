@@ -1,0 +1,44 @@
+.busi-custo-nav-header__wrapper {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+}
+
+.busi-custo-nav-header__wrapper .position_container {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+}
+
+.busi-custo-nav-header__wrapper .capsule-bar,.busi-custo-nav-header__wrapper .status_bar {
+    width: 100vw;
+    text-align: left;
+    text-indent: 32rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+}
+
+.busi-custo-nav-header__wrapper .capsule-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.busi-custo-nav-header__wrapper .capsule-bar .back-icon {
+    padding: 20rpx;
+    margin-left: 30rpx;
+    color: #fff;
+}
+
+.busi-custo-nav-header__wrapper .img {
+    width: 100vw;
+    height: 410rpx;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}

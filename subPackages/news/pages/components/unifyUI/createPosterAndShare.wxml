@@ -1,0 +1,20 @@
+<view>
+    <view class="fixed-share-view" hidden="{{!shareShowTemp}}">
+        <view class="share-btn-group">
+            <button bindtap="__e" class="share-btn" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event',1] ] ] ] ]}}" data-toggle="close" openType="share">
+                <view class="btn-bg btn1">
+                    <text class="iconnew new-weixin1 white-color fz-28"></text>
+                </view>
+                <view class="btn-text small-level-color fz-15">分享给好友</view>
+            </button>
+            <view bindtap="__e" class="share-btn" data-event-opts="{{[ [ 'tap',[ [ 'createPosterHandle',['$event'] ] ] ] ]}}">
+                <view class="btn-bg btn2">
+                    <text class="iconnew new-pengyouquan white-color fz-28"></text>
+                </view>
+                <view class="btn-text small-level-color fz-15">生成海报</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="fz-15 height-level-color cancel" data-event-opts="{{[ [ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-toggle="close">取消</view>
+    </view>
+    <view bindtap="__e" catchtouchmove="__e" class="fixed-share-bg" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ],[ 'tap',[ [ 'toggleShareHandle',['$event'] ] ] ] ]}}" data-toggle="close" hidden="{{!shareShowTemp}}"></view>
+</view>

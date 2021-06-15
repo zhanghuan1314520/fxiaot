@@ -1,0 +1,18 @@
+<base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="235cb0b2-1" vueSlots="{{['default']}}">
+    <view class="ask-call-message__request" wx:if="{{isReceive}}">
+        <view class="ask-call-message__request--content">我想要您的手机号，方便详细沟通</view>
+        <view class="ask-call-message__request--btns" wx:if="{{message.is_operated==0}}">
+            <view catchtap="__e" class="cancel button" data-content="电话请求" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['refuse'] ] ] ] ]}}" data-name="不同意" data-type="button">不同意</view>
+            <view catchtap="__e" class="agreed button" data-content="电话请求" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',['agreed'] ] ] ] ]}}" data-name="同意" data-type="button">同意</view>
+        </view>
+        <block wx:if="{{message.is_operated==1}}">
+            <view class="ask-call-message__request--btns" wx:if="{{message.is_agreed==1}}">
+                <view class="agreed">已同意</view>
+            </view>
+            <view class="ask-call-message__request--btns" wx:else>
+                <view class="cancel">已拒绝</view>
+            </view>
+        </block>
+    </view>
+    <view class="ask-call-message__sender" wx:else>已发送获取手机号的申请</view>
+</base-layout>

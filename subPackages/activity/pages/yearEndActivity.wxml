@@ -1,0 +1,96 @@
+<view>
+    <view class="page">
+        <button class="activity" openType="contact" sendMessagePath="/subPackages/activity/pages/yearEndActivity" sessionFrom="{{weapp}}" showMessageCard="true">
+            <image mode="aspectFill" src="{{top_data.cover}}"></image>
+            <text catchtap="__e" class="fz-12 activity-rules" data-event-opts="{{[ [ 'tap',[ [ 'lookRules',['$event'] ] ] ] ]}}">活动规则</text>
+        </button>
+        <view class="activity-cont">
+            <view class="activity-cont-inner">
+                <view class="project_up">
+                    <image class="backImg" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20181206/5c08d4a472f94.png"></image>
+                    <view class="topVoteNumber">
+                        <view class="vote-line">
+                            <text class="fz-20 red-color font-bold vote-num">{{''+top_data.total_participant+''}}</text>
+                            <text class="fz-13 font-bold black1a-color">参与数</text>
+                        </view>
+                        <view class="vote-line">
+                            <text class="fz-20 font-bold red-color vote-num">{{''+top_data.total_vote+''}}</text>
+                            <text class="fz-13 font-bold black1a-color">总投票数</text>
+                        </view>
+                        <view class="vote-line">
+                            <text class="fz-20 font-bold red-color vote-num">{{''+top_data.total_page_view+''}}</text>
+                            <text class="fz-13 font-bold black1a-color">总访问数</text>
+                        </view>
+                    </view>
+                    <view class="vote-time-end">
+                        <text class="fz-13 iconnew red-color font-bold new-xingzhuang"></text>
+                        <view class="black1a-color fz-13 end-time" wx:if="{{day==0&&hour==0&&minutes==0&&second==0}}">活动结束已结束</view>
+                        <view class="black1a-color fz-13 end-time" wx:else>距离活动结束还有<text class="fz-15 font-bold red-color">{{''+day+''}}</text>天<text class="fz-15 font-bold red-color">{{''+hour+''}}</text>时<text class="fz-15 font-bold red-color">{{''+minutes+''}}</text>分<text class="fz-15 font-bold red-color">{{''+second+''}}</text>秒</view>
+                    </view>
+                    <view class="search">
+                        <text class="iconnew fz-16 new-sousuoxianxing"></text>
+                        <input bindconfirm="__e" bindinput="__e" class="search-inp" data-event-opts="{{[ [ 'confirm',[ [ 'sure',['$event'] ] ] ],[ 'input',[ [ 'oInpChange',['$event'] ] ] ] ]}}" placeholder="输入编号或者楼盘名字" placeholderClass="placeholder" type="text" value="{{keywords}}"></input>
+                        <view bindtap="__e" class="clearInp iconnew new-shanchu1 gray-color" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{keywords.length>0}}"></view>
+                        <form bindsubmit="__e" class="sure" data-event-opts="{{[ [ 'submit',[ [ 'sure',['$event'] ] ] ] ]}}" reportSubmit="true">
+                            <button class="fz-13 white-color sure" formType="submit">确定</button>
+                        </form>
+                    </view>
+                </view>
+                <view class="{{[ ' '+(topHeight?'project_slogen-fixed':'project_slogen') ]}}" id="project_slogen" wx:if="{{typeList.length>0}}">
+                    <text bindtap="__e" class="{{[ 'fz-13 font-bold slogen-tex '+(item.id==category_id&&viewType?'active white-color':'red-color') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchTab',['$0'],[ [ ['typeList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{typeList}}" wx:key="index">{{''+item.title+''}}</text>
+                </view>
+                <view class="activity-out" style="padding-top:86px;">
+                    <view class="activity-content-box">
+                        <block wx:if="{{projects.length>0}}">
+                            <view class="cont-line" wx:for="{{projects}}" wx:key="index">
+                                <text class="sort-num font-bold fz-13 red-color">{{''+item.number+'\n                                        号'}}</text>
+                                <navigator hoverClass="none" url="{{'/subPackages/activity/pages/yearEndActivityDetail?id='+item.id+'&vote_id='+item.vote_id}}">
+                                    <image class="gray-bg" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                                </navigator>
+                                <form bindsubmit="__e" class="bottom-cont" data-event-opts="{{[ [ 'submit',[ [ 'vote',[index] ] ] ] ]}}" reportSubmit="true">
+                                    <view class="fz-13 font-bold black1a-color project-name">{{''+item.name+''}}</view>
+                                    <view class="fz-12 small-level-color project-name" wx:if="{{!viewType}}">{{''+item.tagName+''}}</view>
+                                    <view class="fz-14 font-bold red-color vote-num">{{''+item.total_vote+'票'}}</view>
+                                    <button class="fz-13 white-color want-vote" style="background:#ccc;" wx:if="{{day==0&&hour==0&&minutes==0&&second==0}}">活动已结束</button>
+                                    <button class="fz-13 white-color want-vote" formType="submit" style="{{'background: '+(item.vote_status==1?'linear-gradient(to right, #f06055 , #d91921)':'#ccc')}}" wx:else>{{''+(item.vote_status==1?'我要投票':'明日再来')+''}}</button>
+                                </form>
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="fz-13 small-level-color nothing" wx:if="{{loading}}">暂无数据</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="footer">
+            <navigator class="line font-bold red-color" hoverClass="none" openType="redirect" url="/subPackages/activity/pages/yearEndActivity">
+                <text class="fz-14  top-txt">A</text>
+                <text class="fz-11">活动首页</text>
+            </navigator>
+            <navigator class="line font-bold black-color" hoverClass="none" openType="redirect" url="{{'/subPackages/activity/pages/yearEndActivityRank?vote_id='+top_data.id+'&title='+top_data.title}}">
+                <text class="fz-14 top-txt">O</text>
+                <text class="fz-11">投票排名</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="model" wx:if="{{voteSuccess}}">
+        <view class="model-tip red-color iconnew new-yiguanzhugou fz-25 font-bold"></view>
+        <view class="fz-15 red-color model-text1 font-bold" style="line-height:40rpx;">投票成功</view>
+        <view class="model-btn fz-14 black1a-color" wx:if="{{RemainNum>0}}">{{'今日还有'+RemainNum+'次投票机会'}}</view>
+        <view class="model-btn fz-14 black1a-color" wx:else>次数已用完，请明日再来</view>
+    </view>
+    <view class="model-bg" wx:if="{{voteSuccess}}"></view>
+    <block wx:if="{{showRules}}">
+        <view class="rules-tip">
+            <view catchtouchmove="stopMove" class="rules-cont">
+                <view class="rules-cont-title fz-16 font-bold">活动规则</view>
+                <scroll-view class="rules-details" scrollY="scroll-y">
+                    <text class="fz-14">{{''+top_data.content+''}}</text>
+                </scroll-view>
+            </view>
+            <view bindtap="__e" class="iconnew close-btn new-quxiao fz-13 white-color" data-event-opts="{{[ [ 'tap',[ [ 'closeRulesView',['$event'] ] ] ] ]}}"></view>
+        </view>
+        <view bindtap="__e" catchtouchmove="stopMove" class="rules-bg" data-event-opts="{{[ [ 'tap',[ [ 'closeRulesView',['$event'] ] ] ] ]}}"></view>
+    </block>
+</view>

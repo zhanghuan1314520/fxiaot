@@ -1,0 +1,16 @@
+<view>
+    <view class="wrap">
+        <image mode="widthFix" src="{{item}}" wx:for="{{imgs}}" wx:key="index"></image>
+    </view>
+    <view class="tools">
+        <button class="btn-share" openType="share">
+            <image src="https://imgcdn.huanjutang.com/assets/img/201910231017428081.png"></image>
+            <text>发给朋友</text>
+        </button>
+        <view class="line"></view>
+        <button bindtap="__e" class="btn-save" data-event-opts="{{[ [ 'tap',[ [ 'saveImg',['$event'] ] ] ] ]}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/201910231017458081.png"></image>
+            <text>保存图片</text>
+        </button>
+    </view>
+</view>

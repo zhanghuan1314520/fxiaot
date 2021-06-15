@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "contact-btns": "/pages/salesMan/components/ContactBtns",
+        "medals": "/pages/salesMan/components/Medals"
+    }
+}

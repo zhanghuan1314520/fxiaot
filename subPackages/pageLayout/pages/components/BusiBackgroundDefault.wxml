@@ -1,0 +1,5 @@
+<view class="compBackground" style="{{'background:'+dataBgColor+';'}}">
+    <view class="compBackground__item" wx:for="{{settings}}" wx:key="index">
+        <image bindtap="__e" class="compBackground__image" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],[ [ ['settings','',index,'link'] ] ] ] ] ] ]}}" mode="widthFix" src="{{item.image}}"></image>
+    </view>
+</view>

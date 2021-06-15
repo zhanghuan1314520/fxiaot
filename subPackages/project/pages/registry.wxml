@@ -1,0 +1,27 @@
+<view>
+    <view class="page">
+        <image class="header-image" src="{{answers.header}}"></image>
+        <view class="main-container">
+            <view class="item-content" wx:for="{{answers.data}}" wx:for-index="__i0__" wx:key="num">
+                <block wx:if="{{item.num=='qrcode'}}">
+                    <view class="last-app-content fz-12 black-60">{{''+item.text+''}}</view>
+                    <view class="qr-code-box">
+                        <image bindtap="__e" class="qr-code" data-event-opts="{{[ [ 'tap',[ [ 'preImages',['$0'],[ [ ['answers.data','num',item.num,'image'] ] ] ] ] ] ]}}" src="{{item.image}}"></image>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="sort-num white-color">{{''+item.num+''}}</view>
+                    <view bindtap="__e" class="title black-60 fz-15" data-event-opts="{{[ [ 'tap',[ [ 'copyText',['$0','$event'],[ [ ['answers.data','num',item.num,'copyText'] ] ] ] ] ] ]}}">
+                        <block wx:for="{{item.content}}" wx:for-index="__i1__" wx:for-item="content" wx:key="text">
+                            <text class="black-30 font-bold" wx:if="{{content.type==='bold'}}">{{''+content.text+''}}</text>
+                            <block wx:else>{{''+content.text+''}}</block>
+                        </block>
+                    </view>
+                    <view class="tips-content fz-13 black-60" wx:if="{{item.tips}}">{{''+item.tips+''}}</view>
+                    <image bindtap="__e" class="item-image" data-event-opts="{{[ [ 'tap',[ [ 'preImages',['$0'],[ [ ['answers.data','num',item.num,'image'] ] ] ] ] ] ]}}" mode="widthFix" src="{{item.image}}"></image>
+                </block>
+            </view>
+        </view>
+    </view>
+    <circle-share-btn bind:__l="__l" burryCode="登记-分享" vueId="2b7f13d8-1"></circle-share-btn>
+</view>

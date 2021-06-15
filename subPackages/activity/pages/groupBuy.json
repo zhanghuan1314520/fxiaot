@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "rule-modal": "/subPackages/activity/components/RuleModal",
+        "join-swiper": "/subPackages/activity/components/JoinSwiper",
+        "prize-content": "/subPackages/activity/components/PrizeContent",
+        "on-line-item": "/subPackages/activity/components/HomeOnlineItem",
+        "group-item": "/subPackages/activity/components/HomeGroupItem",
+        "liver-item": "/subPackages/activity/components/HomeLiverItem",
+        "join-modal": "/subPackages/activity/components/JoinModal",
+        "poster-modal": "/subPackages/activity/components/PosterModal",
+        "authorization": "/components/Authorization"
+    }
+}

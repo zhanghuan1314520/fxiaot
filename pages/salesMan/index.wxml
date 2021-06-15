@@ -1,0 +1,11 @@
+<view class="project-salesman">
+    <block wx:if="{{salesList.length>0}}">
+        <salesman-list-plan-a andrees="{{andrees}}" bind:__l="__l" listData="{{salesList}}" projectId="{{project_id}}" vueId="200aa1dc-1" wx:if="{{!hasShowTestPage}}"></salesman-list-plan-a>
+        <salesman-list-new-plan-b andrees="{{andrees}}" bind:__l="__l" listData="{{salesList}}" projectId="{{project_id}}" vueId="200aa1dc-2" wx:else></salesman-list-new-plan-b>
+    </block>
+    <busi-loading bind:__l="__l" loading="{{loading}}" vueId="200aa1dc-3"></busi-loading>
+    <view class="nothing" wx:if="{{salesList.length===0&&!loading}}">
+        <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190819/5d5a1c4844ecb.png"></image>
+        <view class="fz-13 text gray-96">暂时没有置业顾问入驻哦~</view>
+    </view>
+</view>

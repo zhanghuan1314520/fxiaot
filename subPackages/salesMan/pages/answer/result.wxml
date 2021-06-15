@@ -1,0 +1,46 @@
+<view class="box-answer-result">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="3445dad8-1" vueSlots="{{['default']}}">{{''+projectName+'-答题闯关'}}</busi-nav-header>
+    <view class="box-content">
+        <view class="info">
+            <image class="log" src="{{imageSrcTitle}}"></image>
+            <view class="detail">
+                <view class="title">智取100积分</view>
+                <view class="time">
+                    <text class="time-title">参与答题截止日期</text>
+                    <text>{{''+(detail.theme.end_time||'--')+''}}</text>
+                </view>
+                <view class="box-user">
+                    <image class="avatar" src="{{detail.avatar_url}}"></image>
+                    <view class="nickname">{{''+(detail.name||'--')+''}}</view>
+                </view>
+                <view class="box-result">
+                    <view class="box-text left">
+                        <text class="text-normal">本次答题答对</text>
+                        <text class="text-normal light">{{''+rightNum+''}}</text>
+                        <text class="text-normal">道，</text>
+                        <text class="text-normal">答错</text>
+                        <text class="text-normal light">{{''+wrongNum+''}}</text>
+                        <text class="text-normal">道</text>
+                    </view>
+                    <view class="box-text right">
+                        <text bindtap="__e" class="text-normal link" data-event-opts="{{[ [ 'tap',[ [ 'viewAnswer',['$event'] ] ] ] ]}}">查看正确答案</text>
+                        <text class="iconnew new-tongyong-gengduo"></text>
+                    </view>
+                </view>
+                <view class="box-award">
+                    <text class="text-normal left">本次获得奖励</text>
+                    <view class="right">
+                        <text class="text-normal gray">{{'+'+(showAgain?0:result.credit_nums||0)+'积分'}}</text>
+                        <image class="image-award" src="{{imageSrcAward}}" wx:if="{{!showAgain}}"></image>
+                    </view>
+                </view>
+                <view class="{{['box-operate',showAgain?'':'center']}}">
+                    <button bindtap="__e" class="btn-base btn-share" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" data-type="button" hoverClass="btn-hover" openType="share">分享给朋友</button>
+                    <button bindtap="__e" class="btn-base btn-again" data-event-opts="{{[ [ 'tap',[ [ 'againHandler',['$event'] ] ] ] ]}}" hoverClass="btn-hover" wx:if="{{showAgain}}">再次闯关</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <image class="bg-left" src="https://imgcdn.huanjutang.com/assets/img/20213231851508081.png"></image>
+    <image class="bg-right" src="https://imgcdn.huanjutang.com/assets/img/20213231852228081.png"></image>
+</view>

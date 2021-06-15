@@ -1,0 +1,69 @@
+.player {
+    width: auto;
+    height: 72rpx;
+    background: rgba(45,140,240,.04);
+    border-radius: 43rpx;
+    border: 2rpx solid rgba(45,140,240,.04);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.player .movable-area {
+    width: 100%;
+    height: 40rpx;
+    border: 1px solid red;
+    background: transparent;
+}
+
+.player .player-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.player .player-left .icon {
+    width: 48rpx;
+    height: 48rpx;
+    box-shadow: 0rpx 4rpx 8rpx 0 rgba(51,143,242,.3);
+    border-radius: 50%;
+}
+
+.player .player-left .icon image {
+    width: 100%;
+    height: 100%;
+}
+
+.player .player-left .time {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    margin-left: 18rpx;
+}
+
+.player .player-center {
+    width: 434rpx;
+    margin: 0 8rpx;
+    position: relative;
+}
+
+.player .player-center .icon {
+    left: 0;
+    top: -14rpx;
+    position: absolute;
+    height: 36rpx;
+    width: 36rpx;
+}
+
+.player .player-center .icon image {
+    height: 36rpx;
+    width: 36rpx;
+}
+
+.player .player-right {
+    width: auto;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+}

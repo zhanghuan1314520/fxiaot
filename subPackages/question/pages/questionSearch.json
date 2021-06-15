@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "搜索",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "share-template": "/components/shareTemplate",
+        "search-bar": "/subPackages/question/components/SearchBar"
+    }
+}

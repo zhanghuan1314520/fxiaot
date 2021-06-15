@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "杭州房小团-发布分享堂",
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

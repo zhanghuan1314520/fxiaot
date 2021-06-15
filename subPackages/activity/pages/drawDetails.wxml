@@ -1,0 +1,252 @@
+<view class="page">
+    <swiper autoplay="{{autoplay}}" class="banber_img" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <block wx:if="{{bannerList2.length>0}}">
+            <swiper-item wx:for="{{bannerList2}}" wx:key="index">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImage2',['$0'],[ [ ['bannerList2','',index] ] ] ] ] ] ]}}" src="{{item}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="content_title">
+        <text class="fz-18 font-bold">{{''+goodsDetails.title+''}}</text>
+        <text class="fz-14" style="color:#666666;margin-top:14rpx;">{{''+goodsDetails.lucky_time+'自动开奖'}}</text>
+    </view>
+    <view class="content_sponsors layout_style">
+        <text class="fz-15">抽奖发起者</text>
+        <navigator class="option_sponsors" url="{{'/subPackages/activity/pages/sponsor?sku_id='+sku_id}}">
+            <text class="fz-15" wx:if="{{sponsors.length==1}}">{{''+sponsors[0].name+''}}</text>
+            <text class="fz-15" wx:if="{{sponsors.length>1}}">{{'共'+sponsors.length+'个'}}</text>
+            <text class="fz-15" wx:if="{{sponsors.length===0}}">共0个</text>
+            <text class="iconnew new-tongyong-gengduo fz-13"></text>
+        </navigator>
+    </view>
+    <view class="content_prompt">
+        <view class="prompt_text">
+            <text class="fz-14">{{'"'+goodsDetails.description+'"'}}</text>
+        </view>
+    </view>
+    <view class="view_option">
+        <view bindtap="__e" class="{{[ ' opt_item2 '+(opt_type===1?'click_item':'click_item2') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choose_item',[1] ] ] ] ]}}">
+            <text wx:if="{{winning_result}}">抽奖结果</text>
+            <text wx:else>抽奖</text>
+        </view>
+        <view bindtap="__e" class="{{[ 'opt_item '+(opt_type===2?'click_item':'click_item2') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choose_item',[2] ] ] ] ]}}" wx:if="{{lucky_type2}}">
+            <text>邀请好友助力</text>
+        </view>
+        <view class="opt_item click_item3" wx:else>
+            <text>邀请好友助力</text>
+        </view>
+        <view bindtap="__e" class="{{[ 'opt_item '+(opt_type===3?'click_item':'click_item2') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choose_item',[3] ] ] ] ]}}">
+            <text>助力排行榜</text>
+        </view>
+    </view>
+    <view hidden="{{opt_type!==1}}">
+        <view class="draw_result" wx:if="{{winning_result}}">
+            <view class="draw_result_title" wx:if="{{participate_type}}">
+                <block wx:if="{{my_result}}">
+                    <text style="font-size:48rpx;font-weight:bold;color:#ff5d54;margin-top:60rpx;">恭喜！您中奖了~</text>
+                    <text class="fz-16" style="text-align:center;margin-top:10rpx;width:454rpx;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{'奖品:'+goodsDetails.title+''}}</text>
+                    <view bindtap="__e" class="middle_lay information_btn" data-event-opts="{{[ [ 'tap',[ [ 'writeAddress',['$event'] ] ] ] ]}}" style="margin-top:20rpx;">
+                        <text>填写收货信息</text>
+                    </view>
+                </block>
+                <text style="font-size:48rpx;font-weight:bold;margin-top:60rpx;" wx:else>您与大奖擦肩而过~</text>
+            </view>
+            <view class="winner_title layout_style">
+                <view class="line_style"></view>
+                <text class="fz-14">本期中奖名单</text>
+                <view class="line_style"></view>
+            </view>
+            <view style="display:flex;">
+                <view class="winner_name" style="margin-right:20rpx;" wx:for="{{getDrawMan}}" wx:key="index">
+                    <image src="{{item.avatar_url=='null'||!item.avatar_url?'https://imgcdn.huanjutang.com/assets/img/202051995218081.png':item.avatar_url}}"></image>
+                    <text style="text-align:center;margin-top:10rpx;width:120rpx;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{''+(item.nick_name=='null'||!item.nick_name?'匿名':item.nick_name)+''}}</text>
+                </view>
+            </view>
+            <view style="margin-top:50rpx;">
+                <text class="fz-15" style="color:#666666;">{{'已有'+Involved_lsit.total+'人参与,'}}</text>
+                <text bindtap="__e" class="fz-15" data-event-opts="{{[ [ 'tap',[ [ 'lookAll',['$event'] ] ] ] ]}}" style="color:#3772cc;">查看全部</text>
+                <text class="iconnew new-tongyong-gengduo fz-14" style="color:#3772cc;"></text>
+            </view>
+        </view>
+        <view class="draw_content" wx:else>
+            <view bindtap="__e" class="draw_click draw_color" data-event-opts="{{[ [ 'tap',[ [ 'drawbtn',['$event'] ] ] ] ]}}" wx:if="{{!lucky_type}}">
+                <text class="fz-16">抽奖</text>
+            </view>
+            <view class="draw_click draw_color2" wx:else>
+                <text class="fz-16">待开奖</text>
+            </view>
+            <view style="margin-top:30rpx;">
+                <text class="fz-15" style="color:#666666;">{{'已有'+Involved_lsit.total+'人参与,'}}</text>
+                <text bindtap="__e" class="fz-15" data-event-opts="{{[ [ 'tap',[ [ 'lookAll',['$event'] ] ] ] ]}}" style="color:#3772cc;">查看全部</text>
+                <text class="iconnew new-tongyong-gengduo fz-14" style="color:#3772cc;"></text>
+            </view>
+            <view class="user_img">
+                <image src="{{item.session_info.avatar_url}}" wx:for="{{Involved_lsit.data}}" wx:key="index"></image>
+            </view>
+        </view>
+    </view>
+    <view hidden="{{opt_type!==2}}">
+        <view class="draw_content">
+            <text class="fz-15">邀请好友助力,邀请的越多,中奖的几率越高哦~</text>
+            <view class="friends_list">
+                <view class="me_portrait">
+                    <view class="me_mark middle_lay">
+                        <text class="fz-10">我</text>
+                    </view>
+                    <image class="head_portrait" src="{{myData.avatarUrl}}"></image>
+                </view>
+                <view class="friends_location middle_lay">
+                    <image src="{{helpList.data[0].user.avatar_url}}" style="width:84rpx;height:84rpx;border-radius:50%;" wx:if="{{helpList.data[0].user.avatar_url}}"></image>
+                    <text wx:else>?</text>
+                </view>
+                <view class="friends_location middle_lay">
+                    <image src="{{helpList.data[1].user.avatar_url}}" style="width:84rpx;height:84rpx;border-radius:50%;" wx:if="{{helpList.data[1].user.avatar_url}}"></image>
+                    <text wx:else>?</text>
+                </view>
+                <view class="friends_location middle_lay">
+                    <image src="{{helpList.data[2].user.avatar_url}}" style="width:84rpx;height:84rpx;border-radius:50%;" wx:if="{{helpList.data[2].user.avatar_url}}"></image>
+                    <text wx:else>?</text>
+                </view>
+                <view class="friends_location middle_lay">
+                    <image src="{{helpList.data[3].user.avatar_url}}" style="width:84rpx;height:84rpx;border-radius:50%;" wx:if="{{helpList.data[3].user.avatar_url}}"></image>
+                    <text wx:else>?</text>
+                </view>
+                <view class="friends_location middle_lay">
+                    <image src="{{helpList.data[4].user.avatar_url}}" style="width:84rpx;height:84rpx;border-radius:50%;" wx:if="{{helpList.data[4].user.avatar_url}}"></image>
+                    <text wx:else>?</text>
+                </view>
+            </view>
+            <view style="margin-top:30rpx;">
+                <text class="fz-15" style="color:#666666;" wx:if="{{helpList.data.length>0}}">{{'已邀请'+helpList.data.length+'人参与,'}}</text>
+                <text class="fz-15" style="color:#666666;" wx:else>已邀请0人参与,</text>
+                <text bindtap="__e" class="fz-15" data-event-opts="{{[ [ 'tap',[ [ 'lookAll2',['$event'] ] ] ] ]}}" style="color:#3772cc;">查看全部</text>
+                <text class="iconnew new-tongyong-gengduo fz-14" style="color:#3772cc;"></text>
+            </view>
+            <button bindtap="__e" class="invitation_friend middle_lay" data-event-opts="{{[ [ 'tap',[ [ 'initHelp',['$event'] ] ] ] ]}}" openType="share" wx:if="{{share_type}}">
+                <text class="fz-15">邀请好友助力</text>
+            </button>
+            <button class="invitation_friend middle_lay" style="background-color:#e6e6e6;" wx:else>
+                <text class="fz-15">邀请好友助力</text>
+            </button>
+        </view>
+    </view>
+    <view hidden="{{opt_type!==3}}">
+        <view class="draw_content draw_content2">
+            <view class="draw_all_list">
+                <view class="draw_list_item" wx:for="{{helpList2}}" wx:key="index">
+                    <view style="display:flex;align-items:center;">
+                        <view style="width:80rpx;overflow:hidden;">
+                            <text class="rank_num">{{''+index+1+''}}</text>
+                        </view>
+                        <view class="item_image">
+                            <blovk bind:__l="__l" vueId="{{'68a15943-1-'+index}}" vueSlots="{{['default']}}" wx:if="{{index+1<=goodsDetails.helper_num}}">
+                                <view class="sure_get middle_lay">
+                                    <text class="fz-9">必得</text>
+                                </view>
+                            </blovk>
+                            <image class="user_item_img" src="{{item.user.avatar_url}}"></image>
+                        </view>
+                        <text class="fz-14" style="margin-left:18rpx;">{{''+item.user.nick_name+''}}</text>
+                    </view>
+                    <view>
+                        <text class="fz-14">{{'助力人数:'+item.hand_count+''}}</text>
+                    </view>
+                </view>
+                <view class="draw_list_item" wx:if="{{getMydata}}">
+                    <view style="display:flex;align-items:center;">
+                        <view style="width:80rpx;overflow:hidden;">
+                            <text class="rank_num2">{{''+getMydata.raking+''}}</text>
+                        </view>
+                        <view class="item_image2">
+                            <image class="user_item_img2" src="{{getMydata.avatar_url}}"></image>
+                        </view>
+                        <text class="fz-14" style="margin-left:18rpx;color:#fd9404;">{{''+getMydata.nick_name+'(我)'}}</text>
+                    </view>
+                    <view>
+                        <text class="fz-14">{{'助力人数:'+getMydata.hand_count+''}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;height:20rpx;background-color:#f7f7f7;margin-top:60rpx;"></view>
+    <view class="prize_details">
+        <view class="prize_details_title">
+            <text class="fz-14">奖品详情</text>
+        </view>
+        <block wx:if="{{bannerList.length}}">
+            <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$0'],[ [ ['bannerList','',index] ] ] ] ] ] ]}}" mode="widthFix" src="{{item}}" wx:for="{{bannerList}}" wx:key="index"></image>
+        </block>
+    </view>
+    <view class="footer_opt">
+        <view class="footer_content layout_style">
+            <view bindtap="__e" class="create_posters" data-event-opts="{{[ [ 'tap',[ [ 'shareTo',['$event'] ] ] ] ]}}">
+                <text class="fz-16">生成海报</text>
+            </view>
+            <button openType="share">
+                <text>分享好友抽奖</text>
+            </button>
+        </view>
+    </view>
+    <view catchtouchmove="stopMove" wx:if="{{bounced_type}}">
+        <view bindtap="__e" class="bounced_content" data-event-opts="{{[ [ 'tap',[ [ 'shutDown2',['$event'] ] ] ] ]}}"></view>
+        <view class="bounced_prompt">
+            <image class="back_img" src="https://imgcdn.huanjutang.com/assets/img/20181128/5bfe92c18532b.png" wx:if="{{draw_type}}"></image>
+            <image class="back_img" src="https://imgcdn.huanjutang.com/assets/img/20181128/5bfe928ca1467.png" wx:else></image>
+            <view class="buzhidao">
+                <view class="prompt_title">
+                    <text class="fz-16" style="margin-top:150rpx;" wx:if="{{draw_type}}">您已参与抽奖</text>
+                    <block wx:else>
+                        <text style="font-size:48rpx;color:#fff;margin-top:20rpx;">未中奖~</text>
+                        <text class="fz-16" style="margin-top:30rpx;">很遗憾,您与大奖擦肩而过</text>
+                    </block>
+                </view>
+                <view class="{{[draw_type?'invitation_title_text':'invitation_title_text2']}}">
+                    <text class="fz-15" wx:if="{{draw_type}}">邀请好友助力，可以提高中奖概率,助力最高者必得相同奖品哦~</text>
+                    <text class="fz-15" wx:else>别灰心,还有更多免费大奖,机会多多快去试试吧～</text>
+                </view>
+                <button bindtap="__e" class="friend_help" data-event-opts="{{[ [ 'tap',[ [ 'initHelp',['$event'] ] ] ] ]}}" openType="share" wx:if="{{draw_type}}">
+                    <text>邀请好友助力</text>
+                </button>
+                <view bindtap="__e" class="look_draw middle_lay" data-event-opts="{{[ [ 'tap',[ [ 'getBack',['$event'] ] ] ] ]}}" wx:else>
+                    <text>查看其他抽奖</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="stopMove" wx:if="{{winning_type}}">
+        <view bindtap="__e" class="bounced_content" data-event-opts="{{[ [ 'tap',[ [ 'shutDown3',['$event'] ] ] ] ]}}"></view>
+        <image src="https://imgcdn.huanjutang.com/assets/img/20190530/5cefdb291c6d3.png" style="position:absolute;left:20rpx;top:34rpx;"></image>
+        <view class="bounced_prompt">
+            <image class="back_img" src="https://imgcdn.huanjutang.com/assets/img/20181128/5bfe928ca1467.png"></image>
+            <view class="buzhidao">
+                <view class="prompt_title" style="margin-top:-100rpx !important;">
+                    <image src="https://imgcdn.huanjutang.com/assets/img/2020519100468081.png"></image>
+                    <text class="fz-18" style="margin-top:10rpx;">恭喜，您已中奖!</text>
+                </view>
+                <view class="invitation_title_text" style="margin-top:40rpx;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+                    <image src="{{goodsDetails.goods.image}}" style="width:280rpx;height:170rpx;margin-top:-10rpx;"></image>
+                    <text class="fz-11" style="display:block;margin-top:12rpx;">请填写收货人信息领取奖品</text>
+                </view>
+                <button bindtap="__e" class="friend_help" data-event-opts="{{[ [ 'tap',[ [ 'writeAddress',['$event'] ] ] ] ]}}" style="margin-top:-20rpx;">
+                    <text>立即填写</text>
+                </button>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" catchtouchmove="stopMove" class="bg" data-event-opts="{{[ [ 'tap',[ [ 'closeCanvas',['$event'] ] ] ] ]}}" wx:if="{{img_type}}">
+        <view>
+            <view class="create-canvas-box" style="{{'width: '+canvasWidth+'px; height: '+canvasHeight+'px;'}}">
+                <canvas canvasId="myCanvas" class="white-bg" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+            </view>
+            <view bindtap="__e" class="save_img middle_lay" data-event-opts="{{[ [ 'tap',[ [ 'saveShareImage',['$event'] ] ] ] ]}}">
+                <text>保存图片</text>
+            </view>
+        </view>
+    </view>
+    <view class="back-home" style="bottom:300rpx;" wx:if="{{showHome}}">
+        <navigator url="/subPackages/activity/pages/prizeList?homeType=1">
+            <text class="backHome fz-12 white-color">返回列表</text>
+        </navigator>
+    </view>
+</view>

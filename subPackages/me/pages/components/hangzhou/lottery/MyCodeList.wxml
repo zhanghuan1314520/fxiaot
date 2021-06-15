@@ -1,0 +1,51 @@
+<view>
+    <view class="{{[ 'my-code-container '+(classFlag===0?'white-bg':'') ]}}">
+        <block wx:if="{{myCodeList.length>0&&!loading}}">
+            <block wx:for="{{myCodeList}}" wx:for-item="project" wx:key="index">
+                <view bindtap="__e" class="list" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$0','$1','$2'],[ [ ['myCodeList','',index],['myCodes','',index2] ],[ ['myCodeList','',index,'name'] ],[ ['myCodeList','',index,'project_id'] ] ] ] ] ] ]}}" data-name="摇号结果详情" wx:for="{{project.myCodes}}" wx:for-index="index2" wx:key="index2">
+                    <view class="project-info">
+                        <view catchtap="__e" class="title" data-event-opts="{{[ [ 'tap',[ [ 'gotoUrlHandle',['/pages/lotteryDetail?id='+project.id+'&project_id='+project.project_id] ] ] ] ]}}" data-name="楼盘详情" id="{{project.project_id}}">
+                            <text>{{project.name}}</text>
+                            <view class="data-error turn" wx:if="{{item.error}}">有更新</view>
+                        </view>
+                        <viwe bind:__l="__l" class="right-operations" vueId="{{'8b9fb892-1-'+index+'-'+index2}}" vueSlots="{{['default']}}">
+                            <text class="line-split"></text>
+                            <text catchtap="__e" class="iconnew new-shanchu fz-20" data-event-opts="{{[ [ 'tap',[ [ 'delBindCodeHandle',['$0'],[ [ ['myCodeList','',index],['myCodes','',index2,'id'] ] ] ] ] ] ]}}" data-name="删除编码"></text>
+                            <text catchtap="__e" class="iconnew new-xiepinglun2 fz-20" data-content="摇号" data-event-opts="{{[ [ 'tap',[ [ 'gotoUrlHandle',['/subPackages/me/pages/addLotteryCode?id='+item.id] ] ] ] ]}}" data-name="添加编码"></text>
+                        </viwe>
+                    </view>
+                    <viwe bind:__l="__l" class="info-line" vueId="{{'8b9fb892-2-'+index+'-'+index2}}" vueSlots="{{['default']}}">
+                        <view class="li fz-14">
+                            <text class="left">姓名：</text>
+                            <text class="right">{{''+item.name+''}}</text>
+                        </view>
+                        <text class="line-split"></text>
+                        <view class="li fz-14">
+                            <text class="left">摇号编码：</text>
+                            <text class="right">{{''+(item.code||'暂无')+''}}</text>
+                        </view>
+                    </viwe>
+                </view>
+            </block>
+        </block>
+        <block wx:else>
+            <view class="no-content" wx:if="{{!loading}}">
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20200619/5eec6099d4669.png"></image>
+                <view class="no-result">暂无摇号编码</view>
+                <view class="add-user-tips">点击下方按钮添加编码</view>
+            </view>
+            <view class="full-screen" wx:else>
+                <view id="spinner"></view>
+            </view>
+        </block>
+    </view>
+    <view class="bottom-btns">
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'gotoUrlHandle',['/subPackages/me/pages/addLotteryCode'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="8b9fb892-3" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="button-add-user" data-content="底部按钮" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="添加编码" data-type="button">
+                <view class="button">添加编码</view>
+            </view>
+        </authorization>
+    </view>
+    <view class="{{[classFlag>0?'fixed-bg active':'fixed-bg']}}"></view>
+    <dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" cancelText="取消" class="vue-ref" content="意向登记表有更新，请重新进行绑定" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','dataErrorDialog','$event'],[''] ] ] ],[ '^onSubmit',[ ['delGroup'] ] ] ]}}" data-ref="dialog" maskClosable="{{false}}" submitText="确定" visible="{{dataErrorDialog}}" vueId="8b9fb892-4"></dialog>
+</view>

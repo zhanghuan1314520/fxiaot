@@ -1,0 +1,82 @@
+<view>
+    <view class="page white-bg">
+        <image class="top-image" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190612/5d00ac0e7aa30.png"></image>
+        <view class="top-message white-bg">
+            <view class="liner-image">
+                <image class="top-image" src="https://imgcdn.huanjutang.com/assets/img/20190612/5d00bb651e13e.png"></image>我的积分·活跃度</view>
+            <view class="mainContent">
+                <navigator class="content-left content-col" hoverClass="none" url="{{'/subPackages/me/pages/nowInteral?num='+pointData.points}}">
+                    <view class="h1">{{''+(pointData.points||0)+''}}<text class="iconnew jiantou new-tongyong-gengduo fz-11"></text>
+                    </view>
+                    <view class="h2">积分</view>
+                    <view class="h3">今日<text class="rise" wx:if="{{pointData.today_points<0}}">{{''+pointData.today_points+''}}</text>
+                        <text class="down" wx:else>{{'+'+(pointData.today_points||0)+''}}</text>
+                    </view>
+                </navigator>
+                <view class="line"></view>
+                <navigator class="content-left content-col" hoverClass="none" url="{{'/subPackages/me/pages/vitalityIntegral?num='+activeData.recommend_index}}">
+                    <view class="h1">{{''+(activeData.recommend_index||0)+''}}<text class="iconnew new-tongyong-gengduo fz-11"></text>
+                    </view>
+                    <view class="h2">活跃度</view>
+                    <view class="h3">今日<text class="rise" wx:if="{{activeData.today_recommend_index<0}}">{{''+activeData.today_recommend_index+''}}</text>
+                        <text class="down" wx:else>{{'+'+(activeData.today_recommend_index||0)+''}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="advice">
+            <view>
+                <text class="fz-16 height-level-color font-bold">增长建议</text>
+                <view bindtap="__e" class="warning fz-13" data-event-opts="{{[ [ 'tap',[ [ 'toRulesDetail',['$event'] ] ] ] ]}}">
+                    <text class="iconnew jiantou new-xianxing-shuoming fz-14"></text>积分规则</view>
+            </view>
+            <text class="fz-12 bottom">每日积分净增长最高者可登上该平台次日推荐位</text>
+        </view>
+        <view bindtap="__e" class="point-col" data-event-opts="{{[ [ 'tap',[ [ 'toWebUrl',['$0','$1'],[ [ ['asiData','',index,'url'] ],[ ['asiData','',index,'title'] ] ] ] ] ] ]}}" wx:for="{{asiData}}" wx:key="index">
+            <block wx:if="{{item.miniprogram}}">
+                <button catchtap="__e" class="clickArea" data-event-opts="{{[ [ 'tap',[ [ 'stopTouch',['$event'] ] ] ] ]}}" openType="contact" wx:if="{{item.miniprogram=='concat'}}">
+                    <view class="tips">
+                        <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190610/5cfe1ae3aedf0.svg"></image>{{''+item.text}}<text class="iconnew jiantou new-tongyong-gengduo fz-10"></text>
+                    </view>
+                </button>
+                <block wx:else>
+                    <view catchtap="__e" class="clickArea" data-event-opts="{{[ [ 'tap',[ [ 'showProjectInfo',['$event'] ] ] ] ]}}" hoverClass="none" wx:if="{{item.text=='去上传'}}">
+                        <view class="tips">
+                            <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190610/5cfe1ae3aedf0.svg"></image>{{''+item.text}}<text class="iconnew jiantou new-tongyong-gengduo fz-10"></text>
+                        </view>
+                    </view>
+                    <view catchtap="__e" class="clickArea" data-event-opts="{{[ [ 'tap',[ [ 'toWebUrl',['$0','$1'],[ [ ['asiData','',index,'miniprogram'] ],[ ['asiData','',index,'title'] ] ] ] ] ] ]}}" wx:else>
+                        <view class="tips">
+                            <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190610/5cfe1ae3aedf0.svg"></image>{{''+(item.text==='去分享'&&cityName==='nanjing'?'去转发':item.text)}}<text class="iconnew jiantou new-tongyong-gengduo fz-10"></text>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <button catchtap="__e" class="clickArea" data-event-opts="{{[ [ 'tap',[ [ 'returnUrl',['$event'] ] ] ] ]}}" openType="share" wx:else>
+                <view class="tips">
+                    <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190610/5cfe1ae3aedf0.svg"></image>{{''+(item.text==='去分享'&&cityName==='nanjing'?'去转发':item.text)}}<text class="iconnew jiantou new-tongyong-gengduo fz-10"></text>
+                </view>
+            </button>
+            <image class="left-image" mode="aspectFit" src="{{item.img}}"></image>
+            <view class="point-right">
+                <view class="fz-16 height-level-color h1 font-bold">{{''+item.title+''}}</view>
+                <view class="fz-13 h2">{{''+item.description+''}}</view>
+                <view class="h3 fz-13" wx:if="{{item.num}}">
+                    <text class="rise">{{''+item.num+''}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="project-info" wx:if="{{showProjectBox}}">
+        <view class="box-cont">
+            <view class="main-project">
+                <view bindtap="__e" class="item fz-16 black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[1] ] ] ] ]}}">户型图</view>
+                <view bindtap="__e" class="item fz-16 black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[2] ] ] ] ]}}">相册</view>
+                <view bindtap="__e" class="item fz-16 black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[3] ] ] ] ]}}">视频</view>
+            </view>
+            <view bindtap="__e" class="cancle-btn fz-18 black-60" data-event-opts="{{[ [ 'tap',[ [ 'showProjectInfo',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+        <view bindtap="__e" class="hide-bg" data-event-opts="{{[ [ 'tap',[ [ 'showProjectInfo',['$event'] ] ] ] ]}}"></view>
+    </view>
+    <guide-img bind:__l="__l" itemsData="{{guideImg}}" vueId="16722312-1"></guide-img>
+</view>

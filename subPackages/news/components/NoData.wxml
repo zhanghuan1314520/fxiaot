@@ -1,0 +1,10 @@
+<view class="no-data-wrap">
+    <view class="no-data">
+        <image class="image" src="{{imgUrl}}"></image>
+        <view class="text">{{''+text+''}}</view>
+        <view bindtap="__e" class="bottom flex_layout_c" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrl',['$0'],['pageUrl'] ] ] ] ]}}" wx:if="{{isSelf}}">
+            <text class="fz-16 tit">{{''+textStrTmp+''}}</text>
+            <text class="fz-16 icon iconnew new-tongyong-gengduo"></text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+.init__image-container,.init__video-container {
+    width: 100%;
+    height: 386rpx;
+    border-radius: 9rpx;
+    overflow: hidden;
+}
+
+.init__image-container {
+    position: relative;
+}
+
+.init__image-container .init__image-cont {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.init__image-container .init__image-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 112rpx;
+    height: 112rpx;
+    z-index: 2;
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#da4036",
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "back-activity": "/subPackages/activity/components/BackHome"
+    }
+}

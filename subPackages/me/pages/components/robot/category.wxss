@@ -1,0 +1,34 @@
+.wrap.data-v-4f7ab400 {
+    white-space: nowrap;
+    margin-top: 32rpx;
+}
+
+.wrap .category-item.data-v-4f7ab400 {
+    margin-right: 16rpx;
+    width: 148rpx;
+    height: 150rpx;
+    color: red;
+    display: inline-block;
+    background: #fff;
+    border-radius: 12rpx;
+}
+
+.wrap .category-item .item-border.data-v-4f7ab400 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrap .category-icon.data-v-4f7ab400 {
+    height: 60rpx;
+    width: 60rpx;
+    margin-bottom: 4rpx;
+}
+
+.wrap .category-label.data-v-4f7ab400 {
+    font-size: 26rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 36rpx;
+}

@@ -1,0 +1,52 @@
+.map-message {
+    position: relative;
+    display: inline-block;
+    width: 448rpx;
+    border-radius: 10rpx;
+    padding: 24rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #fff;
+}
+
+.map-message.sender {
+    float: right;
+    right: 22rpx;
+}
+
+.map-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}
+
+.map-message__name {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+}
+
+.map-message__address,.map-message__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.map-message__address {
+    height: 36rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+    margin: 4rpx 0 20rpx;
+}
+
+.map-message__cover {
+    width: 450rpx;
+    height: 232rpx;
+    display: block;
+    z-index: 92;
+    border-radius: 10rpx;
+    overflow: hidden;
+}

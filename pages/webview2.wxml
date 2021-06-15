@@ -1,0 +1,9 @@
+<view class="page">
+    <busi-v-rshare-btn bind:__l="__l" huxingId="{{huxingId}}" isAerial="{{isAerial}}" loaded="{{loaded}}" vrProjectId="{{vrProjectId}}" vueId="5430a218-1"></busi-v-rshare-btn>
+    <busi-sunshare-btn bind:__l="__l" showPanoramaShare="{{showPanoramaShare}}" showSunshineShare="{{showSunshineShare}}" vueId="5430a218-2"></busi-sunshare-btn>
+    <busi-qualification-share-btn bind:__l="__l" qualificationShare="{{qualificationShare}}" vueId="5430a218-3" wx:if="{{enableShare}}"></busi-qualification-share-btn>
+    <busi-article-share-btn articleId="{{articleId}}" bind:__l="__l" isIosOrAndroid="{{isIosOrAndroid}}" isSalesMan="{{isSalesMan}}" salesManId="{{salesManId}}" showShareBtn="{{showShareBtn}}" vueId="5430a218-4"></busi-article-share-btn>
+    <busi-salesman-info bind:__l="__l" isSalesMan="{{isSalesMan}}" isShowSalesmanInfo="{{isShowSalesmanInfo}}" salesManInfo="{{salesManInfo}}" vueId="5430a218-5"></busi-salesman-info>
+    <busi-salesman-info-for-v-r bind:__l="__l" isAerial="{{isAerial}}" isShowSalesmanInfo="{{isShowVRSalesmanInfo}}" salesManInfo="{{vrSalesManInfo}}" vueId="5430a218-6"></busi-salesman-info-for-v-r>
+    <web-view bindload="__e" data-event-opts="{{[ [ 'load',[ [ 'handleWebviewLoaded',['$event'] ] ] ] ]}}" src="{{url}}"></web-view>
+</view>

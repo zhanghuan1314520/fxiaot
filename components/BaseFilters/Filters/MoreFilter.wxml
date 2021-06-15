@@ -1,0 +1,8 @@
+<view class="more-filter">
+    <scroll-view class="more-filter__container" scrollY="true">
+        <button-group-list bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" listData="{{listData}}" vueId="353523c5-1"></button-group-list>
+    </scroll-view>
+    <view class="more-filter__footer">
+        <footer-button bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" data-event-opts="{{[ [ '^onReset',[ ['resetHandle'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ] ]}}" isNative="{{isNative}}" vueId="353523c5-2"></footer-button>
+    </view>
+</view>

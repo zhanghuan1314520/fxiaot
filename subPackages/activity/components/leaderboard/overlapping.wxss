@@ -1,0 +1,60 @@
+.overlapping.data-v-b2186d0c {
+    background: #ffe9ce;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-point.data-v-b2186d0c,.top-point.data-v-b2186d0c {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20rpx 20rpx 0;
+}
+
+.bottom-point.data-v-b2186d0c {
+    position: relative;
+    top: -10rpx;
+}
+
+.hotnum-box.data-v-b2186d0c {
+    background: #fff;
+    border-radius: 11rpx;
+    width: 100%;
+    margin: 45rpx 20rpx 20rpx;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hotnum-box .tabs.data-v-b2186d0c {
+    width: 359rpx;
+    height: 73rpx;
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/20201291453358081.png);
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotnum-box .tabs .font.data-v-b2186d0c {
+    height: 35rpx;
+}
+
+.hotnum-box .tabs .text.data-v-b2186d0c {
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.hotnum-box .point.data-v-b2186d0c {
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 50%;
+    background: #ffe9ce;
+}

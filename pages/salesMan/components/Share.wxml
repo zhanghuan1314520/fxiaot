@@ -1,0 +1,71 @@
+<view class="my-share" style="{{'margin-bottom:'+(isSelf?'0':'130rpx')+';'}}">
+    <view class="top_switch_bar">
+        <busi-tab activeId="{{switchType}}" bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['switchBarHandle'] ] ] ]}}" justifyContent="start" list="{{tabList}}" vueId="7a12afa8-1"></busi-tab>
+    </view>
+    <swiper bindchange="__e" current="{{switchType}}" data-event-opts="{{[ [ 'change',[ [ 'handleSwiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+swiperHeight+'px'+';'}}">
+        <swiper-item itemId="0">
+            <view class="swiper-0">
+                <block wx:if="{{list.length}}">
+                    <view class="my-share-list" data-index="{{key}}" wx:for="{{$root.l0}}" wx:for-index="key" wx:for-item="share" wx:key="key">
+                        <view class="post-item-header">
+                            <view class="header-icon">
+                                <image class="avatar no-preview" lazyLoad="{{true}}" mode="aspectFill" src="{{share.f0}}"></image>
+                            </view>
+                            <view class="header-content">
+                                <view class="left">
+                                    <text class="text">{{''+share[$orig].name+''}}</text>
+                                    <view class="sub-info">{{''+share[$orig].created_at+''}}<block wx:if="{{share[$orig].is_hide}}">
+                                            <image class="hide-icon" src="https://imgcdn.huanjutang.com/file/2021/01/05/9b6f90a4c62b8216b5acab3ffa90fe35.png"></image>该条已隐藏</block>
+                                    </view>
+                                </view>
+                                <operate-btns bind:__l="__l" bind:reload="__e" data-event-opts="{{[ [ '^reload',[ ['reload'] ] ] ]}}" isSelf="{{isSelf}}" item="{{share[$orig]}}" vueId="{{'7a12afa8-2-'+key}}"></operate-btns>
+                            </view>
+                        </view>
+                        <over-flow-content bind:__l="__l" content="{{share[$orig].content}}" vueId="{{'7a12afa8-3-'+key}}"></over-flow-content>
+                        <view class="preview-list">
+                            <share-template bind:__l="__l" bind:updateImgData="__e" bind:updateIsShow="__e" bind:updateLazyload="__e" bind:updateVideoData="__e" data-event-opts="{{[ [ '^updateLazyload',[ [ '__set_sync',['$0','lazyload','$event'],[''] ] ] ],[ '^updateIsShow',[ [ '__set_sync',['$0','isShow','$event'],[ [ ['list','',key,''] ] ] ] ] ],[ '^updateIsShow',[ [ '__set_sync',['$0','isShow','$event'],[ [ ['list','',key,''] ] ] ] ] ],[ '^updateImgData',[ [ '__set_sync',['$0','images_arr','$event'],[ [ ['list','',key,''] ] ] ] ] ],[ '^updateImgData',[ [ '__set_sync',['$0','images_arr','$event'],[ [ ['list','',key,''] ] ] ] ] ],[ '^updateVideoData',[ [ '__set_sync',['$0','video_url','$event'],[ [ ['list','',key,''] ] ] ] ] ],[ '^updateVideoData',[ [ '__set_sync',['$0','video_url','$event'],[ [ ['list','',key,''] ] ] ] ] ] ]}}" dataIndex="{{key}}" imgData="{{share[$orig].images_arr}}" isShow="{{share[$orig].isShow}}" lazyload="{{lazyload}}" videoData="{{share[$orig].video_url}}" vueId="{{'7a12afa8-4-'+key}}"></share-template>
+                        </view>
+                        <related-project bind:__l="__l" name="{{share[$orig].project_name}}" postType="我的分享" projectId="{{share[$orig].project_id}}" vueId="{{'7a12afa8-5-'+key}}" wx:if="{{share[$orig].project_id}}"></related-project>
+                    </view>
+                    <busi-bottom-line bind:__l="__l" vueId="7a12afa8-6" vueSlots="{{['default']}}" wx:if="{{!more&&!loading}}">没有更多了 ~</busi-bottom-line>
+                </block>
+                <block wx:else>
+                    <view bindtap="__e" class="nothing" data-event-opts="{{[ [ 'tap',[ [ 'navigato',['$event'] ] ] ] ]}}" data-name="前往分享区" data-type="link" wx:if="{{!loading}}">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20191216/5df6fd6c96787.png"></image>
+                        <view class="nothing-text gray-96 fz-14">暂无楼盘分享</view>
+                        <view class="jump-text fz-14">前去分享区<text class="iconnew new-tongyong-gengduo fz-10"></text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </swiper-item>
+        <swiper-item itemId="1">
+            <view class="swiper-1">
+                <block wx:if="{{questionList.length}}">
+                    <navigator bindtap="__e" data-content="他的回答" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="问答详情" data-type="link" hoverClass="none" url="{{'/subPackages/question/pages/questionDetail?id='+qitem.question_id}}" wx:for="{{questionList}}" wx:for-item="qitem" wx:key="index">
+                        <view class="question-list">
+                            <view class="question-cont">
+                                <view class="left-answer fz-12 font-bold white-color">问</view>
+                                <view class="con-txt fz-15 black-30">{{''+qitem.question_content+''}}</view>
+                            </view>
+                            <view class="answer-cont">
+                                <view class="left-answer font-bold fz-12 white-color">答</view>
+                                <view class="con-txt fz-14 black-60">{{''+qitem.content+''}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                    <busi-bottom-line bind:__l="__l" vueId="7a12afa8-7" vueSlots="{{['default']}}" wx:if="{{!questionMore&&!questionLoading}}">没有更多了 ~</busi-bottom-line>
+                </block>
+                <block wx:else>
+                    <view bindtap="__e" class="nothing" data-event-opts="{{[ [ 'tap',[ [ 'navigato',['$event'] ] ] ] ]}}" data-name="前去问答区参与" data-type="link" wx:if="{{!questionLoading}}">
+                        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20191216/5df6fd6c96787.png"></image>
+                        <view class="nothing-text gray-96 fz-14">暂无问题回答</view>
+                        <view class="jump-text fz-14">前去问答区参与<text class="iconnew new-tongyong-gengduo fz-10"></text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </swiper-item>
+    </swiper>
+    <busi-loading bind:__l="__l" loading="{{loading}}" vueId="7a12afa8-8"></busi-loading>
+</view>

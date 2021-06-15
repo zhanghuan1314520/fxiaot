@@ -1,0 +1,4 @@
+<view class="{{['share-timeline__wrap',hasTimeline?'share-timeline__center':'']}}" style="{{'min-height:'+(hasTimeline&&minHeight)+';'}}">
+    <image class="share-timeline__image" mode="widthFix" src="{{content}}" style="{{'margin-top:'+marginTop+'px'+';'}}" wx:if="{{hasTimeline}}"></image>
+    <slot wx:else></slot>
+</view>

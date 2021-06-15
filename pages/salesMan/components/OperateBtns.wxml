@@ -1,0 +1,12 @@
+<view class="operate-btns">
+    <text bindtap="__e" class="iconnew new-gengduo-copy" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"></text>
+    <view class="drop" wx:if="{{visible}}">
+        <block wx:if="{{isSelf}}">
+            <view bindtap="__e" class="drop-item" data-event-opts="{{[ [ 'tap',[ [ 'setTop',['$event'] ] ] ] ]}}">{{''+(item.top?'取消置顶':'置顶')+''}}</view>
+            <view bindtap="__e" class="drop-item" data-event-opts="{{[ [ 'tap',[ [ 'setHide',['$event'] ] ] ] ]}}">{{''+(item.is_hide?'取消隐藏':'隐藏')+''}}</view>
+            <view bindtap="__e" class="drop-item" data-event-opts="{{[ [ 'tap',[ [ 'del',['$event'] ] ] ] ]}}">删除</view>
+        </block>
+        <view bindtap="__e" class="drop-item" data-event-opts="{{[ [ 'tap',[ [ 'report',['$event'] ] ] ] ]}}" wx:else>举报</view>
+    </view>
+    <view catchtap="__e" class="fixed" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{visible}}"></view>
+</view>

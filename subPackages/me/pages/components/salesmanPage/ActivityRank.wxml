@@ -1,0 +1,29 @@
+<view class="activity-rank-wrap">
+    <view class="filter"></view>
+    <view class="activity-rank">
+        <view class="rank-info">
+            <view class="skeletons-rect" style="height:84rpx;width:100%;" wx:if="{{!projectName}}"></view>
+            <block wx:else>
+                <view catchtap="__e" class="project" data-event-opts="{{[ [ 'tap',[ [ 'goLotteryDetail',['$event'] ] ] ] ]}}" data-name="主营楼盘名称" data-type="link">
+                    <view class="project-name">{{''+projectName+''}}</view>
+                    <view class="project-tag">主营</view>
+                </view>
+                <view catchtap="__e" class="tip" data-event-opts="{{[ [ 'tap',[ [ 'goTaskCenter',['$event'] ] ] ] ]}}" data-name="主营楼盘刺激话术" data-type="link">
+                    <text class="text">{{''+(rankData.tips||'')+''}}</text>
+                    <text class="iconnew new-tongyong-gengduo"></text>
+                </view>
+            </block>
+        </view>
+        <view catchtap="__e" class="rank" data-event-opts="{{[ [ 'tap',[ [ 'goProjectRank',['$event'] ] ] ] ]}}" data-name="主营楼盘活跃度排行榜" data-type="link">
+            <view class="skeletons-rect" style="height:46rpx;width:100%;" wx:if="{{!projectName}}"></view>
+            <block wx:else>
+                <view class="label">
+                    <image class="icon" src="https://imgcdn.huanjutang.com/file/2021/01/16/40c89293f6a2bab9f7609907bc5b7e39.png"></image>
+                    <text class="text">当前活跃度排名第<text class="num">{{''+(rankData.ranking||'')+''}}</text>
+                    </text>
+                </view>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view>
+    <canvas-post bind:__l="__l" cHeight="{{960}}" cWidth="{{650}}" class="vue-ref" data-ref="canvasPost" vueId="cd099fa8-1"></canvas-post>
+    <cover-view bindtouchmove="__e" class="cover-img" data-event-opts="{{[ [ 'touchmove',[ [ 'hideGuide',['$event'] ] ] ] ]}}" wx:if="{{guideImg.length>0}}">
+        <cover-image class="guide-image" mode="widthFix" src="{{guideImg[0]}}"></cover-image>
+    </cover-view>
+</view>

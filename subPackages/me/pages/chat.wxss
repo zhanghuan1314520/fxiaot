@@ -1,0 +1,115 @@
+.top {
+    padding-bottom: 122rpx;
+    background-image: url(https://imgcdn.huanjutang.com/file/2020/12/24/dcff9ac18e69519fbf7b9b4baceae530.png);
+    background-size: cover;
+}
+
+.chat {
+    min-height: 100vh;
+}
+
+.main {
+    margin-top: -122rpx;
+}
+
+.chat-scroll {
+    position: relative;
+    background: #fff;
+    border-radius: 24rpx 24rpx 0 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.scroll-picker {
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+.scroll-picker.borderRadius {
+    border-radius: 40rpx 40rpx 0 0;
+}
+
+.scroll-title {
+    padding: 0 32rpx;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 132rpx;
+    line-height: 132rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+}
+
+.picker-box,.scroll-title {
+    display: flex;
+    align-items: center;
+}
+
+.picker-box {
+    font-size: 40rpx;
+    line-height: 52rpx;
+}
+
+.picker-box .iconnew {
+    color: #d9d9d9;
+    margin-left: 12rpx;
+    font-size: 20rpx;
+}
+
+.picker-box .reset {
+    font-size: 26rpx;
+    margin-left: 24rpx;
+    color: #2d8cf0;
+}
+
+.title-text {
+    font-size: 30rpx;
+    line-height: 40rpx;
+}
+
+.title-text .special {
+    color: #2d8cf0;
+    margin-left: 10rpx;
+}
+
+.title-text .point {
+    margin: 0 6rpx;
+}
+
+.date .text {
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #fff;
+    line-height: 28rpx;
+}
+
+.date .iconnew {
+    position: relative;
+    top: -2rpx;
+    color: #fff;
+    font-size: 20rpx;
+}
+
+.fixTop {
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.04);
+}
+
+.fixTop.total .common,.fixTop.total .num {
+    color: rgba(0,0,0,.85);
+}
+
+.fixTop.total .important {
+    color: rgba(0,0,0,.45);
+}
+
+.fixTop .date .text {
+    color: rgba(0,0,0,.85);
+}
+
+.fixTop .iconnew {
+    color: #2d8cf0;
+}

@@ -1,0 +1,10 @@
+<view class="unify-ui-vote">
+    <view class="vote-text">
+        <text class="left sky-blue">{{''+upVoteTextStr+''}}</text>
+        <text class="right purple">{{''+downVoteTextStr+''}}</text>
+    </view>
+    <view class="vote-result">
+        <view class="left sky-blue" style="{{'width: '+(agreePrecent===100?'unset':agreePrecent===0?'60rpx':agreePrecent+'%')+'; flex: '+(agreePrecent===100?1:'unset')}}"></view>
+        <view class="right purple" style="{{'width: '+(disagreePrecent===100?'unset':disagreePrecent===0?'60rpx':disagreePrecent+'%')+'; flex: '+(disagreePrecent===100?1:'unset')}}"></view>
+    </view>
+</view>

@@ -1,0 +1,56 @@
+.article-style {
+    display: flex;
+    padding: 30rpx 24rpx;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+
+.article-style .right-img {
+    width: 240rpx;
+    height: 160rpx;
+    border-radius: 6rpx;
+}
+
+.article-style .left-cont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-right: 28rpx;
+    flex: 1;
+    height: 160rpx;
+}
+
+.article-style .left-cont .article-detail {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 44rpx;
+    height: 88rpx;
+}
+
+.article-style .left-cont .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 32rpx;
+}
+
+.article-style .left-cont .bottom .left-name {
+    overflow: hidden;
+}
+
+.article-style .left-cont .bottom .left-name .avatar {
+    float: left;
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 32rpx;
+}
+
+.article-style .left-cont .bottom .left-name .name {
+    line-height: 32rpx;
+    float: left;
+}

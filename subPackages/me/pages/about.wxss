@@ -1,0 +1,92 @@
+page {
+    background: #fff;
+}
+
+#app {
+    padding-bottom: 2.4375rem;
+}
+
+.main-top-cont {
+    margin: 48rpx auto 100rpx;
+    text-align: center;
+}
+
+.main-top-cont .app-name {
+    font-size: 1.0625rem;
+    color: #303237;
+    line-height: 1.0625rem;
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+
+.app-num {
+    font-size: 24rpx;
+    color: #96989e;
+    line-height: 34rpx;
+}
+
+.main-top-cont image {
+    width: 128rpx;
+    height: 128rpx;
+    margin-bottom: 20rpx;
+}
+
+.scription {
+    margin: 0 1.125rem 1.125rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.scription .text {
+    margin-right: .9375rem;
+    display: inline-block;
+}
+
+.scription image {
+    width: .6875rem;
+    height: .5625rem;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.scription-box {
+    margin: 0 1.125rem 1.875rem;
+}
+
+.scription-box .line {
+    font-size: .8125rem;
+    color: #96989e;
+    line-height: 1.25rem;
+    margin-bottom: .875rem;
+}
+
+.footer-cont {
+    margin: 0 1.125rem;
+    text-align: center;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20190806/5d493c32197d4.png) 50%/cover no-repeat;
+}
+
+.footer-cont .qr-code {
+    width: 8rem;
+    height: 8rem;
+    padding-top: 1.5rem;
+}
+
+.circle {
+    width: .875rem;
+    height: .625rem;
+    margin: 0 auto .125rem;
+    display: block;
+}
+
+.footer-cont .text {
+    color: #b5b6bb;
+    font-size: .8125rem;
+    padding: 1.25rem;
+}
+
+.footer-cont .text .app-name-text {
+    color: #2f8cef;
+}

@@ -1,0 +1,16 @@
+<view class="search">
+    <view class="nav-search skeletons-rect">
+        <custom-navigator bind:__l="__l" class="search-bar-form sk-hide" dataContent="{{analysis.dataContent}}" dataId="{{analysis.id}}" dataName="{{analysis.dataName}}" dataType="link" url="{{toUrl}}" vueId="dce26222-1" vueSlots="{{['default']}}">
+            <view class="search-bar__form">
+                <slot name="searchIcon" wx:if="{{$slots.searchIcon}}"></slot>
+                <image class="nav-search__icon" src="https://imgcdn.huanjutang.com/image/2020/05/18/9bef8839ce3044147520cbc134096918.png" wx:else></image>
+                <slot wx:if="{{$slots.default}}"></slot>
+                <text class="nav-search__input" wx:else>{{''+inputValue+''}}</text>
+            </view>
+        </custom-navigator>
+        <navigator bindtap="__e" class="nav-search__op sk-hide" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="地图找房" hoverClass="none" url="{{customUrl}}" wx:if="{{customUrl}}">
+            <view class="nav-search__icon--map iconnew new-weibiaoti-1_huaban11"></view>
+            <view class="nav-search__map">地图</view>
+        </navigator>
+    </view>
+</view>

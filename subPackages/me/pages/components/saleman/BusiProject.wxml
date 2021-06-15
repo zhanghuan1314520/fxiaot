@@ -1,0 +1,90 @@
+<view class="busi-component__wrapper">
+    <view class="form">
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>选择入驻楼盘</text>
+                <text class="sub">(为主营楼盘)</text>
+            </view>
+            <view class="content">
+                <view bindtap="__e" class="{{['fz-15 padding-right-32 overflow-1',selectLottery!='选择已有的楼盘'?'input-item':'',selectLottery=='选择已有的楼盘'?'placeholder-input-item padding-left-32':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseLottery',['$event'] ] ] ] ]}}">{{''+selectLottery+''}}<text class="iconnew new-zhankai icon-position fz-14 mar-left-300"></text>
+                </view>
+            </view>
+        </view>
+        <view class="item-form mar-top-16" wx:if="{{relativeProject.length}}">
+            <view class="label fz-17 mar-bottom-32">
+                <text>关联楼盘</text>
+            </view>
+            <view class="content">
+                <view class="input-item flex_layout_b" wx:for="{{relativeProject}}" wx:key="index">
+                    <text class="fz-15 overflow-line-1">{{''+item.name+''}}</text>
+                    <view bindtap="__e" class="relation-box flex_layout" data-event-opts="{{[ [ 'tap',[ [ 'relationHandler',[index] ] ] ] ]}}">
+                        <text class="cricle new-quanquan iconnew fz-18" hidden="{{!!item.isToggle}}"></text>
+                        <text class="{{['iconnew new-queding fz-18 icon-relation',item.isToggle?'active':'']}}" hidden="{{!item.isToggle}}"></text>
+                        <text class="mar-left-12 fz-15">同时入驻</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>公司名称</text>
+            </view>
+            <view class="content">
+                <input bindinput="__e" class="input-item fz-15" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','company_name','$event',[] ],['form'] ] ] ] ]}}" maxlength="25" placeholder="请输入公司全称" placeholderClass="placeholder-input-item" value="{{form.company_name}}"></input>
+            </view>
+        </view>
+        <picker bindchange="__e" class="item-form" data-event-opts="{{[ [ 'change',[ [ 'onGroupChange',['$event'] ] ] ] ]}}" range="{{groupItems}}" value="{{form.team_type}}">
+            <view class="label fz-17 mar-bottom-32">
+                <text>所属团队类型</text>
+            </view>
+            <view class="content">
+                <view class="fz-15 padding-right-32 input-item">{{''+showGroupName+''}}<text class="iconnew new-zhankai icon-position fz-14 mar-left-300"></text>
+                </view>
+            </view>
+            <view class="tip">注：自销团队为开发商自有团队，代理为第三方公司团队</view>
+        </picker>
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>上传该楼盘的名片/工牌</text>
+                <text bindtap="__e" class="fz-14 mar-left-12 blue-color" data-event-opts="{{[ [ 'tap',[ [ 'openUploadDemo',['$event'] ] ] ] ]}}">查看示例</text>
+            </view>
+            <view class="content">
+                <view bindtap="__e" class="upload-pic flex_layout_n" data-event-opts="{{[ [ 'tap',[ [ 'openUploadDemo',['$event'] ] ] ] ]}}" wx:if="{{!form.card}}">
+                    <text class="iconnew fz-30 icon-upload new-tianjiatupian"></text>
+                    <text class="txt mar-top-32 fz-14">添加图片</text>
+                </view>
+                <view class="img-box" wx:else>
+                    <image bindtap="__e" class="img" data-event-opts="{{[ [ 'tap',[ [ 'previewImageHandler',['$event'] ] ] ] ]}}" mode="scaleToFill" src="{{form.card}}"></image>
+                    <image bindtap="__e" class="icon-img-position" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/file/2020/07/02/619b4df259cfd7fc8175fafeef49e5e5.png"></image>
+                </view>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['gotoVerify'] ] ] ]}}" isAuthPhone="{{true}}" vueId="4a1f1b49-1" vueSlots="{{['default']}}">
+            <view class="{{['item-btn fz-16 mar-bottom-46 mar-top-100',!disable?'gary':'']}}">立即提交</view>
+        </authorization>
+        <view class="is-agree-box" wx:if="{{!changeLottery}}">
+            <text class="fz-14 tit">点击提交按钮即默认同意</text>
+            <text bindtap="__e" class="fz-14 tit-blue" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrl',['$event'] ] ] ] ]}}">《入驻须知》</text>
+        </view>
+    </view>
+    <view catchtap="__e" catchtouchmove="__e" class="mark" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'closeModel',['$event'] ] ] ] ]}}" wx:if="{{showType}}">
+        <view catchtap="__e" class="building-bounced" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <view class="buiding-choose white-bg">
+                <view class="search">
+                    <view class="search-left gray-9-color">
+                        <view bindtap="__e" class="iconnew new-sousuo blue-color" data-event-opts="{{[ [ 'tap',[ [ 'searchSure',['$event'] ] ] ] ]}}"></view>
+                        <input bindinput="__e" class="search-bar-input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','searchValue','$event',[] ] ] ] ] ]}}" placeholder="输入楼盘名字搜索" placeholderClass="search-input-place" type="text" value="{{searchValue}}"></input>
+                    </view>
+                    <view bindtap="__e" class="search-btn blue-color fz-16" data-event-opts="{{[ [ 'tap',[ [ 'searchSure',['$event'] ] ] ] ]}}">确定</view>
+                </view>
+            </view>
+            <view class="wrap">
+                <scroll-view bindscrolltolower="scroll" class="h-500 white-bg" scrollTop="0" scrollY="scroll-y">
+                    <view catchtap="__e" class="search-col fz-14" data-event-opts="{{[ [ 'tap',[ [ 'setLotname',['$0'],[ [ ['lotData','',index] ] ] ] ] ] ]}}" wx:if="{{item.name}}" wx:for="{{lotData}}" wx:key="index">{{''+item.name+''}}</view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <busi-upload-demo bind:__l="__l" bind:updateVisible="__e" bind:uploadSuccess="__e" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','visible','$event'],[''] ] ] ],[ '^uploadSuccess',[ ['uploadSuccess'] ] ] ]}}" mode="{{2}}" showuploadBtn="{{showuploadBtn}}" visible="{{visible}}" vueId="4a1f1b49-2"></busi-upload-demo>
+    <busi-tip-box bind:__l="__l" bind:submitHandler="__e" bind:updateVisible="__e" btnStr="确定提交" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','visibleTipBox','$event'],[''] ] ] ],[ '^submitHandler',[ ['submitHandler'] ] ] ]}}" tipStr="{{tipStr}}" visible="{{visibleTipBox}}" vueId="4a1f1b49-3"></busi-tip-box>
+</view>

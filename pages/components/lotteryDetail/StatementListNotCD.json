@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "dialog": "/components/UILayout/BusiDialog",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "statement-over-flow-item": "/pages/components/lotteryDetail/StatementOverFlowItem"
+    }
+}

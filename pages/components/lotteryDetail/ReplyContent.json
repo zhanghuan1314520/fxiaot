@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "report": "/pages/components/lotteryDetail/Report",
+        "comment-item-content": "/pages/components/lotteryDetail/CommentItemContent",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "white-space": "/pages/components/lotteryDetail/WhiteSpace"
+    }
+}

@@ -1,0 +1,13 @@
+<view class="notice-content" wx:if="{{dataApi.length>0}}">
+    <view class="notice">
+        <view class="fz-12 black-color notice-left">
+            <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20203191531478081.png"></image>
+        </view>
+        <view class="point"></view>
+        <swiper autoplay="true" circular="true" class="notice-right skeletons" style="{{'width: '+maxWidth}}" vertical="true">
+            <swiper-item catchtouchmove="__e" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ] ]}}" wx:for="{{dataApi}}" wx:key="index">
+                <view bindtap="__e" class="black1a-color fz-13" data-content="头条" data-event-opts="{{[ [ 'tap',[ [ 'goToUrlHandle',['$0','$1',''],[ [ ['dataApi','',index,'url'] ],[ ['dataApi','',index,'type'] ] ] ] ] ] ]}}" data-name="{{item.title}}" data-type="link">{{''+(item.title||'--')+''}}</view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view class="select-list">
+    <view catchtap="__e" class="{{[true?'select-list__item':'',activeIndex===index?'select-list__item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[index] ] ] ] ]}}" wx:for="{{listData}}" wx:key="index">
+        <view class="select__item__text">{{''+item.text+''}}</view>
+        <view class="select__item__icon iconnew new-gougou"></view>
+    </view>
+</view>

@@ -1,0 +1,173 @@
+<view>
+    <view bindtap="__e" catchtouchmove="stopMove" class="container-header-bg" data-event-opts="{{[ [ 'tap',[ [ 'showAllChoose',['$event'] ] ] ] ]}}" wx:if="{{showAllChooseType}}"></view>
+    <view class="page">
+        <view catchtap="__e" catchtouchmove="stopMove" class="application-from" data-event-opts="{{[ [ 'tap',[ [ 'hideCoupon',['$event'] ] ] ] ]}}" wx:if="{{showType}}"></view>
+        <view class="application-from-content" wx:if="{{showType}}">
+            <view style="padding:70rpx 30rpx 20rpx 30rpx;">
+                <text class="fz-20 font-bold">填写优惠报名表</text>
+            </view>
+            <view class="user-input">
+                <view>
+                    <view class="layout-3 input-item">
+                        <text class="iconnew new-tianjiapinglun" style="color:#e04739;margin-right:10rpx;"></text>
+                        <text class="fz-13" style="margin-right:20rpx;">姓名:</text>
+                        <input bindinput="__e" class="fz-13" data-event-opts="{{[ [ 'input',[ [ 'aplNameChange',['$event'] ] ] ] ]}}" placeholder="请填写您的姓名" value="{{aplName}}"></input>
+                    </view>
+                    <view class="layout-3 input-item" style="padding-top:20rpx;">
+                        <text class="iconnew new-dianhua" style="color:#e04739;margin-right:10rpx;"></text>
+                        <text class="fz-13" style="margin-right:20rpx;">电话:</text>
+                        <input bindinput="__e" class="fz-13" data-event-opts="{{[ [ 'input',[ [ 'aplPhoneChange',['$event'] ] ] ] ]}}" placeholder="请填写您的联系电话" type="number" value="{{aplPhone}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="prompt">
+                <text class="fz-11">注：请填写真实信息，以方便你兑换核实优惠。</text>
+            </view>
+            <view bindtap="__e" class="get-preferential-btn layout-1" data-event-opts="{{[ [ 'tap',[ [ 'getDiscount',['$event'] ] ] ] ]}}">
+                <text class="fz-15">提交</text>
+            </view>
+            <navigator class="join-rules" hoverClass="none" url="{{couponsRules}}">
+                <text class="fz-13 gray-9-color">参与规则</text>
+            </navigator>
+        </view>
+        <view class="holiday-bg">
+            <navigator class="illustrate white-color fz-11" hoverClass="none" url="{{couponsRules}}">活动说明</navigator>
+            <image class="main-bg" lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15524612793922702.jpg"></image>
+        </view>
+        <view class="page_bg">
+            <view class="container">
+                <scroll-view class="header-nav-list" scrollIntoView="{{'target'+toggleIndex}}" scrollWithAnimation="{{true}}" scrollX="scroll-x">
+                    <view bindtap="__e" class="{{[ 'fz-14 nav-list-item '+(rows.is_toggle?'active':'white-color') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectDeveloper',[index] ] ] ] ]}}" id="{{'target'+index}}" wx:for="{{developName}}" wx:for-item="rows" wx:key="index">{{''+rows.name+''}}</view>
+                </scroll-view>
+                <view bindtap="__e" class="choose-all" data-event-opts="{{[ [ 'tap',[ [ 'showAllChoose',['$event'] ] ] ] ]}}" style="transform:rotate(0deg);">
+                    <text class="fz-15 iconnew new-tongyong-gengduolansexiangxia white-color"></text>
+                </view>
+            </view>
+            <view class="container-header-nav fz-14" style="top:0;" wx:if="{{showAllChooseType}}">
+                <view catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showAllChoose',['$event'] ] ] ] ]}}" style="overflow:hidden;margin:30rpx 0 15rpx 0;">
+                    <view class="channel-title white-color">所有开发商</view>
+                    <view class="choose-all white-color" style="transform:rotate(180deg);">
+                        <text class="fz-13 iconnew new-tongyong-gengduolansexiangxia"></text>
+                    </view>
+                </view>
+                <scroll-view class="fz-14" scrollY="scroll-y" style="max-height:400rpx;">
+                    <view class="choose-list-show">
+                        <view bindtap="__e" class="{{[ 'item-choose-show fz-14 '+(row.is_toggle?'active':'white-color') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectDeveloper',[index] ] ] ] ]}}" wx:for="{{developName}}" wx:for-item="row" wx:key="index">{{''+row.name+''}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="pur-common-box" wx:if="{{lotIndex==toggleIndex-1||0==toggleIndex}}" wx:for="{{lotteries}}" wx:for-index="lotIndex" wx:for-item="lottery" wx:key="lotIndex">
+                <view class="pur-common-top">
+                    <view class="building-name fz-16">
+                        <view>
+                            <image lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15524479194019909.jpg"></image>
+                            <view>{{lottery.vendor.name+'专场'}}</view>
+                            <image lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15524479234562269.jpg"></image>
+                        </view>
+                    </view>
+                    <image lazeLoad="{{true}}" src="https://imgcdn.huanjutang.com/assert/img/15524470425297004.jpg"></image>
+                </view>
+                <view class="pur-common-coupon" wx:if="{{lot.type==1}}" wx:for="{{lottery.vendor.coupons}}" wx:for-index="couponsIndex" wx:for-item="lot" wx:key="couponsIndex">
+                    <image lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15524467147676382.jpg"></image>
+                    <view class="fz-24 coupon-left-money white-color">{{''+lot.coupon.name+''}}</view>
+                    <view class="fz-12 coupon-left-bottom white-color">{{'使用时间：'+lot.started_at+'-'+lot.ended_at+''}}</view>
+                    <view bindtap="__e" class="coupon-right fz-12" data-event-opts="{{[ [ 'tap',[ [ 'toggleCoupon',['notSingle',lotIndex,'',couponsIndex] ] ] ] ]}}">立即领取</view>
+                </view>
+                <block wx:for="{{lottery.vendor.projects}}" wx:for-index="colIndex" wx:key="colIndex">
+                    <block wx:if="{{!lottery.showToggle}}">
+                        <view class="pur-common-list" wx:if="{{colIndex<2}}">
+                            <view class="lottery_item_box">
+                                <navigator class="weui-media-box" data-item="{{item}}" hoverClass="none" hoverStayTime="{{100}}" url="{{'/pages/lotteryDetail?id=&project_id='+item.id}}">
+                                    <view class="hot_house_img">
+                                        <view class="gray-shadow"></view>
+                                        <image class="lottery-img gray-bg" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                                        <view class="lottery-img-bottom white-color fz-10" wx:if="{{item.list_tag}}">{{''+item.list_tag+''}}</view>
+                                        <view class="view white-color">
+                                            <text class="fz-15 iconnew new-iconsliulan"></text>
+                                            <text class="fz-11" style="margin-left:5rpx;">{{''+item.page_views+''}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="weui-media-box__bd">
+                                        <view class="weui-media-box__title" style="line-height:44rpx;">
+                                            <view class="right red-color fz-14" wx:if="{{item.avg_price&&item.avg_price!='0'}}">{{'¥'+item.avg_price+''}}</view>
+                                            <view class="right red-color fz-14" style="margin-right:20rpx;" wx:else>待定</view>
+                                            <view class="title_name left fz-14 font-bold">{{''+item.name+''}}</view>
+                                        </view>
+                                        <view class="tags" style="margin:14rpx 0;">
+                                            <text class="tag fz-10" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{''+tag+''}}</text>
+                                            <view class="fz-12 black1a-color" style="float:right;line-height:36rpx;">{{''+item.area_info.area+''}}</view>
+                                        </view>
+                                        <view class="list_bottom small-level-color fz-12" style="margin-top:10rpx;overflow:hidden;">
+                                            <view style="float:left;">
+                                                <text style="margin-right:5rpx;" wx:for="{{item.characteristic}}" wx:for-item="character" wx:key="index">{{''+character+''}}</text>
+                                            </view>
+                                            <view catchtap="__e" class="gray-9-color" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0','$1','$2'],[ [ ['lotteries','',lotIndex],['vendor.projects','',colIndex,'project_id'] ],[ ['lotteries','',lotIndex],['vendor.projects','',colIndex,'name'] ],[ ['lotteries','',lotIndex],['vendor.projects','',colIndex,'id'] ] ] ] ] ] ]}}" style="float:right;">
+                                                <text class="iconnew new-zixunxianxing fz-14"></text>
+                                                <text class="fz-12">{{''+item.commentNum+''}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </navigator>
+                                <view class="weui-media-coupon" wx:if="{{item.coupon.coupon}}">
+                                    <view class="coupon-price white-color">
+                                        <image mode="aspectFit" src="https://imgcdn.huanjutang.com/assets/img/20190313/5c886072268cb.jpg"></image>
+                                        <text class="fz-11" style="position:absolute;left:18rpx;line-height:46rpx;">券</text>
+                                        <text class="fz-17" style="position:absolute;left:60rpx;line-height:46rpx;">{{'￥'+item.coupon.coupon.amount+''}}</text>
+                                    </view>
+                                    <view bindtap="__e" class="getCoupon white-color fz-12" data-event-opts="{{[ [ 'tap',[ [ 'toggleCoupon',['isDeveloper',lotIndex,colIndex,''] ] ] ] ]}}">立即领取</view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="pur-common-list" wx:else>
+                        <view class="lottery_item_box">
+                            <navigator class="weui-media-box" data-item="{{item}}" hoverClass="none" hoverStayTime="{{100}}" url="{{'/pages/lotteryDetail?id=&project_id='+item.id}}">
+                                <view class="hot_house_img">
+                                    <view class="gray-shadow"></view>
+                                    <image class="lottery-img gray-bg" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                                    <view class="lottery-img-bottom white-color fz-10" wx:if="{{item.list_tag}}">{{''+item.list_tag+''}}</view>
+                                    <view class="view white-color">
+                                        <text class="fz-15 iconnew new-iconsliulan"></text>
+                                        <text class="fz-11" style="margin-left:5rpx;">{{''+item.page_views+''}}</text>
+                                    </view>
+                                </view>
+                                <view class="weui-media-box__bd">
+                                    <view class="weui-media-box__title" style="line-height:44rpx;">
+                                        <view class="right red-color fz-14" wx:if="{{item.avg_price&&item.avg_price!='0'}}">{{'¥'+item.avg_price+''}}</view>
+                                        <view class="right red-color fz-14" style="margin-right:20rpx;" wx:else>待定</view>
+                                        <view class="title_name left fz-14 font-bold">{{''+item.name+''}}</view>
+                                    </view>
+                                    <view class="tags" style="margin:14rpx 0;">
+                                        <text class="tag fz-10" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{''+tag+''}}</text>
+                                        <view class="fz-12 black1a-color" style="float:right;line-height:36rpx;">{{''+item.area_info.area+''}}</view>
+                                    </view>
+                                    <view class="list_bottom small-level-color fz-12" style="margin-top:10rpx;overflow:hidden;">
+                                        <view style="float:left;">
+                                            <text style="margin-right:5rpx;" wx:for="{{item.characteristic}}" wx:for-item="character" wx:key="index">{{''+character+''}}</text>
+                                        </view>
+                                        <view catchtap="__e" class="gray-9-color" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0','$1','$2'],[ [ ['lotteries','',lotIndex],['vendor.projects','',colIndex,'project_id'] ],[ ['lotteries','',lotIndex],['vendor.projects','',colIndex,'name'] ],[ ['lotteries','',lotIndex],['vendor.projects','',colIndex,'id'] ] ] ] ] ] ]}}" style="float:right;">
+                                            <text class="iconnew new-zixunxianxing fz-14"></text>
+                                            <text class="fz-12">{{''+item.commentNum+''}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                            <view class="weui-media-coupon" wx:if="{{item.coupon.coupon}}">
+                                <view class="coupon-price white-color">
+                                    <image mode="aspectFit" src="https://imgcdn.huanjutang.com/assets/img/20190313/5c886072268cb.jpg"></image>
+                                    <text class="fz-11" style="position:absolute;left:18rpx;line-height:46rpx;">券</text>
+                                    <text class="fz-17" style="position:absolute;left:60rpx;line-height:46rpx;">{{'￥'+item.coupon.coupon.amount+''}}</text>
+                                </view>
+                                <view bindtap="__e" class="getCoupon white-color fz-12" data-event-opts="{{[ [ 'tap',[ [ 'toggleCoupon',['isDeveloper',lotIndex,colIndex,''] ] ] ] ]}}">立即领取</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+                <view bindtap="__e" class="pur-common-bottom white-color" data-event-opts="{{[ [ 'tap',[ [ 'viewMore',[lotIndex] ] ] ] ]}}" wx:if="{{lottery.vendor.projects.length>2&&!lottery.hideTab}}">
+                    <text class="building-name fz-13" style="margin-right:10rpx;">{{''+(lottery.showToggle?'收起':'查看更多')+''}}</text>
+                    <view class="fz-12 iconnew new-tongyong-gengduolansexiangxia white-color" style="{{'display: inline-block;'+(lottery.showToggle?'transform: rotate(180deg);':'')}}"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

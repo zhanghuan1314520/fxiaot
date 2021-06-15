@@ -1,0 +1,19 @@
+.bg {
+    width: 100%;
+}
+
+.main {
+    background: #6812c1;
+}
+
+.rule {
+    position: absolute;
+    top: 0;
+    overflow-y: auto;
+    z-index: 1;
+    margin-top: 223rpx;
+    padding: 0 110rpx;
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 20px;
+}

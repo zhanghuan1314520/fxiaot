@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "一键找房",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "project-item": "/components/ProjectItem/ProjectItem"
+    }
+}

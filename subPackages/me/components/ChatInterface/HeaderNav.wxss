@@ -1,0 +1,216 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 97;
+    width: 100%;
+    background: #f5f7fa;
+}
+
+.header__container {
+    background: #fff;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.02);
+    padding: 20rpx 24rpx 24rpx;
+    box-sizing: border-box;
+}
+
+.header__container .salesman {
+    display: flex;
+    height: 124rpx;
+    background: #fff;
+    align-items: center;
+}
+
+.header__container .salesman__avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border: 2rpx solid #edeff2;
+    border-radius: 80rpx;
+}
+
+.header__container .salesman__info {
+    margin-left: 20rpx;
+    width: 380rpx;
+    overflow: hidden;
+}
+
+.header__container .salesman__info--name {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #303237;
+    font-size: 30rpx;
+    line-height: 42rpx;
+}
+
+.header__container .salesman__info--name .icon {
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+    border: 0;
+}
+
+.header__container .salesman__info--receiveUsername {
+    margin-bottom: 4rpx;
+}
+
+.header__container .salesman__info .project--icon {
+    font-size: 10px;
+    margin-left: 4rpx;
+}
+
+.header__container .salesman__info--project {
+    font-size: 22rpx;
+    color: rgba(0,0,0,.45);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.header__container .salesman__change {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.header__container .salesman__change .replace {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 26rpx;
+    line-height: 1;
+}
+
+.header__container .salesman__change .replace--icon {
+    font-size: 30rpx;
+    margin-right: 6rpx;
+}
+
+.header__container .salesman__change--report {
+    margin-left: 58rpx;
+    height: 40rpx;
+    line-height: 24rpx;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.header__container .salesman__change--icon {
+    width: 32rpx;
+    height: 14rpx;
+}
+
+.header__container .salesman__btns {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.header__container .salesman__btns--phone {
+    width: 332rpx;
+    height: 68rpx;
+    background: #eff6fe;
+    border-radius: 40rpx;
+    color: #2d8cf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.header__container .salesman__btns--phone .icon {
+    height: 44rpx;
+    width: 44rpx;
+    margin-right: 16rpx;
+}
+
+.header__container .salesman__btns--wechat {
+    margin-right: 38rpx;
+    width: 332rpx;
+    height: 68rpx;
+    background: rgba(10,180,100,.08);
+    border-radius: 40rpx;
+    color: #0ab464;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.header__container .salesman__btns--wechat .icon {
+    height: 44rpx;
+    width: 44rpx;
+    margin-right: 16rpx;
+}
+
+.header__container .user {
+    justify-content: space-between;
+}
+
+.header__container .user,.header__container .user__info {
+    display: flex;
+    align-items: center;
+}
+
+.header__container .user__info--avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border: 2rpx solid #edeff2;
+    border-radius: 80rpx;
+    margin-right: 24rpx;
+}
+
+.header__container .user__info--name {
+    max-width: 200rpx;
+    font-size: #303237;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.header__container .user__info--down {
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+}
+
+.header__container .user__btns {
+    display: flex;
+    align-items: center;
+}
+
+.header__container .user__btns--phone {
+    margin-right: 60rpx;
+}
+
+.header__container .user__btns--phone .icon {
+    display: inline-block;
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 16rpx;
+    color: #fff;
+    border-radius: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    background: linear-gradient(231deg,#80ddff,#2d89f1);
+    box-shadow: 0 4rpx 8rpx 0 rgba(63,155,244,.2);
+}
+
+.header__container .user__btns--phone .text {
+    font-size: 24rpx;
+    color: #303237;
+}
+
+.header__privacy-tip {
+    font-size: 24rpx;
+    color: #ccc;
+    text-align: center;
+    padding: 20rpx 0 16rpx;
+}
+
+.header .medal {
+    height: 40rpx;
+    width: 40rpx;
+}

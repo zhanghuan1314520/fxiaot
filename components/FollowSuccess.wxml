@@ -1,0 +1,17 @@
+<view>
+    <view bindtap="__e" catchtouchmove="preventTouchMove" class="comfirm-dialog" data-event-opts="{{[ [ 'tap',[ [ 'closeSaleManCallDialog',['$event'] ] ] ] ]}}" data-id="followSuccess" wx:if="{{show}}">
+        <view class="comfirm-dialog-content">
+            <view class="content-wrap">
+                <view class="content-status">
+                    <view class="status-text">关注成功</view>
+                    <view class="status-subtext">我们将为您提供以下服务</view>
+                </view>
+                <view class="content-item" wx:for="{{followData}}" wx:key="index">{{''+item.title}}<text class="text">{{''+item.desc+''}}</text>
+                </view>
+            </view>
+            <view class="tool-btns">
+                <view bindtap="__e" class="btn-ok" data-event-opts="{{[ [ 'tap',[ [ 'comfirm',['$event'] ] ] ] ]}}">我知道了</view>
+            </view>
+        </view>
+    </view>
+</view>

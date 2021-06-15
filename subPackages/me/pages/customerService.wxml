@@ -1,0 +1,8 @@
+<view>
+    <view class="page">
+        <image class="publicImage" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190611/5cff6752160d4.png"></image>
+        <image class="qrcode" mode="widthFix" src="{{qrcode}}"></image>
+        <view class="copyBack"></view>
+        <view bindtap="__e" class="copyCode" data-event-opts="{{[ [ 'tap',[ [ 'copyCode',['$event'] ] ] ] ]}}">复制客服微信</view>
+    </view>
+</view>

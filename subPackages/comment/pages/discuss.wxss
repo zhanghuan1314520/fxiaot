@@ -1,0 +1,507 @@
+.discuss {
+    position: relative;
+}
+
+.content-wrpper {
+    position: absolute;
+    top: 80rpx;
+    padding-bottom: 120rpx;
+}
+
+.discuss-top-image {
+    width: 100vw;
+    height: 320rpx;
+}
+
+.discuss-top-image image {
+    width: 100%;
+    height: 100%;
+}
+
+.sky-color {
+    color: #2d8cf0!important;
+    margin-right: 6rpx;
+}
+
+.popular {
+    width: 702rpx;
+    background: #fff;
+    box-shadow: 0rpx 2rpx 12rpx 0rpx rgba(11,96,210,.1);
+    border-radius: 12rpx;
+    margin: 0 auto;
+}
+
+.vote {
+    width: 100vw;
+    height: 158rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vote .left,.vote .right {
+    width: 316rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+}
+
+.vote .left {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191121/5dd64ae58d58d.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.vote .center {
+    flex: none;
+    width: 64rpx;
+    height: 44rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191120/5dd4a1afe9a87.png);
+    background-size: cover;
+}
+
+.vote .right {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191121/5dd64af310bc9.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.popular-bottom {
+    padding: 0 24rpx 24rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.popular-bottom .popularMen {
+    height: 34rpx;
+    line-height: 34rpx;
+    margin-left: 14rpx;
+}
+
+.popular-bottom .share-btn {
+    position: absolute;
+    right: 24rpx;
+}
+
+.popular-bottom .popularList {
+    overflow: hidden;
+}
+
+.popular-bottom text {
+    line-height: 34rpx;
+}
+
+.popular-bottom .count-people,.popular-bottom text {
+    font-weight: 400;
+    color: #96989e;
+}
+
+.popular-bottom .popular-img {
+    float: left;
+    position: relative;
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 56rpx;
+    border: 2rpx solid #edeff2;
+    margin-right: 6rpx;
+    box-sizing: border-box;
+}
+
+.center-block {
+    height: 20rpx;
+    width: 100vw;
+    background-color: #f5f7fa;
+}
+
+.popular-img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 56rpx;
+    display: inline-block;
+}
+
+.popular-sign {
+    width: 25rpx;
+    height: 25rpx;
+    border-radius: 25rpx;
+    position: absolute;
+    right: -2rpx;
+    bottom: 8rpx;
+}
+
+.feature-content-img {
+    float: left;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 60rpx;
+    padding: 35rpx 0 0 30rpx;
+}
+
+.feature-content-img image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border-radius: 60rpx;
+    border: 2rpx solid rgba(48,55,64,.05);
+}
+
+.right-content {
+    margin-left: 110rpx;
+    padding-right: 24rpx;
+}
+
+.right-content .content {
+    line-height: 44rpx;
+}
+
+.popular-sign image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.right-btn {
+    position: relative;
+    padding-bottom: 18rpx;
+    padding-top: 10rpx;
+    border-bottom: 1rpx solid rgba(21,24,45,.05);
+}
+
+.right-btn-text {
+    margin-left: 10rpx;
+    position: relative;
+    top: -8rpx;
+}
+
+.comment,.good,.share {
+    position: absolute;
+    display: inline-block;
+}
+
+.good {
+    right: 64rpx;
+}
+
+.good .like {
+    margin-right: 10rpx;
+    transition: all .3s ease;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: -4rpx;
+    transform: scale(1);
+}
+
+.good>.number {
+    margin-right: 10rpx;
+    padding-right: 44rpx;
+    line-height: 44rpx;
+}
+
+.good .top-layout {
+    opacity: 1!important;
+    z-index: 2;
+    transform: scale(1)!important;
+}
+
+.good .bottom-layout {
+    opacity: .3!important;
+    z-index: 1;
+    transform: scale(0)!important;
+}
+
+.comment {
+    right: 0;
+}
+
+.comment .pinglun-icon {
+    width: 36rpx;
+    height: 36rpx;
+    display: inline-block;
+}
+
+.share {
+    right: 0;
+    background: transparent;
+    line-height: 1.5;
+}
+
+.right-content-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0 4rpx;
+    align-items: center;
+}
+
+.contact-salesman-guanzhu,.contact-salesman-yiguanzhu {
+    top: 40rpx;
+    background: #f5f5f5;
+    height: 50rpx;
+    padding: 0 20rpx;
+    line-height: 50rpx;
+    border-radius: 50rpx;
+    color: #2d8cf0;
+    display: inline-block;
+    margin-right: 15rpx;
+}
+
+.discuss-title {
+    padding: 30rpx 24rpx 0;
+}
+
+.discuss-title .title {
+    display: inline-block;
+    line-height: 1;
+}
+
+.project-name {
+    padding: 10rpx 0;
+    line-height: 1;
+}
+
+.project-name text {
+    margin-right: 15rpx;
+}
+
+.toggle {
+    padding: 10rpx 0;
+}
+
+.discuss-feature {
+    border-bottom: 20rpx solid #f7f7f7;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,.05);
+    z-index: 100;
+}
+
+.upForm {
+    margin: 10rpx 30rpx;
+    line-height: 73rpx;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #2d8cf0;
+    color: #fff;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    font-weight: 700;
+}
+
+.discuss {
+    padding-bottom: 100rpx;
+}
+
+.discuss-feature>view:last-child {
+    border: none;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.nothing-text {
+    line-height: 200rpx;
+}
+
+.getToQuestion,.nothing-text {
+    text-align: center;
+}
+
+.contactTa {
+    color: #16a5af;
+    border: 1rpx solid #16a5af;
+    height: 34rpx;
+    line-height: 34rpx;
+    padding: 0 10rpx;
+    margin-left: 25rpx;
+    border-radius: 8rpx;
+    font-size: 20rpx;
+    display: inline-block;
+}
+
+.user-info {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 310rpx;
+    display: inline-block;
+    font-size: 24rpx;
+    color: #2f8cef;
+}
+
+.right-content-top {
+    display: flex;
+    align-items: center;
+}
+
+.discuss-top-content .left {
+    margin: 36rpx 24rpx 24rpx;
+    padding-top: 36rpx;
+    width: 654rpx;
+    box-sizing: content-box;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #303237;
+    line-height: 52rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.popular-content {
+    padding: 0 24rpx 20rpx;
+}
+
+.popular-content text {
+    line-height: 44rpx;
+}
+
+.contact {
+    width: 118rpx;
+    height: 34rpx;
+    background: #e4f1ff;
+    border-radius: 17rpx;
+    margin-left: 8rpx;
+    font-size: 22rpx;
+    font-weight: 500;
+    color: #2f8cef;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 2rpx;
+}
+
+.contact .icon-box {
+    width: 30rpx;
+    height: 30rpx;
+    background: linear-gradient(48deg,#1469ff,#31c5ff);
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 30rpx;
+    margin-right: 4rpx;
+    margin-left: 2rpx;
+}
+
+.fix-bg {
+    top: 0;
+    background: rgba(0,0,0,.3);
+    height: 100%;
+}
+
+.comment_in,.fix-bg {
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
+
+.comment_in {
+    bottom: 0;
+    box-sizing: border-box;
+    box-shadow: 2rpx 0 8rpx 0 rgba(0,0,0,.1);
+    overflow: hidden;
+    text-align: center;
+    background: #f2f2f2;
+    z-index: 22;
+    padding: 24rpx 24rpx env(safe-area-inset-bottom);
+}
+
+.comment_in.active {
+    padding: 24rpx;
+}
+
+.comment_in .btn {
+    width: 610rpx;
+    line-height: 50rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    border: 2rpx solid rgba(48,55,64,.1);
+    float: left;
+    text-align: left;
+    padding-left: 24rpx;
+    box-sizing: border-box;
+}
+
+.comment_in .btn.active {
+    height: 84rpx;
+}
+
+.comment_in .comment-name {
+    float: right;
+    color: #2f8cef;
+    padding-top: 8rpx;
+    background: transparent;
+    line-height: normal;
+}
+
+.orange-color {
+    color: #f7776a!important;
+}
+
+.comment-child {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    background-color: #f3f3f4;
+    border-radius: 8rpx;
+    position: relative;
+    margin-top: 10rpx;
+}
+
+.blue-text-color {
+    color: #2f8cef!important;
+    font-weight: 700;
+}
+
+.comment_list_user {
+    margin-top: 10rpx;
+    line-height: 36rpx;
+}
+
+.comment_list_user>.contact-box {
+    display: inline-block;
+    position: relative;
+    top: 4rpx;
+}
+
+.comment_list_user:first-child {
+    margin-top: 0;
+}
+
+.attention {
+    position: relative;
+    top: -12rpx;
+    color: #d8d8d8;
+}
+
+.img-style {
+    vertical-align: middle;
+}
+
+.img-style,.img-style-copy {
+    width: 70rpx;
+    height: 25rpx;
+    margin-left: 15rpx;
+}
+
+.right-content .margin {
+    margin-top: 10rpx;
+    color: #6a82c7;
+}
+
+.right-content .margin .new-tongyong-gengduo {
+    display: inline-block;
+    margin-left: 10rpx;
+}

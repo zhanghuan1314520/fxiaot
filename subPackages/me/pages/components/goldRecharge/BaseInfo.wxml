@@ -1,0 +1,15 @@
+<view class="user-info">
+    <view class="info">
+        <image class="avatar" src="{{baseInfo.avatar_url||defaultAvatar}}"></image>
+        <view class="name-box">
+            <view class="name">{{''+(baseInfo.name||'')+''}}</view>
+            <view class="today-point">
+                <text class="label">当前金币</text>
+                <text class="num">{{''+(baseInfo.coins||0)+''}}</text>
+                <view class="split"></view>
+                <text class="label">当前积分</text>
+                <text class="num">{{''+(baseInfo.sales_man_recommend_index||0)+''}}</text>
+            </view>
+        </view>
+    </view>
+</view>

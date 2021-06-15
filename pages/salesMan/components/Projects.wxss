@@ -1,0 +1,21 @@
+.sales-man-project {
+    padding: 0 32rpx;
+    border-top: 20rpx solid #f5f7fa;
+    border-bottom: 20rpx solid #f5f7fa;
+}
+
+.sales-man-project .title {
+    margin-top: 40rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 32rpx;
+}
+
+.sales-man-project .project-list {
+    padding: 40rpx 0;
+}
+
+.sales-man-project .project-list+.project-list {
+    border-top: 1px solid rgba(0,0,0,.07);
+}

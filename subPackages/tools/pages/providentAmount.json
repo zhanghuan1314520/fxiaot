@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "杭州房小团-算公积金额度",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "busi-tab": "/components/UILayout/BusiTab",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "input-item": "/subPackages/tools/pages/component/FormItem/InputItem",
+        "picker-item": "/subPackages/tools/pages/component/FormItem/PickerItem"
+    }
+}

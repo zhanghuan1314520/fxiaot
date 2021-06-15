@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "usingComponents": {
+        "share-template": "/components/shareTemplate",
+        "topic-list": "/components/unifyUI/topicList"
+    }
+}

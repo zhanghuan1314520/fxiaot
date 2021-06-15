@@ -1,0 +1,5 @@
+<view>
+    <view class="container">
+        <brand-pavilion-item bind:__l="__l" itemsData="{{brandData}}" titleData="品牌馆" vueId="6b390782-1"></brand-pavilion-item>
+    </view>
+</view>

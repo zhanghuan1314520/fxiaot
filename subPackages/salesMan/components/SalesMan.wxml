@@ -1,0 +1,25 @@
+<view class="info-container">
+    <navigator catchtap="__e" class="info-wrap" data-event-opts="{{[ [ 'tap',[ [ 'goUserPage',['$event'] ] ] ] ]}}" data-name="红盘会-置业顾问" data-type="link">
+        <view class="info-avatar">
+            <image class="avatar" src="{{detail.sales_man_avatar_url}}"></image>
+        </view>
+        <view class="info-content">
+            <view class="info-name">
+                <text class="info-name__text">{{''+detail.sales_man_name+''}}</text>
+            </view>
+            <image class="info-level" src="{{levelMap[detail.sales_man_grade]}}"></image>
+        </view>
+    </navigator>
+    <view class="icons">
+        <busi-auth-navigator bind:__l="__l" url="{{'navigateTo-authphone://subPackages/me/pages/chatInterface?user_id='+detail.sales_man_session_id}}" vueId="5665b9f0-1" vueSlots="{{['default']}}" wx:if="{{detail.sales_man_session_id>0}}">
+            <view class="phone-cont">
+                <text class="iconnew new-fabuwenda"></text>
+            </view>
+        </busi-auth-navigator>
+        <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callSalesman'] ] ] ]}}" vueId="5665b9f0-2" vueSlots="{{['default']}}" wx:if="{{detail.sales_man_id>0}}">
+            <button class="phone-cont">
+                <text class="iconnew new-dianhua"></text>
+            </button>
+        </base-call-phone>
+    </view>
+</view>

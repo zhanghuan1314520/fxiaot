@@ -1,0 +1,8 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "服务承诺",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

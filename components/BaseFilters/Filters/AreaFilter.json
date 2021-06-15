@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "left-list": "/components/BaseFilters/LeftList",
+        "checkbox-list": "/components/BaseFilters/CheckboxList",
+        "radio-list": "/components/BaseFilters/RadioList",
+        "footer-button": "/components/BaseFilters/FooterButton",
+        "button-group-list": "/components/BaseFilters/ButtonList"
+    }
+}

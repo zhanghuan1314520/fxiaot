@@ -1,0 +1,16 @@
+<base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="4ae88766-1" vueSlots="{{['default']}}">
+    <view class="buys">
+        <view class="buys__content">{{'置业顾问'+receiveUserInfo.name+'现在比较忙，未能及时回复您的消息，小团已经帮您催TA啦，您还可以进行如下操作：'}}</view>
+        <view class="buys__control">
+            <view bindtap="__e" class="buys__control--item" data-event-opts="{{[ [ 'tap',[ [ 'continueWait',['$event'] ] ] ] ]}}">继续等待</view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneHandle'] ] ] ]}}" vueId="{{'4ae88766-2'+','+'4ae88766-1'}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="buys__control--item" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">拨打置业顾问电话</view>
+            </authorization>
+            <view bindtap="__e" class="buys__control--item" data-event-opts="{{[ [ 'tap',[ [ 'askWeixin',['$event'] ] ] ] ]}}">添加置业顾问微信</view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['askCallMe'] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'4ae88766-3'+','+'4ae88766-1'}}" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="buys__control--item" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">让顾问给我打电话</view>
+            </authorization>
+            <view bindtap="__e" class="buys__control--item" data-event-opts="{{[ [ 'tap',[ [ 'replaceHandle',['$event'] ] ] ] ]}}">更换其他顾问咨询</view>
+        </view>
+    </view>
+</base-layout>

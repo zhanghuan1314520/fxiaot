@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "image-loader": "/components/ImageLoader",
+        "custom-navigator": "/components/CustomNavigator"
+    }
+}

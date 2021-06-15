@@ -1,0 +1,9 @@
+.imageBox {
+    text-align: center;
+}
+
+.imageBox>image {
+    display: inline-block;
+    width: 400rpx;
+    margin: 150rpx 0 40rpx;
+}

@@ -1,0 +1,11 @@
+<view>
+    <view class="page">
+        <view class="choose-box">
+            <image class="bg" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20180929/5baf14f03aaed.png"></image>
+            <view class="cont">
+                <image bindtap="__e" class="salesMan cont-img" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$0'],['salesMan'] ] ] ] ]}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15530515201785666.jpg"></image>
+                <image bindtap="__e" class="broker cont-img" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$0'],['broker'] ] ] ] ]}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15530515157757202.jpg"></image>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "project-item": "/components/ProjectItem/ProjectItem"
+    }
+}

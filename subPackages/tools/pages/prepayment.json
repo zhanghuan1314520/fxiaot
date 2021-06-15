@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "杭州房小团-提前还款计算",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "radio-group-item": "/subPackages/tools/pages/component/FormItem/RadioGroupItem",
+        "input-item": "/subPackages/tools/pages/component/FormItem/InputItem",
+        "radio-group-with-input": "/subPackages/tools/pages/component/FormItem/RadioGroupWithInput",
+        "date-picker": "/subPackages/tools/pages/component/FormItem/DatePicker",
+        "white-space": "/subPackages/tools/components/WhiteSpace",
+        "ac-loan-picker": "/subPackages/tools/pages/component/LoanPicker",
+        "bu-loan-picker": "/subPackages/tools/pages/component/BuLoanPicker"
+    }
+}

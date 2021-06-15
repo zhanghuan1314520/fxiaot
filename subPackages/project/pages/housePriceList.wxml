@@ -1,0 +1,84 @@
+<view>
+    <view class="page">
+        <view class="project-top">
+            <view class="image-box">
+                <image class="project-image" mode="scaleToFill" src="{{cover}}"></image>
+                <view class="image-blur"></view>
+            </view>
+            <custom-nav-header bind:__l="__l" vueId="f6ed5a64-1" vueSlots="{{['default']}}">
+                <view class="name-box fz-18">房小团</view>
+            </custom-nav-header>
+            <view class="top-info">
+                <navigator bindtap="__e" class="project-name" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" data-type="link" hoverClass="none" url="{{'/pages/lotteryDetail?id='+lotteryId+'&project_id='+projectId}}">
+                    <tex bind:__l="__l" class="text" vueId="f6ed5a64-2" vueSlots="{{['default']}}">{{''+title+''}}</tex>一房一价</navigator>
+                <view class="project-info">
+                    <navigator class="btn house-price-btn" hoverClass="none" url="{{'/subPackages/project/pages/sourceList?project_id='+projectId+'&lottery_id='+lotteryId+'&name='+title}}">
+                        <text class="text">{{''+toHouseOrigin+''}}</text>
+                        <text class="iconnew new-tongyong-gengduo"></text>
+                    </navigator>
+                    <navigator bindtap="__e" class="btn" data-content="总平图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="房源表列表" data-type="link" hoverClass="none" url="{{'/subPackages/project/pages/projectPlanar/index?projectId='+projectId+'&projectName='+title}}" wx:if="{{isShowProjectPlan}}">
+                        <text class="text">总平图</text>
+                        <text class="iconnew new-tongyong-gengduo"></text>
+                    </navigator>
+                </view>
+                <view class="call-phone-item">
+                    <text class="left-text">装修价格或其他问题，可致电售楼部咨询</text>
+                </view>
+            </view>
+            <view class="top-container">
+                <view class="{{['container-top-content',tabBarLength>3?'active':'']}}">
+                    <view bindtap="__e" class="{{[ 'filter '+(item.isSelected||tabbarListIndex===index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tabBarHandle',[index] ] ] ] ]}}" wx:if="{{item.isShow}}" wx:for="{{tabbarList}}" wx:key="index">
+                        <text class="text">{{''+item.text+''}}</text>
+                        <text class="{{['iconnew new-zhankai fz-11',tabbarListIndex===index?'active':'']}}"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="project-top-bg" style="{{'height:'+sysHeight+'px'}}"></view>
+        <view class="house-price-container">
+            <view class="house-price-list" wx:if="{{houseList.length>0&&!loading}}">
+                <view wx:for="{{houseList}}" wx:for-item="itemData" wx:key="index">
+                    <house-price-item bind:__l="__l" item="{{itemData}}" projectId="{{projectId}}" showSaleStatus="{{showSaleStatus}}" vueId="{{'f6ed5a64-3-'+index}}"></house-price-item>
+                </view>
+                <view class="layout-center" style="padding:20rpx;" wx:if="{{!more}}">
+                    <text style="font-size:28rpx;color:#999999;">我也是有底线的哦~ (๑•́ ₃ •̀๑)</text>
+                </view>
+                <view class="loading-runing" wx:else>
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="full-screen" wx:if="{{loading}}">
+                    <view id="spinner" style="margin-top:-200rpx;"></view>
+                </view>
+                <view class="nothing gray-block" wx:else>
+                    <image class="article-nothing" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d80af20810ac.png"></image>
+                    <view class="fz-13 content">暂无数据～</view>
+                </view>
+            </block>
+        </view>
+        <view class="filter-content" style="{{'top:'+sysHeight+'px'}}">
+            <house-price-filter bind:__l="__l" bind:reset="__e" bind:submit="__e" bind:updateTabbarListIndex="__e" data-event-opts="{{[ [ '^updateTabbarListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateTabbarListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^reset',[ ['resetHandle'] ] ],[ '^submit',[ ['onFilterSubmit'] ] ] ]}}" lotteryId="{{lotteryId}}" tabbarListIndex="{{tabbarListIndex}}" vueId="f6ed5a64-4"></house-price-filter>
+        </view>
+        <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}" style="{{'top:'+sysHeight+'px'}}" wx:if="{{tabbarListIndex!==-1}}"></view>
+    </view>
+    <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhone'] ] ] ]}}" vueId="f6ed5a64-5" vueSlots="{{['default']}}">
+        <view bindtap="__e" class="phone-circle" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ] ]}}" style="{{'top:'+phoneHeight+'px'}}">
+            <text class="text">小团将对您
+                的电话保密</text>
+            <text class="phone-icon"></text>
+        </view>
+    </base-call-phone>
+    <busi-share-icon bind:__l="__l" bottom="{{bottomHeight}}" class="vue-ref" custom="{{true}}" data-ref="busiShareIcon" vueId="f6ed5a64-6" vueSlots="{{['default']}}" wx:if="{{!loading}}">
+        <button class="share" data-type="button" openType="share"></button>
+    </busi-share-icon>
+    <view bindtap="__e" class="toggle-list iconnew new-ic_loudongmoshi_qiehuan fz-26" data-event-opts="{{[ [ 'tap',[ [ 'switchMode',['$event'] ] ] ] ]}}" data-name="切换模式" data-type="button" openType="redirect" style="{{isPhoneX?'bottom:160rpx':'bottom:96rpx'}}" wx:if="{{!loading}}"></view>
+    <view class="guide-box" style="{{isPhoneX?'bottom:166rpx':'bottom:108rpx'}}" wx:if="{{showGuide}}">
+        <view class="text fz-14">点击这里切换回楼栋模式</view>
+    </view>
+</view>

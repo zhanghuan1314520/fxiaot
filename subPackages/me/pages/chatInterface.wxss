@@ -1,0 +1,42 @@
+page {
+    padding-bottom: 0;
+}
+
+.page {
+    background: #f5f7fa;
+}
+
+.chatInterface {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 202rpx);
+    box-sizing: border-box;
+}
+
+.chatInterface__item {
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.chatInterface__item:first-child {
+    padding-top: 40rpx;
+}
+
+.header-nav {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100vw;
+}
+
+.reply-container {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100vw;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: #f5f7fa;
+}

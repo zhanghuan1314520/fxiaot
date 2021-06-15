@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "地铁找房",
+    "usingComponents": {
+        "share-button": "/subPackages/project/components/BaseShareBtn"
+    }
+}

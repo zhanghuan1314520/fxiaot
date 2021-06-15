@@ -1,0 +1,153 @@
+.recommend-item {
+    padding-top: 24rpx;
+    padding-bottom: 24rpx;
+    overflow: hidden;
+    border-bottom: 1rpx solid rgba(0,0,0,.07);
+}
+
+.recommend-item>.avatar {
+    display: block;
+    float: left;
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 72rpx;
+    overflow: hidden;
+    border: 1rpx solid #eee;
+    box-sizing: border-box;
+}
+
+.recommend-item .right-comment {
+    margin-left: 92rpx;
+}
+
+.recommend-item .right-comment>.content {
+    padding-bottom: 8rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+    overflow: hidden;
+}
+
+.recommend-item .right-comment>.content>.text {
+    width: 100%;
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: rgba(0,0,0,.85);
+    line-height: 48rpx;
+}
+
+.recommend-item .right-comment>.content .content-wechat {
+    white-space: nowrap;
+    font-size: 28rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: #2d8cf0;
+    line-height: 26rpx;
+}
+
+.recommend-item .right-comment>.content>.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    color: 96989E;
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    float: left;
+    margin-left: 30rpx;
+    color: #979797;
+    position: relative;
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon .number {
+    position: relative;
+    padding-right: 44rpx;
+    margin-top: 10rpx;
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon .pinglun-icon {
+    position: relative;
+    top: 2rpx;
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon>.like {
+    transition: all .3s ease;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(1);
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon>.top-layout {
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1);
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon>.bottom-layout {
+    opacity: .3;
+    z-index: 1;
+    transform: scale(0);
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon .icon {
+    margin-left: 10rpx;
+}
+
+.recommend-item .right-comment>.content>.bottom .right>.icon.active {
+    color: #ff7d4f;
+}
+
+.recommend-item .avatar_nickname {
+    width: 100%;
+    overflow: hidden;
+}
+
+.recommend-item .avatar_nickname>.nickname {
+    line-height: 40rpx;
+    margin-top: 10rpx;
+    margin-bottom: 8rpx;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: rgba(0,0,0,.45);
+}
+
+.recommend-item .avatar_nickname>.nickname>.image {
+    width: 100rpx;
+    height: 34rpx;
+    margin-left: 8rpx;
+}
+
+.recommend-item:last-child .content {
+    border-bottom: none;
+}
+
+.recommend-item .official-drainage {
+    display: flex;
+    align-items: center;
+    margin-top: 4rpx;
+    justify-content: space-between;
+}
+
+.recommend-item .official-drainage .join-group-chat {
+    background: url(https://imgcdn.huanjutang.com/assets/img/202010141032108081.png) no-repeat 8rpx/40rpx,rgba(45,140,240,.1);
+    border-radius: 29rpx;
+    width: 176rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    box-sizing: border-box;
+    padding-left: 54rpx;
+    color: #2d8cf0;
+    font-size: 26rpx;
+    font-weight: 700;
+}
+
+.wechatIcon {
+    width: 40rpx;
+    height: 40rpx;
+}

@@ -1,0 +1,16 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 100,
+    "usingComponents": {
+        "countdown": "/subPackages/activity/components/leaderboard/countdown",
+        "project": "/subPackages/activity/components/leaderboard/project",
+        "overlapping": "/subPackages/activity/components/leaderboard/overlapping",
+        "order-project": "/subPackages/activity/components/leaderboard/OrderProject",
+        "modal": "/subPackages/activity/components/leaderboard/modal",
+        "share-popup": "/components/UILayout/BusiPopup/SharePopup",
+        "popup": "/components/UILayout/BusiPopup/BasePopup",
+        "tab": "/subPackages/activity/components/leaderboard/tab",
+        "create-poster": "/subPackages/activity/components/CreatePoster"
+    }
+}

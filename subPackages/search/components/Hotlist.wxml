@@ -1,0 +1,18 @@
+<view class="search__hotlist">
+    <view class="search__hotlist__bg-box skeletons-rect">
+        <image class="search__hotlist__bg" mode="aspectFill" src="{{listData.name.bgImg}}"></image>
+    </view>
+    <custom-navigator bind:__l="__l" class="search__hotlist__header" dataName="{{listData.name.text}}" dataType="link" url="{{'/subPackages/project/pages/projectRank?type='+listData.key}}" vueId="2396df26-1"></custom-navigator>
+    <view class="search__hotlist__list">
+        <custom-navigator bind:__l="__l" class="{{['search__hotlist__list-item hotlist__list-item-'+index+1]}}" dataContent="{{listData.name.text}}" dataName="{{item.name}}" dataType="link" url="{{item.url}}" vueId="{{'2396df26-2-'+index}}" vueSlots="{{['default']}}" wx:for="{{listData.list}}" wx:key="id">
+            <view bindtap="__e" class="search__hotlist__item skeletons-rect" data-custom-event-name="{{item.ad?'AD_click':''}}" data-custom-prop-ad_code="{{item.ad.ad_code}}" data-custom-prop-ad_keyword="{{item.ad.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{item.ad.ad_nike_name}}" data-custom-prop-ad_number="{{item.ad.ad_number}}" data-custom-prop-ad_source="projectRank" data-custom-prop-ad_type="order" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}">
+                <view class="search__list__item-rank fz-13 white-color">{{''+index+1+''}}</view>
+                <view class="search__list__item-name fz-14">{{''+(item.name||'')+''}}</view>
+                <view class="search__list__item-icon iconnew new-tongyong-gengduo fz-14"></view>
+            </view>
+        </custom-navigator>
+    </view>
+    <custom-navigator bind:__l="__l" class="search__hotlist__more" data-name="查看全部" data-type="link" url="{{'/subPackages/project/pages/projectRank?type='+listData.key}}" vueId="2396df26-3" vueSlots="{{['default']}}">
+        <view class="search__list__more-text fz-13 sk-hide">查看全部</view>
+    </custom-navigator>
+</view>

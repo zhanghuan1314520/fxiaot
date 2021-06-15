@@ -1,0 +1,26 @@
+<view catchtouchmove="__e" class="reply" data-event-opts="{{[ [ 'touchmove',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">
+    <view class="reply__tools">
+        <tools-bar bind:__l="__l" bind:onInvite="__e" bind:onLocation="__e" bind:onPhrase="__e" data-event-opts="{{[ [ '^onPhrase',[ ['clickPhraseHandle'] ] ],[ '^onLocation',[ ['clickLocationHandle'] ] ],[ '^onInvite',[ ['clickInviteHandle'] ] ] ]}}" vueId="f3fdf4a8-1"></tools-bar>
+    </view>
+    <view class="reply__container">
+        <view catchtap="__e" class="reply__container--more" data-event-opts="{{[ [ 'tap',[ [ 'moreHandle',['$event'] ] ] ] ]}}">
+            <image class="{{['icon',isMore?'active':'']}}" src="https://imgcdn.huanjutang.com/assets/img/2019911174478081.png"></image>
+        </view>
+        <view catchtap="__e" class="reply__container--emoji" data-event-opts="{{[ [ 'tap',[ [ 'emojiHandle',['$event'] ] ] ] ]}}">
+            <image class="icon" src="https://imgcdn.huanjutang.com/assets/img/20213161555398081.png"></image>
+        </view>
+        <view class="reply__container--input">
+            <input bindblur="__e" bindconfirm="__e" bindinput="__e" class="input" confirmHold="{{true}}" confirmType="send" cursorSpacing="10" data-event-opts="{{[ [ 'confirm',[ [ 'onConfirm',['$event'] ] ] ],[ 'blur',[ [ 'getCursor',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','content','$event',[] ] ] ] ] ]}}" maxlength="{{-1}}" placeholder="对TA发送消息" placeholderStyle="font-size:28rpx;color:#DFDFDF;" showConfirmBar="{{false}}" type="text" value="{{content}}"></input>
+        </view>
+    </view>
+    <view class="reply__more" hidden="{{!isMore}}">
+        <more bind:__l="__l" bind:onSendLabel="__e" bind:onSendPicture="__e" data-event-opts="{{[ [ '^onSendPicture',[ ['sendPictrueHandle'] ] ],[ '^onSendLabel',[ ['sendLabelHandle'] ] ] ]}}" projectId="{{projectId}}" vueId="f3fdf4a8-2"></more>
+    </view>
+    <view class="reply__phrases" hidden="{{!isPhrases}}">
+        <phrases bind:__l="__l" bind:onSend="__e" data-event-opts="{{[ [ '^onSend',[ ['sendPhraseHandle'] ] ] ]}}" vueId="f3fdf4a8-3"></phrases>
+    </view>
+    <view class="reply__emoji" hidden="{{!isEmoji}}">
+        <emoji-icon backgroundColor="#F5F7FA" bind:__l="__l" bind:insertemoji="__e" class="mp-emoji" data-event-opts="{{[ [ '^insertemoji',[ ['insertemoji'] ] ] ]}}" showDel="{{false}}" showSend="{{false}}" source="https://imgcdn.huanjutang.com/assets/img/20213161454518081.png" vueId="f3fdf4a8-4"></emoji-icon>
+    </view>
+    <view catchtap="__e" class="reply__bg" data-event-opts="{{[ [ 'tap',[ [ 'hideHandle',['$event'] ] ] ] ]}}" hidden="{{!(isMore||isPhrases||isEmoji)}}"></view>
+</view>

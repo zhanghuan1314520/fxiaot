@@ -1,0 +1,28 @@
+<view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{[ 'scroll-item',[item.skeleton?'skeletons':'',className?'className':''] ]}}" data-event-opts="{{[ [ 'touchstart',[ [ 'touchS',['$event'] ] ] ],[ 'touchmove',[ [ 'touchM',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$0'],['item.id'] ] ] ] ]}}">
+    <view class="{{[ 'item-box',[id===item.id?'active':''] ]}}">
+        <view class="item-left">
+            <view class="item-avatar">
+                <image class="avatar skeletons-circle" src="{{$root.f0}}"></image>
+                <view class="{{['item-status',intentionClass]}}" wx:if="{{$root.g0}}">{{''+intention+''}}</view>
+            </view>
+            <view class="item-info">
+                <text class="info-name skeletons-rect">{{''+(item.linker.name||item.linker.nick_name||'未授权')+''}}</text>
+                <text class="info-time skeletons-rect">{{''+item.display_created_at+''}}</text>
+            </view>
+        </view>
+        <view class="item-chat skeletons-rect">
+            <view bindtap="__e" class="item-chat" data-event-opts="{{[ [ 'tap',[ [ 'jumpUrl',['$0'],['item.link_id'] ] ] ] ]}}" wx:if="{{item.link_id}}">
+                <text class="iconnew new-zixun1"></text>
+            </view>
+        </view>
+    </view>
+    <view class="{{[ 'btns-wrap',[id===item.id?'active':''] ]}}">
+        <view class="{{[ 'btns',[!item.linker.id?'filter':''] ]}}">
+            <view bindtap="__e" class="btn attention" data-event-opts="{{[ [ 'tap',[ [ 'userIntention',[3] ] ] ] ]}}">意向</view>
+            <view bindtap="__e" class="btn potential" data-event-opts="{{[ [ 'tap',[ [ 'userIntention',[2] ] ] ] ]}}">潜在</view>
+            <view bindtap="__e" class="btn invalid" data-event-opts="{{[ [ 'tap',[ [ 'userIntention',[1] ] ] ] ]}}">无效</view>
+        </view>
+        <view class="no-auth" wx:if="{{!item.linker.id}}">该用户暂未授权平台无法标记</view>
+    </view>
+    <view bindtap="__e" class="fixed" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{id===item.id}}"></view>
+</view>

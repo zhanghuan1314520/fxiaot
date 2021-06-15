@@ -1,0 +1,20 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "详情",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "personal-info": "/subPackages/discovery/component/PersonalInfo",
+        "overflow-content": "/subPackages/discovery/component/OverflowContent",
+        "image-row": "/subPackages/discovery/component/ImageRow",
+        "related-project": "/subPackages/discovery/component/RelatedProject",
+        "report": "/subPackages/discovery/component/Report",
+        "comment-item": "/subPackages/discovery/component/CommentItem",
+        "comment-input": "/subPackages/discovery/component/CommentInput",
+        "no-data": "/subPackages/discovery/component/SubNoData",
+        "bottom-line": "/subPackages/discovery/component/BottomLine",
+        "loading": "/subPackages/discovery/component/Loading",
+        "white-space": "/subPackages/discovery/component/WhiteSpace",
+        "authorization": "/components/Authorization"
+    }
+}

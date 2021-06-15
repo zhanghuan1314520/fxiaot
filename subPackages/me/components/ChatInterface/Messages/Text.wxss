@@ -1,0 +1,21 @@
+.text-message {
+    position: relative;
+    display: inline-block;
+    max-width: 450rpx;
+    padding: 24rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #2d8cf0;
+}
+
+.text-message.sender {
+    float: right;
+    right: 22rpx;
+}
+
+.text-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}

@@ -1,0 +1,63 @@
+<view>
+    <view>
+        <view class="settings-line-son" wx:for="{{settingsList}}" wx:key="index">
+            <view bindtap="__e" class="settings-line settings-line-flex" data-event-opts="{{[ [ 'tap',[ [ 'switchChange',[index,'$0'],[ [ ['settingsList','',index,'text'] ] ] ] ] ] ]}}">
+                <text class="left">{{''+item.text+''}}</text>
+                <view class="right fz-13" wx:if="{{item.status==1||item.status==2}}">
+                    <view class="{{[ 'switch-btn '+(item.status==1?'active':'') ]}}">
+                        <view class="circle"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="settings-line-son" wx:if="{{!hasAuthed}}">
+            <view class="settings-line settings-line-flex none-border">
+                <text class="left">微信授权</text>
+                <button bindgetuserinfo="__e" class="right fz-13" data-event-opts="{{[ [ 'getuserinfo',[ [ 'handleGetUserInfo',['$event'] ] ] ] ]}}" disabled="{{authSuccess}}" hoverClass="none" lang="zh_CN" openType="getUserInfo">
+                    <view class="{{[ 'switch-btn '+(authSuccess?'active':'') ]}}">
+                        <view class="circle"></view>
+                    </view>
+                </button>
+            </view>
+        </view>
+        <view class="split-cont"></view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'mydetails',['$event'] ] ] ] ]}}" hoverClass="none" wx:if="{{userInfo.nickName}}">
+            <text class="left">修改个人资料</text>
+            <view class="right">
+                <text class="name">{{''+(userInfo.nickName||'')+''}}</text>
+                <text class="fz-14 gray-96 iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <button bindgetuserinfo="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" wx:else>
+            <text class="left">修改个人资料</text>
+            <view class="right">
+                <text class="fz-14 gray-96 iconnew new-tongyong-gengduo"></text>
+            </view>
+        </button>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'analysis',['/subPackages/salesMan/pages/commonPhrases','常用语设置'] ] ] ] ]}}" wx:if="{{userInfo.sales_man_id>0}}">
+            <text class="left">常用语设置</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'analysis',['/subPackages/tools/pages/businessCode?name=businessQrCode&title=商务合作','商务合作'] ] ] ] ]}}">
+            <text class="left">商务合作</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'analysis',['/subPackages/tools/pages/joinCode?name=contact_us&title=加入我们','加入我们'] ] ] ] ]}}">
+            <text class="left">加入我们</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'analysis',['/subPackages/tools/pages/showCode?name=xqbdQrCode&title=寻求报道','寻求报道'] ] ] ] ]}}">
+            <text class="left">寻求报道</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'analysis',['/subPackages/me/pages/service','服务声明'] ] ] ] ]}}">
+            <text class="left">服务声明</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view class="split-cont"></view>
+        <view bindtap="__e" class="settings-line last-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'analysis',['/subPackages/me/pages/about','关于'+appName] ] ] ] ]}}">
+            <text class="left">{{'关于'+appName+''}}</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+    </view>
+</view>

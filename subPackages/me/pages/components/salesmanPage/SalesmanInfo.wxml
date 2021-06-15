@@ -1,0 +1,14 @@
+<view class="salesman-info">
+    <view class="info-detail">
+        <image bindtap="__e" class="avatar" data-event-opts="{{[ [ 'tap',[ [ 'handleEditInfo',['$event'] ] ] ] ]}}" data-name="修改资料" data-type="link" src="{{salesManData.avatar_url||defaultAvatar}}"></image>
+        <view class="detail">
+            <view class="detail-name">
+                <view class="name">{{''+name+''}}</view>
+                <medals bind:__l="__l" medalItems="{{salesManData.medals}}" userId="{{salesManData.user_id}}" vueId="0f20ddaf-1"></medals>
+            </view>
+            <view class="greetings">{{''+greetings+''}}</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="home-btn" data-event-opts="{{[ [ 'tap',[ [ 'goSalesDetail',['$event'] ] ] ] ]}}" data-name="我的主页" data-type="link">我的主页<view class="iconnew new-tongyong-gengduo"></view>
+    </view>
+</view>

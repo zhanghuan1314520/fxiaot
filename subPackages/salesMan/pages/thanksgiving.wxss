@@ -1,0 +1,136 @@
+.thanksgiving-top {
+    z-index: 300;
+    position: relative;
+    background-image: url(https://imgcdn.huanjutang.com/file/2021/03/16/ce9d114622558cc98f6c69844f4c61af.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.thanks {
+    padding: 26rpx 0 54rpx;
+}
+
+.thanks .time {
+    font-family: PingFangSC-Semibold,PingFang SC;
+    font-weight: 700;
+}
+
+.thanks .desc,.thanks .time {
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0rpx 4rpx 8rpx #5627e5;
+}
+
+.thanks .desc {
+    font-family: PingFangSC-Regular,PingFang SC;
+}
+
+.thanks .desc.lg {
+    font-weight: 700;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    height: 40rpx;
+}
+
+.thanks .desc .yellow {
+    margin: 0 12rpx;
+    color: #fee264;
+    font-size: 36rpx;
+    font-family: PingFangSC-Semibold;
+}
+
+.thanks .desc .yellow.lg {
+    font-size: 48rpx;
+}
+
+.thanks .mt14 {
+    margin-top: 14rpx;
+}
+
+.thanks .mt18 {
+    margin-top: 18rpx;
+}
+
+.poster {
+    position: relative;
+    margin: 78rpx 32rpx 40rpx;
+    padding: 64rpx 26rpx 32rpx 50rpx;
+    width: 686rpx;
+    height: 852rpx;
+    background: #fff;
+    box-shadow: 0rpx 4rpx 14rpx 4rpx #e9e1ff;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+}
+
+.poster .title {
+    position: absolute;
+    top: -50rpx;
+    left: 106rpx;
+    width: 474rpx;
+    height: 122rpx;
+}
+
+.poster .content-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.65);
+    line-height: 44rpx;
+}
+
+.poster .content-item::before {
+    content: "";
+    position: absolute;
+    top: 16rpx;
+    left: -24rpx;
+    width: 14rpx;
+    height: 14rpx;
+    background: #6d58ff;
+    border-radius: 4rpx;
+    transform: rotate(45deg);
+}
+
+.poster .content-item .blue {
+    color: #3304db;
+}
+
+.poster .content-item .yellow {
+    color: #f68f23;
+}
+
+.poster .content-item .btn-yellow {
+    margin-left: 12rpx;
+    width: 136rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f68f23;
+    border-radius: 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.poster .poster-canvas {
+    margin: 24rpx auto 0;
+    background: #fff;
+    border-radius: 8rpx;
+    border: 8rpx solid #c1adfe;
+}
+
+.poster .poster-canvas,.poster .poster-canvas .poster-image {
+    width: 278rpx;
+    height: 496rpx;
+}
+
+.btn-save {
+    margin: 0 32rpx;
+    width: 686rpx;
+    height: 136rpx;
+}

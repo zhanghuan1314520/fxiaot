@@ -1,0 +1,309 @@
+.my-gift .empty .btn-share {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    border-radius: 0;
+    background: none;
+}
+
+page {
+    background: #bd242d url(https://imgcdn.huanjutang.com/file/2020/12/22/45927cc02485b996b1ad50dd11d11fe2.png) 0 0 repeat-y;
+    background-size: 100% auto;
+}
+
+.my-gift {
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/22/45927cc02485b996b1ad50dd11d11fe2.png) 0 0 repeat-y;
+    background-size: 100% auto;
+    box-sizing: border-box;
+    padding: 40rpx 32rpx calc(40rpx + env(safe-area-inset-bottom));
+}
+
+.my-gift .empty {
+    text-align: center;
+    margin-top: 376rpx;
+}
+
+.my-gift .empty .empty-icon {
+    margin: 0 auto;
+    width: 358rpx;
+    height: 184rpx;
+    background: url(https://imgcdn.huanjutang.com/file/2020/12/23/5d7df891669fe703e2cc862214772c32.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.my-gift .empty .empty-text {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 500;
+    color: #faeec9;
+    margin-top: 32rpx;
+}
+
+.my-gift .empty .btn-share {
+    margin: 8rpx auto 0;
+    width: 336rpx;
+    height: 40rpx;
+    background: transparent url(https://imgcdn.huanjutang.com/file/2020/12/23/027de08d0f8642f608812b5f633f0f1f.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.my-gift .list-item {
+    box-sizing: border-box;
+    padding: 32rpx;
+    height: 318rpx;
+    margin-bottom: 28rpx;
+    background: rgba(167,22,30,.58);
+    border-radius: 12rpx;
+    border: 4rpx solid #d1363f;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-gift .left,.my-gift .right {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.my-gift .right {
+    align-items: flex-end;
+}
+
+.my-gift .title {
+    height: 44rpx;
+    width: 400rpx;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.my-gift .title ._img {
+    height: 44rpx;
+    width: 100%;
+}
+
+.my-gift .tag-status {
+    display: flex;
+    align-items: center;
+    margin-top: 16rpx;
+}
+
+.my-gift .tag-text {
+    width: 98rpx;
+    height: 42rpx;
+    justify-content: center;
+    background: rgba(255,228,193,.14);
+    border-radius: 4rpx;
+    font-size: 26rpx;
+    margin-right: 12rpx;
+}
+
+.my-gift .tag-text,.my-gift .win-user {
+    display: flex;
+    align-items: center;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #faeec9;
+}
+
+.my-gift .win-user {
+    font-size: 24rpx;
+}
+
+.my-gift .win-user ._img {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 8rpx;
+    flex: none;
+    border-radius: 50%;
+}
+
+.my-gift .gift-name {
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 500;
+    color: rgba(250,238,201,.6);
+}
+
+.my-gift .time {
+    margin-top: 4rpx;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(250,238,201,.6);
+}
+
+.my-gift .gift-img {
+    width: 154rpx;
+    height: 154rpx;
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+
+.my-gift .gift-img ._img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-gift .btn {
+    width: 176rpx;
+    height: 62rpx;
+    box-sizing: border-box;
+    box-shadow: 0rpx 4rpx 12rpx 0rpx rgba(236,64,23,.35);
+    border-radius: 31rpx;
+    border: 2rpx solid #fbefc8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 500;
+    color: #fbefc8;
+}
+
+.my-gift .winner-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24rpx;
+}
+
+.my-gift .winner-item .winner-left {
+    flex: none;
+    display: flex;
+    align-items: center;
+}
+
+.my-gift .winner-item .winner-avatar {
+    width: 56rpx;
+    height: 56rpx;
+    border: 2rpx solid rgba(250,238,201,.3);
+    flex: none;
+    margin-right: 20rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.my-gift .winner-item .winner-avatar ._img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-gift .winner-item .winner-nick-name {
+    width: 68rpx;
+    margin-right: 10rpx;
+}
+
+.my-gift .winner-item .winner-gift-name,.my-gift .winner-item .winner-nick-name {
+    flex: none;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #faeec9;
+}
+
+.my-gift .winner-item .winner-gift-name {
+    width: 220rpx;
+    word-break: break-all;
+}
+
+.my-gift .winner-item .winner-right {
+    text-align: right;
+    flex: none;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(250,238,201,.6);
+    padding-right: 20rpx;
+}
+
+.my-gift .input-wrapper {
+    height: 846rpx;
+    background: #a7161e url(https://imgcdn.huanjutang.com/file/2020/12/30/0e69c9ac3fbf0288e166d3474f283df1.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.my-gift .input-wrapper .kefu {
+    color: #faeec9;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    font-weight: 400;
+    position: absolute;
+    bottom: 230rpx;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.my-gift .input-wrapper .submit-btn {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 140rpx;
+    width: 296rpx;
+    height: 72rpx;
+}
+
+.my-gift .input-wrapper .inputPlaceholder {
+    color: rgba(250,238,201,.6)!important;
+    font-family: PingFangSC-Regular!important;
+    font-size: 26rpx!important;
+}
+
+.my-gift .input-wrapper .input-address,.my-gift .input-wrapper .input-name,.my-gift .input-wrapper .input-tel {
+    color: #faeec9;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    border: 1rpx solid transparent;
+    position: absolute;
+}
+
+.my-gift .input-wrapper .input-name {
+    top: 59rpx;
+}
+
+.my-gift .input-wrapper .input-name,.my-gift .input-wrapper .input-tel {
+    right: 0;
+    left: 0;
+    height: 78rpx;
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    width: 100%;
+}
+
+.my-gift .input-wrapper .input-tel {
+    top: 230rpx;
+}
+
+.my-gift .input-wrapper .input-address {
+    top: 400rpx;
+    left: 0;
+    height: 130rpx;
+    box-sizing: border-box;
+    padding: 24rpx;
+    width: 100%;
+    min-width: 200rpx;
+}
+
+.my-gift .text1,.my-gift .text2 {
+    color: rgba(250,238,201,.6);
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.my-gift .text1 {
+    bottom: 38rpx;
+}
+
+.my-gift .text2 {
+    bottom: 0;
+}

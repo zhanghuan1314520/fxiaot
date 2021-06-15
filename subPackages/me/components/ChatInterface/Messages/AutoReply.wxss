@@ -1,0 +1,37 @@
+.auto-reply-message {
+    position: relative;
+    display: inline-block;
+    width: 498rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #2d8cf0;
+}
+
+.auto-reply-message.sender {
+    float: right;
+    right: 22rpx;
+}
+
+.auto-reply-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}
+
+.auto-reply-message__content {
+    display: inline-block;
+    padding: 24rpx;
+}
+
+.auto-reply-message__call {
+    width: auto;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    border-top: 1rpx solid rgba(48,55,64,.05);
+    font-size: 30rpx;
+    color: #2d8cf0;
+    border-radius: 0;
+    background: transparent;
+}

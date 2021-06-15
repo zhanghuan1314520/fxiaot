@@ -1,0 +1,42 @@
+.text {
+    position: relative;
+    margin-top: 28rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 44rpx;
+    display: -webkit-box;
+    -webkit-line-clamp: 99999999999;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.text.collapsed {
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+
+.toggle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 140rpx;
+    height: 44rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(90deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.95) 20%,#fff 100%,#fff 0);
+}
+
+.toggle .toggle-text {
+    color: rgba(0,0,0,.45);
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.toggle .iconnew {
+    margin-left: 6rpx;
+    font-size: 20rpx;
+    color: rgba(0,0,0,.45);
+}

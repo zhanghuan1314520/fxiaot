@@ -1,0 +1,9 @@
+<view>
+    <view class="page">
+        <view class="tab-bar" wx:if="{{tabList.length>1}}">
+            <busi-tab activeId="{{nowTab}}" bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['toggleTab'] ] ] ]}}" isScrollView="{{true}}" list="{{tabList}}" vueId="6fbd1b8f-1"></busi-tab>
+        </view>
+        <my-lottery-list bind:__l="__l" bind:updateSaveInformation="__e" data-event-opts="{{[ [ '^updateSaveInformation',[ [ '__set_sync',['$0','saveInformation','$event'],[''] ] ] ],[ '^updateSaveInformation',[ [ '__set_sync',['$0','saveInformation','$event'],[''] ] ] ] ]}}" saveInformation="{{saveInformation}}" vueId="6fbd1b8f-2" wx:if="{{nowTab==1}}"></my-lottery-list>
+        <my-code-list bind:__l="__l" vueId="6fbd1b8f-3" wx:else></my-code-list>
+    </view>
+</view>

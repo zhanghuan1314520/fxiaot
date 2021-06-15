@@ -1,0 +1,65 @@
+page {
+    background: #f5f7fa;
+    padding-bottom: 80rpx;
+}
+
+.header-image {
+    width: 100%;
+    height: 244rpx;
+}
+
+.main-container {
+    margin: 24rpx;
+}
+
+.main-container .item-content {
+    box-shadow: 0 2rpx 12rpx 0 rgba(11,96,210,.1);
+    border-radius: 8rpx;
+    padding: 20rpx 18rpx 32rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+    margin-bottom: 24rpx;
+}
+
+.main-container .item-content .sort-num {
+    width: 72rpx;
+    height: 70rpx;
+    background: #2d8cf0;
+    text-align: center;
+    line-height: 70rpx;
+    position: absolute;
+    top: 0;
+    left: 28rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    font-size: 48rpx;
+}
+
+.main-container .item-content .title {
+    margin: 0 0 30rpx 108rpx;
+    line-height: 42rpx;
+}
+
+.main-container .item-content .title.active {
+    margin-bottom: 8rpx;
+}
+
+.main-container .item-content .item-image {
+    width: 100%;
+}
+
+.main-container .item-content .last-app-content {
+    margin-top: 12rpx;
+}
+
+.main-container .item-content .qr-code-box {
+    text-align: center;
+}
+
+.main-container .item-content .qr-code-box .qr-code {
+    display: inline-block;
+    width: 206rpx;
+    height: 206rpx;
+    margin-top: 16rpx auto 0;
+}

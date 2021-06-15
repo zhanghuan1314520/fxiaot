@@ -1,0 +1,4 @@
+.base-layout {
+    position: relative;
+    z-index: 10;
+}

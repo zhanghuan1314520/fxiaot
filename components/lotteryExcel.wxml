@@ -1,0 +1,34 @@
+<view class="excel-container">
+    <view class="only-total-num-table" wx:if="{{tableData&&tableData.total_room_num}}">
+        <view class="{{[tableData.lt_triple_info.value.length>0&&tableData.gte_triple_info.title?'left-total-num':tableData.lt_triple_info.length==0&&tableData.gte_triple_info.title?'one-table left-total-num':'left-total-num no-title']}}">
+            <text class="num">{{''+tableData.total_room_num+''}}</text>
+            <text class="text">房源总套数</text>
+        </view>
+        <view class="right-content">
+            <view class="-top" wx:if="{{tableData.gte_triple_info.value.length>0}}">
+                <view class="table-title" wx:if="{{tableData.gte_triple_info.title}}">{{''+tableData.gte_triple_info.title+''}}<text bindtap="__e" class="iconnew icon new-changjianwenti" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['$0'],['tableData.gte_triple_info.url'] ] ] ] ]}}"></text>
+                </view>
+                <view class="-table">
+                    <view class="tr" wx:for="{{tableData.gte_triple_info.value}}" wx:key="index">
+                        <view class="td" wx:for="{{item}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="-bottom" wx:if="{{tableData.lt_triple_info.value.length>0}}">
+                <view class="table-title">{{''+tableData.lt_triple_info.title+''}}<text bindtap="__e" class="iconnew icon new-changjianwenti" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['$0'],['tableData.lt_triple_info.url'] ] ] ] ]}}"></text>
+                </view>
+                <view class="-table">
+                    <view class="tr" wx:for="{{tableData.lt_triple_info.value}}" wx:key="index">
+                        <view class="td" wx:for="{{item}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="table-data" wx:else>
+        <view class="tr" wx:for="{{lotteryRate}}" wx:key="index">
+            <view class="td" wx:for="{{item}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</view>
+        </view>
+        <image class="image" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/202012181719358081.png" wx:if="{{isExceedTriple}}"></image>
+    </view>
+</view>

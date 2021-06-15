@@ -1,0 +1,87 @@
+<base-layout bind:__l="__l" customerPadding="{{left:'0rpx',right:'0rpx'}}" margin="{{margin}}" padding="{{padding}}" vueId="f761d700-1" vueSlots="{{['default']}}">
+    <view class="project">
+        <view class="{{['filter-container projects__filters']}}" style="{{'position:'+(forceFixed?'fixed':'sticky')+';'+'top:'+(hasPureSearch?'128rpx':'')+';'}}" wx:if="{{settings.filter==='开启'}}">
+            <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="{{['vue-ref',tabbarListIndex!==-1?'filters__fixed':'']}}" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['onFilterReset'] ] ],[ '^onSubmit',[ [ 'submitHandle',['$event','$0','$1'],['item','index'] ] ] ] ]}}" data-ref="baseFilters" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" style="{{'top:'+(tabbarListIndex===-1?'':forceFixed?'':'128rpx')+';'}}" vueId="{{'f761d700-2'+','+'f761d700-1'}}"></base-filters>
+            <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+        </view>
+        <view class="not_id_card" wx:if="{{list.length==0&&!isRequesting}}">
+            <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+            <text class="text">暂无楼盘</text>
+        </view>
+        <block wx:else>
+            <view class="middle__item" wx:for="{{list}}" wx:for-item="detail" wx:key="index">
+                <view bindtap="__e" class="middle__item__child" data-content="{{content}}" data-event-opts="{{[ [ 'tap',[ [ 'sendAnalysisHandle',['$0',index],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="{{detail.name}}" data-type="project" id="{{detail.id}}" wx:if="{{!detail.ad_number}}">
+                    <view class="project__left">
+                        <image class="project__headIcon" mode="aspectFill" src="{{detail.cover||'https://imgcdn.huanjutang.com/assets/img/20202111520167887.png'}}"></image>
+                        <view class="{{[ 'hot-rank '+(index<3?' hot-rank--red ':'') ]}}" wx:if="{{type=='hotNum'&&index<20}}">{{''+index+1+''}}</view>
+                        <view class="image__gradient"></view>
+                        <view class="icon-618" wx:if="{{detail.is_activity==1}}"></view>
+                        <view class="project__view">
+                            <text class="iconnew new-liulan fz-15 project__view__icon"></text>
+                            <text class="mar-left-8 fz-11 project__view__text">{{''+detail.page_views+''}}</text>
+                        </view>
+                        <view class="project__left__tags">
+                            <view class="left__tags__item" wx:if="{{detail.is_video==1}}">
+                                <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+                            </view>
+                            <view class="left__tags__item" wx:if="{{detail.has_vr>0}}">
+                                <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201912191716568081.png"></image>
+                            </view>
+                            <view class="left__tags__item" wx:if="{{detail.has_panorama}}">
+                                <image class="tags__item__img" src="https://imgcdn.huanjutang.com/assets/img/201911201049218081.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="project__info">
+                        <view class="project__info__top">
+                            <view class="card__info__name ellipsis">{{''+detail.name+''}}</view>
+                        </view>
+                        <view class="mar-top-10" wx:if="{{detail.avg_price.length==1}}">
+                            <text class="project__info__price project__info__price--1" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                        </view>
+                        <view class="mar-top-8" wx:if="{{detail.avg_price.length==2}}">
+                            <text class="project__info__price project__info__price--2" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                        </view>
+                        <view class="mar-top-10" wx:if="{{detail.avg_price.length==3}}">
+                            <text class="project__info__price project__info__price--3" wx:for="{{detail.avg_price}}" wx:for-index="pindex" wx:for-item="price" wx:key="pindex">{{''+price+''}}</text>
+                        </view>
+                        <view class="mar-top-10 project__info__location ellipsis" wx:if="{{detail.project_location||detail.area||biz_circle_name}}">
+                            <text wx:if="{{detail.area}}">{{''+detail.area+''}}</text>
+                            <text class="mar-left-12" wx:if="{{detail.biz_circle_name}}">{{''+detail.biz_circle_name+''}}</text>
+                            <text class="mar-left-12">{{''+detail.comment_num+'条评论'}}</text>
+                        </view>
+                        <view class="mar-top-10 project__info__bottom" wx:if="{{detail.tips.length}}">
+                            <view class="{{[ 'info__tips__item '+(statusStyles[item]?statusStyles[item]:'') ]}}" wx:for="{{detail.tags}}" wx:key="index">{{''+item+''}}</view>
+                            <view class="feature__tips__item" wx:for="{{detail.characteristic}}" wx:key="index">{{''+item+''}}</view>
+                        </view>
+                        <view>
+                            <view class="project__info__spot" wx:if="{{detail.time_array&&detail.time_array.type}}">
+                                <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e747696f0b86.png" wx:if="{{detail.time_array['type']==1}}"></image>
+                                <block wx:else>
+                                    <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e74776a56cc1.png" wx:if="{{detail.time_array['type']==2}}"></image>
+                                    <block wx:else>
+                                        <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e7477e5b3434.png" wx:if="{{detail.time_array['type']==3}}"></image>
+                                        <block wx:else>
+                                            <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200320/5e74779e776f5.png" wx:if="{{detail.time_array['type']==4}}"></image>
+                                        </block>
+                                    </block>
+                                </block>
+                                <text class="mar-left-10 light__title">{{''+detail.time_array['text']+''}}</text>
+                                <text class="line"></text>
+                                <text class="light__spot ellipsis">{{''+detail.time_array['time']+''}}</text>
+                            </view>
+                            <view class="project__info__spot" wx:if="{{detail.light_spot}}">
+                                <image class="light__icon" src="https://imgcdn.huanjutang.com/assets/img/20200317/5e709ad337d9d.png"></image>
+                                <text class="mar-left-10 light__title">楼盘亮点</text>
+                                <text class="line"></text>
+                                <text class="light__spot ellipsis">{{''+detail.light_spot+''}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <base-ad-flow bind:__l="__l" detailSource="{{'collection'+settings.assocated_collection.data_uri}}" flowDetail="{{detail}}" vueId="{{'f761d700-3-'+index+','+'f761d700-1'}}" wx:else></base-ad-flow>
+            </view>
+        </block>
+    </view>
+    <base-loading bind:__l="__l" loading="{{ladding}}" more="{{more}}" vueId="{{'f761d700-4'+','+'f761d700-1'}}"></base-loading>
+</base-layout>

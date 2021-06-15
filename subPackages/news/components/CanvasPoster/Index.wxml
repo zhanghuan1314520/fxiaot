@@ -1,0 +1,4 @@
+<view class="{{['canvas-poster',className]}}">
+    <photo-permissions-settings bind:__l="__l" bind:updateShowSetting="__e" data-event-opts="{{[ [ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ],[ '^updateShowSetting',[ [ '__set_sync',['$0','showPermissionsSetting','$event'],[''] ] ] ] ]}}" permissionsCallback="{{savePhoto}}" showSetting="{{showPermissionsSetting}}" txt="保存海报" vueId="66df7fb1-1"></photo-permissions-settings>
+    <canvas canvasId="_canvas-poster" style="{{'width:'+width+'px'+';'+'height:'+height+'px'+';'+'position:'+'fixed'+';'+'top:'+'-'+height+'px'+';'+'left:'+'-'+width+'px'+';'}}"></canvas>
+</view>

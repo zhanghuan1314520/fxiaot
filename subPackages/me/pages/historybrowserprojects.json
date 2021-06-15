@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "杭州房小团-浏览记录",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "project-items": "/components/ProjectItem/ProjectItem"
+    }
+}

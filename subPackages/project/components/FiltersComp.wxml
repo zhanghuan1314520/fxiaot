@@ -1,0 +1,35 @@
+<view catchtap="__e" catchtouchmove="__e" class="filters-comp__wrapper" data-event-opts="{{[ [ 'touchmove',[ [ 'touchmoveHandler',['$event'] ] ] ],[ 'tap',[ [ 'stopHandle',['$event'] ] ] ] ]}}">
+    <view class="house-type">
+        <view bindtap="__e" class="{{['house-type-list',optionsIndex==='area'||hightLight.area||descText.area!='区域'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['area'] ] ] ] ]}}" wx:if="{{showItem.area}}">
+            <view class="house-type-text fz-14">{{''+descText.area+''}}</view>
+            <view class="iconnew new-zhankai"></view>
+        </view>
+        <view bindtap="__e" class="{{['house-type-list',optionsIndex==='price'||hightLight.price||descText.price!='价格'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['price'] ] ] ] ]}}" wx:if="{{showItem.price}}">
+            <view class="house-type-text fz-14">{{''+descText.price+''}}</view>
+            <view class="iconnew new-zhankai"></view>
+        </view>
+        <view bindtap="__e" class="{{['house-type-list',optionsIndex==='housePlan'||hightLight.housePlan||descText.housePlan!='户型'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['housePlan'] ] ] ] ]}}" wx:if="{{showItem.housePlan}}">
+            <view class="house-type-text fz-14">{{''+descText.housePlan+''}}</view>
+            <view class="iconnew new-zhankai"></view>
+        </view>
+        <view bindtap="__e" class="{{['house-type-list',optionsIndex==='square'||hightLight.square||descText.square!='面积'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['square'] ] ] ] ]}}" wx:if="{{showItem.square}}">
+            <view class="house-type-text fz-14">{{''+descText.square+''}}</view>
+            <view class="iconnew new-zhankai"></view>
+        </view>
+        <view bindtap="__e" class="{{['house-type-list',optionsIndex==='others'||hightLight.others||descText.others!='更多'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['others'] ] ] ] ]}}" wx:if="{{showItem.others}}">
+            <view class="house-type-text fz-14">{{''+descText.others+''}}</view>
+            <view class="iconnew new-zhankai"></view>
+        </view>
+        <view bindtap="__e" class="{{['house-type-list',optionsIndex==='priceSort'||hightLight.priceSort||descText.priceSort!='排序'?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['priceSort'] ] ] ] ]}}" wx:if="{{showItem.priceSort}}">
+            <view class="house-type-text fz-14">{{''+descText.priceSort+''}}</view>
+            <view class="iconnew new-zhankai"></view>
+        </view>
+    </view>
+    <view class="fliter-map__tab" wx:if="{{type==='map'&&!optionsIndex}}">
+        <view bindtap="__e" class="{{[activeId===item.id?'view active':'view']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleTapChange',[index,'$0'],[ [ ['tabList','',index,'param'] ] ] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">{{''+item.content+''}}</view>
+    </view>
+    <view class="filters-content__wrapper">
+        <filters-comp-content bind:__l="__l" bind:changeDescText="__e" bind:closeHide="__e" bind:updateOptionsIndex="__e" class="vue-ref" data-event-opts="{{[ [ '^updateOptionsIndex',[ [ '__set_sync',['$0','optionsIndex','$event'],[''] ] ] ],[ '^updateOptionsIndex',[ [ '__set_sync',['$0','optionsIndex','$event'],[''] ] ] ],[ '^changeDescText',[ ['changeDescText'] ] ],[ '^closeHide',[ ['closeHide'] ] ] ]}}" data-ref="filtersCompContent" descFatherText="{{descText}}" filterOptions="{{filterOptionsTmp}}" multiple="{{multipleTmp}}" optionsIndex="{{optionsIndex}}" vueId="01d0618f-1"></filters-comp-content>
+    </view>
+    <view bindtap="__e" catchtouchmove="__e" class="hide-bg" data-event-opts="{{[ [ 'touchmove',[ [ 'handleTouch',['$event'] ] ] ],[ 'tap',[ [ 'closeHideBg',['$event'] ] ] ] ]}}" wx:if="{{optionsIndex}}"></view>
+</view>

@@ -1,0 +1,67 @@
+<view class="leaderboard-project data-v-68cbcd9d">
+    <busi-nav-header bind:__l="__l" class="data-v-68cbcd9d vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" vueId="6fe9793f-1"></busi-nav-header>
+    <view class="project-image data-v-68cbcd9d">
+        <image class="image data-v-68cbcd9d" mode="aspectFill" src="{{detail.cover}}"></image>
+        <view class="desc data-v-68cbcd9d">{{'房小团 · '+(detail.vote_group_name||'房小团')+''}}</view>
+    </view>
+    <view class="project-main data-v-68cbcd9d">
+        <image class="background data-v-68cbcd9d" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20201210103528081.png"></image>
+        <view class="project-content data-v-68cbcd9d">
+            <view class="project-rank data-v-68cbcd9d">
+                <overlapping bind:__l="__l" class="data-v-68cbcd9d" font="{{(detail.code||'1')+'号楼盘'}}" fontType="text" vueId="6fe9793f-2" vueSlots="{{['default']}}">
+                    <view class="slot-box data-v-68cbcd9d">
+                        <view class="slot-top data-v-68cbcd9d">
+                            <view class="name data-v-68cbcd9d">{{''+(detail.object_name||'')+''}}</view>
+                            <view class="link data-v-68cbcd9d">
+                                <view class="view data-v-68cbcd9d">{{''+(detail.total_visitor_number||0)+'次浏览'}}</view>
+                                <view bindtap="__e" class="detail data-v-68cbcd9d" data-content="detail.object_name" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$0'],['detail.object_id'] ] ] ] ]}}" data-name="楼盘详情" id="{{detail.object_id}}">
+                                    <text class="text data-v-68cbcd9d">进入楼盘</text>
+                                    <image class="image data-v-68cbcd9d" src="https://imgcdn.huanjutang.com/assets/img/20201210112548081.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="slot-bottom data-v-68cbcd9d">
+                            <view class="left data-v-68cbcd9d">
+                                <text class="num data-v-68cbcd9d">{{'第 '+(detail.ranking||1)+' 名'}}</text>
+                                <text class="text data-v-68cbcd9d">当前排名</text>
+                            </view>
+                            <view class="right data-v-68cbcd9d">
+                                <text class="num data-v-68cbcd9d">{{''+(detail.total_vote_number||0)+'票'}}</text>
+                                <text class="text data-v-68cbcd9d">{{''+(detail.rankNotice||'')+''}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </overlapping>
+            </view>
+            <view class="project-desc data-v-68cbcd9d">
+                <view class="button-title data-v-68cbcd9d">楼盘介绍</view>
+                <view class="{{['data-v-68cbcd9d','text',hideText?'overflow':'']}}" id="text">{{''+(detail.introduction||'')+''}}</view>
+                <view bindtap="__e" class="more data-v-68cbcd9d" data-content="楼盘介绍" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-name="{{hideText?'展开':'收起'}}" wx:if="{{overflow}}">
+                    <text class="font data-v-68cbcd9d">{{''+overflowText+''}}</text>
+                    <image class="image data-v-68cbcd9d" data-hide="{{hideText}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/202012101353448081.png"></image>
+                </view>
+            </view>
+            <view class="project-style data-v-68cbcd9d" wx:if="{{detail.medias&&detail.medias.length}}">
+                <view class="button-title data-v-68cbcd9d">更多风采</view>
+                <view class="project-image-list data-v-68cbcd9d">
+                    <view class="image-item data-v-68cbcd9d" wx:for="{{detail.medias}}" wx:key="index">
+                        <image class="image data-v-68cbcd9d" mode="aspectFill" src="{{item}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="project-logo data-v-68cbcd9d">
+            <image class="logo data-v-68cbcd9d" mode="widthFix" src="{{logoImage}}"></image>
+        </view>
+    </view>
+    <view class="project-button data-v-68cbcd9d">
+        <view bindtap="__e" class="share data-v-68cbcd9d" data-content="底部按钮" data-event-opts="{{[ [ 'tap',[ [ 'handleBoost',['$event'] ] ] ] ]}}" data-name="拉票">分享拉票</view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="count data-v-68cbcd9d" data-event-opts="{{[ [ '^onSuccess',[ ['handleVote'] ] ] ]}}" vueId="6fe9793f-3" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="data-v-68cbcd9d" data-content="投票" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="投票">{{'投票（可投'+restCount+'次)'}}</view>
+        </authorization>
+    </view>
+    <modal bind:__l="__l" bind:confirm="__e" class="data-v-68cbcd9d vue-ref" data-event-opts="{{[ [ '^confirm',[ ['handleModalConfirm'] ] ] ]}}" data-ref="modal" rest="{{restCount}}" vueId="6fe9793f-4"></modal>
+    <share-popup bind:__l="__l" class="data-v-68cbcd9d vue-ref" content="（可保存海报分享朋友圈拉票哦）" data-ref="popup" render="{{renderButtons}}" title="{{popupText}}" vueId="6fe9793f-5"></share-popup>
+    <popup bind:__l="__l" class="data-v-68cbcd9d vue-ref" content="{{remark}}" data-ref="basePopup" maskClose="{{false}}" position="center" vueId="6fe9793f-6"></popup>
+    <create-poster bind:__l="__l" class="data-v-68cbcd9d vue-ref" data-ref="canvasPoster" height="{{2250}}" vueId="6fe9793f-7" width="{{1125}}"></create-poster>
+</view>

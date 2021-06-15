@@ -1,0 +1,24 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-background-default": "/subPackages/pageLayout/pages/components/BusiBackgroundDefault",
+        "busi-cube-default": "/subPackages/pageLayout/pages/components/BusiCubeDefault",
+        "busi-cube-variant1": "/subPackages/pageLayout/pages/components/BusiCubeVariant1",
+        "busi-cube-variant2": "/subPackages/pageLayout/pages/components/BusiCubeVariant2",
+        "busi-tab-project-default": "/subPackages/pageLayout/pages/components/BusiTabProjectDefault",
+        "busi-project-default": "/subPackages/pageLayout/pages/components/BusiProjectDefault",
+        "busi-project-variant1": "/subPackages/pageLayout/pages/components/BusiProjectVariant1",
+        "busi-project-variant2": "/subPackages/pageLayout/pages/components/BusiProjectVariant2",
+        "busi-project-variant3": "/subPackages/pageLayout/pages/components/BusiProjectVariant3",
+        "busi-smart-button-default": "/subPackages/pageLayout/pages/components/BusiSmartButtonDefault",
+        "busi-motion-button-default": "/subPackages/pageLayout/pages/components/BusiMotionButtonDefault",
+        "busi-banner-default": "/subPackages/pageLayout/pages/components/BusiBannerDefault",
+        "busi-banner-variant1": "/subPackages/pageLayout/pages/components/BusiBannerVariant1",
+        "busi-rich-text-default": "/subPackages/pageLayout/pages/components/BusiRichTextDefault",
+        "busi-video-default": "/subPackages/pageLayout/pages/components/BusiVideoDefault",
+        "busi-search1": "/subPackages/pageLayout/pages/components/BusiSearch1",
+        "busi-search2": "/subPackages/pageLayout/pages/components/BusiSearch2",
+        "busi-search3": "/subPackages/pageLayout/pages/components/BusiSearch3"
+    }
+}

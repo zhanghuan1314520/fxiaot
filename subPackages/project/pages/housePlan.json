@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "户型",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "base-call-phone": "/components/BaseCallPhone"
+    }
+}

@@ -1,0 +1,25 @@
+<view class="video data-v-6d0a42e0">
+    <view class="video-title data-v-6d0a42e0">
+        <view class="title-box data-v-6d0a42e0">
+            <text class="data-v-6d0a42e0">{{title}}</text>
+            <view class="point1 data-v-6d0a42e0"></view>
+            <view class="point2 data-v-6d0a42e0"></view>
+        </view>
+        <view class="title-bridge data-v-6d0a42e0">
+            <view class="data-v-6d0a42e0"></view>
+            <view class="data-v-6d0a42e0"></view>
+        </view>
+    </view>
+    <view class="video-content data-v-6d0a42e0">
+        <view class="video-list data-v-6d0a42e0" wx:if="{{list.length}}">
+            <view bindtap="__e" class="video-item data-v-6d0a42e0" data-event-opts="{{[ [ 'tap',[ [ 'toVideoDetail',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+                <image class="cover data-v-6d0a42e0" mode="aspectFill" src="{{item.video_url+'?vframe/jpg/offset/1'}}"></image>
+                <image class="play data-v-6d0a42e0" src="{{homeImage.bigPlay}}"></image>
+            </view>
+        </view>
+        <block wx:else>
+            <no-data bind:__l="__l" class="data-v-6d0a42e0" vueId="404fd16d-1" wx:if="{{!loading}}"></no-data>
+        </block>
+    </view>
+    <upload-btn bind:__l="__l" class="data-v-6d0a42e0 vue-ref" data-ref="upload" vueId="404fd16d-2"></upload-btn>
+</view>

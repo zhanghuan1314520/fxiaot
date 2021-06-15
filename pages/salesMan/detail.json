@@ -1,0 +1,15 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "authorization": "/components/Authorization",
+        "entries": "/pages/salesMan/components/Entries",
+        "sales-card": "/pages/salesMan/components/SalesCard",
+        "projects": "/pages/salesMan/components/Projects",
+        "share": "/pages/salesMan/components/Share",
+        "busi-footer": "/components/UILayout/BusiFooter",
+        "base-call-phone": "/components/BaseCallPhone",
+        "busi-button": "/components/UILayout/BusiButton",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

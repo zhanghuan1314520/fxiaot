@@ -1,0 +1,104 @@
+.move-tips {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    width: 344rpx;
+    height: 80rpx;
+    background: rgba(0,0,0,.6);
+    border-radius: 4rpx;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.move-tips .image {
+    width: 28rpx;
+    height: 37rpx;
+    vertical-align: center;
+    margin-right: 16rpx;
+}
+
+.move-tips .text {
+    width: auto;
+    height: 28rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 28rpx;
+}
+
+.trend-page {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 16rpx;
+    padding-bottom: 30rpx;
+}
+
+.common-title {
+    padding: 34rpx 24rpx 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.common-title .title {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    color: #303237;
+    font-weight: 700;
+}
+
+.common-title .more {
+    font-size: 26rpx;
+    color: #96989e;
+    display: flex;
+    align-items: center;
+}
+
+.common-title .more .iconnew {
+    margin-left: 8rpx;
+    font-size: 22rpx;
+    vertical-align: middle;
+}
+
+.canvas-box {
+    width: auto;
+    margin: 0 24rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.trend-canvas {
+    height: 400rpx;
+    width: 100%;
+}
+
+.bottom-text {
+    padding: 18rpx 24rpx;
+    display: flex;
+}
+
+.bottom-text .text {
+    position: relative;
+    font-size: 24rpx;
+    color: #96989e;
+    padding-left: 20rpx;
+}
+
+.bottom-text .text::before {
+    display: inline-block;
+    content: "";
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 8rpx;
+    background: #96989e;
+    position: absolute;
+    top: 14rpx;
+    left: 0;
+}

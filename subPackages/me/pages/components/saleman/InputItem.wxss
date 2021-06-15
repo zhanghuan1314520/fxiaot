@@ -1,0 +1,27 @@
+.input-wrap {
+    position: relative;
+    padding: 0 32rpx;
+    height: 112rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.input {
+    width: 620rpx;
+    height: 112rpx;
+    background: #fff;
+    font-size: 30rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+}
+
+.new-shanchu1,.placeholder {
+    color: rgba(0,0,0,.25);
+}
+
+.new-shanchu1 {
+    font-size: 42rpx;
+}

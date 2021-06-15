@@ -1,0 +1,12 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "project-item": "/components/ProjectItem/ProjectItem",
+        "busi-search": "/components/UILayout/BusiSearch",
+        "loading": "/subPackages/project/pages/component/SecondBuildingList/Loading",
+        "base-filters": "/components/BaseFilters/Index",
+        "base-banner": "/components/BaseBanner",
+        "busi-search-swiper": "/pages/components/BusiSearchSwiper",
+        "authorization": "/components/Authorization"
+    }
+}

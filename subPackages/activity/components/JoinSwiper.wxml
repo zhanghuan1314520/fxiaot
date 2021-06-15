@@ -1,0 +1,9 @@
+<swiper autoplay="{{true}}" circular="{{true}}" class="swiper data-v-4721a30e" vertical="{{true}}">
+    <swiper-item class="swiper-item data-v-4721a30e" wx:for="{{list}}" wx:for-index="__i0__" wx:key="id">
+        <image class="avatar data-v-4721a30e" src="{{item.user.avatar_url}}"></image>
+        <text class="bold-text data-v-4721a30e">{{''+item.user.nick_name+''}}</text>
+        <tex bind:__l="__l" class="common-text data-v-4721a30e" vueId="{{'4342d9db-1-'+__i0__}}" vueSlots="{{['default']}}">已参加</tex>
+        <text class="bold-text data-v-4721a30e">{{''+item.activity_title+''}}</text>
+        <text class="common-text data-v-4721a30e">活动</text>
+    </swiper-item>
+</swiper>

@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "杭州房小团-我的摇号",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f2f2f2",
+    "usingComponents": {
+        "my-code-list": "/subPackages/me/pages/components/hangzhou/lottery/MyCodeList",
+        "my-lottery-list": "/subPackages/me/pages/components/hangzhou/lottery/MyLotteryList",
+        "busi-tab": "/components/UILayout/BusiTab"
+    }
+}

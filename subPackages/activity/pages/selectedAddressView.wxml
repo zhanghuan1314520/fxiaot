@@ -1,0 +1,20 @@
+<view>
+    <view class="selectedAddress" wx:if="{{isShow}}">
+        <view class="btnBox">
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'btnCancelHandle',['$event'] ] ] ] ]}}">取消</text>
+            <text catchtap="__e" class="green-color" data-event-opts="{{[ [ 'tap',[ [ 'btnSureHandle',['$event'] ] ] ] ]}}" style="folat:right;">确定</text>
+        </view>
+        <picker-view bindchange="__e" class="pickerBox" data-event-opts="{{[ [ 'change',[ [ 'selectedAddressHandle',['$event'] ] ] ] ]}}" value="{{value}}">
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{provinces}}" wx:key="index">{{''+item.name+''}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{citys}}" wx:key="index">{{''+item.name+''}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{areas}}" wx:key="index">{{''+item.name+''}}</view>
+            </picker-view-column>
+        </picker-view>
+        <view></view>
+    </view>
+</view>

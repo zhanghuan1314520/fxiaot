@@ -1,0 +1,14 @@
+<view class="{{['scroll-item',className]}}">
+    <view class="item-box">
+        <view class="item-left">
+            <view class="item-avatar">
+                <image class="avatar" src="{{item.linker.avatar_url||defaultAvatar}}"></image>
+                <view class="{{['item-status',intentionClass]}}" wx:if="{{$root.g0}}">{{''+intention+''}}</view>
+            </view>
+            <view class="item-info">
+                <text class="info-name">{{''+(item.linker.name||item.linker.nick_name||'未授权')+''}}</text>
+                <text class="info-time">{{''+item.display_created_at+''}}</text>
+            </view>
+        </view>
+    </view>
+</view>

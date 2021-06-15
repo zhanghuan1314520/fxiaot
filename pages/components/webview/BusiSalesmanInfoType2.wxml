@@ -1,0 +1,19 @@
+<cover-view class="{{[true?'saleMan-info':'',!isFullScreen?'notFullScreen':'']}}" wx:if="{{isShowSalesmanInfo}}">
+    <cover-view bindtap="__e" class="left-avatar" data-content="{{isAerial?'航拍':'vr'}}" data-event-opts="{{[ [ 'tap',[ [ 'toSaleMan',['$event'] ] ] ] ]}}" data-name="置业顾问详情" data-type="link">
+        <cover-image class="avatar" src="{{salesManInfo.avatar_url}}"></cover-image>
+        <cover-view class="name-wrapper">
+            <cover-view class="name">{{''+salesManInfo.sales_name+''}}</cover-view>
+            <cover-image class="is-confirm-img" src="https://imgcdn.huanjutang.com/image/2020/08/27/e0f8d73241b935f9efa65e4b0a5f6b76.png"></cover-image>
+        </cover-view>
+    </cover-view>
+    <cover-view class="right-btn-group">
+        <button bindtap="__e" class="btn-chat" data-event-opts="{{[ [ 'tap',[ [ 'getUserInfo',['chat'] ] ] ] ]}}" hidden="{{!(!userInfo.unionId||!userInfo.nickName||!userInfo.phone)}}" lang="zh_CN" openType="getUserInfo">
+            <cover-image class="btn-chat" src="https://imgcdn.huanjutang.com/image/2020/08/27/a98ae0694e8bcf7ec62d3e917797dc52.png"></cover-image>
+        </button>
+        <button bindtap="__e" class="btn-call" data-event-opts="{{[ [ 'tap',[ [ 'getUserInfo',['call'] ] ] ] ]}}" hidden="{{!(!userInfo.unionId||!userInfo.nickName||!userInfo.phone)}}" lang="zh_CN" openType="getUserInfo">
+            <cover-image class="btn-call-img" src="https://imgcdn.huanjutang.com/image/2020/08/27/a2499e7f9bee9784e02ace496f68abbf.png"></cover-image>
+        </button>
+        <cover-image bindtap="__e" class="btn-chat" data-content="{{isAerial?'航拍':'vr'}}" data-event-opts="{{[ [ 'tap',[ [ 'navigateToChat',['$event'] ] ] ] ]}}" data-name="聊天" data-type="link" hidden="{{!(userInfo.unionId&&userInfo.nickName&&userInfo.phone)}}" src="https://imgcdn.huanjutang.com/image/2020/08/27/a98ae0694e8bcf7ec62d3e917797dc52.png"></cover-image>
+        <cover-image bindtap="__e" class="btn-call" data-content="{{isAerial?'航拍':'vr'}}" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}" data-name="打电话" data-type="button" hidden="{{!(userInfo.unionId&&userInfo.nickName&&userInfo.phone)}}" src="https://imgcdn.huanjutang.com/image/2020/08/27/a2499e7f9bee9784e02ace496f68abbf.png"></cover-image>
+    </cover-view>
+</cover-view>

@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "share-template": "/components/shareTemplate",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "share-btn": "/components/unifyUI/shareBtn",
+        "base-call-phone": "/components/BaseCallPhone"
+    }
+}

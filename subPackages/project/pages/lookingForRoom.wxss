@@ -1,0 +1,106 @@
+.page {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.content-box {
+    margin: 0 24rpx;
+    padding: 0 0 24rpx;
+    border-bottom: 2rpx solid rgba(48,55,64,.05);
+}
+
+.content-box.square-content {
+    padding-bottom: 150rpx;
+}
+
+.content-box .title {
+    font-size: 32rpx;
+    line-height: 44rpx;
+    padding: 42rpx 0 32rpx;
+    display: flex;
+    align-items: center;
+    color: #303237;
+}
+
+.content-box .title>text {
+    height: 100%;
+    display: inline-block;
+}
+
+.content-box .title .active {
+    color: #96989e;
+}
+
+.content-box .title>image {
+    width: 36rpx;
+    height: 32rpx;
+    display: inline-block;
+    margin: 0 16rpx;
+}
+
+.content-box .area-box {
+    overflow: hidden;
+}
+
+.content-box .area-box .area-line {
+    float: left;
+    min-width: 162rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    height: 72rpx;
+    background: rgba(150,152,158,.1);
+    color: #303237;
+    border-radius: 4rpx;
+    margin-right: 18rpx;
+    line-height: 72rpx;
+    text-align: center;
+    margin-bottom: 24rpx;
+}
+
+.content-box .area-box .area-line:nth-child(4n) {
+    margin-right: 0;
+}
+
+.content-box .area-box .square-line {
+    float: left;
+    width: 222rpx;
+    height: 76rpx;
+    background: rgba(150,152,158,.1);
+    border-radius: 4rpx;
+    text-align: center;
+    line-height: 76rpx;
+    margin-right: 18rpx;
+    margin-bottom: 24rpx;
+}
+
+.content-box .area-box .square-line:nth-child(3n) {
+    margin-right: 0;
+}
+
+.content-box .area-box .active {
+    color: #fff;
+    background: #2d8cf0;
+    box-shadow: 0 8rpx 16rpx 0 rgba(47,140,239,.2);
+}
+
+.search-cont {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: hsla(0,0%,100%,.95);
+    box-shadow: 0 -4rpx 12rpx 0 rgba(21,24,45,.03);
+    box-sizing: border-box;
+    z-index: 3;
+    padding: 18rpx 24rpx env(safe-area-inset-bottom);
+}
+
+.search-cont .search-text {
+    width: 100%;
+    height: 88rpx;
+    background: #2f8cef;
+    border-radius: 4rpx;
+    line-height: 88rpx;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 18rpx;
+}

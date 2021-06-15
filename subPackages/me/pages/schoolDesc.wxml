@@ -1,0 +1,13 @@
+<view>
+    <view class="school-info">
+        <view class="title">订阅号简介</view>
+        <view class="info-text">{{''+(info.intro||'')+''}}</view>
+    </view>
+    <view class="{{['footer',isIphoneX?'b-68':'']}}">
+        <view class="footer-info">
+            <view class="line"></view>
+            <text>若遇到问题，可联系在线客服</text>
+        </view>
+        <button class="btn" openType="contact">联系客服</button>
+    </view>
+</view>

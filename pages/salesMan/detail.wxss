@@ -1,0 +1,68 @@
+.detail-top {
+    position: relative;
+    z-index: 300;
+    background-image: url(https://imgcdn.huanjutang.com/file/2021/03/17/3480214938372f5aec596a740b3f1f25.png);
+    background-size: cover;
+    background-position: bottom;
+    margin-bottom: 100rpx;
+}
+
+.right-btns {
+    position: absolute;
+    right: 28rpx;
+    top: 40rpx;
+}
+
+.footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    padding: 20rpx 32rpx 20rpx 0;
+    box-sizing: border-box;
+}
+
+.footer-btn {
+    flex: 1;
+}
+
+.footer-btn+.footer-btn {
+    margin-left: 22rpx;
+}
+
+.footer__follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 152rpx;
+    height: 100%;
+    color: rgba(0,0,0,.85);
+    overflow: hidden;
+}
+
+.footer__follow .footer__follow--icon {
+    font-size: 48rpx;
+}
+
+.footer__follow .footer__follow--text {
+    font-size: 28rpx;
+    line-height: 36rpx;
+    margin-top: 6;
+}
+
+.footer__follow.footer__follow-active {
+    color: #ee3f4d;
+}
+
+.tip {
+    margin: 0 24rpx 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68rpx;
+    background: linear-gradient(270deg,rgba(255,249,234,0),#fff9ea 49%,rgba(255,249,234,0));
+    font-size: 26rpx;
+    color: #7e4b21;
+}

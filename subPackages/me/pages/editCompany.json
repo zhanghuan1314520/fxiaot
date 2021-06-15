@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "编辑公司名称",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "picker-item": "/subPackages/me/pages/components/saleman/PickerItem",
+        "submit-button": "/subPackages/me/pages/components/saleman/SubmitButton",
+        "input-item": "/subPackages/me/pages/components/saleman/InputItem"
+    }
+}

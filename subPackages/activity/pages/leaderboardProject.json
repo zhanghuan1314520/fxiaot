@@ -1,0 +1,13 @@
+{
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "overlapping": "/subPackages/activity/components/leaderboard/overlapping",
+        "share-popup": "/components/UILayout/BusiPopup/SharePopup",
+        "popup": "/components/UILayout/BusiPopup/BasePopup",
+        "modal": "/subPackages/activity/components/leaderboard/modal",
+        "create-poster": "/subPackages/activity/components/CreatePoster",
+        "authorization": "/components/Authorization"
+    }
+}

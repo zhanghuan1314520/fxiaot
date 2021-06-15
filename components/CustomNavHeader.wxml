@@ -1,0 +1,6 @@
+<view class="busi-custo-nav-header__wrapper">
+    <view class="position_container" style="{{'background: '+bgcolor}}">
+        <view bindtap="__e" class="status_bar" data-event-opts="{{[ [ 'tap',[ [ 'backPage',['$event'] ] ] ] ]}}" style="{{'height:'+statusBarHeight+'px'+';'}}"></view>
+        <view class="capsule-bar" style="{{'height:'+44+'px'+';'+'color:'+color+';'}}">{{''+title+''}}</view>
+    </view>
+</view>

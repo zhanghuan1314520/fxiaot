@@ -1,0 +1,91 @@
+.reply__container,.reply__tools {
+    position: relative;
+    z-index: 2;
+}
+
+.reply__container {
+    padding: 14rpx 24rpx;
+    background: #f5f7fa;
+}
+
+.reply__container--input {
+    padding: 8rpx;
+    border: 2rpx solid #f2f2f2;
+    border-radius: 10rpx;
+    background: #fff;
+    margin-right: 149rpx;
+}
+
+.reply__container--input .input {
+    position: relative;
+    display: block;
+    width: auto;
+    height: 72rpx;
+    line-height: 72rpx;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    border: none;
+    background: hsla(0,0%,100%,.8);
+}
+
+.reply__container--send {
+    display: block;
+    float: right;
+    color: #2d8cf0;
+    font-size: 28rpx;
+    line-height: 54rpx;
+    top: 22rpx;
+    padding: 0 15rpx;
+    background: transparent;
+}
+
+.reply__container--emoji {
+    float: right;
+    font-size: 28rpx;
+    border-radius: 48rpx;
+    margin: 22rpx 20rpx 0 0;
+    line-height: 48rpx;
+    text-align: center;
+}
+
+.reply__container--emoji,.reply__container--emoji .icon,.reply__container--more {
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.reply__container--more {
+    float: right;
+    font-size: 28rpx;
+    border-radius: 48rpx;
+    margin: 22rpx 0 0;
+    line-height: 48rpx;
+    text-align: center;
+}
+
+.reply__container--more .icon {
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.reply__container--more .active {
+    transform: rotate(45deg);
+}
+
+.reply__emoji,.reply__more,.reply__phrases {
+    position: relative;
+    z-index: 2;
+    background: #f5f7fa;
+}
+
+.reply__bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    background: rgba(0,0,0,.3);
+    z-index: 1;
+}

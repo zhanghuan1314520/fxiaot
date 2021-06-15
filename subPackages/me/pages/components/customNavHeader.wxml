@@ -1,0 +1,9 @@
+<view class="data-v-83d7e02c" style="{{'height:'+44+userPhoneInfo.statusBarHeight+'px'+';'}}">
+    <view class="{{['header-tools__warpper data-v-83d7e02c',scrolled?'scroll-fixed':'']}}">
+        <view class="status_bar data-v-83d7e02c" style="{{'height: '+userPhoneInfo.statusBarHeight+'px'}}"></view>
+        <view class="capsule-bar data-v-83d7e02c" style="{{capsuleBarStyle}}">
+            <text bindtap="__e" class="fz-20 back-icon iconnew new-jiantouxiangzuo data-v-83d7e02c" data-event-opts="{{[ [ 'tap',[ [ 'backPage',['$event'] ] ] ] ]}}" style="{{'color:'+navigatorColor+';'}}"></text>
+            <slot></slot>
+        </view>
+    </view>
+</view>

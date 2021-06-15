@@ -1,0 +1,80 @@
+.huxing__list .huxing__item {
+    width: 100%;
+    margin-top: 56rpx;
+}
+
+.huxing__list .huxing__item-left {
+    float: left;
+    width: 284rpx;
+    height: 284rpx;
+    border: 4rpx solid rgba(0,0,0,.02);
+    border-radius: 8rpx;
+    background: rgba(0,0,0,.02);
+    overflow: hidden;
+}
+
+.huxing__list .huxing__item-right {
+    margin-left: 320rpx;
+    height: 292rpx;
+    overflow: hidden;
+}
+
+.huxing__list .huxing__item-player {
+    margin-top: 32rpx;
+}
+
+.huxing__list .huxing__item--room {
+    height: 40rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+    margin-bottom: 18rpx;
+    overflow: hidden;
+}
+
+.huxing__list .huxing__item--name {
+    width: 100%;
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+    margin-bottom: 14rpx;
+    overflow: hidden;
+}
+
+.huxing__list .huxing__item--btn {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 26rpx;
+    overflow: hidden;
+}
+
+.huxing__list .huxing--btn-audio {
+    margin-right: 8rpx;
+}
+
+.huxing__list .huxing--btn--img {
+    display: block;
+    width: 114rpx;
+    height: 56rpx;
+    overflow: hidden;
+}
+
+.huxing__list .huxing--btn--img.playing {
+    background: linear-gradient(135deg,#65c9ff,#3c9aff);
+    box-shadow: 0 4rpx 8rpx 0 rgba(51,143,242,.3);
+    border-radius: 4rpx;
+}
+
+.huxing__list .huxing--btn--text {
+    width: 114rpx;
+    height: 32rpx;
+    margin-top: 12rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 32rpx;
+    text-align: center;
+}

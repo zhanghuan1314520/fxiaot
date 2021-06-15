@@ -1,0 +1,17 @@
+<view class="tab">
+    <block wx:if="{{isScrollView}}">
+        <scroll-view class="tab__container" scrollX="true" style="width:100%;">
+            <view bindtap="__e" class="{{[ 'tab__item',[item.id==activeId?'tab__active':'',index===0?'tab__item-first':'',index===list.length-1?'tab__item-last':''] ]}}" data-content="{{item.dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'handleTabChange',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" data-name="{{item.dataName}}" wx:for="{{list}}" wx:key="index">
+                <text class="tab__item-text">{{''+item.text+''}}</text>
+                <view class="tab__item-line"></view>
+            </view>
+        </scroll-view>
+        <view catchtap="__e" class="tab__linear" data-event-opts="{{[ [ 'tap',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+    </block>
+    <view class="{{['tab__container','tab__between',justifyContent]}}" wx:else>
+        <view bindtap="__e" class="{{[ 'tab__item',[item.id==activeId?'tab__active':''] ]}}" data-content="{{item.dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'handleTabChange',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" data-name="{{item.dataName}}" wx:for="{{list}}" wx:key="index">
+            <text class="tab__item-text">{{''+item.text+''}}</text>
+            <view class="tab__item-line"></view>
+        </view>
+    </view>
+</view>

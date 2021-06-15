@@ -1,0 +1,3 @@
+<view bindtap="__e" class="upload" data-event-opts="{{[ [ 'tap',[ [ 'toUpload',['$event'] ] ] ] ]}}" data-name="上传视频" wx:if="{{isSaleMan&&canUpload}}">
+    <image class="image" src="{{uploadImage}}"></image>
+</view>

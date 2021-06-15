@@ -1,0 +1,146 @@
+<view>
+    <view class="page">
+        <swiper autoplay="true" circular="{{true}}" class="banner-list" duration="300" indicatorActiveColor="#ffffff" indicatorColor="rgba(255,255,255,.4)" indicatorDots="true" interval="4000" wx:if="{{banner.length>0}}">
+            <swiper-item class="banner-item" wx:for="{{banner}}" wx:key="index">
+                <navigator hoverClass="none" style="width:100%;height:100%;" url="{{item.url}}">
+                    <image mode="aspectFill" src="{{item.image}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+        <scroll-view class="header-nav-list" scrollWithAnimation="{{true}}" scrollX="scroll-x">
+            <view style="{{'width: '+kindsListLen*200+'rpx'}}">
+                <view bindtap="__e" class="{{[ 'nav-item '+(index==chooseIndex?'active fz-16 font-bold':'fz-14') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',[index] ] ] ] ]}}" wx:for="{{kindsList}}" wx:key="index">{{''+item.title+''}}</view>
+            </view>
+        </scroll-view>
+        <view class="project-nav">
+            <view class="project-menu-cont">
+                <view bindtap="__e" class="{{[ 'menu-select '+(params.f_type&&params.f_type!=''||params.f_price_type&&params.f_price_type!=''||params.f_status&&params.f_status!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[1,'force'] ] ] ] ]}}">
+                    <text class="text fz-13">筛选类型</text>
+                    <text class="iconnew new-zhankai"></text>
+                </view>
+                <view bindtap="__e" class="{{[ 'menu-select '+(params.f_price&&params.f_price!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[2,'force'] ] ] ] ]}}">
+                    <text class="text fz-13">价格筛选</text>
+                    <text class="iconnew new-zhankai"></text>
+                </view>
+                <view bindtap="__e" class="{{[ 'menu-select '+(params.range_me&&params.range_me!=''||params.coordinate&&params.coordinate!=''||params.range&&params.range!=''||params.train&&params.train!=''||params.area_id&&params.area_id!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[3,'force'] ] ] ] ]}}">
+                    <text class="text fz-13">全部区域</text>
+                    <text class="iconnew new-zhankai"></text>
+                </view>
+                <view bindtap="__e" class="{{[ 'menu-select '+(params.price_orderBy&&params.price_orderBy!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[4,'force'] ] ] ] ]}}">
+                    <text class="iconnew icon-paixu fz-14"></text>
+                </view>
+            </view>
+        </view>
+        <project-item bind:__l="__l" bind:updateItems="__e" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projectList','$event'],[''] ] ] ] ]}}" items="{{projectList}}" sourcePosition="特色楼盘列表" vueId="465aaf52-1" wx:if="{{projectList.length>0}}"></project-item>
+        <block wx:else>
+            <view class="project_box_list" wx:if="{{loading}}">
+                <view class="fz-13 black1a-color" style="{{'padding: '+(chooseIndex==0?'200rpx 0;':'60rpx 0;')+'text-align: center'}}">暂无房源哦~</view>
+            </view>
+        </block>
+        <view class="full-screen" style="z-index:0;" wx:if="{{!loading}}">
+            <view id="spinner" style="margin-top:-200rpx;"></view>
+        </view>
+        <block wx:if="{{showSelect}}">
+            <scroll-view class="header-nav-list header-nav-list-fixed" scrollWithAnimation="{{true}}" scrollX="scroll-x">
+                <view style="{{'width: '+kindsListLen*200+'rpx'}}">
+                    <view bindtap="__e" class="{{[ 'nav-item '+(index==chooseIndex?'height-level-color active fz-16 font-bold':'gray-9-color fz-14') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseItem',[index] ] ] ] ]}}" wx:for="{{kindsList}}" wx:key="index">{{''+item.title+''}}</view>
+                </view>
+            </scroll-view>
+            <view class="project-nav fixed-top">
+                <view class="project-menu-cont">
+                    <view bindtap="__e" class="{{[ 'menu-select '+(params.f_type&&params.f_type!=''||params.f_price_type&&params.f_price_type!=''||params.f_status&&params.f_status!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[1] ] ] ] ]}}">
+                        <text class="text fz-13">筛选类型</text>
+                        <text class="iconnew new-zhankai"></text>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'menu-select '+(params.f_price&&params.f_price!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[2] ] ] ] ]}}">
+                        <text class="text fz-13">价格筛选</text>
+                        <text class="iconnew new-zhankai"></text>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'menu-select '+(params.range_me&&params.range_me!=''||params.coordinate&&params.coordinate!=''||params.range&&params.range!=''||params.train&&params.train!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[3] ] ] ] ]}}">
+                        <text class="text fz-13">全部区域</text>
+                        <text class="iconnew new-zhankai"></text>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'menu-select '+(params.price_orderBy&&params.price_orderBy!=''?'active font-bold':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchMenuHandle',[4] ] ] ] ]}}">
+                        <text class="iconnew icon-paixu fz-14"></text>
+                    </view>
+                </view>
+                <view catchtouchmove="touchmoveHandler" class="project-select-content">
+                    <view class="project-select_category" wx:if="{{menuIndex==1}}">
+                        <view class="select-right-cont no-left-cont gray-f7-bg">
+                            <block wx:for="{{categoryDatas}}" wx:key="index">
+                                <view class="select-item_title black1a-color font-bold fz-14">{{''+item.title+''}}</view>
+                                <view class="select-item_group">
+                                    <view bindtap="__e" class="{{[ 'select-item_btn fz-13 '+(item.toggle_val==cate.val?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickCateHandle',[index,'$0'],[ [ ['categoryDatas','',index],['data','',cateIndex,'val'] ] ] ] ] ] ]}}" wx:for="{{item.data}}" wx:for-index="cateIndex" wx:for-item="cate" wx:key="cateIndex">{{''+cate.key+''}}</view>
+                                </view>
+                            </block>
+                        </view>
+                        <view class="select-bottom">
+                            <view bindtap="__e" class="select-btn white-style float_left fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'resetHandle',['$event'] ] ] ] ]}}">重置</view>
+                            <view bindtap="__e" class="select-btn float_right fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                        </view>
+                    </view>
+                    <view catchtouchmove="stopMove" class="project-select_price" wx:if="{{menuIndex==2}}">
+                        <view class="select-right-cont no-left-cont gray-f7-bg">
+                            <block wx:for="{{pricesDatas}}" wx:key="index">
+                                <view bindtap="__e" class="{{[ 'select-item_list fz-13 '+(item.toggle_val==price.val?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickPriceHandle',[index,'$0'],[ [ ['pricesDatas','',index],['data','',i,'val'] ] ] ] ] ] ]}}" wx:if="{{index==pricesIndex}}" wx:for="{{item.data}}" wx:for-index="i" wx:for-item="price" wx:key="i">{{''+price.key+''}}</view>
+                            </block>
+                        </view>
+                        <view class="select-bottom">
+                            <view class="select-input gray-f7-bg">
+                                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputPriceHandle',['min','$event'] ] ] ] ]}}" placeholder="{{loading?'最低价格':''}}" placeholderClass="gray-color fz-14" type="number" value="{{minPrice}}"></input>
+                                <text class="line fz-14 black1a-color">-</text>
+                                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputPriceHandle',['max','$event'] ] ] ] ]}}" placeholder="{{loading?'最高价格':''}}" placeholderClass="gray-color fz-14" type="number" value="{{maxPrice}}"></input>
+                            </view>
+                            <view bindtap="__e" class="select-btn float_right fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                        </view>
+                    </view>
+                    <view class="project-select_area" wx:if="{{menuIndex==3}}">
+                        <view class="select-left-cont">
+                            <view bindtap="__e" class="{{[ 'select-item fz-13 font-bold '+(areasIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickAreaTypeHandle',[index] ] ] ] ]}}" wx:for="{{areasDatas}}" wx:key="index">{{''+item.title+''}}</view>
+                        </view>
+                        <view class="{{[ 'select-right-cont gray-f7-bg '+(areasIndex==2?'tow-columns':'') ]}}">
+                            <block wx:for="{{areasDatas}}" wx:for-index="aIndex" wx:for-item="areas" wx:key="aIndex">
+                                <block wx:if="{{areasIndex==aIndex&&aIndex!=2}}">
+                                    <block wx:for="{{areas.data}}" wx:key="index">
+                                        <view bindtap="__e" class="{{[ 'select-item_list fz-13 '+(areas.toggle_val==item.val?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-event-params="{{item:item}}" wx:if="{{areasIndex==0}}">{{''+item.key+''}}</view>
+                                        <block wx:if="{{areasIndex==1}}">
+                                            <view class="select-item_title black1a-color font-bold fz-14">{{''+item.title+''}}</view>
+                                            <view class="select-item_group">
+                                                <view bindtap="__e" class="{{[ 'select-item_btn fz-13 '+(area.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickAreaHandle',[index,areaIndex] ] ] ] ]}}" wx:for="{{item.data}}" wx:for-index="areaIndex" wx:for-item="area" wx:key="areaIndex">{{''+area.key+''}}</view>
+                                            </view>
+                                        </block>
+                                    </block>
+                                </block>
+                                <block wx:if="{{areasIndex==2&&areasIndex==aIndex}}">
+                                    <view class="short-column">
+                                        <view bindtap="__e" class="{{[ 'select-item_list fz-13 '+(index==areas.def_index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'clickLineHandle',[aIndex,index] ] ] ] ]}}" wx:for="{{areas.data}}" wx:for-item="line" wx:key="index">{{''+line.title+''}}</view>
+                                    </view>
+                                    <view class="long-column">
+                                        <block wx:if="{{lineIndex==areas.def_index}}" wx:for="{{areas.data}}" wx:for-index="lineIndex" wx:for-item="line" wx:key="lineIndex">
+                                            <view bindtap="__e" class="{{[ 'select-item_list fz-13 '+(tube.is_toggle?'active':'') ]}}" data-child="{{tubeIndex}}" data-event-opts="{{[ [ 'tap',[ [ 'clickTubeHandle',['$event'] ] ] ] ]}}" data-index="{{lineIndex}}" data-parent="{{aIndex}}" wx:for="{{line.data}}" wx:for-index="tubeIndex" wx:for-item="tube" wx:key="tubeIndex">{{''+tube.title+''}}</view>
+                                        </block>
+                                    </view>
+                                </block>
+                            </block>
+                        </view>
+                        <view class="select-bottom">
+                            <view bindtap="__e" class="select-btn white-style float_left fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'resetHandle',['$event'] ] ] ] ]}}">重置</view>
+                            <view bindtap="__e" class="select-btn float_right fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                        </view>
+                    </view>
+                    <view class="project-select_sort" wx:if="{{menuIndex==4}}">
+                        <view class="select-right-cont no-left-cont gray-f7-bg">
+                            <view bindtap="__e" class="{{[ 'select-item_list fz-13 '+(sortIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'sortHandle',['$0',index],[ [ ['sortDatas','',index,'val'] ] ] ] ] ] ]}}" wx:for="{{sortDatas}}" wx:key="index">{{''+item.key+''}}</view>
+                        </view>
+                        <view class="select-bottom">
+                            <view bindtap="__e" class="select-btn white-style float_left fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'resetHandle',['$event'] ] ] ] ]}}">重置</view>
+                            <view bindtap="__e" class="select-btn float_right fz-14 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">确定</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="__e" catchtouchmove="stopMove" class="close-select" data-event-opts="{{[ [ 'tap',[ [ 'closeSelect',['$event'] ] ] ] ]}}"></view>
+            </view>
+        </block>
+    </view>
+    <guide-img bind:__l="__l" itemsData="{{guideImg}}" vueId="465aaf52-2"></guide-img>
+</view>

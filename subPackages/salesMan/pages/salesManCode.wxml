@@ -1,0 +1,14 @@
+<view>
+    <view class="page">
+        <image class="top-img" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190410/5cadc64340515.png"></image>
+        <image class="background" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20190410/5cadc3f8bb5c3.png"></image>
+        <view class="content">
+            <view class="sales-man-name fz-16 blue-color">置业顾问</view>
+            <view class="sales-man-tag font-bold fz-16">专属二维码</view>
+            <image class="code" mode="aspectFill" src="{{qrCode}}"></image>
+            <view class="text fz-12 gray-9-color">保存二维码分享给好友</view>
+            <view bindtap="__e" class="save-handle fz-14 white-color" data-event-opts="{{[ [ 'tap',[ [ 'buildCodeHandle',['$event'] ] ] ] ]}}">保存到手机</view>
+        </view>
+    </view>
+    <canvas canvasId="myCanvas" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden;position: absolute;left: -'+canvasWidth+'px;'}}"></canvas>
+</view>

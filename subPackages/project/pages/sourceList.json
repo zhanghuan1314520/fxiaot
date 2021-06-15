@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "footer-btns": "/components/FooterBtns"
+    }
+}

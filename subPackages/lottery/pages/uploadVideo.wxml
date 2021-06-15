@@ -1,0 +1,87 @@
+<view>
+    <view catchtouchmove="ture" class="modalDialog" wx:if="{{dialogShow}}">
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'changType',['$event'] ] ] ] ]}}" style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;">
+            <view class="modalDialog_item">
+                <view class="modalDialog_item1">
+                    <text class="fz-15 font-bold black-3a-color">上传成功，请等待审核</text>
+                    <text class="modalDialog_cont">关注官方服务号，可第一时间收到审核结果信息，以及更多置业顾问相关内容</text>
+                </view>
+                <view class="modalDialog_item2 modalDialog_style">
+                    <view catchtap="__e" class="modalDialog_style2" data-event-opts="{{[ [ 'tap',[ [ 'changType',['$event'] ] ] ] ]}}">
+                        <text class="fz-16 black-3a-color font-bold">取消</text>
+                    </view>
+                    <view catchtap="__e" class="modalDialog_style2" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$0'],['invite_url'] ] ] ] ]}}">
+                        <text class="fz-16 blue-color font-bold">去关注</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page">
+        <view class="video-project" wx:if="{{projectShow}}">
+            <text class="video-project_title">楼盘</text>
+            <view bindtap="__e" class="video-project_name" data-event-opts="{{[ [ 'tap',[ [ 'optProject',['$event'] ] ] ] ]}}">
+                <text>{{projectData[projectIndex].project_name}}</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view class="pic_category upload_item border-bottom">
+            <view class="pic_category w-170">
+                <text class="type-text">类别</text>
+            </view>
+            <view class="pic_category upload_item_opt">
+                <picker bindchange="__e" class="upload_item_opt2" data-event-opts="{{[ [ 'change',[ [ 'switchType',['$event'] ] ] ] ]}}" range="{{houseType}}" rangeKey="text" value="{{houseIndex}}">
+                    <text class="f-16 color-gray">{{''+houseType[houseIndex].text+''}}</text>
+                    <text class="iconnew f-16 new-tongyong-gengduo color-gray"></text>
+                </picker>
+            </view>
+        </view>
+        <view class="video-upload_box">
+            <view class="video-upload_desc">
+                <text>上传视频</text>
+                <text>(单次最多上传3段，每段时长不小于30s)</text>
+            </view>
+            <view class="video-upload_list video">
+                <view class="video_item" wx:for="{{videoList}}" wx:key="index">
+                    <image mode="aspectFill" src="{{item.image_url}}"></image>
+                    <image bindtap="__e" class="play-video" data-event-opts="{{[ [ 'tap',[ [ 'playVideoHandle',['$0'],[ [ ['videoList','',index,'video'] ] ] ] ] ] ]}}" src="{{playIcon}}"></image>
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'deleteVideo',[index] ] ] ] ]}}" src="{{deleteIcon}}"></image>
+                </view>
+                <image bindtap="__e" class="video-upload_button" data-event-opts="{{[ [ 'tap',[ [ 'chooseVideo',['$event'] ] ] ] ]}}" src="{{uploadIcon}}" wx:if="{{videoList.length<3}}"></image>
+            </view>
+            <view class="video-upload_desc">
+                <text>上传视封面</text>
+                <text>选填项，若不填写，自动获取第一帧视频</text>
+            </view>
+            <view class="video-upload_list">
+                <view class="video_item" wx:for="{{imageList}}" wx:key="index">
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$0'],[ [ ['imageList','',index] ] ] ] ] ] ]}}" mode="aspectFill" src="{{item}}"></image>
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'deleteImage',[index] ] ] ] ]}}" src="{{deleteIcon}}"></image>
+                </view>
+                <image bindtap="__e" class="video-upload_button" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" src="{{uploadIcon}}" wx:if="{{imageList.length<3}}"></image>
+            </view>
+        </view>
+        <view style="height:20rpx;background:#f2f2f2;"></view>
+        <view class="video-text">
+            <view class="video-text_title">上传建议</view>
+            <view class="video-text_head">1.传什么视频？</view>
+            <view class="video-text_content">（1）开发商自己的广告宣传片</view>
+            <view class="video-text_content">（2）用手机拍摄的一些售楼部的区位图和沙盘模型或者拍摄样板间，还可以拍摄售楼部附近的外景视频</view>
+            <view class="video-text_head">2.手机拍摄建议</view>
+            <view class="video-text_content">（1）拍摄时长必须在1分钟左右，必须有语音解说</view>
+            <view class="video-text_content">（2）拍摄时请务必保持平稳，不要剧烈晃动，不要横竖切换拍摄画面</view>
+            <view class="video-text_content">（3）拍摄时请务必保持语音收录清晰，不要有太大的背景噪音</view>
+            <view class="video-text_content">
+                <text>（4）语音介绍可以说：
+                    1、各位杭州房小团的房友们大家好，我是XXX楼盘的置业顾问XXX，本次我给大家介绍的是我们XX平米的样板间，是X室X厅X卫......
+                    2、各位杭州房小团的房友们大家好，我是XXX楼盘的置业顾问XXX，本次我给大家介绍的是我们项目周边的环境，这里是XX学校，这里是XX商场，这边是XX地铁口.......
+                    3、各位杭州房小团的房友们大家好，我是XXX楼盘的置业顾问XXX，本次我给大家介绍的是我们项目的房源情况，目前还有XX平米的房子，X室X厅X卫，分别是在X栋的XX层......</text>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['upFiles'] ] ] ]}}" isAuthPhone="{{true}}" vueId="bcd652c6-1" vueSlots="{{['default']}}">
+            <view class="last-bottom">
+                <view class="upFiles">确定上传</view>
+            </view>
+        </authorization>
+    </view>
+</view>

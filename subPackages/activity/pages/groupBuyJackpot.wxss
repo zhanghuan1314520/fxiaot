@@ -1,0 +1,160 @@
+page {
+    background: #4362ff;
+}
+
+.container.data-v-3a6a2f42,.jackpot.data-v-3a6a2f42 {
+    background-color: #4362ff;
+    min-height: 100vh;
+}
+
+.jackpot.data-v-3a6a2f42 {
+    padding-bottom: 50rpx;
+}
+
+.jackpot-top__image.data-v-3a6a2f42 {
+    display: block;
+    width: 100%;
+}
+
+.jackpot-content.data-v-3a6a2f42 {
+    position: relative;
+    z-index: 2;
+}
+
+.content-title.data-v-3a6a2f42 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -146rpx;
+    position: relative;
+    z-index: 9;
+}
+
+.content-title image.data-v-3a6a2f42 {
+    width: 412rpx;
+    height: 114rpx;
+}
+
+.content-box.data-v-3a6a2f42 {
+    width: 643rpx;
+    height: 411rpx;
+    background-color: #fff;
+    border: 4rpx solid #002aff;
+    position: relative;
+    margin: -54rpx 50rpx 0;
+}
+
+.content-box.data-v-3a6a2f42::before {
+    content: "";
+    background-color: #e792d5;
+    border: 8rpx solid #002aff;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 6rpx;
+    left: 6rpx;
+}
+
+.box-title.data-v-3a6a2f42 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 70rpx;
+}
+
+.box-title text.data-v-3a6a2f42 {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #002aff;
+}
+
+.box-title .title.data-v-3a6a2f42 {
+    font-family: PingFangSC-Semibold;
+    text-decoration: underline;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #002aff;
+    margin: 0 15rpx;
+}
+
+.box-prize.data-v-3a6a2f42 {
+    box-sizing: border-box;
+    padding: 0 122rpx;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.box-prize .image-view.data-v-3a6a2f42 {
+    width: 121rpx;
+    height: 121rpx;
+    background-color: #acbaff;
+    border: 4rpx solid #002aff;
+    margin-right: 20rpx;
+}
+
+.box-prize .image-view .image.data-v-3a6a2f42 {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.box-prize .box-text.data-v-3a6a2f42 {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    height: 60rpx;
+    color: #002aff;
+    max-width: 246rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.content-desc.data-v-3a6a2f42 {
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    z-index: 3;
+}
+
+.content-desc text.data-v-3a6a2f42 {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    color: #fff;
+    position: relative;
+}
+
+.content-desc text.data-v-3a6a2f42::before {
+    content: attr(data-text);
+    position: absolute;
+    -webkit-text-stroke: 4rpx #002aff;
+    z-index: -1;
+    left: 0;
+}
+
+.jackpot-button.data-v-3a6a2f42 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    z-index: 4;
+    margin-top: -32rpx;
+}
+
+.jackpot-button image.data-v-3a6a2f42 {
+    width: 376rpx;
+    height: 87rpx;
+}

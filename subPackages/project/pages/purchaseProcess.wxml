@@ -1,0 +1,4 @@
+<view>
+    <purchase-process-data bind:__l="__l" vueId="005794ce-1"></purchase-process-data>
+    <busi-share-icon bind:__l="__l" class="vue-ref" data-ref="share" vueId="005794ce-2"></busi-share-icon>
+</view>

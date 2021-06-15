@@ -1,0 +1,51 @@
+<view>
+    <view class="share-good-btn">
+        <button bindtap="__e" class="line" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="立即转发" data-type="button" openType="share">
+            <view class="line-box blue">
+                <image class="img" src="https://imgcdn.huanjutang.com/file/2021/01/19/d393a4bff1b58555195812f2745760a0.png"></image>
+            </view>
+            <view class="text">立即转发</view>
+        </button>
+        <view bindtap="__e" class="line" data-event-opts="{{[ [ 'tap',[ [ 'likeSalesMan',['$event'] ] ] ] ]}}" data-name="帮我点赞" data-type="button">
+            <view class="line-box orange">
+                <text class="{{[ 'iconnew white-color '+(item.is_like==1?'new-dianzan_sel':'new-dianzan_nor') ]}}"></text>
+            </view>
+            <view class="text">{{''+(item.is_like==1?'谢谢您的支持！':'帮我点赞')+''}}</view>
+        </view>
+        <view bindtap="__e" class="line" data-event-opts="{{[ [ 'tap',[ [ 'saveQrCode',['$event'] ] ] ] ]}}" data-name="保存二维码" data-type="button" wx:if="{{writePhotoAuth}}">
+            <view class="line-box green">
+                <image class="img" src="https://imgcdn.huanjutang.com/file/2021/01/19/38c1185a972462ae0cc6ed819be49e29.png"></image>
+            </view>
+            <view class="text">保存二维码</view>
+            <image class="add-me" src="https://imgcdn.huanjutang.com/file/2021/01/14/6095792d9b451fc732c2f5437617d11f.png"></image>
+        </view>
+        <view catchtap="__e" class="line" data-event-opts="{{[ [ 'tap',[ [ 'sureBtn',['$event'] ] ] ] ]}}" wx:else>
+            <view class="line-box green">
+                <image class="img" src="https://imgcdn.huanjutang.com/file/2021/01/19/38c1185a972462ae0cc6ed819be49e29.png"></image>
+            </view>
+            <view class="text">保存二维码</view>
+            <image class="add-me" src="https://imgcdn.huanjutang.com/file/2021/01/14/6095792d9b451fc732c2f5437617d11f.png"></image>
+        </view>
+    </view>
+    <view class="model" hidden="{{!showModel||item.attention!=1}}" wx:if="{{serviceQrCode}}">
+        <view class="image-box">
+            <image mode="aspectFill" src="{{serviceQrCode}}"></image>
+        </view>
+        <view class="fz-14 black1a-color cont-txt">
+            <text class="txt" style="padding-bottom:25rpx;">扫码关注服务号</text>
+            <text class="txt">更快更及时接收消息通知</text>
+        </view>
+        <view class="model-btn">
+            <view bindtap="__e" class="savecode blue-color fz-14" data-event-opts="{{[ [ 'tap',[ [ 'saveCode',['$event'] ] ] ] ]}}">保存</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="model-bg" data-event-opts="{{[ [ 'tap',[ [ 'cancelModel',['$event'] ] ] ] ]}}" hidden="{{!showModel||item.attention!=1}}" wx:if="{{serviceQrCode}}"></view>
+    <view class="get-user-info" wx:if="{{isCheck}}">
+        <view bindtap="__e" class="hide-bg" data-event-opts="{{[ [ 'tap',[ [ 'closeBtn',['$event'] ] ] ] ]}}"></view>
+        <view class="box">
+            <view class="title fz-16 font-bold black-30">提示</view>
+            <view class="content fz-13 gray-96">你没有授权保存至相册的权限，是否打开授权</view>
+            <button bindopensetting="__e" class="submit fz-16 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">确认</button>
+        </view>
+    </view>
+</view>

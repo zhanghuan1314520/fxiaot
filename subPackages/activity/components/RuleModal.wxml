@@ -1,0 +1,13 @@
+<view catchtouchmove="__e" class="modal data-v-4ce903ee" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{!destroy}}">
+    <view bindtap="__e" class="{{['data-v-4ce903ee','modal-mask',maskClass]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleMaskClick',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['data-v-4ce903ee','mask-content',contentClass]}}">
+        <image class="content-title__image data-v-4ce903ee" src="{{titleImage}}"></image>
+        <view class="content-box data-v-4ce903ee">
+            <view class="box-text data-v-4ce903ee">{{''+content+''}}</view>
+        </view>
+        <view bindtap="__e" class="modal-close data-v-4ce903ee" data-content="规则弹窗" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" data-name="关闭">
+            <image class="close-image data-v-4ce903ee" src="{{closeImage}}"></image>
+            <text class="close-text data-v-4ce903ee">关闭</text>
+        </view>
+    </view>
+</view>

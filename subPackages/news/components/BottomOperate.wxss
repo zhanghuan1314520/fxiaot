@@ -1,0 +1,108 @@
+.bottom-operate {
+    justify-content: space-between;
+}
+
+.bottom-operate,.bottom-operate__left {
+    display: flex;
+    align-items: center;
+    font-family: PingFangSC-Regular,PingFang SC;
+    line-height: 32rpx;
+}
+
+.bottom-operate__left {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.bottom-operate__left .extra-line {
+    width: 1rpx;
+    height: 20rpx;
+    margin: 0 12rpx;
+    background: rgba(0,0,0,.1);
+}
+
+.bottom-operate__right {
+    display: flex;
+    align-items: center;
+    color: rgba(0,0,0,.65);
+    font-family: SFUIText-Regular,SFUIText;
+}
+
+.bottom-operate__right .operate-num {
+    font-size: 24rpx;
+    margin-left: 6rpx;
+    line-height: 32rpx;
+}
+
+.bottom-operate__right .operate-comment .iconnew {
+    font-size: 30rpx;
+}
+
+.bottom-operate__right .operate-comment,.bottom-operate__right .operate-like {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-operate__right .operate-like {
+    margin-left: 32rpx;
+    height: 40rpx;
+}
+
+.bottom-operate__right .operate-like .like-image {
+    width: 50rpx;
+    height: 50rpx;
+    overflow: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20207221833138081.png);
+    background-size: cover;
+    background-position: 0 0;
+    transition-property: all;
+    transition-delay: 20/40s;
+}
+
+.bottom-operate__right .operate-like.active .like-image {
+    animation-name: play;
+    animation-duration: 20/40s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(20);
+    background-position: 100%;
+}
+
+.bottom-operate__right .iconnew {
+    vertical-align: middle;
+}
+
+.operate-answer {
+    height: 32rpx;
+    color: rgba(0,0,0,.45);
+    font-family: PingFangSC-Regular,PingFang SC;
+}
+
+@-webkit-keyframes play {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes play {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.right-content {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 32rpx;
+}
+
+.new-dianzan_sel {
+    color: #f03c50;
+}

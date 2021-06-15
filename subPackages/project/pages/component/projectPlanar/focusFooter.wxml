@@ -1,0 +1,28 @@
+<view>
+    <view class="focus__fotter isPhonex" wx:if="{{showFocus}}">
+        <image class="focus__fotter__img _img" mode="aspectFill" src="{{foucsInfo.project_image}}"></image>
+        <view class="focus__fotter__content">
+            <view class="focus__fotter__content__desc">您正在浏览的楼盘</view>
+            <view class="focus__fotter__content__name">{{''+(foucsInfo.project_name||'')+''}}</view>
+        </view>
+        <view bindtap="__e" class="focus__fotter__btn" data-content="总平图关注弹窗" data-event-opts="{{[ [ 'tap',[ [ 'lotteryRemindHandle',['$event'] ] ] ] ]}}" data-name="关注" data-type="link">关注</view>
+        <view bindtap="__e" class="focus__fotter__close" data-event-opts="{{[ [ 'tap',[ [ 'handleClose',['$event'] ] ] ] ]}}">
+            <view class="iconnew new-guanbi focus__fotter__close__btn"></view>
+        </view>
+    </view>
+    <attention-service-number bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','attentionServiceFlag','$event'],[''] ] ] ] ]}}" isResulted="{{isResultedFlag}}" show="{{attentionServiceFlag}}" vueId="a6127fbc-1"></attention-service-number>
+    <follow-success bind:__l="__l" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','followSuccessed','$event'],[''] ] ] ] ]}}" show="{{followSuccessed}}" vueId="a6127fbc-2"></follow-success>
+    <view class="flower-model" wx:if="{{serviceQrCode&&followModelShow}}">
+        <view class="image-box">
+            <image mode="aspectFill" src="{{serviceQrCode}}"></image>
+        </view>
+        <view class="fz-14 black1a-color cont-txt">
+            <text class="txt" style="padding-bottom:25rpx;">扫码关注服务号</text>
+            <text class="txt">更快更及时接收消息通知</text>
+        </view>
+        <view class="model-btn">
+            <view bindtap="__e" class="savecode blue-color fz-14" data-event-opts="{{[ [ 'tap',[ [ 'saveQrcodeHandle',['$event'] ] ] ] ]}}">保存</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="flower-model-bg" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{serviceQrCode&&followModelShow}}"></view>
+</view>

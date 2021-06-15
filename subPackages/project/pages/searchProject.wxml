@@ -1,0 +1,54 @@
+<view>
+    <view class="page">
+        <view class="options-content">
+            <block wx:if="{{selectItems.length>0}}">
+                <view class="options-line" wx:if="{{item!='不限'}}" wx:for="{{selectItems}}" wx:key="index">{{''+item+''}}</view>
+            </block>
+            <block wx:if="{{isTotal}}">
+                <block wx:if="{{highPrice>=100000000000000&&lowPrice==0}}">
+                    <view class="options-line" wx:if="{{selectItems.length<1}}">不限</view>
+                </block>
+                <view class="options-line" wx:else>{{''+(highPrice>=100000000000000&&lowPrice==0?'':lowPrice/10000+'万-')+(highPrice>=100000000000000?'不限':highPrice/10000+'万')+''}}</view>
+            </block>
+            <block wx:if="{{isPrice}}">
+                <block wx:if="{{highPrice>=1000000000000&&lowPrice==0}}">
+                    <view class="options-line" wx:if="{{selectItems.length<1}}">不限</view>
+                </block>
+                <view class="options-line" wx:else>{{''+(highPrice>=1000000000000&&lowPrice==0?'':lowPrice+'-')+(highPrice>=1000000000000?'不限':highPrice+'元')+''}}</view>
+            </block>
+        </view>
+        <view class="project-data">
+            <block wx:if="{{projectData.length>0}}">
+                <block wx:if="{{imperfectData}}">
+                    <view class="nothing">
+                        <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190705/5d1f23e0d8884.png"></image>未找到合适房源！请尝试修改您的找房条件</view>
+                    <view class="title font-bold">基于部分条件为您推荐<text class="gray-96"></text>
+                    </view>
+                </block>
+                <view class="title font-bold" wx:else>为您找到的楼盘<text class="gray-96"></text>
+                </view>
+                <project-item bind:__l="__l" bind:updateItems="__e" content="look_project_search" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projectData','$event'],[''] ] ] ] ]}}" items="{{projectData}}" sourcePosition="一键找房列表" vueId="116d9396-1"></project-item>
+            </block>
+            <block wx:else>
+                <view class="full-screen" wx:if="{{loading}}">
+                    <view id="spinner"></view>
+                </view>
+                <view class="nothing" wx:else>
+                    <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190705/5d1f23e0d8884.png"></image>未找到合适房源！请尝试修改您的找房条件</view>
+            </block>
+            <view class="flex_layout_c" hidden="{{!loading}}" wx:if="{{more}}">
+                <view class="loading-runing">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="search-cont">
+            <view bindtap="__e" class="search-text fz-16 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'resetOptions',['$event'] ] ] ] ]}}">重新选择</view>
+        </view>
+    </view>
+</view>

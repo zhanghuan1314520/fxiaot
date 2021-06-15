@@ -1,0 +1,15 @@
+<view class="sign-timer" wx:if="{{show}}">
+    <view class="left">{{''+text+''}}</view>
+    <view class="timeout" wx:if="{{endTime}}">
+        <block wx:if="{{days>0}}">
+            <view class="num">{{''+days+''}}</view>
+            <view class="split">天</view>
+        </block>
+        <view class="num">{{''+hours+''}}</view>
+        <view class="split">时</view>
+        <view class="num">{{''+minutes+''}}</view>
+        <view class="split">分</view>
+        <view class="num">{{''+seconds+''}}</view>
+        <view class="split">秒</view>
+    </view>
+</view>

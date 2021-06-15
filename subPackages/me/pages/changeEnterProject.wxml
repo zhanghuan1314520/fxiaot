@@ -1,0 +1,132 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="info step_one">
+            <view class="lottery-msg">
+                <view class="up-header">
+                    <text class="fz-16 font-bold">基本信息</text>
+                    <navigator class="rule fz-14" hoverClass="none" url="{{invite_url}}">#入驻优势与须知#</navigator>
+                </view>
+            </view>
+            <view class="hou_plan_item">
+                <view class="general_style">
+                    <view class="fz-14 small-level-color">姓名</view>
+                </view>
+                <view class="hou_plan_live">
+                    <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['name','$event'] ] ] ] ]}}" placeholder="您的真实姓名" placeholderClass="font-bold-normal" value="{{inputData.name}}"></input>
+                </view>
+            </view>
+            <view class="hou_plan_item">
+                <view class="general_style">
+                    <view class="fz-14 small-level-color">手机号</view>
+                </view>
+                <view class="hou_plan_live">
+                    <input bindblur="__e" data-event-opts="{{[ [ 'blur',[ [ 'loseFocus',['phone','$event'] ] ] ] ]}}" placeholder="联系您的手机号" placeholderClass="font-bold-normal" type="number" value="{{inputData.phone}}"></input>
+                </view>
+            </view>
+            <view class="hou_plan_item">
+                <view class="general_style">
+                    <view class="fz-14 small-level-color">微信号</view>
+                </view>
+                <view class="hou_plan_live">
+                    <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['wechat','$event'] ] ] ] ]}}" placeholder="您的微信号" placeholderClass="font-bold-normal" value="{{inputData.wechat}}"></input>
+                </view>
+            </view>
+            <block wx:if="{{is_broker==1}}">
+                <view class="hou_plan_item">
+                    <view class="general_style">
+                        <view class="fz-14 small-level-color">原门面</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['old_shop','$event'] ] ] ] ]}}" disabled="disabled" placeholder="原门面" placeholderClass="font-bold-normal" value="{{inputData.old_shop}}"></input>
+                    </view>
+                </view>
+                <view class="hou_plan_item">
+                    <view class="general_style">
+                        <view class="fz-14 small-level-color">更换后门面</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['shop','$event'] ] ] ] ]}}" placeholder="更换后门面" placeholderClass="font-bold-normal" value="{{inputData.shop}}"></input>
+                    </view>
+                </view>
+                <view class="hou_plan_item">
+                    <view class="general_style">
+                        <view class="fz-14 small-level-color">原公司</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['old_corporation','$event'] ] ] ] ]}}" disabled="disabled" placeholder="原公司" placeholderClass="font-bold-normal" value="{{inputData.old_corporation}}"></input>
+                    </view>
+                </view>
+                <view class="hou_plan_item">
+                    <view class="general_style item_style">
+                        <view class="fz-14 small-level-color">更换后公司</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['corporation','$event'] ] ] ] ]}}" placeholder="更换后公司" placeholderClass="font-bold-normal" value="{{inputData.corporation}}"></input>
+                    </view>
+                </view>
+                <view class="hou_plan_item">
+                    <view class="general_style">
+                        <view class="fz-14 small-level-color">更换后楼盘名</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['project_name','$event'] ] ] ] ]}}" placeholder="更换后楼盘名" placeholderClass="font-bold-normal" value="{{inputData.project_name}}"></input>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="hou_plan_item">
+                    <view class="general_style">
+                        <view class="fz-14 small-level-color">原入驻楼盘名</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['old_project_name','$event'] ] ] ] ]}}" disabled="disabled" placeholder="原入驻楼盘名" placeholderClass="font-bold-normal" value="{{inputData.old_project_name}}"></input>
+                    </view>
+                </view>
+                <view class="hou_plan_item">
+                    <view class="general_style">
+                        <view class="fz-14 small-level-color">更换后楼盘名</view>
+                    </view>
+                    <view class="hou_plan_live">
+                        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['project_name','$event'] ] ] ] ]}}" placeholder="更换后楼盘名" placeholderClass="font-bold-normal" value="{{inputData.project_name}}"></input>
+                    </view>
+                </view>
+            </block>
+            <view class="layout_display">
+                <view class="up-header">
+                    <text class="fz-16 black-3a-color font-bold star">上传二维码和名片/工牌</text>
+                    <text class="fz-12">(图片大小不超过2M)</text>
+                </view>
+                <view class="upload-content">
+                    <view class="w-cell_style">
+                        <view class="upload-file">
+                            <view bindtap="__e" class="pic" data-event-opts="{{[ [ 'tap',[ [ 'uploadFile',[1] ] ] ] ]}}" wx:if="{{!inputData.wechat_qrcode}}"></view>
+                            <view class="pic" wx:else>
+                                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$event'] ] ] ] ]}}" data-preview="{{inputData.wechat_qrcode}}" mode="aspectFill" src="{{inputData.wechat_qrcode}}" style="width:100%;height:100%;"></image>
+                            </view>
+                        </view>
+                        <text class="small-level-color fz-12" style="margin-top:20rpx;" wx:if="{{!inputData.wechat_qrcode}}">微信二维码</text>
+                        <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'delImg',[1] ] ] ] ]}}" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAe1BMVEUAAADv7+/f39/f39/f39/f39/f39/g4ODf39/g4ODg4ODg4ODg4ODe3t7g4ODg4ODf39/i4uLY2Njg4ODg4ODg4ODh4eHi4uLh4eHe3t7g4ODf39/g4ODh4eHg4ODh4eHf39/j4+Pc3Nzh4eHn5+fV1dXf39/f39/f39+Rb3c3AAAAKHRSTlMABfFu9+lkdvr1sq9/Gezl4S8NlNnURSOg++nIw6qEWko6MyoVEmlAuFgdDAAAAZtJREFUSMellueSgyAQgBfEEsvZS7qm3b7/E140TmDFOHj5/uCMIB+7CwhTsqgLj+VOiF15DLsog0VYagUJKsSBe2HwkShPBE4QSR7BPJnDcRb+mBW7+h5+YOunoPFb4AJFBRR2/sFF+JmuXeuv8eMQH72/PkKxuhZoQHx9x9NHI/wbvHA8NMKzxvxyNIQPOWc5GtP0sU0TMu2ezCf2pLjsPuOWUPs3zN0o/UOWe5NVZAEq7BmAY78/+HzPDqgQ3CEiRtwFYNZoJSz2FCCKSQ0dEjYOA3hZiRAApiVfQYgjUqO3kg+UExyHVreSPoQAyqHVraQPoYTd0OpW0oe+A5kFaiV9CEIfMMZniJWOWK9EFy3zJTNIKGhYlXzJDBL89Ynr5ny4WleEFqJ4xofWlUJcry9vcIU6Q04kuMtysr/6jF7oFj0Q6c2BbtHL6kNg5TFTw8Bji0Zs3f8elZCaHcYpvKkMlrFpv7lQgDnaCH2jU6p40b9df+3q3KxPF7t7g3mixtZm8eym/vbnhHKvq1NQ2kLYhX9q6ztM+AOHVvRysoRsogAAAABJRU5ErkJggg==" style="width:36rpx;margin-top:24rpx;" wx:else></image>
+                    </view>
+                    <view class="w-cell_style">
+                        <view class="upload-file">
+                            <view bindtap="__e" class="pic" data-event-opts="{{[ [ 'tap',[ [ 'uploadFile',[2] ] ] ] ]}}" wx:if="{{!inputData.card}}"></view>
+                            <view class="pic" wx:else>
+                                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$event'] ] ] ] ]}}" data-preview="{{inputData.card}}" mode="aspectFill" src="{{inputData.card}}" style="width:100%;height:100%;"></image>
+                            </view>
+                        </view>
+                        <text class="small-level-color fz-12" style="margin-top:20rpx;" wx:if="{{!inputData.card}}">名牌/工牌</text>
+                        <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'delImg',[2] ] ] ] ]}}" mode="widthFix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAe1BMVEUAAADv7+/f39/f39/f39/f39/f39/g4ODf39/g4ODg4ODg4ODg4ODe3t7g4ODg4ODf39/i4uLY2Njg4ODg4ODg4ODh4eHi4uLh4eHe3t7g4ODf39/g4ODh4eHg4ODh4eHf39/j4+Pc3Nzh4eHn5+fV1dXf39/f39/f39+Rb3c3AAAAKHRSTlMABfFu9+lkdvr1sq9/Gezl4S8NlNnURSOg++nIw6qEWko6MyoVEmlAuFgdDAAAAZtJREFUSMellueSgyAQgBfEEsvZS7qm3b7/E140TmDFOHj5/uCMIB+7CwhTsqgLj+VOiF15DLsog0VYagUJKsSBe2HwkShPBE4QSR7BPJnDcRb+mBW7+h5+YOunoPFb4AJFBRR2/sFF+JmuXeuv8eMQH72/PkKxuhZoQHx9x9NHI/wbvHA8NMKzxvxyNIQPOWc5GtP0sU0TMu2ezCf2pLjsPuOWUPs3zN0o/UOWe5NVZAEq7BmAY78/+HzPDqgQ3CEiRtwFYNZoJSz2FCCKSQ0dEjYOA3hZiRAApiVfQYgjUqO3kg+UExyHVreSPoQAyqHVraQPoYTd0OpW0oe+A5kFaiV9CEIfMMZniJWOWK9EFy3zJTNIKGhYlXzJDBL89Ynr5ny4WleEFqJ4xofWlUJcry9vcIU6Q04kuMtysr/6jF7oFj0Q6c2BbtHL6kNg5TFTw8Bji0Zs3f8elZCaHcYpvKkMlrFpv7lQgDnaCH2jU6p40b9df+3q3KxPF7t7g3mixtZm8eym/vbnhHKvq1NQ2kLYhX9q6ztM+AOHVvRysoRsogAAAABJRU5ErkJggg==" style="width:36rpx;margin-top:24rpx;" wx:else></image>
+                    </view>
+                </view>
+            </view>
+            <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'getFormID',['$event'] ] ] ] ]}}" reportSubmit="true">
+                <button bindtap="__e" class="submit-btn fz-16 white-color" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" formType="submit">确认申请更换</button>
+            </form>
+            <view class="gray-9-color" style="padding:0 24rpx 90rpx;box-sizing:border-box;">
+                <view class="fz-12">注：为了避免他人冒充置业顾问/经纪人，我们需要验证您的名片或者工牌！谢谢您的配合。</view>
+                <view class="fz-12">如果无法上传图片或者遇到任何问题，请联系客服，我们会及时为您解决！</view>
+                <navigator class="fz-14 contact-button" hoverClass="none" url="/subPackages/me/pages/customerService">#去联系客服#</navigator>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+{
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-card-id": "/subPackages/me/pages/components/saleman/BusiCardId",
+        "busi-wx-card": "/subPackages/me/pages/components/saleman/BusiWxCard",
+        "busi-project": "/subPackages/me/pages/components/saleman/BusiProject",
+        "busi-relation-lottery": "/subPackages/me/pages/components/saleman/BusiRelationLottery"
+    }
+}

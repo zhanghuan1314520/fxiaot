@@ -1,0 +1,66 @@
+<view class="page">
+    <view class="panel">
+        <view class="title mt-20">动态类型</view>
+        <view class="types mt-20">
+            <view bindtap="__e" class="{{[ 'type '+(typeIndex===index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'choiceType',['$0',index],[ [ ['types','',index] ] ] ] ] ] ]}}" wx:for="{{types}}" wx:key="index">{{''+item+''}}</view>
+        </view>
+    </view>
+    <view class="panel">
+        <view class="title mt-16">动态标题</view>
+        <view class="dynamic-title mt-8 mb-10">
+            <textarea bindinput="__e" class="dynamic-title-input" data-event-opts="{{[ [ 'input',[ [ 'bindTitleChange',['$event'] ] ] ] ]}}" fixed="{{false}}" hidden="{{comment_show}}" maxlength="{{maxTitleLen}}" placeholder="标题内容简短易懂更能吸引人喔～（30字以内）" placeholderClass="dynamic-placeholder" value="{{inputTitle}}"></textarea>
+            <view class="word-count" hidden="{{comment_show}}">
+                <text>{{titleLen+'/30'}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="panel">
+        <view class="title mt-16">具体内容</view>
+        <view class="dynamic-content mt-8 mb-10">
+            <textarea bindinput="__e" class="dynamic-content-input" data-event-opts="{{[ [ 'input',[ [ 'bindContentChange',['$event'] ] ] ] ]}}" fixed="{{false}}" hidden="{{comment_show}}" maxlength="{{maxContentLength}}" placeholder="请输入动态的具体内容（最多300字以内）" placeholderClass="dynamic-placeholder" value="{{inputContent}}"></textarea>
+            <view class="word-count" hidden="{{comment_show}}">
+                <text>{{contentLen+'/300'}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="panel">
+        <view class="title mt-20">上传图片</view>
+        <view class="image-list mt-20 mb-28">
+            <view class="image-upload_list">
+                <view class="image_item" wx:for="{{imageList}}" wx:key="index">
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$0'],[ [ ['imageList','',index] ] ] ] ] ] ]}}" mode="aspectFill" src="{{item}}"></image>
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'deleteImage',[index] ] ] ] ]}}" src="{{deleteIcon}}"></image>
+                </view>
+                <image bindtap="__e" class="image-upload_button" data-event-opts="{{[ [ 'tap',[ [ 'chooseImage',['$event'] ] ] ] ]}}" src="{{uploadIcon}}" wx:if="{{imageList.length<maxLength}}"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="tips" data-event-opts="{{[ [ 'tap',[ [ 'showModel',['$event'] ] ] ] ]}}">
+        <text class="iconnew new-xianxing-shuoming f-14"></text>
+        <text>发布规则</text>
+    </view>
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['handleConfirm'] ] ] ]}}" isAuthPhone="{{true}}" vueId="00de9f2a-1" vueSlots="{{['default']}}">
+        <view class="submit-btn">确定</view>
+    </authorization>
+    <view class="model" wx:if="{{comment_show}}">
+        <view class="model-tip">发布规则</view>
+        <scroll-view class="comment-box" scrollY="scroll-y">
+            <view class="model-text1">
+                <view class="text1" wx:for="{{content}}" wx:key="index">{{''+item+''}}</view>
+            </view>
+            <view class="customer-info">如有疑问可咨询杭州房小团客服:<text class="wechat">{{''+serveicesWechat+''}}</text>
+                <text bindtap="__e" class="copy-wechat" data-event-opts="{{[ [ 'tap',[ [ 'copyWechat',['$event'] ] ] ] ]}}">复制微信号</text>
+            </view>
+        </scroll-view>
+        <view class="model-btn">
+            <button bindtap="__e" class="btn-know white-bg" data-event-opts="{{[ [ 'tap',[ [ 'cancelCommentShow',['$event'] ] ] ] ]}}">我知道了</button>
+        </view>
+    </view>
+    <view bindtap="__e" class="model-bg" data-event-opts="{{[ [ 'tap',[ [ 'cancelCommentShow',['$event'] ] ] ] ]}}" wx:if="{{comment_show}}"></view>
+    <view class="page-control">
+        <navigator class="backhome btn" openType="switchTab" url="/pages/index" wx:if="{{showHome}}">
+            <text class="iconnew new-huishouye fz-21"></text>
+            <text class="fz-11 font-bold">首页</text>
+        </navigator>
+    </view>
+</view>

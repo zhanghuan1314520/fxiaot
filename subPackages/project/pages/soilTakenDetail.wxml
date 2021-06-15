@@ -1,0 +1,54 @@
+<view>
+    <view class="page">
+        <view id="map-container" wx:if="{{items.item.is_show_map==1}}">
+            <map bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'showMoreLocal',['$event'] ] ] ] ]}}" id="map" latitude="{{show_lat}}" longitude="{{show_long}}" markers="{{markers}}" scale="14" showLocation="show-location">
+                <view catchtap="__e" class="fz-12 showMoreLocal" data-event-opts="{{[ [ 'tap',[ [ 'showMoreLocal',['$event'] ] ] ] ]}}">点击查看附近楼盘</view>
+            </map>
+        </view>
+        <view class="container">
+            <view class="container-box" style="{{items.item.is_show_map!=1?'margin-top: 16rpx;':''}}" wx:if="{{items.rows1.length>0}}">
+                <view class="container-box-line" wx:for="{{items.rows1}}" wx:for-index="pIndex" wx:for-item="row" wx:key="pIndex">
+                    <view class="fz-13 left-key gray-96">
+                        <text selectable="selectable">{{''+row.name+''}}</text>
+                        <text catchtap="__e" class="tips iconnew new-wenhaocopy fz-17" data-event-opts="{{[ [ 'tap',[ [ 'floorPriceTips',['$event'] ] ] ] ]}}" wx:if="{{row.name=='楼面价：'}}"></text>
+                    </view>
+                    <view class="right-value fz-13 black-30">
+                        <text selectable="selectable">{{''+row.value+''}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="container-box" wx:if="{{items.rows2.length>0}}">
+                <view class="qr-code-content" wx:if="{{items.item.service_qrcode}}">
+                    <image bindtap="__e" class="qr-code" data-event-opts="{{[ [ 'tap',[ [ 'preViewImage',['$0'],['items.item.service_qrcode'] ] ] ] ]}}" src="{{items.item.service_qrcode}}"></image>
+                    <view class="text fz-11 gray-96">
+                        <text>选新房 查摇号
+                            就上房小团</text>
+                    </view>
+                </view>
+                <view class="container-box-line" wx:for="{{items.rows2}}" wx:for-index="pIndex" wx:for-item="row" wx:key="pIndex">
+                    <view class="fz-13 left-key gray-96">
+                        <text selectable="selectable">{{''+row.name+''}}</text>
+                    </view>
+                    <view class="right-value fz-13 black-30">
+                        <text selectable="selectable">{{''+row.value+''}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="container-box" wx:if="{{items.rows2.length>0}}">
+                <view class="container-box-line" wx:for="{{items.rows3}}" wx:for-index="pIndex" wx:for-item="row" wx:key="pIndex">
+                    <view class="fz-13 left-key gray-96">
+                        <text selectable="selectable">{{''+row.name+''}}</text>
+                    </view>
+                    <view class="right-value fz-13 black-30">
+                        <text selectable="selectable">{{''+row.value+''}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" content="{{rules}}" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','floorTipsShow','$event'],[''] ] ] ] ]}}" data-ref="DialogPoint" isColumnBtn="true" showCancel="{{false}}" submitText="知道了" textAlign="left" title="什么是楼面价？" visible="{{floorTipsShow}}" vueId="4b9e26a4-1"></dialog>
+    <busi-share-icon bind:__l="__l" class="vue-ref" data-ref="share" vueId="4b9e26a4-2" vueSlots="{{['default']}}">
+        <button bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'shareTo',['$event'] ] ] ] ]}}" wx:if="{{salesManId>0}}"></button>
+        <button bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" data-type="button" openType="share" wx:else></button>
+    </busi-share-icon>
+</view>

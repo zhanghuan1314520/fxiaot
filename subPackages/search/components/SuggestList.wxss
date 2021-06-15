@@ -1,0 +1,127 @@
+.suggest {
+    width: 100%;
+    height: calc(100vh - 128rpx);
+}
+
+.suggest .suggest__keyword {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.suggest .suggest__keyword-text {
+    flex: 1;
+    color: #303237;
+    display: inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-overflow: hidden;
+    overflow: hidden;
+}
+
+.suggest .suggest__keyword-icon {
+    width: 40rpx;
+    height: 40rpx;
+    color: rgba(0,0,0,.25);
+}
+
+.suggest .suggest__container {
+    padding: 25rpx 32rpx 23rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.suggest .suggest__group,.suggest .suggest__item {
+    display: flex;
+    flex-direction: column;
+    padding: 24rpx 0;
+    box-sizing: border-box;
+    background: transparent;
+    border-bottom: 1rpx solid rgba(21,24,45,.05);
+    overflow: hidden;
+}
+
+.suggest .suggest__item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14rpx;
+}
+
+.suggest .suggest__item-title-text {
+    display: inline-block;
+    flex: 1;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.suggest .suggest__item-title-tag {
+    height: 32rpx;
+    padding: 0 8rpx;
+    line-height: 32rpx;
+    border-radius: 4rpx;
+    color: #2d8cf0;
+    background: rgba(45,140,240,.12);
+}
+
+.suggest .suggest__item-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.suggest .suggest__item-desc-text {
+    flex: 1;
+    text-overflow: ellipsis;
+    max-width: 420rpx;
+}
+
+.suggest .suggest__item-desc-price,.suggest .suggest__item-desc-text {
+    display: inline-block;
+    color: rgba(0,0,0,.45);
+    line-height: 32rpx;
+    overflow: hidden;
+}
+
+.suggest .suggest__item-desc-price>.price-text {
+    margin-bottom: 4rpx;
+}
+
+.suggest .suggest__group {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 28rpx;
+}
+
+.suggest .suggest__group .group-left {
+    display: flex;
+    align-items: center;
+    color: #303237;
+}
+
+.suggest .suggest__group .group-left .light {
+    font-size: 28rpx;
+}
+
+.suggest .suggest__group .group-left .type {
+    padding: 2rpx 8rpx;
+    background: #eceff5;
+    border-radius: 4rpx;
+    font-size: 22rpx;
+    color: #828caa;
+    margin-left: 16rpx;
+}
+
+.suggest .suggest__group .group-right {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.suggest .suggest__group .group-right .default {
+    margin-right: 8rpx;
+}

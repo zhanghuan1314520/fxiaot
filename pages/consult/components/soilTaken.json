@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "soil-item": "/components/SoilTakenItem/soilTokenItem",
+        "share-btn": "/components/unifyUI/shareBtn",
+        "dialog": "/components/UILayout/BusiDialog"
+    }
+}

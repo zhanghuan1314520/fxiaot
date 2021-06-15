@@ -1,0 +1,13 @@
+<view class="description data-v-f99d6638" wx:if="{{!switchPage}}">
+    <view class="weui-loadmore data-v-f99d6638" hidden="{{more}}" wx:if="{{hideText}}">
+        <view class="{{[ 'data-v-f99d6638','weui-loadmore__tips '+(showDataSomeFlag?'left-align':'left-align gray-color') ]}}">
+            <text class="data-v-f99d6638">{{(!showDataSomeFlag?'':defaultText)+'\n注意：隐藏后的身份证号不具有唯一性，例如330127198003031111和330127197002021111隐藏后同为330127********1111，我们会使用330127********1111来查询摇号结果，因此可能会出现结果不精确的情况。此功能旨在让大家查询更便捷，如果给您带来了困扰敬请谅解！'}}</text>
+        </view>
+    </view>
+    <view class="qr-code-box data-v-f99d6638" wx:if="{{serviceQrCode}}">
+        <image bindtap="__e" class="qr-code data-v-f99d6638" data-event-opts="{{[ [ 'tap',[ [ 'preViewImage',['$event'] ] ] ] ]}}" src="{{serviceQrCode}}"></image>
+        <view class="right-text data-v-f99d6638">
+            <text class="gray-96 data-v-f99d6638">{{''+shortTitle+'\n                买房更简单'}}</text>
+        </view>
+    </view>
+</view>

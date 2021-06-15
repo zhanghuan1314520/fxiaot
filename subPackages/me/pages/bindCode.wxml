@@ -1,0 +1,9 @@
+<view>
+    <view class="page">
+        <view class="page__bd">
+            <view class="title gray-9-color fz-13">{{'绑定【'+title+'】摇号编码'}}</view>
+            <bind-code-forms bind:__l="__l" bind:dialogHandle="__e" bind:updateIds="__e" data-event-opts="{{[ [ '^updateIds',[ [ '__set_sync',['$0','id','$event'],[''] ] ] ],[ '^dialogHandle',[ ['dialog'] ] ] ]}}" ids="{{id}}" vueId="60e35d5a-1"></bind-code-forms>
+        </view>
+    </view>
+    <dialog bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" class="vue-ref" content="绑定个人信息之后，部分楼盘可以直接获取摇号编码，查询摇号结果更方便" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','dialogVisible','$event'],[''] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ] ]}}" data-ref="Dialog" submitText="去绑定" title="请先绑定个人信息" visible="{{dialogVisible}}" vueId="60e35d5a-2"></dialog>
+</view>

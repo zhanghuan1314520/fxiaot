@@ -1,0 +1,6 @@
+<view class="no-data-wrap">
+    <view class="no-data">
+        <image class="image" src="{{imgUrl}}"></image>
+        <view class="text">{{''+text+''}}</view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+page {
+    background: #f2f2f2;
+}
+
+.focus-option,.page {
+    overflow: hidden;
+}
+
+.focus-option {
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e2e4ea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 100rpx;
+    background: #fff;
+    z-index: 99;
+}
+
+.focus-option .option-color {
+    margin: 0 auto;
+    width: 0rpx;
+    height: 6rpx;
+    border-radius: 6rpx;
+    background-color: #2d8cf0;
+    transition: width .2s;
+}
+
+.focus-option .color-style {
+    width: 56rpx;
+}
+
+.focus-option .blued-color {
+    color: #2d8cf0;
+}
+
+.focus-option .focus-option-item {
+    width: 100%;
+}
+
+.empty_block {
+    height: 106rpx;
+    background-color: #f2f2f2;
+    position: relative;
+    z-index: 6;
+}

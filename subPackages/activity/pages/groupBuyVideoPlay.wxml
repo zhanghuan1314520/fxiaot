@@ -1,0 +1,32 @@
+<view class="video data-v-10064444">
+    <busi-nav-header bind:__l="__l" class="data-v-10064444 vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" vueId="d9fba1ce-1"></busi-nav-header>
+    <view class="play-container data-v-10064444">
+        <video autoplay="true" bindpause="__e" bindplay="__e" bindtap="__e" class="video data-v-10064444" controls="{{false}}" data-event-opts="{{[ [ 'play',[ [ 'handleChangeVideoStatus',['play'] ] ] ],[ 'pause',[ [ 'handleChangeVideoStatus',['pause'] ] ] ],[ 'tap',[ [ 'videoClick',['$event'] ] ] ] ]}}" id="video" loop="{{true}}" objectFit="contain" showCenterPlayBtn="{{false}}" showFullscreenBtn="{{true}}" src="{{detail.video_url}}"></video>
+        <view catchtap="__e" class="play data-v-10064444" data-event-opts="{{[ [ 'tap',[ [ 'playVideo',['$event'] ] ] ] ]}}" wx:if="{{status==='pause'}}">
+            <text class="iconnew new-ic_shipin data-v-10064444"></text>
+        </view>
+        <button bindtap="__e" class="share white-color data-v-10064444" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="分享" openType="share">
+            <text class="share-icon new-ic_fenxiang iconnew data-v-10064444"></text>
+        </button>
+        <view class="bottom-info data-v-10064444">
+            <view bindtap="__e" class="info-class data-v-10064444" data-event-opts="{{[ [ 'tap',[ [ 'handleGoDetail',['$event'] ] ] ] ]}}" data-name="楼盘详情" id="{{detail.project_id}}">{{''+(detail.project.name||'')+''}}</view>
+            <view class="contact data-v-10064444" wx:if="{{detail.sales_man}}">
+                <view class="contact-left data-v-10064444">
+                    <image bindtap="__e" class="avatar data-v-10064444" data-event-opts="{{[ [ 'tap',[ [ 'toSalesDetail',['$event'] ] ] ] ]}}" data-name="职业顾问详情" id="{{detail.sales_man.sales_man_id}}" src="{{detail.sales_man.avatar_url}}"></image>
+                    <view class="left-box data-v-10064444">
+                        <text class="data-v-10064444">{{detail.sales_man.sales_name}}</text>
+                        <image class="flag data-v-10064444" src="https://imgcdn.huanjutang.com/file/2020/10/14/78c85739aa4d8bd152de9b6eec113bf3.png"></image>
+                    </view>
+                </view>
+                <view class="contact-right data-v-10064444">
+                    <authorization Authorization="{{true}}" bind:__l="__l" bind:onSuccess="__e" class="right-button margin data-v-10064444" data-event-opts="{{[ [ '^onSuccess',[ ['toIMPageHandle'] ] ] ]}}" vueId="d9fba1ce-2" vueSlots="{{['default']}}">
+                        <image bindtap="__e" class="right-button data-v-10064444" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="微聊" src="https://imgcdn.huanjutang.com/file/2020/10/14/1f81cefe0a1724fdd7f57b4ef8185318.png"></image>
+                    </authorization>
+                    <base-call-phone bind:__l="__l" bind:onSuccess="__e" class="data-v-10064444" data-event-opts="{{[ [ '^onSuccess',[ ['e0'] ] ] ]}}" vueId="d9fba1ce-3" vueSlots="{{['default']}}">
+                        <image bindtap="__e" class="right-button data-v-10064444" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="打电话" src="https://imgcdn.huanjutang.com/file/2020/10/14/63691fd27ad289c79ede9ee24ffd890a.png"></image>
+                    </base-call-phone>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

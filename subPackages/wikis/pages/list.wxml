@@ -1,0 +1,78 @@
+<view>
+    <view class="lists" wx:if="{{tabTypes.length<=1}}">
+        <block wx:if="{{contentType==1}}">
+            <wiki-item bind:__l="__l" item="{{wiki}}" vueId="{{'4b62ad41-1-'+index}}" wx:if="{{contentType==1}}" wx:for="{{cacheList[0].list}}" wx:for-item="wiki" wx:key="index"></wiki-item>
+        </block>
+        <view class="download_item" wx:if="{{contentType==2}}">
+            <view class="download_item_content" wx:for="{{cacheList[0].list}}" wx:key="index">
+                <view bindtap="__e" class="content_left" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['cacheList.__$n0.list','',index] ] ] ] ] ] ]}}">
+                    <image class="preview-img" lazyLoad="{{true}}" src="{{item.cover_img}}"></image>
+                    <view class="image-icon">
+                        <text class="new-fangda iconnew white-color fz-16"></text>
+                    </view>
+                </view>
+                <view class="content_right">
+                    <text class="name font-bold" wx:if="{{item.title}}">{{''+item.title+''}}</text>
+                    <view class="middle-line">
+                        <text class="text" wx:if="{{item.title}}">(仅供参考)</text>
+                        <view bindtap="__e" class="item_btn" data-event-opts="{{[ [ 'tap',[ [ 'downloadFile',['$0'],[ [ ['cacheList.__$n0.list','',index] ] ] ] ] ] ]}}">下载文件</view>
+                    </view>
+                    <view bindtap="__e" class="preview-img" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['cacheList.__$n0.list','',index] ] ] ] ] ] ]}}">点击预览大图</view>
+                </view>
+            </view>
+        </view>
+        <view class="empty-data" wx:if="{{!tabTypes.length||cacheList[0].list.length<1}}">
+            <image class="empty-image" src="https://imgcdn.huanjutang.com/image/2020/06/08/b14b6b723fdadd219950a03bacd6cfc1.png"></image>
+            <view class="empty-text">暂无数据</view>
+        </view>
+    </view>
+    <view class="column" wx:else>
+        <view class="column__nav-box">
+            <scroll-view class="column__nav" scrollIntoView="{{'column_'+selIndex}}" scrollX="true">
+                <view bindtap="__e" class="{{[ 'column__nav__item '+(index==activeIndex?'column__nav__item--active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleCheck',[index] ] ] ] ]}}" id="{{'column_'+index}}" wx:for="{{tabTypes}}" wx:key="index">{{''+item.name+''}}</view>
+            </scroll-view>
+        </view>
+        <view class="projects">
+            <swiper autoHeight="true" bindchange="__e" currentItemId="{{'project'+selContIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+swiperHieght}}">
+                <swiper-item class="swiper-item" itemId="{{'project'+index}}" wx:for="{{cacheList}}" wx:key="index">
+                    <view class="{{['project'+index]}}" wx:if="{{contentType==1}}">
+                        <wiki-item bind:__l="__l" item="{{wiki}}" vueId="{{'4b62ad41-2-'+index+'-'+index2}}" wx:for="{{item.list}}" wx:for-index="index2" wx:for-item="wiki" wx:key="index2"></wiki-item>
+                    </view>
+                    <view class="{{['download_item','project'+index]}}" wx:if="{{contentType==2}}">
+                        <view class="download_item_content" wx:for="{{item.list}}" wx:for-index="index2" wx:for-item="wiki" wx:key="index2">
+                            <view bindtap="__e" class="content_left" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['cacheList','',index],['list','',index2] ] ] ] ] ] ]}}">
+                                <image class="preview-img" lazyLoad="{{true}}" src="{{wiki.cover_img}}"></image>
+                                <view class="image-icon">
+                                    <text class="new-fangda iconnew white-color fz-16"></text>
+                                </view>
+                            </view>
+                            <view class="content_right">
+                                <text class="name font-bold" wx:if="{{wiki.title}}">{{''+wiki.title+''}}</text>
+                                <view class="middle-line">
+                                    <text class="text" wx:if="{{wiki.title}}">(仅供参考)</text>
+                                    <view bindtap="__e" class="item_btn" data-event-opts="{{[ [ 'tap',[ [ 'downloadFile',['$0'],[ [ ['cacheList','',index],['list','',index2] ] ] ] ] ] ]}}">下载文件</view>
+                                </view>
+                                <view bindtap="__e" class="preview-img" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['cacheList','',index],['list','',index2] ] ] ] ] ] ]}}">点击预览大图</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="empty-data" wx:if="{{item.list<1}}">
+                        <image class="empty-image" src="https://imgcdn.huanjutang.com/image/2020/06/08/b14b6b723fdadd219950a03bacd6cfc1.png"></image>
+                        <view class="empty-text">暂无数据</view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <cover-view class="permissions-settings" wx:if="{{showPermissionsSetting}}">
+        <cover-view class="tips-content fz-18">请开启保存到相册的权限</cover-view>
+        <cover-view class="fz-18 text">开启后需重新点击下载图片按钮</cover-view>
+        <cover-view class="bottom-btn">
+            <cover-view bindtap="__e" class="cancle line fz-18 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'closePermissionsHandle',['$event'] ] ] ] ]}}">取消</cover-view>
+            <button bindopensetting="__e" class="line sure-btn fz-18 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">
+                <cover-view>去开启</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+    <cover-view class="hide-bg" wx:if="{{showPermissionsSetting}}"></cover-view>
+</view>

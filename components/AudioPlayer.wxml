@@ -1,0 +1,15 @@
+<view class="player">
+    <view bindtap="__e" class="player-left" data-event-opts="{{[ [ 'tap',[ [ 'operation',['$event'] ] ] ] ]}}">
+        <view class="icon" wx:if="{{paused}}">
+            <image src="https://imgcdn.huanjutang.com/image/2020/07/23/c1d12b69f61797f39c21892c62f4e3d8.png"></image>
+        </view>
+        <view class="icon" wx:if="{{!paused}}">
+            <image src="https://imgcdn.huanjutang.com/image/2020/07/23/7f95e97ecd18640db27f63d4b8bd2198.png"></image>
+        </view>
+        <text class="time">{{''+currentTime+''}}</text>
+    </view>
+    <view class="player-center _div">
+        <slider activeColor="#2D8CF0" backgroundColor="#D3E3F5" bindchange="__e" bindchanging="__e" blockSize="18" class="audio-slider" data-event-opts="{{[ [ 'changing',[ [ 'changing',['$event'] ] ] ],[ 'change',[ [ 'change',['$event'] ] ] ] ]}}" max="{{duration}}" strokeWidth="4" value="{{current}}"></slider>
+    </view>
+    <view class="player-right">{{''+durationTime+''}}</view>
+</view>

@@ -1,0 +1,7 @@
+<busi-footer bind:__l="__l" vueId="a1199b8e-1" vueSlots="{{['default']}}">
+    <view class="footer-wrap">
+        <footer-share bind:__l="__l" vueId="{{'a1199b8e-2'+','+'a1199b8e-1'}}" wx:if="{{showShareBtn}}"></footer-share>
+        <contact-salesman bind:__l="__l" class="footer-btn skeletons-rect" projectId="{{projectId}}" salesmanId="{{salesmanId}}" vueId="{{'a1199b8e-3'+','+'a1199b8e-1'}}" vueSlots="{{['default']}}">{{''+contactText+''}}</contact-salesman>
+        <call-salesman bind:__l="__l" class="footer-btn skeletons-rect" projectId="{{projectId}}" salesmanId="{{salesmanId}}" vueId="{{'a1199b8e-4'+','+'a1199b8e-1'}}" vueSlots="{{['default']}}" wx:if="{{showCallBtn}}">{{''+callText+''}}</call-salesman>
+    </view>
+</busi-footer>

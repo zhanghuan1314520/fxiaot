@@ -1,0 +1,4 @@
+<view bindtap="__e" class="busi-red-dot" data-event-opts="{{[ [ 'tap',[ [ 'setRead',['$event'] ] ] ] ]}}">
+    <slot></slot>
+    <slot name="redDot" wx:if="{{redDotObj[fieldName]}}"></slot>
+</view>

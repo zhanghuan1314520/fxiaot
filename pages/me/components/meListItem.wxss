@@ -1,0 +1,65 @@
+.list-item,.padding {
+    box-sizing: border-box;
+    padding: 0 32rpx;
+}
+
+.list-item {
+    height: 112rpx;
+    line-height: 112rpx;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skeletons .item-info .text {
+    min-width: 400rpx;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.item-info .text {
+    margin-left: 24rpx;
+    height: 40rpx;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.item-info .todo {
+    width: 100rpx;
+    height: 42rpx;
+    background: linear-gradient(52deg,#ff4e44 1%,#ff6b44 98%);
+    box-shadow: 0 4rpx 16rpx 0 rgba(238,65,20,.24);
+    border-radius: 22rpx 22rpx 22rpx 0;
+    position: absolute;
+    top: -2rpx;
+    right: 0;
+    transform: translateX(calc(100% + 16rpx));
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: #fff;
+    justify-content: center;
+}
+
+.item-info .todo,.right-text {
+    display: flex;
+    align-items: center;
+}
+
+.right-text {
+    font-size: 28rpx;
+    line-height: 36rpx;
+    color: rgba(0,0,0,.35);
+}
+
+.right-text .iconnew {
+    margin-left: 14rpx;
+    font-size: 30rpx;
+    color: #d8d8d8;
+}

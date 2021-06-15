@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "全部楼盘",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "project-items": "/components/ProjectItem/ProjectItem",
+        "filters-comp": "/subPackages/project/components/FiltersComp",
+        "search-bar": "/subPackages/project/pages/component/SecondBuildingList/SearchBar"
+    }
+}

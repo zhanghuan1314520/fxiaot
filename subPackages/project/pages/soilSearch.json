@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "土拍搜索",
+    "navigationBarBackgroundColor": "#fff",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "soil-item": "/components/SoilTakenItem/soilTokenItem",
+        "search-bar": "/subPackages/project/pages/component/SecondBuildingList/SearchBar"
+    }
+}

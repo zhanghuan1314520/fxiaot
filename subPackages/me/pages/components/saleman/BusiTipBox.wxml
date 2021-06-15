@@ -1,0 +1,11 @@
+<view class="busi-tip-box__wrap" wx:if="{{visible}}">
+    <view class="tip-container flex_layout_n_b">
+        <view class="tip-tit">
+            <view class="fz-18">{{''+tipStr+''}}</view>
+        </view>
+        <view class="tip-btn flex_layout">
+            <view bindtap="__e" class="cancel btn-item fz-18" data-event-opts="{{[ [ 'tap',[ [ 'closed',['$event'] ] ] ] ]}}">取消</view>
+            <view bindtap="__e" class="submit btn-item fz-18" data-event-opts="{{[ [ 'tap',[ [ 'relationHandler',['$event'] ] ] ] ]}}">{{''+btnStr+''}}</view>
+        </view>
+    </view>
+</view>

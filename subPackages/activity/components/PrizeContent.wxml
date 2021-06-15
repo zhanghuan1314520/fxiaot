@@ -1,0 +1,15 @@
+<view class="prize data-v-f23002f0">
+    <view class="prize-countdown data-v-f23002f0">
+        <block wx:for="{{showArray}}" wx:for-item="ele" wx:key="index">
+            <view class="box data-v-f23002f0">{{''+ele.value1+''}}</view>
+            <view class="box data-v-f23002f0">{{''+ele.value2+''}}</view>
+            <text class="text data-v-f23002f0">{{''+ele.text+''}}</text>
+        </block>
+    </view>
+    <view class="prize-content data-v-f23002f0">
+        <view class="prize-box data-v-f23002f0">
+            <image class="prize-image data-v-f23002f0" src="{{item.prize_image}}"></image>
+        </view>
+        <view class="prize-name data-v-f23002f0">{{''+(item.prize_title||'')+''}}</view>
+    </view>
+</view>

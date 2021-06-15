@@ -1,0 +1,16 @@
+<view>
+    <view class="reportDetail">
+        <textarea bindinput="__e" class="gray-9-color fz-12" cols="30" data-event-opts="{{[ [ 'input',[ [ 'inputNum',['$event'] ] ] ] ]}}" maxlength="300" placeholder="举报详细说明" rows="10" value="{{inputVal}}"></textarea>
+        <view class="fz-12 small-level-color textNum">{{''+num+'/300'}}</view>
+        <view class="upload-file">
+            <view bindtap="__e" class="pic" data-event-opts="{{[ [ 'tap',[ [ 'uploadFile',['$event'] ] ] ] ]}}" wx:if="{{imageList.length<6}}">
+                <text class="small-level-color fz-10" style="position:absolute;line-height:1;bottom:-40rpx;">上传图片(6张)</text>
+            </view>
+            <view class="pic" wx:for="{{imageList}}" wx:key="index">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['imageList','',index] ] ] ] ] ] ]}}" data-preview="{{item}}" mode="aspectFill" src="{{item}}" style="width:100%;height:100%;"></image>
+                <view bindtap="__e" class="small-level-color" data-event-opts="{{[ [ 'tap',[ [ 'deletePic',[index] ] ] ] ]}}" style="position:absolute;line-height:1;bottom:-40rpx;left:0;">点击删除图片</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="upForm fz-16 white-color" data-event-opts="{{[ [ 'tap',[ [ 'upForm',['$event'] ] ] ] ]}}">提交</view>
+</view>

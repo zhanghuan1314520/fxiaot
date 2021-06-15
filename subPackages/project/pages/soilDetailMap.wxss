@@ -1,0 +1,220 @@
+#map {
+    width: 100%;
+}
+
+.markTip {
+    position: fixed;
+    left: 0;
+    background: hsla(0,0%,100%,.9);
+    z-index: 23;
+    padding: 8rpx;
+}
+
+.markTipText {
+    padding: 5rpx;
+    margin-left: 22rpx;
+}
+
+.markTip .markTipTx {
+    width: 20rpx;
+    height: 20rpx;
+    display: inline-block;
+    float: left;
+    margin: 8rpx;
+}
+
+.backHome {
+    text-align: center;
+    padding: 15rpx;
+}
+
+.backHome:first-child {
+    padding-bottom: 0;
+}
+
+.backHome:last-child {
+    padding-top: 0;
+}
+
+.back-home {
+    bottom: 226rpx!important;
+}
+
+.come-back {
+    width: 132rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    background: #2d8cf0;
+    box-shadow: 0 0 12rpx 0 hsla(0,1.4%,71%,.47);
+    border-radius: 32px;
+    text-align: center;
+    position: fixed;
+    top: 110rpx;
+    left: 26rpx;
+    color: #2d8cf0;
+}
+
+.come-back .back-img {
+    position: relative;
+    width: 26rpx;
+    height: 22rpx;
+    float: left;
+    top: 22rpx;
+    left: 24rpx;
+}
+
+.come-back .back-text {
+    float: right;
+    position: relative;
+    top: 18rpx;
+    right: 20rpx;
+}
+
+.share-btn {
+    border-radius: 64rpx;
+    width: 132rpx;
+    line-height: 64rpx;
+    text-align: center;
+    position: fixed;
+    top: 28rpx;
+    right: 24rpx;
+}
+
+.share-btn .share-icon {
+    float: left;
+    margin-left: 24rpx;
+    width: 25rpx;
+    height: 25rpx;
+    padding-top: 20rpx;
+}
+
+.share-btn button {
+    line-height: 64rpx;
+}
+
+.share-btn .text {
+    float: right;
+    margin-right: 20rpx;
+}
+
+.filter-type {
+    position: fixed;
+    bottom: 40rpx;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    width: 94%;
+    border-radius: 44rpx;
+    background: #fff;
+    line-height: 88rpx;
+    height: 88rpx;
+    left: 5%;
+    align-items: center;
+}
+
+.filter-type .filter-type-line {
+    color: #606266;
+    width: 100%;
+    border-right: 2rpx solid #dfdfdf;
+    font-size: 28rpx;
+    box-sizing: border-box;
+}
+
+.filter-type .no-border {
+    border: none;
+}
+
+.filter-type .active {
+    font-size: 28rpx;
+    color: #2d8cf0;
+    position: relative;
+}
+
+.filter-type .active:after {
+    position: absolute;
+    bottom: 0rpx;
+    content: "";
+    left: 80rpx;
+    height: 8rpx;
+    border-radius: 8rpx;
+    background: rgba(45,140,240,.2);
+    width: 60rpx;
+    display: inline-block;
+}
+
+.project-info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 25;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.project-info .project-status {
+    position: absolute;
+    left: 0;
+    top: -2rpx;
+    height: 54rpx;
+    width: 140rpx;
+    text-align: center;
+}
+
+.project-info .project-img {
+    width: 100%;
+    height: 360rpx;
+}
+
+.project-info .project-name {
+    padding: 24rpx 24rpx 16rpx;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.project-info .project-name .name {
+    float: left;
+    max-width: 300rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project-info .project-name .last-num {
+    display: inline-block;
+    width: 160rpx;
+    margin-left: 20rpx;
+    margin-top: 8rpx;
+}
+
+.project-info .project-name .price {
+    float: right;
+}
+
+.project-info .project-address {
+    padding: 0 24rpx 24rpx;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.project-info .project-address .address-name {
+    float: left;
+    width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 48rpx;
+}
+
+.project-info .project-address .attention {
+    float: right;
+    line-height: 48rpx;
+    width: 100rpx;
+    border-radius: 8rpx;
+    background: rgba(150,152,158,.15);
+    text-align: center;
+    z-index: 99;
+}
+
+.project-info .project-address .attention-active {
+    background: rgba(45,140,240,.15);
+}

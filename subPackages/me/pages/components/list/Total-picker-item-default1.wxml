@@ -1,0 +1,4 @@
+<view class="date" style="margin-left:32rpx;">
+    <text class="text">{{''+showName+''}}</text>
+    <text class="iconnew new-zhankai" style="margin-left:8rpx;"></text>
+</view>

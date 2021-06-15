@@ -1,0 +1,86 @@
+<view>
+    <view class="page-container">
+        <view class="share-line"></view>
+        <view class="{{[ 'share-line share-line-position '+(shareHeaderFix?'share-header-fixed':'') ]}}">
+            <view bindtap="__e" class="{{[activeFlag.house?'orange-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeActiveFlag',[0] ] ] ] ]}}">
+                <picker bindchange="__e" class="line" data-event-opts="{{[ [ 'change',[ [ 'chooseShareTypeOne',['$event'] ] ] ] ]}}" range="{{shareType}}" rangeKey="value" value="{{shareIndex}}">
+                    <text class="fz-13 black-30 text">{{''+shareType[shareIndex].value+''}}</text>
+                    <text class="iconnew new-zhankai fz-10 text"></text>
+                </picker>
+            </view>
+            <view bindtap="__e" class="{{[activeFlag.hotShare?'orange-color':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeActiveFlag',[1] ] ] ] ]}}">
+                <picker bindchange="__e" class="line" data-event-opts="{{[ [ 'change',[ [ 'chooseShareTypeTwo',['$event'] ] ] ] ]}}" range="{{myType}}" rangeKey="value" value="{{newIndex}}">
+                    <text class="fz-13 black-30 text">{{''+myType[newIndex].value+''}}</text>
+                    <text class="iconnew new-zhankai fz-10 text"></text>
+                </picker>
+            </view>
+            <share-btn bind:__l="__l" vueId="4719b4e4-1"></share-btn>
+        </view>
+        <view class="search-box-share">
+            <view class="search-bar">
+                <image bindtap="__e" class="weui-icon-search gray-color" data-event-opts="{{[ [ 'tap',[ [ 'doSearch',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/assets/img/20190624/5d108a915ccf3.svg"></image>
+                <view bindtap="__e" class="weui-icon-clear iconnew new-shanchu1" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{inputVal.length>0}}"></view>
+                <input bindconfirm="__e" bindinput="__e" class="search-input fz-13" data-event-opts="{{[ [ 'input',[ [ 'inputTyping',['$event'] ] ] ],[ 'confirm',[ [ 'doSearch',['$event'] ] ] ] ]}}" placeholderClass="search-input-place" type="text" value="{{inputVal}}"></input>
+            </view>
+        </view>
+        <view class="post-items">
+            <block wx:if="{{items.length>0}}">
+                <view class="post-item" data-index="{{key}}" wx:for="{{items}}" wx:for-index="key" wx:key="key">
+                    <view class="post-item-header">
+                        <navigator class="header-icon" hoverClass="none" url="{{'/pages/salesMan/detail?user_id='+item.session_id}}">
+                            <image class="avatar no-preview gray-bg" lazyLoad="lazy-load" mode="aspectFill" src="{{item.avatar_url||defaultAvatar}}" wx:if="{{item.isShow}}"></image>
+                            <view class="avatar gray-bg" wx:else></view>
+                        </navigator>
+                        <view class="right-content">
+                            <view class="header-content clearfix">
+                                <view class="left-avatar">
+                                    <navigator class="weui-media-box__title" hoverClass="none" url="{{'/pages/salesMan/detail?user_id='+item.session_id+'&project_id='+item.project_id}}">
+                                        <text class="fz-13 font-bold black-30">{{''+item.user_name+''}}</text>
+                                        <image class="identity" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/1555393675965515.jpg" wx:if="{{item.identity_tag==2}}"></image>
+                                        <view class="label-group">
+                                            <text class="label label-danger fz-12" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{''+tag+''}}</text>
+                                        </view>
+                                    </navigator>
+                                    <view class="time fz-12 gray-96">{{''+item.created_at+''}}</view>
+                                </view>
+                                <view class="right-btn">
+                                    <base-call-phone bind:__l="__l" bind:onSuccess="__e" class="auth-phone" data-event-opts="{{[ [ '^onSuccess',[ [ 'phoneHandle',['$event','$0'],[ [ ['items','',key] ] ] ] ] ] ]}}" vueId="{{'4719b4e4-2-'+key}}" vueSlots="{{['default']}}">
+                                        <view class="phone btn"></view>
+                                    </base-call-phone>
+                                    <busi-auth-navigator bind:__l="__l" url="{{urls[key]}}" vueId="{{'4719b4e4-3-'+key}}" vueSlots="{{['default']}}">
+                                        <view class="btn message">
+                                            <image src="https://imgcdn.huanjutang.com/assets/img/201910301737418081.png"></image>
+                                        </view>
+                                    </busi-auth-navigator>
+                                </view>
+                            </view>
+                            <view class="post-item-body">
+                                <text class="fz-14 black-60 text-content">{{''+item.content+''}}</text>
+                            </view>
+                            <share-template bind:__l="__l" bind:updateImgData="__e" bind:updateIsShow="__e" bind:updateLazyload="__e" bind:updateVideoData="__e" data-event-opts="{{[ [ '^updateLazyload',[ [ '__set_sync',['$0','lazyload','$event'],[''] ] ] ],[ '^updateIsShow',[ [ '__set_sync',['$0','isShow','$event'],[ [ ['items','',key,''] ] ] ] ] ],[ '^updateIsShow',[ [ '__set_sync',['$0','isShow','$event'],[ [ ['items','',key,''] ] ] ] ] ],[ '^updateImgData',[ [ '__set_sync',['$0','images_arr','$event'],[ [ ['items','',key,''] ] ] ] ] ],[ '^updateImgData',[ [ '__set_sync',['$0','images_arr','$event'],[ [ ['items','',key,''] ] ] ] ] ],[ '^updateVideoData',[ [ '__set_sync',['$0','video_url','$event'],[ [ ['items','',key,''] ] ] ] ] ],[ '^updateVideoData',[ [ '__set_sync',['$0','video_url','$event'],[ [ ['items','',key,''] ] ] ] ] ] ]}}" dataIndex="{{key}}" imgData="{{item.images_arr}}" isShow="{{item.isShow}}" lazyload="{{lazyload}}" videoData="{{item.video_url}}" vueId="{{'4719b4e4-4-'+key}}"></share-template>
+                            <navigator class="lottery-nav" hoverClass="none" url="{{'/pages/lotteryDetail?project_id='+item.project_id}}">
+                                <text class="iconnew new-lou fz-15 lottery-icon"></text>
+                                <text class="fz-13 text">{{''+'点击查看【'+item.project_name+'】'+''}}</text>
+                                <text class="iconnew new-tongyong-gengduo fz-15 more-icon"></text>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="loading-runing white-bg" wx:if="{{more}}">
+                <view class="loading-icon">
+                    <text class="iconnew new-jiazai"></text>
+                </view>
+                <view class="left-font">
+                    <text>加载中</text>
+                </view>
+            </view>
+            <view class="not_id_card" wx:if="{{items.length<=0&&!more}}">
+                <text class="gray-96" style="margin-top:30px;font-size:14px;">小主人~暂无内容</text>
+            </view>
+        </view>
+        <busi-auth-navigator bind:__l="__l" url="navigateTo://subPackages/posts/pages/create" vueId="4719b4e4-5" vueSlots="{{['default']}}" wx:if="{{iShowCreateShare}}">
+            <view class="create-share iconnew new-bianji white-color"></view>
+        </busi-auth-navigator>
+    </view>
+</view>

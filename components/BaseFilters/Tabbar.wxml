@@ -1,0 +1,6 @@
+<view class="tabbar">
+    <view catchtap="__e" class="{{[true?'tabbar__item':'',tabbarIndex===index||item.isSelected?'tabbar__item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[index] ] ] ] ]}}" wx:for="{{tabbarList}}" wx:key="index">
+        <text class="tabbar__item-text fz-14">{{''+item.text+(item.selectedLen>0?'('+item.selectedLen+')':'')+''}}</text>
+        <text class="tabbar__item-icon iconnew new-zhankai"></text>
+    </view>
+</view>

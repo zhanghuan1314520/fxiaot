@@ -1,0 +1,13 @@
+<view class="page">
+    <view class="image">
+        <view class="start-time">{{''+activityTime+' 每日8点开始发放红包'}}</view>
+        <button bindtap="__e" class="invite-btn" data-content="红包活动" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="邀请助力" data-type="click" openType="share"></button>
+        <navigator bindtap="__e" class="right-btn rules" data-content="红包活动" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="活动规则" data-type="link" hoverClass="none" url="{{'/subPackages/activity/pages/richPage?nodes='+$root.m0}}"></navigator>
+        <view bindtap="__e" class="right-btn logs" data-content="红包活动" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-name="红包记录" data-type="click"></view>
+    </view>
+    <view class="project-content" wx:if="{{!notFoundShow}}">
+        <project-box-item bind:__l="__l" projectData="{{redpackData}}" vueId="7c8b14a0-1"></project-box-item>
+    </view>
+    <issue-record activityId="{{activityId}}" bind:__l="__l" bind:updateVisible="__e" class="vue-ref" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','showDialog','$event'],[''] ] ] ] ]}}" data-ref="redPaperRecord" visible="{{showDialog}}" vueId="7c8b14a0-2"></issue-record>
+    <nocontent-page bind:__l="__l" visible="{{notFoundShow}}" vueId="7c8b14a0-3"></nocontent-page>
+</view>

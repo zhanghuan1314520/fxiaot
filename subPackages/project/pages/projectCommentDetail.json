@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "personal-info": "/pages/components/lotteryDetail/PersonalInfo",
+        "reply-content": "/pages/components/lotteryDetail/ReplyContent",
+        "comment-input": "/pages/components/lotteryDetail/CommentInput",
+        "comment-title": "/pages/components/lotteryDetail/CommentTitle",
+        "white-space": "/subPackages/project/components/WhiteSpace",
+        "no-data": "/subPackages/project/pages/component/NoData",
+        "loading": "/subPackages/project/components/Loading",
+        "show-home": "/subPackages/project/components/ShowHome"
+    }
+}

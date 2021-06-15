@@ -1,0 +1,17 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="7c9faf1a-1" vueSlots="{{['default']}}">
+    <view>
+        <view class="cubes" wx:if="{{settings.magic_square.length}}">
+            <view class="three" wx:if="{{settings.magic_square.length==3}}">
+                <view class="three__item">
+                    <image bindtap="__e" class="cube__icon cube__icon--hight _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n0.link'] ] ] ] ]}}" src="{{settings.magic_square[0].img_url}}"></image>
+                </view>
+                <view class="three__item">
+                    <image bindtap="__e" class="cube__icon cube__icon--hight _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n1.link'] ] ] ] ]}}" src="{{settings.magic_square[1].img_url}}"></image>
+                </view>
+                <view class="three__item">
+                    <image bindtap="__e" class="cube__icon cube__icon--hight _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n2.link'] ] ] ] ]}}" src="{{settings.magic_square[2].img_url}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</base-layout>

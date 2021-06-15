@@ -1,0 +1,27 @@
+<view>
+    <view bindtap="__e" catchtouchmove="preventTouchMove" class="mark" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}" data-id="dialog" wx:if="{{show}}">
+        <view class="dialog">
+            <view class="dialog-title">{{''+(params.id?'编辑':'新增')+'常用语'}}</view>
+            <view catchtouchmove="preventTouchMove" class="dialog-content">
+                <textarea bindblur="__e" bindinput="__e" catchtouchmove="preventTouchMove" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','content','$event',['trim'] ] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" fixed="{{show}}" maxlength="100" placeholder="输入您的常用语" value="{{content}}"></textarea>
+                <view class="word-count">{{''+(content.length||0)+'/100'}}</view>
+            </view>
+            <view class="dialog-tools">
+                <view class="set-default">
+                    <view bindtap="__e" class="reply-auto" data-event-opts="{{[ [ 'tap',[ ['selectedDefault'] ] ] ]}}">
+                        <text class="iconnew new-queding fz-20 mr-4" style="color:#2F8CEF;" wx:if="{{is_auto_reply}}"></text>
+                        <text class="iconnew new-gougouxianxing fz-20 mr-4" wx:if="{{!is_auto_reply}}"></text>设置为自动回复</view>
+                    <view class="reply-time">
+                        <image bindtap="__e" class="image decrement" data-event-opts="{{[ [ 'tap',[ ['decrement'] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/04/20/7843ac18d16ddbca159d3e88f278bdca.png"></image>
+                        <text class="time-val">{{''+delay_time+'秒'}}</text>
+                        <image bindtap="__e" class="image increment" data-event-opts="{{[ [ 'tap',[ ['increment'] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/04/20/d88dcbfbe88d3a9d7211f704da7b65db.png"></image>
+                    </view>
+                </view>
+                <view class="btns">
+                    <button bindtap="__e" class="button btn-cancel" data-event-opts="{{[ [ 'tap',[ [ 'cancelDialog',['$event'] ] ] ] ]}}">取消</button>
+                    <button bindtap="__e" class="button" data-event-opts="{{[ [ 'tap',[ [ 'saveData',['$event'] ] ] ] ]}}">保存</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

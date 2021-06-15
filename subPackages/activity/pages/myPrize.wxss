@@ -1,0 +1,150 @@
+page {
+    background-color: #f7f7f7;
+    padding-bottom: 96rpx;
+    box-sizing: border-box;
+}
+
+.myPrize .price-title {
+    padding: 30rpx 30rpx 20rpx;
+    box-sizing: border-box;
+}
+
+.myPrize .prize-main {
+    box-sizing: border-box;
+}
+
+.myPrize .prize-main .fz-17 {
+    font-size: 34rpx;
+}
+
+.myPrize .prize-main .fz-15 {
+    font-size: 30rpx!important;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list {
+    background-color: #fff;
+    padding: 34rpx;
+    border-top: 1rpx solid #e2e2e2;
+    border-bottom: 1rpx solid #e2e2e2;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: -1rpx;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_left {
+    float: right;
+    margin-top: 40rpx;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_left .getPrize {
+    border-radius: 5rpx;
+    line-height: 52rpx;
+    height: 50rpx;
+    width: 80rpx;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #3772cc;
+    color: #3772cc;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_img {
+    float: left;
+    width: 230rpx;
+    height: 133rpx;
+    margin-right: 20rpx;
+    border-radius: 5rpx;
+    overflow: hidden;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_img image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_info {
+    height: 133rpx;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_info .title {
+    max-width: 310rpx;
+    padding: 20rpx 0 30rpx;
+    line-height: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_info .price {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    color: #fc7100;
+}
+
+.myPrize .prize-main .prize_main-col .hot_prize_list .hot_prize_info .red-color {
+    width: 100%;
+    color: #f13845!important;
+}
+
+.dui_tabbar {
+    bottom: 0;
+    height: 98rpx;
+    position: fixed;
+    width: 100%;
+    z-index: 22;
+    background: #fff;
+    padding: 0 30rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.dui_tabbar .alignLine {
+    float: left;
+    height: 34rpx;
+    width: 1px;
+    background-color: #ccc;
+    margin-top: 38rpx;
+}
+
+.dui_tabbar .line {
+    line-height: 100rpx;
+    box-sizing: border-box;
+    text-align: center;
+    float: left;
+}
+
+.dui_tabbar .flow2 {
+    width: 49.8%;
+}
+
+.noCoupon {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.noCoupon .viewmsg {
+    margin: 32rpx auto 25rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+}
+
+.noCoupon image {
+    width: 280rpx;
+    height: 180rpx;
+    margin-top: 350rpx;
+}
+
+.noCoupon .look {
+    margin: 100rpx auto;
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 260rpx;
+    text-align: center;
+    border: 1px solid #666;
+}

@@ -1,0 +1,5 @@
+<view class="data-v-32ce8cd9">
+    <text-msg bind:__l="__l" class="data-v-32ce8cd9" isReceive="{{false}}" message="{{user}}" vueId="7fbfdbaf-1"></text-msg>
+    <ques-msg bind:__l="__l" class="data-v-32ce8cd9" isReceive="{{true}}" message="{{robot}}" vueId="7fbfdbaf-2" wx:if="{{item.type!==0}}"></ques-msg>
+    <category-msg bind:__l="__l" class="data-v-32ce8cd9" isReceive="{{true}}" message="{{robot}}" vueId="7fbfdbaf-3" wx:else></category-msg>
+</view>

@@ -1,0 +1,44 @@
+<view>
+    <view class="page">
+        <view class="full-screen" wx:if="{{loading}}">
+            <view id="spinner"></view>
+        </view>
+        <block wx:else>
+            <view class="content-box">
+                <view class="title font-bold">您想购买的区域</view>
+                <view class="area-box">
+                    <view bindtap="__e" class="{{[ 'area-line '+(item.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'optionsChange',[index,'areaList'] ] ] ] ]}}" wx:for="{{areaList.data}}" wx:key="index">{{''+item.name+''}}</view>
+                </view>
+            </view>
+            <view class="content-box">
+                <view class="title font-bold">
+                    <text bindtap="__e" class="{{[priceIndex==1?'':'active']}}" data-event-opts="{{[ [ 'tap',[ [ 'priceChange',[1] ] ] ] ]}}">您的预算(总价)</text>
+                    <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190703/5d1c14c58fa93.png"></image>
+                    <text bindtap="__e" class="{{[priceIndex==2?'':'active']}}" data-event-opts="{{[ [ 'tap',[ [ 'priceChange',[2] ] ] ] ]}}">您的预算(单价)</text>
+                </view>
+                <sliders bind:__l="__l" bind:highValueChange="__e" bind:lowValueChange="__e" bind:updateHighPriceProps="__e" bind:updateLowPriceProps="__e" bind:updatePriceIndex="__e" data-event-opts="{{[ [ '^updatePriceIndex',[ [ '__set_sync',['$0','priceIndex','$event'],[''] ] ] ],[ '^updatePriceIndex',[ [ '__set_sync',['$0','priceIndex','$event'],[''] ] ] ],[ '^updateLowPriceProps',[ [ '__set_sync',['$0','lowPrice','$event'],[''] ] ] ],[ '^updateLowPriceProps',[ [ '__set_sync',['$0','lowPrice','$event'],[''] ] ] ],[ '^updateHighPriceProps',[ [ '__set_sync',['$0','highPrice','$event'],[''] ] ] ],[ '^updateHighPriceProps',[ [ '__set_sync',['$0','highPrice','$event'],[''] ] ] ],[ '^highValueChange',[ ['highValueChange'] ] ],[ '^lowValueChange',[ ['lowValueChange'] ] ] ]}}" highPriceProps="{{highPrice}}" lowPriceProps="{{lowPrice}}" priceIndex="{{priceIndex}}" vueId="6e19eb18-1"></sliders>
+            </view>
+            <view class="content-box">
+                <view class="title font-bold">您考虑的地铁路线</view>
+                <view class="area-box">
+                    <view bindtap="__e" class="{{[ 'area-line '+(item.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'optionsChange',[index,'trainList'] ] ] ] ]}}" wx:for="{{trainList.data}}" wx:key="index">{{''+item.name+''}}</view>
+                </view>
+            </view>
+            <view class="content-box">
+                <view class="title font-bold">您心仪的户型</view>
+                <view class="area-box">
+                    <view bindtap="__e" class="{{[ 'area-line '+(item.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'optionsChange',[index,'housePlan'] ] ] ] ]}}" wx:for="{{housePlan.data}}" wx:key="index">{{''+item.name+''}}</view>
+                </view>
+            </view>
+            <view class="content-box square-content">
+                <view class="title font-bold">您想买的面积</view>
+                <view class="area-box">
+                    <view bindtap="__e" class="{{[ 'square-line '+(item.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'optionsChange',[index,'squareList'] ] ] ] ]}}" wx:for="{{squareList.data}}" wx:key="index">{{''+item.name+''}}</view>
+                </view>
+            </view>
+            <view class="search-cont">
+                <view bindtap="__e" class="search-text fz-16 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'searchProject',['$event'] ] ] ] ]}}">开始找房</view>
+            </view>
+        </block>
+    </view>
+</view>

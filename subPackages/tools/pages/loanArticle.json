@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "文章",
+    "usingComponents": {
+        "loading": "/subPackages/tools/components/Loading",
+        "article-item": "/components/articleStyle",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon"
+    }
+}

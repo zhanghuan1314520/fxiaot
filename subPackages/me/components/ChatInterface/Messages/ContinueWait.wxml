@@ -1,0 +1,5 @@
+<base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="19342fb7-1" vueSlots="{{['default']}}">
+    <view class="wait-message">
+        <view class="wait-message__content">{{''+message.content+''}}</view>
+    </view>
+</base-layout>

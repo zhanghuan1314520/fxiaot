@@ -1,0 +1,110 @@
+.box-single {
+    box-sizing: border-box;
+    width: 676rpx;
+    background: #fff;
+    border-radius: 12rpx 12rpx 0 0;
+    padding: 38rpx 28rpx 0;
+    position: relative;
+    margin: 30rpx auto 0;
+    z-index: 8;
+}
+
+.box-single .line {
+    width: 622rpx;
+    padding-top: 48rpx;
+    margin-bottom: 36rpx;
+    border-bottom: 2rpx dashed #d4d4d4;
+}
+
+.box-single.view {
+    height: auto;
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 10rpx 28rpx 0;
+}
+
+.box-single .box-answer {
+    display: flex;
+    justify-content: space-between;
+    height: 44rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    margin-bottom: 32rpx;
+    position: relative;
+}
+
+.box-single .box-answer .right {
+    color: #2d8cf0;
+}
+
+.box-single .box-answer .wrong {
+    color: red;
+}
+
+.box-single .box-answer .wrong-icon {
+    z-index: 99;
+    position: absolute;
+    width: 230rpx;
+    height: 230rpx;
+    right: 0;
+    bottom: 0;
+}
+
+.option {
+    width: 620rpx;
+    margin-top: 20rpx;
+    background: #f5f8fb;
+    border-radius: 4rpx;
+    padding: 28rpx 34rpx;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.option.select-single.selected .symbol {
+    background: #fff url(https://imgcdn.huanjutang.com/assets/img/20213241439148081.png) no-repeat 50%;
+    background-size: 18rpx 18rpx;
+    border: 3rpx solid #2d8cf0;
+}
+
+.option.select-single .symbol {
+    margin-top: 4rpx;
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    border: 3rpx solid #b5b6bb;
+    margin-right: 24rpx;
+}
+
+.option.select-multi.selected .symbol {
+    background: #2d8cf0 url(https://imgcdn.huanjutang.com/assets/img/20213241346248081.png) no-repeat 50%;
+    background-size: 24rpx 20rpx;
+    border: 3rpx solid #2d8cf0;
+}
+
+.option.select-multi .symbol {
+    margin-top: 4rpx;
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 4rpx;
+    border: 3rpx solid #b5b6bb;
+    margin-right: 24rpx;
+}
+
+.option .number {
+    margin-right: 16rpx;
+    color: #000;
+}
+
+.option .context,.option .number {
+    font-size: 28rpx;
+    line-height: 44rpx;
+}
+
+.option .context {
+    width: 452rpx;
+    color: #303237;
+}
+
+.option.selected .context,.option.selected .number {
+    color: #2f8cef;
+}

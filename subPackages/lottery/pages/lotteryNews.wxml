@@ -1,0 +1,22 @@
+<view class="pages">
+    <block wx:for="{{systemMessageItemList}}" wx:for-item="items" wx:key="index">
+        <view class="lotteryYear">{{''+items.time+''}}</view>
+        <view bindtap="__e" class="comment_box" data-event-opts="{{[ [ 'tap',[ [ 'pageNavigateTo',['$0','$1'],[ [ ['systemMessageItemList','',index],['data','',index2,'params.invite_id'] ],[ ['systemMessageItemList','',index],['data','',index2,'id'] ] ] ] ] ] ]}}" wx:for="{{items.data}}" wx:for-index="index2" wx:key="index2">
+            <view class="comment_list_item">
+                <view class="comment_list_avatar">
+                    <text class="white-color icon-blue1-bg new-lou iconnew"></text>
+                    <view class="{{[item.status==1?'tips1':'']}}"></view>
+                </view>
+                <view class="comment_list_right">
+                    <view class="comment_list_user">
+                        <view class="fz-14 font-bold">{{''+item.title+''}}</view>
+                        <view class="house-count fz-13">{{''+item.content+''}}</view>
+                        <view class="commentTime">
+                            <view class="text-fz-22">{{''+item.created_at+''}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

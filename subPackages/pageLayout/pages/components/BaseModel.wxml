@@ -1,0 +1,13 @@
+<view>
+    <view class="model" wx:if="{{showModelTemp}}">
+        <view class="top-box">
+            <view class="model-tip">领取成功</view>
+            <view class="model-text1">领取成功后，可以前往我的>优惠券查看</view>
+        </view>
+        <view class="model-btn">
+            <button bindtap="__e" class="left" data-event-opts="{{[ [ 'tap',[ [ 'cancelReviewModel',['$event'] ] ] ] ]}}">取消</button>
+            <button bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['$event'] ] ] ] ]}}">优惠详情</button>
+        </view>
+    </view>
+    <view bindtap="__e" catchtouchmove="ture" class="model-bg" data-event-opts="{{[ [ 'tap',[ [ 'cancelReviewModel',['$event'] ] ] ] ]}}" wx:if="{{showModelTemp}}"></view>
+</view>

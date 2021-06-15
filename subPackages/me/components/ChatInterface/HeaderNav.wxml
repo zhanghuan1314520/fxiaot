@@ -1,0 +1,50 @@
+<view class="header">
+    <view class="header__container">
+        <view wx:if="{{receiveUserInfo.is_sales_man==1}}">
+            <view class="salesman">
+                <image bindtap="__e" class="salesman__avatar" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'toSalesmanCenterHandle',['$event'] ] ] ] ]}}" data-name="置业顾问详情" data-type="link" mode="aspectFill" src="{{receiveUserInfo.avatar_url||defaultAvatar}}"></image>
+                <view class="salesman__info">
+                    <view class="salesman__info--name">
+                        <view class="salesman__info--receiveUsername">{{''+(receiveUserInfo.name||'')+''}}</view>
+                        <image class="medal" hidden="{{medals[item.code][item.is_get]===0}}" src="{{medals[item.code][item.is_get?item.level:0].icon}}" wx:for="{{medalsItem}}" wx:key="index"></image>
+                    </view>
+                    <view bindtap="__e" class="salesman__info--project" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'toProjectDetail',['$event'] ] ] ] ]}}" data-name="楼盘详情" data-type="link">{{''+(receiveUserInfo.project_name||'')+''}}<text class="project--icon iconnew new-tongyong-gengduo"></text>
+                    </view>
+                </view>
+                <view class="salesman__change">
+                    <view bindtap="__e" class="replace" data-event-opts="{{[ [ 'tap',[ [ 'replaceHandle',['$event'] ] ] ] ]}}" data-name="换一个" wx:if="{{sendUserInfo.sales_man_id<1}}">
+                        <text class="replace--icon iconnew new-shuaxin"></text>换一个</view>
+                    <view bindtap="__e" class="salesman__change--report" data-event-opts="{{[ [ 'tap',[ [ 'showActionSheet',['$event'] ] ] ] ]}}">
+                        <image class="salesman__change--icon _img" src="https://imgcdn.huanjutang.com/assets/img/20213301156338081.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="salesman__btns">
+                <view bindtap="__e" class="salesman__btns--wechat" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'askWeixin',['$event'] ] ] ] ]}}" data-name="复制微信号" data-type="button" title="复制微信号">
+                    <image class="icon" src="https://imgcdn.huanjutang.com/assets/img/20213301155578081.png"></image>
+                    <text>添加微信</text>
+                </view>
+                <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneHandle'] ] ] ]}}" vueId="23fb9180-1" vueSlots="{{['default']}}">
+                    <view bindtap="__e" class="salesman__btns--phone" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="免费电话咨询" data-type="button" title="免费电话咨询">
+                        <image class="icon" src="https://imgcdn.huanjutang.com/assets/img/20213161122158081.png"></image>
+                        <text>拨打电话</text>
+                    </view>
+                </base-call-phone>
+            </view>
+        </view>
+        <view class="user" wx:else>
+            <view class="user__info">
+                <image bindtap="__e" class="user__info--avatar" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'preview',[receiveUserInfo.avatar_url||defaultAvatar] ] ] ] ]}}" data-name="置业顾问详情" data-type="button" src="{{receiveUserInfo.avatar_url||defaultAvatar}}"></image>
+                <text bindtap="__e" class="user__info--name" data-event-opts="{{[ [ 'tap',[ [ 'showActionSheet',['$event'] ] ] ] ]}}">{{''+(receiveUserInfo.name||'')+''}}</text>
+                <image bindtap="__e" class="user__info--down" data-event-opts="{{[ [ 'tap',[ [ 'showActionSheet',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/03/26/d87db37d926140e2996492df143ec13d.png"></image>
+            </view>
+            <view class="user__btns" wx:if="{{sendUserInfo.sales_man_id>0}}">
+                <view bindtap="__e" class="user__btns--phone" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'askPhone',['$event'] ] ] ] ]}}" data-name="索要电话" data-type="button">
+                    <text class="icon iconnew new-dianhua"></text>
+                    <text class="text">索要电话</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="header__privacy-tip" wx:if="{{receiveUserInfo.is_sales_man==1}}">已对置业顾问隐藏您的手机号，请放心沟通。</view>
+</view>

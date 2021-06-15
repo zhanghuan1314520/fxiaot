@@ -1,0 +1,3 @@
+<scroll-view class="middle-tab data-v-42f4e2be" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+    <view bindtap="__e" class="{{['data-v-42f4e2be','item',item.id===defaultId?'active':'',tab.length===1?'single':'']}}" data-content="榜单" data-event-opts="{{[ [ 'tap',[ [ 'handleLeaderboardClick',['$0'],[ [ ['tab','id',item.id,'id'] ] ] ] ] ] ]}}" data-name="{{item.name}}" data-type="{{source}}" style="{{'width:'+(tab.length>3?'229rpx':100/tab.length+'%')+';'}}" wx:for="{{tab}}" wx:for-index="__i0__" wx:key="id">{{''+item.name+''}}</view>
+</scroll-view>

@@ -1,0 +1,318 @@
+<view>
+    <view class="page">
+        <view class="discuss">
+            <view class="discuss-top">
+                <view class="discuss-top-image">
+                    <image mode="aspectFill" src="{{bgStr}}"></image>
+                </view>
+            </view>
+            <view class="content-wrpper">
+                <view class="discuss-header">
+                    <view class="popular">
+                        <view class="discuss-top-content">
+                            <view class="left">
+                                <view class="title font-bold fz-18 height-level-color">{{''+(topicInfo.title||'')+''}}</view>
+                            </view>
+                        </view>
+                        <view class="popular-content">
+                            <text class="fz-14 sky-color font-bold">{{''+(topicInfo.short_title||'')+''}}</text>
+                            <text class="fz-14 black-60">{{''+(topicInfo.content||'')+''}}</text>
+                        </view>
+                        <view class="popular-bottom" wx:if="{{topicInfo.hot_discussion_name.length>0}}">
+                            <view class="popularList">
+                                <view class="popular-img" wx:for="{{topicInfo.hot_discussion_name}}" wx:for-index="key" wx:for-item="val" wx:key="key">
+                                    <image src="{{val.user_avatar_url||default_avatar}}"></image>
+                                </view>
+                            </view>
+                            <view class="popularMen">
+                                <text class="fz-12">
+                                    <text class="count-people fz-12">{{''+topicInfo.page_views+''}}</text>人已围观</text>
+                            </view>
+                            <view class="share-btn">
+                                <share-btn bind:__l="__l" vueId="16a8a321-1"></share-btn>
+                            </view>
+                        </view>
+                    </view>
+                    <block wx:if="{{isShowVote}}">
+                        <view class="vote" wx:if="{{!isHasVote}}">
+                            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'discussionVoteFN',['up_vote'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="16a8a321-2" vueSlots="{{['default']}}">
+                                <view class="left fz-16">{{''+topicInfo.up_vote+''}}</view>
+                            </authorization>
+                            <view class="center"></view>
+                            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'discussionVoteFN',['down_vote'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="16a8a321-3" vueSlots="{{['default']}}">
+                                <view class="right fz-16">{{''+topicInfo.down_vote+''}}</view>
+                            </authorization>
+                        </view>
+                        <vote-result agreePrecent="{{agreePrecent}}" bind:__l="__l" bind:updateAgreePrecent="__e" bind:updateDisagreePrecent="__e" bind:updateDownVoteText="__e" bind:updateUpVoteText="__e" bind:updateVoteType="__e" data-event-opts="{{[ [ '^updateAgreePrecent',[ [ '__set_sync',['$0','agreePrecent','$event'],[''] ] ] ],[ '^updateAgreePrecent',[ [ '__set_sync',['$0','agreePrecent','$event'],[''] ] ] ],[ '^updateDisagreePrecent',[ [ '__set_sync',['$0','disagreePrecent','$event'],[''] ] ] ],[ '^updateDisagreePrecent',[ [ '__set_sync',['$0','disagreePrecent','$event'],[''] ] ] ],[ '^updateVoteType',[ [ '__set_sync',['$0','voteType','$event'],[''] ] ] ],[ '^updateVoteType',[ [ '__set_sync',['$0','voteType','$event'],[''] ] ] ],[ '^updateUpVoteText',[ [ '__set_sync',['$0','upVoteText','$event'],[''] ] ] ],[ '^updateUpVoteText',[ [ '__set_sync',['$0','upVoteText','$event'],[''] ] ] ],[ '^updateDownVoteText',[ [ '__set_sync',['$0','downVoteText','$event'],[''] ] ] ],[ '^updateDownVoteText',[ [ '__set_sync',['$0','downVoteText','$event'],[''] ] ] ] ]}}" disagreePrecent="{{disagreePrecent}}" downVoteText="{{downVoteText}}" upVoteText="{{upVoteText}}" voteType="{{voteType}}" vueId="16a8a321-4" wx:else></vote-result>
+                    </block>
+                </view>
+                <view class="center-block"></view>
+                <view class="discuss-feature" wx:if="{{discussionList.length>0}}">
+                    <view class="discuss-title">
+                        <view class="title black-30 fz-16 font-bold">精选讨论</view>
+                    </view>
+                    <view class="discuss-feature-content" wx:for="{{discussionList}}" wx:for-index="toggleIndex" wx:key="toggleIndex">
+                        <view class="feature-content-img">
+                            <image src="{{item.user_avatar_url||default_avatar}}"></image>
+                        </view>
+                        <view class="right-content">
+                            <view class="right-content-head" wx:if="{{item.sales_man_id!=0}}">
+                                <view>
+                                    <view class="right-content-top">
+                                        <text bindtap="__e" bindtouchend="__e" bindtouchstart="__e" class="fz-12 font-bold user-info" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ],[ 'tap',[ [ 'comment',['$0','$1','$2'],[ [ ['discussionList','',toggleIndex,'id'] ],[ ['discussionList','',toggleIndex,'user_name'] ],[ ['discussionList','',toggleIndex,'user_id'] ] ] ] ] ] ]}}">{{'置业顾问'+item.user_name+''}}</text>
+                                        <view class="fz-10 contact-box blue-color">
+                                            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['discussionList','',toggleIndex,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-5-'+toggleIndex}}" vueSlots="{{['default']}}">
+                                                <view class="contact">
+                                                    <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                    <text>联系TA</text>
+                                                </view>
+                                            </authorization>
+                                        </view>
+                                        <image class="img-style" lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/1555393675965515.jpg" wx:if="{{item.identity_tag==2}}"></image>
+                                    </view>
+                                    <view class="project-name fz-13 gray-9-color">
+                                        <text>置业顾问</text>
+                                        <text>{{'【'+item.project_name+'】'}}</text>
+                                    </view>
+                                </view>
+                                <view class="attention">
+                                    <text catchtap="__e" class="fz-24 other font-bold" data-event-opts="{{[ [ 'tap',[ [ 'delQuestion',[1,toggleIndex] ] ] ] ]}}">...</text>
+                                </view>
+                            </view>
+                            <view class="right-content-head" wx:else>
+                                <view bindtap="__e" bindtouchend="__e" bindtouchstart="__e" class="right-content-top user-info" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ],[ 'tap',[ [ 'comment',['$0','$1','$2'],[ [ ['discussionList','',toggleIndex,'id'] ],[ ['discussionList','',toggleIndex,'user_name'] ],[ ['discussionList','',toggleIndex,'user_id'] ] ] ] ] ] ]}}">
+                                    <text class="fz-12 font-bold gray-96">{{''+item.user_name+''}}</text>
+                                    <image class="img-style-copy" lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/1555393675965515.jpg" wx:if="{{item.identity_tag==2}}"></image>
+                                </view>
+                                <view class="attention">
+                                    <text catchtap="__e" class="fz-24 other font-bold" data-event-opts="{{[ [ 'tap',[ [ 'delQuestion',[1,toggleIndex] ] ] ] ]}}">...</text>
+                                </view>
+                            </view>
+                            <view bindtap="__e" class="fz-13 content black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['/subPackages/question/pages/questionComment?id='+item.id+'&topicId='+topic_id] ] ] ] ]}}">
+                                <text>{{item.content}}</text>
+                            </view>
+                            <view bindtap="__e" class="fz-12 comment-child clearfloat" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['/subPackages/question/pages/questionComment?id='+item.id+'&topicId='+topic_id] ] ] ] ]}}" wx:if="{{item.parent.length>0}}">
+                                <block wx:for="{{item.parent}}" wx:for-index="parent_index" wx:for-item="child" wx:key="parent_index">
+                                    <view class="comment_list_user height-level-color fz-12" wx:if="{{parent_index<3&&item.is_toggle}}">
+                                        <block wx:if="{{child.sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-6-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text catchtap="__e" class="black-60" data-event-opts="{{[ [ 'tap',[ [ 'comment',['$0','$1'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'id'] ],[ ['discussionList','',toggleIndex],['parent','',parent_index,'name'] ] ] ] ] ] ]}}" wx:else>{{''+child.name+''}}</text>
+                                        <text class="gray-96 answer-text" wx:if="{{child.to_user_name}}">{{''+(child.to_user_name?' 回复 ':'')+''}}</text>
+                                        <block wx:if="{{child.to_sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.to_user_name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'to_sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-7-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text class="gray-96" wx:else>{{''+child.to_user_name+''}}</text>
+                                        <text bindlongpress="__e" class="black-60 fz-13" data-event-opts="{{[ [ 'longpress',[ [ 'delComment',['$0','$1'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'user_id'] ],[ ['discussionList','',toggleIndex],['parent','',parent_index,'id'] ] ] ] ] ] ]}}">{{'：'+child.content+''}}</text>
+                                    </view>
+                                    <view class="comment_list_user height-level-color fz-13" wx:if="{{!item.is_toggle}}">
+                                        <block wx:if="{{child.sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-8-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text class="black-60" wx:else>{{''+child.name+''}}</text>
+                                        <text class="gray-96 answer-text" wx:if="{{child.to_user_name}}">{{''+(child.to_user_name?' 回复 ':'')+''}}</text>
+                                        <block wx:if="{{child.to_sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.to_user_name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-9-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text class="black-60" wx:else>{{''+child.to_user_name+'：'}}</text>
+                                        <text bindlongpress="__e" class="black-60 fz-13" data-event-opts="{{[ [ 'longpress',[ [ 'delComment',['$0','$1'],[ [ ['discussionList','',toggleIndex],['parent','',parent_index,'user_id'] ],[ ['discussionList','',toggleIndex],['parent','',parent_index,'id'] ] ] ] ] ] ]}}">{{''+child.content+''}}</text>
+                                    </view>
+                                </block>
+                                <view class="margin" wx:if="{{item.comment.length>3}}">
+                                    <view catchtap="__e" class="fz-13 more-comment" data-event-opts="{{[ [ 'tap',[ [ 'toggle',[1,toggleIndex] ] ] ] ]}}">
+                                        <text>{{(item.is_toggle?'展开':'收起')+'更多'+item.comment.length-3+'条回复'}}</text>
+                                        <text class="iconnew new-tongyong-gengduo fz-12" style="{{'transform: rotateZ'+(item.is_toggle?'(90deg)':'(-90deg)')}}"></text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="gray-96 right-btn">
+                                <text class="fz-13">{{''+item.time+''}}</text>
+                                <view catchtap="__e" class="{{[ 'good  '+(item.is_like==1?'orange-color':'gray-9-color') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'isLike',[1,toggleIndex] ] ] ] ]}}">
+                                    <text class="fz-13 number">{{''+item.like_num+''}}</text>
+                                    <text class="{{[ 'iconnew fz-19 like new-weizan '+(item.is_like==1?'top-layout':'bottom-layout') ]}}"></text>
+                                    <text class="{{[ 'iconnew like fz-19 new-weizan '+(item.is_like==1?'bottom-layout':'top-layout') ]}}"></text>
+                                </view>
+                                <view bindtap="__e" bindtouchend="__e" bindtouchstart="__e" class="fz-13 comment" data-event-opts="{{[ [ 'tap',[ [ 'comment',['$0','$1','$2'],[ [ ['discussionList','',toggleIndex,'id'] ],[ ['discussionList','',toggleIndex,'user_name'] ],[ ['discussionList','',toggleIndex,'user_id'] ] ] ] ] ],[ 'touchstart',[ [ 'touchStart',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ] ]}}">
+                                    <text class="fz-19 pinglun-icon gray-96 iconnew new-pinglun2"></text>
+                                    <text class="fz-12 right-btn-text gray-96">{{''+item.comment_num+''}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="discuss-feature" wx:if="{{newDiscussionList.length>0}}">
+                    <view class="discuss-title">
+                        <view class="title black-30 fz-16 font-bold">最新讨论</view>
+                    </view>
+                    <view class="discuss-feature-content" wx:for="{{newDiscussionList}}" wx:for-index="toggleIndex" wx:key="toggleIndex">
+                        <view catchtap="__e" class="feature-content-img" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['/subPackages/question/pages/userQuestion?user_id='+item.user_id+'&sales_man_id='+item.sales_man_id] ] ] ] ]}}">
+                            <image src="{{item.user_avatar_url||default_avatar}}"></image>
+                        </view>
+                        <view class="right-content">
+                            <view class="right-content-head" wx:if="{{item.sales_man_id!=0}}">
+                                <view>
+                                    <view bindtap="__e" class="right-content-top" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['/subPackages/question/pages/questionComment?id='+item.id+'&topicId='+topic_id] ] ] ] ]}}">
+                                        <text catchtap="__e" class="fz-12 font-bold user-info" data-event-opts="{{[ [ 'tap',[ [ 'toAnswerManDetail',['$0','$1'],[ [ ['newDiscussionList','',toggleIndex,'user_id'] ],[ ['newDiscussionList','',toggleIndex,'identity_tag'] ] ] ] ] ] ]}}">{{'置业顾问'+item.user_name+''}}</text>
+                                        <view class="fz-10 contact-box blue-color">
+                                            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['newDiscussionList','',toggleIndex,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-10-'+toggleIndex}}" vueSlots="{{['default']}}">
+                                                <view class="contact">
+                                                    <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                    <text>联系TA</text>
+                                                </view>
+                                            </authorization>
+                                        </view>
+                                        <image class="img-style-copy" lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/1555393675965515.jpg" wx:if="{{item.identity_tag==2}}"></image>
+                                    </view>
+                                </view>
+                                <view class="attention">
+                                    <text catchtap="__e" class="fz-24 other font-bold" data-event-opts="{{[ [ 'tap',[ [ 'delQuestion',[2,toggleIndex] ] ] ] ]}}">...</text>
+                                </view>
+                            </view>
+                            <view class="right-content-head" wx:else>
+                                <view bindtap="__e" bindtouchend="__e" bindtouchstart="__e" class="right-content-top user-info" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ],[ 'tap',[ [ 'comment',['$0','$1','$2'],[ [ ['newDiscussionList','',toggleIndex,'id'] ],[ ['newDiscussionList','',toggleIndex,'user_name'] ],[ ['newDiscussionList','',toggleIndex,'user_id'] ] ] ] ] ] ]}}">
+                                    <text class="fz-13 gray-96">{{''+item.user_name+''}}</text>
+                                    <image class="img-style-copy" lazeLoad="{{true}}" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/1555393675965515.jpg" wx:if="{{item.identity_tag==2}}"></image>
+                                </view>
+                                <view class="attention">
+                                    <text catchtap="__e" class="fz-24 other font-bold" data-event-opts="{{[ [ 'tap',[ [ 'delQuestion',[2,toggleIndex] ] ] ] ]}}">...</text>
+                                </view>
+                            </view>
+                            <view bindtap="__e" class="fz-15 content black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['/subPackages/question/pages/questionComment?id='+item.id+'&topicId='+topic_id] ] ] ] ]}}">
+                                <text>{{item.content}}</text>
+                            </view>
+                            <view bindtap="__e" class="fz-13 comment-child clearfloat" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['/subPackages/question/pages/questionComment?id='+item.id+'&topicId='+topic_id] ] ] ] ]}}" wx:if="{{item.comment.length>0}}">
+                                <block wx:for="{{item.comment}}" wx:for-index="parent_index" wx:for-item="child" wx:key="parent_index">
+                                    <view class="comment_list_user height-level-color fz-13" wx:if="{{parent_index<3&&!item.is_toggle}}">
+                                        <block wx:if="{{child.sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.user_name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-11-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text catchtap="__e" class="black-60" data-event-opts="{{[ [ 'tap',[ [ 'comment',['$0','$1'],[ [ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'id'] ],[ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'user_name'] ] ] ] ] ] ]}}" wx:else>{{''+child.user_name+''}}</text>
+                                        <text class="gray-96 answer-text" wx:if="{{child.to_user_name}}">{{''+(child.to_user_name?' 回复 ':'')+''}}</text>
+                                        <block wx:if="{{child.to_sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.to_user_name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'to_sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-12-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text class="black-60" wx:else>{{''+child.to_user_name+''}}</text>
+                                        <text class="black-60 fz-13">{{'：'+child.content+''}}</text>
+                                    </view>
+                                    <view class="comment_list_user height-level-color fz-13" wx:if="{{item.is_toggle}}">
+                                        <block wx:if="{{child.sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.user_name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-13-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text class="black-60" wx:else>{{''+child.user_name+''}}</text>
+                                        <text class="gray-96 answer-text" wx:if="{{child.to_user_name}}">{{''+(child.to_user_name?' 回复 ':'')+''}}</text>
+                                        <block wx:if="{{child.to_sales_man_id!='0'}}">
+                                            <text class="blue-text-color">{{'置业顾问'+child.to_user_name+''}}</text>
+                                            <view class="fz-10 contact-box blue-color">
+                                                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toSalesManHandle',['$0'],[ [ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'to_sales_man_id'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'16a8a321-14-'+toggleIndex+'-'+parent_index}}" vueSlots="{{['default']}}">
+                                                    <view class="contact">
+                                                        <image class="icon-box iconnew" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190701/5d197d179f68e.svg"></image>
+                                                        <text>联系TA</text>
+                                                    </view>
+                                                </authorization>
+                                            </view>
+                                        </block>
+                                        <text class="black-60" wx:else>{{''+child.to_user_name+'：'}}</text>
+                                        <text bindlongpress="__e" class="black-60 fz-13" data-event-opts="{{[ [ 'longpress',[ [ 'delComment',['$0','$1'],[ [ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'user_id'] ],[ ['newDiscussionList','',toggleIndex],['comment','',parent_index,'id'] ] ] ] ] ] ]}}">{{''+child.content+''}}</text>
+                                    </view>
+                                </block>
+                                <view class="margin" wx:if="{{item.comment.length>3}}">
+                                    <view catchtap="__e" class="fz-13 more-comment" data-event-opts="{{[ [ 'tap',[ [ 'toggle',[2,toggleIndex] ] ] ] ]}}">
+                                        <text>{{(item.is_toggle?'收起':'展开')+'更多'+item.comment.length-3+'条回复'}}</text>
+                                        <text class="iconnew new-tongyong-gengduo fz-12" style="{{'transform: rotateZ'+(item.is_toggle?'(-90deg)':'(90deg)')}}"></text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="gray-96 right-btn">
+                                <text class="fz-13">{{''+item.time+''}}</text>
+                                <view catchtap="__e" class="{{[ 'good '+(item.is_like==1?'orange-color':'gray-9-color') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'isLike',[2,toggleIndex] ] ] ] ]}}">
+                                    <text class="fz-13 number">{{''+item.like_num+''}}</text>
+                                    <text class="{{[ 'iconnew fz-19 like new-weizan '+(item.is_like==1?'top-layout':'bottom-layout') ]}}"></text>
+                                    <text class="{{[ 'iconnew like fz-19 new-weizan '+(item.is_like==1?'bottom-layout':'top-layout') ]}}"></text>
+                                </view>
+                                <view bindtap="__e" bindtouchend="__e" bindtouchstart="__e" class="fz-13 comment" data-event-opts="{{[ [ 'tap',[ [ 'comment',['$0','$1','$2'],[ [ ['newDiscussionList','',toggleIndex,'id'] ],[ ['newDiscussionList','',toggleIndex,'user_name'] ],[ ['newDiscussionList','',toggleIndex,'user_id'] ] ] ] ] ],[ 'touchstart',[ [ 'touchStart',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ] ]}}">
+                                    <image class="pinglun-icon" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20199231411198081.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <block wx:else>
+                    <view class="nothing" wx:if="{{!loading}}">
+                        <view class="nothing-text fz-13 gray-9-color">暂无内容</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="footer">
+            <block wx:if="{{userInfo.nickName}}">
+                <view bindtap="__e" catchtouchmove="closeBg" class="fix-bg" data-event-opts="{{[ [ 'tap',[ [ 'closeBg',['$event'] ] ] ] ]}}" wx:if="{{isFocus}}"></view>
+                <form bindsubmit="__e" class="{{[isIphoneX?'comment_in':'comment_in active']}}" contenteditable="true" data-event-opts="{{[ [ 'submit',[ [ 'getFormId',['$event'] ] ] ] ]}}" reportSubmit="true" style="{{'bottom:'+bottom+'px'}}">
+                    <textarea adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" class="{{[ 'btn '+(!isFocus?'active':'') ]}}" cursorSpacing="20" data-event-opts="{{[ [ 'blur',[ [ 'loseFocus',['$event'] ] ] ],[ 'focus',[ [ 'bindContfocus',['$event'] ] ] ],[ 'input',[ [ 'inputVal',['$event'] ] ] ] ]}}" fixed="true" focus="{{isFocus}}" formType="submit" placeholder="{{inputPlace}}" showConfirmBar="{{false}}" style="{{textAreaStyle?'padding: 10rpx':'padding: 24rpx'}}" type="text" value="{{comment_cont}}"></textarea>
+                    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['formSubmit'] ] ] ]}}" isAuthPhone="{{true}}" vueId="16a8a321-15" vueSlots="{{['default']}}">
+                        <button class="fz-14 comment-name">发送</button>
+                    </authorization>
+                </form>
+            </block>
+            <view class="{{[isIphoneX?'comment_in':'comment_in active']}}" wx:else>
+                <input bindfocus="__e" class="btn" data-event-opts="{{[ [ 'focus',[ [ 'bindContfocus',['$event'] ] ] ] ]}}" focus="{{isFocus}}" formType="submit" placeholder="{{inputPlace}}" placeholderStyle="height:84rpx" type="text" value="{{comment_cont}}"></input>
+                <button bindgetuserinfo="__e" class="fz-14 comment-name" data-event-opts="{{[ [ 'getuserinfo',[ [ 'updateUserInfoSubmit',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo">评论</button>
+            </view>
+        </view>
+    </view>
+</view>

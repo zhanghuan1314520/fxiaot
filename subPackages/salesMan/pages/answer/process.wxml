@@ -1,0 +1,12 @@
+<view class="box-answer-process">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="7db4659c-1" vueSlots="{{['default']}}">{{''+projectName+'-答题闯关'}}</busi-nav-header>
+    <view class="box-topic" wx:if="{{currentTopic&&currentTopic.type}}">
+        <view class="indicator">{{''+currentTopicIndex+1+'/'+topicList.length+'·共'+topicList.length+'题'}}</view>
+        <subject bind:__l="__l" index="{{currentTopicIndex}}" info="{{currentTopic}}" vueId="7db4659c-2"></subject>
+        <answer-select bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" info="{{currentTopic}}" mode="process" type="{{currentTopic.type}}" vueId="7db4659c-3"></answer-select>
+        <view class="{{['box-operate',currentTopicIndex!==0?'':'center']}}">
+            <button bindtap="__e" class="btn-base btn-second" data-event-opts="{{[ [ 'tap',[ [ 'pervHandler',['$event'] ] ] ] ]}}" data-type="button" hoverClass="btn-hover" wx:if="{{currentTopicIndex!==0}}">上一题</button>
+            <button bindtap="__e" class="{{['btn-base btn-primary',hasDone?'':'disabled']}}" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}" hoverClass="btn-hover">{{''+(hasNext?'下一题':'提交答卷')+''}}</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "image-loader": "/components/ImageLoader",
+        "action-sheet": "/components/UILayout/BusiActionSheet"
+    }
+}

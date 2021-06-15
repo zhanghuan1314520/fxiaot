@@ -1,0 +1,220 @@
+.lottery-result.data-v-138ed35c {
+    position: relative;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    border-radius: 4rpx;
+}
+
+.lottery-result .add.data-v-138ed35c {
+    position: absolute;
+    right: 40rpx;
+    top: 32rpx;
+    color: #2f8cef;
+    z-index: 100;
+}
+
+.detail.data-v-138ed35c {
+    position: absolute;
+    right: 40rpx;
+    bottom: 32rpx;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+}
+
+.order-label.data-v-138ed35c {
+    right: 0;
+    top: 16rpx;
+    width: 200rpx;
+    height: 60rpx;
+    background: rgba(45,140,240,.06);
+    border-radius: 200rpx 0 0 200rpx;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding-left: 24rpx;
+    font-size: 26rpx;
+    color: #2d8cf0;
+}
+
+.order-label.data-v-138ed35c,.turn-label.data-v-138ed35c {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+}
+
+.turn-label.data-v-138ed35c {
+    top: 0;
+    right: 40rpx;
+    width: 96rpx;
+    height: 48rpx;
+    border-radius: 0 0 12rpx 12rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: #bfbfbf;
+}
+
+.turn-label.success.data-v-138ed35c {
+    background: #0ab464;
+}
+
+.row.data-v-138ed35c {
+    padding: 32rpx 40rpx;
+    font-size: 28rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.column.data-v-138ed35c {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    line-height: 28rpx;
+    margin-bottom: 20rpx;
+}
+
+.column .symbol.data-v-138ed35c {
+    color: #96989e;
+}
+
+.column.data-v-138ed35c:last-child {
+    margin-bottom: 0;
+}
+
+.column .label.data-v-138ed35c {
+    color: #96989e;
+    min-width: 148rpx;
+    text-align: justify;
+    text-align-last: justify;
+    height: 28rpx;
+    line-height: 28rpx;
+}
+
+.column .label.data-v-138ed35c::after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+}
+
+.column .value.data-v-138ed35c {
+    color: #303237;
+    margin-left: 20rpx;
+}
+
+.label-button.data-v-138ed35c {
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    line-height: 32rpx;
+    box-sizing: border-box;
+    padding: 2rpx 8rpx;
+    border-radius: 4rpx;
+}
+
+.label-button.default.data-v-138ed35c {
+    background: rgba(250,120,50,.12);
+    color: #fa7832;
+}
+
+.label-button.success.data-v-138ed35c {
+    background: rgba(10,180,100,.12);
+    color: #0ab464;
+}
+
+.name-column.data-v-138ed35c {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24rpx;
+}
+
+.name-column .name.data-v-138ed35c {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+    margin-right: 12rpx;
+}
+
+.tip-cont .container.data-v-138ed35c {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 660rpx;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background: #fff;
+    text-align: center;
+    border-radius: 8rpx;
+}
+
+.tip-cont .container .image.data-v-138ed35c {
+    width: 102rpx;
+    height: 100rpx;
+    margin-bottom: 28rpx;
+    padding-top: 52rpx;
+}
+
+.tip-cont .container .success.data-v-138ed35c {
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #303237;
+    line-height: 36rpx;
+    margin-bottom: 24rpx;
+}
+
+.tip-cont .container .result.data-v-138ed35c {
+    padding: 0 32rpx 24rpx;
+    font-size: 28rpx;
+    color: #b5b6bb;
+    line-height: 44rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.tip-cont .container .cancel.data-v-138ed35c {
+    padding: 30rpx 0 28rpx;
+    font-size: 32rpx;
+    color: #2f8cef;
+}
+
+.tip-cont .hide-bg.data-v-138ed35c {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+}
+
+.auth-add.data-v-138ed35c {
+    position: absolute;
+    right: 30rpx;
+    top: 28rpx;
+    display: inline-block;
+    z-index: 100;
+}
+
+.auth-add button.data-v-138ed35c {
+    line-height: normal;
+}
+
+.auth-fz-14.data-v-138ed35c {
+    color: #2f8cef;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.auth-fz-14 .iconnew.data-v-138ed35c {
+    font-size: 32rpx;
+    margin-right: 8rpx;
+    vertical-align: middle;
+}

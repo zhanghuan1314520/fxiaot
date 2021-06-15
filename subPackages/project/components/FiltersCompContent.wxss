@@ -1,0 +1,249 @@
+.filters-comp-content__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 752rpx;
+    width: 100vw;
+    background: #fff;
+}
+
+.filters-comp-content__wrapper .filter-top-box {
+    flex: 1;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-left {
+    float: left;
+    width: 150rpx;
+    height: 100%;
+    background: #fff;
+    padding-top: 20rpx;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-left .left-line {
+    margin-left: 34rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    padding: 26rpx 42rpx 26rpx 12rpx;
+    line-height: 36rpx;
+    color: #000;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-left .left-line:last-of-type {
+    border: none;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right {
+    width: 600rpx;
+    height: 100%;
+    background: #fafafa;
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 20rpx;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-left {
+    width: 240rpx;
+    height: 588rpx;
+    box-sizing: content-box;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-left .subway-left-line {
+    height: 36rpx;
+    line-height: 36rpx;
+    text-align: left;
+    padding: 26rpx 48rpx;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-right {
+    flex: 1;
+    padding: 20rpx 32rpx 0rpx 48rpx;
+    border-left: 2rpx solid rgba(0,0,0,.07);
+    height: 608rpx;
+    box-sizing: border-box;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-right .subway-right-line {
+    width: 100%;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-right .subway-right-line .txt {
+    height: 36rpx;
+    line-height: 36rpx;
+    padding: 26rpx 0;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-right .subway-right-line .checkbox {
+    transform: scale(.7);
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .subway-right .subway-right-line .checkbox .wx-checkbox-input {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 22rpx;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .no-border {
+    border: none;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .right-top {
+    margin: 0 40rpx;
+    height: 88rpx;
+    background: #f5f5f5;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .right-top .select-input {
+    float: left;
+    width: 100%;
+    height: 88rpx;
+    border-radius: 8rpx;
+    padding: 0 70rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .right-top .select-input .line {
+    width: 18rpx;
+    height: 4rpx;
+    background-color: rgba(0,0,0,.85);
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .right-top .select-input .input {
+    width: 120rpx;
+    height: 100%;
+    line-height: 100%;
+    font-size: 28rpx;
+    overflow: hidden;
+    color: rgba(0,0,0,.85);
+}
+
+.filters-comp-content__wrapper .filter-top-box .filter-cont-right .right-top .select-input .select__text {
+    color: rgba(0,0,0,.85);
+}
+
+.filters-comp-content__wrapper .filter-top-box .no-flex {
+    display: block;
+}
+
+.filters-comp-content__wrapper .filter-top-box .right-line {
+    padding: 26rpx 48rpx;
+    line-height: 36rpx;
+    height: 36rpx;
+    box-sizing: content-box;
+    color: rgba(0,0,0,.85);
+}
+
+.filters-comp-content__wrapper .filter-top-box .right-box {
+    float: left;
+    margin: 26rpx 26rpx 0rpx 0rpx;
+    text-align: center;
+    width: 152rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    background: #f7f7f7;
+    border-radius: 8rpx;
+    color: rgba(0,0,0,.85);
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2rpx solid rgba(45,140,240,0);
+}
+
+.filters-comp-content__wrapper .filter-top-box .title {
+    height: 44rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 44rpx;
+    margin: 20rpx 0 6rpx;
+}
+
+.filters-comp-content__wrapper .filter-top-box .no-margin-right {
+    margin-right: 0!important;
+}
+
+.filters-comp-content__wrapper .filter-top-box .no-padding-left {
+    padding-left: 0!important;
+}
+
+.filters-comp-content__wrapper .filter-top-box .no-padding-top {
+    padding-top: 0!important;
+}
+
+.filters-comp-content__wrapper .filter-top-box .padding-top-20 {
+    padding-top: 20rpx;
+}
+
+.filters-comp-content__wrapper .filter-top-box .active {
+    background: rgba(45,140,240,.06);
+    border: 2rpx solid rgba(45,140,240,.8);
+    box-sizing: border-box;
+}
+
+.filters-comp-content__wrapper .filter-top-box .blue-color {
+    color: #2d8cf0!important;
+    font-weight: 700;
+}
+
+.filters-comp-content__wrapper .content-padding {
+    padding: 20rpx 32rpx 0rpx;
+    display: block;
+}
+
+.filters-comp-content__wrapper .other-top-box {
+    height: 608rpx;
+}
+
+.filters-comp-content__wrapper .filter-bottom-btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 22rpx 32rpx;
+    height: 144rpx;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 12rpx 0rpx rgba(21,24,45,.03);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+}
+
+.filters-comp-content__wrapper .filter-bottom-btn .left-cancle {
+    width: 168rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 8rpx;
+    border: 2rpx solid rgba(0,0,0,.25);
+    color: rgba(0,0,0,.65);
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.filters-comp-content__wrapper .filter-bottom-btn .right-sure {
+    width: 496rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.blank-box {
+    height: 20rpx;
+    width: 100%;
+}
+
+.gray-color-input {
+    color: B7B7B7;
+    font-weight: 400;
+}
+
+.normal-weight {
+    font-weight: 400!important;
+}

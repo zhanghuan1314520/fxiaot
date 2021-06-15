@@ -1,0 +1,85 @@
+.recharge-content {
+    padding: 64rpx 30rpx 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.recharge-content .points-content {
+    margin-bottom: 28rpx;
+}
+
+.recharge-content .points-content,.recharge-content .points-content .conmmon-input {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recharge-content .points-content .conmmon-input {
+    width: 276rpx;
+    height: 99rpx;
+    background: #f2f2f2;
+    border: 2rpx solid rgba(0,0,0,.03);
+    padding: 0 36rpx 0 48rpx;
+    background-color: #f2f2f2;
+    border-radius: 52rpx;
+}
+
+.recharge-content .points-content .conmmon-input input {
+    width: 150rpx;
+    font-size: 40rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+}
+
+.recharge-content .points-content .conmmon-input .label {
+    flex-shrink: 0;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.recharge-content .getCoin-btn {
+    height: 95rpx;
+    border-radius: 47rpx;
+    border: 2rpx solid #2d8cf0;
+    text-align: center;
+    line-height: 95rpx;
+    color: #2d8cf0;
+    margin: 0 0 28rpx;
+    font-weight: 700;
+}
+
+.center-input {
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.center-input,.tip {
+    color: rgba(0,0,0,.45);
+}
+
+.tip {
+    display: flex;
+    justify-content: space-between;
+    height: 36rpx;
+    font-size: 24rpx;
+}
+
+.goldRule {
+    padding: 36rpx 32rpx 74rpx;
+    box-sizing: border-box;
+}
+
+.goldRule .rule-title {
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 16rpx;
+}
+
+.goldRule .rule-content {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.65);
+    line-height: 48rpx;
+}

@@ -1,0 +1,107 @@
+<view class="my-lottery-container">
+    <block wx:if="{{idCards.length>0}}">
+        <view class="id-list">
+            <scroll-view scrollIntoView="{{'scroll-'+cardIndex}}" scrollX="scroll-x">
+                <view class="id-list-box">
+                    <view bindtap="__e" class="{{[ 'list '+(index==cardIndex?'active':'') ]}}" data-conten="用户切换" data-event-opts="{{[ [ 'tap',[ [ 'changeShowCardHandle',[index] ] ] ] ]}}" data-name="{{card.name}}" id="{{'scroll-'+index}}" wx:for="{{idCards}}" wx:for-item="card" wx:key="index">{{''+card.name+''}}</view>
+                    <view class="last-view"></view>
+                </view>
+            </scroll-view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" class="auth-manager" data-event-opts="{{[ [ '^onSuccess',[ [ 'gotoUrlHandle',['/subPackages/me/pages/myIDCard'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="e7ac7b9a-1" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="management" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="用户信息管理">
+                    <text class="iconnew new-41shezhi"></text>
+                    <text class="text">管理</text>
+                </view>
+            </authorization>
+        </view>
+        <view class="container">
+            <block wx:if="{{myLotteries.length>0}}">
+                <view class="update-time" wx:if="{{updateTime&&!firstOpen}}">
+                    <text>{{'上次数据更新时间：'+updateTime}}</text>
+                    <view class="update-btn-loading" wx:if="{{syncState=='sync'}}">
+                        <text class="iconnew update-btn-loading-icon new-jiazai"></text>
+                        <text>更新中</text>
+                    </view>
+                    <view class="update-btn" wx:else>
+                        <text class="iconnew new-xiala"></text>
+                        <text>下拉可更新</text>
+                    </view>
+                </view>
+                <view class="list-container">
+                    <view bindtap="__e" class="list" data-event-opts="{{[ [ 'tap',[ [ 'enterResultPage',[index] ] ] ] ]}}" data-name="摇号结果" wx:for="{{myLotteries}}" wx:key="index">
+                        <view catchtap="__e" class="title" data-event-opts="{{[ [ 'tap',[ [ 'gotoUrlHandle',['/pages/lotteryDetail?id='+item.lottery_id+'&project_id='+item.project_id] ] ] ] ]}}" data-name="楼盘详情" id="{{item.project_id}}">{{''+item.lottery_name+''}}</view>
+                        <view class="{{[item.results.length>0?'lottery-result active':'lottery-result']}}">{{''+(item.results.length>0?'有摇号结果':'暂无摇号结果')+''}}</view>
+                        <view class="name-code">
+                            <view class="name-text">
+                                <text class="left">姓   名：</text>
+                                <text class="right">{{''+item.name+''}}</text>
+                            </view>
+                            <view class="code-text">
+                                <text class="left">摇号编码：</text>
+                                <text class="right">{{''+(item.code||'暂无')+''}}</text>
+                            </view>
+                        </view>
+                        <view class="registry-num">
+                            <text class="left">登记号：</text>
+                            <text class="right">{{''+item.reg_num+''}}</text>
+                        </view>
+                        <view class="{{['status '+item.status_text_color]}}">{{''+item.status_text+''}}</view>
+                    </view>
+                    <view class="bottom-tips">注意：隐藏后的身份证号不具有唯一性，例如330127198003031111和330127197002021111隐藏后同为330127********1111，我们会使用330127********1111来查询摇号结果，因此可能会出现结果不精确的情况。此功能旨在让大家查询更便捷，如果给您带来了困扰敬请谅解！</view>
+                </view>
+                <view class="fixed-bg active"></view>
+            </block>
+            <block wx:else>
+                <view class="full-screen-loading" wx:if="{{loading}}">
+                    <view class="spinner"></view>
+                </view>
+                <view class="no-content" wx:else>
+                    <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20200619/5eec6099d4669.png"></image>
+                    <view class="no-result">未查询到摇号结果</view>
+                    <view class="add-user-tips">下拉更新摇号结果</view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="full-screen-loading" wx:if="{{loading}}">
+            <view class="spinner"></view>
+        </view>
+        <view class="no-content" wx:else>
+            <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20200619/5eec6099d4669.png"></image>
+            <view class="no-result">未查询到摇号结果</view>
+            <view class="add-user-tips">点击下方按钮添加新用户</view>
+        </view>
+    </block>
+    <view class="bottom-btns">
+        <view class="new-user-tip">
+            <toast bind:__l="__l" class="vue-ref" data-ref="toast" position="center" showClose="{{true}}" text="点击添加新用户，快速查询摇号结果" toastType="callout" vertical="bottom" vueId="e7ac7b9a-2"></toast>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'gotoUrlHandle',['/subPackages/me/pages/bindIDCard?type=1'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="e7ac7b9a-3" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="button-add-user" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="添加新用户" data-type="button">
+                <view class="button">添加新用户</view>
+            </view>
+        </authorization>
+    </view>
+    <view class="validate-mark" wx:if="{{showValidateDialog}}">
+        <view class="validate-dialog">
+            <view class="relative">
+                <view class="validate-title">
+                    <text>输入验证码</text>
+                    <text bindtap="__e" class="iconnew new-quxiao" data-event-opts="{{[ [ 'tap',[ [ 'closeValiCodeDialog',['$event'] ] ] ] ]}}"></text>
+                </view>
+                <view class="validate-subtitle">验证码已发送至19938222849</view>
+                <input bindinput="__e" class="valicode-input" data-event-opts="{{[ [ 'input',[ [ 'getVal',['$event'] ] ] ] ]}}" focus="{{autofocus}}" holdKeyboard="{{true}}" maxlength="6" type="idcard"></input>
+                <view class="input-val">
+                    <view class="val b-0" wx:for="{{valiCodeArr}}" wx:key="index">{{''+item+''}}</view>
+                    <view class="val" wx:for="{{valiCodeEmptyArr}}" wx:key="index"></view>
+                </view>
+                <view class="err-msg" wx:if="{{showErr}}">请输入正确的验证码信息</view>
+                <view class="validate-btns">
+                    <button bindtap="__e" class="{{[ 'btn-left '+(seconds!==0?'default-color':'active-color') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'getValiCode',['$event'] ] ] ] ]}}">{{'重新获取'+(seconds===0?'':'（'+seconds+'s）')+''}}</button>
+                    <button bindtap="__e" class="validate-dialog-confirm" data-event-opts="{{[ [ 'tap',[ [ 'updateHandle',['$event'] ] ] ] ]}}">确定更新</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

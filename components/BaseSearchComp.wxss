@@ -1,0 +1,100 @@
+.baseSearchComp-cont {
+    overflow: hidden;
+}
+
+.baseSearchComp-cont .search-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 2px 20rpx 0;
+    background-color: #3772cc;
+    z-index: 999;
+}
+
+.baseSearchComp-cont .search-bar .search-btn {
+    float: right;
+    height: 70rpx;
+    width: 80rpx;
+    line-height: 70rpx;
+    text-align: center;
+    padding-left: 15rpx;
+    background: transparent;
+}
+
+.baseSearchComp-cont .search-bar .search-bar-form {
+    margin: 0 10rpx 20rpx;
+    background: #fff;
+    line-height: 100%;
+    color: #ccc;
+    border-radius: 40rpx;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.baseSearchComp-cont .search-bar .search-bar-form .weui-icon-clear {
+    width: 76rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: center;
+    font-size: 38rpx;
+    color: #ccc;
+    padding: 0;
+}
+
+.baseSearchComp-cont .search-bar .search-bar-form .search-bar-input {
+    padding-left: 0;
+    width: auto!important;
+    margin: 0 40rpx;
+    height: 66rpx;
+    color: #666;
+}
+
+.baseSearchComp-cont .search-bar .search-bar-form .search-bar-input-text {
+    margin: 0;
+}
+
+.baseSearchComp-cont .search-bar .search-bar-form .ui-input {
+    line-height: 76rpx;
+    height: 76rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+}
+
+.baseSearchComp-cont .search-bar-navagator {
+    line-height: 66rpx;
+    color: #ccc;
+    position: relative;
+    margin: 24rpx 24rpx 0;
+    z-index: 1;
+    border-radius: 66rpx;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+.baseSearchComp-cont .search-bar-navagator .search-bar-input-text {
+    margin: 0;
+    max-width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.baseSearchComp-cont .search-bar-navagator .weui-icon-search {
+    position: relative;
+    float: left;
+    z-index: 2;
+    right: 0;
+    margin-right: 0;
+    height: 66rpx;
+    width: 36rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #96989e;
+    padding: 0 12rpx 0 24rpx;
+}

@@ -1,0 +1,39 @@
+.related-project {
+    font-family: PingFangSC-Regular,PingFang SC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.related-project__content {
+    line-height: 36rpx;
+    margin-right: 16rpx;
+}
+
+.new-bianzu173x {
+    color: #0ab464;
+    margin-right: 8rpx;
+    vertical-align: middle;
+}
+
+.related-project__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0,0,0,.85);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.new-tongyong-gengduo {
+    color: rgba(0,0,0,.25);
+    align-self: flex-end;
+    line-height: 36rpx;
+}
+
+.img {
+    width: 36rpx;
+    height: 36rpx;
+    vertical-align: middle;
+    margin-right: 8rpx;
+}

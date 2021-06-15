@@ -1,0 +1,186 @@
+.empty_block {
+    height: 100rpx;
+    background: #f2f2f2;
+}
+
+.nothing-text {
+    line-height: 200rpx;
+    text-align: center;
+}
+
+.search-history {
+    margin: 0 24rpx;
+    min-height: calc(100vh - 264rpx);
+}
+
+.search-history .search-title {
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+    overflow: hidden;
+    padding-bottom: 24rpx;
+}
+
+.search-history .search-title.often-search {
+    padding-bottom: 20rpx;
+}
+
+.search-history .search-title .iconnew {
+    color: #b5b6bb;
+}
+
+.search-history .search-content {
+    overflow: hidden;
+}
+
+.search-history .search-content .search-line {
+    height: 52rpx;
+    background: rgba(48,55,64,.05);
+    line-height: 52rpx;
+    padding: 0 16rpx;
+    border-radius: 8rpx;
+    margin-right: 16rpx;
+    margin-bottom: 16rpx;
+    float: left;
+}
+
+.question-container {
+    padding: 24rpx;
+    background: #f2f2f2;
+}
+
+.question-container .question-list {
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 32rpx 28rpx 24rpx;
+    margin-bottom: 20rpx;
+}
+
+.question-container .question-list .question-line-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.question-container .question-list .question-line-top .question-sign {
+    overflow: hidden;
+}
+
+.question-container .question-list .question-line-top .question-sign .ask-for {
+    height: 40rpx;
+    background: #2f8cef;
+    border-radius: 2rpx;
+    padding: 0 8rpx;
+    float: left;
+    margin-right: 16rpx;
+    line-height: 40rpx;
+}
+
+.question-container .question-list .question-line-top .question-sign .ask-for.green-bg {
+    background: #0abf79;
+}
+
+.question-container .question-list .question-line-top .question-sign .question-type {
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: rgba(255,125,79,.15);
+    border-radius: 4rpx;
+    color: #ff7d4f;
+    padding: 0 8rpx;
+    margin-right: 8rpx;
+}
+
+.question-container .question-list .question-line-top .person-view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #b5b6bb;
+    font-size: 24rpx;
+}
+
+.question-container .question-list .question-line-top .person-view .view-num {
+    margin-right: 12rpx;
+}
+
+.question-container .question-list .question-line-top .person-view .circle {
+    position: relative;
+    top: -6rpx;
+}
+
+.question-container .question-list .question-line-top .person-view .answer-num {
+    margin-left: 12rpx;
+}
+
+.question-container .question-list .question-line-middle {
+    line-height: 40rpx;
+    min-height: 40rpx;
+}
+
+.question-container .question-list .question-line-bottom {
+    padding-top: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-container .question-list .question-line-bottom .left-person-info {
+    display: flex;
+    align-items: center;
+}
+
+.question-container .question-list .question-line-bottom .left-person-info image {
+    width: 32rpx;
+    height: 32rpx;
+    border: 2rpx solid rgba(48,55,64,.05);
+    margin-right: 10rpx;
+    border-radius: 32rpx;
+}
+
+.question-container .question-list .question-line-bottom .left-person-info .name {
+    margin-right: 16rpx;
+}
+
+.question-container .question-list .question-line-bottom .right-answer-btn {
+    color: #2f8cef;
+}
+
+.question-container .question-list .question-line-bottom .right-answer-btn text {
+    margin-left: 8rpx;
+}
+
+.bottom-logo {
+    margin-right: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #fff;
+}
+
+.bottom-logo image {
+    width: 88rpx;
+    height: 88rpx;
+    margin-right: 30rpx;
+}
+
+.bottom-logo view {
+    color: #b5b6bb;
+    font-size: 24rpx;
+}
+
+.bottom-logo view text {
+    display: block;
+}
+
+.bottom-logo view text:first-child {
+    margin-bottom: 6rpx;
+}
+
+.miniTit {
+    font-size: 26rpx!important;
+    font-weight: 700;
+    color: rgba(0,0,0,.85)!important;
+}

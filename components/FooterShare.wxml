@@ -1,0 +1,6 @@
+<button openType="share" style="background:#fff;">
+    <view class="footer-share">
+        <text class="iconnew new-fenxiang2"></text>
+        <view class="text">分享</view>
+    </view>
+</button>

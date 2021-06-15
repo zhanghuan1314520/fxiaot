@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "usingComponents": {
+        "base-banner": "/components/BaseBanner"
+    }
+}

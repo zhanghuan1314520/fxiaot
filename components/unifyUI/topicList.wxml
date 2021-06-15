@@ -1,0 +1,48 @@
+<view class="topic-list">
+    <scroll-view scrollWithAnimation="{{true}}" scrollX="scroll-x">
+        <view class="scroll-view-list" style="{{'width:'+bannerWidth+';'}}">
+            <view class="{{[item.vote_able&&' question-cont active-'+index||'']}}" wx:for="{{banners}}" wx:key="id">
+                <authorization bind:__l="__l" bind:onSuccess="__e" class="{{['auth-question'+' auth-active-'+index]}}" data-event-opts="{{[ [ '^onSuccess',[ [ 'toDiscussDetailHandle',['$0'],[ [ ['banners','id',item.id] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'6f00b27c-1-'+index}}" vueSlots="{{['default']}}">
+                    <view class="{{[!item.vote_able?'question-cont'+' active-'+index:'']}}">
+                        <view class="question-type">
+                            <text class="iconnew new-huati fz-19 text"></text>
+                            <text class="fz-12 font-color-subtitlle text">热议话题</text>
+                            <text class="line text"></text>
+                            <text class="fz-12 font-color-subtitlle text">{{''+(item.category_name||'精选')+''}}</text>
+                        </view>
+                        <view class="question-title black-30 font-bold fz-16">{{''+(item.title||'--')+''}}</view>
+                        <view class="discuss-cont" wx:if="{{!item.vote_able}}">
+                            <view class="particument gray-96 fz-12">
+                                <text class="gray-96">{{''+(item.page_views||'0')+''}}</text>人已围观</view>
+                            <view class="{{['particument-btn fz-13 white-color active-'+index]}}">参与讨论</view>
+                        </view>
+                        <view class="unify-ui-vote length-animate" wx:if="{{item.vote_able&&item.has_voted}}">
+                            <view class="vote-text">
+                                <text class="text left fz-13 sky-blue">{{''+(item.vote_type==='up_vote'?item.up_percentum+'%'+item.up_vote+'（已投）':item.up_percentum+'%'+item.up_vote)+''}}</text>
+                                <text class="text right fz-13 purple">{{''+(item.vote_type==='down_vote'?item.down_percentum+'%'+item.down_vote+'（已投）':item.down_percentum+'%'+item.down_vote)+''}}</text>
+                            </view>
+                            <view class="vote-result">
+                                <view class="view left sky-blue" style="{{'width: '+(item.up_percentum===100?'unset':item.up_percentum===0?'60rpx':item.up_percentum+'%')+'; flex: '+(item.up_percentum===100?1:'unset')}}"></view>
+                                <view class="view right purple" style="{{'width: '+(item.down_percentum===100?'unset':item.down_percentum===0?'60rpx':item.down_percentum+'%')+'; flex: '+(item.down_percentum===100?1:'unset')}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                </authorization>
+                <view wx:if="{{item.vote_able&&!item.has_voted}}">
+                    <view class="vote">
+                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'discussionVoteFN',[index,'up_vote'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'6f00b27c-2-'+index}}" vueSlots="{{['default']}}">
+                            <view class="left fz-13">{{''+item.up_vote+''}}</view>
+                        </authorization>
+                        <view class="center"></view>
+                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'discussionVoteFN',[index,'down_vote'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'6f00b27c-3-'+index}}" vueSlots="{{['default']}}">
+                            <view class="right fz-13">{{''+item.down_vote+''}}</view>
+                        </authorization>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="all-discussion" data-event-opts="{{[ [ 'tap',[ [ 'toDiscussUrl',['$event'] ] ] ] ]}}">
+                <text class="fz-14 gray-96 text">全部话题</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

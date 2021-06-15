@@ -1,0 +1,20 @@
+page {
+    background-color: #f5f5f5;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 60rpx;
+    margin-bottom: 32rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    height: 108rpx;
+    padding: 0 32rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.45);
+}

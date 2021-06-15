@@ -1,0 +1,127 @@
+.sale-man-sbumit-success__wrapper .icon {
+    margin: 130rpx 326rpx 0;
+    color: #0ab464;
+}
+
+.sale-man-sbumit-success__wrapper .red {
+    color: #f03c50!important;
+}
+
+.sale-man-sbumit-success__wrapper .txt {
+    line-height: 52rpx;
+    color: rgba(0,0,0,.85);
+    font-weight: 700;
+    margin-top: 32rpx;
+    text-align: center;
+}
+
+.sale-man-sbumit-success__wrapper .time {
+    color: rgba(0,0,0,.45);
+    line-height: 40rpx;
+    margin-top: 8rpx;
+    margin-bottom: 72rpx;
+    text-align: center;
+}
+
+.sale-man-sbumit-success__wrapper .line {
+    padding: 0 48rpx;
+}
+
+.sale-man-sbumit-success__wrapper .line text {
+    line-height: 40rpx;
+}
+
+.sale-man-sbumit-success__wrapper .line .color-45 {
+    color: rgba(0,0,0,.45);
+}
+
+.sale-man-sbumit-success__wrapper .line .color-85 {
+    color: rgba(0,0,0,.85);
+}
+
+.sale-man-sbumit-success__wrapper .mar-32 {
+    margin-top: 32rpx;
+}
+
+.sale-man-sbumit-success__wrapper .subscribe-btn {
+    margin: 120rpx 32rpx 0;
+    width: 686rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    font-weight: 700;
+    color: #fff;
+}
+
+.sale-man-sbumit-success__wrapper .subscribe-btn-box {
+    margin-bottom: 50rpx;
+}
+
+.sale-man-sbumit-success__wrapper .retry-btn {
+    width: 686rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    color: #fff;
+    margin: 320rpx 32rpx 0;
+    font-weight: 700;
+}
+
+.sale-man-sbumit-success__wrapper .no-try {
+    color: #2d8cf0;
+    line-height: 36rpx;
+    margin-top: 60rpx;
+    text-align: center;
+}
+
+.sale-man-sbumit-success__wrapper .link-kefu {
+    position: fixed;
+    bottom: 60rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 36rpx;
+}
+
+.sale-man-sbumit-success__wrapper .link-kefu .blue-color-sale {
+    color: #0d78f7;
+    line-height: 36rpx;
+}
+
+.sale-man-sbumit-success__wrapper .link-kefu .gary {
+    color: #8c8c8c;
+    line-height: 36rpx;
+}
+
+.sale-man-sbumit-success__wrapper .link-kefu .line-sale {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    font-size: unset;
+    text-align: center;
+    text-decoration: none;
+    line-height: 36rpx;
+    border-radius: unset;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    color: unset;
+    background-color: unset;
+}
+
+.sale-man-sbumit-success__wrapper .link-kefu .mar-right-8 {
+    margin-right: 8rpx;
+}
+
+.tip {
+    margin: 48rpx 48rpx 0;
+    width: 100%;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+}

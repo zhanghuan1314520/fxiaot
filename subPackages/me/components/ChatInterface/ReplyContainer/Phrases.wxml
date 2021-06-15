@@ -1,0 +1,22 @@
+<view class="phrases">
+    <scroll-view class="phrases__container" scrollY="scroll-y">
+        <block wx:if="{{hasSalesman}}">
+            <view class="empty" wx:if="{{phrasesList.length<1}}">
+                <image class="image" src="https://imgcdn.huanjutang.com/assets/img/2019991441558081.png"></image>
+                <view class="text">暂无常用语，点击下方按钮新增常用语</view>
+            </view>
+            <block wx:else>
+                <view catchtap="__e" class="phrases__item" data-content="常用语" data-event-opts="{{[ [ 'tap',[ [ 'usePhraseClick',['$0'],[ [ ['phrasesList','',index,'content'] ] ] ] ] ] ]}}" data-name="{{item.content}}" data-type="link" wx:for="{{phrasesList}}" wx:key="index">
+                    <view class="phrases__item-reply" wx:if="{{item.id==receiveUserInfo.phrase_id}}">自动回复</view>{{''+item.content+''}}</view>
+            </block>
+        </block>
+        <block wx:else>
+            <view catchtap="__e" class="phrases__item" data-content="常用语" data-event-opts="{{[ [ 'tap',[ [ 'usePhraseClick',['$0'],[ [ ['userPhrasesList','',index] ] ] ] ] ] ]}}" data-name="{{item}}" data-type="link" wx:for="{{userPhrasesList}}" wx:key="index">{{''+item+''}}</view>
+        </block>
+    </scroll-view>
+    <view class="phrases__tools" wx:if="{{hasSalesman}}">
+        <view bindtap="__e" class="add" data-event-opts="{{[ [ 'tap',[ [ 'addHandle',['$event'] ] ] ] ]}}" data-name="新增常用语" data-type="button">新增常用语</view>
+        <view bindtap="__e" class="edit" data-event-opts="{{[ [ 'tap',[ [ 'editHandle',['$event'] ] ] ] ]}}" data-name="编辑常用语" data-type="button" wx:if="{{phrasesList.length>0}}">编辑</view>
+    </view>
+    <phrases-editor bind:__l="__l" bind:onSubmit="__e" bind:updateVisible="__e" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','editorVisible','$event'],[''] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ] ]}}" visible="{{editorVisible}}" vueId="187786a4-1"></phrases-editor>
+</view>

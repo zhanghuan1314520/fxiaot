@@ -1,0 +1,67 @@
+.fixed-share-view {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 5rpx 0 20rpx 0 rgba(0,0,0,.3);
+    transition: all .35s;
+    z-index: 1102;
+    background: #fff;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.fixed-share-view .share-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    margin: 0 24rpx;
+}
+
+.fixed-share-view .share-btn-group .share-btn {
+    text-align: center;
+    padding-top: 45rpx;
+    background: transparent;
+}
+
+.fixed-share-view .share-btn-group .share-btn .btn-text {
+    padding: 40rpx 0;
+    line-height: 1;
+}
+
+.fixed-share-view .share-btn-group .share-btn .btn-bg {
+    display: inline-block;
+    width: 108rpx;
+    height: 108rpx;
+    border-radius: 50%;
+    line-height: 108rpx;
+}
+
+.fixed-share-view .share-btn-group .share-btn .btn-bg.btn1 {
+    background: rgba(35,205,148,.98);
+    box-shadow: 0 4rpx 10rpx 0 rgba(35,205,148,.3);
+}
+
+.fixed-share-view .share-btn-group .share-btn .btn-bg.btn2 {
+    background: #ff7d4f;
+    box-shadow: 0 4rpx 10rpx 0 rgba(255,125,79,.3);
+}
+
+.fixed-share-view .cancel {
+    text-align: center;
+    padding: 30rpx;
+    background: #fff;
+}
+
+.fixed-share-bg {
+    background: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}

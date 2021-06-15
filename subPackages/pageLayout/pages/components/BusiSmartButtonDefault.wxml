@@ -1,0 +1,10 @@
+<view class="btn">
+    <view class="smartBtn" wx:for="{{settings}}" wx:key="index">
+        <view class="smartBtn__item" wx:for="{{item.smart_button}}" wx:for-index="index_" wx:for-item="per" wx:key="index_">
+            <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['e0'] ] ] ]}}" data-event-params="{{item:item}}" vueId="{{'ec3b2c22-1-'+index+'-'+index_}}" vueSlots="{{['default']}}" wx:if="{{item.linkType=='1'}}">
+                <image class="smartBtn__item__icon" mode="widthFix" src="{{per.img_url}}"></image>
+            </base-call-phone>
+            <image bindtap="__e" class="smartBtn__item__icon" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],[ [ ['settings','',index],['smart_button','',index_] ] ] ] ] ] ]}}" mode="widthFix" src="{{per.img_url}}" wx:else></image>
+        </view>
+    </view>
+</view>

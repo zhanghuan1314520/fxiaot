@@ -1,0 +1,146 @@
+<view>
+    <view class="page">
+        <navigator bindtap="__e" class="search-bar" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="搜索" hoverClass="none" url="/subPackages/salesMan/pages/salesmanSearchList">
+            <view class="search-bar-form">
+                <image src="https://imgcdn.huanjutang.com/image/2020/06/16/f4eb4f3f754ce71456beba96820d9bef.png"></image>
+                <view class="search-bar-input fz-14 search-input-place">可按顾问名搜索</view>
+            </view>
+        </navigator>
+        <view class="page__bd">
+            <view class="rank-top-list">
+                <view bindtap="__e" class="second-sales-man" data-content="{{tabName}}" data-event-opts="{{[ [ 'tap',[ [ 'topRankToDetail',['$0'],['topItems.__$n1'] ] ] ] ]}}" data-name="顶部置业顾问">
+                    <view class="avatar">
+                        <image class="avatar-url" lazyLoad="{{true}}" mode="aspectFill" src="{{topItems[1]&&topItems[1].avatar_url_thumbnail}}"></image>
+                        <image class="sales-man-rank" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b86f010bb4.png"></image>
+                    </view>
+                    <view class="sales-man-name white-color font-bold fz-14">{{''+(topItems[1]&&topItems[1].name||'--')+''}}</view>
+                    <view class="active-num fz-12 white-color" wx:if="{{typeIndex=='yesterday'}}">{{'活跃度: '+(topItems[1]&&topItems[1].yesterday_points||'')+''}}</view>
+                    <view class="active-num fz-12 white-color" wx:else>{{'活跃度: '+(topItems[1]&&topItems[1].liveness||'')+''}}</view>
+                </view>
+                <view bindtap="__e" class="first-sales-man" data-content="{{tabName}}" data-event-opts="{{[ [ 'tap',[ [ 'topRankToDetail',['$0'],['topItems.__$n0'] ] ] ] ]}}" data-name="顶部置业顾问">
+                    <view class="avatar">
+                        <image class="avatar-url" lazyLoad="{{true}}" mode="aspectFill" src="{{topItems[0]&&topItems[0].avatar_url_thumbnail}}"></image>
+                        <image class="sales-man-rank" src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b8704c2f2d.png"></image>
+                    </view>
+                    <view class="sales-man-name white-color font-bold fz-14">{{''+(topItems[0]&&topItems[0].name||'--')+''}}</view>
+                    <view class="active-num fz-12 white-color" wx:if="{{typeIndex=='yesterday'}}">{{'活跃度: '+(topItems[0]&&topItems[0].yesterday_points||'')+''}}</view>
+                    <view class="active-num fz-12 white-color" wx:else>{{'活跃度: '+(topItems[0]&&topItems[0].liveness||'')+''}}</view>
+                </view>
+                <view bindtap="__e" class="third-sales-man" data-content="{{tabName}}" data-event-opts="{{[ [ 'tap',[ [ 'topRankToDetail',['$0'],['topItems.__$n2'] ] ] ] ]}}" data-name="顶部置业顾问详情">
+                    <view class="avatar">
+                        <image class="avatar-url" lazyLoad="{{true}}" mode="aspectFill" src="{{topItems[2]&&topItems[2].avatar_url_thumbnail}}"></image>
+                        <image class="sales-man-rank" src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b872265a78.png"></image>
+                    </view>
+                    <view class="sales-man-name white-color font-bold fz-14">{{''+(topItems[2]&&topItems[2].name||'--')+''}}</view>
+                    <view class="active-num fz-12 white-color" wx:if="{{typeIndex=='yesterday'}}">{{'活跃度: '+(topItems[2]&&topItems[2].yesterday_points||'')+''}}</view>
+                    <view class="active-num fz-12 white-color" wx:else>{{'活跃度: '+(topItems[2]&&topItems[2].liveness||'')+''}}</view>
+                </view>
+            </view>
+            <view class="tab-change">
+                <view bindtap="__e" class="{{['tab-text '+(typeIndex=='liveness'?'active':'')+' fz-14']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',['liveness'] ] ] ] ]}}" data-name="总活跃榜">总活跃榜<view class="short-line"></view>
+                </view>
+                <view bindtap="__e" class="{{['tab-text '+(typeIndex=='yesterday'?'active':'')+' fz-14']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',['yesterday'] ] ] ] ]}}" data-name="优选置业顾问">优选置业顾问<view class="short-line"></view>
+                </view>
+                <view bindtap="__e" class="{{['tab-text '+(typeIndex=='new'?'active':'')+' fz-14']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',['new'] ] ] ] ]}}" data-name="新人榜">新人榜<view class="short-line"></view>
+                </view>
+            </view>
+            <view class="active-tips-box" wx:if="{{tipsContent}}">
+                <view bindtap="__e" class="active-tips" data-event-opts="{{[ [ 'tap',[ [ 'tipsHandle',['$event'] ] ] ] ]}}">
+                    <text class="text">{{''+tipsContent+''}}</text>
+                    <text class="close-btn fz-16">×</text>
+                </view>
+            </view>
+            <view class="hot-tab-box">
+                <view class="tab-content">
+                    <view class="item" wx:for="{{me}}" wx:key="index">
+                        <view bindtap="__e" class="user-content" data-content="{{tabName}}" data-event-opts="{{[ [ 'tap',[ [ 'topRankToDetail',['$0'],[ [ ['me','',index] ] ] ] ] ] ]}}" data-name="置业顾问详情" hoverClass="none">
+                            <view class="ranking">
+                                <text class="{{['COM-color '+(item.mine_ranking=='99+'?'fz-12':'fz-18')+' font-bold']}}">{{''+(item.mine_ranking>9||item.mine_ranking=='99+'?item.mine_ranking:'0'+item.mine_ranking)+''}}</text>
+                            </view>
+                            <view class="avatar">
+                                <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.avatar_url_thumbnail||defaultAvatar}}"></image>
+                            </view>
+                            <view class="userinfo">
+                                <view class="username">
+                                    <text class="fz-15 black-30 font-bold">{{''+item.name+''}}</text>
+                                    <text class="{{['level-box level-box-'+item.level]}}"></text>
+                                    <text class="fz-12 black-60" style="float:right;" wx:if="{{typeIndex=='yesterday'}}">{{'昨日活跃度：'+item.yesterday_points+''}}</text>
+                                    <text class="fz-12 black-60" style="float:right;" wx:else>{{'活跃度：'+item.liveness+''}}</text>
+                                </view>
+                                <view catchtap="__e" class="weixin-num" data-content="{{tabName}}" data-event-opts="{{[ [ 'tap',[ [ 'copyCode',['$0'],[ [ ['me','',index,'wechat_code'] ] ] ] ] ] ]}}" data-name="复制微信">
+                                    <text class="fz-12 black-60">{{'微信：'+item.wechat_code+''}}</text>
+                                    <text class="iconnew black-60 new-fuzhi1 fz-12"></text>
+                                </view>
+                                <view class="project_name black-60 fz-12">{{'楼盘：'+item.project_name+''}}</view>
+                                <view class="wechat-phone gray-96 fz-12">
+                                    <view class="chat first left t-left">
+                                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toIMPage',['$0'],['meUrls.'+index+''] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'00d47cb7-1-'+index}}" vueSlots="{{['default']}}">
+                                            <image src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b97df0dc05.png"></image>
+                                            <text class="txt fz-12 gray-96">发消息</text>
+                                        </authorization>
+                                    </view>
+                                    <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'hanldeCallPhone',['$event','$0'],[ [ ['me','',index,'id'] ] ] ] ] ] ]}}" vueId="{{'00d47cb7-2-'+index}}" vueSlots="{{['default']}}">
+                                        <view class="chat middle left">
+                                            <image src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b981c0fca9.png"></image>
+                                            <text class="txt fz-12 gray-96">打电话</text>
+                                        </view>
+                                    </base-call-phone>
+                                    <view catchtap="__e" class="left right good" data-content="{{tabName}}" data-event-opts="{{[ [ 'tap',[ [ 'likeMe',['$event'] ] ] ] ]}}" data-name="点赞">
+                                        <image class="{{[ 'pinglun-icon '+(item.is_like==1?'top-layout':'bottom-layout') ]}}" src="https://imgcdn.huanjutang.com/assert/img/15593032464315059.jpg"></image>
+                                        <image class="{{[ 'pinglun-icon '+(item.is_like==1?'bottom-layout':'top-layout') ]}}" src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b983b38368.png"></image>
+                                        <text class="fz-12 small-level-color" wx:if="{{item.sales_man_like_num=='undefined'}}">{{''+item.is_like+''}}</text>
+                                        <text class="{{[ 'fz-12 '+(item.is_like==1?'orange-color':'gray-9-color') ]}}" wx:else>{{''+item.sales_man_like_num+''}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="{{[ 'item',[item.skeleton?'skeletons':''] ]}}" wx:for="{{items}}" wx:key="index">
+                        <view bindtap="__e" class="user-content" data-event-opts="{{[ [ 'tap',[ [ 'topRankToDetail',['$0'],[ [ ['items','',index] ] ] ] ] ] ]}}" hoverClass="none">
+                            <view class="ranking skeletons-rect">
+                                <text class="COM-color fz-18 font-bold">{{''+(index>9?index:'0'+index)+''}}</text>
+                            </view>
+                            <view class="avatar skeletons-circle">
+                                <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.avatar_url_thumbnail||defaultAvatar}}"></image>
+                            </view>
+                            <view class="userinfo">
+                                <view class="username skeletons-rect">
+                                    <text class="fz-15 black-30 font-bold">{{''+item.name+''}}</text>
+                                    <text class="{{['level-box level-box-'+item.level]}}"></text>
+                                    <text class="fz-12 black-60" style="float:right;" wx:if="{{typeIndex=='yesterday'}}">{{'昨日活跃度：'+(item.yesterday_points||0)+''}}</text>
+                                    <text class="fz-12 black-60" style="float:right;" wx:else>{{'活跃度：'+(item.liveness||0)+''}}</text>
+                                </view>
+                                <view catchtap="__e" class="weixin-num skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'copyCode',['$0'],[ [ ['items','',index,'wechat_code'] ] ] ] ] ] ]}}">
+                                    <text class="fz-12 black-60">{{'微信：'+item.wechat_code+''}}</text>
+                                    <text class="iconnew black-60 new-fuzhi1 fz-12"></text>
+                                </view>
+                                <view class="project_name black-60 fz-12 skeletons-rect">{{'楼盘：'+item.project_name+''}}</view>
+                                <view class="wechat-phone gray-96 fz-12">
+                                    <view class="chat first left t-left">
+                                        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'toIMPage',['$0'],['urls.'+index+''] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'00d47cb7-3-'+index}}" vueSlots="{{['default']}}">
+                                            <image src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b97df0dc05.png"></image>
+                                            <text class="txt fz-12 gray-96">发消息</text>
+                                        </authorization>
+                                    </view>
+                                    <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'hanldeCallPhone',['$event','$0'],[ [ ['items','',index,'id'] ] ] ] ] ] ]}}" vueId="{{'00d47cb7-4-'+index}}" vueSlots="{{['default']}}">
+                                        <view class="chat middle left">
+                                            <image src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b981c0fca9.png"></image>
+                                            <text class="txt fz-12 gray-96">打电话</text>
+                                        </view>
+                                    </base-call-phone>
+                                    <view catchtap="__e" class="left right good" data-event-opts="{{[ [ 'tap',[ [ 'like',[index] ] ] ] ]}}">
+                                        <image class="{{[ 'pinglun-icon '+(item.is_like==1?'top-layout':'bottom-layout') ]}}" src="https://imgcdn.huanjutang.com/assert/img/15593032464315059.jpg"></image>
+                                        <image class="{{[ 'pinglun-icon '+(item.is_like==1?'bottom-layout':'top-layout') ]}}" src="https://imgcdn.huanjutang.com/assets/img/20190820/5d5b983b38368.png"></image>
+                                        <text class="fz-12 small-level-color" wx:if="{{item.sales_man_like_num=='undefined'}}">{{''+item.is_like+''}}</text>
+                                        <text class="{{[ 'fz-12 '+(item.is_like==1?'orange-color':'gray-96') ]}}" wx:else>{{''+(item.sales_man_like_num||0)+''}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" content="微信号已复制，联系说来自【杭州房小团】将会获得更好服务！" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','copyTips','$event'],[''] ] ] ] ]}}" data-ref="Dialog" isColumnBtn="true" showCancel="{{false}}" submitText="知道了" title="小技巧" visible="{{copyTips}}" vueId="00d47cb7-5"></dialog>
+</view>

@@ -1,0 +1,36 @@
+.base-prompt {
+    position: relative;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 19;
+}
+
+.prompt {
+    left: -100rpx;
+    bottom: 60rpx;
+    padding: 14rpx 20rpx;
+    line-height: 36rpx;
+    border-radius: 12rpx;
+    font-size: 24rpx;
+    color: #fff;
+    white-space: wrap;
+    background: rgba(0,0,0,.7);
+    z-index: 20;
+}
+
+.arrow,.prompt {
+    position: absolute;
+}
+
+.arrow {
+    bottom: -20rpx;
+    left: 114rpx;
+    border: 10rpx solid transparent;
+    border-top-color: rgba(0,0,0,.7);
+}

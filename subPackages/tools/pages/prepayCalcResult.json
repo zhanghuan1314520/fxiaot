@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "杭州房小团-提前还款计算",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "prepay-all": "/subPackages/tools/pages/component/PrepayAll",
+        "prepay-part": "/subPackages/tools/pages/component/PrepayPart"
+    }
+}

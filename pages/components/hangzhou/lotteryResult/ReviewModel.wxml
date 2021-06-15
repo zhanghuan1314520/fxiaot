@@ -1,0 +1,14 @@
+<view>
+    <view class="model" wx:if="{{showModelTemp}}">
+        <view class="top-box">
+            <view class="model-tip black-color fz-13">暂无摇号结果</view>
+            <view class="fz-12 black-color model-text1">用身份证号查询不了？试试摇号编码查询。记不住摇号编码？前往意向登记表查看摇号编码</view>
+            <view class="fz-10 small-level-color model-text2">备注：部分意向登记表以图片形式展示，望小主多谅解！</view>
+        </view>
+        <view class="model-btn">
+            <view bindtap="__e" class="left" data-event-opts="{{[ [ 'tap',[ [ 'cancelReviewModel',['$event'] ] ] ] ]}}">取消</view>
+            <view bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'navigateTo',['$event'] ] ] ] ]}}">前往意向登记表</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="model-bg" data-event-opts="{{[ [ 'tap',[ [ 'cancelReviewModel',['$event'] ] ] ] ]}}" wx:if="{{showModelTemp}}"></view>
+</view>

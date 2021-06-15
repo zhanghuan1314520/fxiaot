@@ -1,0 +1,8 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "loading": "/subPackages/discovery/component/Loading",
+        "no-data": "/subPackages/discovery/component/SubNoData",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

@@ -1,0 +1,40 @@
+<view class="general-layout" wx:if="{{showGeneralLayout}}">
+    <navigator bindtap="__e" class="observe-scroll-node " data-content="总平图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="查看更多" data-type="link" hoverClass="none" id="general-layout" url="{{'/subPackages/project/pages/projectPlanar/index?projectId='+project_id+'&projectName='+baseDetail.name+'&lottery_id='+lottery_id+'&navbarText='+navbarText}}">
+        <view class="common-title" id="housePlanMore">
+            <view class="title">总平图<image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20198131850538081.png"></image>
+            </view>
+            <view class="more">
+                <text>查看更多</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+        <view class="general-layout-cont">
+            <view class="general-layout-stage">
+                <image-loader bind:__l="__l" class="general-layout__img" mode="aspectFill" source="{{baseDetail.plan_image}}" styles="{{width:'100%',height:'100%'}}" vueId="4c7ed1ac-1"></image-loader>
+                <view class="icon-img">
+                    <text>查看总平图</text>
+                    <text class="iconnew new-tongyong-gengduo"></text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator bindtap="__e" class="observe-scroll-node " data-content="总平图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼栋信息" data-type="link" hoverClass="none" id="general-layout" url="{{'/subPackages/project/pages/projectPlanar/index?projectId='+project_id+'&projectName='+baseDetail.name+'&lottery_id='+lottery_id+'&navbarText='+navbarText}}">
+        <view class="general-layout-building" wx:if="{{swiperList.length>0}}">
+            <view class="general-layout-building-title">
+                <view class="building-title-item">
+                    <view>楼栋名称</view>
+                    <view class="building-item" wx:for="{{$root.l0}}" wx:for-index="__i0__" wx:key="id">{{''+(item.name||'-')+''}}</view>
+                </view>
+                <view class="building-title-item">
+                    <view>单元</view>
+                    <view class="building-item" wx:for="{{$root.l1}}" wx:for-index="__i1__" wx:key="id">{{''+(item.units||'-')+''}}</view>
+                </view>
+                <view class="building-title-item">
+                    <view>梯户比</view>
+                    <view class="building-item" wx:for="{{$root.l2}}" wx:for-index="__i2__" wx:key="id">{{''+(item.lift_house_ratio||'-')+''}}</view>
+                </view>
+            </view>
+            <view class="redicturl">{{'查看全部'+plan_buildings.total+'栋楼信息'}}</view>
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,8 @@
+<view class="tab-wrap">
+    <view class="tab-container" style="{{'position:'+(fixed?'fixed':'relative')+';'+'top:'+top+'px'+';'}}">
+        <view bindtap="__e" class="{{[ 'tab-item '+(item.id==activeId?'active':'') ]}}" data-content="{{item.dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'handleTabChange',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="{{item.dataName}}" wx:for="{{list}}" wx:key="index">
+            <text class="{{[ 'tab-text',[smallTitle?'small-title':''] ]}}">{{''+item.text+''}}</text>
+            <view class="tab-line"></view>
+        </view>
+    </view>
+</view>

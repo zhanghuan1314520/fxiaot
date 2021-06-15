@@ -1,0 +1,21 @@
+<view class="appeal">
+    <view class="appeal-main">
+        <view class="appeal-reason">
+            <view class="appeal-desc">请填写申述理由（必填）</view>
+            <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','reason','$event',[] ] ] ] ] ]}}" value="{{reason}}"></textarea>
+        </view>
+        <view class="appeal-shot">
+            <view class="appeal-desc">上传截图（非必填）</view>
+            <view class="appeal-upload">
+                <image class="upload-box" mode="aspectFill" src="{{item}}" wx:for="{{fileList}}" wx:for-index="__i0__" wx:key="*this"></image>
+                <view bindtap="__e" class="upload upload-box" data-event-opts="{{[ [ 'tap',[ [ 'handleUpload',['$event'] ] ] ] ]}}" wx:if="{{showUpload}}">
+                    <text class="iconnew new-tianjiatupian"></text>
+                </view>
+            </view>
+            <view class="upload-desc" wx:if="{{showUpload}}">最多可上传3张</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="appeal-footer" data-event-opts="{{[ [ 'tap',[ [ 'handleSubmit',['$event'] ] ] ] ]}}">
+        <view class="footer-button">提交</view>
+    </view>
+</view>

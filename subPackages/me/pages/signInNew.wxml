@@ -1,0 +1,78 @@
+<view class="signin">
+    <view class="main-content">
+        <image mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20191101/5dbb9eb6c053f.png"></image>
+        <view class="bg-box">
+            <view class="desc">
+                <text>{{date}}</text>
+                <text>连续签到攒人品，楼盘大卖！</text>
+            </view>
+        </view>
+        <view class="signin-list">
+            <view class="up-list">
+                <view class="{{[ 'list-item '+(item==currentDay?'bottom-sign-active':'') ]}}" wx:for="{{7}}" wx:key="index">
+                    <text>{{'第'+item+1+'天'}}</text>
+                    <text wx:if="{{item==2&&(item==currentDay?!signedFlag:item>currentDay)}}">+10</text>
+                    <block wx:else>
+                        <text wx:if="{{item<=5&&(item==currentDay?!signedFlag:item>currentDay)}}">+5</text>
+                        <block wx:else>
+                            <image class="last-day-img" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20191101/5dbbcf4582734.png" wx:if="{{item==6&&(item==currentDay?!signedFlag:item>currentDay)}}"></image>
+                            <text class="queding-icon new-checked iconnew fz-20" wx:else></text>
+                        </block>
+                    </block>
+                </view>
+            </view>
+            <view class="bottom-sign">
+                <view class="left">
+                    <text class="sum-sign-score">{{''+sumScore+''}}</text>
+                    <view class="next-line">
+                        <text class="sum-sign-text">累计积分</text>
+                        <text class="line"></text>
+                        <text class="sum-sign-day-text">已经连续签到</text>
+                        <text class="sum-sign-day">{{''+sumDay+'天'+''}}</text>
+                    </view>
+                </view>
+                <view class="{{[ 'right '+(!signedFlag?'right-active':'') ]}}">
+                    <text wx:if="{{signedFlag}}">今日已签到</text>
+                    <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'signin',['$event'] ] ] ] ]}}" wx:else>{{''+(sumDay==6?'开启幸运福袋':'立即签到')+''}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="{{[ 'sign-guide-bg '+(!signGuideFlag?'fadeOut':'') ]}}" hidden="{{!signGuideFlag}}">
+            <text>连续签到7天可以开启幸运福袋哦～</text>
+            <text class="line"></text>
+            <text bindtap="__e" class="cha-icon new-quxiao iconnew" data-event-opts="{{[ [ 'tap',[ [ 'closedSignGuide',['$event'] ] ] ] ]}}"></text>
+        </view>
+    </view>
+    <view class="rule">
+        <view class="rule-content">
+            <view class="title">签到积分规则</view>
+            <view class="desc">
+                <text>1. 连续签到七天可开启幸运福袋</text>
+                <text>2. 如果签到中断，需重头开始累积签到7天才可开启福袋</text>
+                <text>3. 福袋里设置积分奖励，随机幸运派送</text>
+            </view>
+        </view>
+    </view>
+    <view class="hot-active" wx:if="{{bannerList.list.length}}">
+        <view class="title">热门活动</view>
+        <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{bannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{bannerList.list}}" source="signIn" vueId="06fd4afa-1"></base-banner>
+    </view>
+    <view class="signin-hide-bg" wx:if="{{showBgFlag}}">
+        <view class="score-content" wx:if="{{sumDay<7}}">
+            <image class="image-bg" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20191101/5dbb95be42373.png"></image>
+            <text class="signin-success">签到成功</text>
+            <text class="signin-coin-socre">{{''+'+'+integral+''}}</text>
+            <text class="signin-feature">{{''+(sumDay==3?'明天签到还可获得10积分哦':'明天签到还可获得5积分哦')+''}}</text>
+        </view>
+        <view class="score-content" wx:else>
+            <image class="image-bg last" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20191101/5dbbdf0c60cc5.png"></image>
+            <image class="left-img" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20191104/5dbfc32112982.png"></image>
+            <image class="right-img" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20191104/5dbfc5c8a7d45.png"></image>
+            <text class="signin-last">福袋有福气，卖房不费力!</text>
+            <text class="signin-prize">恭喜您获得奖励</text>
+            <text class="signin-coin-socre-last">{{''+'积分+'+integral+' 金币+'+coin+''}}</text>
+            <text class="signin-feature last">明天签到还可获得5积分哦</text>
+        </view>
+        <image bindtap="__e" class="close icon-image" data-event-opts="{{[ [ 'tap',[ [ 'closedHideBg',['$event'] ] ] ] ]}}" mode="scaleToFill" src="https://imgcdn.huanjutang.com/assets/img/20190917/5d803e424e8ac.png"></image>
+    </view>
+</view>

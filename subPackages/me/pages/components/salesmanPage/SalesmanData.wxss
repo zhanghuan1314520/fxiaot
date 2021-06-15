@@ -1,0 +1,62 @@
+.salesman-data {
+    position: relative;
+    margin-top: 26rpx;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.salesman-data .data-item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 106rpx;
+}
+
+.salesman-data .data-item.skeletons-rect {
+    width: 160rpx;
+}
+
+.salesman-data .item-text {
+    position: absolute;
+    top: 70rpx;
+    display: flex;
+    height: 32rpx;
+    font-size: 26rpx;
+    color: hsla(0,0%,100%,.65);
+    font-family: PingFangSC-Regular,PingFang SC;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.salesman-data .item-text .iconnew {
+    position: absolute;
+    top: 2rpx;
+    left: 4rpx;
+    font-size: 28rpx;
+}
+
+.salesman-data .item-num {
+    position: relative;
+    margin-top: 6rpx;
+    width: 100%;
+    line-height: 48rpx;
+    font-size: 42rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.salesman-data .red-dot {
+    position: absolute;
+    right: -24rpx;
+    top: 6rpx;
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 8rpx;
+    background: #f03c50;
+}

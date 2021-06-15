@@ -1,0 +1,18 @@
+<view>
+    <custom-nav-header bgcolor="{{bgcolor}}" bind:__l="__l" vueId="c17d0116-1" vueSlots="{{['default']}}">
+        <view class="header_wrap flex_layout">
+            <text bindtap="__e" class="iconnew icon new-jiantouxiangzuo fz-16" data-event-opts="{{[ [ 'tap',[ [ 'goBack',['$event'] ] ] ] ]}}"></text>
+            <text class="fz-20 tit">{{''+title+''}}</text>
+        </view>
+    </custom-nav-header>
+    <view class="wrap" style="{{'padding-top:'+paddingTop+';'+'background-color:'+backcolor+';'+'background-image:'+'url('+background+')'+';'+'background-position-y:'+offsetY+';'}}">
+        <view class="projects">
+            <project-item bind:__l="__l" bind:updateItems="__e" content="union_list" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','list','$event'],[''] ] ] ] ]}}" items="{{list}}" sourcePosition="红盘汇列表" vueId="c17d0116-2" wx:if="{{list.length>0}}"></project-item>
+            <view class="not_id_card" wx:if="{{!loading&&!more&&list.length<1}}">
+                <image src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+                <text>暂无楼盘</text>
+            </view>
+        </view>
+        <loading bind:__l="__l" loading="{{loading}}" vueId="c17d0116-3"></loading>
+    </view>
+</view>

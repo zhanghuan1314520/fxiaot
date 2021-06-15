@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff",
+    "usingComponents": {
+        "average-user": "/subPackages/discovery/component/userPage/AverageUser",
+        "sales-man": "/subPackages/discovery/component/userPage/SalesMan"
+    }
+}

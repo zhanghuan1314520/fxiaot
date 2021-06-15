@@ -1,0 +1,64 @@
+<view class="cubes" wx:if="{{dataApi.detail.length}}">
+    <view class="five " wx:if="{{dataApi.style_name=='penta_cube'&&dataApi.detail.length==5}}">
+        <view class="five__item">
+            <view catchtap="__e" class="cube__icon cube__icon--hight" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n0'] ] ] ] ]}}" data-name="{{dataApi.detail[0].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[0].img_url}}" styles="{{width:'100%',height:'332rpx'}}" vueId="271fa478-1"></image-loader>
+            </view>
+        </view>
+        <view class="five__item">
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n1'] ] ] ] ]}}" data-name="{{dataApi.detail[1].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[1].img_url}}" styles="{{width:'220rpx',height:'160rpx'}}" vueId="271fa478-2"></image-loader>
+            </view>
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n3'] ] ] ] ]}}" data-name="{{dataApi.detail[3].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[3].img_url}}" styles="{{width:'220rpx',height:'160rpx'}}" vueId="271fa478-3"></image-loader>
+            </view>
+        </view>
+        <view class="five__item">
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n2'] ] ] ] ]}}" data-name="{{dataApi.detail[2].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[2].img_url}}" styles="{{width:'220rpx',height:'160rpx'}}" vueId="271fa478-4"></image-loader>
+            </view>
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n4'] ] ] ] ]}}" data-name="{{dataApi.detail[4].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[4].img_url}}" styles="{{width:'220rpx',height:'160rpx'}}" vueId="271fa478-5"></image-loader>
+            </view>
+        </view>
+    </view>
+    <view class="four" wx:if="{{dataApi.style_name=='quadra_cube'&&dataApi.detail.length==4}}">
+        <view class="four__item">
+            <view catchtap="__e" class="cube__icon cube__icon--hight" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n0'] ] ] ] ]}}" data-name="{{dataApi.detail[0].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[0].img_url}}" styles="{{width:'100%',height:'332rpx'}}" vueId="271fa478-6"></image-loader>
+            </view>
+        </view>
+        <view class="four__right">
+            <view class="four__right__up">
+                <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n1'] ] ] ] ]}}" data-name="{{dataApi.detail[1].data_name}}" data-type="link">
+                    <image-loader bind:__l="__l" source="{{dataApi.detail[1].img_url}}" styles="{{width:'220rpx',height:'160rpx'}}" vueId="271fa478-7"></image-loader>
+                </view>
+                <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n2'] ] ] ] ]}}" data-name="{{dataApi.detail[2].data_name}}" data-type="link">
+                    <image-loader bind:__l="__l" source="{{dataApi.detail[2].img_url}}" styles="{{width:'220rpx',height:'160rpx'}}" vueId="271fa478-8"></image-loader>
+                </view>
+            </view>
+            <view class="four__right__down">
+                <view catchtap="__e" class="cube__icon cube__icon--width" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n3'] ] ] ] ]}}" data-name="{{dataApi.detail[3].data_name}}" data-type="link">
+                    <image-loader bind:__l="__l" source="{{dataApi.detail[3].img_url}}" styles="{{width:'452rpx',height:'160rpx'}}" vueId="271fa478-9"></image-loader>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="three" wx:if="{{dataApi.style_name=='triple_cube'&&dataApi.detail.length==3}}">
+        <view class="three__item">
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n0'] ] ] ] ]}}" data-name="{{dataApi.detail[0].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[0].img_url}}" styles="{{width:'220rpx',height:'180rpx'}}" vueId="271fa478-10"></image-loader>
+            </view>
+        </view>
+        <view class="three__item">
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n1'] ] ] ] ]}}" data-name="{{dataApi.detail[1].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[1].img_url}}" styles="{{width:'220rpx',height:'180rpx'}}" vueId="271fa478-11"></image-loader>
+            </view>
+        </view>
+        <view class="three__item">
+            <view catchtap="__e" class="cube__icon" data-content="魔方" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['dataApi.detail.__$n2'] ] ] ] ]}}" data-name="{{dataApi.detail[2].data_name}}" data-type="link">
+                <image-loader bind:__l="__l" source="{{dataApi.detail[2].img_url}}" styles="{{width:'220rpx',height:'180rpx'}}" vueId="271fa478-12"></image-loader>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<block wx:if="{{listData.length>0}}">
+    <navigator class="brand" hoverClass="none" url="{{'/subPackages/project/pages/brandPavilion?brandId='+item.id}}" wx:for="{{listData}}" wx:for-index="__i0__" wx:key="id">
+        <view class="brand-info">
+            <image class="brand-logo" mode="aspectFit" src="{{item.image}}" wx:if="{{item.image}}"></image>
+            <text class="brand-name">{{''+item.name+''}}</text>
+            <image class="brand-icon" src="https://imgcdn.huanjutang.com/assets/img/20190924/5d8979c63959c.png"></image>
+        </view>
+        <view class="brand-entry">进入品牌</view>
+    </navigator>
+</block>

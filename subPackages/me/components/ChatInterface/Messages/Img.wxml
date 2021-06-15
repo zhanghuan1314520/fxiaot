@@ -1,0 +1,5 @@
+<base-layout bind:__l="__l" message="{{message}}" vueId="c73c9b34-1" vueSlots="{{['default']}}">
+    <view class="{{['img-message',isReceive?'receive':'',!isReceive?'sender':'']}}">
+        <image catchtap="__e" class="img-message__img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['message.content'] ] ] ] ]}}" mode="aspectFill" src="{{message.content+'?imageView2/1/w/476/h/289/q/75|imageslim'}}"></image>
+    </view>
+</base-layout>

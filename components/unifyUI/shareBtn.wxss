@@ -1,0 +1,22 @@
+.unify-ui-share-btn>.button {
+    width: 128rpx;
+    height: 56rpx;
+    background: rgba(47,140,239,.14);
+    border-radius: 200rpx 0rpx 0rpx 200rpx;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unify-ui-share-btn>.button .text {
+    margin-left: 2rpx;
+    color: #2d8cf0;
+    line-height: 56rpx;
+}
+
+.unify-ui-share-btn>.button .icon {
+    color: #2d8cf0;
+    margin-left: 10rpx;
+    margin-top: 2rpx;
+}

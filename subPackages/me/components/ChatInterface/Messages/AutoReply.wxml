@@ -1,0 +1,11 @@
+<base-layout bind:__l="__l" message="{{message}}" vueId="ee061b24-1" vueSlots="{{['default']}}">
+    <view class="{{['auto-reply-message',isReceive?'receive':'',!isReceive?'sender':'']}}">
+        <block wx:if="{{isReceive}}">
+            <text class="auto-reply-message__content" userSelect="{{true}}">{{''+message.content+''}}</text>
+            <view class="auto-reply-message__call">
+                <text catchtap="__e" class="auto-reply-message__call--button" data-content="立即致电-立即致电" data-event-opts="{{[ [ 'tap',[ [ 'replyCallHandle',['$event'] ] ] ] ]}}" data-name="立即致电" data-type="button">立即致电</text>
+            </view>
+        </block>
+        <text class="auto-reply-message__content" userSelect="{{true}}" wx:else>{{''+message.content+''}}</text>
+    </view>
+</base-layout>

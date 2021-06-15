@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "房友圈",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "projectCircle-list-main": "/subPackages/news/pages/projectCircle-list-main",
+        "discovery-item": "/subPackages/news/components/DiscoveryItem",
+        "list": "/subPackages/news/components/List",
+        "publish": "/subPackages/news/components/Publish"
+    }
+}

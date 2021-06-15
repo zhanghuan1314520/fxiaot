@@ -1,0 +1,25 @@
+.img-message {
+    position: relative;
+    display: flex;
+    border-radius: 10rpx;
+    width: 460rpx;
+}
+
+.img-message.sender {
+    right: 22rpx;
+    float: right;
+}
+
+.img-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}
+
+.img-message__img {
+    display: block;
+    width: 460rpx;
+    height: 288rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}

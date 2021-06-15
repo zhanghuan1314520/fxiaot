@@ -1,0 +1,181 @@
+<view class="page">
+    <view class="title-container">
+        <view class="title" wx:if="{{projectId==0}}">小程序首页推荐位</view>
+        <view class="title" wx:if="{{projectId!=0}}">{{''+projectName+''}}</view>
+        <view class="desc">{{'优秀置业顾问推荐位(1天 '+tomorrow+')'}}</view>
+        <view class="project-name" wx:if="{{projectId==0}}">{{'上推荐的楼盘：'+projectName+''}}</view>
+    </view>
+    <view class="bidding-container">
+        <view class="common-title">
+            <text class="fz-18 font-bold black-3a-color">{{''+(autoBidding?autoBiddingStatus?showJoinInp?'我的出价':'自动竞价中…':'自动竞价':'我的出价')+''}}</text>
+            <view bindtap="__e" class="more gray-9-color fz-12" data-event-opts="{{[ [ 'tap',[ [ 'toggleComment',['open'] ] ] ] ]}}">竞价规则<text class="iconnew new-wenhaocopy"></text>
+            </view>
+        </view>
+        <view class="input-content">
+            <input bindinput="__e" class="black-3a-color" data-event-opts="{{[ [ 'input',[ [ 'inputVal',['$event'] ] ] ] ]}}" disabled="{{autoBidding}}" placeholderClass="input-placeholder" type="number" value="{{integral}}"></input>
+        </view>
+        <view class="tip-message fz-12" hidden="{{!showAuctionMsg}}">金币低于当前最高竞价时，无法参与竞价</view>
+        <view class="info">
+            <view class="coins-total fz-12">
+                <text class="key">我的金币：</text>
+                <text class="total">{{''+points+'金币'}}</text>
+                <text bindtap="__e" class="get-btn" data-event-opts="{{[ [ 'tap',[ [ 'gotoTransformGold',['$event'] ] ] ] ]}}">获取金币</text>
+            </view>
+            <view class="right">
+                <text class="iconnew new-xingzhuang fz-13"></text>
+                <text class="fz-12">{{''+(showJoinInp?'竞价结束':time)+''}}</text>
+            </view>
+        </view>
+        <view class="settlement" wx:if="{{settlementing&&!settlementEnd}}">
+            <view class="settlement-title">竞价已结束</view>
+            <view class="settlement-subtitle">正在核算中，请稍后…</view>
+        </view>
+        <block wx:if="{{!showJoinInp}}">
+            <view class="auto-bidding" data-log="小于23点 立即出价">
+                <view bindtap="__e" class="switch" data-event-opts="{{[ [ 'tap',[ [ 'changeSwitch',['$event'] ] ] ] ]}}">
+                    <switch-btn bind:__l="__l" bind:switchChangeEvent="__e" bind:updateChecked="__e" checked="{{autoBidding}}" data-event-opts="{{[ [ '^updateChecked',[ [ '__set_sync',['$0','autoBidding','$event'],[''] ] ] ],[ '^switchChangeEvent',[ ['switchChangeEvent'] ] ] ]}}" vueId="385d226a-1"></switch-btn>
+                    <view class="{{[ 'text fz-13 font-bold '+(autoBidding?'active':'') ]}}">自动竞价</view>
+                </view>
+                <view class="edit fz-13">
+                    <text class="gray-9-color">自动竞价设置：</text>
+                    <text bindtap="__e" class="number" data-event-opts="{{[ [ 'tap',[ [ 'toggleBiddingDialog',['open'] ] ] ] ]}}"></text>
+                    <view bindtap="__e" class="iconnew new-xiepinglun2 fz-15" data-event-opts="{{[ [ 'tap',[ [ 'toggleBiddingDialog',['open'] ] ] ] ]}}"></view>
+                </view>
+                <view class="dialog" wx:if="{{explainDialogStatus}}">
+                    <view class="left">点击这里设置自动竞价啦</view>
+                    <view bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'toggleComment',['open'] ] ] ] ]}}">查看竞价说明</view>
+                    <view bindtap="__e" class="close iconnew new-quxiao fz-18" data-event-opts="{{[ [ 'tap',[ [ 'closeExplainDialog',['$event'] ] ] ] ]}}"></view>
+                </view>
+            </view>
+            <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['submitHandle'] ] ] ]}}" isAuthPhone="{{true}}" vueId="385d226a-2" vueSlots="{{['default']}}">
+                <button class="{{[ 'submit '+(disableSubmitBtn?'disable':'') ]}}">{{''+(autoBidding?autoBiddingStatus?'停止自动竞价':'开始自动竞价':'立即出价')+''}}</button>
+            </authorization>
+        </block>
+        <block wx:if="{{settlementEnd&&auctionResults}}">
+            <view class="bidding-result" wx:if="{{auctionResults.joined}}">
+                <block wx:if="{{auctionResults.result.salesman_id==salesmanId}}">
+                    <image class="img" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/2019729141708081.png"></image>
+                    <view class="right">
+                        <view class="title fz-16 black-3a-color font-bold">恭喜你，竞价成功！</view>
+                        <view class="desc fz-12 gray-9-color">{{'您将在明日 ('+tomorrow+')登上首页推荐位'}}</view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <image class="img" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20199161718388081.png"></image>
+                    <view class="right">
+                        <view class="title fz-16 black-3a-color font-bold">很遗憾，竞价失败</view>
+                        <view class="desc fz-12 gray-9-color">不要灰心，明天再来一次！</view>
+                    </view>
+                </block>
+            </view>
+            <block wx:if="{{!auctionResults.joined}}">
+                <view class="auto-bidding" data-log="没参与 显示出价且不可点">
+                    <view bindtap="__e" class="switch" data-event-opts="{{[ [ 'tap',[ [ 'changeSwitch',['$event'] ] ] ] ]}}">
+                        <switch-btn bind:__l="__l" bind:updateChecked="__e" checked="{{autoBidding}}" data-event-opts="{{[ [ '^updateChecked',[ [ '__set_sync',['$0','autoBidding','$event'],[''] ] ] ] ]}}" vueId="385d226a-3"></switch-btn>
+                        <view class="{{[ 'text fz-13 font-bold '+(autoBidding?'active':'') ]}}">自动竞价</view>
+                    </view>
+                    <view class="edit fz-13">
+                        <text class="gray-9-color">我的最高出价：</text>
+                        <text bindtap="__e" class="number" data-event-opts="{{[ [ 'tap',[ [ 'toggleBiddingDialog',['open'] ] ] ] ]}}">{{''+(autoBiddingDetail.integral||0)+''}}</text>
+                        <view bindtap="__e" class="iconnew new-xiepinglun2 fz-15" data-event-opts="{{[ [ 'tap',[ [ 'toggleBiddingDialog',['open'] ] ] ] ]}}"></view>
+                    </view>
+                    <view class="dialog" wx:if="{{explainDialogStatus}}">
+                        <view class="left">点击这里设置自动竞价啦</view>
+                        <view bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'toggleComment',['open'] ] ] ] ]}}">查看竞价说明</view>
+                        <view bindtap="__e" class="close iconnew new-quxiao fz-18" data-event-opts="{{[ [ 'tap',[ [ 'closeExplainDialog',['$event'] ] ] ] ]}}"></view>
+                    </view>
+                </view>
+                <button class="submit disable">{{''+(autoBidding?autoBiddingStatus?'停止自动竞价':'开始自动竞价':'立即出价')+''}}</button>
+            </block>
+        </block>
+        <block wx:if="{{false}}">
+            <view class="bidding-result" wx:if="{{showJoinInp&&auctionResults}}">
+                <block wx:if="{{auctionResults.result.salesman_id==salesmanId}}">
+                    <image class="img" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/2019729141708081.png"></image>
+                    <view class="right">
+                        <view class="title fz-16 black-3a-color font-bold">恭喜你，竞价成功！</view>
+                        <view class="desc fz-12 gray-9-color">{{'您将在明日 ('+tomorrow+')登上首页推荐位'}}</view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <image class="img" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20199161718388081.png"></image>
+                    <view class="right">
+                        <view class="title fz-16 black-3a-color font-bold">很遗憾，竞价失败</view>
+                        <view class="desc fz-12 gray-9-color">不要灰心，明天再来一次！</view>
+                    </view>
+                </block>
+            </view>
+            <block wx:else>
+                <view class="auto-bidding">
+                    <view bindtap="__e" class="switch" data-event-opts="{{[ [ 'tap',[ [ 'changeSwitch',['$event'] ] ] ] ]}}">
+                        <switch-btn bind:__l="__l" bind:updateChecked="__e" checked="{{autoBidding}}" data-event-opts="{{[ [ '^updateChecked',[ [ '__set_sync',['$0','autoBidding','$event'],[''] ] ] ] ]}}" vueId="385d226a-4"></switch-btn>
+                        <view class="{{[ 'text fz-13 font-bold '+(autoBidding?'active':'') ]}}">自动竞价</view>
+                    </view>
+                    <view class="edit fz-13">
+                        <text class="gray-9-color">我的最高出价：</text>
+                        <text bindtap="__e" class="number" data-event-opts="{{[ [ 'tap',[ [ 'toggleBiddingDialog',['open'] ] ] ] ]}}">{{''+(autoBiddingDetail.integral||0)+''}}</text>
+                        <view bindtap="__e" class="iconnew new-xiepinglun2 fz-15" data-event-opts="{{[ [ 'tap',[ [ 'toggleBiddingDialog',['open'] ] ] ] ]}}"></view>
+                    </view>
+                    <view class="dialog" wx:if="{{explainDialogStatus}}">
+                        <view class="left">点击这里设置自动竞价啦</view>
+                        <view bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'toggleComment',['open'] ] ] ] ]}}">查看竞价说明</view>
+                        <view bindtap="__e" class="close iconnew new-quxiao fz-18" data-event-opts="{{[ [ 'tap',[ [ 'closeExplainDialog',['$event'] ] ] ] ]}}"></view>
+                    </view>
+                </view>
+                <button bindtap="__e" class="{{[ 'submit '+(disableSubmitBtn?'disable':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}" id="{{!autoBiddingStatus&&autoBidding?'autoBidding':''}}">{{''+(autoBidding?autoBiddingStatus?'停止自动竞价':'开始自动竞价':'立即出价')+''}}</button>
+            </block>
+        </block>
+    </view>
+    <view class="history-container">
+        <view class="common-title">
+            <text class="fz-18 font-bold black-3a-color">竞价记录</text>
+        </view>
+        <view class="normal-content" wx:if="{{joinList.length===0&&!loading}}">
+            <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20199101451318081.png"></image>
+            <text class="fz-16">当前无人竞价，快来出价吧！</text>
+        </view>
+        <view class="history-content" wx:else>
+            <view class="history-list" wx:for="{{joinList}}" wx:key="index">
+                <view class="{{[ 'avatar-content '+(index==0?'active':'') ]}}">
+                    <image class="avatar" mode="aspectFill" src="{{item.salesman.user.avatar_url||defaultAvatar}}"></image>
+                    <image class="label" mode="widthFix" src="data:image/png;base64,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" wx:if="{{index==0}}"></image>
+                </view>
+                <view class="info">
+                    <view class="username">
+                        <text class="fz-14">{{''+item.salesman.name+''}}</text>
+                    </view>
+                    <view class="time fz-12">{{''+item.joined_at+''}}</view>
+                </view>
+                <view class="conic fz-12">
+                    <text class="fz-16">{{''+item.integral+''}}</text>金币</view>
+            </view>
+        </view>
+    </view>
+    <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','commentShow','$event'],[''] ] ] ] ]}}" data-ref="Dialog" visible="{{commentShow}}" vueId="385d226a-5" vueSlots="{{['default']}}">
+        <scroll-view class="comment-box" scrollY="{{true}}">
+            <view class="fz-14" wx:for="{{configs.rules}}" wx:key="index">
+                <view class="line">
+                    <text>{{item}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </dialog>
+    <dialog bind:__l="__l" bind:updateVisible="__e" class="vue-ref" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','commentShow','$event'],[''] ] ] ] ]}}" data-ref="DialogBidding" visible="{{commentShow}}" vueId="385d226a-6" vueSlots="{{['default']}}">
+        <view class="settings-items">
+            <view class="item">
+                <view class="key">当前最高出价:</view>
+                <view class="value">{{''+(joinList[0]?joinList[0].integral:0)+''}}</view>
+            </view>
+            <view class="item">
+                <view class="key">每次加价金币:</view>
+                <view class="value">{{''+(projectId?configs.steps.project:configs.steps.index)+''}}</view>
+            </view>
+            <view class="item input">
+                <view class="key">我的最高出价:</view>
+                <view class="value">
+                    <input bindblur="__e" bindfocus="__e" bindinput="__e" data-event-opts="{{[ [ 'focus',[ [ 'autoBiddingFocus',['$event'] ] ] ],[ 'blur',[ [ 'autoBiddingBlur',['$event'] ] ] ],[ 'input',[ [ 'autoBiddingInputVal',['$event'] ] ] ] ]}}" focus="{{dialogFocus}}" type="number" value="{{integral}}"></input>
+                </view>
+            </view>
+        </view>
+    </dialog>
+</view>

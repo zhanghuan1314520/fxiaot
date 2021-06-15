@@ -1,0 +1,51 @@
+<view>
+    <view class="{{[ 'page',[bannerLoading?'skeletons':''] ]}}">
+        <view class="page__bd haveSearchBar">
+            <view class="search skeletons-rect">
+                <busi-search analysis="{{$root.a0}}" bind:__l="__l" customUrl="/subPackages/project/pages/mapLookHouse" inputValue="{{inputPlace}}" toUrl="{{searchData}}" vueId="54e941ba-1" vueSlots="{{['default']}}">
+                    <busi-search-swiper bind:__l="__l" config="{{hotSearchList.config}}" list="{{hotSearchList.list}}" style="flex:1;" vueId="{{'54e941ba-2'+','+'54e941ba-1'}}"></busi-search-swiper>
+                </busi-search>
+            </view>
+            <view id="observe-node">
+                <view class="project-banner skeletons-rect" wx:if="{{bannerList.list.length!==0}}">
+                    <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{bannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{bannerList.list}}" source="{{adSource}}" vueId="54e941ba-3"></base-banner>
+                </view>
+                <view bindtap="__e" class="{{[ 'skeletons-rect','content-intro '+(bannerList.list.length!==0?'short-margin':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'closedIntro',['$event'] ] ] ] ]}}" wx:if="{{title!=='热门推荐'&&iShowIntro&&contentIntroTxt}}">
+                    <text class="content fz-12">{{''+contentIntroTxt+''}}</text>
+                    <text class="iconnew icon new-quxiao fz-16"></text>
+                </view>
+            </view>
+            <view class="{{[ 'filter-block '+(tabList.length>0?'':'') ]}}" wx:if="{{filterFixed&&!hideFilter}}"></view>
+            <view catchtouchmove="__e" class="{{[ 'skeletons-rect skeletons-margin','filter-container '+(showSelect||filterFixed?'fixed-top':'projects__filters') ]}}" data-event-opts="{{[ [ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}" wx:if="{{!hideFilter}}">
+                <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="{{['vue-ref',tabbarListIndex!==-1?'filters__fixed':'']}}" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['resetOutput'] ] ],[ '^onSubmit',[ ['filterOutput'] ] ] ]}}" data-ref="baseFilters" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" style="{{'top:'+(tabbarListIndex===-1?'':'128rpx')+';'}}" vueId="54e941ba-4"></base-filters>
+            </view>
+            <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+            <view class="{{['filter-tab skeletons-rect skeletons-margin',showSelect?'fixed-top zIndex-1':'']}}" wx:if="{{tabList.length>0}}">
+                <view bindtap="__e" class="{{[ 'filter-tab_item '+(activeTab===item.id?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleTabChange',[index] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">{{''+item.content+''}}</view>
+            </view>
+            <view class="popular-desc" wx:if="{{tabList[activeTab-1].desc}}">{{''+tabList[activeTab-1].desc+''}}</view>
+            <view class="new-lottery-box">
+                <view class="not_id_card" wx:if="{{lotteries.length==0&&!loading}}">
+                    <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+                    <text class="text">暂无楼盘</text>
+                </view>
+                <view class="new-lottery-listbox" wx:else>
+                    <project-item adSource="{{adSource}}" adType="{{adType}}" bind:__l="__l" content="{{content}}" items="{{lotteries}}" showIndex="{{showIndex}}" sourcePosition="{{sourcePosition}}" titleData="{{title+'列表'}}" type="{{baseParam.type}}" updating="{{updating}}" vueId="54e941ba-5"></project-item>
+                </view>
+            </view>
+        </view>
+        <view class="lottery-entry skeletons-rect" wx:if="{{searchType==='最新摇号'&&!more&&activeTab===2}}">
+            <text class="lottery-entry-desc">当前显示为最近7天的摇号结果</text>
+        </view>
+        <block wx:else>
+            <view class="weui-loadmore flex_layout_c_style" wx:if="{{!more&&lotteries.length>0}}">
+                <view class="weui-loadmore__tips gray-color">我也是有底线的哦~ (๑•́ ₃ •̀๑)</view>
+            </view>
+        </block>
+        <loading bind:__l="__l" bind:updateLoading="__e" data-event-opts="{{[ [ '^updateLoading',[ [ '__set_sync',['$0','loading','$event'],[''] ] ] ] ]}}" loading="{{loading}}" vueId="54e941ba-6"></loading>
+        <view bindtap="__e" class="project-map_entry" data-event-opts="{{[ [ 'tap',[ [ 'handleJumpToMap',['$event'] ] ] ] ]}}" wx:if="{{showMapEntry}}">
+            <text class="iconnew new-tongyong-dingwei1"></text>
+            <text class="text">地图</text>
+        </view>
+    </view>
+</view>

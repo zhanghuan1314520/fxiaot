@@ -1,0 +1,48 @@
+<view class="projects">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" isTabbarPage="{{true}}" vueId="738bc6b3-1"></busi-nav-header>
+    <view class="projects__search" style="{{'top:'+pageMarginTop+'rpx'+';'}}">
+        <busi-search analysis="{{dataName:'找房-搜索框'}}" bind:__l="__l" inputValue="{{inputPlace}}" toUrl="/subPackages/search/pages/index" vueId="738bc6b3-2" vueSlots="{{['default']}}">
+            <busi-search-swiper bind:__l="__l" config="{{hotSearchList.config}}" list="{{hotSearchList.list}}" style="flex:1;" vueId="{{'738bc6b3-3'+','+'738bc6b3-2'}}"></busi-search-swiper>
+        </busi-search>
+    </view>
+    <view class="projects__container">
+        <view class="{{[ 'projects__grid',[isLoadingBase?'skeletons':''] ]}}" wx:if="{{gridsList.length>0}}">
+            <busi-grid bind:__l="__l" listData="{{gridsList}}" vueId="738bc6b3-4"></busi-grid>
+        </view>
+        <view class="{{[ 'projects__cube',[isLoadingBase?'skeletons':''] ]}}" wx:if="{{cubeList.detail}}">
+            <busi-cube bind:__l="__l" listData="{{cubeList}}" vueId="738bc6b3-5"></busi-cube>
+        </view>
+        <view class="projects__column" wx:if="{{columnsList.length>0}}">
+            <busi-column bind:__l="__l" listData="{{columnsList}}" vueId="738bc6b3-6"></busi-column>
+        </view>
+        <view class="projects__filters" style="{{'top:'+pageMarginTop+52+'rpx'+';'}}">
+            <view class="projects__filters-title fz-20">全部楼盘</view>
+            <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="{{['vue-ref',tabbarListIndex!==-1?'filters__fixed':'']}}" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['onFilterReset'] ] ],[ '^onSubmit',[ ['onFilterSubmit'] ] ] ]}}" data-ref="baseFilters" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" style="{{'top:'+(tabbarListIndex===-1?'':pageMarginTop+112+'rpx')+';'}}" vueId="738bc6b3-7"></base-filters>
+            <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+        </view>
+        <view class="{{[ 'projects__list',[isLoadingBase?'skeletons':''] ]}}">
+            <project-item adSource="projectindex" adType="order" bind:__l="__l" bind:updateItems="__e" content="project_list" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projectsList','$event'],[''] ] ] ] ]}}" items="{{projectsList}}" sourcePosition="找房列表" titleData="底部找房按钮" vueId="738bc6b3-8" wx:if="{{projectsList.length>0}}"></project-item>
+            <view class="not_id_card" wx:if="{{!more&&projectsList.length<1}}">
+                <image src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+                <text>暂无楼盘</text>
+            </view>
+        </view>
+        <view wx:if="{{more}}">
+            <view class="flex_layout_c" hidden="{{!isLoadingProjects}}" style="width:100%;margin-top:30rpx;margin-bottom:30rpx;">
+                <view class="loading-runing">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="flex_layout_c" hidden="{{more&&projectsList.length>0}}" style="width:100%;margin-top:30rpx;margin-bottom:30rpx;" wx:if="{{!more&&projectsList.length>0}}">
+            <view class="weui-loadmore__tips gray-color">我也是有底线的哦~ (๑•́ ₃ •̀๑)</view>
+        </view>
+        <busi-share-icon bind:__l="__l" bottom="{{100}}" class="vue-ref" custom="{{true}}" data-ref="baseSahreIcon" vueId="738bc6b3-9" wx:if="{{enableShare}}"></busi-share-icon>
+        <ad-float-window adFloatWindowImg="{{adFloatWindowImg}}" adFloatWindowUrl="{{adFloatWindowUrl}}" bind:__l="__l" bind:updateAdFloatWindowImg="__e" bind:updateAdFloatWindowUrl="__e" bind:updateBottom="__e" bottom="{{adFloatWindowBottom}}" class="skeletons-rect" data-event-opts="{{[ [ '^updateBottom',[ [ '__set_sync',['$0','adFloatWindowBottom','$event'],[''] ] ] ],[ '^updateAdFloatWindowImg',[ [ '__set_sync',['$0','adFloatWindowImg','$event'],[''] ] ] ],[ '^updateAdFloatWindowImg',[ [ '__set_sync',['$0','adFloatWindowImg','$event'],[''] ] ] ],[ '^updateAdFloatWindowUrl',[ [ '__set_sync',['$0','adFloatWindowUrl','$event'],[''] ] ] ],[ '^updateAdFloatWindowUrl',[ [ '__set_sync',['$0','adFloatWindowUrl','$event'],[''] ] ] ] ]}}" vueId="738bc6b3-10" wx:if="{{isAdOpen}}"></ad-float-window>
+    </view>
+</view>

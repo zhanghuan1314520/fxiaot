@@ -1,0 +1,15 @@
+{
+    "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "busi-salesman-info": "/subPackages/tools/components/webview/BusiSalesmanInfo",
+        "busi-salesman-info-for-v-r": "/subPackages/tools/components/webview/BusiSalesmanInfoType2",
+        "busi-v-rshare-btn": "/subPackages/tools/components/webview/BusiVRshareBtnType2",
+        "busi-sunshare-btn": "/subPackages/tools/components/webview/BusiSunshareBtn",
+        "busi-qualification-share-btn": "/subPackages/tools/components/webview/BusiQualificationShareBtn",
+        "busi-article-share-btn": "/subPackages/tools/components/webview/BusiArticleShareBtn",
+        "aerial-navigatato-btn": "/subPackages/tools/components/webview/AerialNavigatatoBtn",
+        "busi-activity-prepare": "/subPackages/tools/components/webview/BusiActivityPrepare"
+    }
+}

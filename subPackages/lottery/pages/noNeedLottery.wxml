@@ -1,0 +1,47 @@
+<view>
+    <view class="{{[ 'page',[bannerLoading?'skeletons':''] ]}}">
+        <view class="page__bd haveSearchBar">
+            <view class="search skeletons-rect">
+                <busi-search analysis="{{$root.a0}}" bind:__l="__l" customUrl="/subPackages/project/pages/mapLookHouse" inputValue="{{inputPlace}}" toUrl="{{searchData}}" vueId="d0c6e5f6-1" vueSlots="{{['default']}}">
+                    <busi-search-swiper bind:__l="__l" config="{{hotSearchList.config}}" list="{{hotSearchList.list}}" style="flex:1;" vueId="{{'d0c6e5f6-2'+','+'d0c6e5f6-1'}}"></busi-search-swiper>
+                </busi-search>
+            </view>
+            <view id="observe-node">
+                <view class="bannerModule skeletons-rect" wx:if="{{bannerList.list.length>0}}">
+                    <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{bannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{bannerList.list}}" source="noNeedLottery" vueId="d0c6e5f6-3"></base-banner>
+                </view>
+                <view bindtap="__e" class="{{[ 'skeletons-rect','content-intro '+(bannerList.list.length!==0?'short-margin':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'closedIntro',['$event'] ] ] ] ]}}" wx:if="{{iShowIntro&&introStr}}">
+                    <text class="content fz-12">{{''+introStr+''}}</text>
+                    <text class="iconnew icon new-quxiao fz-16"></text>
+                </view>
+            </view>
+            <view class="filter-block" wx:if="{{filterFixed}}"></view>
+            <view class="{{['skeletons-rect skeletons-margin',showSelect||filterFixed?'fixed-top':'projects__filters']}}">
+                <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="{{['vue-ref',tabbarListIndex!==-1?'filters__fixed':'']}}" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['onFilterReset'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ] ]}}" data-ref="baseFilters" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" style="{{'top:'+(tabbarListIndex===-1?'':'128rpx')+';'}}" vueId="d0c6e5f6-4"></base-filters>
+                <view catchtap="__e" catchtouchmove="__e" class="{{[true?'filters__bg':'',tabbarListIndex!==-1?'filters__bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+            </view>
+            <view class="projects">
+                <project-item adSource="noNeedLottery" adType="order" bind:__l="__l" content="home_remanent_yao" items="{{projects}}" sourcePosition="{{navBarTitle+'列表'}}" titleData="{{navBarTitle+'列表'}}" vueId="d0c6e5f6-5"></project-item>
+                <view class="not_id_card" wx:if="{{!more&&projects.length<1}}">
+                    <image src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+                    <text>暂无楼盘</text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{more}}">
+            <view class="flex_layout_c">
+                <view class="loading-runing">
+                    <view class="loading-icon">
+                        <text class="iconnew new-jiazai"></text>
+                    </view>
+                    <view class="left-font">
+                        <text>加载中</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="flex_layout_c" wx:if="{{!more&&projects.length>0}}">
+            <view class="weui-loadmore__tips gray-color">我也是有底线的哦~ (๑•́ ₃ •̀๑)</view>
+        </view>
+    </view>
+</view>

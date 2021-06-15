@@ -1,0 +1,21 @@
+<view class="busi-component__wrapper">
+    <view class="form">
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>姓名</text>
+            </view>
+            <view class="content">
+                <input bindinput="__e" class="input-item fz-15" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" maxlength="15" placeholder="请输入您的姓名" placeholderClass="placeholder-input-item" value="{{form.name}}"></input>
+            </view>
+        </view>
+        <view class="item-form" wx:if="{{idCard}}">
+            <view class="label fz-17 mar-bottom-32">身份证号码</view>
+            <view class="content">
+                <input bindinput="__e" class="input-item fz-15" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','id_card','$event',[] ],['form'] ] ] ] ]}}" maxlength="18" placeholder="请输入您的身份证号码" placeholderClass="placeholder-input-item" type="idcard" value="{{form.id_card}}"></input>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['gotoVerify'] ] ] ]}}" isAuthPhone="{{true}}" vueId="7a29602f-1" vueSlots="{{['default']}}">
+            <view class="{{['item-btn fz-16 mar-top-100',!disable?'gary':'']}}">下一步</view>
+        </authorization>
+    </view>
+</view>

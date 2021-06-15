@@ -1,0 +1,105 @@
+<view class="data-v-6d7a7a46">
+    <view class="time data-v-6d7a7a46">{{''+info.show_time+''}}</view>
+    <view bindtap="__e" class="message-item type-1 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==1}}">
+        <view class="message-text data-v-6d7a7a46">{{''+info.content.header.content+''}}</view>
+    </view>
+    <view bindtap="__e" class="message-item type-2 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==2}}">
+        <view class="msg-info data-v-6d7a7a46">
+            <view class="title data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+            <view class="content data-v-6d7a7a46">{{''+info.content.header.content+''}}</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="message-item type-3 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==3}}">
+        <view class="msg-info data-v-6d7a7a46">
+            <view class="title data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+        </view>
+        <view class="msg-link data-v-6d7a7a46">
+            <text class="data-v-6d7a7a46">点击查看</text>
+            <text class="iconnew new-tongyong-gengduo data-v-6d7a7a46"></text>
+        </view>
+    </view>
+    <view bindtap="__e" class="message-item type-4 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==4}}">
+        <view class="msg-header data-v-6d7a7a46">
+            <view class="msg-image data-v-6d7a7a46">
+                <image class="img data-v-6d7a7a46" mode="aspectFill" src="{{info.content.header.image}}"></image>
+            </view>
+            <view class="mark data-v-6d7a7a46">
+                <view class="view-text cut data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+            </view>
+        </view>
+        <view class="msg-list data-v-6d7a7a46">
+            <view class="msg-list-item data-v-6d7a7a46">
+                <view class="msg-title data-v-6d7a7a46">{{''+info.content.header.content+''}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="message-item type-5 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==5}}">
+        <view class="msg-header data-v-6d7a7a46">
+            <view class="msg-image data-v-6d7a7a46">
+                <image class="img data-v-6d7a7a46" mode="aspectFill" src="{{info.content.header.image}}"></image>
+            </view>
+            <view class="mark data-v-6d7a7a46">
+                <view class="view-text cut data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+            </view>
+        </view>
+        <view class="msg-list data-v-6d7a7a46">
+            <view class="msg-list-item data-v-6d7a7a46">
+                <view class="msg-title cut data-v-6d7a7a46">{{''+info.content.header.content+''}}</view>
+            </view>
+        </view>
+        <view class="msg-link data-v-6d7a7a46">
+            <text class="data-v-6d7a7a46">点击查看</text>
+            <text class="iconnew new-tongyong-gengduo data-v-6d7a7a46"></text>
+        </view>
+    </view>
+    <view bindtap="__e" class="message-item type-6 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==6}}">
+        <view class="msg-list data-v-6d7a7a46">
+            <view class="msg-list-item data-v-6d7a7a46">
+                <view class="msg-title cut data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+                <view class="msg-image data-v-6d7a7a46">
+                    <image class="data-v-6d7a7a46" mode="aspectFill" src="{{info.content.header.image}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="message-item type-7 data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" wx:if="{{info.content.type==7}}">
+        <view class="msg-info data-v-6d7a7a46">
+            <view class="title data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+            <view class="content data-v-6d7a7a46">{{''+info.content.header.content+''}}</view>
+        </view>
+        <view class="msg-link data-v-6d7a7a46">
+            <text class="data-v-6d7a7a46">点击查看</text>
+            <text class="iconnew new-tongyong-gengduo data-v-6d7a7a46"></text>
+        </view>
+    </view>
+    <view class="message-item type-8 data-v-6d7a7a46" wx:if="{{info.content.type==8}}">
+        <view bindtap="__e" class="msg-header data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}">
+            <view class="msg-image data-v-6d7a7a46">
+                <image class="img data-v-6d7a7a46" src="{{info.content.header.image}}"></image>
+            </view>
+            <view class="mark data-v-6d7a7a46">
+                <view class="view-text cut data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+            </view>
+        </view>
+        <view class="msg-list data-v-6d7a7a46" wx:if="{{info.content.list.length}}">
+            <view bindtap="__e" class="msg-list-item data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],[ [ ['info.content.list','',index] ] ] ] ] ] ]}}" wx:for="{{info.content.list}}" wx:key="index">
+                <view class="msg-title data-v-6d7a7a46">
+                    <view class="title-text cut data-v-6d7a7a46">{{''+item.title+''}}</view>
+                </view>
+                <view class="msg-image data-v-6d7a7a46">
+                    <image class="data-v-6d7a7a46" src="{{item.image}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="group-code data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'handleCodeClick',['$0'],['info.content.header'] ] ] ] ]}}" data-name="{{info.content.header.linkName||'加入群聊'}}" wx:if="{{$root.m0===9}}">
+        <view class="top data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+        <view class="line data-v-6d7a7a46"></view>
+        <view class="bottom data-v-6d7a7a46">{{''+(info.content.header.linkName||'加入群聊')+''}}</view>
+    </view>
+    <view bindtap="__e" class="intelligent data-v-6d7a7a46" data-event-opts="{{[ [ 'tap',[ [ 'toUrlHandle',['$0'],['info.content.header'] ] ] ] ]}}" data-name="{{info.content.header.linkName}}" wx:if="{{$root.m1===10}}">
+        <view class="top data-v-6d7a7a46">{{''+info.content.header.title+''}}</view>
+        <view class="line data-v-6d7a7a46"></view>
+        <view class="bottom data-v-6d7a7a46">{{''+info.content.header.linkName+''}}</view>
+    </view>
+</view>

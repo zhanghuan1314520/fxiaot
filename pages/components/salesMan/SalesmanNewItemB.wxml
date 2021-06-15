@@ -1,0 +1,35 @@
+<view bindtap="__e" class="{{[ 'salesman-item',[item.skeleton?'skeletons':''] ]}}" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0','$1'],['item','index'] ] ] ] ]}}" data-name="置业顾问详情" data-type="link">
+    <view class="avatar-box">
+        <image-loader bind:__l="__l" source="{{item.avatar_url_thumbnail||item.avatar_url||defaultAvatar}}" styles="{{$root.a0}}" vueId="4df106e8-1"></image-loader>
+        <view class="only-tag position" wx:if="{{item.is_bind&&item.is_bind==1}}"></view>
+    </view>
+    <view class="salesman-main">
+        <view class="info">
+            <text class="info-name skeletons-rect">{{''+item.name+''}}</text>
+            <image class="info-tag" src="{{sort[item.grade]||sort[item.level]||sort['1']}}"></image>
+        </view>
+        <view class="project">
+            <image class="project-image" src="https://imgcdn.huanjutang.com/assets/img/2020616141278081.png"></image>
+            <text class="project-name skeletons-rect">{{''+item.project_name+''}}</text>
+        </view>
+        <view class="target-num skeletons-rect">
+            <text class="item">{{'活跃度：'+recommend+''}}</text>
+            <text class="slash">/</text>
+            <text class="item">{{'点赞数：'+likeNum+''}}</text>
+            <text class="slash">/</text>
+            <text class="item">{{'浏览量：'+$root.m0+''}}</text>
+        </view>
+    </view>
+    <view class="advisory" wx:if="{{!item.skeleton}}">
+        <busi-auth-navigator bind:__l="__l" url="{{'navigateTo-authphone://subPackages/me/pages/chatInterface?user_id='+item.session_id+'&project_id='+project_id+'&project_name='+item.project_name+'&project_img='+item.cover}}" vueId="4df106e8-2" vueSlots="{{['default']}}">
+            <view class="advisory-button" data-content="{{dataContent}}" data-name="聊天" data-type="link">
+                <text class="iconnew new-zixun"></text>
+            </view>
+        </busi-auth-navigator>
+        <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'callPhoneSuccess',['$event','$0'],['item.id'] ] ] ] ]}}" vueId="4df106e8-3" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="advisory-button" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyHandle',['$event'] ] ] ] ]}}" data-name="打电话" data-type="link">
+                <text class="iconnew new-dianhua"></text>
+            </view>
+        </base-call-phone>
+    </view>
+</view>

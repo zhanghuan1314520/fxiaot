@@ -1,0 +1,8 @@
+<swiper autoplay="true" circular="true" class="notice-right skeletons" interval="{{config.rotation_duration||2000}}" vertical="true">
+    <swiper-item catchtouchmove="__e" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+        <view bindtap="__e" class="modify-color" data-content="搜索关键词" data-event-opts="{{[ [ 'tap',[ [ 'goToSearchUrl',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="{{item.text}}" data-type="link">{{''+item.text+''}}</view>
+    </swiper-item>
+    <swiper-item catchtouchmove="__e" data-event-opts="{{[ [ 'touchmove',[ [ 'stopMoveHandle',['$event'] ] ] ] ]}}" wx:if="{{list.length===0}}">
+        <view data-name bindtap="__e" class="modify-color" data-content="搜索关键词" data-event-opts="{{[ [ 'tap',[ [ 'goToSearchUrl',[''] ] ] ] ]}}" data-type="link">点击搜索楼盘</view>
+    </swiper-item>
+</swiper>

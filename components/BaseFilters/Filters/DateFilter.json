@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "select-list": "/components/BaseFilters/SelectList",
+        "footer-button": "/components/BaseFilters/FooterButton"
+    }
+}

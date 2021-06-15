@@ -1,0 +1,19 @@
+<view class="appeal-detail">
+    <view class="appeal-detail__main">
+        <view class="detail-line"></view>
+        <view class="detail-item" wx:for="{{processes}}" wx:for-index="__i0__" wx:key="id">
+            <view class="item-title">{{''+item.title+''}}</view>
+            <text class="item-date">{{''+item.created_at+''}}</text>
+            <view class="item-content">{{''+item.operate_data.content+''}}</view>
+            <view class="item-image" wx:if="{{item.operate_data.files.length>0}}">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0','$1'],[ [ ['processes','id',item.id,'operate_data.files'] ],[ ['processes','id',item.id],['operate_data.files','',__i1__] ] ] ] ] ] ]}}" mode="aspectFill" src="{{ele}}" wx:for="{{item.operate_data.files}}" wx:for-index="__i1__" wx:for-item="ele" wx:key="*this"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="appeal-footer" data-event-opts="{{[ [ 'tap',[ [ 'handleAppeal',['$event'] ] ] ] ]}}" wx:if="{{button_status!=='hidden'}}">
+        <view class="footer-button" wx:if="{{button_status==='show'}}">点击申述</view>
+        <block wx:else>
+            <view class="footer-button disable" wx:if="{{button_status==='gray'}}">申述已提交</view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,226 @@
+.mar-top-8 {
+    margin-top: 8rpx;
+}
+
+.mar-top-10 {
+    margin-top: 10rpx;
+}
+
+.aeria-item {
+    margin: 0 32rpx 32rpx;
+    background: #fff;
+    box-shadow: 0 8rpx 50rpx 0 rgba(0,0,0,.13);
+    border-radius: 12rpx;
+    padding: 24rpx 24rpx 28rpx;
+    box-sizing: border-box;
+}
+
+.aeria-item .image-model {
+    width: 100%;
+    height: 300rpx;
+    border-radius: 8rpx 8rpx 0 0;
+    box-shadow: 0 8rpx 50rpx 0 rgba(0,0,0,.13);
+    position: relative;
+    margin-bottom: 28rpx;
+    overflow: hidden;
+}
+
+.aeria-item .image-model .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx 8rpx 0 0;
+}
+
+.aeria-item .image-model .view-comment {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    background: linear-gradient(180deg,transparent,#000 99%);
+    box-shadow: 0 8rpx 50rpx 0 rgba(0,0,0,.13);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16rpx 24rpx;
+    box-sizing: border-box;
+}
+
+.aeria-item .image-model .view-comment .view-num {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aeria-item .image-model .view-comment .comment-icon {
+    width: 29rpx;
+    height: 29rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/202012221613468081.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+    margin-right: 10rpx;
+}
+
+.aeria-item .image-model .view-comment .page-view-icon {
+    width: 29rpx;
+    height: 29rpx;
+    margin-right: 8rpx;
+}
+
+.aeria-item .image-model .view-comment .iconnew {
+    margin-right: 10rpx;
+    font-size: 28px;
+    color: hsla(0,0%,100%,.8);
+}
+
+.aeria-item .image-model .view-comment .text {
+    color: hsla(0,0%,100%,.85);
+    font-size: 24rpx;
+    line-height: 29rpx;
+    text-shadow: 0 8rpx 50rpx rgba(0,0,0,.13);
+}
+
+.aeria-item .image-model .aeria-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/20209151630208081.png);
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.aeria-item .title-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aeria-item .title-status .title {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    max-width: 300rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 40rpx;
+}
+
+.aeria-item .title-status .status-tags {
+    line-height: 40rpx;
+    display: flex;
+}
+
+.aeria-item .title-status .status-tags .-tag {
+    display: inline-block;
+    padding: 0 8rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    color: #fff;
+    font-size: 22rpx;
+    margin-left: 12rpx;
+    box-shadow: 0 8rpx 50rpx 0 rgba(0,0,0,.13);
+    border-radius: 4rpx;
+    background: #2d8cf0;
+    box-sizing: border-box;
+}
+
+.aeria-item .title-status .status-tags .-tag.-feature {
+    color: #828caa;
+    background: #eceff5;
+}
+
+.aeria-item .title-status .status-tags .dispaly-none {
+    display: none;
+}
+
+.aeria-item .address-price {
+    overflow: hidden;
+}
+
+.aeria-item .address-price .address {
+    float: left;
+    line-height: 32rpx;
+    margin-top: 16rpx;
+}
+
+.aeria-item .address-price .address .name {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.65);
+    line-height: 32rpx;
+    text-shadow: 0 8rpx 50rpx rgba(0,0,0,.13);
+    margin-right: 12rpx;
+}
+
+.aeria-item .address-price .project__info__price {
+    float: right;
+    display: block;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #f03c50;
+    line-height: 40rpx;
+    margin-top: 4rpx;
+}
+
+.aeria-item .address-price .project__info__price:nth-child(1) {
+    margin-top: 0;
+}
+
+.aeria-item .address-price .project__info__price--1 {
+    height: 44rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aeria-item .address-price .project__info__price--2 {
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    line-height: 36rpx;
+}
+
+.aeria-item .address-price .project__info__price--3 {
+    height: 32rpx;
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #f03c50;
+    line-height: 32rpx;
+}
+
+.aeria-item .sales-feature {
+    margin-top: 16rpx;
+}
+
+.aeria-item .sales-feature,.aeria-item .sales-feature .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aeria-item .sales-feature .light__icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}
+
+.aeria-item .sales-feature .text {
+    font-weight: 700;
+}
+
+.aeria-item .sales-feature .feature-text,.aeria-item .sales-feature .text {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 32rpx;
+}

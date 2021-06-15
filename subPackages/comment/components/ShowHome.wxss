@@ -1,0 +1,32 @@
+.page-control {
+    position: fixed;
+    right: 0;
+    bottom: 296rpx;
+    z-index: 99;
+    overflow: hidden;
+    margin-right: 24rpx;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 84rpx;
+    width: 84rpx;
+    margin-top: 30rpx;
+    color: #fff;
+    line-height: 1;
+    background: rgba(47,140,239,.95);
+    border-radius: 50%;
+}
+
+.iconnew {
+    margin-right: 8rpx;
+    margin-left: 10rpx;
+    margin-bottom: 4rpx;
+}
+
+.backhome {
+    background: rgba(35,205,148,.98);
+}

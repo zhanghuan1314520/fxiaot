@@ -1,0 +1,12 @@
+<view class="entries">
+    <authorization bind:__l="__l" bind:onSuccess="__e" class="data-item" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleNext',['$0'],[ [ ['entriesData','',index,'url'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'472ce361-1-'+index}}" vueSlots="{{['default']}}" wx:for="{{entriesData}}" wx:key="index">
+        <view bindtap="__e" class="{{[ 'data-item',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.text}}" data-type="link">
+            <view class="item-img skeletons-rect">
+                <image class="img" src="{{item.icon}}"></image>
+                <text class="add" wx:if="{{item.today_num}}">{{'今'+(item.today_num||0)+''}}</text>
+                <text class="add" wx:if="{{item.tips}}">未完成</text>
+            </view>
+            <view class="item-text skeletons-rect">{{''+item.text+''}}</view>
+        </view>
+    </authorization>
+</view>

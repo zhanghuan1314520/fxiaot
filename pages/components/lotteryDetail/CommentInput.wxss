@@ -1,0 +1,176 @@
+.placeholder {
+    position: absolute;
+    left: 28rpx;
+    line-height: 88rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: rgba(0,0,0,.25);
+}
+
+.comment-input {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 99;
+    position: fixed;
+    transition: all .2s ease;
+}
+
+.comment-input__box {
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    height: 144rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32rpx env(safe-area-inset-bottom);
+}
+
+.comment-default__box {
+    width: 492rpx;
+    line-height: 88rpx;
+    height: 88rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    border-radius: 8rpx;
+    background: #f5f5f5;
+    padding-left: 28rpx;
+    color: rgba(0,0,0,.25);
+}
+
+.comment-default__operate {
+    display: flex;
+    align-items: center;
+    margin-right: -2rpx;
+}
+
+.comment-default__operate .like {
+    margin-right: 20rpx;
+}
+
+.comment-default__operate .like .like-image {
+    width: 72rpx;
+    height: 72rpx;
+    overflow: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/2020531941308081.png);
+    background-size: cover;
+    background-position: 0 0;
+    transition-property: all;
+    transition-delay: 20/40s;
+}
+
+.comment-default__operate .like,.comment-default__operate .share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0,0,0,.85);
+}
+
+.comment-default__operate .like .num,.comment-default__operate .share .num {
+    font-size: 28rpx;
+    margin-top: -8rpx;
+}
+
+.comment-default__operate .like.active .like-image {
+    animation-name: play;
+    animation-duration: 20/40s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(20);
+    background-position: 100%;
+}
+
+.comment-default__operate .share {
+    background: transparent;
+    line-height: normal;
+    padding: 0;
+}
+
+.comment-default__operate .iconnew {
+    font-size: 40rpx;
+}
+
+@-webkit-keyframes play {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes play {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.comment-input__box-focus {
+    height: 144rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 32rpx;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    box-sizing: border-box;
+}
+
+.comment-focus__input {
+    background: #f5f5f5;
+    border-radius: 8rpx;
+    height: 88rpx;
+    font-size: 30rpx;
+    padding: 0 28rpx;
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.comment-focus__input .input {
+    flex: 1;
+    padding-right: 130rpx;
+}
+
+.comment-focus__input .send {
+    width: 120rpx;
+    height: 64rpx;
+    position: relative;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    font-family: PingFangSC-Medium,PingFang SC;
+    background: #d9d9d9;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16rpx;
+    color: #fff;
+    transition: all .2s ease;
+}
+
+.comment-focus__input .send.active {
+    background: #2d8cf0;
+}
+
+.image-default {
+    margin: 10rpx;
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.auth-comment-default__box button {
+    text-align: left;
+}
+
+.auth-send .authorization__button {
+    position: absolute;
+    right: 16rpx;
+}

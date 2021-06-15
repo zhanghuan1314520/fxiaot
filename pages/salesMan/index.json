@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "置业顾问",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "salesman-list-plan-a": "/pages/components/salesMan/SalesmanListPlanA",
+        "salesman-list-new-plan-b": "/pages/components/salesMan/SalesmanListNewPlanB",
+        "busi-loading": "/components/UILayout/BusiLoading"
+    }
+}

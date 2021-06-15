@@ -1,0 +1,3 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="03e8a07d-1" vueSlots="{{['default']}}" wx:if="{{banners.list.length>0}}">
+    <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{banners.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{banners.list}}" height="{{settings.adInfo.imgH}}" source="uiLayout" vueId="{{'03e8a07d-2'+','+'03e8a07d-1'}}"></base-banner>
+</base-layout>

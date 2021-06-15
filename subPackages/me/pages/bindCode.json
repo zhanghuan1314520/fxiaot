@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团-添加摇号编码",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "bind-code-forms": "/subPackages/me/pages/components/hangzhou/bindCode/Forms",
+        "dialog": "/components/UILayout/BusiDialog"
+    }
+}

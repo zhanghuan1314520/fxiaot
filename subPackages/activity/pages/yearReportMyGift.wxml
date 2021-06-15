@@ -1,0 +1,61 @@
+<view class="my-gift">
+    <view class="list">
+        <view class="list-item" wx:for="{{$root.l0}}" wx:key="index">
+            <view class="left">
+                <view class="top">
+                    <view class="title" style="{{'background-image:'+'url('+item.m0+')'+';'}}"></view>
+                    <view class="tag-status">
+                        <view class="tag-text">{{''+(item[$orig].is_reward===0?'未开奖':'已开奖')+''}}</view>
+                    </view>
+                </view>
+                <view class="bottom">
+                    <view class="gift-name">{{''+(item[$orig].raffle_award_name||'')+''}}</view>
+                    <view class="time">{{''+(item[$orig].is_reward===0?'开奖倒计时':'开奖时间')+' '+(item[$orig].is_reward===0?item[$orig].countdownStr||'0天 00:00:00':item[$orig].raffle_start_time)+''}}</view>
+                </view>
+            </view>
+            <view class="right">
+                <view class="gift-img">
+                    <image class="_img" src="{{item[$orig].raffle_award_image}}"></image>
+                </view>
+                <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'openDia',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'7a2bb064-1-'+index}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].is_reward===1}}">
+                    <view bindtap="__e" class="btn" data-content="我的抽奖" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-name="立即领奖" data-type="button">立即领奖</view>
+                </authorization>
+                <view bindtap="__e" class="btn" data-content="我的抽奖" data-event-opts="{{[ [ 'tap',[ [ 'openDia',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="中奖名单" data-type="button" wx:if="{{item[$orig].is_reward===2}}">中奖名单</view>
+            </view>
+        </view>
+    </view>
+    <view class="empty" wx:if="{{list.length===0}}">
+        <view class="empty-icon"></view>
+        <view class="empty-text">您暂时未参与抽奖</view>
+        <button bindtap="__e" class="btn-share" data-content="我的抽奖" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" data-name="邀请好友" data-type="button" openType="share"></button>
+    </view>
+    <year-report-modal bind:__l="__l" bind:close="__e" bind:updateVisible="__e" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','winnerListShow','$event'],[''] ] ] ],[ '^close',[ ['e2'] ] ] ]}}" titleCss="height: 138rpx; top: -74rpx;" titleImg="https://imgcdn.huanjutang.com/file/2021/01/05/8c8604c6d7598468b54205df709bbc2f.png" visible="{{winnerListShow}}" vueId="7a2bb064-2" vueSlots="{{['default']}}">
+        <scroll-view scrollY="{{true}}" style="max-height:616rpx;">
+            <view class="winner-list">
+                <view class="winner-item" wx:for="{{winnerList}}" wx:key="index">
+                    <view class="winner-left">
+                        <view class="winner-avatar">
+                            <image class="_img" src="{{item.avatar_url||'https://imgcdn.huanjutang.com/assets/img/2020712180428081.png'}}"></image>
+                        </view>
+                        <view class="winner-nick-name">{{''+item.nick_name+''}}</view>
+                        <view class="winner-gift-name">{{''+item.gift_name+''}}</view>
+                    </view>
+                    <view class="winner-right">{{''+item.activity_name+''}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </year-report-modal>
+    <year-report-modal bind:__l="__l" bind:close="__e" bind:updateVisible="__e" css="top: 10%;" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','inputAddressShow','$event'],[''] ] ] ],[ '^close',[ ['inputAddressClose'] ] ] ]}}" titleCss="height: 138rpx; top: -74rpx;" titleImg="https://imgcdn.huanjutang.com/file/2021/01/05/a8070ef2092fcb903667d5c04f3146cf.png" visible="{{inputAddressShow}}" vueId="7a2bb064-3" vueSlots="{{['default']}}">
+        <view class="input-wrapper">
+            <input bindblur="__e" bindinput="__e" class="input-name" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',['trim'] ],['form'] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" maxlength="{{20}}" placeholder="输入您的姓名" placeholderClass="inputPlaceholder" type="text" value="{{form.name}}"></input>
+            <input bindblur="__e" bindinput="__e" class="input-tel" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','phone','$event',['trim'] ],['form'] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" maxlength="{{11}}" placeholder="输入您的手机号" placeholderClass="inputPlaceholder" type="number" value="{{form.phone}}"></input>
+            <textarea bindblur="__e" bindinput="__e" class="input-address" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','address','$event',['trim'] ],['form'] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" maxlength="{{200}}" placeholder="输入您的收获地址" placeholderClass="inputPlaceholder" type="text" value="{{form.address}}"></textarea>
+            <view class="kefu">{{'请添加客服微信: '+form.serviceLink+'领取奖品'}}<view>请在“发送添加朋友申请“中备注【祈愿活动】</view>
+            </view>
+            <view bindtap="__e" class="submit-btn" data-content="我的抽奖" data-event-opts="{{[ [ 'tap',[ [ 'handleSubmit',['$event'] ] ] ] ]}}" data-name="提交信息" data-type="button"></view>
+            <view class="text3 _div"></view>
+            <view class="text1">请填写您的收货信息方便我们进行核对</view>
+            <view class="text2">待活动结束后(1月17日00:00)7个工作日内发放</view>
+        </view>
+    </year-report-modal>
+</view>

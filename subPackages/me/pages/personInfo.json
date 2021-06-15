@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "杭州房小团—个人资料",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "cropper": "/subPackages/me/pages/components/wepy-com-cropper"
+    }
+}

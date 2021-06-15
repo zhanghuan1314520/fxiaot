@@ -1,0 +1,43 @@
+<view class="year-report-wish-value">
+    <view class="header-img"></view>
+    <view class="my-wish-value">
+        <view>当前祈愿值</view>
+        <view class="my-value">{{''+myValue+''}}</view>
+    </view>
+    <view class="list">
+        <block wx:for="{{list}}" wx:key="index">
+            <view class="list-item" wx:if="{{item.task_flag==='share'}}">
+                <view class="left">
+                    <image class="_img" src="{{item.avatar_url||'https://imgcdn.huanjutang.com/assets/img/2020712180428081.png'}}"></image>
+                </view>
+                <view class="right">
+                    <view class="line1">
+                        <view class="nick-name">{{''+item.nick_name+''}}</view>
+                        <view class="wish-value">{{'+'+item.reward_num+''}}</view>
+                    </view>
+                    <view class="line2">
+                        <view>用户助力</view>
+                        <view>{{item.created_at}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="list-item" wx:else>
+                <view class="left2">{{''+item.task_name+''}}</view>
+                <view class="right">
+                    <view class="line1">
+                        <view class="nick-name"></view>
+                        <view class="wish-value">{{'+'+item.reward_num+''}}</view>
+                    </view>
+                    <view class="line2">
+                        <view></view>
+                        <view>{{item.created_at}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="empty" wx:if="{{list.length===0}}">
+            <image class="_img" src="https://imgcdn.huanjutang.com/file/2020/12/23/e54aef376b6fff6536400f6d9c09d7f3.png"></image>
+            <view class="empty-text">您暂时还未获得祈愿值</view>
+        </view>
+    </view>
+</view>

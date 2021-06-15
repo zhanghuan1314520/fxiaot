@@ -1,0 +1,308 @@
+.h-68 {
+    height: 68rpx;
+    width: 100%;
+    background: #fff;
+}
+
+.evaluate-box {
+    height: auto;
+    width: auto;
+    margin: 96rpx 32rpx 0;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 100rpx;
+}
+
+.evaluate-box .tips-line {
+    height: 40rpx;
+    width: auto;
+    margin: 0 32rpx 48rpx;
+    position: relative;
+}
+
+.evaluate-box .tips-line .line {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: rgba(0,0,0,.1);
+    top: 20rpx;
+    left: 0;
+    right: 0;
+}
+
+.evaluate-box .tips-line .text {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.5);
+    line-height: 40rpx;
+    height: 40rpx;
+    background: #fff;
+    width: 400rpx;
+    padding: 0 20rpx;
+}
+
+.evaluate-box .evaluate {
+    margin: 0 94rpx;
+}
+
+.btn-down,.btn-up,.evaluate-box .evaluate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-down,.btn-up {
+    width: 248rpx;
+    height: 80rpx;
+    border-radius: 8rpx;
+    border: 1px solid rgba(0,0,0,.1);
+    background: transparent;
+    font-size: 32rpx!important;
+    font-weight: 400;
+    color: rgba(0,0,0,.65);
+    line-height: 80rpx;
+}
+
+.btn-up {
+    margin-left: 64rpx;
+}
+
+.btn-down .iconnew,.btn-up .iconnew {
+    font-size: 34rpx!important;
+    margin-right: 4rpx;
+}
+
+.icon-default {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 14rpx;
+}
+
+.empty {
+    height: 144rpx;
+    width: auto;
+}
+
+.detail-header {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    margin: 40rpx 32rpx 48rpx;
+}
+
+.detail-header .title {
+    width: auto;
+    height: auto;
+    font-size: 44rpx;
+    font-weight: 700;
+    color: #333;
+    line-height: 60rpx;
+    margin-bottom: 24rpx;
+}
+
+.detail-header .tag-text {
+    display: inline-block;
+    background: rgba(45,140,240,.12);
+    border-radius: 4rpx;
+    padding: 0 12rpx;
+    color: #2d8cf0;
+}
+
+.detail-header .info-date,.detail-header .tag-text {
+    width: auto;
+    height: 40rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    line-height: 40rpx;
+}
+
+.detail-header .info-date {
+    color: rgba(0,0,0,.5);
+    margin-left: 24rpx;
+}
+
+.video {
+    width: 100%;
+    height: 386rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 8rpx;
+}
+
+.video-list {
+    height: 386rpx;
+    width: auto;
+    overflow: hidden;
+    margin: 0 32rpx 48rpx;
+    position: relative;
+}
+
+.video-list .video-item {
+    width: 100%;
+    height: 386rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    border-radius: 8rpx;
+}
+
+.video-list .video-item .image {
+    width: 100%;
+    height: 100%;
+}
+
+.video-list .video-item .icon-video {
+    height: 80rpx;
+    width: 80rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+.video-list .video-item .icon-video image {
+    width: 100%;
+    height: 100%;
+}
+
+.file-list {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.file-list .file-item {
+    padding: 32rpx;
+    display: flex;
+    align-items: center;
+    margin: 0 32rpx 24rpx;
+    background: #f7f7f7;
+    border-radius: 8rpx;
+}
+
+.file-list .file-icon {
+    width: 52rpx;
+    height: 60rpx;
+    background: url(https://imgcdn.huanjutang.com/image/2020/06/16/358e7cf009d61db6b783a805a45fe1bf.png) 50% no-repeat;
+    background-size: cover!important;
+}
+
+.file-list .file-info {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    margin: 0 22rpx;
+    flex: 1;
+}
+
+.file-list .file-info .file-name {
+    width: auto;
+    height: 40rpx;
+    font-size: 30rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+    margin-bottom: 4rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.file-list .file-info .file-size {
+    width: auto;
+    height: 34rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.5);
+    line-height: 34rpx;
+}
+
+.file-list .file-download {
+    width: 64rpx;
+    height: 64rpx;
+    background: url(https://imgcdn.huanjutang.com/image/2020/06/05/79250bb12ad3850058126cf9ef2638c0.png) 50% no-repeat;
+    background-size: cover;
+}
+
+.detail-content {
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    margin-left: 32rpx;
+    margin-right: 32rpx;
+}
+
+.title {
+    width: 686px;
+    height: 120px;
+    font-size: 44px;
+    font-weight: 600;
+    color: #333;
+    line-height: 60px;
+}
+
+.detail-footer {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(0,0,0,.03);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.detail-footer .footer-content {
+    padding: 22rpx 32rpx;
+    height: 100rpx;
+    display: flex;
+}
+
+.detail-footer .btn-contact {
+    height: 100rpx;
+    width: 120rpx;
+    text-align: center;
+    background: transparent;
+}
+
+.detail-footer .btn-contact .icon {
+    width: 38rpx;
+    height: 44rpx;
+    background: url(https://imgcdn.huanjutang.com/image/2020/06/05/1e268d30750844953883a8a0eba0efd8.png) 50% no-repeat;
+    background-size: cover;
+    margin: 6rpx auto 10rpx;
+}
+
+.detail-footer .btn-contact .text {
+    width: auto;
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    line-height: 36rpx;
+}
+
+.detail-footer .btn-share {
+    text-align: center;
+    margin-left: 40rpx;
+    width: 526rpx;
+    height: 100rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #f7f7f7;
+    line-height: 100rpx;
+}

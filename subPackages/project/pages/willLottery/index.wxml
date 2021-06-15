@@ -1,0 +1,4 @@
+<view>
+    <second-building-list adSource="willLottery" baseParam="{{baseParam}}" bind:__l="__l" bind:updateBaseParam="__e" bind:updateTabList="__e" buttonType="{{buttonType}}" class="vue-ref" data-event-opts="{{[ [ '^updateBaseParam',[ [ '__set_sync',['$0','baseParam','$event'],[''] ] ] ],[ '^updateBaseParam',[ [ '__set_sync',['$0','baseParam','$event'],[''] ] ] ],[ '^updateTabList',[ [ '__set_sync',['$0','tabList','$event'],[''] ] ] ],[ '^updateTabList',[ [ '__set_sync',['$0','tabList','$event'],[''] ] ] ] ]}}" data-ref="secondBuilding" searchType="最新摇号" tabList="{{tabList}}" vueId="1477ed2d-1"></second-building-list>
+    <official-account></official-account>
+</view>

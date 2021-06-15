@@ -1,0 +1,10 @@
+<view class="page">
+    <view class="project" wx:if="{{projectList.length>0}}">
+        <aeria-project-item bind:__l="__l" list="{{projectList}}" vueId="077533b4-1"></aeria-project-item>
+    </view>
+    <view class="not_id_card" wx:if="{{projectList.length==0&&!loading}}">
+        <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20199301111198081.png"></image>
+        <text class="text">暂无楼盘</text>
+    </view>
+    <loading bind:__l="__l" bind:updateLoading="__e" data-event-opts="{{[ [ '^updateLoading',[ [ '__set_sync',['$0','loading','$event'],[''] ] ] ] ]}}" loading="{{loading}}" vueId="077533b4-2"></loading>
+</view>

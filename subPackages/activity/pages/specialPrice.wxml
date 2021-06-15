@@ -1,0 +1,26 @@
+<view>
+    <view class="container">
+        <view class="page">
+            <image class="bg" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15524585191364334.jpg"></image>
+            <view class="card-cont">
+                <view bindtap="__e" class="tip-msg fz-22" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}">
+                    <view class="p fz-22">{{''+project_name}}<view class="span"></view>
+                    </view>
+                </view>
+                <view class="quan_cont font-bold">
+                    <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assert/img/15524558985939583.jpg"></image>
+                    <view class="left">
+                        <view class="left-price">{{''+price+'元优惠券'}}</view>
+                        <view class="fz-12 white-color time">{{'使用时间：'+project_time+''}}</view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="rule-tip fz-12" data-event-opts="{{[ [ 'tap',[ [ 'toRules',['$event'] ] ] ] ]}}">使用规则 >></view>
+                <view class="rule fz-12">提示:优惠券凭证可在【我的】——【我的优惠券】页面查看</view>
+                <view class="bottom-btn">
+                    <button class="fz-17 btn" openType="contact" sessionFrom="{{weapp}}">咨询如何使用</button>
+                    <button class="fz-17 btn" openType="share">立即分享优惠</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

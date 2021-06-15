@@ -1,0 +1,54 @@
+<view catchtouchmove="emptyHandle" class="{{['enveloper',status!=-1&&!hidden?'busi-dialog__show':'']}}" wx:if="{{status!=-1}}">
+    <view bindtap="__e" class="-image image-1 status-0" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{status===0}}">
+        <view catchtap="__e" class="click-box" data-event-opts="{{[ [ 'tap',[ [ 'submitHandle',['$event'] ] ] ] ]}}">
+            <view class="price">
+                <text class="num">{{''+redpackDetail.per_amount+''}}</text>
+                <text class="text">元</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="-image image-2" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{status==-6}}">
+        <view class="click-box">
+            <view class="text-1">今日红包领取次数已用完</view>
+            <view class="text-2">
+                <text>不要离开
+                    还可在房小团360°在线看房</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="-image image-3 status-3" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{status==-3}}">
+        <view catchtap="__e" class="click-box" data-event-opts="{{[ [ 'tap',[ [ 'emptyHandle',['$event'] ] ] ] ]}}">
+            <view class="price">0.00</view>
+            <view class="text-1">
+                <text>差一点就领到了
+                    换个楼盘再试一次</text>
+            </view>
+            <view class="btns">
+                <view catchtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'navigateToHandle',['$event'] ] ] ] ]}}">换个楼盘</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="-image image-3" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{status==-4}}">
+        <view catchtap="__e" class="click-box" data-event-opts="{{[ [ 'tap',[ [ 'emptyHandle',['$event'] ] ] ] ]}}">
+            <view class="text-2">
+                <text>当前楼盘今日份红包已领完
+                    快去其他楼盘看看吧！</text>
+            </view>
+            <view class="btns">
+                <view catchtap="__e" class="left" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}">再逛逛</view>
+                <view catchtap="__e" class="right active" data-event-opts="{{[ [ 'tap',[ [ 'navigateToHandle',['$event'] ] ] ] ]}}">换个楼盘</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="-image image-3" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}" wx:if="{{status==-5}}">
+        <view bindtap="__e" class="click-box" data-event-opts="{{[ [ 'tap',[ [ 'emptyHandle',['$event'] ] ] ] ]}}">
+            <view class="text-2">
+                <text>呀，您来晚了
+                    今日活动红包已全部领完</text>
+            </view>
+            <view class="btns">
+                <view catchtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'closeHandle',['$event'] ] ] ] ]}}">好的</view>
+            </view>
+        </view>
+    </view>
+</view>

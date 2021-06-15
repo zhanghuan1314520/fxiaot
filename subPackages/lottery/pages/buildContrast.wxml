@@ -1,0 +1,66 @@
+<view>
+    <view class="build_list">
+        <block wx:if="{{data_list.list&&data_list.list.length}}">
+            <view class="build_item" wx:for="{{$root.l0}}" wx:key="index">
+                <view bindtap="__e" class="xuanxiang" data-event-opts="{{[ [ 'tap',[ [ 'opting',['$0',index],[ [ ['data_list.list','',index] ] ] ] ] ] ]}}">
+                    <view class="iconnew new-yiguanzhugou options_item" wx:if="{{item.g0}}"></view>
+                    <view class="options_item2" wx:else></view>
+                </view>
+                <navigator class="build_item_right" hoverClass="none" url="{{item[$orig].project.url}}">
+                    <image lazyLoad="{{true}}" mode="aspectFill" src="{{item[$orig].project.cover}}"></image>
+                    <view class="item_detail_right">
+                        <view class="item_detail_right_name">
+                            <text class="fz-14 item_detail_right_text font-bold">{{''+item[$orig].project.name+''}}</text>
+                        </view>
+                        <view class="item_tishi">
+                            <view class="item_tishi_dan" wx:for="{{item[$orig].project.tags}}" wx:for-index="index2" wx:for-item="item1" wx:key="index2">
+                                <text>{{item1}}</text>
+                            </view>
+                        </view>
+                        <view class="redColor" wx:if="{{item[$orig].project.avg_price.length>0}}">
+                            <view class="fz-14" wx:for="{{item[$orig].project.avg_price}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</view>
+                        </view>
+                        <view class="item_detail_right_area">
+                            <text class="fz-12 left">{{''+(item[$orig].project.predict_preorder_time||'')+''}}</text>
+                            <text class="fz-12 right">{{''+item[$orig].project.area+''}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <block wx:if="{{data_list.list.length>10}}">
+                <blcok bind:__l="__l" vueId="7fd1a4f2-1" vueSlots="{{['default']}}" wx:if="{{loging_type}}">
+                    <view class="loading-runing" wx:if="{{more}}">
+                        <view class="loading-icon">
+                            <text class="iconnew new-jiazai"></text>
+                        </view>
+                        <view class="left-font">
+                            <text>加载中</text>
+                        </view>
+                    </view>
+                    <blcok bind:__l="__l" vueId="{{'7fd1a4f2-2'+','+'7fd1a4f2-1'}}" vueSlots="{{['default']}}" wx:else>
+                        <view class="reach-bottom">
+                            <text class="fz-14">到底咯</text>
+                        </view>
+                    </blcok>
+                </blcok>
+            </block>
+        </block>
+        <block wx:else>
+            <view class="nothing" wx:if="{{loading}}">
+                <text class="gray-color">暂无楼盘</text>
+            </view>
+        </block>
+    </view>
+    <view class="operation_list footer">
+        <view bindtap="__e" class="opt_style1" data-event-opts="{{[ [ 'tap',[ [ 'delete_item',['$event'] ] ] ] ]}}">
+            <image lazyLoad="{{true}}" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190624/5d10a27429c03.png"></image>
+            <text class="fz-14">删除</text>
+        </view>
+        <view class="add-project">
+            <view bindtap="__e" class="opt_style fz-16" data-event-opts="{{[ [ 'tap',[ [ 'addBuilding',['$event'] ] ] ] ]}}">
+                <text>添加楼盘</text>
+            </view>
+            <view bindtap="__e" class="{{[ 'opt_style2 fz-16 '+(len===2?'opt_active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'compareBegan',['$event'] ] ] ] ]}}">开始PK</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,35 @@
+<view>
+    <view class="page">
+        <view class="fz-14 h1">设置我的主营楼盘</view>
+        <view class="h2 fz-11">当入驻多个楼盘时，在首页、名片、以及聊天界面会优先显示主营楼盘，请慎重选择。</view>
+        <block wx:if="{{houseData.length>0}}">
+            <view class="title fz-14">住宅盘</view>
+            <view bindtap="__e" class="bulding-col" data-event-opts="{{[ [ 'tap',[ [ 'selectDefault',[houseIndex,1,'$0'],[ [ ['houseData','',houseIndex,'project_id'] ] ] ] ] ] ]}}" wx:for="{{houseData}}" wx:for-index="houseIndex" wx:key="houseIndex">
+                <view class="item-left">
+                    <view class="name">{{''+item.project_name+''}}<text class="tips" wx:if="{{defaultId==item.project_id}}">主营楼盘</text>
+                    </view>
+                    <view class="rank">当前楼盘我的排名：<text>{{item.rankings.sort}}</text>
+                    </view>
+                </view>
+                <view class="{{[ 'radio '+(activeIndex==houseIndex&&type==1||defaultId==item.project_id&&!type?'selected':'') ]}}">
+                    <view class="cicle"></view>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{apartmentData.length>0}}">
+            <view class="title fz-14">公寓盘</view>
+            <view bindtap="__e" class="bulding-col" data-event-opts="{{[ [ 'tap',[ [ 'selectDefault',[apartIndex,2,'$0'],[ [ ['apartmentData','',apartIndex,'project_id'] ] ] ] ] ] ]}}" wx:for="{{apartmentData}}" wx:for-index="apartIndex" wx:key="apartIndex">
+                <view class="item-left">
+                    <view class="name">{{''+item.project_name+''}}<text class="tips" wx:if="{{defaultId==item.project_id}}">主营楼盘</text>
+                    </view>
+                    <view class="rank">当前楼盘我的排名：<text>{{item.rankings.sort}}</text>
+                    </view>
+                </view>
+                <view class="{{[ 'radio '+(activeIndex==apartIndex&&type==2||defaultId==item.project_id&&!type?'selected':'') ]}}">
+                    <view class="cicle"></view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view bindtap="__e" class="bottom-btn" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}">保存设置</view>
+</view>

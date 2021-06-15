@@ -1,0 +1,9 @@
+<view bindlongpress="__e" class="{{[ 'text',[showToggle&&!expand?'collapsed':''] ]}}" data-event-opts="{{[ [ 'longpress',[ [ 'longPress',['$event'] ] ] ] ]}}">
+    <text class="padding-right" wx:if="{{mentions}}">回复</text>
+    <text catchtap="__e" class="color-blue" data-event-opts="{{[ [ 'tap',[ [ 'handleGoUserPage',['$event'] ] ] ] ]}}" wx:if="{{mentions}}">{{'@'+mentions+':'}}</text>
+    <text>{{''+content+''}}</text>
+</view>
+<view class="{{['toggle',expand?'collapse':'expand']}}" wx:if="{{showToggle}}">
+    <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'toggleExpand',['$event'] ] ] ] ]}}">{{''+(expand?'收起':'展开')+''}}</text>
+    <text class="{{['iconnew',expand?'new-shouqi':'new-zhankai']}}"></text>
+</view>

@@ -1,0 +1,66 @@
+.hide-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,.7);
+}
+
+.upload-demo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 80rpx;
+}
+
+.upload-demo,.upload-demo .header {
+    width: 100vw;
+    background: #fff;
+    border-radius: 40rpx 40rpx 0rpx 0rpx;
+    box-sizing: border-box;
+}
+
+.upload-demo .header {
+    padding: 60rpx 110rpx 0;
+    text-align: center;
+    position: relative;
+}
+
+.upload-demo .header .tit {
+    color: rgba(0,0,0,.85);
+    font-weight: 700;
+    line-height: 52rpx;
+}
+
+.upload-demo .header .icon-demo {
+    color: #d9d9d9;
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    width: 26rpx;
+    height: 26rpx;
+    display: inline-block;
+}
+
+.img {
+    width: 520rpx;
+    height: 520rpx;
+    margin: 32rpx 0 0rpx;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.upload-btn {
+    width: 686rpx;
+    height: 100rpx;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100rpx;
+    color: #fff;
+    margin: 74rpx 32rpx 0;
+}

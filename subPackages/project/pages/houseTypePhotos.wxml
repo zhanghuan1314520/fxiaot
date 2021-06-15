@@ -1,0 +1,24 @@
+<view>
+    <view class="page">
+        <scroll-view class="scroll-navbar">
+            <view class="navbar-container">
+                <view bindtap="__e" class="{{[ 'navbar-item fz-12 '+(index==changeIndex?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeNavbarHandle',['$event'] ] ] ] ]}}" data-index="{{index}}" wx:for="{{navbar}}" wx:key="index">{{''+item.text+'('+item.number+')'}}</view>
+            </view>
+        </scroll-view>
+        <view class="banner-swiper swiper" style="{{'height:'+winHeight+'px'}}">
+            <view animation="{{animationData}}" class="scroll_photos" style="{{'width:'+winWidth*swiperList.length+'px;'}}">
+                <view catchtouchend="__e" catchtouchmove="__e" catchtouchstart="__e" class="swiper-item" data-event-opts="{{[ [ 'touchstart',[ [ 'touchstart',['$event'] ] ] ],[ 'touchend',[ [ 'touchend',['$event'] ] ] ],[ 'touchmove',[ [ 'touchmove',['$event'] ] ] ] ]}}" style="{{'width:'+winWidth+'px;'}}" wx:for="{{swiperList}}" wx:key="index">
+                    <movable-area>
+                        <movable-view animation="{{false}}" bindchange="__e" bindscale="onScale" data-event-opts="{{[ [ 'change',[ [ 'onChange',['$event'] ] ] ] ]}}" direction="all" disabled="{{disabled}}" inertia="inertia" scale="scale" scaleMax="10" scaleMin="1" scaleValue="1">
+                            <image mode="aspectFit" src="{{item.original_image}}"></image>
+                        </movable-view>
+                    </movable-area>
+                </view>
+            </view>
+        </view>
+        <view class="photosInfo">
+            <view class="bottom-text fz-14 white-color">{{''+nowNumber+'/'+navbar[changeIndex].number+''}}</view>
+            <view class="details fz-14 white-color" wx:if="{{isComplete==2}}">{{''+swiperList[itemIndex].name+' '+swiperList[itemIndex].house_type+' '+(swiperList[itemIndex].sales_status==1?'在售':swiperList[itemIndex].sales_status==2?'待售':swiperList[itemIndex].sales_status==3?'售罄':'')+''}}</view>
+        </view>
+    </view>
+</view>

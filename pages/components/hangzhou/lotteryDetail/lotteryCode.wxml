@@ -1,0 +1,26 @@
+<view>
+    <view class="lottery-result" wx:if="{{ids}}">
+        <view class="common-title">
+            <view class="title skeletons-rect">摇号结果</view>
+            <view class="more" wx:if="{{myCodes.length<1}}">
+                <text class="skeletons-rect">暂未绑定摇号编码</text>
+            </view>
+        </view>
+        <view class="result-container">
+            <view class="list" wx:if="{{myCodes.length>0}}">
+                <navigator class="item fz-14" hoverClass="none" url="{{'/pages/lottery/showCode?id='+ids+'&code='+code.code}}" wx:for="{{myCodes}}" wx:for-item="code" wx:key="index">
+                    <view class="left black-3a-color">{{''+code.name+''}}</view>
+                    <view class="right gray-9-color">
+                        <text class="iconnew new-tongyong-gengduo fz-10"></text>
+                    </view>
+                </navigator>
+            </view>
+            <busi-auth-navigator bind:__l="__l" class="skeletons-rect" url="{{'navigateTo-authphone://subPackages/me/pages/bindCode?id='+ids+'&name='+projectName}}" vueId="b8630dc4-1" vueSlots="{{['default']}}">
+                <view bindtap="__e" class="add fz-16" data-content="摇号结果" data-event-opts="{{[ [ 'tap',[ [ 'handleBindCode',['$event'] ] ] ] ]}}" data-name="添加我的摇号编码" data-type="button">
+                    <text class="iconnew new-tianjiawodeyaohaobianma fz-18"></text>
+                    <text class="font-bold">添加我的摇号编码</text>
+                </view>
+            </busi-auth-navigator>
+        </view>
+    </view>
+</view>

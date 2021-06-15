@@ -1,0 +1,30 @@
+<view class="{{[ 'busi-column',[loading?'skeletons':''] ]}}">
+    <scroll-view class="busi-column__nav" scrollX="true">
+        <view bindtap="__e" class="{{[loading&&item.skeletons?'skeletons-rect':'',true?'busi-column__nav__item':'',index===activeIndex?'busi-column__nav__item--active':'']}}" data-content="栏目" data-event-opts="{{[ [ 'tap',[ [ 'navItemClickHandle',[index] ] ] ] ]}}" data-name="{{item.section_name}}" id="{{'busi-column_'+index}}" wx:for="{{listData}}" wx:key="index">
+            <view class="busi-column__nav__item-text">{{''+(item.section_name||'')+''}}</view>
+        </view>
+    </scroll-view>
+    <view class="busi-column__container">
+        <block wx:if="{{projectsList.length>0}}">
+            <view class="skeletons-rect" wx:for="{{projectsList}}" wx:key="index">
+                <view class="busi-column__list__item">
+                    <custom-navigator bind:__l="__l" dataContent="栏目" dataName="{{item.name}}" url="{{item.url}}" vueId="{{'7ff1be01-1-'+index}}" vueSlots="{{['default']}}" wx:if="{{!item.skeletons}}">
+                        <view bindtap="__e" data-custom-event-name="{{item.is_ad?'AD_click':''}}" data-custom-prop-ad_code="{{item.ad.ad_code}}" data-custom-prop-ad_keyword="{{item.ad.project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{item.ad.ad_nike_name}}" data-custom-prop-ad_number="{{item.ad.ad_number}}" data-custom-prop-ad_source="{{'collection'+collectionId}}" data-custom-prop-ad_type="order" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}">
+                            <image-loader bind:__l="__l" mode="aspectFill" source="{{item.cover}}" styles="{{position:'absolute',zIndex:1,width:'100%',height:'100%'}}" vueId="{{'7ff1be01-2-'+index+','+'7ff1be01-1-'+index}}"></image-loader>
+                            <view class="busi-column__item-shadown">
+                                <view class="fz-15 white-color busi-column__item__title">{{''+item.name+''}}</view>
+                                <view class="fz-12 busi-column__item__desc">{{''+(item.characteristic[0]||'')+''}}</view>
+                            </view>
+                            <view class="{{[true?'busi-column__item-label':'',true?'white-color':'',item.type===1?'green':'']}}">{{''+(item.type===1?'公寓':'住宅')+''}}</view>
+                        </view>
+                    </custom-navigator>
+                </view>
+            </view>
+            <view class="busi-column__list__more">
+                <custom-navigator bind:__l="__l" dataContent="栏目" dataName="更多栏目" url="{{'/subPackages/project/pages/collectProjects?collection_id='+collectionId}}" vueId="7ff1be01-3" vueSlots="{{['default']}}">
+                    <view class="view">查看更多</view>
+                </custom-navigator>
+            </view>
+        </block>
+    </view>
+</view>

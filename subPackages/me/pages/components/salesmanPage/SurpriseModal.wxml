@@ -1,0 +1,6 @@
+<view class="surprise-modal" wx:if="{{visible}}">
+    <view class="suprise">
+        <image catchtap="__e" class="image" data-event-opts="{{[ [ 'tap',[ [ 'goThanksgivingPage',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/file/2021/03/11/d1a2006aef18db100a9cff3e0baf38b1.png"></image>
+        <image catchtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/file/2021/03/11/31c097a7dae8ecfa21fa7a5b3f9504c9.png"></image>
+    </view>
+</view>

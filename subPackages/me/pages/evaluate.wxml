@@ -1,0 +1,39 @@
+<view>
+    <view class="settings-top" style="margin-top:10px;">
+        <navigator class="top-info" hoverClass="none" url="{{'/pages/salesMan/detail?user_id='+session_id}}">
+            <image mode="aspectFill" src="{{userinfo.avatar_url||'https://imgcdn.huanjutang.com/assets/img/202051995218081.png'}}"></image>
+            <view class="center-info">
+                <view class="sales-man">
+                    <text class="name fz-15 black1a-color font-bold">{{''+userinfo.name+''}}</text>
+                    <text class="sign-text fz-10" style="{{'color:'+(userinfo.grade==1?'#8c7374':userinfo.grade==2?'#8d92a3':'c86601')}}">{{''+(userinfo.is_broker==1?'经纪人':'置业顾问')+''}}</text>
+                </view>
+            </view>
+            <view class="right-info">
+                <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['call'] ] ] ]}}" vueId="389139eb-1" vueSlots="{{['default']}}" wx:if="{{userinfo.phone}}">
+                    <text class="iconnew new-dianhua fz-16"></text>
+                </base-call-phone>
+                <view catchtap="__e" class="iconnew new-zixunxianxing fz-16" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}"></view>
+            </view>
+        </navigator>
+        <view class="evaluate">
+            <view class="evaluateTitle fz-15 font-bold">— 评价本次服务 —</view>
+            <view class="start">
+                <view class="start-lists">
+                    <text bindtap="__e" class="{{[ 'start-list iconnew fz-24 '+(servicesIndex>=1?'orange-color new-yishoucang':'gray-9-color new-shoucang') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'setServiceIndex',[1] ] ] ] ]}}"></text>
+                    <text bindtap="__e" class="{{[ 'start-list iconnew fz-24 '+(servicesIndex>=2?'orange-color new-yishoucang':'gray-9-color new-shoucang') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'setServiceIndex',[2] ] ] ] ]}}"></text>
+                    <text bindtap="__e" class="{{[ 'start-list iconnew fz-24 '+(servicesIndex>=3?'orange-color new-yishoucang':'gray-9-color new-shoucang') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'setServiceIndex',[3] ] ] ] ]}}"></text>
+                    <text bindtap="__e" class="{{[ 'start-list iconnew fz-24 '+(servicesIndex>=4?'orange-color new-yishoucang':'gray-9-color new-shoucang') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'setServiceIndex',[4] ] ] ] ]}}"></text>
+                    <text bindtap="__e" class="{{[ 'start-list iconnew fz-24 '+(servicesIndex>=5?'orange-color new-yishoucang':'gray-9-color new-shoucang') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'setServiceIndex',[5] ] ] ] ]}}"></text>
+                </view>
+                <view class="fz-15 start-score" style="{{'color:'+item.color}}" wx:if="{{index==servicesIndex}}" wx:for="{{tags}}" wx:key="index">{{''+item.hint+''}}</view>
+            </view>
+            <view class="tips">
+                <view bindtap="__e" class="{{['tip  '+(tip.isCheck?'tipOrange':servicesIndex>=1?'tipBlack':'tipGray')+' fz-13']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectTips',[index] ] ] ] ]}}" wx:for="{{tags[servicesIndex].value}}" wx:for-item="tip" wx:key="index">{{''+tip.value+''}}</view>
+            </view>
+            <view class="text-area">
+                <textarea bindinput="__e" class="fz-13" data-event-opts="{{[ [ 'input',[ [ 'inputValue',['$event'] ] ] ] ]}}" maxlength="120" placeholder="其他想说的（120字）" placeholderStyle="text-align: center;" type="text" value="{{content}}"></textarea>
+            </view>
+            <view bindtap="__e" class="btn fz-15 white-color" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">提交评论</view>
+        </view>
+    </view>
+</view>

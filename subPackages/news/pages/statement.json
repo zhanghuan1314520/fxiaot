@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "动态",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-footer": "/components/UILayout/BusiFooter",
+        "contact-salesman": "/components/ContactSalesman",
+        "footer-share": "/components/FooterShare",
+        "loading": "/subPackages/news/components/Loading",
+        "statement-list": "/pages/components/lotteryDetail/StatementList",
+        "dialog": "/components/UILayout/BusiDialog",
+        "busi-tab": "/components/UILayout/BusiTab",
+        "authorization": "/components/Authorization"
+    }
+}

@@ -1,0 +1,48 @@
+.notice-content {
+    width: 100%;
+    height: 90rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 8rpx 28rpx 0 hsla(0,0%,80%,.3);
+    border-radius: 8rpx;
+}
+
+.notice-content .border-top {
+    width: 100%;
+    height: 1rpx;
+    background-color: #e6e6e6;
+}
+
+.notice-content .notice {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.notice-content .notice .notice-left {
+    width: 70rpx;
+    height: 37rpx;
+    overflow: hidden;
+}
+
+.notice-content .notice .notice-left .image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.notice-content .notice .notice-right {
+    flex: 1;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.point {
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 4rpx;
+    margin: 0 16rpx;
+    background: #b5b6bb;
+}

@@ -1,0 +1,47 @@
+<view>
+    <view bindtap="__e" catchtouchmove="preventTouchMove" class="comfirm-dialog" data-event-opts="{{[ [ 'tap',[ [ 'closeSaleManCallDialog',['$event'] ] ] ] ]}}" data-id="coupon-dialog" wx:if="{{show}}">
+        <view class="comfirm-dialog-content">
+            <view class="content-wrap">
+                <view class="content-status">
+                    <view bindtap="__e" class="icon-close" data-event-opts="{{[ [ 'tap',[ [ 'hideSaleManCallDialog',['$event'] ] ] ] ]}}">
+                        <text class="iconnew new-quxiao"></text>
+                    </view>
+                    <view class="status-subtext" data-content="优惠券" data-name="领取优惠券" data-type="button">领取优惠券</view>
+                </view>
+                <scroll-view class="scroll-view" scrollY="{{true}}">
+                    <view class="coupon-item" wx:for="{{list}}" wx:for-index="__i0__" wx:key="id">
+                        <view bindtap="__e" class="item-left type-1" data-event-opts="{{[ [ 'tap',[ [ 'goDetaiPage',['$0'],[ [ ['list','id',item.id,'id'] ] ] ] ] ] ]}}">
+                            <text class="value semiBold">{{''+item.discount+''}}</text>
+                            <text class="unit">{{''+item.discountUnit+''}}</text>
+                        </view>
+                        <view bindtap="__e" class="item-center" data-event-opts="{{[ [ 'tap',[ [ 'goDetaiPage',['$0'],[ [ ['list','id',item.id,'id'] ] ] ] ] ] ]}}">
+                            <view class="item-name">{{''+item.couponName+''}}</view>
+                            <view class="item-premise">{{''+(item.premise?'仅限'+item.premise:'详情咨询置业顾问')+''}}</view>
+                            <view class="item-date">{{''+item.dateText+''}}</view>
+                        </view>
+                        <view bindtap="__e" class="item-right" data-event-opts="{{[ [ 'tap',[ [ 'receiveThis',['$0'],[ [ ['list','id',item.id] ] ] ] ] ] ]}}">
+                            <text class="text color-glay" wx:if="{{item.btnStatus!=1}}">{{''+item.btnText+''}}</text>
+                            <text class="text" wx:else>{{''+item.btnText+''}}</text>
+                        </view>
+                    </view>
+                    <view class="empty-20"></view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <view class="lottery-toast" wx:if="{{alertShowFlag}}">
+        <view class="cont">
+            <image class="image" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190620/5d0b4dabb803c.png" wx:if="{{alertShow=='1'}}"></image>
+            <text class="weui-icon-clear iconnew new-shanchu1" wx:if="{{alertShow=='2'}}"></text>
+            <text>{{toastMsg||'领取成功'}}</text>
+        </view>
+        <view class="fz-13 tips" wx:if="{{alertShow=='1'}}">前往"我的 > 优惠券 >"查看</view>
+    </view>
+    <view class="receiveDialog" wx:if="{{receiveDialog&&userInfo&&userInfo.phone}}">
+        <view class="cont">领取优惠券</view>
+        <view class="cont cont--phone">{{''+$root.f0+''}}</view>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'receiveConfirm',['$event'] ] ] ] ]}}">立即领取</view>
+        <view class="tips">领取后专属置业顾问将尽快与您联系</view>
+    </view>
+    <view bindtap="__e" class="receiveDialog__shade" data-event-opts="{{[ [ 'tap',[ [ 'receiveClose',['$event'] ] ] ] ]}}" wx:if="{{receiveDialog}}"></view>
+</view>

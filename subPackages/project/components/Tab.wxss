@@ -1,0 +1,60 @@
+.tab-wrap {
+    height: 100rpx;
+}
+
+.tab-container {
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    font-family: PingFangSC-Regular,PingFang SC;
+}
+
+.tab-container,.tab-item {
+    height: 100rpx;
+    display: flex;
+}
+
+.tab-item {
+    align-items: center;
+    justify-content: center;
+    width: 150rpx;
+    position: relative;
+}
+
+.tab-item .tab-text {
+    font-size: 32rpx;
+    line-height: 48rpx;
+    color: rgba(0,0,0,.85);
+    transition: all .2s ease;
+}
+
+.tab-item.active .tab-text {
+    font-size: 40rpx;
+    font-weight: 700;
+    line-height: 52rpx;
+}
+
+.tab-item.active .tab-text.small-title {
+    font-size: 36rpx;
+}
+
+.tab-item .tab-line {
+    transition: all .2s ease;
+    width: 0;
+    height: 6rpx;
+    border-radius: 4rpx;
+    opacity: 0;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    background: #2d8cf0;
+}
+
+.tab-item.active .tab-line {
+    width: 40rpx;
+    opacity: 1;
+}

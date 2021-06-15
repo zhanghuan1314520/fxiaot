@@ -1,0 +1,27 @@
+page {
+    background: #f7f7f7;
+}
+
+.projectList .line {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 30rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    background: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.achieve {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    position: relative;
+    top: -15rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.achieve image {
+    width: 100%;
+}

@@ -1,0 +1,16 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "评论详情",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "white-space": "/subPackages/discovery/component/WhiteSpace",
+        "personal-info": "/subPackages/discovery/component/PersonalInfo",
+        "comment-item": "/subPackages/discovery/component/CommentItem",
+        "comment-input": "/subPackages/discovery/component/CommentInput",
+        "comment-title": "/subPackages/discovery/component/CommentTitle",
+        "no-data": "/subPackages/discovery/component/SubNoData",
+        "bottom-line": "/subPackages/discovery/component/BottomLine",
+        "loading": "/subPackages/discovery/component/Loading"
+    }
+}

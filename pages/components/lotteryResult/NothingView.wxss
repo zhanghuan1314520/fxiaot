@@ -1,0 +1,19 @@
+.nothing {
+    text-align: center;
+    padding-top: 130rpx;
+    padding-bottom: 20rpx;
+}
+
+.nothing__img {
+    width: 358rpx;
+    height: 184rpx;
+    margin-bottom: 62rpx;
+}
+
+.nothing__text {
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #b5b6bb;
+    line-height: 28rpx;
+    color: #303237;
+}

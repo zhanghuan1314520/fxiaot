@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "杭州房小团-航拍看房",
+    "backgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "aeria-project-item": "/subPackages/project/pages/component/aeriaProjectItem",
+        "loading": "/subPackages/project/pages/component/SecondBuildingList/Loading"
+    }
+}

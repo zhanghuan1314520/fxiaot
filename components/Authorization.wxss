@@ -1,0 +1,6 @@
+.authorization .authorization__button {
+    background: transparent;
+    line-height: normal;
+    border-radius: 0;
+    overflow: inherit;
+}

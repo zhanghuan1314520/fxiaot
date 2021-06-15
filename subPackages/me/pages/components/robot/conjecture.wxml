@@ -1,0 +1,19 @@
+<view class="wrap data-v-30e06438">
+    <view class="tool data-v-30e06438">
+        <image class="image data-v-30e06438" mode="aspectFill" src="{{descImg}}"></image>
+        <view bindtap="__e" class="tool-but data-v-30e06438" data-event-opts="{{[ [ 'tap',[ [ 'getQuestionList',['$event'] ] ] ] ]}}">
+            <image class="exchange-img data-v-30e06438" mode="aspectFill" src="{{exchangeImg}}"></image>
+            <view class="exchange-word data-v-30e06438">换一批</view>
+        </view>
+    </view>
+    <view class="list data-v-30e06438">
+        <view bindtap="__e" class="data-v-30e06438" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-event-params="{{i:i}}" wx:for="{{questionList}}" wx:for-index="__i0__" wx:for-item="i" wx:key="id">
+            <view class="list-item data-v-30e06438">
+                <view class="list-content data-v-30e06438">{{''+i.title+''}}</view>
+                <text class="right-text data-v-30e06438">
+                    <text class="iconnew new-tongyong-gengduo data-v-30e06438"></text>
+                </text>
+            </view>
+        </view>
+    </view>
+</view>

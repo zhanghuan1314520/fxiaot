@@ -1,0 +1,76 @@
+<view>
+    <view class="vote_ranking_bg"></view>
+    <view class="vote_ranking_container">
+        <image class="vote_ranking_title" mode="widthFix" src="/static/images/1536913952_862110.png"></image>
+        <view class="vote_ranking_cont">
+            <view class="vote_ranking_top">
+                <navigator class="list NO_tow" hoverClass="none" url="{{'/subPackages/activity/pages/buildingVote?id='+top3List[1].id+'&vote_id='+top3List[1].vote_id}}" wx:if="{{top3List[1]}}">
+                    <view class="avatar">
+                        <image class="rank" mode="widthFix" src="/static/images/ranking_NO2.png"></image>
+                        <view class="cover">
+                            <image mode="aspectFill" src="{{top3List[1].cover}}"></image>
+                        </view>
+                        <image class="card" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/2020519103188081.png"></image>
+                    </view>
+                    <view class="fz-15 white-color font-bold">{{''+top3List[1].name+''}}</view>
+                    <view class="num fz-15 font-bold">{{''+top3List[1].total_vote+'票'}}</view>
+                </navigator>
+                <view class="list NO_tow" wx:else></view>
+                <navigator class="list NO_one" hoverClass="none" url="{{'/subPackages/activity/pages/buildingVote?id='+top3List[0].id+'&vote_id='+top3List[0].vote_id}}" wx:if="{{top3List[0]}}">
+                    <view class="avatar">
+                        <image class="rank" mode="widthFix" src="/static/images/ranking_NO1.png"></image>
+                        <view class="cover">
+                            <image mode="aspectFill" src="{{top3List[0].cover}}"></image>
+                        </view>
+                        <image class="card" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/2020519102408081.png"></image>
+                    </view>
+                    <view class="fz-15 white-color font-bold">{{''+top3List[0].name+''}}</view>
+                    <view class="num fz-15 font-bold">{{''+top3List[0].total_vote+'票'}}</view>
+                </navigator>
+                <view class="list NO_one" wx:else></view>
+                <navigator class="list NO_three" hoverClass="none" url="{{'/subPackages/activity/pages/buildingVote?id='+top3List[2].id+'&vote_id='+top3List[2].vote_id}}" wx:if="{{top3List[2]}}">
+                    <view class="avatar">
+                        <image class="rank" mode="widthFix" src="/static/images/ranking_NO3.png"></image>
+                        <view class="cover">
+                            <image mode="aspectFill" src="{{top3List[2].cover}}"></image>
+                        </view>
+                        <image class="card" mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/2020519103508081.png"></image>
+                    </view>
+                    <view class="fz-15 white-color font-bold">{{''+top3List[2].name+''}}</view>
+                    <view class="num fz-15 font-bold">{{''+top3List[2].total_vote+'票'}}</view>
+                </navigator>
+                <view class="list NO_three" wx:else></view>
+            </view>
+            <view class="vote_ranking_list">
+                <navigator class="list" hoverClass="none" url="{{'/subPackages/activity/pages/buildingVote?id='+item.id+'&vote_id='+item.vote_id}}" wx:for="{{rankingList}}" wx:key="index">
+                    <view class="left">
+                        <view class="num fz-14 white-color">{{''+item.ranking+''}}</view>
+                        <view class="avatar">
+                            <image mode="aspectFill" src="{{item.cover}}"></image>
+                        </view>
+                    </view>
+                    <view class="title fz-16 white-color">{{''+item.name+''}}</view>
+                    <view class="like_num fz-16 font-bold white-color">{{''+item.total_vote+'票'}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <navigator class="line font-bold black-color" hoverClass="none" openType="redirect" url="/subPackages/activity/pages/projectVote">
+            <text class="fz-14  top-txt">Y</text>
+            <text class="fz-11">首页</text>
+        </navigator>
+        <view class="line font-bold red-color">
+            <text class="fz-14 top-txt">A</text>
+            <text class="fz-11">投票排名</text>
+        </view>
+        <navigator class="line font-bold black-color" hoverClass="none" url="/pages/webview2?redirect=https%3A%2F%2Fh5.yhgj.qi.la%2Factivity%2FactivityRules">
+            <text class="fz-14 top-txt">O</text>
+            <text class="fz-11">活动详情</text>
+        </navigator>
+    </view>
+    <back-home bind:__l="__l" bind:updateOpenType="__e" bind:updateText="__e" bind:updateUrl="__e" data-event-opts="{{[ [ '^updateUrl',[ [ '__set_sync',['$0','backHomeUrl','$event'],[''] ] ] ],[ '^updateText',[ [ '__set_sync',['$0','backHomeText','$event'],[''] ] ] ],[ '^updateOpenType',[ [ '__set_sync',['$0','backHomeOpenType','$event'],[''] ] ] ],[ '^updateOpenType',[ [ '__set_sync',['$0','backHomeOpenType','$event'],[''] ] ] ] ]}}" openType="{{backHomeOpenType}}" text="{{backHomeText}}" url="{{backHomeUrl}}" vueId="980b1716-1" wx:if="{{showHome}}"></back-home>
+    <navigator hoverClass="none" style="position:fixed;right:0;bottom:304rpx;width:180rpx;z-index:997;" url="{{activityUrl}}">
+        <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20180921/5ba4cfe520078.png" style="width:100%;"></image>
+    </navigator>
+</view>

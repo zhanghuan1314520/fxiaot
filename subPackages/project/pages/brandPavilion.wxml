@@ -1,0 +1,63 @@
+<view>
+    <view class="page">
+        <block wx:if="{{brandInfo.is_disable_info!=1&&loading}}">
+            <view class="brand-detail" wx:if="{{!baseInfo.toggle}}">
+                <image class="left-logo" mode="aspectFit" src="{{brandInfo.image}}"></image>
+                <view bindtap="__e" class="right-container" data-event-opts="{{[ [ 'tap',[ [ 'toggleInfoShow',['$event'] ] ] ] ]}}">
+                    <view class="brand-name">
+                        <view class="name">
+                            <text class="fz-16 font-bold">{{''+brandInfo.name+''}}</text>
+                            <image src="https://imgcdn.huanjutang.com/assets/img/20191119/5dd38473a0b01.png"></image>
+                        </view>
+                        <view catchtap="__e" class="attention-btn" data-event-opts="{{[ [ 'tap',[ [ 'attentionBrand',['$event'] ] ] ] ]}}">
+                            <text class="{{[ 'iconnew fz-18 new-yiguanzhu '+(brandInfo.is_collection==1?'active':'') ]}}"></text>
+                            <text class="fz-12 gray-96">{{''+(brandInfo.is_collection==1?'已关注':'关注')+''}}</text>
+                        </view>
+                    </view>
+                    <view class="brand-introduction fz-13 gray-96">{{''+brandInfo.content+''}}<view class="toggle_page">
+                            <text class="fz-12">展开</text>
+                            <text class="fz-10 iconnew new-tongyong-gengduolansexiangxia"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="brand-detail-fixed" style="{{toggleClose?'':'height: 0'}}" wx:if="{{!baseInfo.toggle}}">
+                <view class="brand-name-info">
+                    <view class="brand-image-name">
+                        <image mode="aspectFit" src="{{brandInfo.image}}"></image>
+                        <view class="name">
+                            <text class="fz-16 font-bold">{{''+brandInfo.name+''}}</text>
+                            <image src="https://imgcdn.huanjutang.com/assets/img/20191119/5dd38473a0b01.png"></image>
+                        </view>
+                    </view>
+                    <view bindtap="__e" class="attention-btn" data-event-opts="{{[ [ 'tap',[ [ 'attentionBrand',['$event'] ] ] ] ]}}">
+                        <text class="{{[ 'iconnew fz-18 new-yiguanzhu '+(brandInfo.is_collection==1?'active':'') ]}}"></text>
+                        <text class="fz-12 gray-96">{{''+(brandInfo.is_collection==1?'已关注':'关注')+''}}</text>
+                    </view>
+                </view>
+                <view bindtap="__e" class="main-content gray-96" data-event-opts="{{[ [ 'tap',[ [ 'toggleInfoShow',['$event'] ] ] ] ]}}">
+                    <text class="fz-13">{{''+brandInfo.content+''}}</text>
+                </view>
+                <view bindtap="__e" class="toggle-close fz-12" data-event-opts="{{[ [ 'tap',[ [ 'toggleInfoShow',['$event'] ] ] ] ]}}">
+                    <text>收起</text>
+                    <text class="iconnew new-shouqijiantou fz-10"></text>
+                </view>
+            </view>
+        </block>
+        <swiper autoplay="true" circular="{{true}}" class="swiper-image" duration="300" indicatorActiveColor="#ffffff" indicatorColor="rgba(255,255,255,.4)" indicatorDots="{{brandInfo.banners.length>1}}" interval="4000" wx:if="{{brandInfo.banners.length>0}}">
+            <swiper-item class="item-image" wx:for="{{brandInfo.banners}}" wx:key="index">
+                <navigator ataCustomEventName="AD_click" data-content="brand_banner" data-custom-prop-ad_nike_name="{{item.title}}" data-custom-prop-ad_number="{{item.brand_id}}" data-custom-prop-ad_source="线上旗舰店" data-custom-prop-ad_type="banner" data-name="{{item.name}}" data-type="project" hoverClass="none" id="{{item.brand_id}}" url="{{item.url}}">
+                    <image src="{{item.image}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+        <view class="container" wx:if="{{projects.length>0}}">
+            <view class="title fz-16 font-bold">平台所有楼盘</view>
+            <project-item bind:__l="__l" bind:updateItems="__e" content="brand_list" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','projects','$event'],[''] ] ] ] ]}}" items="{{projects}}" sourcePosition="线上旗舰店楼盘列表" titleData="品牌馆" vueId="e0728300-1"></project-item>
+        </view>
+        <button bindtap="__e" class="brand-share" data-event-opts="{{[ [ 'tap',[ [ 'handleShare',['$event'] ] ] ] ]}}" hoverClass="none" openType="share">
+            <text class="iconnew new-fenxiang8 fz-21"></text>
+            <text class="fz-11 font-bold">分享</text>
+        </button>
+    </view>
+</view>

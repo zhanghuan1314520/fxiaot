@@ -1,0 +1,33 @@
+<view class="project data-v-f319c39c">
+    <navigator bindtap="__e" class="project-item data-v-f319c39c" data-content="红包活动" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-name="{{item[$orig].name}}" data-type="click" hoverClass="none" id="{{item[$orig].project_id}}" url="{{'/pages/lotteryDetail?id='+item[$orig].lottery_id+'&project_id='+item[$orig].project_id+'&navigateBack=true'}}" wx:for="{{$root.l0}}" wx:key="index">
+        <view class="{{['data-v-f319c39c',item[$orig].icon_status==0?'display-none':'',item[$orig].icon_status==1?'left-top-image':'',item[$orig].icon_status==2?'left-top-image get-over':'']}}"></view>
+        <view class="image-box data-v-f319c39c">
+            <image-loader bind:__l="__l" class="data-v-f319c39c" source="{{item[$orig].cover}}" styles="{{item.a0}}" vueId="{{'4531e750-1-'+index}}"></image-loader>
+            <view class="image__gradient data-v-f319c39c"></view>
+            <view class="project__view data-v-f319c39c">
+                <text class="iconnew new-liulan fz-15 project__view__icon data-v-f319c39c"></text>
+                <text class="fz-11 project__view__text data-v-f319c39c">{{''+item[$orig].page_views+''}}</text>
+            </view>
+            <view class="project__left__tags data-v-f319c39c">
+                <view class="left__tags__item data-v-f319c39c" wx:if="{{item[$orig].is_video==1}}">
+                    <image class="tags__item__img data-v-f319c39c" src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+                </view>
+                <view class="left__tags__item data-v-f319c39c" wx:if="{{item[$orig].has_vr>0}}">
+                    <image class="tags__item__img data-v-f319c39c" src="https://imgcdn.huanjutang.com/assets/img/201912191716568081.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="text-content data-v-f319c39c">
+            <view class="title data-v-f319c39c">{{''+item[$orig].name+''}}</view>
+            <view class="price data-v-f319c39c">{{''+item[$orig].price+''}}</view>
+            <view class="area-comment data-v-f319c39c">
+                <text class="area data-v-f319c39c">{{''+item[$orig].area+''}}</text>
+                <text class="comment data-v-f319c39c">{{''+item[$orig].comment_num+'条评论'}}</text>
+            </view>
+            <view class="project-tags data-v-f319c39c">
+                <text class="{{['data-v-f319c39c',vIndex==0?'tag-text active':'display-none']}}" wx:for="{{item[$orig].tags}}" wx:for-index="vIndex" wx:for-item="val" wx:key="vIndex">{{''+val+''}}</text>
+                <text class="{{['data-v-f319c39c',vIndex<1&&item[$orig].tags.length>0||vIndex<2&&item[$orig].tags.length==0?'tag-text':'display-none']}}" wx:for="{{item[$orig].characteristic}}" wx:for-index="vIndex" wx:for-item="val" wx:key="vIndex">{{''+val+''}}</text>
+            </view>
+        </view>
+    </navigator>
+</view>

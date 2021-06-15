@@ -1,0 +1,17 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="4c6b7e5b-1" vueSlots="{{['default']}}">
+    <view class="cubes" wx:if="{{settings.magic_square.length}}">
+        <view class="five " wx:if="{{settings.magic_square.length==5}}">
+            <view class="five__item">
+                <image bindtap="__e" class="cube__icon cube__icon--hight _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n0.link'] ] ] ] ]}}" src="{{settings.magic_square[0].img_url}}"></image>
+            </view>
+            <view class="five__item">
+                <image bindtap="__e" class="cube__icon _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n1.link'] ] ] ] ]}}" src="{{settings.magic_square[1].img_url}}"></image>
+                <image bindtap="__e" class="cube__icon _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n3.link'] ] ] ] ]}}" src="{{settings.magic_square[3].img_url}}"></image>
+            </view>
+            <view class="five__item">
+                <image bindtap="__e" class="cube__icon _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n2.link'] ] ] ] ]}}" src="{{settings.magic_square[2].img_url}}"></image>
+                <image bindtap="__e" class="cube__icon _img" data-event-opts="{{[ [ 'tap',[ [ 'to',['$0'],['settings.magic_square.__$n4.link'] ] ] ] ]}}" src="{{settings.magic_square[4].img_url}}"></image>
+            </view>
+        </view>
+    </view>
+</base-layout>

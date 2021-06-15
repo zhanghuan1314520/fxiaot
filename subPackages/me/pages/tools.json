@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#f2f2f2",
+    "usingComponents": {
+        "uni-popup": "/subPackages/me/pages/components/uni-popup/uni-popup",
+        "authorization": "/components/Authorization"
+    }
+}

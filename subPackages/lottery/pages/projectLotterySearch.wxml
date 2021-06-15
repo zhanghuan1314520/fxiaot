@@ -1,0 +1,50 @@
+<view class="{{['data-v-4ff37c21',true?'lottery':'',hasResults?'gray':'']}}">
+    <view class="search-input data-v-4ff37c21">
+        <busi-search bind:__l="__l" bind:onCancel="__e" bind:onSubmit="__e" bind:updateInputVal="__e" class="data-v-4ff37c21 vue-ref" data-event-opts="{{[ [ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^updateInputVal',[ [ '__set_sync',['$0','inputVal','$event'],[''] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ],[ '^onCancel',[ ['onCancel'] ] ] ]}}" data-ref="busiSearch" inputVal="{{inputVal}}" showCancelBtn="{{true}}" vueId="0433a226-1"></busi-search>
+    </view>
+    <view class="lottery-top data-v-4ff37c21">
+        <view class="lottery-filter data-v-4ff37c21">
+            <block wx:if="{{tab===2}}">
+                <view bindtap="__e" class="{{['data-v-4ff37c21',true?'filter-button':'',inventoryIndex===i?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleButtonClick',['inventoryIndex',i] ] ] ] ]}}" wx:for="{{inventoryList}}" wx:for-index="i" wx:key="i">{{''+item.type_text+''}}</view>
+            </block>
+            <block wx:if="{{tab===1}}">
+                <view bindtap="__e" class="{{['data-v-4ff37c21',true?'filter-button':'',turnIndex===i?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleButtonClick',['turnIndex',i] ] ] ] ]}}" wx:for="{{turnList}}" wx:for-index="i" wx:key="i">{{''+item.batch_text+''}}</view>
+            </block>
+        </view>
+        <view class="lottery-history data-v-4ff37c21" wx:if="{{historyList.length>0}}">
+            <view class="lottery-history-title data-v-4ff37c21">
+                <text class="title__text fz-13 data-v-4ff37c21">近期搜索</text>
+                <text bindtap="__e" class="title-clear fz-14 iconnew new-shanchu data-v-4ff37c21" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}"></text>
+            </view>
+            <view class="history-content data-v-4ff37c21">
+                <view bindtap="__e" class="content-item data-v-4ff37c21" data-event-opts="{{[ [ 'tap',[ [ 'historyClick',['$0'],[ [ ['historyList','',index] ] ] ] ] ] ]}}" wx:for="{{historyList}}" wx:key="index">{{''+item+''}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="lottery-content data-v-4ff37c21">
+        <image-list-view bind:__l="__l" class="data-v-4ff37c21" listData="{{lotteryList}}" vueId="0433a226-2" wx:if="{{lotteryList.length>0}}"></image-list-view>
+        <block wx:else>
+            <view class="list_container data-v-4ff37c21" wx:if="{{dataSource.length>0}}">
+                <buyer-list bind:__l="__l" bind:updateItems="__e" class="data-v-4ff37c21" data-event-opts="{{[ [ '^updateItems',[ [ '__set_sync',['$0','dataSource','$event'],[''] ] ] ] ]}}" items="{{dataSource}}" tab="{{tab}}" vueId="0433a226-3"></buyer-list>
+                <discription bind:__l="__l" class="data-v-4ff37c21" defaultText="{{defaultText}}" serviceQrCode="{{serviceQrCode}}" shortTitle="{{shortTitle}}" showDataSomeFlag="{{showDataSomeFlag}}" switchPage="{{switchPage}}" vueId="0433a226-4"></discription>
+            </view>
+            <block wx:else>
+                <image-view bind:__l="__l" bind:click="__e" class="data-v-4ff37c21" data-event-opts="{{[ [ '^click',[ [ 'toRules',['$0'],['pdfUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="0433a226-5" wx:if="{{pdfUrl}}"></image-view>
+                <block wx:else>
+                    <image-view bind:__l="__l" bind:click="__e" class="data-v-4ff37c21" data-event-opts="{{[ [ '^click',[ [ 'navUrlFn',['$0'],['navUrl'] ] ] ] ]}}" titleText="{{titleText}}" vueId="0433a226-6" wx:if="{{navUrl}}"></image-view>
+                    <nothing-view bind:__l="__l" class="data-v-4ff37c21" isHidden="{{loading}}" vueId="0433a226-7" vueSlots="{{['default']}}" wx:else>
+                        <block wx:if="{{tab!=3}}">
+                            <view class="fz-14 nothing__text data-v-4ff37c21" wx:if="{{hasResults}}">未查到结果哟，请输入正确的完整信息</view>
+                            <block wx:else>
+                                <view class="fz-14 nothing__text data-v-4ff37c21">暂无内容结果</view>
+                                <view class="nothing__timer data-v-4ff37c21" wx:if="{{timers}}">{{'预计'+timers+'出'+tabBar[tab]+''}}</view>
+                                <view bindtap="__e" class="nothing__subscribe data-v-4ff37c21" data-event-opts="{{[ [ 'tap',[ ['lotteryRemindHandle'] ] ] ]}}" wx:if="{{!isSubscribed}}">立即订阅，及时获取结果通知</view>
+                                <view class="nothing__subscribed data-v-4ff37c21" wx:if="{{isSubscribed}}">已订阅，出结果会第一时间通知您</view>
+                            </block>
+                        </block>
+                    </nothing-view>
+                </block>
+            </block>
+        </block>
+    </view>
+</view>

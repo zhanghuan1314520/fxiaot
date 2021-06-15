@@ -1,0 +1,161 @@
+.signin-hide-bg {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    justify-content: center;
+}
+
+.score-content,.signin-hide-bg {
+    display: flex;
+    align-items: center;
+}
+
+.score-content {
+    position: relative;
+    flex-direction: column;
+    width: 420rpx;
+    height: 308rpx;
+    background: url(https://imgcdn.huanjutang.com/file/2021/03/22/4a8868e6c45c701f88b8c3e4d72df2fa.png);
+    background-size: 100%;
+}
+
+.score-content.last {
+    height: 740rpx;
+}
+
+.score-content .image-title {
+    width: 188rpx;
+    height: 152rpx;
+    position: absolute;
+    left: 116rpx;
+    top: -76rpx;
+}
+
+.score-content .signin-success {
+    margin-top: 106rpx;
+    font-size: 32rpx;
+    color: #fff;
+    line-height: 44rpx;
+}
+
+.score-content .signin-coin-socre {
+    margin-top: 18rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #fee97b;
+    line-height: 40rpx;
+}
+
+.score-content .signin-feature {
+    margin-top: 46rpx;
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 40rpx;
+}
+
+.score-content .signin-feature .color-yellow {
+    color: #fee97b;
+}
+
+.score-content .close {
+    position: absolute;
+    bottom: -132rpx;
+    left: 184rpx;
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.score-content__last {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500rpx;
+    height: 368rpx;
+    background: url(https://imgcdn.huanjutang.com/file/2021/03/22/b0e03dabb25967e52beb0b572596fb28.png);
+    background-size: 100%;
+}
+
+.score-content__last .image-title__last {
+    width: 196rpx;
+    height: 140rpx;
+    position: absolute;
+    left: 152rpx;
+    top: -62rpx;
+}
+
+.score-content__last .signin-last {
+    margin-top: 84rpx;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #ff7157;
+    line-height: 44rpx;
+}
+
+.score-content__last .signin-prize {
+    margin-top: 28rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.55);
+    line-height: 40rpx;
+}
+
+.score-content__last .signin-feature__last {
+    margin-top: 54rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+}
+
+.score-content__last .signin-feature__last .color-orange {
+    color: #ff4640;
+}
+
+.score-content__last .close {
+    position: absolute;
+    bottom: -132rpx;
+    left: 226rpx;
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.num-box {
+    margin-top: 24rpx;
+    padding: 0 60rpx;
+    width: 100%;
+    height: 40rpx;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.num-box,.num-box .point {
+    display: flex;
+    align-items: center;
+}
+
+.num-box .point {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.num-box .point .icon-point {
+    margin-right: 8rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.num-box .coin {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.num-box .coin .icon-coin {
+    margin-right: 8rpx;
+    width: 36rpx;
+    height: 36rpx;
+}

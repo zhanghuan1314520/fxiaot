@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "签到厅",
+    "navigationBarBackgroundColor": "#3772cc",
+    "usingComponents": {
+        "base-banner": "/components/BaseBanner"
+    }
+}

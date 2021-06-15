@@ -1,0 +1,63 @@
+.salesman-info {
+    margin-top: 20rpx;
+    box-sizing: border-box;
+    padding: 0 32rpx;
+    position: relative;
+}
+
+.info-detail {
+    display: flex;
+}
+
+.info-detail .avatar {
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.info-detail .avatar,.info-detail .detail {
+    position: relative;
+    z-index: 5;
+}
+
+.info-detail .detail-name {
+    display: flex;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-size: 34rpx;
+    line-height: 52rpx;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4rpx;
+}
+
+.info-detail .detail-name .name {
+    margin-right: 12rpx;
+}
+
+.info-detail .greetings {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: hsla(0,0%,100%,.65);
+    line-height: 28rpx;
+}
+
+.home-btn {
+    position: absolute;
+    top: 6rpx;
+    right: 32rpx;
+    display: flex;
+    align-items: center;
+    width: 160rpx;
+    height: 54rpx;
+    padding-left: 6rpx;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 30rpx;
+    border: 2rpx solid hsla(0,0%,100%,.65);
+    color: #fff;
+}
+
+.home-btn,.home-btn .iconnew {
+    font-size: 26rpx;
+}

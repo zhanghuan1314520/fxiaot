@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "上传户型图",
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

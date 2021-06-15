@@ -1,0 +1,34 @@
+<view class="page">
+    <view class="checkTitle">
+        <view class="titleLeft fz-13">核验资料</view>
+        <view class="titleRight">
+            <button openType="share">
+                <image src="https://imgcdn.huanjutang.com/assets/img/2020519102328081.png"></image>
+            </button>
+        </view>
+    </view>
+    <view class="PictureMsg">
+        <view class="PictureTitle">
+            <view class="txtLine linel">
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20205191023268081.png"></image>
+            </view>
+            <view class="txt">{{''+name+''}}</view>
+            <view class="txtLine liner">
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20205191023428081.png"></image>
+            </view>
+        </view>
+        <view bindtap="__e" class="fz-13" data-event-opts="{{[ [ 'tap',[ [ 'toRules',['$0'],['contents.url'] ] ] ] ]}}" style="display:block;line-height:70rpx;box-sizing:border-box;margin:0 auto;width:250rpx;color:#3772cc;border:1px solid #3772cc;border-radius:70rpx;text-align:center;" wx:if="{{contents.type==2}}">点击查看</view>
+        <navigator class="fz-13" hoverClass="none" style="display:block;line-height:70rpx;box-sizing:border-box;margin:0 auto;width:250rpx;color:#3772cc;border:1px solid #3772cc;border-radius:70rpx;text-align:center;" url="{{contents.url}}" wx:if="{{contents.type==3}}">点击查看</navigator>
+        <block wx:if="{{contents.type==4}}">
+            <view class="sendPicture" wx:if="{{contents.url}}">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$event'] ] ] ] ]}}" mode="widthFix" src="{{contents.url}}" style="width:100%;"></image>
+            </view>
+            <view class="fz-13 small-level-color direct" wx:else>
+                <text style="display:inline-block;">暂无登记指引</text>
+            </view>
+        </block>
+    </view>
+    <view bindtap="__e" class="checkBtn" data-event-opts="{{[ [ 'tap',[ [ 'savePicture',['$event'] ] ] ] ]}}" wx:if="{{contents.type==4&&contents.url}}">
+        <view class="savePicture" hoverClass="none">保存图片</view>
+    </view>
+</view>

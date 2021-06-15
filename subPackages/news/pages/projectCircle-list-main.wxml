@@ -1,0 +1,1 @@
+<discovery-item bind:__l="__l" isFirstItem="{{index===0}}" isLastItem="{{index+1===list.length}}" item="{{item}}" playCurrentVideo="{{true}}" showFollow="{{true}}" vueId="{{'57418198-2-'+index}}" wx:for="{{list}}" wx:key="index"></discovery-item>

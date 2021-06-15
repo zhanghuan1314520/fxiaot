@@ -1,0 +1,12 @@
+.wrapper {
+    position: fixed;
+    z-index: 20000;
+    right: 24rpx;
+    display: inline-block;
+    width: 176rpx;
+}
+
+.wrapper .navigator {
+    display: block;
+    width: 100%;
+}

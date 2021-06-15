@@ -1,0 +1,5 @@
+<view>
+    <view bindtap="__e" class="wrapper" data-event-opts="{{[ [ 'tap',[ [ 'toTop',['$event'] ] ] ] ]}}" wx:if="{{show}}">
+        <image src="https://imgcdn.huanjutang.com/assets/img/201911281042378081.png"></image>
+    </view>
+</view>

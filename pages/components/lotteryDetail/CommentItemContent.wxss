@@ -1,0 +1,43 @@
+.text {
+    margin-left: 92rpx;
+    margin-top: -14rpx;
+    line-height: 48rpx;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 99999999999;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-size: 32rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.text.collapsed {
+    -webkit-line-clamp: 3;
+}
+
+.toggle {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: #2d8cf0;
+    line-height: 32rpx;
+    margin-top: 8rpx;
+}
+
+.toggle .iconnew {
+    margin-left: 6rpx;
+    color: #2d8cf0;
+    font-size: 20rpx;
+}
+
+.color-blue {
+    color: #2d8cf0;
+    margin-right: 10rpx;
+}
+
+.padding-right {
+    padding-right: 10rpx;
+}

@@ -1,0 +1,15 @@
+<base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="f36a007a-1" vueSlots="{{['default']}}">
+    <view class="wechat-message">
+        <view class="wechat-message__content">
+            <view class="wechat-message__content--icon iconnew new-weixin1"></view>
+            <view class="right">
+                <view class="right__title">{{''+(receiveUserInfo.name||content.nick_name)+'的微信号'}}</view>
+                <view class="right__content">{{''+content.wechat_code+''}}</view>
+            </view>
+        </view>
+        <view class="wechat-message__btns">
+            <text catchtap="__e" class="copy" data-content="对方消息" data-event-opts="{{[ [ 'tap',[ [ 'copyHandle',['$event'] ] ] ] ]}}" data-name="复制微信号" data-type="button">复制微信号</text>
+            <text catchtap="__e" class="preview" data-content="对方消息" data-event-opts="{{[ [ 'tap',[ [ 'previewHandle',['$event'] ] ] ] ]}}" data-name="查看二维码" data-type="button">查看二维码</text>
+        </view>
+    </view>
+</base-layout>

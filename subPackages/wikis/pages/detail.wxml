@@ -1,0 +1,58 @@
+<view class="page" wx:if="{{loaded}}">
+    <view class="detail-header">
+        <view class="title">{{''+info.title+''}}</view>
+        <view class="info">
+            <text class="tag-text">{{''+info.category.name+''}}</text>
+            <text class="info-date">{{'更新于'+info.publish_date+''}}</text>
+        </view>
+    </view>
+    <view class="video-list" wx:if="{{info.medias.length}}">
+        <view bindtap="__e" class="video-item" data-event-opts="{{[ [ 'tap',[ [ 'playVideo',['$0'],['info.medias.__$n0'] ] ] ] ]}}" hidden="{{!!playing}}">
+            <image class="image" mode="scaleToFill" src="{{info.medias[0].image}}"></image>
+            <view class="icon-video _div">
+                <image alt src="https://imgcdn.huanjutang.com/assets/img/201912191719128081.png"></image>
+            </view>
+        </view>
+        <video class="video" id="video" src="{{currentVideoSrc}}"></video>
+    </view>
+    <view class="detail-content">
+        <view class="content-text">
+            <rich-text nodes="{{info.content}}"></rich-text>
+        </view>
+    </view>
+    <view class="file-list">
+        <view bindtap="__e" class="file-item" data-event-opts="{{[ [ 'tap',[ [ 'downloadFile',['$0'],[ [ ['info.attachments','url',item.url] ] ] ] ] ] ]}}" wx:for="{{info.attachments}}" wx:for-index="__i0__" wx:key="url">
+            <view class="file-icon icon-xls"></view>
+            <view class="file-info">
+                <view class="file-name">{{''+item.name+''}}</view>
+                <view class="file-size">{{''+item.size+''}}</view>
+            </view>
+            <view class="file-download"></view>
+        </view>
+    </view>
+    <view class="evaluate-box">
+        <view class="tips-line">
+            <view class="text">以上方案是否解决了您的问题</view>
+            <view class="line"></view>
+        </view>
+        <view class="evaluate">
+            <button bindtap="__e" class="btn-down" data-event-opts="{{[ [ 'tap',[ [ 'vote',[0] ] ] ] ]}}">
+                <image class="icon-default clicked" src="https://imgcdn.huanjutang.com/image/2020/06/12/a8bc76eb5b2f8811585f427456cc17ca.png" wx:if="{{info.had_vote==1&&info.vote==0}}"></image>
+                <image class="icon-default" src="https://imgcdn.huanjutang.com/image/2020/06/12/154af8075d6592a327be791bb4d27742.png" wx:else></image>没用</button>
+            <button bindtap="__e" class="btn-up" data-event-opts="{{[ [ 'tap',[ [ 'vote',[1] ] ] ] ]}}">
+                <image class="icon-default clicked" src="https://imgcdn.huanjutang.com/image/2020/06/12/07f5a34836fb409333a9934e682c7159.png" wx:if="{{info.had_vote==1&&info.vote==1}}"></image>
+                <image class="icon-default" src="https://imgcdn.huanjutang.com/image/2020/06/12/589dec8d61ad6ebbcc2cba3b39d263df.png" wx:else></image>赞</button>
+        </view>
+    </view>
+    <view class="empty"></view>
+    <view class="detail-footer" wx:if="{{!type}}">
+        <view class="footer-content">
+            <button class="btn-contact" openType="contact">
+                <view class="icon"></view>
+                <view class="text">在线客服</view>
+            </button>
+            <navigator class="btn-share" url="{{'/subPackages/tools/pages/canvasWikis?id='+id+'&title='+info.title+'&cover='+info.cover_img}}">{{''+(isSalesMan?'转发获客':'分享转发')+''}}</navigator>
+        </view>
+        <view class="h-68" wx:if="{{isIphoneX}}"></view>
+    </view>
+</view>

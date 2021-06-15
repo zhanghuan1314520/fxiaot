@@ -1,0 +1,20 @@
+.label-message {
+    position: relative;
+    width: 100%;
+    padding: 0 16rpx 32rpx;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.label-message__content {
+    padding: 20rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #96989e;
+    line-height: 36rpx;
+    border-radius: 4rpx;
+    background: rgba(150,152,158,.1);
+    box-sizing: border-box;
+    overflow: hidden;
+}

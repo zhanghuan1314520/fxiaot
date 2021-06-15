@@ -1,0 +1,18 @@
+.comment__title {
+    box-sizing: border-box;
+    padding: 40rpx 32rpx 8rpx;
+}
+
+.comment__title .comment-all {
+    font-size: 36rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    line-height: 48rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.comment__title .comment-num {
+    font-size: 28rpx;
+    line-height: 36rpx;
+    color: rgba(0,0,0,.65);
+}

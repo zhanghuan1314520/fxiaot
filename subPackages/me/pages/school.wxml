@@ -1,0 +1,31 @@
+<view class="page">
+    <view class="school-info">
+        <view class="logo">
+            <image alt class="_img" src="{{info.icon}}"></image>
+        </view>
+        <view class="info-desc">
+            <view class="info-name">{{''+info.title+''}}</view>
+            <view bindtap="__e" class="info-desc-text" data-event-opts="{{[ [ 'tap',[ [ 'goSchoolDescPage',['$event'] ] ] ] ]}}">
+                <view class="text">{{''+info.intro+''}}</view>
+                <view class="icon-more">
+                    <text class="iconnew new-tongyong-gengduo"></text>
+                </view>
+            </view>
+            <view class="info-count">
+                <text class="text-fans">{{''+remindNum+'位置业顾问已关注'}}</text>
+            </view>
+            <view class="info-tools">
+                <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'goSysMsgPage',['$event'] ] ] ] ]}}">进入订阅号</text>
+                <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'subscription',['$event'] ] ] ] ]}}" wx:if="{{info.is_subscribe!=1}}">立即订阅</text>
+                <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'subscription',['$event'] ] ] ] ]}}" wx:if="{{info.is_subscribe==1&&!info.is_force_subscribe}}">取消订阅</text>
+            </view>
+        </view>
+    </view>
+    <view class="history-message">
+        <message-tpl bind:__l="__l" info="{{item}}" vueId="{{'05678170-1-'+index}}" wx:for="{{sysInfo}}" wx:key="index"></message-tpl>
+        <view class="empty-data" wx:if="{{sysInfo.length<1&&!loading}}">
+            <image alt class="img _img" src="https://imgcdn.huanjutang.com/image/2020/07/02/4c1516e86f952492dadc3e016ecd801a.png"></image>
+            <view class="text">暂无消息</view>
+        </view>
+    </view>
+</view>

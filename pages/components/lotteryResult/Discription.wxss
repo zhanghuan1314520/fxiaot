@@ -1,0 +1,18 @@
+.qr-code-box.data-v-d931be6c {
+    margin-top: 58rpx;
+    padding-bottom: 150rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code-box .qr-code.data-v-d931be6c {
+    width: 132rpx;
+    height: 132rpx;
+    margin-right: 32rpx;
+}
+
+.qr-code-box .right-text.data-v-d931be6c {
+    line-height: 36rpx;
+    font-size: 28rpx;
+}

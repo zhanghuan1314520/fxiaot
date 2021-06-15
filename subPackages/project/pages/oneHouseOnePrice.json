@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "杭州房小团-一房一价",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "base-call-phone": "/components/BaseCallPhone",
+        "select-list": "/components/BaseFilters/SelectList"
+    }
+}

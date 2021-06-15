@@ -1,0 +1,46 @@
+<view class="result">
+    <view class="result__search">
+        <busi-search analysis="{{dataName:'搜索结果-搜索框'}}" bind:__l="__l" toUrl="{{'redirectTo://subPackages/search/pages/index?s_t='+keyword+'&searchType='+(searchType||'')}}" vueId="49e68e77-1" vueSlots="{{['default']}}">
+            <text class="result__search-text">{{''+projectKeyword+''}}</text>
+        </busi-search>
+    </view>
+    <view class="result__filters">
+        <view class="result__filters-container">
+            <base-filters bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:updateListIndex="__e" class="vue-ref" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','tabbarListIndex','$event'],[''] ] ] ],[ '^onReset',[ ['onFilterReset'] ] ],[ '^onSubmit',[ ['onFilterSubmit'] ] ] ]}}" data-ref="baseFilters" listData="{{tabbarList}}" listIndex="{{tabbarListIndex}}" vueId="49e68e77-2"></base-filters>
+        </view>
+        <view catchtap="__e" catchtouchmove="__e" class="{{[true?'result__filters-bg':'',tabbarListIndex!==-1?'result__filters-bg-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hiddenFilterHandle',['$event'] ] ] ],[ 'touchmove',[ [ 'stopHandle',['$event'] ] ] ] ]}}"></view>
+    </view>
+    <view class="result__container">
+        <brand-item bind:__l="__l" listData="{{brandData}}" vueId="49e68e77-3"></brand-item>
+        <view class="result__project__list" wx:if="{{projectList.length>0}}">
+            <project-item bind:__l="__l" content="search_list" items="{{projectList}}" sourceKeyword="{{keyword}}" sourcePosition="楼盘搜索列表" titleData="搜索" vueId="49e68e77-4"></project-item>
+        </view>
+        <block wx:if="{{!more&&projectList.length<1}}">
+            <view class="result__porject__list-empty">
+                <view class="result__empty__tip">暂未找到相关楼盘，换个词在搜搜吧~</view>
+                <navigator class="result__empty__add" hoverClass="none" url="/subPackages/project/pages/addDuilding">反馈楼盘</navigator>
+            </view>
+            <view class="result__recommend__container" wx:if="{{recommendList.length>0}}">
+                <view class="result__recommend__title fz-20">热门推荐</view>
+                <view class="result__recommend__list">
+                    <project-item bind:__l="__l" content="search_recommend" items="{{recommendList}}" sourcePosition="楼盘搜索热门推荐" titleData="搜索" vueId="49e68e77-5"></project-item>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx:if="{{more}}">
+        <view class="flex_layout_c" hidden="{{!loading}}" style="width:100%;margin-top:30rpx;margin-bottom:30rpx;">
+            <view class="loading-runing">
+                <view class="loading-icon">
+                    <text class="iconnew new-jiazai"></text>
+                </view>
+                <view class="left-font">
+                    <text>加载中</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="flex_layout_c" hidden="{{more&&projectList.length>0}}" style="width:100%;margin-top:30rpx;margin-bottom:30rpx;" wx:if="{{!more&&projectList.length>0}}">
+        <view class="weui-loadmore__tips gray-color">我也是有底线的哦~ (๑•́ ₃ •̀๑)</view>
+    </view>
+</view>

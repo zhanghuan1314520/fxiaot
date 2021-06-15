@@ -1,0 +1,10 @@
+<block wx:if="{{show}}">
+    <view class="marker" style="{{'width:'+width+'rpx'}}" wx:if="{{position=='top'}}">
+        <view class="rote _div" style="{{'margin-left:'+roteLeft+'rpx'}}"></view>
+        <view class="content _div">{{''+text+''}}</view>
+    </view>
+    <view class="marker" style="{{'width:'+width+'rpx'}}" wx:if="{{position=='bottom'}}">
+        <view class="content _div">{{''+text+''}}</view>
+        <view class="b-rote _div" style="{{'margin-left:'+roteLeft+'rpx'}}"></view>
+    </view>
+</block>

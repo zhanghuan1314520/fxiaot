@@ -1,0 +1,14 @@
+.upload {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 99;
+    bottom: 50rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.upload .image {
+    display: block;
+    width: 376rpx;
+    height: 87rpx;
+}

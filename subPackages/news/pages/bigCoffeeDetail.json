@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团-大咖详情",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "article-style": "/components/articleStyle"
+    }
+}

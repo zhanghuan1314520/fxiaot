@@ -1,0 +1,46 @@
+<view class="tools">
+    <swiper bindchange="__e" class="swiper" current="{{current}}" data-event-opts="{{[ [ 'change',[ [ 'handleSwiperChange',['$event'] ] ] ] ]}}" nextMargin="20rpx" previousMargin="20rpx">
+        <swiper-item class="{{[ 'swiper-item',[current==index?'active':''] ]}}" wx:for="{{projectList}}" wx:key="index">
+            <navigator bindtap="__e" class="image-wraper" data-content="封面图" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" data-type="link" hoverClass="none" url="{{'/pages/lotteryDetail?id=&project_id='+item.project_id}}">
+                <image class="swiper-image" src="{{item.cover}}"></image>
+                <view class="image-cover"></view>
+            </navigator>
+        </swiper-item>
+    </swiper>
+    <view class="tools-project" wx:if="{{projectList.length>0}}">
+        <view class="project-info skeletons">
+            <navigator bindtap="__e" class="{{[ 'info-name',[!projectList[current].name?'skeletons-rect':''] ]}}" data-content="楼盘卡片" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="楼盘详情" data-type="link" hoverClass="none" url="{{'/pages/lotteryDetail?id=&project_id='+projectList[current].project_id}}">{{''+projectList[current].name+''}}</navigator>
+            <view class="{{[ 'info-address',[!projectList[current].project_location?'skeletons-rect':''] ]}}">{{''+projectList[current].project_location+''}}</view>
+        </view>
+    </view>
+    <view class="tools-list">
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleNext',['$0'],[ [ ['toolsList','',index,'url'] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'0b3d4286-1-'+index}}" vueSlots="{{['default']}}" wx:for="{{toolsList}}" wx:key="index">
+            <view bindtap="__e" class="{{[ 'list-item',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" data-name="{{item.title}}" data-type="link">
+                <view class="item-left">
+                    <image class="item-icon skeletons-rect" src="{{item.icon}}"></image>
+                    <text class="item-name skeletons-rect">{{''+item.title+''}}</text>
+                </view>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </authorization>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="rangeDialog" type="bottom" vueId="0b3d4286-2" vueSlots="{{['default']}}">
+        <view class="dialog">
+            <view bindtap="__e" class="close-btn iconnew new-guanbi" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}"></view>
+            <view class="title range-title">选择范围</view>
+            <view class="recomment-tips">楼栋范围</view>
+            <scroll-view class="project-box" scrollY="{{true}}" wx:if="{{rangeList.length>0}}">
+                <view bindtap="__e" class="{{[rangeIndex==index?'active li':'li']}}" data-event-opts="{{[ [ 'tap',[ [ 'rangeChoose',[index] ] ] ] ]}}" wx:if="{{item.name}}" wx:for="{{rangeList}}" wx:key="index">
+                    <text class="iconnew choosed-icon new-yiguanzhugou"></text>
+                    <text class="project-name">{{''+item.name+''}}</text>
+                </view>
+            </scroll-view>
+            <view class="no-content" wx:else>
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20200619/5eec6099d4669.png"></image>
+                <view class="no-result">该楼盘暂无摇号</view>
+                <button class="add-user-tips" hoverClass="none" openType="contact">联系客服反馈</button>
+            </view>
+        </view>
+        <view class="iphone-x-bottom"></view>
+    </uni-popup>
+</view>

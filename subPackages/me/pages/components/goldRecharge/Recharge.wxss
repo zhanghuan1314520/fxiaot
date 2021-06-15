@@ -1,0 +1,44 @@
+.charge-content {
+    padding: 44rpx 32rpx 50rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.charge-content .normal {
+    border: 1rpx solid #ccc;
+    color: #999;
+}
+
+.charge-content .charge-box {
+    margin-bottom: 32rpx;
+    margin-right: 42rpx;
+    width: 200rpx;
+    height: 98rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40rpx;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    background: #f2f2f2;
+    border-radius: 49rpx;
+    border: 2rpx solid rgba(0,0,0,.03);
+}
+
+.charge-content .charge-box.active {
+    border: 2rpx solid #2d8cf0;
+    color: #2d8cf0;
+    background: rgba(45,140,240,.1);
+}
+
+.charge-content .charge-box:nth-child(3n) {
+    margin-right: 0;
+}
+
+.charge-tip {
+    font-size: 24rpx;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+}

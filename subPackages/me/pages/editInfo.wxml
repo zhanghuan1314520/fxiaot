@@ -1,0 +1,8 @@
+<view class="edit-info">
+    <view class="edit-form" data-type="{{type}}">
+        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','val','$event',[] ] ] ] ] ]}}" placeholder="{{$root.f0}}" value="{{val}}" wx:if="{{type!=='content'}}"></input>
+        <textarea bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','val','$event',[] ] ] ] ] ]}}" maxlength="50" placeholder="填写个人介绍更容易获得关注哦～" value="{{val}}" wx:else></textarea>
+        <view class="count" wx:if="{{type==='content'}}">{{''+val.length+'/50'}}</view>
+    </view>
+    <view bindtap="__e" class="info-save" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">保存</view>
+</view>

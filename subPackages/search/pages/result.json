@@ -1,0 +1,11 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "搜索结果",
+    "usingComponents": {
+        "busi-search": "/components/UILayout/BusiSearch",
+        "base-filters": "/components/BaseFilters/Index",
+        "project-item": "/components/ProjectItem/ProjectItem",
+        "brand-item": "/subPackages/search/components/BrandItem"
+    }
+}

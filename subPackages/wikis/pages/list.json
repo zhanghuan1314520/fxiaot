@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "百科列表",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "wiki-item": "/subPackages/wikis/pages/component/WikiItem"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "发表评论",
+    "usingComponents": {
+        "dialog": "/components/UILayout/BusiDialog",
+        "authorization": "/components/Authorization"
+    }
+}

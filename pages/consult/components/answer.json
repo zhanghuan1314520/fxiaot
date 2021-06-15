@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "share-template": "/components/shareTemplate",
+        "share-btn": "/components/unifyUI/shareBtn",
+        "topic-list": "/components/unifyUI/topicList",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "authorization": "/components/Authorization"
+    }
+}

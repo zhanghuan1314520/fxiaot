@@ -1,0 +1,114 @@
+.settings-line-son .settings-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-left: 30rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    padding-right: 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+}
+
+.none-border {
+    border: none!important;
+}
+
+.settings-line.line-bottom {
+    overflow: hidden;
+    margin-left: 36rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    padding-right: 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+    display: block;
+    background: transparent;
+}
+
+.settings-line.line-bottom:last-child {
+    border-bottom: none;
+}
+
+.settings-line.line-bottom.last-line {
+    height: 158rpx;
+}
+
+.right {
+    float: right;
+}
+
+.right.iconnew,.right .iconnew {
+    color: #b5b6bb;
+    opacity: .6;
+}
+
+.right .name {
+    margin-right: 8rpx;
+    color: #b5b6bb;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+
+button.right {
+    padding: 0;
+    border-radius: none;
+    background: transparent!important;
+}
+
+.left {
+    float: left;
+    font-size: 30rpx;
+    color: #303237;
+    line-height: 112rpx;
+}
+
+.settings-small-line {
+    margin-left: 50rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    padding-right: 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.05);
+    overflow: hidden;
+}
+
+.split-cont {
+    background: #f2f2f2;
+    height: 16rpx;
+}
+
+.switch-btn {
+    width: 82rpx;
+    height: 46rpx;
+    border-radius: 28rpx;
+    background: #fff;
+    transition: border-color .3s,background .3s;
+    border: 4rpx solid #e5e5e5;
+    position: relative;
+}
+
+.switch-btn .circle {
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+    width: 46rpx;
+    height: 46rpx;
+    background: #fff;
+    box-shadow: 0 4rpx 6rpx 0 rgba(0,0,0,.16);
+    border: 1rpx solid rgba(0,0,0,.07);
+    transform: translateX(0rpx);
+    border-radius: 46rpx;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0rpx;
+}
+
+.switch-btn.active {
+    background: #2d8cf0;
+    border: 4rpx solid #2d8cf0;
+}
+
+.switch-btn.active .circle {
+    box-shadow: 0 4rpx 6rpx 0 #2d8cf0;
+    box-sizing: border-box;
+    transform: translateX(36rpx);
+    border: 1rpx solid #fff;
+}

@@ -1,0 +1,142 @@
+<view>
+    <view bindtap="__e" class="modal_dialog" data-event-opts="{{[ [ 'tap',[ [ 'quxiao',['$event'] ] ] ] ]}}" hidden="{{!canvassing}}">
+        <view class="modal_dialog_item">
+            <view class="flex_layout_c" style="margin-top:70rpx;">
+                <view class="flex_layout">
+                    <view class="flex_layout_n" style="margin-right:170rpx;">
+                        <button openType="share">
+                            <view class="share_item">
+                                <text class="iconnew new-weixin1 white-color fz-24"></text>
+                            </view>
+                        </button>
+                        <text class="fz-13" style="margin-top:34rpx;">发送给朋友</text>
+                    </view>
+                    <view bindtap="__e" class="flex_layout_n" data-event-opts="{{[ [ 'tap',[ [ 'draw',['$event'] ] ] ] ]}}">
+                        <view>
+                            <view class="share_item1">
+                                <text class="iconnew new-pengyouquan white-color fz-24"></text>
+                            </view>
+                        </view>
+                        <text class="fz-13" style="margin-top:34rpx;">分享楼盘海报</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="guanbi flex_layout_c" data-event-opts="{{[ [ 'tap',[ [ 'quxiao',['$event'] ] ] ] ]}}">
+                <text class="fz-14">取消</text>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="vote_head">
+            <image bindtap="__e" class="vote_head_img" data-event-opts="{{[ [ 'tap',[ [ 'previe',['$0'],['details.cover'] ] ] ] ]}}" src="{{details.cover}}"></image>
+            <view class="building_number">
+                <text class="fz-13">{{''+details.number+''}}</text>
+                <text class="fz-13">号</text>
+            </view>
+        </view>
+        <view class="vote_content">
+            <view class="house_details">
+                <view style="display:flex;align-items:flex-end;justify-content:space-between;">
+                    <text class="fz-16" style="font-weight:700;">{{''+details.name+''}}</text>
+                    <text bindtap="__e" class="fz-13" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$0'],['details.mobile'] ] ] ] ]}}" style="float:right;" wx:if="{{details.mobile}}">{{'联系电话：'+details.mobile+''}}</text>
+                </view>
+                <view class="flex_layout_b" style="margin-top:8rpx;">
+                    <text class="fz-12">{{''+details.total_page_view+'次浏览'}}</text>
+                    <navigator class="flex_layout" url="{{details.url}}">
+                        <text class="fz-12 title_details_color" style="margin-right:10rpx;">{{''+details.url_text+''}}</text>
+                        <text class="fz-12 title_details_color">>></text>
+                    </navigator>
+                </view>
+                <view class="flex_layout_a" style="margin-top:40rpx;">
+                    <view class="flex_layout_n">
+                        <text class="fz-25 title_details_color" style="font-weight:700;">{{''+details.ranking+''}}</text>
+                        <text class="fz-12">当前排名</text>
+                    </view>
+                    <view class="flex_layout_n">
+                        <text class="fz-25 title_details_color" style="font-weight:700;">{{''+details.total_vote+'票'}}</text>
+                        <text class="fz-12" wx:if="{{details.before_total_vote<0}}">恭喜登上巅峰</text>
+                        <text class="fz-12" wx:else>距上一位还差<text class="font-bold">{{''+details.before_total_vote+''}}</text>票</text>
+                    </view>
+                </view>
+                <view>
+                    <text class="fz-13" style="font-weight:700;margin-top:30rpx;">简介 :</text>
+                    <view class="{{[type==1?'introduction_details':'']}}" style="line-height:36rpx;">
+                        <text class="fz-12">{{''+details.player_introduce+''}}</text>
+                    </view>
+                    <view class="flex_layout_c" style="padding-top:15rpx;" wx:if="{{details.player_introduce.length>100}}">
+                        <view bindtap="__e" class="flex_layout" data-event-opts="{{[ [ 'tap',[ [ 'open_details',['$event'] ] ] ] ]}}">
+                            <text class="fz-12" style="font-weight:700;">{{''+(type==1?'展开':'收起')+''}}</text>
+                            <view class="{{[ 'iconnew new-tongyong-gengduolansexiangxia '+(type==1?'':'transform_jiao') ]}}" style="font-size:20rpx;margin-left:10rpx;"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="department_content">
+                <text class="fz-13" style="font-weight:700;">{{''+details.photo_title+':'}}</text>
+                <view style="padding-bottom:140rpx;margin-top:20rpx;">
+                    <view class="department_pic" wx:for="{{details.img}}" wx:for-index="__i0__" wx:key="*this">
+                        <image bindtap="__e" class="department_img" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['details.img','',__i0__] ] ] ] ] ] ]}}" data-preview="{{item}}" src="{{item}}"></image>
+                    </view>
+                    <view class="last-text">
+                        <button class="fz-13 red-color" openType="contact" sendMessagePath="{{'/subPackages/activity/pages/buildingVote?id='+id+'&vote_id='+vote_id}}" sessionFrom="{{weapp}}" showMessageCard="true">修改资料，联系客服>></button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="vote_foot">
+            <view style="display:flex;align-items:center;padding:0 30rpx;box-sizing:border-box;width:100%;">
+                <block wx:if="{{!voteStop}}">
+                    <view bindtap="__e" class="flex_layout_c lapiao" data-event-opts="{{[ [ 'tap',[ [ 'canvassingFun',['$event'] ] ] ] ]}}">
+                        <text class="fz-14" style="color:#da4036;">为TA拉票</text>
+                    </view>
+                    <view bindtap="__e" class="flex_layout_c toupiao" data-event-opts="{{[ [ 'tap',[ [ 'vote_in',['$event'] ] ] ] ]}}" style="{{'background: '+(details.vote_num>0?'#da4036':'#ccc')}}">
+                        <text class="fz-14" style="color:#ffffff;">{{'投票(可投'+details.vote_num+'次)'}}</text>
+                    </view>
+                </block>
+                <view class="toupiao flex_layout_c" style="background:#ccc;width:100%;margin-left:0;" wx:else>
+                    <text class="fz-14" style="color:#ffffff;">投票已结束</text>
+                </view>
+            </view>
+        </view>
+        <navigator class="goHome" url="/subPackages/lottery/pages/addHouseIn" wx:if="{{share_in==1}}">
+            <image src="https://imgcdn.huanjutang.com/assets/img/20180915/5b9cbf476f7e9.png" style="width:130rpx;height:140rpx;"></image>
+        </navigator>
+    </view>
+    <view bindtap="__e" catchtouchmove="stopMove" class="poster-container abs-center" data-event-opts="{{[ [ 'tap',[ [ 'closePoster',['$event'] ] ] ] ]}}" hidden="{{hidePoster}}">
+        <view catchtouchmove="stopMove">
+            <view class="create-canvas-box white-bg">
+                <view hidden="{{posterIndex!=0}}" style="{{'height:'+canvasHeight+'px;width:'+canvasWidth+'px;overflow: hidden;'}}">
+                    <canvas canvasId="myCanvas1" class="white-bg" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+                </view>
+                <view hidden="{{posterIndex!=1}}" style="{{'height:'+canvasHeight+'px;width:'+canvasWidth+'px;overflow: hidden;'}}">
+                    <canvas canvasId="myCanvas2" class="white-bg" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+                </view>
+                <view hidden="{{posterIndex!=2}}" style="{{'height:'+canvasHeight+'px;width:'+canvasWidth+'px;overflow: hidden;'}}">
+                    <canvas canvasId="myCanvas3" class="white-bg" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+                </view>
+                <view hidden="{{posterIndex!=3}}" style="{{'height:'+canvasHeight+'px;width:'+canvasWidth+'px;overflow: hidden;'}}">
+                    <canvas canvasId="myCanvas4" class="white-bg" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+                </view>
+                <view hidden="{{posterIndex!=4}}" style="{{'height:'+canvasHeight+'px;width:'+canvasWidth+'px;overflow: hidden;'}}">
+                    <canvas canvasId="myCanvas5" class="white-bg" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;overflow:hidden'}}"></canvas>
+                </view>
+            </view>
+            <view class="btn-group">
+                <view catchtap="__e" class="btn white-color fz-15" data-event-opts="{{[ [ 'tap',[ [ 'switchPoster',['$event'] ] ] ] ]}}" style="margin-right:22rpx;">换一张</view>
+                <button class="btn white-color fz-15" openType="share">分享给朋友</button>
+            </view>
+            <view bindtap="__e" class="saveBtn white-color fz-15" data-event-opts="{{[ [ 'tap',[ [ 'savePoster',['$event'] ] ] ] ]}}">保存图片</view>
+        </view>
+    </view>
+    <view class="model" wx:if="{{voteSuccess}}">
+        <view class="model-tip red-color iconnew new-yiguanzhugou fz-25 font-bold"></view>
+        <view class="fz-15 red-color model-text1 font-bold" style="line-height:40rpx;">投票成功</view>
+        <view class="model-btn fz-14 black1a-color" wx:if="{{details.vote_num>0}}">{{'今日还有'+details.vote_num+'次投票机会'}}</view>
+        <view class="model-btn fz-14 black1a-color" wx:else>次数已用完，请明日再来</view>
+    </view>
+    <view class="model-bg" wx:if="{{voteSuccess}}"></view>
+    <back-activity bind:__l="__l" bind:updateOpenType="__e" bind:updateText="__e" bind:updateUrl="__e" data-event-opts="{{[ [ '^updateUrl',[ [ '__set_sync',['$0','backHomeUrl','$event'],[''] ] ] ],[ '^updateText',[ [ '__set_sync',['$0','backHomeText','$event'],[''] ] ] ],[ '^updateOpenType',[ [ '__set_sync',['$0','backHomeOpenType','$event'],[''] ] ] ],[ '^updateOpenType',[ [ '__set_sync',['$0','backHomeOpenType','$event'],[''] ] ] ] ]}}" openType="{{backHomeOpenType}}" text="{{backHomeText}}" url="{{backHomeUrl}}" vueId="8be37d46-1" wx:if="{{showHome}}"></back-activity>
+    <navigator hoverClass="none" style="position:fixed;right:0;bottom:304rpx;width:180rpx;z-index:997;" url="{{activityUrl}}">
+        <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20180921/5ba4cfe520078.png" style="width:100%;"></image>
+    </navigator>
+</view>

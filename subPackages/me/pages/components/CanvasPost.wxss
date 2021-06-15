@@ -1,0 +1,112 @@
+.canvas-box {
+    position: relative;
+}
+
+.create-canvas-box {
+    box-sizing: border-box;
+    box-shadow: 0 4rpx 40rpx 0 rgba(48,55,64,.1);
+    overflow: hidden;
+}
+
+.create-canvas-box .canvas-image {
+    width: 100%;
+}
+
+.share-btn-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150rpx;
+    width: 100%;
+    margin-bottom: 56rpx;
+}
+
+.share-btn-group .canvas-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    line-height: 1;
+}
+
+.share-btn-group .canvas-btn .text {
+    font-size: 28rpx;
+    line-height: 36rpx;
+    color: rgba(0,0,0,.65);
+}
+
+.share-btn-group .canvas-btn .btn-icon {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 96rpx;
+    position: relative;
+}
+
+.share-btn-group .canvas-btn .btn-icon.share {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20200326/5e7c7f5fd771c.png) 50%/100% 96rpx no-repeat;
+}
+
+.share-btn-group .canvas-btn .btn-icon.save {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20200326/5e7c7f166e85c.png) 50%/100% 96rpx no-repeat;
+}
+
+.share-btn-group .canvas-btn .btn-icon .image {
+    width: 46rpx;
+    height: 42rpx;
+    position: absolute;
+    left: 60rpx;
+    top: 0rpx;
+}
+
+.businessCard-bg {
+    background: #fff;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+.businessCard-bg,.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-slide {
+    align-items: flex-end;
+    height: 42rpx;
+}
+
+.slide {
+    transition: width .3s;
+    width: 34rpx;
+    height: 8rpx;
+    background: #ccc;
+    border-radius: 4rpx;
+    opacity: .5;
+    margin-right: 8rpx;
+}
+
+.slide-active {
+    width: 12rpx;
+    background: #2d8cf0;
+    opacity: 1;
+}
+
+.cover-img {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 996;
+    background: rgba(0,0,0,.4);
+    height: 100%;
+}
+
+.guide-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

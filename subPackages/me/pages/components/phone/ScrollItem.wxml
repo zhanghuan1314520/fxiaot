@@ -1,0 +1,30 @@
+<view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{[ 'scroll-item',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ 'touchstart',[ [ 'touchS',['$event'] ] ] ],[ 'touchmove',[ [ 'touchM',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$0'],['item.id'] ] ] ] ]}}">
+    <view class="{{[ 'item-box',[id===item.id?'active':''] ]}}">
+        <view class="item-left">
+            <view class="item-avatar">
+                <image class="avatar skeletons-circle" src="{{item.linker.avatar_url||'https://imgcdn.huanjutang.com/assets/img/20190806/5d4948aa7c92c.png'}}"></image>
+                <view class="{{['item-status',intentionClass]}}" wx:if="{{$root.g0}}">{{''+intention+''}}</view>
+            </view>
+            <view class="item-info">
+                <view class="item-name skeletons-rect">{{''+(item.linker.name||item.linker.user_name||'未授权')+''}}</view>
+                <view class="{{[ 'info-phone skeletons-rect',[item.talk_time==0?'active':''] ]}}">{{''+(showPhone?item.peer_no:item.peer_no_replace)+''}}<image class="recalled" src="https://imgcdn.huanjutang.com/file/2020/12/31/05e5d0e2c1084120b696a6c4092ae7b0.png" wx:if="{{isCalled}}"></image>
+                </view>
+                <text class="info-time skeletons-rect">{{''+item.display_created_at+''}}</text>
+            </view>
+        </view>
+        <base-call-phone bind:__l="__l" bind:onSubmit="__e" bind:onSuccess="__e" class="item-call skeletons-rect" data-event-opts="{{[ [ '^onSuccess',[ [ 'callPhone',['$event','$0'],['item.peer_no'] ] ] ],[ '^onSubmit',[ ['onSubmit'] ] ] ]}}" vueId="5de6d3be-1" vueSlots="{{['default']}}">
+            <view class="item-call">
+                <text class="iconnew new-dianhua"></text>
+            </view>
+        </base-call-phone>
+    </view>
+    <view class="{{[ 'btns-wrap',[id===item.id?'active':''] ]}}">
+        <view class="{{[ 'btns',[!item.linker.id?'filter':''] ]}}">
+            <view bindtap="__e" class="btn attention" data-event-opts="{{[ [ 'tap',[ [ 'userIntention',[3] ] ] ] ]}}">意向</view>
+            <view bindtap="__e" class="btn potential" data-event-opts="{{[ [ 'tap',[ [ 'userIntention',[2] ] ] ] ]}}">潜在</view>
+            <view bindtap="__e" class="btn invalid" data-event-opts="{{[ [ 'tap',[ [ 'userIntention',[1] ] ] ] ]}}">无效</view>
+        </view>
+        <view class="no-auth" wx:if="{{!item.linker.id}}">该用户暂未授权平台无法标记</view>
+    </view>
+    <view bindtap="__e" class="fixed" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:if="{{id===item.id}}"></view>
+</view>

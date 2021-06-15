@@ -1,0 +1,20 @@
+<view class="sales_man_wrap">
+    <view class="sales_man_list pale-blue-bg" wx:for="{{$root.l0}}" wx:key="index">
+        <view class="area">{{''+item[$orig].area+''}}</view>
+        <view bindtap="__e" class="avatar" data-content="优秀置业顾问推荐" data-event-opts="{{[ [ 'tap',[ [ 'goSaleDetailPage',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="{{'置业顾问详情-'+item[$orig].sales_man_name}}" data-type="link">
+            <view class="icon-kings" wx:if="{{showIcon}}">
+                <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20191022142168081.png"></image>
+            </view>
+            <image-loader bind:__l="__l" mode="aspectFill" source="{{item[$orig].avatar_url_thumbnail||item[$orig].sales_man_avatar}}" styles="{{item.a0}}" vueId="{{'394db136-1-'+index}}"></image-loader>
+            <view class="only-tag position" wx:if="{{item[$orig].is_bind&&item[$orig].is_bind==1}}"></view>
+        </view>
+        <view bindtap="__e" class="info" data-content="优秀置业顾问推荐" data-event-opts="{{[ [ 'tap',[ [ 'goSaleDetailPage',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-name="置业顾问详情" data-type="link">
+            <view class="name">{{''+item[$orig].sales_man_name+''}}</view>
+            <view class="project-name">{{''+(item[$orig].project_name||'')+''}}</view>
+        </view>
+        <busi-auth-navigator bind:__l="__l" url="{{urls[index]}}" vueId="{{'394db136-2-'+index}}" vueSlots="{{['default']}}">
+            <view class="btn-contact">
+                <image class="image" src="https://imgcdn.huanjutang.com/file/2020/03/15/b9a59792156b3b9d936d375f990f36cb.png"></image>咨询</view>
+        </busi-auth-navigator>
+    </view>
+</view>

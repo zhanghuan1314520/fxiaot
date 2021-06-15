@@ -1,0 +1,7 @@
+<view class="project">
+    <view class="project-wrap">
+        <view class="project-title">{{''+(project_info.name||'')+''}}</view>
+        <view class="project-area">{{''+(project_info.area||'')+''}}</view>
+    </view>
+    <text class="icon-right iconnew new-tongyong-gengduo"></text>
+</view>

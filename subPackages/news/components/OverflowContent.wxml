@@ -1,0 +1,4 @@
+<view class="overflow-content" style="{{'-webkit-line-clamp:'+rows+';'+'height:'+height+';'}}">
+    <text catchtap="__e" class="content-topic" data-event-opts="{{[ [ 'tap',[ [ 'topicClick',['$event'] ] ] ] ]}}" wx:if="{{topic&&!hideTopic}}">{{''+topic+''}}</text>
+    <text class="content-main">{{''+content+''}}</text>
+</view>

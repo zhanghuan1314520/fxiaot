@@ -1,0 +1,15 @@
+<base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="23f26e6b-1" vueSlots="{{['default']}}">
+    <view class="call-message">
+        <view class="call-message__content">
+            <view class="call-message__content--icon iconnew new-dianhua"></view>
+            <view class="right">
+                <view class="right__title">{{''+(receiveUserInfo.name||content.nick_name)+'的手机号'}}</view>
+                <view class="right__content">{{''+content.phone+''}}</view>
+            </view>
+        </view>
+        <view class="call-message__btns">
+            <text catchtap="__e" class="copy" data-content="用户电话" data-event-opts="{{[ [ 'tap',[ [ 'copyHandle',['$event'] ] ] ] ]}}" data-name="复制手机号" data-type="button">复制手机号</text>
+            <text catchtap="__e" class="call" data-content="用户电话" data-event-opts="{{[ [ 'tap',[ [ 'callHandle',['$event'] ] ] ] ]}}" data-name="立即拨打" data-type="button">立即拨打</text>
+        </view>
+    </view>
+</base-layout>

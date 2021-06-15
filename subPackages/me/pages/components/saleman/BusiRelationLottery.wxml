@@ -1,0 +1,20 @@
+<view class="busi-component__wrapper">
+    <view class="form">
+        <view class="item-form">
+            <view class="label fz-17 mar-bottom-32">
+                <text>关联楼盘</text>
+            </view>
+            <view class="content">
+                <view bindtap="__e" class="item flex_layout_b" data-event-opts="{{[ [ 'tap',[ [ 'relationHandler',[index,'$0'],[ [ ['relationLottery','',index] ] ] ] ] ] ]}}" wx:for="{{relationLottery}}" wx:key="index">
+                    <text class="fz-15 overflow-line-1">{{''+item.name+''}}</text>
+                    <text class="relation-cricle new-quanquan iconnew fz-24" hidden="{{!!item.ischeck}}"></text>
+                    <text class="iconnew new-queding fz-24 icon-relation" hidden="{{!item.ischeck}}"></text>
+                </view>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['gotoVerify'] ] ] ]}}" isAuthPhone="{{true}}" vueId="233f4d35-1" vueSlots="{{['default']}}">
+            <view class="{{['item-btn fz-16 mar-bottom-46 mar-top-100',!form.project_id?'gary':'']}}">立即关联</view>
+        </authorization>
+    </view>
+    <busi-tip-box bind:__l="__l" bind:submitHandler="__e" bind:updateVisible="__e" btnStr="确定关联" data-event-opts="{{[ [ '^updateVisible',[ [ '__set_sync',['$0','visibleTipBox','$event'],[''] ] ] ],[ '^submitHandler',[ ['submitHandler'] ] ] ]}}" tipStr="{{tipStr}}" visible="{{visibleTipBox}}" vueId="233f4d35-2"></busi-tip-box>
+</view>

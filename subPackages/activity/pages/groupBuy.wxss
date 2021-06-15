@@ -1,0 +1,408 @@
+.activity.data-v-0ea87298,.container.data-v-0ea87298 {
+    background-color: #4362ff;
+    min-height: 100vh;
+}
+
+.activity-top.data-v-0ea87298 {
+    position: relative;
+}
+
+.top-image.data-v-0ea87298 {
+    width: 100%;
+    height: 899rpx;
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/202010261616548081.png);
+    background-size: cover;
+}
+
+.top-rule.data-v-0ea87298 {
+    position: absolute;
+    top: 0;
+    right: 18rpx;
+    width: 156rpx;
+    height: 64rpx;
+    background-color: #5bcaf4;
+    border-radius: 0rpx 0rpx 33rpx 39rpx;
+    border: 4rpx solid #0023d3;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.top-rule text.data-v-0ea87298 {
+    position: relative;
+    font-family: PingFangSC-Semibold;
+    font-size: 26rpx;
+    font-weight: 700;
+    color: #002aff;
+    top: -2rpx;
+}
+
+.activity-join.data-v-0ea87298 {
+    height: 70rpx;
+    background: #002aff;
+    box-sizing: border-box;
+    padding: 0 43rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.join-left.data-v-0ea87298 {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    color: #c2ccff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.join-left .number.data-v-0ea87298 {
+    font-family: PingFangSC-Semibold;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+    margin-right: 8rpx;
+}
+
+.join-right.data-v-0ea87298 {
+    flex: 1;
+    height: 70rpx;
+}
+
+.activity-prize__title.data-v-0ea87298 {
+    width: 693rpx;
+    height: 144rpx;
+    margin-left: 10rpx;
+    display: block;
+    margin-top: 36rpx;
+}
+
+.scroll-container.data-v-0ea87298 {
+    text-align: center;
+}
+
+.scroll-container[data-margin="true"].data-v-0ea87298 {
+    margin: 0 30rpx;
+    text-align: left;
+}
+
+.activity-prize.data-v-0ea87298 {
+    white-space: nowrap;
+    margin-top: -4rpx;
+}
+
+.prize-item.data-v-0ea87298 {
+    width: 227rpx;
+    height: 97rpx;
+    background-color: #acbaff;
+    border: 4rpx solid #002aff;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: inline-flex;
+    transition: all .2s ease;
+}
+
+.prize-item.data-v-0ea87298:last-child {
+    border-right: 4rpx solid #002aff;
+}
+
+.prize-item text.data-v-0ea87298 {
+    font-family: PingFangSC-Semibold;
+    font-size: 30rpx;
+    font-weight: 700;
+    color: #fff;
+    transition: all .2s ease;
+}
+
+.prize-item[data-active="true"].data-v-0ea87298 {
+    background: #fff;
+}
+
+.prize-item[data-active="true"] text.data-v-0ea87298 {
+    color: #002aff;
+}
+
+.activity-prize__container.data-v-0ea87298 {
+    position: relative;
+    z-index: 2;
+}
+
+.activity-prize__content.data-v-0ea87298 {
+    margin: 14rpx 30rpx 38rpx;
+    width: 690rpx;
+    height: 478rpx;
+    background-color: #fff;
+    border: 4rpx solid #002aff;
+    position: relative;
+}
+
+.activity-prize__content.data-v-0ea87298::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 6rpx;
+    top: 6rpx;
+    background-color: #e792d5;
+    border: 4rpx solid #002aff;
+}
+
+.prize-content__title.data-v-0ea87298 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 37rpx;
+}
+
+.prize-content__title text.data-v-0ea87298 {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #002aff;
+}
+
+.prize-content__title .title.data-v-0ea87298 {
+    font-family: PingFangSC-Semibold;
+    text-decoration: underline;
+    font-size: 32rpx;
+    font-weight: 700;
+    margin: 0 15rpx;
+    max-width: 300rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.prize-content__bottom.data-v-0ea87298 {
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.prize-content__bottom .button.data-v-0ea87298 {
+    width: 376rpx;
+    height: 87rpx;
+    background-size: cover;
+    transition: all .2s ease;
+}
+
+.prize-content__bottom .bottom-jackpot.data-v-0ea87298 {
+    width: 487rpx;
+    height: 75rpx;
+    background-color: #ffd92a;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0 60rpx 0 88rpx;
+}
+
+.prize-content__bottom .jackpot-gift.data-v-0ea87298 {
+    width: 108rpx;
+    height: 111rpx;
+    position: absolute;
+    left: -12rpx;
+    top: -23rpx;
+}
+
+.prize-content__bottom .jackpot-image.data-v-0ea87298 {
+    width: 121rpx;
+    height: 31rpx;
+    margin-right: 44rpx;
+}
+
+.prize-content__bottom .avatar.data-v-0ea87298 {
+    width: 36rpx;
+    height: 36rpx;
+    border: 4rpx solid #002aff;
+    border-radius: 50%;
+}
+
+.prize-content__bottom .jackpot-name.data-v-0ea87298 {
+    font-family: PingFangSC-Semibold;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    color: #002aff;
+    margin-left: 17rpx;
+    max-width: 116rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.activity-online.data-v-0ea87298 {
+    margin: 0 30rpx 40rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.online-top.data-v-0ea87298 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.online-top .top-left.data-v-0ea87298 {
+    width: 366rpx;
+    height: 123rpx;
+}
+
+.online-top .top-right.data-v-0ea87298 {
+    width: 162rpx;
+    height: 74rpx;
+}
+
+.online-container.data-v-0ea87298 {
+    width: 690rpx;
+    height: 300rpx;
+    background-color: #fff;
+    border: 4rpx solid #002aff;
+    position: relative;
+    padding: 34rpx 16rpx 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.online-container.data-v-0ea87298::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 8rpx;
+    left: 8rpx;
+    background-color: #f5f652;
+    border: 4rpx solid #002aff;
+}
+
+.activity-group.data-v-0ea87298 {
+    margin: 0 30rpx 42rpx;
+    position: relative;
+    z-index: 5;
+}
+
+.group-top.data-v-0ea87298 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.group-top .top-left.data-v-0ea87298 {
+    width: 349rpx;
+    height: 123rpx;
+}
+
+.group-top .top-right.data-v-0ea87298 {
+    width: 162rpx;
+    height: 74rpx;
+}
+
+.group-container.data-v-0ea87298 {
+    width: 690rpx;
+    height: 1218rpx;
+    background-color: #fff;
+    border: 4rpx solid #002aff;
+    box-sizing: border-box;
+    padding: 32rpx 16rpx;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.group-container.data-v-0ea87298::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 10rpx;
+    left: 10rpx;
+    background-color: #ff495f;
+    border: 4rpx solid #002aff;
+}
+
+.online-empty.data-v-0ea87298 {
+    width: 214rpx;
+}
+
+.activity-liver.data-v-0ea87298 {
+    margin: 0 30rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.liver-top.data-v-0ea87298 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.liver-top .top-left.data-v-0ea87298 {
+    width: 338rpx;
+    height: 123rpx;
+}
+
+.liver-top .top-right.data-v-0ea87298 {
+    width: 162rpx;
+    height: 74rpx;
+}
+
+.liver-container.data-v-0ea87298 {
+    width: 690rpx;
+    height: 529rpx;
+    padding: 0 18rpx;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+    border: 4rpx solid #002aff;
+}
+
+.liver-container.data-v-0ea87298::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 6rpx;
+    left: 6rpx;
+    background-color: #f8cb59;
+    border: 4rpx solid #002aff;
+}
+
+.activity-logo.data-v-0ea87298 {
+    margin-top: 42rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 40rpx;
+}
+
+.activity-logo image.data-v-0ea87298 {
+    width: 321rpx;
+    height: 50rpx;
+}

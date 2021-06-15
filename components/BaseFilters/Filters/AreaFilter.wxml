@@ -1,0 +1,36 @@
+<view class="area-filter data-v-18938802">
+    <view class="area-filter__container data-v-18938802">
+        <scroll-view class="area-filter__left data-v-18938802" scrollY="true">
+            <left-list bind:__l="__l" bind:updateListIndex="__e" class="data-v-18938802" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','areaListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','areaListIndexData','$event'],[''] ] ] ] ]}}" listData="{{areaListData}}" listIndex="{{areaListIndexData}}" vueId="69179b8d-1"></left-list>
+        </scroll-view>
+        <view class="area-filter__right data-v-18938802">
+            <view class="area__right-town data-v-18938802" wx:if="{{areaListIndexData===0}}">
+                <scroll-view class="right-town__first data-v-18938802" scrollY="true" wx:if="{{areaStyle===3}}">
+                    <button-group-list bind:__l="__l" bind:onChange="__e" class="data-v-18938802" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" listData="{{townListData}}" vueId="69179b8d-2"></button-group-list>
+                </scroll-view>
+                <block wx:else>
+                    <scroll-view class="right-town__first data-v-18938802" scrollY="true" style="{{'width:'+(townListIndexData===0?'100%':'240rpx')+';'}}">
+                        <radio-list bind:__l="__l" bind:updateListIndex="__e" class="data-v-18938802" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','townListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','townListIndexData','$event'],[''] ] ] ] ]}}" listData="{{townListData}}" listIndex="{{townListIndexData}}" vueId="69179b8d-3" width="{{townListIndexData===0?'240rpx':'100%'}}"></radio-list>
+                    </scroll-view>
+                    <scroll-view class="right-town__second data-v-18938802" scrollY="true" wx:if="{{townListData[townListIndexData]&&townListData[townListIndexData].value!==''}}">
+                        <checkbox-list bind:__l="__l" bind:onChange="__e" class="data-v-18938802" data-event-opts="{{[ [ '^onChange',[ ['changeBizCircle'] ] ] ]}}" listData="{{bizCircleListData}}" vueId="69179b8d-4"></checkbox-list>
+                    </scroll-view>
+                </block>
+            </view>
+            <view class="area__right-train data-v-18938802" wx:if="{{areaListIndexData===1}}">
+                <scroll-view class="right-train__first data-v-18938802" scrollY="true" style="{{'width:'+(trainLineListIndexData===0?'100%':'240rpx')+';'}}">
+                    <radio-list bind:__l="__l" bind:updateListIndex="__e" class="data-v-18938802" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','trainLineListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','trainLineListIndexData','$event'],[''] ] ] ] ]}}" listData="{{trainLineListData}}" listIndex="{{trainLineListIndexData}}" vueId="69179b8d-5" width="{{trainLineListIndexData===0?'240rpx':'100%'}}"></radio-list>
+                </scroll-view>
+                <scroll-view class="right-train__second data-v-18938802" scrollY="true" wx:if="{{trainLineListIndexData!==0}}">
+                    <checkbox-list bind:__l="__l" bind:onChange="__e" class="data-v-18938802" data-event-opts="{{[ [ '^onChange',[ ['changeTrainTube'] ] ] ]}}" listData="{{trainTubeListData}}" vueId="69179b8d-6"></checkbox-list>
+                </scroll-view>
+            </view>
+            <scroll-view class="area__right-nearby data-v-18938802" scrollY="true" wx:if="{{areaListIndexData===2}}">
+                <radio-list bind:__l="__l" bind:updateListIndex="__e" class="data-v-18938802" data-event-opts="{{[ [ '^updateListIndex',[ [ '__set_sync',['$0','nearbyListIndexData','$event'],[''] ] ] ],[ '^updateListIndex',[ [ '__set_sync',['$0','nearbyListIndexData','$event'],[''] ] ] ] ]}}" listData="{{nearbyListData}}" listIndex="{{nearbyListIndexData}}" vueId="69179b8d-7"></radio-list>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="area-filter__footer data-v-18938802">
+        <footer-button bind:__l="__l" bind:onReset="__e" bind:onSubmit="__e" bind:remove="__e" buttonList="{{buttonList}}" class="data-v-18938802" data-event-opts="{{[ [ '^onReset',[ ['resetHandle'] ] ],[ '^onSubmit',[ ['submitHandle'] ] ],[ '^remove',[ ['removeHandle'] ] ] ]}}" isNative="{{isNative}}" vueId="69179b8d-8"></footer-button>
+    </view>
+</view>

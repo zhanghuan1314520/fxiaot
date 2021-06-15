@@ -1,0 +1,13 @@
+.project-salesman .nothing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.project-salesman .nothing image {
+    width: 516rpx;
+    height: 297rpx;
+    margin-bottom: 10rpx;
+}

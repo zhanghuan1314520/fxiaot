@@ -1,0 +1,17 @@
+<view>
+    <view class="page">
+        <image class="img" mode="widthFix" src="{{img_url}}"></image>
+        <view class="code-box">
+            <image bindtap="__e" class="code" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['code'] ] ] ] ]}}" mode="widthFix" src="{{code}}"></image>
+            <view class="cont">
+                <text class="fz-14 black1a-color font-bold">{{''+programName+''}}</text>
+                <text class="fz-12 black1a-color">获取实用房源信息</text>
+                <text class="fz-12 black1a-color">买房总是快人一步</text>
+            </view>
+        </view>
+        <button class="share blue-color" openType="share">分享</button>
+        <view class="bottom-bg">
+            <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/2020519102078081.png"></image>
+        </view>
+    </view>
+</view>

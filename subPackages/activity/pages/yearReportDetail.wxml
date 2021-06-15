@@ -1,0 +1,317 @@
+<share-timeline-layout bind:__l="__l" vueId="59a5dcce-1" vueSlots="{{['default']}}">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" hasHeight="{{false}}" vueId="{{'59a5dcce-2'+','+'59a5dcce-1'}}" vueSlots="{{['default']}}">
+        <view></view>
+    </busi-nav-header>
+    <view bindchange="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="swiper_container" data-event-opts="{{[ [ 'change',[ [ 'pageChange',['$event'] ] ] ],[ 'touchstart',[ [ 'touchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'touchMove',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ] ]}}" indicatorActiveColor="#fff" indicatorColor="#6af" interval="3000" vertical="true">
+        <view class="{{['s_index_item s_item',uInfo.user_type===2?'sales_man':'',playState===0?'start':'']}}">
+            <view class="{{['move_in move_bg animate_deley-1',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[0]+')'+';'}}"></view>
+            <view class="big_fly fade_in_out animate_deley-3"></view>
+            <view class="hand move_in animate_deley-1"></view>
+            <view class="up_slide move_in">
+                <view class="agree">
+                    <view catchtap="__e" data-content="{{uInfo.user_type===2?'顾问首页':'用户首页'}}" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-name="选择框" data-type="button" style="width:592rpx;margin:0 auto;">
+                        <checkbox-group catchchange="__e" data-event-opts="{{[ [ 'change',[ [ 'changeAgree',['$event'] ] ] ] ]}}">
+                            <label class="radio">
+                                <checkbox checked="true" color="rgba(11,30,103)" style="transform:scale(0.7);" value="agreeVal"></checkbox>我同意房小团使用我在平台的数据以生成《我的房小团2020年度报告》</label>
+                        </checkbox-group>
+                    </view>
+                </view>
+                <view class="open_text">上滑开启</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="fade_in_out index_fly animate_deley-2"></view>
+        </view>
+        <view class="{{['s_item page_1',playState==1?'start':'',playState===1?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[1]+')'+';'}}"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box" wx:if="{{uInfo.user_type===1}}">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page1.register_date}}">
+                        <label class="_span">{{reportData.page1.register_date}}</label>我们初次相见</view>
+                    <view wx:if="{{reportData.page1.user_id}}">感谢你成为房小团的第<label class="_span">{{reportData.page1.user_id}}</label>位用户</view>
+                    <view wx:if="{{reportData.page1.register_days}}">买房路上，我们已经并肩走过<label class="_span">{{reportData.page1.register_days}}</label>天</view>
+                    <view wx:if="{{reportData.page1.mine_launch}}">2020年，您一共启动房小团<label class="_span">{{reportData.page1.mine_launch}}</label>次</view>
+                    <view class="bold_txt">我们一起走过的路，都是最好的路</view>
+                </view>
+            </view>
+            <view class="txt_box_salesman move_in animate_deley-3" wx:if="{{uInfo.user_type===2}}"></view>
+            <view class="{{['fly fade_in_out move_in move_in_loop animate_deley-1',uInfo.user_type===2?'salesman':'user']}}"></view>
+        </view>
+        <view class="{{['s_item page_2',playState==2?'start':'',playState===2?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[2]+')'+';'}}"></view>
+            <view class="{{['fly fade_in_out move_in move_in_loop animate_deley-1',uInfo.user_type===2?'salesman':'user']}}"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box" wx:if="{{uInfo.user_type===1}}">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page2.project_num}}">2020年是个特殊的年份，</view>
+                    <view wx:if="{{reportData.page2.project_num}}">今年共有<label class="_span">{{reportData.page2.project_num}}</label>个新盘与大家见面</view>
+                    <view wx:if="{{uInfo.city_id=='510100'}}">共取证<label class="_span">396</label>次</view>
+                    <view wx:if="{{uInfo.city_id=='330100'}}">共取证<label class="_span">983</label>次</view>
+                    <view wx:if="{{reportData.page2.max_room_area}}">房源最多的区域是<label class="_span">{{reportData.page2.max_room_area}}</label>
+                    </view>
+                    <view wx:if="{{reportData.page2.project_visit_top3.length>0}}">
+                        <label class="_span" style="font-size:30rpx;">{{reportData.page2.project_visit_top3[0].project_name}}</label>
+                        <label class="_span" style="font-size:30rpx;">{{','+reportData.page2.project_visit_top3[1].project_name}}</label>
+                        <label class="_span" style="font-size:30rpx;">{{','+reportData.page2.project_visit_top3[2].project_name}}</label>
+                    </view>
+                    <view wx:if="{{reportData.page2.project_visit_top3.length>0}}">成为用户心中的top3</view>
+                    <view wx:if="{{reportData.page2.mine_visit_project_num}}">您在小团共访问过<label class="_span">{{reportData.page2.mine_visit_project_num}}</label>个楼盘</view>
+                    <view wx:if="{{reportData.page2.mine_visit_project_num}}">
+                        <label class="_span">{{reportData.page2.mine_max_visit_project}}</label>是您访问次数最多的楼盘</view>
+                </view>
+            </view>
+            <view class="txt_box_salesman" wx:if="{{uInfo.user_type===2}}">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page1.register_date}}">
+                        <label class="_span">{{reportData.page1.register_date}}</label>是我们相识的第一天</view>
+                    <view wx:if="{{reportData.page1.salesman_id}}">您是第<label class="_span">{{reportData.page1.salesman_id}}</label>位入驻房小团的置业顾问</view>
+                    <view wx:if="{{reportData.page1.register_days}}">您共在房小团活跃了<label class="_span">{{reportData.page1.register_days}}</label>天</view>
+                    <view>2021我们继续携手前行</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['s_item page_3',playState==3?'start':'',playState===3?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[3]+')'+';'}}"></view>
+            <view class="{{['fly fade_in_out move_in move_in_loop animate_deley-1',uInfo.user_type===2?'salesman':'user']}}"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box" wx:if="{{uInfo.user_type===1}}">
+                <view class="move_in animate_deley-3">
+                    <view>2020年，新开楼盘均价<label class="_span">{{reportData.page3.project_avg_price}}</label>元/㎡</view>
+                    <view wx:if="{{uInfo.city_id=='510100'}}">最高单价<label class="_span">39977</label>元/㎡</view>
+                    <view wx:if="{{uInfo.city_id=='510100'}}">最低单价<label class="_span">6378</label>元/㎡</view>
+                    <view wx:if="{{uInfo.city_id=='330100'}}">最高单价<label class="_span">95700</label>元/㎡</view>
+                    <view wx:if="{{uInfo.city_id=='330100'}}">最低单价<label class="_span">9500</label>元/㎡</view>
+                    <view wx:if="{{reportData.page3.rate_low3.length>0}}">
+                        <label class="_span" style="font-size:32rpx;" wx:if="{{reportData.page3.rate_low3[0]}}">{{reportData.page3.rate_low3[0].project}}</label>
+                        <label class="_span" style="font-size:32rpx;" wx:if="{{reportData.page3.rate_low3[1]}}">{{','+reportData.page3.rate_low3[1].project}}</label>
+                        <label class="_span" style="font-size:32rpx;" wx:if="{{reportData.page3.rate_low3[2]}}">{{','+reportData.page3.rate_low3[2].project}}</label>
+                    </view>
+                    <view>成为最难摇楼盘</view>
+                    <view wx:if="{{reportData.page3.rate_low3.length>0}}">他们的中签率分别是<label class="_span" wx:if="{{reportData.page3.rate_low3[0]}}">{{reportData.page3.rate_low3[0].rate}}</label>
+                        <label class="_span" wx:if="{{reportData.page3.rate_low3[1]}}">{{','+reportData.page3.rate_low3[1].rate}}</label>
+                        <label class="_span" wx:if="{{reportData.page3.rate_low3[2]}}">{{','+reportData.page3.rate_low3[2].rate}}</label>
+                    </view>
+                    <view wx:if="{{rate_low3}}">您参加摇号的<label class="_span">{{reportData.page3.my_lottery}}</label>楼盘中签了吗？</view>
+                    <view>千金易得，一房难求</view>
+                    <view class="bold_txt">房小团永远是您买房路上最真诚的朋友</view>
+                </view>
+            </view>
+            <view class="txt_box_salesman" wx:if="{{uInfo.user_type===2}}">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page2.avg_credit_num}}">2020年，每位置业顾问平均每天通过努力获得<label class="_span">{{reportData.page2.avg_credit_num}}</label>积分</view>
+                    <view wx:if="{{reportData.page2.mine_credit_count}}">2020您完成了<label class="_span">{{reportData.page2.mine_credit_count}}</label>次任务</view>
+                    <view wx:if="{{reportData.page2.mine_credit_num&&reportData.page2.mine_credit_rank}}">获取了<label class="_span" wx:if="{{reportData.page2.mine_credit_num}}">{{reportData.page2.mine_credit_num}}</label>积分</view>
+                    <view wx:if="{{reportData.page2.mine_credit_rank!=='0%'}}">击败了<label class="_span">{{reportData.page2.mine_credit_rank}}</label>的置业顾问</view>
+                    <view wx:if="{{reportData.page2.mine_credit_daily_max.date}}">
+                        <label class="_span">{{reportData.page2.mine_credit_daily_max.date}}</label>是你最给力的一天，那天你获取了<label class="_span">{{reportData.page2.mine_credit_daily_max.value}}</label>分</view>
+                    <view class="bold_txt">相信努力终有回报</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['s_item page_4',playState==4?'start':'',playState===4?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[4]+')'+';'}}"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box" wx:if="{{uInfo.user_type===1&&uInfo.city_id=='510100'}}">
+                <view class="pg_txt_4 move_in animate_deley-3">
+                    <view class="bold_txt">成都房产新政十五条：</view>
+                    <view>1、增值税“2改5”，二手房平均交易成本上涨</view>
+                    <view>2、提高棚改、无房家庭中签率</view>
+                    <view class="bold_txt">成都房产11月新政：</view>
+                    <view>1、无房优先，棚改其次</view>
+                    <view>2、报名人数超过房源数3倍，将只针对无房和棚改摇号，普通资格不能参与摇号</view>
+                </view>
+            </view>
+            <view class="txt_box" wx:if="{{uInfo.user_type===1&&uInfo.city_id=='330100'}}">
+                <view class="pg_txt_4 move_in animate_deley-3">
+                    <view class="bold_txt">杭州“7.2”楼市新政：</view>
+                    <view>1、高层次人才优先购房限售五年</view>
+                    <view>2、无房家庭认定补充，四县市社保要求</view>
+                    <view>3、3万5房源无房家庭摇号倾斜</view>
+                    <view>4、一户一次只能参加一个楼盘摇号</view>
+                    <view class="bold_txt">杭州“9.4”楼市新政：</view>
+                    <view>1、限房价、竞地价；加强住房贷款审慎管理；取消提前交契税</view>
+                    <view>2、父母投靠落户杭州需满3年</view>
+                    <view>3、调整无房家庭认定标准</view>
+                    <view>4、热点楼盘无房家庭倾斜，无房家庭优先购买需5年限售</view>
+                </view>
+            </view>
+            <view class="txt_box_salesman" wx:if="{{uInfo.user_type===2}}">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page3.chat_common_questions[0]}}">
+                        <label class="_span">{{reportData.page3.chat_common_questions[0]}}</label>是用户最常咨询的问题</view>
+                    <view wx:if="{{reportData.page3.chat_high_period}}">
+                        <label class="_span">{{reportData.page3.chat_high_period}}</label>是用户咨询的高峰时段</view>
+                    <view wx:if="{{reportData.page3.chat_high_period}}">记住这个时间段，说不定能发掘新的客户哦</view>
+                    <view wx:if="{{reportData.page3.mine_chat_users>=3}}">2020你共服务了<label class="_span">{{reportData.page3.mine_chat_users}}</label>位客户，发送了<label class="_span">{{reportData.page3.mine_chat_messages}}</label>次消息</view>
+                    <view wx:if="{{reportData.page3.mine_chat_daily_max.date}}">
+                        <label class="_span">{{reportData.page3.mine_chat_daily_max.date}}</label>是你发送消息最多的一天</view>
+                    <view wx:if="{{reportData.page3.mine_chat_daily_max.count}}">共发送了<label class="_span">{{reportData.page3.mine_chat_daily_max.count}}</label>条消息</view>
+                    <view wx:if="{{reportData.page3.mine_chat_earliest_date}}">
+                        <label class="_span">{{reportData.page3.mine_chat_earliest_date}}</label>是你工作最早的一天</view>
+                    <view wx:if="{{reportData.page3.mine_chat_earliest_date&&reportData.page3.mine_chat_earliest_hour}}">那天你<label class="_span">{{reportData.page3.mine_chat_earliest_hour}}</label>就开始工作</view>
+                    <view wx:if="{{reportData.page3.mine_chat_latest_date}}">
+                        <label class="_span">{{reportData.page3.mine_chat_latest_date}}</label>是你工作最晚的一天</view>
+                    <view wx:if="{{reportData.page3.mine_chat_latest_date&&reportData.page3.mine_chat_latest_hour}}">那天你工作到<label class="_span">{{reportData.page3.mine_chat_latest_hour}}</label>
+                    </view>
+                    <view class="bold_txt">比别人更辛苦的你，值得最好的回报</view>
+                </view>
+            </view>
+            <view class="{{['fly fade_in_out move_in move_in_loop animate_deley-1',uInfo.user_type===2?'salesman':'user']}}"></view>
+        </view>
+        <view class="{{['s_item page_5',playState==5?'start':'',playState===5?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[5]+')'+';'}}"></view>
+            <view class="fly fade_in_out move_in move_in_loop animate_deley-1"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box" wx:if="{{uInfo.user_type===1}}">
+                <view class="move_in animate_deley-3">
+                    <view>2020年，房小团共有<label class="_span">{{reportData.page4.total_salesman}}</label>位置业顾问提供服务</view>
+                    <view>
+                        <label class="_span">何时开盘？配套怎样？价格如何？</label>
+                    </view>
+                    <view>TA们共服务用户<label class="_span">{{reportData.page4.salesman_to_user_message}}</label>次</view>
+                    <view>成为了用户的“问题粉碎机”</view>
+                    <view>
+                        <label class="_span">{{reportData.page4.max_visit_project}}</label>
+                    </view>
+                    <view wx:if="{{reportData.page4.max_visit_project}}">是大家咨询最多的楼盘</view>
+                    <view wx:if="{{reportData.page4.mine_salesman_count}}">2020年您共向<label class="_span">{{reportData.page4.mine_salesman_count}}</label>个置业顾问发起<label class="_span">{{reportData.page4.mine_chat_window_count}}</label>次咨询</view>
+                    <view class="bold_txt">买房有向导，上车不困难</view>
+                </view>
+            </view>
+            <view class="txt_box_salesman" wx:if="{{uInfo.user_type===2}}">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page4.avg_share_count}}">2020年，平均每位置业顾问分享房小团<label class="_span">{{reportData.page4.avg_share_count}}</label>次</view>
+                    <view wx:if="{{reportData.page4.share_flow_user}}">为<label class="_span">{{reportData.page4.share_flow_user}}</label>位用户提供了帮助</view>
+                    <view wx:if="{{reportData.page4.share_flow_high_period}}">
+                        <label class="_span">{{reportData.page4.share_flow_high_period}}</label>是用户通过链接进入小程序的高峰时段</view>
+                    <view wx:if="{{reportData.page4.mine_share_count}}">2020您共分享了<label class="_span">{{reportData.page4.mine_share_count}}</label>次</view>
+                    <view wx:if="{{reportData.page4.mine_share_flow_users>=10}}">为<label class="_span">{{reportData.page4.mine_share_flow_users}}</label>位用户坚定了买房信念</view>
+                    <view wx:if="{{reportData.page4.mine_share_daily_max.date}}">
+                        <label class="_span">{{reportData.page4.mine_share_daily_max.date}}</label>是你分享最多的一天</view>
+                    <view class="bold_txt">一切过往皆为序章，直挂云帆乘风破浪</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['s_item page_6',playState==6?'start':'',playState===6?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[6]+')'+';'}}"></view>
+            <view class="fly fade_in_out move_in move_in_loop animate_deley-1"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box">
+                <view class="move_in animate_deley-3">
+                    <view>2020房小团共产生了<label class="_span">{{reportData.page5.total_comment}}</label>条评论</view>
+                    <view wx:if="{{uInfo.user_type===1}}">
+                        <label class="_span">{{reportData.page5.max_comment_project.project_name}}</label>是大家评论最多的楼盘,</view>
+                    <view wx:if="{{uInfo.user_type===1}}">共有<label class="_span">{{reportData.page5.max_comment_project.num}}</label>条评论</view>
+                    <view wx:if="{{uInfo.user_type===2&&reportData.page5.hot_project}}">
+                        <label class="_span">{{reportData.page5.hot_project}}</label>是最受大家热议的楼盘</view>
+                    <view wx:if="{{uInfo.user_type===1}}">
+                        <label class="_span">{{reportData.page5.comment_question_top3[0]}}</label>
+                        <label class="_span">{{','+reportData.page5.comment_question_top3[1]}}</label>
+                        <label class="_span">{{','+reportData.page5.comment_question_top3[2]}}</label>成为最热议话题</view>
+                    <view wx:if="{{uInfo.user_type===2&&reportData.page5.comment_focus_questions.length>0}}">
+                        <label class="_span">{{reportData.page5.comment_focus_questions[0]}}</label>、<label class="_span">{{reportData.page5.comment_focus_questions[1]}}</label>、<label class="_span">{{reportData.page5.comment_focus_questions[2]}}</label>
+                    </view>
+                    <view wx:if="{{uInfo.user_type===2&&reportData.page5.comment_focus_questions.length>0}}">是大家最为关注的问题</view>
+                    <view wx:if="{{uInfo.user_type===2&&reportData.page5.mine_comment_total}}">2020您共在<label class="_span">{{reportData.page5.mine_comment_projects}}</label>个楼盘中发布了<label class="_span">{{reportData.page5.mine_comment_total}}</label>条评论</view>
+                    <view wx:if="{{uInfo.user_type===2&&reportData.page5.mine_discovery.video||reportData.page5.mine_discovery.article||reportData.page5.mine_discovery.question}}">2020您共发布了<label class="_span">{{reportData.page5.mine_discovery.video}}</label>个视频、<label class="_span">{{reportData.page5.mine_discovery.article}}</label>个图文、<label class="_span">{{reportData.page5.mine_discovery.question}}</label>次问答</view>
+                    <view class="bold_txt" wx:if="{{uInfo.user_type===1}}">足迹是走过的最好证明</view>
+                    <view class="bold_txt" wx:if="{{uInfo.user_type===2}}">因为你的答案</view>
+                    <view class="bold_txt" wx:if="{{uInfo.user_type===2}}">有人找到茫茫楼海最初的真相</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['s_item page_7',playState==7?'start':'',playState===7?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[7]+')'+';'}}"></view>
+            <view class="fly fade_in_out move_in move_in_loop animate_deley-1"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box">
+                <view class="move_in animate_deley-3">
+                    <view>2020，我们迎着新冠雾霾前行</view>
+                    <view>疫情期间我们发布了<label class="_span" style="font-size:30rpx;">疫情地图、</label>
+                        <label class="_span" style="font-size:30rpx;">核酸检测点查询</label>功能</view>
+                    <view>为<label class="_span">{{reportData.page6.affect_users}}</label>名用户带去了第一时间的服务和关怀</view>
+                    <view>没有不可逾越的冬天，没有不会到来的春天</view>
+                    <view class="bold_txt">请再坚持一下，胜利就在眼前</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['s_item page_8',playState==8?'start':'',playState===8?'show':'']}}">
+            <view class="{{['move_in move_bg animate_deley-2',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[8]+')'+';'}}"></view>
+            <view class="fly fade_in_out move_in move_in_loop animate_deley-1"></view>
+            <view class="up_slide move_in animate_deley-4">
+                <view class="open_text">上滑查看</view>
+                <view class="move_in_loop up_arrow"></view>
+            </view>
+            <view class="txt_box">
+                <view class="move_in animate_deley-3">
+                    <view wx:if="{{reportData.page7.avg_salary}}">2020，<text wx:if="{{uInfo.city_id=='510100'}}">成都市</text>
+                        <text wx:if="{{uInfo.city_id=='330100'}}">杭州市</text>人均收入<label class="_span">{{reportData.page7.avg_salary}}</label>元</view>
+                    <view>
+                        <label class="_span" wx:if="{{reportData.page7.buy_purpose[0]}}">{{reportData.page7.buy_purpose[0]}}</label>
+                        <label class="_span" wx:if="{{reportData.page7.buy_purpose[1]}}">{{'、'+reportData.page7.buy_purpose[1]}}</label>
+                        <label class="_span" wx:if="{{reportData.page7.buy_purpose[2]}}">{{'、'+reportData.page7.buy_purpose[2]}}</label>
+                    </view>
+                    <view>是<text wx:if="{{uInfo.city_id=='510100'}}">成都</text>
+                        <text wx:if="{{uInfo.city_id=='330100'}}">杭州</text>人民的主要购房目的</view>
+                    <view>人们最亲睐的房屋面积是<label class="_span">{{reportData.page7.prefer_area}}</label>
+                    </view>
+                    <view>人们最喜欢的户型是<label class="_span">{{reportData.page7.prefer_house_style}}</label>
+                    </view>
+                    <view wx:if="{{reportData.page7.focus_on.length>0}}">用户们购房时最关注<label class="_span">{{reportData.page7.focus_on[0]}}</label>
+                        <label class="_span" wx:if="{{reportData.page7.buy_purpose[1]}}">{{'、'+reportData.page7.focus_on[1]}}</label>
+                        <label class="_span" wx:if="{{reportData.page7.buy_purpose[2]}}">{{'、'+reportData.page7.focus_on[2]}}</label>
+                    </view>
+                    <view>在过去的时光里，我们互相信任、彼此慰藉</view>
+                    <view class="bold_txt">小团将继续努力</view>
+                    <view class="bold_txt" wx:if="{{uInfo.user_type==2}}">与您相伴，一路拼搏！</view>
+                    <view class="bold_txt" wx:if="{{uInfo.user_type==1}}">与您同行，为爱置家！</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['s_item page_9',playState==9?'start':'',playState===9?'show':'']}}">
+            <view class="move_in move_star_bg animate_deley-2" style="{{'background-image:'+'url('+bgArr[10]+')'+';'}}"></view>
+            <view class="move_in animate_deley-2 cont_box">
+                <view class="cont_bg_box">
+                    <view class="{{['move_bg',uInfo.user_type===2?'salesman':'user']}}" style="{{'background-image:'+'url('+bgArr[9]+')'+';'}}"></view>
+                    <view class="move_point" style="{{'background-image:'+'url('+wishValue+')'+';'}}"></view>
+                </view>
+                <view class="end_page_btns">
+                    <view bindtap="__e" class="canvas_btn move_in animate_deley-3" data-event-opts="{{[ [ 'tap',[ [ 'toJoinActivity',['$event'] ] ] ] ]}}">再看一次</view>
+                    <view bindtap="__e" class="share_btn move_in animate_deley-3" data-event-opts="{{[ [ 'tap',[ [ 'createCanvas',['$event'] ] ] ] ]}}">分享祈愿签</view>
+                </view>
+            </view>
+            <view class="fly fade_in_out move_in move_in_loop animate_deley-1"></view>
+        </view>
+        <view class="qr_code" wx:if="{{playState<9&&playState!==0}}">
+            <view class="code_img">
+                <image alt class="_img" src="{{reportData.qrcode}}"></image>
+            </view>
+            <view class="code_txt">
+                <view>立即扫码</view>
+                <view>查看年度报告</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="{{['audio_btn',musicState===1?'animate_rotate':'']}}" data-content="{{uInfo.user_type===2?'顾问报告':'用户报告'}}" data-event-opts="{{[ [ 'tap',[ [ 'changePlayState',['$event'] ] ] ] ]}}" data-name="音乐开关" data-type="button" style="{{'background-image:'+'url('+audioBtnBg+')'+';'}}"></view>
+    </view>
+</share-timeline-layout>

@@ -1,0 +1,10 @@
+<view class="contact-btns">
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['contanct'] ] ] ]}}" isAuthPhone="{{true}}" vueId="eee31420-1" vueSlots="{{['default']}}">
+        <view class="{{['btn','level'+level]}}">
+            <image class="icon" src="{{chatImgMap[level]}}"></image>在线咨询</view>
+    </authorization>
+    <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneSuccess'] ] ] ]}}" vueId="eee31420-2" vueSlots="{{['default']}}">
+        <view class="{{['btn','mt20','level'+level]}}">
+            <image class="icon" src="{{phoneImgMap[level]}}"></image>拨打电话</view>
+    </base-call-phone>
+</view>

@@ -1,0 +1,7 @@
+<base-layout bind:__l="__l" message="{{message}}" vueId="5f118726-1" vueSlots="{{['default']}}">
+    <view bindtap="__e" class="{{['map-message',isReceive?'receive':'',!isReceive?'sender':'']}}" data-content="{{isReceive?'对方消息':'我的消息'}}" data-event-opts="{{[ [ 'tap',[ [ 'openLocation',['$event'] ] ] ] ]}}" data-name="{{isReceive?'位置':'发送位置'}}" data-type="button">
+        <view class="map-message__name">{{''+content.name+''}}</view>
+        <view class="map-message__address">{{''+content.address+''}}</view>
+        <image class="map-message__cover" src="https://imgcdn.huanjutang.com/image/2020/04/21/b25dfb3e6303af91a27ad0e6698fa423.png"></image>
+    </view>
+</base-layout>

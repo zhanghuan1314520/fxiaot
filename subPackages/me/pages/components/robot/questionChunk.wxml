@@ -1,0 +1,5 @@
+<view class="data-v-dcc95a22">
+    <text-msg bind:__l="__l" class="data-v-dcc95a22" isReceive="{{true}}" message="{{introduceMsg}}" vueId="4f5e4d3b-1"></text-msg>
+    <conjecture bind:__l="__l" class="data-v-dcc95a22" vueId="4f5e4d3b-2"></conjecture>
+    <category bind:__l="__l" class="data-v-dcc95a22" vueId="4f5e4d3b-3"></category>
+</view>

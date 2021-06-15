@@ -1,0 +1,12 @@
+.compBackground {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.compBackground__image {
+    width: 100%;
+    display: block;
+}

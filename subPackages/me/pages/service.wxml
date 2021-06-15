@@ -1,0 +1,10 @@
+<view>
+    <view class="page">
+        <view class="reportType">
+            <navigator class="reportType-line" hoverClass="none" url="{{item.value}}" wx:for="{{lists}}" wx:key="index">
+                <text class="fz-13 black-1a-color left">{{''+item.key+''}}</text>
+                <text class="iconnew new-tongyong-gengduo right gray-color"></text>
+            </navigator>
+        </view>
+    </view>
+</view>

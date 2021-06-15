@@ -1,0 +1,69 @@
+.saleMan-info,.saleMan-info .left-avatar,.saleMan-info .right-btn-group {
+    display: flex;
+    align-items: center;
+}
+
+.saleMan-info {
+    justify-content: space-between;
+}
+
+.saleMan-info,.saleMan-info .avatar {
+    box-sizing: border-box;
+}
+
+.saleMan-info .avatar,.saleMan-info .btn-call,.saleMan-info .btn-call .btn-call-img,.saleMan-info .btn-chat {
+    width: 92rpx;
+    height: 92rpx;
+}
+
+.saleMan-info .is-confirm-img {
+    background-position: 0 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.saleMan-info {
+    position: fixed;
+    bottom: 24rpx;
+    bottom: calc(24rpx + constant(safe-area-inset-bottom));
+    bottom: calc(24rpx + env(safe-area-inset-bottom));
+    left: 32rpx;
+    right: 32rpx;
+    height: 140rpx;
+    background-color: rgba(0,0,0,.5);
+    padding: 24rpx 32rpx;
+    border-radius: 8rpx;
+    z-index: 1000;
+}
+
+.saleMan-info .avatar {
+    border-radius: 50%;
+    border: 1rpx solid rgba(0,0,0,.07);
+    margin-right: 16rpx;
+}
+
+.saleMan-info .name-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.saleMan-info .name {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 10rpx;
+}
+
+.saleMan-info .is-confirm-img {
+    width: 100rpx;
+    height: 34rpx;
+    background-image: url(https://imgcdn.huanjutang.com/image/2020/08/27/e0f8d73241b935f9efa65e4b0a5f6b76.png);
+}
+
+.saleMan-info .btn-call {
+    margin-left: 32rpx;
+}
+
+.notFullScreen {
+    bottom: 64rpx;
+}

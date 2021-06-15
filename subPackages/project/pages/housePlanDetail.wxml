@@ -1,0 +1,90 @@
+<view>
+    <view class="page">
+        <view class="housePlan">
+            <view class="top-swiper">
+                <swiper autoplay="{{false}}" circular="{{true}}" indicatorDots="{{false}}">
+                    <swiper-item wx:for="{{houseType.image}}" wx:key="index">
+                        <image bindtap="__e" class="gray-bg swiper-img" data-event-opts="{{[ [ 'tap',[ [ 'previewHouse',[index] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{item}}"></image>
+                    </swiper-item>
+                </swiper>
+                <view class=" preview-col fz-10 white-color" wx:if="{{houseType.image.length>1}}">{{'共'+houseType.image.length+'张'}}</view>
+            </view>
+            <view class="top-title">
+                <text class="fz-21 height-level-color" style="color:#021028;">{{''+houseType.name+''}}</text>
+                <text class="fz-10 title-status white-color" wx:if="{{houseType.sales_status}}">{{''+houseType.sales_status+''}}</text>
+            </view>
+            <view class="houseType">
+                <view class="line">
+                    <view class="fz-14 red-color">{{''+(houseType.num_bed_room||'0')+'室'+(houseType.num_living_room||'0')+'厅'+(houseType.num_rest_room||'0')+'卫'}}</view>
+                    <view class="fz-11 gray-9-color">户型</view>
+                </view>
+                <view class="line notFirst" wx:if="{{houseType.outer_square}}">
+                    <view class="fz-14 red-color">{{''+houseType.outer_square+'㎡'}}</view>
+                    <view class="fz-11 gray-9-color">面积</view>
+                </view>
+                <view class="line notFirst" wx:else>
+                    <view class="fz-14 red-color">暂无</view>
+                    <view class="fz-11 gray-9-color">面积</view>
+                </view>
+                <view class="line no-border notFirst" wx:if="{{houseType.price_total>0}}">
+                    <view class="fz-14 red-color">{{'约'+houseType.price_total+'万/套'}}</view>
+                    <view class="fz-11 gray-9-color">估价</view>
+                </view>
+                <view class="line no-border notFirst" wx:else>
+                    <view class="fz-14 red-color">暂无</view>
+                    <view class="fz-11 gray-9-color">估价</view>
+                </view>
+            </view>
+            <view class="projecDetail-mainInfo">
+                <view class="height-level-color fz-21 small-title font-bold">户型信息</view>
+                <view class="projecDetail-mainInfo-content fz-13">
+                    <view class="qrCode" wx:if="{{qrcode}}">
+                        <image bindtap="__e" class="qrcode-img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['qrcode'] ] ] ] ]}}" mode="aspectFill" src="{{qrcode}}"></image>
+                    </view>
+                    <view class="projecDetail-mainInfo-line" wx:if="{{houseType.orientation}}">
+                        <view class="fz-13 gray-9-color left-key">朝向:</view>
+                        <view class="weui-form-preview__value fz-13 height-level-color">{{''+houseType.orientation+''}}</view>
+                    </view>
+                    <view class="projecDetail-mainInfo-line" wx:if="{{houseType.feature}}">
+                        <view class="fz-13 gray-9-color left-key">户型特色:</view>
+                        <view class="weui-form-preview__value fz-13 height-level-color">{{''+houseType.feature+''}}</view>
+                    </view>
+                    <view class="projecDetail-mainInfo-line" wx:if="{{houseType.sales_status}}">
+                        <view class="fz-13 gray-9-color left-key">销售状态:</view>
+                        <view class="weui-form-preview__value fz-13 height-level-color">{{''+houseType.sales_status+''}}</view>
+                    </view>
+                </view>
+                <view class="code"></view>
+            </view>
+            <view class="projecDetail-mainInfo" wx:if="{{houseType.comment}}">
+                <view class="height-level-color fz-21 small-title font-bold">户型分析</view>
+                <view class="projecDetail-mainInfo-content fz-14" style="padding-right:30rpx;">{{''+houseType.comment+''}}</view>
+            </view>
+            <view class="projecDetail-mainInfo" wx:if="{{sameTypes.length>0}}">
+                <view class="height-level-color fz-21 small-title font-bold">本楼盘其他户型</view>
+                <scroll-view class="projecDetail-mainInfo-content fz-14" scrollX="scroll-x">
+                    <view class="swiper-box" style="{{'width: '+scrollWidth+'rpx'}}">
+                        <view bindtap="__e" class="cont-line" data-event-opts="{{[ [ 'tap',[ [ 'switchHouseType',['$0'],[ [ ['sameTypes','',index,'id'] ] ] ] ] ] ]}}" hoverClass="none" wx:for="{{sameTypes}}" wx:key="index">
+                            <image mode="aspectFill" src="{{item.image}}"></image>
+                            <view class="fz-14 black1a-color square">{{''+(item.name||'待定')+''}}</view>
+                            <view class="fz-13 small-level-color" style="padding-bottom:16rpx;">{{''+(item.num_bed_room||'0')+'室'+(item.num_living_room||'0')+'厅'+(item.num_rest_room||'')+'卫 '+(item.outer_square||'')+(item.outer_square>0?'㎡':'')+''}}</view>
+                            <view class="fz-10 housePlanStyle">
+                                <text class="style" wx:if="{{item.sales_status}}">{{''+item.sales_status+''}}</text>
+                                <text class="style" wx:for="{{item.tags}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</text>
+                            </view>
+                            <view class="price red-color" wx:if="{{item.price_total>0}}">{{'约'+item.price_total+'万/套'}}</view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="bottom-btn" style="{{officialPhone?' display: flex;justify-content: space-between;':''}}">
+                <busi-auth-navigator bind:__l="__l" url="{{'navigateTo-authphone://pages/salesMan/index?id='+houseType.project_id+'&title='+houseType.name+'&andrees=detail&project_img='+houseType.image}}" vueId="7ca7bf2d-1" vueSlots="{{['default']}}">
+                    <view class="button btn2 fz-15 white-color" style="{{officialPhone?'width:330rpx;':'width:100%;'}}">联系置业顾问</view>
+                </busi-auth-navigator>
+                <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['callPhoneSuccess'] ] ] ]}}" vueId="7ca7bf2d-2" vueSlots="{{['default']}}" wx:if="{{officialPhone}}">
+                    <view class="button btn1 fz-15 white-color" style="{{officialPhone?'width:330rpx;':''}}">电话咨询</view>
+                </base-call-phone>
+            </view>
+        </view>
+    </view>
+</view>

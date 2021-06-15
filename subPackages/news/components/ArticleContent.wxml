@@ -1,0 +1,13 @@
+<view bindtap="__e" class="article-container" data-event-opts="{{[ [ 'tap',[ [ 'handleDetail',['$event'] ] ] ] ]}}">
+    <view class="article-main">
+        <overflow-content bind:__l="__l" content="{{content}}" height="96rpx" rows="{{2}}" vueId="4d534354-1"></overflow-content>
+        <view class="article-bottom">
+            <view class="article-bottom__info">
+                <image class="image" src="{{info.creatorAvatar}}"></image>
+                <text class="text">{{''+info.creatorName+''}}</text>
+            </view>
+            <text class="article-bottom__text">{{''+time+''}}</text>
+        </view>
+    </view>
+    <image class="article-image" mode="scaleToFill" src="{{imageUrl}}"></image>
+</view>

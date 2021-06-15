@@ -1,0 +1,12 @@
+<base-layout bind:__l="__l" isReceive="{{isReceive}}" message="{{message}}" vueId="2f8d5e3e-1" vueSlots="{{['default']}}">
+    <view class="{{['text-message',isReceive?'receive':'',!isReceive?'sender':'']}}" wx:if="{{message.content.type===1||message.content.type===5}}">
+        <text class="text-message__content" userSelect="{{true}}">{{''+message.content.title+''}}</text>
+    </view>
+    <view class="{{['img-message',isReceive?'receive':'',!isReceive?'sender':'']}}" wx:if="{{message.content.type===2||message.content.type===5}}">
+        <image catchtap="__e" class="img-message__img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['message.content.image'] ] ] ] ]}}" mode="aspectFill" src="{{message.content.image+'?imageView2/1/w/476/h/289/q/75|imageslim'}}"></image>
+    </view>
+    <view class="{{['link-message',isReceive?'receive':'',!isReceive?'sender':'']}}" wx:if="{{message.content.type===3||message.content.type===4}}">
+        <view class="text-message__content" userSelect="{{true}}" wx:if="{{message.content.title}}">{{''+message.content.title+''}}</view>
+        <view bindtap="__e" class="url-link" data-event-opts="{{[ [ 'tap',[ [ 'handleRedict',['$event'] ] ] ] ]}}">详细内容 一键直达</view>
+    </view>
+</base-layout>

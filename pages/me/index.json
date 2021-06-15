@@ -1,0 +1,12 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "top-icon": "/pages/me/components/topIcon",
+        "me-list-item": "/pages/me/components/meListItem",
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "busi-auth-navigator": "/components/UILayout/BusiAuthNavigator",
+        "base-banner": "/components/BaseBanner",
+        "authorization": "/components/Authorization"
+    }
+}

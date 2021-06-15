@@ -1,0 +1,12 @@
+<view catchtouchmove="__e" class="reply" data-event-opts="{{[ [ 'touchmove',[ [ 'emptyFunction',['$event'] ] ] ] ]}}">
+    <view class="reply__container">
+        <view class="reply__container--input">
+            <input bindconfirm="__e" bindinput="__e" class="input" confirmHold="{{true}}" confirmType="send" cursorSpacing="10" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','content','$event',[] ] ],[ 'associate',['$event'] ] ] ],[ 'confirm',[ [ 'onConfirm',['$event'] ] ] ] ]}}" maxlength="{{100}}" placeholder="对TA发送消息" placeholderStyle="font-size:28rpx;color:#DFDFDF;" showConfirmBar="{{false}}" type="text" value="{{content}}"></input>
+        </view>
+        <view class="reply__container--associate" wx:if="{{associateList.length>0&&!isClicked}}">
+            <view>
+                <view bindtap="__e" class="list-item" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$0'],[ [ ['associateList','id',i.id] ] ] ] ] ] ]}}" wx:for="{{associateList}}" wx:for-index="__i0__" wx:for-item="i" wx:key="id">{{''+i.title+''}}</view>
+            </view>
+        </view>
+    </view>
+</view>

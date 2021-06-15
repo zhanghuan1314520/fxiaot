@@ -1,0 +1,275 @@
+page {
+    background-color: #fff;
+}
+
+.vote_head {
+    position: relative;
+    width: 100%;
+    height: 470rpx;
+}
+
+.vote_head_img {
+    width: 100%;
+    height: 100%;
+}
+
+.building_number {
+    right: 30rpx;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rpx 16rpx;
+    border-radius: 0 0 30rpx 30rpx;
+}
+
+.building_number,.vote_content {
+    position: absolute;
+    background-color: #fff;
+}
+
+.vote_content {
+    left: 0;
+    top: 440rpx;
+    z-index: 9;
+    margin-top: -30rpx;
+    border-radius: 30rpx 30rpx 0 0;
+    width: 100%;
+}
+
+.house_details {
+    padding: 30rpx;
+}
+
+.title_details_color {
+    color: #da4036;
+}
+
+.introduction_details {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.department_pic {
+    width: 690rpx;
+}
+
+.department_content {
+    padding: 0 30rpx;
+}
+
+.department_img {
+    width: 100%;
+    border-radius: 10rpx;
+}
+
+.vote_foot {
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 1px #e6e6e6;
+}
+
+.foot_padding {
+    padding: 26rpx 100rpx;
+}
+
+.lapiao {
+    border: 1px solid #da4036;
+    border-radius: 6rpx;
+    box-sizing: border-box;
+}
+
+.lapiao,.toupiao {
+    width: 334rpx;
+    height: 76rpx;
+}
+
+.toupiao {
+    margin-left: 26rpx;
+    border-radius: 6rpx;
+}
+
+.transform_jiao {
+    transform: rotate(180deg);
+}
+
+.modal_dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0,0,0,.7);
+}
+
+.modal_dialog_item {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #f7f7f7;
+    width: 100%;
+    height: 400rpx;
+}
+
+.modal_dialog_img {
+    width: 110rpx;
+    height: 110rpx;
+}
+
+.guanbi {
+    background-color: #fff;
+    width: 100%;
+    height: 90rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.share_item {
+    background-color: #19cd6a;
+}
+
+.share_item,.share_item1 {
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share_item1 {
+    background-color: #1acdc7;
+}
+
+.goHome {
+    position: fixed;
+    right: 0;
+    bottom: 100rpx;
+    z-index: 99999;
+}
+
+.poster-container {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0,0,0,.5);
+}
+
+.poster-container>view {
+    width: 680rpx;
+}
+
+.poster-container .create-canvas-box {
+    width: 100%;
+    height: 908rpx;
+    overflow: hidden;
+}
+
+.poster-container .btn-group {
+    display: flex;
+    justify-content: center;
+    padding: 30rpx 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.poster-container .btn-group .btn {
+    width: 310rpx;
+    background-color: #6b69e8;
+}
+
+.poster-container .btn-group .btn,.poster-container .saveBtn {
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.poster-container .saveBtn {
+    width: 642rpx;
+    background-color: #9d9bfe;
+    box-shadow: 0 10rpx 0 0 #5754db;
+    margin: 0 auto;
+}
+
+.model {
+    position: fixed;
+    background: #fff;
+    border-radius: 8rpx;
+    width: 460rpx;
+    padding: 80rpx 70rpx;
+    box-sizing: border-box;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.model-tip {
+    padding: 30rpx 0;
+}
+
+.model-text1 {
+    padding-bottom: 15rpx;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-box,.model-btn {
+    padding: 15rpx 0;
+}
+
+.model-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: rgba(0,0,0,.1);
+    top: 0;
+    z-index: 999;
+}
+
+.last-text {
+    margin-top: 50rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.last-text button {
+    background-color: transparent;
+    line-height: 1;
+}
+
+.comeBack {
+    position: fixed;
+    bottom: 100rpx;
+    right: 0;
+    z-index: 55;
+    width: 100rpx;
+    line-height: 1;
+    background: #ccc;
+    text-align: center;
+    padding: 5rpx;
+    border-radius: 5rpx;
+}

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "busi-dialog": "/components/UILayout/BusiDialog",
+        "busi-button": "/components/UILayout/BusiButton",
+        "authorization": "/components/Authorization"
+    }
+}

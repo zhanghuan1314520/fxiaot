@@ -1,0 +1,264 @@
+.tools {
+    min-height: 100vh;
+    padding-top: 40rpx;
+    box-sizing: border-box;
+    background: linear-gradient(1turn,#f7f7f7,#fff 100%,#fff 0);
+}
+
+.swiper {
+    height: 320rpx;
+}
+
+.image-wraper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+.swiper-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+    transform: translateY(12rpx);
+    transition: all .5s ease;
+}
+
+.swiper-item.active .swiper-image,.swiper-item.lastActive .swiper-image {
+    width: calc(100% - 48rpx);
+    transform: translateY(0);
+}
+
+.swiper-item.active .image-cover,.swiper-item.lastActive .image-cover {
+    width: calc(100% - 48rpx);
+    left: 24rpx;
+}
+
+.swiper-item.active[data-single="true"] .swiper-image {
+    width: 100%;
+    transform: translateY(0);
+}
+
+.swiper-item.active[data-single="true"] .image-cover {
+    width: 100%;
+}
+
+.swiper-item.lastActive .swiper-image {
+    margin-left: 28rpx;
+}
+
+.swiper-item.lastActive .image-cover {
+    left: 28rpx;
+}
+
+.image-cover {
+    position: absolute;
+    width: 100%;
+    height: 80rpx;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(180deg,transparent,rgba(0,0,0,.8));
+    border-radius: 8rpx;
+}
+
+.iphone-x-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+}
+
+.tools-project {
+    margin: -20rpx 32rpx 0;
+    background: #fff;
+    box-shadow: 0 -12rpx 60rpx 0 rgba(0,0,0,.16);
+    border-radius: 8rpx;
+    position: relative;
+    z-index: 9;
+}
+
+.project-info {
+    padding-bottom: 28rpx;
+    padding-top: 40rpx;
+    margin: 0 48rpx 28rpx;
+}
+
+.info-address,.info-name,.overflow {
+    max-width: 550rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info-name {
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 52rpx;
+}
+
+.info-address {
+    font-size: 26rpx;
+    line-height: 36rpx;
+    margin-top: 12rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.project-detail {
+    margin: 0 48rpx;
+}
+
+.detail-rank {
+    margin-bottom: 16rpx;
+    display: flex;
+    align-items: flex-end;
+}
+
+.rank-text {
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-size: 28rpx;
+    font-weight: 700;
+    line-height: 50rpx;
+    color: rgba(0,0,0,.85);
+    margin-right: 16rpx;
+}
+
+.rank-num {
+    color: #2d8cf0;
+    font-weight: 700;
+    font-size: 52rpx;
+    line-height: 60rpx;
+}
+
+.detail-content {
+    font-size: 26rpx;
+    color: rgba(0,0,0,.65);
+    line-height: 36rpx;
+}
+
+.dialog {
+    border-radius: 40rpx 40rpx 0 0;
+    background: #fff;
+    padding-top: 60rpx;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+.dialog .close-btn {
+    position: absolute;
+    top: 32rpx;
+    right: 32rpx;
+    font-size: 32rpx;
+    color: #d9d9d9;
+}
+
+.dialog .title {
+    text-align: center;
+    color: rgba(0,0,0,.85);
+    font-size: 40rpx;
+    font-weight: 700;
+    margin-bottom: 32rpx;
+}
+
+.dialog .title.range-title {
+    margin-bottom: 48rpx;
+}
+
+.dialog .search-place {
+    background: #f5f5f5;
+    height: 76rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 32rpx 40rpx;
+    padding: 0 28rpx;
+    border-radius: 8rpx;
+}
+
+.dialog .search-place input {
+    width: 100%;
+}
+
+.dialog .search-place .new-sousuo {
+    font-size: 32rpx;
+    margin-right: 12rpx;
+    color: rgba(0,0,0,.45);
+}
+
+.dialog .recomment-tips {
+    color: rgba(0,0,0,.45);
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.dialog .project-box {
+    height: 680rpx;
+    padding-left: 32rpx;
+    box-sizing: border-box;
+}
+
+.dialog .project-box .li {
+    height: 108rpx;
+    line-height: 108rpx;
+    color: rgba(0,0,0,.85);
+    font-size: 32rpx;
+    font-weight: 700;
+    padding-right: 32rpx;
+}
+
+.dialog .project-box .li .choosed-icon {
+    display: none;
+}
+
+.dialog .project-box .li.active {
+    color: #2d8cf0;
+}
+
+.dialog .project-box .li.active .choosed-icon {
+    display: block;
+    float: right;
+    color: #2d8cf0;
+    font-size: 38rpx;
+}
+
+.tools-list {
+    margin-top: 32rpx;
+}
+
+.list-item {
+    height: 112rpx;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 40rpx;
+}
+
+.item-left,.list-item {
+    display: flex;
+    align-items: center;
+}
+
+.item-icon {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 32rpx;
+}
+
+.item-name {
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+}
+
+.new-tongyong-gengduo {
+    font-size: 40rpx;
+    color: #d8d8d8;
+}

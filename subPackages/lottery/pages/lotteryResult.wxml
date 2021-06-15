@@ -1,0 +1,13 @@
+<view>
+    <view class="page">
+        <view class="lotteryResult">
+            <navigator class="fz-15 height-level-color font-bold title" url="{{'/pages/lotteryDetail?id='+id+'&project_id='+project_id}}">{{''+title+''}}</navigator>
+            <block wx:if="{{lotteryList.length>0}}">
+                <view class="imageList" wx:for="{{lotteryList}}" wx:key="index">
+                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['lotteryList','',index] ] ] ] ] ] ]}}" mode="widthFix" src="{{item}}"></image>
+                </view>
+            </block>
+            <view class="nothing fz-13 height-level-color" wx:else>暂无摇号结果</view>
+        </view>
+    </view>
+</view>

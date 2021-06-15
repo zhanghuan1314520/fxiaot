@@ -1,0 +1,22 @@
+<view>
+    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+        <slot></slot>
+        <scoped-slots-default bind:__l="__l" showName="{{showName}}"></scoped-slots-default>
+    </view>
+    <view bindtap="__e" class="{{[ 'picker-container '+(visible?'show':'hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'handlecCancel',['$event'] ] ] ] ]}}"></view>
+    <view class="{{[ 'picker-content '+(visible?'active':'') ]}}">
+        <view class="picker-operate">
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handlecCancel',['$event'] ] ] ] ]}}">取消</text>
+            <text>{{label}}</text>
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleComplete',['$event'] ] ] ] ]}}">确定</text>
+        </view>
+        <picker-view bindchange="__e" bindupdate:value="__e" class="picker-view" data-event-opts="{{[ [ 'update:value',[ [ '__set_sync',['$0','pickerValue','$event'],[''] ] ] ],[ 'change',[ [ 'handleChange',['$event'] ] ] ] ]}}" indicatorClass="picker-indicator" value="{{pickerValue}}">
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{year}}" wx:key="index">{{''+item.label+''}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{month}}" wx:key="index">{{''+item.label+''}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

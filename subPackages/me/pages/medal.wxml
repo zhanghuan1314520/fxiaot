@@ -1,0 +1,28 @@
+<view class="rank">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="8da0e9be-1" vueSlots="{{['default']}}">{{''+projectName+'-个人勋章'}}</busi-nav-header>
+        <view class="info">
+            <image class="avatar" src="{{info.avatar_url||'https://imgcdn.huanjutang.com/assets/img/2021122191988081.png'}}"></image>
+            <view class="right">
+                <view class="name">{{''+(info.name||'--')+''}}</view>
+                <view class="desc">{{''+(isSelf?'您':'')+'已经获得'}}<text class="num">{{''+(info.medals.get_num||0)+''}}</text>个勋章啦</view>
+            </view>
+        </view>
+    </view>
+    <view class="main">
+        <view class="medal-list">
+            <view class="{{[ 'medal-item',[item.skeleton?'skeletons':''] ]}}" wx:for="{{medalItems}}" wx:key="index">
+                <image class="logo skeletons-circle" src="{{medals[item.code][item.is_get?item.level:0].icon}}"></image>
+                <view class="name-box">
+                    <view class="name skeletons-rect">{{''+item.name+''}}</view>
+                    <block wx:if="{{isSelf}}">
+                        <view class="desc skeletons-rect">{{''+(item.rule||'')+''}}</view>
+                        <view class="desc skeletons-rect">{{''+(item.tips||'')+''}}</view>
+                    </block>
+                    <view class="desc skeletons-rect" wx:else>{{''+(item.desc||'')+''}}</view>
+                </view>
+            </view>
+        </view>
+        <busi-bottom-line bind:__l="__l" vueId="8da0e9be-2" vueSlots="{{['default']}}" wx:if="{{!loading}}">更多勋章，敬请期待～</busi-bottom-line>
+    </view>
+</view>

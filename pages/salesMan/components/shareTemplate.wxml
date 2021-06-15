@@ -1,0 +1,27 @@
+<view>
+    <view wx:if="{{videoData||imgData.length>0}}">
+        <view class="video-img" wx:if="{{videoData}}">
+            <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'playVideoHandle',['$0'],['videoData'] ] ] ] ]}}" mode="aspectFill" source="{{videoData+'?vframe/jpg/offset/1/w/400/h/206'}}" styles="{{$root.a0}}" vueId="46d5392e-1"></image-loader>
+            <view catchtap="__e" class="img-tags" data-event-opts="{{[ [ 'tap',[ [ 'playVideoHandle',['$0'],['videoData'] ] ] ] ]}}">
+                <view class="img-tag-item">
+                    <image class="image" src="https://imgcdn.huanjutang.com/assets/img/20191017163748081.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="img-one" wx:if="{{imgData.length===1}}">
+            <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n0','imgData'] ] ] ] ]}}" mode="aspectFill" source="{{imgData[0]}}" styles="{{$root.a1}}" vueId="46d5392e-2"></image-loader>
+        </view>
+        <view class="img-two" wx:if="{{imgData.length===2}}">
+            <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n0','imgData'] ] ] ] ]}}" mode="aspectFill" source="{{imgData[0]}}" styles="{{$root.a2}}" vueId="46d5392e-3"></image-loader>
+            <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n1','imgData'] ] ] ] ]}}" mode="aspectFill" source="{{imgData[1]}}" styles="{{$root.a3}}" vueId="46d5392e-4"></image-loader>
+        </view>
+        <view class="img-three" wx:if="{{imgData.length>=3}}">
+            <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n0','imgData'] ] ] ] ]}}" mode="aspectFill" source="{{imgData[0]}}" styles="{{$root.a4}}" vueId="46d5392e-5"></image-loader>
+            <view class="right">
+                <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n1','imgData'] ] ] ] ]}}" mode="aspectFill" source="{{imgData[1]}}" styles="{{$root.a5}}" vueId="46d5392e-6"></image-loader>
+                <image-loader bind:__l="__l" catch:tap="__e" data-event-opts="{{[ [ '^tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n2','imgData'] ] ] ] ]}}" mode="aspectFill" source="{{imgData[2]}}" styles="{{$root.a6}}" vueId="46d5392e-7"></image-loader>
+                <view catchtap="__e" class="count" data-event-opts="{{[ [ 'tap',[ [ 'viewPic',['$0','$1'],['imgData.__$n2','imgData'] ] ] ] ]}}" wx:if="{{imgData.length>3}}">{{'+'+imgData.length-3+''}}</view>
+            </view>
+        </view>
+    </view>
+</view>

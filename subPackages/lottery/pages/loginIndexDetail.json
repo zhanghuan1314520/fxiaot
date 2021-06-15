@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我要上首页",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "switch-btn": "/subPackages/lottery/components/SwitchBtn",
+        "dialog": "/components/UILayout/BusiDialog",
+        "authorization": "/components/Authorization"
+    }
+}

@@ -1,0 +1,21 @@
+.auto-send-message {
+    position: relative;
+    display: inline-block;
+    max-width: 450rpx;
+    padding: 24rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #2d8cf0;
+}
+
+.auto-send-message.sender {
+    float: right;
+    right: 22rpx;
+}
+
+.auto-send-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}

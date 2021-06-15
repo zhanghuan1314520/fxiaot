@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "杭州房小团-周边配套",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader"
+    }
+}

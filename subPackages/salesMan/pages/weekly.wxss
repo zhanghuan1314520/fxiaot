@@ -1,0 +1,156 @@
+page {
+    padding-bottom: 0;
+}
+
+.box-weekly {
+    width: 750rpx;
+    min-height: 100vh;
+    background: linear-gradient(245deg,#487df7,#54b1f8);
+    background-size: contain;
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.box-weekly .image-header {
+    width: 100%;
+}
+
+.box-weekly .time {
+    position: relative;
+    top: -94rpx;
+    width: 340rpx;
+    height: 44rpx;
+    background: linear-gradient(270deg,#ffdf67,#fbc227);
+    border-radius: 22rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #387bf3;
+    line-height: 44rpx;
+    margin-left: 48rpx;
+    text-align: center;
+}
+
+.box-weekly .user-info {
+    margin-bottom: 56rpx;
+}
+
+.box-weekly .user-info,.box-weekly .user-info .info {
+    height: 64rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-weekly .user-info .info {
+    align-items: center;
+}
+
+.box-weekly .user-info .info .avatar {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 50%;
+    margin-right: 24rpx;
+}
+
+.box-weekly .user-info .info .nickname {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 44rpx;
+}
+
+.box-weekly .box-content {
+    position: relative;
+    top: -52rpx;
+    width: 686rpx;
+    margin: 0 auto;
+    padding: 32rpx;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 4rpx 26rpx 0 rgba(46,131,224,.68);
+    border-radius: 12rpx;
+}
+
+.box-weekly .box-content .chat,.box-weekly .box-content .core {
+    position: relative;
+    width: 622rpx;
+    background: #ecf1fe;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    padding: 44rpx 24rpx 24rpx;
+}
+
+.box-weekly .box-content .chat .logo,.box-weekly .box-content .core .logo {
+    position: absolute;
+    left: 24rpx;
+    top: -28rpx;
+    width: 236rpx;
+    height: 56rpx;
+}
+
+.box-weekly .box-content .chat .item,.box-weekly .box-content .core .item {
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx solid hsla(0,0%,100%,.7);
+    min-height: 114rpx;
+}
+
+.box-weekly .box-content .chat .item .detail,.box-weekly .box-content .core .item .detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-weekly .box-content .chat .item .detail .label,.box-weekly .box-content .core .item .detail .label {
+    flex: 1;
+    height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #2153c6;
+    line-height: 40rpx;
+}
+
+.box-weekly .box-content .chat .item .detail .remark,.box-weekly .box-content .core .item .detail .remark {
+    height: 34rpx;
+    font-size: 24rpx;
+    color: #2153c6;
+    line-height: 34rpx;
+}
+
+.box-weekly .box-content .chat .item .value,.box-weekly .box-content .core .item .value {
+    text-align: right;
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #e1591e;
+    line-height: 44rpx;
+}
+
+.box-weekly .box-content .chat .item .value.w320,.box-weekly .box-content .core .item .value.w320 {
+    width: 320rpx;
+}
+
+.box-weekly .box-content .core {
+    min-height: 532rpx;
+}
+
+.box-weekly .box-content .core .core-image {
+    position: absolute;
+    left: 24rpx;
+    top: -28rpx;
+    width: 236rpx;
+    height: 56rpx;
+}
+
+.box-weekly .box-content .chat {
+    margin-top: 56rpx;
+    min-height: 978rpx;
+}
+
+.box-weekly .box-content .chat .chat-image {
+    position: absolute;
+    left: 24rpx;
+    top: -28rpx;
+    width: 266rpx;
+    height: 56rpx;
+}

@@ -1,0 +1,6 @@
+<view class="{{['tip-bg',close?'animated':'',close?'fadeOutRight':'']}}" style="{{'top:'+top+'px'+';'}}" wx:if="{{showTips}}">
+    <view class="tip-bar">
+        <text class="tip-text">点击“添加小程序”下次更快找到</text>
+        <text catchtap="__e" class="iconnew new-quxiao fz-14 tip-close" data-event-opts="{{[ [ 'tap',[ [ 'closeTipHandle',['$event'] ] ] ] ]}}"></text>
+    </view>
+</view>

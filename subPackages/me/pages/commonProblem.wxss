@@ -1,0 +1,61 @@
+page {
+    background-color: #fff;
+}
+
+.reportType-title {
+    padding: 19rpx 30rpx;
+}
+
+.reportType-line {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-left: 24rpx;
+    padding: 34rpx 34rpx 34rpx 0;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.is-toggle {
+    border-bottom: none;
+}
+
+.right {
+    width: 30rpx;
+    margin-right: 10rpx;
+}
+
+.left {
+    flex: 1;
+    color: #606266;
+}
+
+.type-col {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-left: 54rpx;
+    padding: 34rpx 34rpx 34rpx 0;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.type-col:last-of-type {
+    border-bottom: none;
+}
+
+.col-content {
+    position: relative;
+    animation-duration: .2s;
+    box-shadow: inset 0 0 30rpx 0 #f7f7f7,inset 0 0 30rpx 0 #f7f7f7;
+}
+
+.new-tongyong-gengduo,.new-tongyong-gengduolansexiangxia {
+    vertical-align: middle;
+}
+
+.rotateAngle {
+    transform: rotate(90deg);
+}
+
+.rotateAngle,.rotateBack {
+    transition-duration: .2s;
+}

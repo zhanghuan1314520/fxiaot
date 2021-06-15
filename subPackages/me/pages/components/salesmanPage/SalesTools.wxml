@@ -1,0 +1,15 @@
+<view class="tools">
+    <view class="title">售房工具</view>
+    <view class="wrap">
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="{{[ 'data-item',[item.skeleton?'skeletons':''] ]}}" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleNext',['$0'],[ [ ['toolsData','',index] ] ] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="{{'a0caa188-1-'+index}}" vueSlots="{{['default']}}" wx:for="{{toolsData}}" wx:key="index">
+            <button bindtap="__e" class="tools-item skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="联系客服" openType="contact" sessionFrom="{{sessionFrom}}" wx:if="{{item.title==='我的客服'}}">
+                <image class="img" src="{{item.icon}}"></image>
+                <text class="item-text">{{''+item.title+''}}</text>
+            </button>
+            <view bindtap="__e" class="tools-item skeletons-rect" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{item.title}}" data-type="link" wx:else>
+                <image class="img" src="{{item.icon}}"></image>
+                <text class="item-text">{{''+item.title+''}}</text>
+            </view>
+        </authorization>
+    </view>
+</view>

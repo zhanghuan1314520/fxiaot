@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "一键找房",
+    "usingComponents": {
+        "sliders": "/subPackages/project/pages/component/hangzhou/lookForRoomTemplate/slidersComponent"
+    }
+}

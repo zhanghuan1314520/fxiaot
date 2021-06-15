@@ -1,0 +1,19 @@
+.footer-share {
+    text-align: center;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: rgba(0,0,0,.85);
+    line-height: 38rpx;
+    font-size: 28rpx;
+    margin-right: 48rpx;
+    margin-left: 16rpx;
+    padding-top: 4rpx;
+}
+
+.footer-share .iconnew {
+    font-size: 40rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.footer-share .text {
+    margin-top: 6rpx;
+}

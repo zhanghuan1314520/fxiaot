@@ -1,0 +1,31 @@
+<view class="task">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="7d4b476a-1" vueSlots="{{['default']}}">置业顾问-任务中心</busi-nav-header>
+        <base-info bind:__l="__l" liveness="{{liveless}}" points="{{point}}" vueId="7d4b476a-2"></base-info>
+    </view>
+    <sign-in bind:__l="__l" bind:signInCallback="__e" class="vue-ref" data-event-opts="{{[ [ '^signInCallback',[ ['getIntegralBaseInfo'] ] ] ]}}" data-ref="signIn" vueId="7d4b476a-3"></sign-in>
+    <view class="task-list">
+        <view class="task-list__title">
+            <text class="left">日常任务</text>
+            <text class="right">连续做任务30天，可赚取6000+</text>
+        </view>
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'navigatoDetail',['$0'],[ [ ['customTaskList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{customTaskList}}" wx:key="index">
+            <task-item bind:__l="__l" item="{{item}}" vueId="{{'7d4b476a-4-'+index}}"></task-item>
+        </view>
+        <view wx:for="{{tasks}}" wx:key="index">
+            <task-item bind:__l="__l" bind:handleCheckFn="__e" bind:handleOperateFn="__e" data-event-opts="{{[ [ '^handleOperateFn',[ ['handleOperate'] ] ],[ '^handleCheckFn',[ ['handleCheck'] ] ] ]}}" item="{{item}}" vueId="{{'7d4b476a-5-'+index}}"></task-item>
+        </view>
+    </view>
+    <view class="project-info" wx:if="{{showProjectBox}}">
+        <view class="box-cont">
+            <view class="main-project">
+                <view bindtap="__e" class="item fz-16 black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[1] ] ] ] ]}}">户型图</view>
+                <view bindtap="__e" class="item fz-16 black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[2] ] ] ] ]}}">相册</view>
+                <view bindtap="__e" class="item fz-16 black-30" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',[3] ] ] ] ]}}">视频</view>
+            </view>
+            <view bindtap="__e" class="cancle-btn fz-18 black-60" data-event-opts="{{[ [ 'tap',[ [ 'showProjectInfo',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+        <view bindtap="__e" class="hide-bg" data-event-opts="{{[ [ 'tap',[ [ 'showProjectInfo',['$event'] ] ] ] ]}}"></view>
+    </view>
+    <busi-bottom-line bind:__l="__l" vueId="7d4b476a-6" vueSlots="{{['default']}}">未来的你，一定会感谢今天拼命努力的自己</busi-bottom-line>
+</view>

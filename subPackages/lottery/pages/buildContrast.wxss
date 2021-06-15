@@ -1,0 +1,193 @@
+.build_list {
+    background-color: #fff;
+    padding-bottom: 170rpx;
+    margin-top: 16rpx;
+}
+
+.build_list .build_item {
+    padding: 24rpx;
+    overflow: hidden;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.build_list .build_item .xuanxiang {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140rpx;
+}
+
+.build_list .build_item .options_item {
+    width: 38rpx;
+    height: 38rpx;
+    background-color: #2f8cef;
+    border: 1px solid #2f8cef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 33rpx;
+    color: #fff;
+}
+
+.build_list .build_item .options_item2 {
+    width: 38rpx;
+    height: 38rpx;
+    border: 1px solid #b3b3b3;
+    border-radius: 50%;
+}
+
+.build_list .build_item .build_item_right {
+    float: left;
+    margin-right: 24rpx;
+    overflow: hidden;
+    display: flex;
+}
+
+.build_list .build_item .build_item_right image {
+    width: 190rpx;
+    height: 138rpx;
+    border-radius: 12rpx;
+}
+
+.build_list .build_item .build_item_right .item_detail_right {
+    flex: 1;
+    margin-left: 24rpx;
+    width: 370rpx;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_detail_right_area {
+    overflow: hidden;
+    margin-top: 16rpx;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_detail_right_area .left {
+    float: left;
+    color: #96989e;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_detail_right_area .right {
+    float: right;
+    color: #2f8cef;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_detail_right_text {
+    width: 370rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_detail_right_name {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_tishi {
+    overflow: hidden;
+    margin-top: 28rpx;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_tishi .no-price {
+    color: #d13c0e;
+    float: right;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .item_tishi .item_tishi_dan {
+    height: 32rpx;
+    padding: 0 8rpx;
+    background: rgba(35,205,148,.15);
+    color: rgba(35,205,148,.98);
+    font-size: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.build_list .build_item .build_item_right .item_detail_right .redColor {
+    color: #ee3f4d;
+    font-weight: 500;
+    margin-top: 12rpx;
+}
+
+.footer {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4rpx 12rpx 0 rgba(21,24,45,.03);
+}
+
+.operation_list {
+    padding: 18rpx 20rpx calc(18rpx + env(safe-area-inset-bottom)) 34rpx;
+    box-sizing: border-box;
+    margin: auto;
+    font-size: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.operation_list .add-project {
+    display: flex;
+}
+
+.operation_list .opt_style {
+    width: 260rpx;
+    height: 88rpx;
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+    background: #2f8cef;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.operation_list .opt_style1 {
+    color: #303740;
+    display: flex;
+    align-items: center;
+}
+
+.operation_list .opt_style1 image {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 8rpx;
+}
+
+.operation_list .opt_style2 {
+    width: 260rpx;
+    height: 88rpx;
+    background: #dfdfdf;
+    border-radius: 4rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.operation_list .opt_active {
+    background: linear-gradient(52deg,#ff8e5c,#ff5431);
+}
+
+.reach-bottom {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.nothing,.reach-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nothing {
+    height: 100%;
+    padding-top: 100rpx;
+}

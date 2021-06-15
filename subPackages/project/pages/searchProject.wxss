@@ -1,0 +1,86 @@
+.page {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.options-content {
+    height: 92rpx;
+    background: #f2f2f2;
+    padding: 16rpx 24rpx;
+    box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    overflow-x: visible;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.options-content .options-line {
+    height: 60rpx;
+    background: #fff;
+    border-radius: 4rpx;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #606266;
+    padding: 0 16rpx;
+    margin-right: 12rpx;
+}
+
+.project-data {
+    padding: 0 32rpx 150rpx;
+    box-sizing: border-box;
+}
+
+.project-data .title {
+    padding: 32rpx 24rpx 8rpx;
+    font-size: 32rpx;
+    color: #303237;
+    line-height: 44rpx;
+}
+
+.search-cont {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: hsla(0,0%,100%,.95);
+    box-shadow: 0 -4rpx 12rpx 0 rgba(21,24,45,.03);
+    box-sizing: border-box;
+    z-index: 3;
+    padding: 18rpx 24rpx env(safe-area-inset-bottom);
+}
+
+.search-cont .search-text {
+    width: 100%;
+    height: 88rpx;
+    background: #2f8cef;
+    border-radius: 4rpx;
+    line-height: 88rpx;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 18rpx;
+}
+
+.nothing {
+    margin: 64rpx auto 32rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #2f8cef;
+    line-height: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nothing image {
+    color: #2f8cef;
+    margin-right: 10rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.flex_layout_c {
+    width: 100%;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}

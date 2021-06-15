@@ -1,0 +1,23 @@
+.countdown.data-v-536e18a7 {
+    background-image: url(https://imgcdn.huanjutang.com/assets/img/2020129149518081.png);
+    background-size: cover;
+    width: 407rpx;
+    height: 51rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown .colorful.data-v-536e18a7,.countdown .common.data-v-536e18a7 {
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.countdown .common.data-v-536e18a7 {
+    color: #fff;
+}
+
+.countdown .colorful.data-v-536e18a7 {
+    color: #fff105;
+    margin-left: 8rpx;
+}

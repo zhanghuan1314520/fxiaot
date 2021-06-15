@@ -1,0 +1,33 @@
+<view>
+    <view class="page">
+        <view class="avatar">
+            <view bindtap="__e" class="avatar-box" data-event-opts="{{[ [ 'tap',[ [ 'changeAvatar',['$event'] ] ] ] ]}}">
+                <image class="avatar-img" mode="aspectFill" src="{{avatar||default_avatar}}"></image>
+                <image class="take-photo" mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190809/5d4d08c2c025d.png"></image>
+            </view>
+            <view class="fz-12 changeName">点击修改头像<image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleShowDialog',[true] ] ] ] ]}}" src="https://imgcdn.huanjutang.com/image/2020/03/30/10078a3ea38ed3305266bd781c5245bb.png"></image>
+            </view>
+        </view>
+        <view class="name">
+            <text class="left">昵称</text>
+            <input bindinput="__e" class="right" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ] ] ] ]}}" placeholder="{{palceHolder}}" type="text" value="{{inputVal}}"></input>
+        </view>
+        <view class="bottom">
+            <view bindtap="__e" class="btn fz-16 white-color blue-bg" data-event-opts="{{[ [ 'tap',[ [ 'saveInfo',['$event'] ] ] ] ]}}">保存</view>
+        </view>
+    </view>
+    <view class="cropper-view" wx:if="{{showCropper}}">
+        <cropper bind:__l="__l" class="vue-ref" data-ref="cropper" options="{{cropperOpt}}" vueId="f1a2f17e-1"></cropper>
+    </view>
+    <view class="dialog" wx:if="{{showDialog}}">
+        <view class="rote"></view>
+        <view class="content">
+            <view bindtap="__e" class="icon-close" data-event-opts="{{[ [ 'tap',[ [ 'handleShowDialog',[false] ] ] ] ]}}">
+                <text class="iconnew new-quxiao"></text>
+            </view>
+            <view class="p">1.每月仅可修改3次</view>
+            <view class="p">2.不得出现手机号、微信号、QQ号等联系信息</view>
+            <view class="p">3.不得出现血腥、色情、暴力等不良信息</view>
+        </view>
+    </view>
+</view>

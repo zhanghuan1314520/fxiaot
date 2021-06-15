@@ -1,0 +1,51 @@
+.ask-call-message__request {
+    width: 498rpx;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    background: #fff;
+}
+
+.ask-call-message__request--content {
+    width: 100%;
+    padding: 32rpx 24rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #606266;
+}
+
+.ask-call-message__request--btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    border-top: 1rpx solid rgba(125,132,141,.05);
+    padding: 24rpx 0;
+    font-size: 30rpx;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ask-call-message__request--btns .button {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.ask-call-message__request--btns .button:first-child {
+    border-right: 1rpx solid rgba(125,132,141,.05);
+}
+
+.ask-call-message__request--btns .cancel {
+    color: #606266;
+}
+
+.ask-call-message__request--btns .agreed {
+    color: #23cd94;
+}
+
+.ask-call-message__sender {
+    padding: 0 16rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #96989e;
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "杭州房小团",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "bottom-btns": "/subPackages/project/pages/component/photosBottombtns",
+        "tab": "/subPackages/project/components/Tab",
+        "image-loader": "/components/ImageLoader"
+    }
+}

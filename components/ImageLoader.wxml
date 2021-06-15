@@ -1,0 +1,4 @@
+<view class="{{['loader data-v-e9ff34d6',!loaded?'gray-bg':'']}}" style="{{baseStyle}}">
+    <image class="image fadeIn data-v-e9ff34d6" lazyLoad="{{true}}" mode="{{mode}}" src="{{source||defaultImage}}" style="{{baseStyle}}" wx:if="{{loaded}}"></image>
+    <image binderror="__e" bindload="__e" class="backup data-v-e9ff34d6" data-event-opts="{{[ [ 'error',[ [ 'handleImageLoadError',['$event'] ] ] ],[ 'load',[ [ 'handleImageLoaded',['$event'] ] ] ] ]}}" mode="{{mode}}" src="{{source}}" style="{{baseStyle}}" wx:if="{{ratio===1&&!loaded}}"></image>
+</view>

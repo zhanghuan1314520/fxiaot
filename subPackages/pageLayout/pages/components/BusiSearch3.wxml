@@ -1,0 +1,7 @@
+<base-layout bind:__l="__l" margin="{{margin}}" padding="{{padding}}" vueId="16b296fc-1" vueSlots="{{['default']}}">
+    <view class="busi-search3">
+        <busi-search analysis="{{dataName:'UI配置中心-搜索框'}}" bind:__l="__l" customUrl="/subPackages/project/pages/mapLookHouse" vueId="{{'16b296fc-2'+','+'16b296fc-1'}}" vueSlots="{{['default']}}">
+            <busi-search-swiper bind:__l="__l" config="{{hotSearchList.config}}" list="{{hotSearchList.list}}" style="flex:1;" vueId="{{'16b296fc-3'+','+'16b296fc-2'}}"></busi-search-swiper>
+        </busi-search>
+    </view>
+</base-layout>

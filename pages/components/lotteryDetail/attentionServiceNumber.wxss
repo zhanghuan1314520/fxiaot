@@ -1,0 +1,144 @@
+.hide-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 997;
+    width: 100vw;
+    height: 100vh;
+}
+
+.permissions-settings {
+    width: 606rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 998;
+}
+
+.permissions-settings .tips-content {
+    padding-top: 54rpx;
+    padding-bottom: 8rpx;
+    line-height: 50rpx;
+    z-index: 39;
+}
+
+.permissions-settings .text {
+    line-height: 50rpx;
+    padding-bottom: 48rpx;
+    z-index: 39;
+}
+
+.permissions-settings .bottom-btn {
+    border-top: 1rpx solid rgba(0,0,0,.1);
+    height: 100rpx;
+    line-height: 100rpx;
+    align-items: center;
+    overflow: hidden;
+}
+
+.permissions-settings .bottom-btn .cancle {
+    text-align: center;
+    width: 50%;
+    float: left;
+    border-right: 1rpx solid #e2e4ea;
+    color: #606266;
+    height: 100rpx;
+    line-height: 100rpx;
+    box-sizing: border-box;
+}
+
+.permissions-settings .bottom-btn .sure-btn {
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    width: 50%;
+    float: right;
+    color: #2f8cef;
+    background: transparent;
+}
+
+.attention-service-number .hide-model-bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    top: 0;
+    z-index: 999;
+}
+
+.attention-service-number .content-wrapper {
+    width: 620rpx;
+    height: 814rpx;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    z-index: 222;
+    z-index: 1000;
+}
+
+.attention-service-number .f-content-bg {
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191219163768081.png) 100% 100% no-repeat!important;
+}
+
+.attention-service-number .f-content {
+    width: 620rpx;
+    height: 814rpx;
+    background-size: cover;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    z-index: 222;
+}
+
+.attention-service-number .f-content .btn {
+    width: 348rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #2d8cf0;
+    box-shadow: 0rpx 12rpx 20rpx 0rpx rgba(45,140,240,.3);
+    border-radius: 44rpx;
+    position: absolute;
+    left: 50%;
+    bottom: 56rpx;
+    transform: translateX(-50%);
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.attention-service-number .s-content {
+    width: 664rpx;
+    height: 808rpx;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20191216/5df725313bdc6.png) 100% 100% no-repeat;
+    background-size: cover;
+    border-radius: 8rpx;
+    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    z-index: 222;
+}
+
+.attention-service-number .s-content .qr-code {
+    width: 220rpx;
+    height: 220rpx;
+    position: absolute;
+    top: 64rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}

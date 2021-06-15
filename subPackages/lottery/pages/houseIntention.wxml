@@ -1,0 +1,44 @@
+<view>
+    <view class="page">
+        <view class="condition-option">
+            <view class="option-unlimited">
+                <view class="title fz-14 black1a-color font-bold">你的买房预算</view>
+                <view class="text fz-13 orange-color" wx:if="{{low==0&&heigh==20000}}">{{''+usPrice+''}}</view>
+                <view class="text fz-13 orange-color" wx:else>{{''+low+'元/㎡ - '+heigh+'元/㎡'}}</view>
+                <view class="zy-slider">
+                    <slider backgroundColor="#e6e6e6" bindheighValueChange="__e" bindlowValueChange="__e" bindupdate:max="__e" bindupdate:max-value="__e" bindupdate:maxValue="__e" bindupdate:min="__e" bindupdate:min-value="__e" bindupdate:minValue="__e" blockColor="#0099FF" data-event-opts="{{[ [ 'update:minValue',[ [ '__set_sync',['$0','minValue','$event'],[''] ] ] ],[ 'update:min-value',[ [ '__set_sync',['$0','minValue','$event'],[''] ] ] ],[ 'update:maxValue',[ [ '__set_sync',['$0','maxValue','$event'],[''] ] ] ],[ 'update:max-value',[ [ '__set_sync',['$0','maxValue','$event'],[''] ] ] ],[ 'update:min',[ [ '__set_sync',['$0','min','$event'],[''] ] ] ],[ 'update:max',[ [ '__set_sync',['$0','max','$event'],[''] ] ] ],[ 'lowValueChange',[ [ 'lowValueChangeAction',['$event'] ] ] ],[ 'heighValueChange',[ [ 'heighValueChangeAction',['$event'] ] ] ] ]}}" id="zy-slider" max="{{max}}" maxValue="{{maxValue}}" min="{{min}}" minValue="{{minValue}}" selectedColor="#eb734e"></slider>
+                </view>
+            </view>
+            <view class="option">
+                <view class="title fz-14 black1a-color font-bold">您想要哪种户型</view>
+                <view class="tags-list">
+                    <text bindtap="__e" class="{{[ 'tag-txt fz-12  '+(item.type?'white-color  choosed':'black1a-color not-choose ') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectHouse',[index,'$0'],[ [ ['hsType','',index] ] ] ] ] ] ]}}" wx:for="{{hsType}}" wx:key="index">{{''+item.house_name+''}}</text>
+                </view>
+            </view>
+            <view class="option-unlimited">
+                <view class="title fz-14 black1a-color font-bold">户型面积</view>
+                <view class="text fz-13 orange-color" wx:if="{{low2==0&&heigh2==200}}">{{''+usPrice+''}}</view>
+                <view class="text fz-13 orange-color" wx:else>{{''+low2+'㎡ - '+heigh2+'㎡'}}</view>
+                <view class="zy-slider">
+                    <sliders backgroundColor="#f2f2f2" bind:__l="__l" bind:heighValueChange="__e" bind:lowValueChange="__e" bind:updateMax="__e" bind:updateMaxValue="__e" bind:updateMin="__e" bind:updateMinValue="__e" blockColor="#0099FF" data-event-opts="{{[ [ '^updateMinValue',[ [ '__set_sync',['$0','minValue2','$event'],[''] ] ] ],[ '^updateMinValue',[ [ '__set_sync',['$0','minValue2','$event'],[''] ] ] ],[ '^updateMaxValue',[ [ '__set_sync',['$0','maxValue2','$event'],[''] ] ] ],[ '^updateMaxValue',[ [ '__set_sync',['$0','maxValue2','$event'],[''] ] ] ],[ '^updateMin',[ [ '__set_sync',['$0','min2','$event'],[''] ] ] ],[ '^updateMax',[ [ '__set_sync',['$0','max2','$event'],[''] ] ] ],[ '^lowValueChange',[ ['lowValueChangeAction1'] ] ],[ '^heighValueChange',[ ['heighValueChangeAction1'] ] ] ]}}" id="zy-slider2" max="{{max2}}" maxValue="{{maxValue2}}" min="{{min2}}" minValue="{{minValue2}}" selectedColor="#eb734e" vueId="197837b9-1"></sliders>
+                </view>
+            </view>
+            <view class="option">
+                <view class="title fz-14 black1a-color font-bold">区域位置</view>
+                <view class="tags-list">
+                    <text bindtap="__e" class="{{[ 'tag-txt fz-12  '+(component_type?'white-color  choosed':'black1a-color not-choose ') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'generations',['$0'],['component_type'] ] ] ] ]}}">不限</text>
+                    <text bindtap="__e" class="{{[ 'tag-txt fz-12  '+(item.type?'white-color  choosed':'black1a-color not-choose ') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectLocal',[index,'$0'],[ [ ['areaList','',index] ] ] ] ] ] ]}}" wx:for="{{areaList}}" wx:key="index">{{''+item.area_name+''}}</text>
+                </view>
+            </view>
+            <view class="option">
+                <view class="title fz-14 black1a-color font-bold">房源特点</view>
+                <view class="tags-list">
+                    <text bindtap="__e" class="{{[ 'tag-txt fz-12 '+(item.type?'white-color  choosed':'black1a-color not-choose') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectSource',[index,'$0'],[ [ ['sourceType','',index] ] ] ] ] ] ]}}" wx:for="{{sourceType}}" wx:key="index">{{''+item.air_name+''}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="submit" data-event-opts="{{[ [ 'tap',[ [ 'submit_list',['$event'] ] ] ] ]}}">
+        <view class="btn blue-bg white-color fz-14">提交</view>
+    </view>
+</view>

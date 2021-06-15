@@ -1,0 +1,3 @@
+<button bindtap="__e" class="{{[ 'busi-button','busi-button__'+type,[disabled?'busi-button__diabled':''] ]}}" data-content="{{dataContent}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyHandle',['$event'] ] ] ] ]}}" data-name="{{dataName}}" data-type="{{dataType}}">
+    <slot></slot>
+</button>

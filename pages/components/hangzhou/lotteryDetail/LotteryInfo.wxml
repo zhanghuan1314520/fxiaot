@@ -1,0 +1,55 @@
+<view>
+    <view class="lottery-info" id="lottery-info" wx:if="{{lotteryInfo.lottery_rate}}">
+        <view class="info-container">
+            <slot name="head"></slot>
+            <view class="info-list" wx:if="{{lotteryInfo.avg_price.length>0||lotteryInfo.total_price.length>0}}">
+                <view class="left skeletons-rect">
+                    <view class="item" wx:for="{{lotteryInfo.price}}" wx:key="index">
+                        <view class="fz-15 key">
+                            <text class="text-val">{{''+item.key+''}}</text>
+                            <text class="text-split">:</text>
+                        </view>
+                        <view class="fz-15 price">
+                            <view wx:for="{{item.value}}" wx:for-index="cIndex" wx:for-item="price" wx:key="cIndex">{{price}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="right skeletons-rect" wx:if="{{lotteryInfo.qr_code}}">
+                    <image bindtap="__e" class="qrcode" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],['lotteryInfo.qr_code'] ] ] ] ]}}" mode="widthFix" src="{{lotteryInfo.qr_code}}"></image>
+                </view>
+            </view>
+            <view class="table skeletons-rect">
+                <view class="tr" wx:for="{{lotteryInfo.lottery_rate}}" wx:key="index">
+                    <view class="td" wx:for="{{item}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="btn-list" wx:if="{{hasBtns}}">
+            <navigator bindtap="__e" class="navigator house-price" data-content="基本信息" data-event-opts="{{[ [ 'tap',[ [ 'btnEventTrack',['楼盘详情-'+tag.name] ] ] ] ]}}" data-name="{{tag.name}}" data-type="link" hoverClass="none" id="{{'LotteryInfoBtn'+index}}" url="{{tag.url}}" wx:for="{{lotteryInfo.tags}}" wx:for-item="tag" wx:key="index">
+                <image class="image" mode="widthFix" src="{{tag.img}}"></image>
+            </navigator>
+        </view>
+    </view>
+    <view class="observe-scroll-node open-quotation" id="open-quotation" wx:if="{{lotteryInfo.time_line}}">
+        <view class="open_container">
+            <view class="common-title">
+                <view class="title">开盘信息</view>
+            </view>
+            <view class="ul">
+                <view class="list fz-15" wx:for="{{lotteryInfo.rows}}" wx:key="index">
+                    <view class="gray-9-color left-text">
+                        <text class="text-val">{{''+item.key+''}}</text>
+                        <text class="text-split">:</text>
+                    </view>
+                    <text class="black-3a-color right" wx:for="{{item.value}}" wx:for-index="cIndex" wx:for-item="val" wx:key="cIndex">{{''+val+''}}</text>
+                </view>
+            </view>
+        </view>
+        <time-axis bind:__l="__l" timeData="{{lotteryInfo.time_line}}" vueId="03add1c6-1"></time-axis>
+        <view class="open_container">
+            <view class="btn-list white-color fz-12">
+                <view bindtap="__e" class="{{[ 'btn fz-12 '+(btn.type===0?'btn-gray':'') ]}}" data-content="开盘信息" data-event-opts="{{[ [ 'tap',[ [ 'btnEventHandle',[index] ] ] ] ]}}" data-name="{{btn.text}}" data-type="button" hoverClass="btn-hover" wx:for="{{lotteryInfo.button_list}}" wx:for-item="btn" wx:key="index">{{''+btn.text+''}}</view>
+            </view>
+        </view>
+    </view>
+</view>

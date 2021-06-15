@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "salesman-new-item-b": "/pages/components/salesMan/SalesmanNewItemB"
+    }
+}

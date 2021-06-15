@@ -1,0 +1,4 @@
+<view class="noData-wrap">
+    <image class="noData" mode="aspectFit" src="https://imgcdn.huanjutang.com/image/2020/10/13/8f91e4e0e439b537a8d5d0812f248dd0.png"></image>
+    <image bindtap="__e" class="backBtn" data-event-opts="{{[ [ 'tap',[ [ 'goBack',['$event'] ] ] ] ]}}" mode="aspectFit" src="https://imgcdn.huanjutang.com/image/2020/10/13/ae50fd6b15cef6ccc01c0f1eb77e07a9.png" wx:if="{{backSwitch}}"></image>
+</view>

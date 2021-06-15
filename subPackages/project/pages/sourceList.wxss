@@ -1,0 +1,146 @@
+.flex-1 {
+    flex: 1;
+}
+
+.mr-22 {
+    margin-right: 22rpx!important;
+}
+
+.top {
+    position: fixed;
+    padding: 0 24rpx;
+    display: flex;
+    height: 112rpx;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 2rpx 2rpx 4rpx 0 hsla(0,0%,87.5%,.5);
+    background: #fff;
+}
+
+.top .title {
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.top .house-origin-image {
+    height: 60rpx;
+    border-radius: 4rpx;
+    background: rgba(47,140,239,.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20rpx;
+}
+
+.top .house-origin-image .text {
+    margin: 0 6rpx;
+}
+
+.top .house-origin-image .new-tongyong-gengduo {
+    display: inline-block;
+    height: 28rpx;
+}
+
+.top .toastTips {
+    position: absolute;
+    right: 24rpx;
+    top: 100rpx;
+    height: 68rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2d8cf0;
+    box-shadow: 0 4rpx 8rpx 0 rgba(0,0,0,.15);
+    color: #fff;
+    padding: 0 18rpx 0 30rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+}
+
+.top .toastTips text {
+    margin-left: 18rpx;
+}
+
+.top .toastTips:before {
+    position: absolute;
+    top: -18rpx;
+    right: 80rpx;
+    content: "";
+    display: inline-block;
+    border: 10rpx solid transparent;
+    border-bottom-color: #2d8cf0;
+}
+
+.projectDetail-title-name-share {
+    height: 60rpx;
+    width: 140rpx;
+    text-align: center;
+    border-radius: 32rpx;
+    background: rgba(45,140,240,.1);
+    color: #2d8cf0;
+    line-height: 60rpx;
+}
+
+.imgContain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 36rpx 24rpx 120rpx;
+    border-top: 112rpx solid #fff;
+}
+
+.image-col {
+    width: 336rpx;
+    height: 336rpx;
+    box-shadow: 0 0 8rpx 0 #cacacc;
+    border-radius: 8rpx;
+    padding: 5rpx;
+    box-sizing: border-box;
+    margin-bottom: 30rpx;
+}
+
+.image-col image {
+    width: 100%;
+    height: 100%;
+}
+
+.mr-5 {
+    margin-left: 5rpx;
+}
+
+.fz-29 {
+    font-size: 29rpx!important;
+}
+
+.toggle-list {
+    position: fixed;
+    bottom: 150rpx;
+    right: 28rpx;
+    width: 84rpx;
+    height: 84rpx;
+    background: #2f8cef;
+    box-shadow: 0 4rpx 16rpx 0 rgba(47,140,239,.3);
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    border-radius: 84rpx;
+    justify-content: center;
+    align-items: center;
+    z-index: 22;
+    line-height: 1;
+}
+
+.toggle-list .iconnew {
+    position: relative;
+    top: 2rpx;
+}
+
+.toggle-list .toggle-list-text {
+    position: relative;
+    top: 4rpx;
+}

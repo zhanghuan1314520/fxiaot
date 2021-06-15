@@ -1,0 +1,3 @@
+<view catchtap="__e" class="medals" data-event-opts="{{[ [ 'tap',[ [ 'goMedalPage',['$event'] ] ] ] ]}}" data-name="勋章" data-type="link">
+    <image class="medal" hidden="{{item.code==='grade'&&!showGrade}}" src="{{medals[item.code][item.is_get?item.level:0].icon||'https://imgcdn.huanjutang.com/file/2021/01/28/1a9e8cb4d4d61a845a7887d9cad68a31.png'}}" wx:for="{{medalItems}}" wx:key="index"></image>
+</view>

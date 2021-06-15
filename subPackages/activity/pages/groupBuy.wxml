@@ -1,0 +1,83 @@
+<view class="activity data-v-0ea87298">
+    <view class="activity-top data-v-0ea87298">
+        <view class="top-image data-v-0ea87298" style="{{'background-image:'+'url('+singleday_home_headimg+')'+';'}}"></view>
+        <view bindtap="__e" class="top-rule data-v-0ea87298" data-event-opts="{{[ [ 'tap',[ [ 'showRuleModal',['$event'] ] ] ] ]}}" data-name="活动规则" data-type="link">
+            <text class="data-v-0ea87298">活动规则</text>
+        </view>
+    </view>
+    <view class="activity-join data-v-0ea87298">
+        <view class="join-left data-v-0ea87298">
+            <text class="number data-v-0ea87298">{{''+(joinNumber||0)+''}}</text>
+            <text class="data-v-0ea87298">人参加</text>
+        </view>
+        <view class="join-right data-v-0ea87298">
+            <join-swiper bind:__l="__l" class="data-v-0ea87298" list="{{joinList}}" vueId="dcb1ec98-1"></join-swiper>
+        </view>
+    </view>
+    <image class="activity-prize__title data-v-0ea87298" src="{{homeImage.prizeTitle}}"></image>
+    <view class="scroll-container data-v-0ea87298" data-margin="{{scrollViewMargin}}">
+        <scroll-view class="activity-prize data-v-0ea87298" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+            <view bindtap="__e" class="prize-item data-v-0ea87298" data-active="{{activeIndex===index}}" data-content="{{dataContent[1]}}" data-event-opts="{{[ [ 'tap',[ [ 'changePrize',['$0',index],[ [ ['prizeList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.prize_title}}" id="{{item.id}}" wx:for="{{prizeList}}" wx:key="id">
+                <text class="time data-v-0ea87298">{{''+(item.status.code===0?item.startShowTime:item.lotteryShowTime)+''}}</text>
+                <text class="status data-v-0ea87298">{{''+item.status.text+''}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="activity-prize__container data-v-0ea87298">
+        <view class="activity-prize__content data-v-0ea87298">
+            <view class="prize-content__title data-v-0ea87298">
+                <text class="data-v-0ea87298">由</text>
+                <text bindtap="__e" class="title data-v-0ea87298" data-content="{{dataContent[1]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleGoDetail',['$event'] ] ] ] ]}}" data-name="楼盘详情" data-type="link" id="{{activePrize.project_id}}">{{''+(activePrize.project_name||'')+''}}</text>
+                <text class="data-v-0ea87298">提供</text>
+            </view>
+            <prize-content bind:__l="__l" bind:update="__e" class="data-v-0ea87298" data-event-opts="{{[ [ '^update',[ ['loadPrizeList'] ] ] ]}}" item="{{activePrize}}" vueId="dcb1ec98-2"></prize-content>
+            <view class="prize-content__bottom data-v-0ea87298">
+                <view class="bottom-jackpot data-v-0ea87298" wx:if="{{activePrize.status.code===3}}">
+                    <image class="jackpot-gift data-v-0ea87298" src="{{homeImage.gift}}"></image>
+                    <image class="jackpot-image data-v-0ea87298" src="{{homeImage.prizeFont}}"></image>
+                    <image class="avatar data-v-0ea87298" src="{{activePrize.win_user[0].avatar_url}}"></image>
+                    <text class="jackpot-name data-v-0ea87298">{{''+activePrize.win_user[0].name+''}}</text>
+                </view>
+                <block wx:else>
+                    <authorization bind:__l="__l" bind:onSuccess="__e" class="button data-v-0ea87298" data-event-opts="{{[ [ '^onSuccess',[ ['handleJoinButtonClick'] ] ] ]}}" isAuthPhone="{{true}}" vueId="dcb1ec98-3" vueSlots="{{['default']}}" wx:if="{{activePrize.status.buttonCode}}">
+                        <view bindtap="__e" class="button data-v-0ea87298" data-content="{{dataContent[1]}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="{{codeMap[activePrize.status.buttonCode]}}" data-type="button" style="{{'background-image:'+'url('+joinStatus[activePrize.status.buttonCode].image+')'+';'}}"></view>
+                    </authorization>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="activity-online data-v-0ea87298">
+        <view class="online-top data-v-0ea87298">
+            <image class="top-left data-v-0ea87298" src="{{homeImage.onlineTitle}}"></image>
+            <image bindtap="__e" class="top-right data-v-0ea87298" data-content="{{dataContent[2]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/activity/pages/groupBuyOnline'] ] ] ] ]}}" data-name="线上看好房更多" data-type="link" src="{{homeImage.more}}"></image>
+        </view>
+        <view class="online-container data-v-0ea87298">
+            <on-line-item bind:__l="__l" class="data-v-0ea87298" item="{{item}}" vueId="{{'dcb1ec98-4-'+__i0__}}" wx:for="{{onlineList}}" wx:for-index="__i0__" wx:key="id"></on-line-item>
+            <view class="online-empty data-v-0ea87298" wx:if="{{onlineList.length===2}}"></view>
+        </view>
+    </view>
+    <view class="activity-group data-v-0ea87298">
+        <view class="group-top data-v-0ea87298">
+            <image class="top-left data-v-0ea87298" src="{{homeImage.projectTitle}}"></image>
+            <image bindtap="__e" class="top-right data-v-0ea87298" data-content="{{dataContent[3]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/activity/pages/groupBuyProject'] ] ] ] ]}}" data-name="新房团着买更多" data-type="link" src="{{homeImage.more}}"></image>
+        </view>
+        <view class="group-container data-v-0ea87298">
+            <group-item bind:__l="__l" class="data-v-0ea87298" item="{{item}}" vueId="{{'dcb1ec98-5-'+__i1__}}" wx:for="{{groupList}}" wx:for-index="__i1__" wx:key="id"></group-item>
+        </view>
+    </view>
+    <view class="activity-liver data-v-0ea87298">
+        <view class="liver-top data-v-0ea87298">
+            <image class="top-left data-v-0ea87298" src="{{homeImage.liverTitle}}"></image>
+            <image bindtap="__e" class="top-right data-v-0ea87298" data-content="{{dataContent[4]}}" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/activity/pages/groupBuyLiver'] ] ] ] ]}}" data-name="直播底价抢更多" data-type="link" src="{{homeImage.more}}"></image>
+        </view>
+        <view class="liver-container data-v-0ea87298">
+            <liver-item bind:__l="__l" class="data-v-0ea87298" item="{{item}}" vueId="{{'dcb1ec98-6-'+__i2__}}" wx:for="{{liverList}}" wx:for-index="__i2__" wx:key="id"></liver-item>
+        </view>
+    </view>
+    <view class="activity-logo data-v-0ea87298">
+        <image class="data-v-0ea87298" src="{{homeImage.logo}}"></image>
+    </view>
+    <rule-modal bind:__l="__l" class="data-v-0ea87298 vue-ref" content="{{ruleContent}}" data-ref="ruleModal" vueId="dcb1ec98-7"></rule-modal>
+    <join-modal bind:__l="__l" class="data-v-0ea87298 vue-ref" data-ref="joinModal" vueId="dcb1ec98-8"></join-modal>
+    <poster-modal bind:__l="__l" class="data-v-0ea87298 vue-ref" data-ref="posterModal" fontImage="{{singleday_share_text}}" image="{{qrcode}}" titleImage="{{singleday_share_img}}" vueId="dcb1ec98-9"></poster-modal>
+</view>

@@ -1,0 +1,56 @@
+<view>
+    <view class="page">
+        <view class="report-cont" wx:if="{{type==='5'||type==='99'}}">
+            <view class="report-title fz-16 height-level-color font-bold">
+                <text class="report-tip red-color fz-12">*</text>{{(type==='5'?'纠错':'反馈')+'类型'}}<text class="fz-13 small-level-color">(最多一项)</text>
+            </view>
+            <view class="report-main-cont">
+                <view bindtap="__e" class="{{[ 'report-type-line '+(index===chooseIndex?'active':'')+' '+( (index+1)/3>0&&(index+1)%3==0?'no-margin-right':'' ) ]}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseRadioHandle',[index] ] ] ] ]}}" wx:for="{{typeList}}" wx:key="index">{{''+item.text+''}}<view class="choosed">
+                        <text class="white-color icon-gougou iconnew fz-10" wx:if="{{index===chooseIndex}}"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="report-cont" wx:else>
+            <view class="report-title fz-16 height-level-color font-bold">
+                <text class="report-tip red-color fz-12">*</text>举报类型<text class="fz-13 small-level-color">(最多两项)</text>
+            </view>
+            <view class="report-main-cont">
+                <view bindtap="__e" class="{{[ 'report-type-line '+(item.is_toggle?'active':'')+' '+( (index+1)/3>0&&(index+1)%3==0?'no-margin-right':'' ) ]}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseTypeHandle',[index] ] ] ] ]}}" wx:for="{{typeList}}" wx:key="index">{{''+item.text+''}}<view class="choosed">
+                        <text class="white-color icon-gougou iconnew fz-10" wx:if="{{item.is_toggle}}"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="report-cont">
+            <view class="report-title fz-16 height-level-color font-bold">
+                <text class="report-tip red-color fz-12" wx:if="{{type==='3'}}">*</text>请提供相关问题图片<text class="fz-13 small-level-color">(最多6张，单张图不超过20M)</text>
+            </view>
+            <view class="report-main-cont">
+                <view bindtap="__e" class="{{[ 'report-type-line-img '+( (index+1)/4>0&&(index+1)%4==0?'no-margin-right':'' ) ]}}" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',[index] ] ] ] ]}}" wx:for="{{imagesList}}" wx:key="index">
+                    <image mode="aspectFill" src="{{item}}"></image>
+                    <view catchtap="__e" class="choosed fz-14 white-color" data-event-opts="{{[ [ 'tap',[ [ 'deleteImg',[index] ] ] ] ]}}">×</view>
+                </view>
+                <view bindtap="__e" class="report-type-line-img border-line gray-9-color" data-event-opts="{{[ [ 'tap',[ [ 'upFileImg',['$event'] ] ] ] ]}}" wx:if="{{imagesList.length<6}}">+</view>
+            </view>
+        </view>
+        <view class="report-cont">
+            <view class="report-title fz-16 height-level-color font-bold">
+                <text class="report-tip red-color fz-14">*</text>问题描述</view>
+            <view class="report-main-cont">
+                <textarea bindinput="__e" class="textarea-box fz-14 height-level-color" data-event-opts="{{[ [ 'input',[ [ 'questionCont',['question','$event'] ] ] ] ]}}" maxlength="300" placeholder="请描述您的问题(300字内)" type="text"></textarea>
+                <view class="text-num gray-9-color fz-13">{{''+(questionContent.length||0)+'/300'}}</view>
+            </view>
+        </view>
+        <view class="report-cont">
+            <view class="report-title fz-16 height-level-color font-bold">联系方式<text class="small-level-color fz-13">(手机号/邮箱)</text>
+            </view>
+            <view class="report-main-cont">
+                <input bindinput="__e" class="input-box fz-14 height-level-color" data-event-opts="{{[ [ 'input',[ [ 'questionCont',['phoneText','$event'] ] ] ] ]}}" placeholder="请留下您的联系方式，便于技术排查问题" type="text"></input>
+            </view>
+        </view>
+        <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['upFileHandle'] ] ] ]}}" isAuthPhone="{{true}}" vueId="647aea67-1" vueSlots="{{['default']}}">
+            <view class="up-file white-color fz-16" style="{{finish?'':'background:#ccc'}}">提交</view>
+        </authorization>
+    </view>
+</view>

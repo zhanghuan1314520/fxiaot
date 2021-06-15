@@ -1,0 +1,6 @@
+<view class="page-control" style="{{'bottom:'+bottom+'rpx'}}">
+    <navigator class="backhome btn-back" openType="{{openType}}" url="{{url}}">
+        <text class="iconnew new-huishouye fz-21"></text>
+        <text class="fz-11 font-bold">{{''+text+''}}</text>
+    </navigator>
+</view>

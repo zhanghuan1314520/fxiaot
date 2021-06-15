@@ -1,0 +1,21 @@
+<view>
+    <view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/tools/pages/businessCode?name=businessQrCode&title=商务合作','商务合作'] ] ] ] ]}}">
+            <text class="left">商务合作</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/tools/pages/joinCode?name=contact_us&title=加入我们','加入我们'] ] ] ] ]}}">
+            <text class="left">加入我们</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view bindtap="__e" class="settings-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/me/pages/service','服务声明'] ] ] ] ]}}">
+            <text class="left">服务声明</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+        <view class="split-cont"></view>
+        <view bindtap="__e" class="settings-line last-line line-bottom" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['/subPackages/me/pages/about','关于'+appName] ] ] ] ]}}">
+            <text class="left">{{'关于'+appName+''}}</text>
+            <text class="right gray-96 fz-14 iconnew new-tongyong-gengduo"></text>
+        </view>
+    </view>
+</view>

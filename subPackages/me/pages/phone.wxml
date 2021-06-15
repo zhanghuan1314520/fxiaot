@@ -1,0 +1,21 @@
+<view class="phone">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="6d452f0a-1" vueSlots="{{['default']}}">{{''+projectName+'-通话记录'}}</busi-nav-header>
+        <view class="phone-total">
+            <view class="radio">
+                <view bindtap="__e" class="{{['radio-item',type==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleRadioChange',[0] ] ] ] ]}}">所有通话</view>
+                <view bindtap="__e" class="{{['radio-item',type==2?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleRadioChange',[2] ] ] ] ]}}">未接来电</view>
+            </view>
+        </view>
+    </view>
+    <view class="main">
+        <total bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" fixTop="{{scrolled}}" item="{{phoneTotal}}" text="所有通话总数" vueId="6d452f0a-2"></total>
+        <view class="phone-scroll">
+            <scroll-item bind:__l="__l" item="{{ele}}" vueId="{{'6d452f0a-3-'+index}}" wx:for="{{phoneList}}" wx:for-item="ele" wx:key="index"></scroll-item>
+            <empty bind:__l="__l" image="https://imgcdn.huanjutang.com/file/2021/01/06/97aae0e212ae5fd8037d34b86f0d0625.png" text="无通话记录" vueId="6d452f0a-4" wx:if="{{!loading&&!phoneList.length}}"></empty>
+            <busi-bottom-line bind:__l="__l" vueId="6d452f0a-5" vueSlots="{{['default']}}" wx:if="{{phoneList.length&&end&&!loading}}">加油，赶快给客户回电吧 ~</busi-bottom-line>
+            <busi-loading bind:__l="__l" loading="{{!firstLoad&&loading}}" vueId="6d452f0a-6"></busi-loading>
+        </view>
+    </view>
+    <guide bind:__l="__l" bind:comfirm="__e" data-event-opts="{{[ [ '^comfirm',[ ['e0'] ] ] ]}}" vueId="6d452f0a-7" wx:if="{{guideVisible}}"></guide>
+</view>

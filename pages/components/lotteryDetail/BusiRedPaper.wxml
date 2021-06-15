@@ -1,0 +1,16 @@
+<view class="red-paper">
+    <view class="rd-img-wrapper entryAni" wx:if="{{innerStatus===1}}">
+        <image class="image" src="https://imgcdn.huanjutang.com/file/2021/04/07/39facb2bcb6bc392b25aa4b539cd6a18.png"></image>
+        <view class="paper-text">{{'倒计时 '+countdown+'秒'}}</view>
+    </view>
+    <authorization bind:__l="__l" catch:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'clickGet',['$event'] ] ] ] ]}}" isAuthPhone="{{true}}" vueId="ffb154c6-1" vueSlots="{{['default']}}" wx:if="{{innerStatus===2}}">
+        <view class="rd-img-wrapper attentionAni">
+            <image class="image" src="https://imgcdn.huanjutang.com/file/2021/04/07/39facb2bcb6bc392b25aa4b539cd6a18.png"></image>
+            <view class="paper-text">点击领取</view>
+        </view>
+    </authorization>
+    <view bindtap="__e" class="rd-img-wrapper" data-event-opts="{{[ [ 'tap',[ [ 'clickGetOut',['$event'] ] ] ] ]}}" wx:if="{{innerStatus===3}}">
+        <image class="image" src="https://imgcdn.huanjutang.com/file/2021/04/07/39facb2bcb6bc392b25aa4b539cd6a18.png"></image>
+        <view class="paper-text">已领完</view>
+    </view>
+</view>

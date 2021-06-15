@@ -1,0 +1,5 @@
+<view class="cricle-share-btn" style="{{'bottom: '+bottom+'rpx; right: '+right+'rpx;'}}">
+    <button bindtap="__e" class="share btn" data-event-opts="{{[ [ 'tap',[ [ 'shareHandle',['$event'] ] ] ] ]}}" data-toggle="open" openType="share">
+        <text class="iconnew new-fenxiang8 fz-21"></text>
+    </button>
+</view>

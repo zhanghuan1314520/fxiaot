@@ -1,0 +1,6 @@
+<view class="checkbox-list">
+    <view catchtap="__e" class="{{[true?'checkbox-list__item':'',item.isChecked?'checkbox-list__item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'clickHandle',[index] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+        <text class="checkbox-list__item-text">{{''+item.text+''}}</text>
+        <checkbox checked="{{item.isChecked}}" class="checkbox-list__item-button" color="#2D8CF0"></checkbox>
+    </view>
+</view>

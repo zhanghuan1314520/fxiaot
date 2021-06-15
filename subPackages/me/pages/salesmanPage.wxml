@@ -1,0 +1,20 @@
+<view class="salesman">
+    <view class="salesman-top" style="{{'background-image:'+'url('+bgImg+')'+';'}}">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="ef1fccf2-1" vueSlots="{{['default']}}">{{''+projectName+'-顾问之家'}}</busi-nav-header>
+        <salesman-info bind:__l="__l" greetings="{{greetings}}" salesManData="{{salesManData}}" vueId="ef1fccf2-2"></salesman-info>
+        <salesman-data bind:__l="__l" class="vue-ref" data-ref="salesmanDataRef" scoreData="{{scoreData}}" vueId="ef1fccf2-3"></salesman-data>
+        <activity-rank bind:__l="__l" rankData="{{salesManData.project}}" vueId="ef1fccf2-4"></activity-rank>
+        <view class="bg-gradient"></view>
+    </view>
+    <entries bind:__l="__l" entriesData="{{salesManData.tops}}" vueId="ef1fccf2-5"></entries>
+    <view class="advertising" wx:if="{{advBannerList.list.length}}">
+        <base-banner bind:__l="__l" bind:swiperNavHandle="__e" config="{{advBannerList.config}}" data-event-opts="{{[ [ '^swiperNavHandle',[ ['swiperNavHandle'] ] ] ]}}" dataApi="{{advBannerList.list}}" height="{{180}}" source="salesmanPage" vueId="ef1fccf2-6"></base-banner>
+    </view>
+    <white-space bind:__l="__l" color="#f7f7f7" vueId="ef1fccf2-7" wx:if="{{commonToolsData.length}}"></white-space>
+    <common-tools bind:__l="__l" projectName="{{salesManData.project.project_name}}" toolsData="{{commonToolsData}}" vueId="ef1fccf2-8" wx:if="{{commonToolsData.length}}"></common-tools>
+    <white-space bind:__l="__l" color="#f7f7f7" vueId="ef1fccf2-9" wx:if="{{salesToolsData.length}}"></white-space>
+    <sales-tools bind:__l="__l" toolsData="{{salesToolsData}}" vueId="ef1fccf2-10" wx:if="{{salesToolsData.length}}"></sales-tools>
+    <white-space bind:__l="__l" color="#f7f7f7" vueId="ef1fccf2-11"></white-space>
+    <salesman-college bannerList="{{bannerList}}" bind:__l="__l" collegeList="{{collegeList}}" vueId="ef1fccf2-12" wx:if="{{showCollegeArticle}}"></salesman-college>
+    <surprise-modal bind:__l="__l" bind:success="__e" class="vue-ref" data-event-opts="{{[ [ '^success',[ ['createSurpriseFlag'] ] ] ]}}" data-ref="surpriseModal" vueId="ef1fccf2-13"></surprise-modal>
+</view>

@@ -1,0 +1,54 @@
+<view class="points">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="3f4148b6-1" vueSlots="{{['default']}}">置业顾问-活跃度明细</busi-nav-header>
+        <view class="user-info">
+            <view class="info">
+                <image class="avatar" src="{{baseInfo.user.avatar_url||'https://imgcdn.huanjutang.com/assets/img/2021122191988081.png'}}"></image>
+                <view class="name-box">
+                    <view class="name">{{''+(baseInfo.user.name||'--')+''}}</view>
+                    <view class="current-point">当前总排名<text class="num">{{''+(baseInfo.ranking||'')+''}}</text>
+                    </view>
+                </view>
+            </view>
+            <view catchtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'goTaskCenter',['$event'] ] ] ] ]}}" data-name="活跃度明细-立即赚积分" data-type="link">立即赚积分</view>
+        </view>
+        <view class="tip">
+            <block wx:if="{{baseInfo.ranking===1}}">恭喜你，当前第一！快去保持！</block>
+            <block wx:else>
+                <block wx:if="{{baseInfo.next}}">赶超上一名差<text class="orange">{{''+(baseInfo.front.difference||0)+''}}</text>活跃度，下一名还差<text class="orange">{{''+(baseInfo.next.difference||0)+''}}</text>活跃度赶超你</block>
+                <block wx:else>赶超上一名差<text class="orange">{{''+(baseInfo.front.difference||0)+''}}</text>活跃度，快去做任务！</block>
+            </block>
+        </view>
+        <view class="current-activity">
+            <view class="activity-info">
+                <view class="label">当前活跃度</view>
+                <view class="num">{{''+(baseInfo.liveness||0)+''}}</view>
+                <view class="sub">（近30天积分总和）</view>
+                <base-prompt arrowLeft="286rpx" bind:__l="__l" bottom="72rpx" left="-280rpx" text="近30天指从昨天开始计算往前推30天" vueId="3f4148b6-2" vueSlots="{{['default']}}" width="400rpx">
+                    <view class="iconnew new-xianxing-shuoming"></view>
+                </base-prompt>
+            </view>
+            <view bindtap="__e" class="activity-link" data-content="活跃度明细-特权介绍" data-event-opts="{{[ [ 'tap',[ [ 'goPrivilegePage',['$event'] ] ] ] ]}}" data-name="特权介绍" data-type="link">
+                <text class="text">达到一定活跃度可获得对应特权服务</text>
+                <text class="text golden">特权介绍</text>
+                <text class="iconnew new-tongyong-gengduo"></text>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="title">活跃度明细（近30天获得积分）</view>
+        <view class="detail">
+            <view class="process" wx:for="{{$root.l0}}" wx:key="index">
+                <view class="label">{{''+item[$orig].day+''}}</view>
+                <view class="value-box">
+                    <view class="value" style="{{'width:'+item.m0+';'}}">
+                        <text class="text" style="{{'color:'+(item[$orig].yesterday_points<=0?'rgba(0, 0, 0, 0.35)':'#fff')+';'+'position:'+(item[$orig].yesterday_points<=20&&item[$orig].yesterday_points>0?'':'absolute')+';'}}">{{''+item[$orig].yesterday_points+''}}</text>
+                    </view>
+                </view>
+            </view>
+            <busi-bottom-line bind:__l="__l" vueId="3f4148b6-3" vueSlots="{{['default']}}" wx:if="{{!loading&&list.length}}">没有更多了 ~</busi-bottom-line>
+            <empty bind:__l="__l" image="https://imgcdn.huanjutang.com/file/2021/01/07/81f44a312a7ed98aa13c4977c2f907a8.png" text="无活跃度明细" vueId="3f4148b6-4" wx:if="{{!loading&&!list.length}}"></empty>
+            <busi-loading bind:__l="__l" loading="{{loading}}" vueId="3f4148b6-5"></busi-loading>
+        </view>
+    </view>
+</view>

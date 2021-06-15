@@ -1,0 +1,16 @@
+.nodata {
+    padding-top: 300rpx;
+    text-align: center;
+}
+
+.nodata .image {
+    margin-bottom: 54rpx;
+    width: 322rpx;
+    display: inline-block;
+}
+
+.nodata .text {
+    font-size: 32rpx;
+    line-height: 40rpx;
+    color: rgba(0,0,0,.45);
+}

@@ -1,0 +1,81 @@
+.box-subject {
+    box-sizing: border-box;
+    width: 676rpx;
+    background: #fff;
+    border-radius: 6px;
+    padding: 54rpx 32rpx 58rpx;
+    margin: 0 auto;
+    position: relative;
+}
+
+.box-subject.view {
+    padding-bottom: 32rpx;
+}
+
+.box-subject.view.num1 {
+    padding-top: 0;
+}
+
+.box-subject .image-pin {
+    position: absolute;
+    left: 72rpx;
+    bottom: -68rpx;
+    width: 530rpx;
+    height: 94rpx;
+    z-index: 12;
+}
+
+.box-subject .context {
+    position: relative;
+}
+
+.box-subject .context .image-remark {
+    width: 32rpx;
+    height: 32rpx;
+    position: relative;
+    top: 4rpx;
+    margin-left: 8rpx;
+    z-index: 102;
+}
+
+.box-subject .context .box-index {
+    position: absolute;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213221055548081.png) no-repeat;
+    background-size: cover;
+    width: 66rpx;
+    height: 46rpx;
+    top: -71rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-subject .context .box-index .index-label {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #c15f24;
+    position: relative;
+    left: -5.5rpx;
+}
+
+.box-subject .context .type-label {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40rpx;
+    padding: 0rpx 14rpx;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 40rpx;
+    background: #2d8cf0;
+    border-radius: 4rpx;
+    margin-right: 16rpx;
+    position: relative;
+    top: -3rpx;
+}
+
+.box-subject .context .title {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.75);
+    line-height: 52rpx;
+}

@@ -1,0 +1,21 @@
+<view class="{{[ 'comment-container',[border?'border':''] ]}}">
+    <view class="comment-top">
+        <image bindtap="__e" class="comment-avatar" data-event-opts="{{[ [ 'tap',[ [ 'handleGoUserPage',['$event'] ] ] ] ]}}" src="{{item.avatar_url}}"></image>
+        <text class="comment-name">{{''+item.name+''}}</text>
+        <image class="comment-level" mode="widthFix" src="{{levelMap[item.salesman_grade]}}" wx:if="{{item.sales_man_id}}"></image>
+        <busi-auth-navigator bind:__l="__l" class="connect-b-rect" url="{{'navigateTo-authphone://subPackages/me/pages/chatInterface?user_id='+item.user_id+'&project_id='+item.project_id+'&project_name='+project_name+'&project_img='+cover}}" vueId="6b36fa5c-1" vueSlots="{{['default']}}" wx:if="{{'hangzhou'!=='nanjing'&&item.salesman_grade}}">
+            <text class="connect-btn">
+                <text class="iconnew new-zixun icon-zixun"></text>咨询顾问</text>
+        </busi-auth-navigator>
+    </view>
+    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleContentClick',['$event'] ] ] ] ]}}">
+        <comment-item-content bind:__l="__l" bind:delComment="__e" commentId="{{item.id}}" content="{{item.content}}" data-event-opts="{{[ [ '^delComment',[ ['delCommentHandle'] ] ] ]}}" isNeedDetele="{{true}}" mentions="{{item.to_name}}" sales_man_id="{{item.sales_man_id}}" user_id="{{item.user_id}}" vueId="6b36fa5c-2"></comment-item-content>
+    </view>
+    <view class="comment-bottom">
+        <view class="comment-bottom__left">
+            <text class="comment-bottom__time">{{''+fromTime+''}}</text>
+        </view>
+        <report bind:__l="__l" hideTip="{{hideTip}}" reportId="{{item.id}}" vueId="6b36fa5c-3"></report>
+    </view>
+    <white-space bind:__l="__l" height="24rpx" vueId="6b36fa5c-4"></white-space>
+</view>

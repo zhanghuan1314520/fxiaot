@@ -1,0 +1,5 @@
+<base-layout bind:__l="__l" message="{{message}}" showAvatar="{{false}}" vueId="117ab70a-1" vueSlots="{{['default']}}">
+    <view class="notify-message">
+        <view class="notify-message__content">{{''+message.content+''}}</view>
+    </view>
+</base-layout>

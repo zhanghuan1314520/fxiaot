@@ -1,0 +1,87 @@
+.link-message {
+    position: relative;
+    max-width: 450rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #2d8cf0;
+}
+
+.link-message.sender {
+    float: right;
+    right: 22rpx;
+}
+
+.link-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}
+
+.link-message .url-link {
+    height: 90rpx;
+    text-align: center;
+    color: #2d8cf0;
+    font-size: 30rpx;
+    line-height: 90rpx;
+}
+
+.link-message .text-message__content {
+    padding: 24rpx 24rpx 0;
+}
+
+.text-message {
+    position: relative;
+    display: inline-block;
+    max-width: 450rpx;
+    padding: 24rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #2d8cf0;
+}
+
+.text-message:not(:last-child) {
+    margin-bottom: 32rpx;
+}
+
+.text-message__content {
+    word-break: break-all;
+}
+
+.text-message.sender {
+    float: right;
+    right: 22rpx;
+}
+
+.text-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}
+
+.img-message {
+    position: relative;
+    display: flex;
+    border-radius: 10rpx;
+    width: 460rpx;
+}
+
+.img-message.sender {
+    right: 22rpx;
+    float: right;
+}
+
+.img-message.receive {
+    left: 22rpx;
+    color: #606266;
+    background: #fff;
+}
+
+.img-message__img {
+    display: block;
+    width: 460rpx;
+    height: 288rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}

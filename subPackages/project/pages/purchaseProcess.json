@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "购房流程",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "purchase-process-data": "/subPackages/project/pages/component/hangzhou/purchaseProcessData/PurchaseProcess",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon"
+    }
+}

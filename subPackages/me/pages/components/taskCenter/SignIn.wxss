@@ -1,0 +1,136 @@
+.sign-in-box {
+    position: relative;
+    height: 286rpx;
+}
+
+.sign-in {
+    position: absolute;
+    top: -128rpx;
+    left: 32rpx;
+    padding: 32rpx;
+    width: 686rpx;
+    height: 366rpx;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0rpx 8rpx 20rpx 0rpx rgba(0,0,0,.1);
+    border-radius: 20rpx;
+    z-index: 2;
+}
+
+.sign-in__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sign-in__top .text {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+}
+
+.sign-in__top .text .blue-color {
+    color: #2d8cf0;
+}
+
+.sign-in__top .desc {
+    font-size: 24rpx;
+    color: #96989e;
+    position: relative;
+    bottom: 1rpx;
+}
+
+.sign-in__main {
+    padding-top: 64rpx;
+}
+
+.sign-in__form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item {
+    position: relative;
+}
+
+.form-item .score-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 68rpx;
+    height: 96rpx;
+    background: #efefef;
+    border-radius: 4rpx;
+}
+
+.form-item .score-box .score {
+    font-size: 22rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.55);
+    line-height: 24rpx;
+}
+
+.form-item .score-box .icon {
+    margin-top: 12rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.form-item .label {
+    margin-top: 12rpx;
+    font-size: 20rpx;
+    color: rgba(0,0,0,.25);
+    line-height: 28rpx;
+}
+
+.form-item.active .score-box {
+    background: #2d8cf0;
+}
+
+.form-item.active .score {
+    color: #fff;
+}
+
+.form-item.active .label {
+    color: rgba(0,0,0,.85);
+}
+
+.form-item .lucky-bag {
+    position: absolute;
+    top: -52rpx;
+    right: 0;
+    width: 92rpx;
+    height: 52rpx;
+}
+
+.sign-in__bottom {
+    margin-top: 28rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40rpx;
+}
+
+.sign-in__bottom .text {
+    font-size: 28rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 40rpx;
+}
+
+.sign-in__bottom .text .blue-color {
+    margin-left: 12rpx;
+    color: #2f8cef;
+}
+
+.sign-in__bottom .switch-box .text {
+    font-size: 24rpx;
+    color: #96989e;
+    line-height: 34px;
+}
+
+.sign-in__bottom .switch-box switch {
+    margin-right: -24rpx;
+    transform: scale(.64,.57);
+}

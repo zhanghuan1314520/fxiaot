@@ -1,0 +1,472 @@
+.haveSearchBar {
+    padding-top: 0;
+}
+
+.empty_block {
+    height: 100rpx;
+    background: #fff;
+}
+
+.search-bar {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12rpx 24rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.nav-search__line {
+    width: 2rpx;
+    height: 28rpx;
+    background: #d9d9d9;
+}
+
+.search-bar .search-icon {
+    color: #b5b6bb;
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 16rpx;
+}
+
+.search-bar .new-shanchu1 {
+    color: #ccc;
+    font-size: 38rpx;
+    width: 50rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: center;
+}
+
+.search-bar-form .search-type {
+    color: #303237;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.search-type .iconnew {
+    margin-right: 28rpx;
+    margin-left: 6rpx;
+    position: relative;
+    top: 1rpx;
+}
+
+.project-cont {
+    padding: 20rpx 32rpx;
+}
+
+.search-bar-form {
+    flex: 1;
+    height: 76rpx;
+    border-radius: 38rpx;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 36rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 20rpx 0 hsla(0,0%,92.5%,.5);
+    border-radius: 8rpx;
+    border: 2rpx solid #ededed;
+}
+
+.search-input-placeholder {
+    line-height: 76rpx;
+    height: 76rpx;
+    color: #b5b6bb;
+}
+
+.search-bar-input {
+    flex: 1;
+    height: 76rpx;
+    color: #303237;
+}
+
+.search-bar-input,.search-btn {
+    line-height: 76rpx;
+    font-size: 28rpx;
+}
+
+.search-btn {
+    color: #0d78f7;
+    margin-left: 20rpx;
+}
+
+.select-options {
+    position: absolute;
+    background: #fff;
+    z-index: 333;
+    min-width: 184rpx;
+    left: 24rpx;
+    top: 104rpx;
+    box-shadow: 0 4px 8px 0 rgba(21,24,45,.05);
+    border: 2rpx solid #dfdfdf;
+    border-radius: 14rpx;
+    color: #303237;
+}
+
+.select-options .select-options_item:last-child {
+    border: none;
+}
+
+.select-options.show {
+    animation: show .2s;
+    opacity: 1;
+    display: block;
+}
+
+.select-options.hide {
+    animation: hide .2s;
+    opacity: 0;
+    display: none;
+}
+
+.select-options_item {
+    height: 84rpx;
+    line-height: 84rpx;
+    margin: 0 36rpx;
+    border-bottom: 2rpx solid rgba(21,24,45,.03);
+    box-sizing: border-box;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.select-options_item.active {
+    color: #2f8cef;
+}
+
+.select-options_triangle {
+    border-bottom: 10rpx solid #dfdfdf;
+    top: -10rpx;
+}
+
+.select-options_triangle,.select-options_triangle_cover {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-left: 12rpx solid transparent;
+    border-right: 12rpx solid transparent;
+}
+
+.select-options_triangle_cover {
+    border-bottom: 10rpx solid #fff;
+    top: -8rpx;
+}
+
+@-webkit-keyframes show {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes show {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes hide {
+    from {
+        display: block;
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes hide {
+    from {
+        display: block;
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.history {
+    padding: 30rpx 32rpx 10rpx 0rpx;
+    margin-left: 32rpx;
+}
+
+.history .head {
+    overflow: hidden;
+    padding-bottom: 20rpx;
+    line-height: 38rpx;
+}
+
+.history .head .float-right {
+    float: right;
+}
+
+.history .list {
+    overflow: hidden;
+}
+
+.history .list .tags {
+    padding: 0 16rpx;
+    line-height: 52rpx;
+    background: rgba(48,55,64,.05);
+    border-radius: 4rpx;
+    margin: 0 16rpx 20rpx 0;
+    float: left;
+    color: #606266;
+    font-size: 28rpx;
+}
+
+.building_nofind {
+    text-align: center;
+    font-size: 26rpx;
+    color: #96989e;
+    margin-top: 40rpx;
+}
+
+.addBuilding {
+    margin-top: 24rpx;
+    color: #2d8cf0;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBuilding>.iconnew {
+    font-size: 28rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.head-color {
+    width: 166rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+    border-radius: 4rpx;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.title-text {
+    position: absolute;
+    left: 32rpx;
+}
+
+.head-color .fz-14,.title-text .fz-14 {
+    color: #96989e;
+}
+
+.keyword-index {
+    overflow: hidden;
+}
+
+.keyword-index .keyword-index-list {
+    display: block;
+    padding: 20rpx 0;
+    margin: 0 32rpx;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid rgba(21,24,45,.05);
+    overflow: hidden;
+}
+
+.keyword-index .keyword-index-list.keyword-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 24rpx 32rpx;
+}
+
+.keyword-index-list.keyword-cont .fz-14 {
+    color: #303237;
+}
+
+.keyword-index-list.keyword-cont .iconnew {
+    color: #b5b6bb;
+}
+
+.keyword-index-list .top {
+    margin-bottom: 10rpx;
+    line-height: 50rpx;
+    overflow: hidden;
+}
+
+.keyword-index-list .top .title {
+    width: 320rpx;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.keyword-index-list .top .status {
+    float: right;
+    width: 140rpx;
+    text-align: right;
+    overflow: hidden;
+}
+
+.keyword-index-list .top .alias {
+    float: left;
+}
+
+.keyword-index-list .bottom {
+    overflow: hidden;
+}
+
+.keyword-index-list .bottom .address {
+    float: left;
+    max-width: 440rpx;
+}
+
+.keyword-index-list .bottom .price {
+    float: right;
+}
+
+.brand-list {
+    padding: 24rpx 0;
+    margin: 0 32rpx;
+    border-bottom: 1rpx solid rgba(21,24,45,.05);
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.brand-info,.brand-list {
+    display: flex;
+    align-items: center;
+}
+
+.brand-name {
+    color: #383f51;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.brand-image {
+    width: 32rpx;
+    height: 28rpx;
+    margin-left: 10rpx;
+}
+
+.brand-logo {
+    width: 214rpx;
+    height: 156rpx;
+    border-radius: 10rpx;
+    margin-right: 26rpx;
+    border: 1rpx solid #edeff2;
+}
+
+.brand-entry {
+    width: 126rpx;
+    height: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.recommend-title {
+    color: #303237;
+    font-size: 28rpx;
+    box-sizing: border-box;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+
+.bottom-logo {
+    margin-right: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #fff;
+}
+
+.bottom-logo image {
+    width: 88rpx;
+    height: 88rpx;
+    margin-right: 30rpx;
+}
+
+.bottom-logo view {
+    color: #b5b6bb;
+    font-size: 24rpx;
+}
+
+.bottom-logo view text {
+    display: block;
+}
+
+.bottom-logo view text:first-child {
+    margin-bottom: 6rpx;
+}
+
+.search-content_box {
+    min-height: calc(100vh - 248rpx);
+}
+
+.search-banner,.search-banner swiper {
+    height: 150rpx;
+}
+
+.search-banner swiper-item {
+    position: relative;
+}
+
+.search-banner button {
+    border-radius: 0;
+}
+
+.slide-image {
+    width: 100%;
+    max-width: 100%;
+    height: 150rpx;
+}
+
+.advert {
+    font-size: 18rpx;
+    line-height: 26rpx;
+    text-align: center;
+    background: rgba(0,0,0,.3);
+    width: 50rpx;
+    height: 26rpx;
+    position: absolute;
+    right: 20rpx;
+    bottom: 15rpx;
+    z-index: 222;
+    border-radius: 1rpx;
+    opacity: .4;
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "搜索",
+    "navigationBarBackgroundColor": "#2D8CF0",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "article-style": "/components/articleStyle",
+        "search-bar": "/subPackages/news/components/SearchBar"
+    }
+}

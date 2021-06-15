@@ -1,0 +1,301 @@
+<view class="page">
+    <cover-view class="propertyData" hidden="{{!(toggle!=4)}}">
+        <cover-view class="propertyData-top">
+            <cover-view bindtap="__e" class="{{[ 'top-box '+(toggle==item.id?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['$0'],[ [ ['tabData','id',item.id,'id'] ] ] ] ] ] ]}}" data-name="{{item.text}}" wx:for="{{tabData}}" wx:for-index="__i0__" wx:key="id">
+                <cover-view class="top-btn-text">{{''+item.text+''}}</cover-view>
+                <cover-view class="line" wx:if="{{toggle==item.id}}"></cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <view class="propertyData" hidden="{{!(toggle==4)}}">
+        <view class="propertyData-top">
+            <view bindtap="__e" class="{{[ 'top-box '+(toggle==item.id?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['$0'],[ [ ['tabData','id',item.id,'id'] ] ] ] ] ] ]}}" data-name="{{item.text}}" wx:for="{{tabData}}" wx:for-index="__i1__" wx:key="id">
+                <view class="top-btn-text">{{''+item.text+''}}</view>
+                <view class="line" wx:if="{{toggle==item.id}}"></view>
+            </view>
+        </view>
+    </view>
+    <view class="h-100"></view>
+    <block wx:if="{{toggle==1}}">
+        <view class="tools">
+            <view class="tabs">
+                <view bindtap="__e" class="{{[ 'tab '+(tabOne?'active-tab':'') ]}}" data-content="交易数据" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['tabOne',true] ] ] ] ]}}" data-name="实时数据">
+                    <view class="tab-text">实时数据</view>
+                    <view class="icon-rote" wx:if="{{tabOne}}"></view>
+                </view>
+                <view bindtap="__e" class="{{[ 'tab '+(tabOne?'':'active-tab') ]}}" data-content="交易数据" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['tabOne',false] ] ] ] ]}}" data-name="历史成交量" wx:if="{{historyChartData.timeLine.length>0}}">
+                    <view class="tab-text">历史成交量</view>
+                    <view class="icon-rote" wx:if="{{!tabOne}}"></view>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{tabOne}}">
+            <view class="title mb-20">
+                <view class="title-left">商品房成交量<text class="date-value">(今日)</text>
+                </view>
+                <view class="title-right">
+                    <view class="sub-title">单位: 套</view>
+                </view>
+            </view>
+            <view class="real-time-data">
+                <view class="data-box-item" wx:for="{{saleStatRealTimeData.new_data}}" wx:key="index">
+                    <view class="unit" wx:if="{{item.unit}}">{{''+item.unit+''}}</view>
+                    <view class="value">{{''+item.num+''}}</view>
+                    <view class="label">{{''+item.text+''}}</view>
+                </view>
+            </view>
+            <view class="title mb-20 mt-11">
+                <view class="title-left">二手房成交量<text class="date-value">{{'('+todayOrYesterday+')'}}</text>
+                </view>
+                <view class="title-right">
+                    <view class="sub-title">单位: 套</view>
+                </view>
+            </view>
+            <view class="real-time-data">
+                <view class="data-box-item yellow-bg" wx:for="{{saleStatRealTimeData.ershou_data}}" wx:key="index">
+                    <view class="unit" wx:if="{{item.unit}}">{{''+item.unit+''}}</view>
+                    <view class="value">{{''+item.num+''}}</view>
+                    <view class="label">{{''+item.text+''}}</view>
+                </view>
+            </view>
+            <view class="update-time">{{'更新时间：'+(saleStatRealTimeData.time||updateTime)+''}}</view>
+        </block>
+        <block wx:else>
+            <view class="title mb-20">
+                <view class="title-left">成交套数</view>
+                <view class="title-right">
+                    <view class="sub-title">
+                        <text bindtap="__e" class="{{[chartStatus.one?'active':'']}}" data-content="成交套数" data-event-opts="{{[ [ 'tap',[ [ 'changeDateType',[0,true,1,'ec-Canvas1'] ] ] ] ]}}" data-name="按周查看">按周查看</text>
+                        <text bindtap="__e" class="{{[chartStatus.one?'':'active']}}" data-content="成交套数" data-event-opts="{{[ [ 'tap',[ [ 'changeDateType',[0,false,1,'ec-Canvas1'] ] ] ] ]}}" data-name="按月查看">按月查看</text>
+                    </view>
+                </view>
+            </view>
+            <view class="chart-box">
+                <canvas canvasId="ec-Canvas1" id="ec-Canvas1" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+            <view class="title mb-20 mt-50">
+                <view class="title-left">商品房</view>
+                <view class="title-right">
+                    <view class="sub-title">
+                        <text bindtap="__e" class="{{[chartStatus.two?'active':'']}}" data-content="商品房" data-event-opts="{{[ [ 'tap',[ [ 'changeDateType',[1,true,2,'ec-Canvas2'] ] ] ] ]}}" data-name="按周查看">按周查看</text>
+                        <text bindtap="__e" class="{{[chartStatus.two?'':'active']}}" data-content="商品房" data-event-opts="{{[ [ 'tap',[ [ 'changeDateType',[1,false,2,'ec-Canvas2'] ] ] ] ]}}" data-name="按月查看">按月查看</text>
+                    </view>
+                </view>
+            </view>
+            <view class="chart-box">
+                <canvas canvasId="ec-Canvas2" id="ec-Canvas2" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+            <view class="title mb-20 mt-50">
+                <view class="title-left">二手房</view>
+                <view class="title-right">
+                    <view class="sub-title">
+                        <text bindtap="__e" class="{{[chartStatus.three?'active':'']}}" data-content="二手房" data-event-opts="{{[ [ 'tap',[ [ 'changeDateType',[2,true,3,'ec-Canvas3'] ] ] ] ]}}" data-name="按周查看">按周查看</text>
+                        <text bindtap="__e" class="{{[chartStatus.three?'':'active']}}" data-content="二手房" data-event-opts="{{[ [ 'tap',[ [ 'changeDateType',[2,false,3,'ec-Canvas3'] ] ] ] ]}}" data-name="按月查看">按月查看</text>
+                    </view>
+                </view>
+            </view>
+            <view class="chart-box mb-40">
+                <canvas canvasId="ec-Canvas3" id="ec-Canvas3" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+        </block>
+    </block>
+    <block wx:if="{{toggle==2}}">
+        <view class="tools">
+            <view class="tabs">
+                <view bindtap="__e" class="{{[ 'tab '+(tabTwo?'active-tab':'') ]}}" data-content="最新开盘" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['tabTwo',true] ] ] ] ]}}" data-name="实时数据">
+                    <view class="tab-text">实时数据</view>
+                    <view class="icon-rote" wx:if="{{tabTwo}}"></view>
+                </view>
+                <view bindtap="__e" class="{{[ 'tab '+(tabTwo?'':'active-tab') ]}}" data-content="最新开盘" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['tabTwo',false] ] ] ] ]}}" data-name="数据走势">
+                    <view class="tab-text">数据走势</view>
+                    <view class="icon-rote" wx:if="{{!tabTwo}}"></view>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{tabTwo}}">
+            <view class="title mb-20">
+                <view class="title-left">近 30 天数据</view>
+                <view class="title-right">
+                    <view class="sub-title"></view>
+                </view>
+            </view>
+            <view class="real-time-data">
+                <view class="data-box-item" wx:for="{{preSalaRealTimeData.pre_order_data}}" wx:key="index">
+                    <view class="unit" wx:if="{{item.unit}}">{{''+item.unit+''}}</view>
+                    <view class="value">{{''+item.num+''}}</view>
+                    <view class="label">{{''+item.text+''}}</view>
+                </view>
+                <view class="data-box-item green-bg mt-11" wx:for="{{preSalaRealTimeData.result_data}}" wx:key="index">
+                    <view class="unit" wx:if="{{item.unit}}">{{''+item.unit+''}}</view>
+                    <view class="value">{{''+item.num+''}}</view>
+                    <view class="label">{{''+item.text+''}}</view>
+                </view>
+            </view>
+            <view class="update-time">{{'更新时间：'+(preSalaRealTimeData.time||updateTime)+''}}</view>
+        </block>
+        <block wx:else>
+            <view class="title mb-20">
+                <view class="title-left">开盘数量</view>
+                <view class="title-right">
+                    <view class="sub-title">单位:个</view>
+                </view>
+            </view>
+            <view class="chart-box">
+                <canvas canvasId="ec-Canvas4" id="ec-Canvas4" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+            <view class="title mb-20 mt-50">
+                <view class="title-left">报名人数</view>
+                <view class="title-right">
+                    <view class="sub-title">单位:人</view>
+                </view>
+            </view>
+            <view class="chart-box">
+                <canvas canvasId="ec-Canvas5" id="ec-Canvas5" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+            <view class="title mb-20 mt-50">
+                <view class="title-left">开盘房源</view>
+                <view class="title-right">
+                    <view class="sub-title">单位: 套</view>
+                </view>
+            </view>
+            <view class="chart-box">
+                <canvas canvasId="ec-Canvas6" id="ec-Canvas6" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+            <view class="title mb-20 mt-50">
+                <view class="title-left">已摇号楼盘</view>
+                <view class="title-right">
+                    <view class="sub-title">单位: 套</view>
+                </view>
+            </view>
+            <view class="chart-box mb-40">
+                <canvas canvasId="ec-Canvas7" id="ec-Canvas7" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+        </block>
+    </block>
+    <block wx:if="{{toggle==3}}">
+        <view class="tools">
+            <view class="tabs">
+                <view bindtap="__e" class="{{[ 'tab '+(tabThree?'active-tab':'') ]}}" data-content="二手房" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['tabThree',true] ] ] ] ]}}" data-name="实时数据">
+                    <view class="tab-text">实时数据</view>
+                    <view class="icon-rote" wx:if="{{tabThree}}"></view>
+                </view>
+                <view bindtap="__e" class="{{[ 'tab '+(tabThree?'':'active-tab') ]}}" data-content="二手房" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['tabThree',false] ] ] ] ]}}" data-name="数据走势">
+                    <view class="tab-text">数据走势</view>
+                    <view class="icon-rote" wx:if="{{!tabThree}}"></view>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{tabThree}}">
+            <view class="title mb-20">
+                <view class="title-left">本月数据</view>
+                <view class="title-right">
+                    <view class="sub-title"></view>
+                </view>
+            </view>
+            <view class="real-time-data">
+                <view class="data-box-item" wx:for="{{oldSaleRealTimeData.real_time_data}}" wx:key="index">
+                    <view class="unit" wx:if="{{item.unit}}">{{''+item.unit+''}}</view>
+                    <view class="value">{{''+item.num+''}}</view>
+                    <view class="label">{{''+item.text+''}}</view>
+                </view>
+            </view>
+            <view class="update-time">{{'更新时间：'+(oldSaleRealTimeData.time||updateTime)+''}}</view>
+        </block>
+        <block wx:else>
+            <view class="title mb-20">
+                <view class="title-left">价格走势</view>
+                <view class="title-right">
+                    <view class="sub-title">均价（元/㎡）</view>
+                </view>
+            </view>
+            <view class="chart-box">
+                <canvas canvasId="ec-Canvas11" id="ec-Canvas11" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+            <view class="title mb-20 mt-50">
+                <view class="title-left">供需走势</view>
+                <view class="title-right">
+                    <view class="sub-title">单位: 套</view>
+                </view>
+            </view>
+            <view class="chart-box mb-40">
+                <canvas canvasId="ec-Canvas12" id="ec-Canvas12" style="{{'width:'+cWidth*2+'rpx'+';'+'height:'+cHeight*2+'rpx'+';'}}"></canvas>
+            </view>
+        </block>
+    </block>
+    <block wx:if="{{toggle==4}}">
+        <view class="update-time2">{{'更新时间:'+updateTime+''}}</view>
+        <view class="white-bg search-box">
+            <navigator bindtap="__e" class="search-bar" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="土拍搜索" data-type="link" hoverClass="none" url="/subPackages/project/pages/soilSearch">
+                <image class="weui-icon-search gray-color" src="https://imgcdn.huanjutang.com/image/2020/03/30/080ba61fe07a0a13d309a5864f496810.png"></image>
+                <input class="search-input gray-96 fz-14" disabled="disabled" placeholder="{{placeHolder}}" placeholderClass="search-input-place" type="text"></input>
+            </navigator>
+        </view>
+        <view class="flex-top">
+            <view class="filter-cont-fix">
+                <view class="filter-cont">
+                    <view bindtap="__e" class="{{[ 'filter-line '+(changeIndex==1?'activeTab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeFilter',[1] ] ] ] ]}}">
+                        <text class="{{[ 'fz-14 text '+(filterParams['_0_']?'active':'') ]}}">{{''+areaValue+''}}</text>
+                        <text class="fz-10 iconnew new-zhankai"></text>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'filter-line '+(changeIndex==2?'activeTab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeFilter',[2] ] ] ] ]}}">
+                        <text class="{{[ 'fz-14 text '+(filterParams['_1_']?'active':'') ]}}">{{''+priceValue+''}}</text>
+                        <text class="fz-10 iconnew new-zhankai"></text>
+                    </view>
+                    <view bindtap="__e" class="{{[ 'filter-line '+(changeIndex==3?'activeTab':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeFilter',[3] ] ] ] ]}}">
+                        <text class="{{[ 'fz-14 text '+(filterParams['_2_']?'active':'') ]}}">{{''+floorPriceValue+''}}</text>
+                        <text class="fz-10 iconnew new-zhankai"></text>
+                    </view>
+                </view>
+                <view class="container-filter" wx:if="{{changeIndex!='none'}}">
+                    <view class="item-cont clearfloat" wx:if="{{changeIndex==1}}">
+                        <text class="title fz-17">区域</text>
+                        <view bindtap="__e" class="{{[ 'line fz-13 '+(val.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'areaOptions',[valIndex] ] ] ] ]}}" wx:for="{{areaData}}" wx:for-index="valIndex" wx:for-item="val" wx:key="valIndex">{{''+val.key+''}}</view>
+                    </view>
+                    <view catchtouchmove="stopMove" class="item-cont" wx:if="{{changeIndex==2}}">
+                        <view class="title fz-17">分类</view>
+                        <view class="item-box clearfloat">
+                            <view bindtap="__e" class="{{[ 'line fz-13 '+(val.is_toggle?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'houseTypeChange',[index] ] ] ] ]}}" wx:for="{{houseType}}" wx:for-item="val" wx:key="index">{{''+val.key+''}}</view>
+                        </view>
+                    </view>
+                    <view class="item-cont" wx:if="{{changeIndex==3}}">
+                        <view bindtap="__e" class="{{[ 'flex_layout_b','item-line fz-14 '+(priceIndex==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'floorPriceChange',[index] ] ] ] ]}}" wx:for="{{floorPrice}}" wx:key="index">
+                            <view>{{item.tag_name}}</view>
+                            <text class="fz-18 blue-color new-gougou iconnew normal-weight" wx:if="{{priceIndex==index}}"></text>
+                        </view>
+                    </view>
+                    <view catchtouchmove="stopMove" class="soil-bottom-btn">
+                        <view bindtap="__e" class="left fz-16" data-event-opts="{{[ [ 'tap',[ [ 'soilReset',['$event'] ] ] ] ]}}">重置</view>
+                        <view bindtap="__e" class="right fz-16" data-event-opts="{{[ [ 'tap',[ [ 'soilSubmit',['$event'] ] ] ] ]}}">确定</view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="soil-hide-bg" data-event-opts="{{[ [ 'tap',[ [ 'closeFilter',['$event'] ] ] ] ]}}" style="{{changeIndex!='none'?'height:'+sysHeight+'px':''}}" wx:if="{{changeIndex!='none'}}"></view>
+            </view>
+        </view>
+        <soil-item bind:__l="__l" bind:updateSoilData="__e" data-event-opts="{{[ [ '^updateSoilData',[ [ '__set_sync',['$0','soilData','$event'],[''] ] ] ],[ '^updateSoilData',[ [ '__set_sync',['$0','soilData','$event'],[''] ] ] ] ]}}" soilData="{{soilData}}" vueId="2f2056b6-1"></soil-item>
+        <view class="project_box_list" wx:if="{{soilData.length==0}}">
+            <image mode="aspectFill" src="https://imgcdn.huanjutang.com/assets/img/20190802/5d43d89c0eb9e.png"></image>
+            <view class="text">暂无内容</view>
+        </view>
+        <view class="guide-box">
+            <toast bind:__l="__l" class="vue-ref" data-ref="toast" position="right" showClose="{{true}}" text="{{guideImage}}" toastType="callout" vertical="top" vueId="2f2056b6-2"></toast>
+        </view>
+    </block>
+    <view class="footer" wx:if="{{toggle!=4}}">
+        <view class="brand-info">
+            <view class="qr-code" wx:if="{{enableShare}}">
+                <image src="https://imgcdn.huanjutang.com/assets/img/2019425187558081.jpg"></image>
+            </view>
+            <view class="info-text" data-left="{{enableShare}}">
+                <view class="h1">杭州房小团</view>
+                <view class="p">选新房 查摇号 就上房小团</view>
+            </view>
+        </view>
+        <view class="tips-info">
+            <view class="p" wx:for="{{bottomInfo}}" wx:key="index">{{''+item+''}}</view>
+        </view>
+    </view>
+    <busi-share-icon bind:__l="__l" class="vue-ref" data-ref="share" vueId="2f2056b6-3" vueSlots="{{['default']}}" wx:if="{{enableShare}}">
+        <button bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'createPost',['$event'] ] ] ] ]}}" wx:if="{{isSalesMan&&toggle!=4}}"></button>
+        <button class="share" openType="share" wx:else></button>
+    </busi-share-icon>
+</view>

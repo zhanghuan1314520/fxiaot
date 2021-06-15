@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "button-group-list": "/components/BaseFilters/ButtonGroupList",
+        "footer-button": "/components/BaseFilters/FooterButton"
+    }
+}

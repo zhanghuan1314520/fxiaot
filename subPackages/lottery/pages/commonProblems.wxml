@@ -1,0 +1,49 @@
+<view>
+    <view class="page">
+        <view class="top-image">
+            <view class="app-name fz-14 white-color">{{''+programName+''}}</view>
+        </view>
+        <view class="container">
+            <block wx:if="{{commonTools.length>0}}">
+                <view class="container-title">常用工具</view>
+                <view class="tools-box">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$0'],[ [ ['commonTools','',index,'url'] ] ] ] ] ] ]}}" style="{{'background: url('+item.image+') right bottom / 110rpx 110rpx no-repeat'}}" wx:for="{{commonTools}}" wx:key="index">
+                        <view class="item-title">{{''+item.title+''}}</view>
+                        <view class="description fz-11">{{''+item.describe+''}}</view>
+                    </view>
+                </view>
+            </block>
+            <view class="container-title">相关资料下载</view>
+            <view class="download_item">
+                <view class="download_item_content" wx:for="{{data_list}}" wx:key="index">
+                    <view bindtap="__e" class="content_left" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}">
+                        <image class="preview-img" lazyLoad="{{true}}" src="{{item.image}}"></image>
+                        <view class="image-icon">
+                            <text class="new-fangda iconnew white-color fz-16"></text>
+                        </view>
+                    </view>
+                    <view class="content_right">
+                        <text class="name font-bold" wx:if="{{item.name}}">{{''+item.name+''}}</text>
+                        <view class="middle-line">
+                            <text class="text" wx:if="{{item.name}}">(仅供参考)</text>
+                            <view bindtap="__e" class="item_btn" data-event-opts="{{[ [ 'tap',[ [ 'downLoadFileImg',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}">下载图片</view>
+                        </view>
+                        <view bindtap="__e" class="preview-img" data-event-opts="{{[ [ 'tap',[ [ 'previewImg',['$0'],[ [ ['data_list','',index] ] ] ] ] ] ]}}">点击预览大图</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <cover-view class="permissions-settings" wx:if="{{showPermissionsSetting}}">
+        <cover-view class="tips-content fz-18">请开启保存到相册的权限</cover-view>
+        <cover-view class="fz-18 text">开启后需重新点击下载图片按钮</cover-view>
+        <cover-view class="bottom-btn">
+            <cover-view bindtap="__e" class="cancle line fz-18 font-bold" data-event-opts="{{[ [ 'tap',[ [ 'closePermissionsHandle',['$event'] ] ] ] ]}}">取消</cover-view>
+            <button bindopensetting="__e" class="line sure-btn fz-18 font-bold" data-event-opts="{{[ [ 'opensetting',[ [ 'openSetting',['$event'] ] ] ] ]}}" openType="openSetting">
+                <cover-view>去开启</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+    <cover-view class="hide-bg" wx:if="{{showPermissionsSetting}}"></cover-view>
+    <busi-share-icon bind:__l="__l" class="vue-ref" data-ref="share" vueId="25ddaf86-1"></busi-share-icon>
+</view>

@@ -1,0 +1,13 @@
+<view bindtap="__e" class="project data-v-05f26bdd" data-content="{{item.object_name}}" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$event'] ] ] ] ]}}" data-name="楼盘信息" data-type="活动首页" id="{{item.id}}">
+    <view class="wrapper data-v-05f26bdd">
+        <image class="cover data-v-05f26bdd" lazyLoad="{{true}}" mode="aspectFill" src="{{compressCover}}"></image>
+        <text class="name data-v-05f26bdd">{{''+(item.object_name||'')+''}}</text>
+        <text class="count data-v-05f26bdd">{{''+(item.total_vote_number||0)+'票'}}</text>
+        <authorization bind:__l="__l" bind:onSuccess="__e" class="data-v-05f26bdd" data-event-opts="{{[ [ '^onSuccess',[ [ 'handleVote',['$0'],['item'] ] ] ] ]}}" vueId="268e7a98-1" vueSlots="{{['default']}}">
+            <view bindtap="__e" class="{{['data-v-05f26bdd','button',buttonMap[status].className]}}" data-event-opts="{{[ [ 'tap',[ [ 'emptyFunction',['$event'] ] ] ] ]}}" data-name="投票">{{''+buttonMap[status].text+''}}</view>
+        </authorization>
+    </view>
+    <view class="tab data-v-05f26bdd">
+        <text class="text data-v-05f26bdd">{{''+(item.code||1)+'号'}}</text>
+    </view>
+</view>

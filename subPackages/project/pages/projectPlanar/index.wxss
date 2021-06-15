@@ -1,0 +1,399 @@
+page {
+    background: #f7f7f7;
+    min-height: 100vh;
+}
+
+.planar {
+    overflow: hidden;
+}
+
+.planar .planar__aviation {
+    width: 208rpx;
+    height: 64rpx;
+    background: #2d8cf0;
+    box-shadow: 0 0 8rpx 0 rgba(0,0,0,.5);
+    border-radius: 8rpx;
+    color: #fff;
+    line-height: 64rpx;
+    font-weight: 500;
+    font-size: 28rpx;
+    position: absolute;
+    z-index: 2;
+    bottom: 24rpx;
+    left: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.planar .planar__aviation--plane {
+    height: 32rpx;
+    width: 32rpx;
+    margin-right: 12rpx;
+}
+
+.planar__container {
+    height: 600rpx;
+}
+
+.planar__container,.planar__container .planar__stage {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.planar__container .planar__stage {
+    height: 100%;
+    background: #fff;
+}
+
+.planar__container .stage__image {
+    width: 400%;
+    height: 400%;
+    max-width: 400%;
+    transform: translateZ(0) scale(.25);
+    transform-origin: left top;
+}
+
+.planar__container .stage__item {
+    position: absolute;
+    z-index: 1;
+    transform: translate3d(-50%,-50%,0);
+    display: inline-flex;
+    align-items: center;
+    height: 36rpx;
+    line-height: 36rpx;
+    border-radius: 36rpx;
+    background: hsla(0,0%,100%,.86);
+    padding: 0 10rpx;
+    font-size: 22rpx;
+    color: rgba(0,0,0,.85);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.planar__container .stage__item.stage__item-active {
+    z-index: 2;
+    background: #2d8cf0;
+    color: #fff;
+}
+
+.planar__container .stage__item.stage__item-active .stage__item--line {
+    background: #fff;
+}
+
+.planar__container .stage__item .stage__item--line {
+    margin: 0 8rpx;
+    width: 2rpx;
+    height: 18rpx;
+    background: rgba(0,0,0,.85);
+}
+
+.planar__container .planar__share {
+    position: absolute;
+    z-index: 98;
+    right: 40rpx;
+    top: 26rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 83rpx;
+    height: 83rpx;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+}
+
+.planar__container .planar__share .planar__share-icon {
+    font-size: 48rpx;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.planar__container .planar__compass {
+    position: absolute;
+    z-index: 2;
+    top: 26rpx;
+    left: 58rpx;
+    width: 28rpx;
+    height: 50rpx;
+    transition: all 1s ease;
+}
+
+.planar__container .planar__compass .planar__compass-text {
+    position: absolute;
+    top: -32rpx;
+    z-index: 2;
+    line-height: 1;
+    font-size: 24rpx;
+    color: #fff;
+    transition: all 1s ease;
+}
+
+.planar__container .planar__compass .planar__compass-point {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.planar__container .planar__compass .planar__compass-bg {
+    position: absolute;
+    z-index: 1;
+    width: 100rpx;
+    height: 100rpx;
+    left: -36rpx;
+    top: -25rpx;
+}
+
+.planar__container .planar__navbar {
+    position: absolute;
+    z-index: 2;
+    bottom: 24rpx;
+    right: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 46rpx;
+    background: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    padding: 0 4rpx;
+    border-radius: 24rpx;
+    overflow: hidden;
+}
+
+.planar__container .planar__navbar--item {
+    padding: 0 16rpx;
+    color: hsla(0,0%,100%,.8);
+    font-weight: 400rpx;
+    height: 38rpx;
+    background: none;
+    border-radius: 19rpx;
+    font-size: 24rpx;
+    color: #fff;
+    float: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.planar__container .planar__navbar--item.planar__navbar--item-active {
+    padding: 0 16rpx;
+    color: #fff;
+    background: #2d8cf0;
+}
+
+.planar__container .planar__tips {
+    position: absolute;
+    z-index: 3;
+    top: 97rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380rpx;
+    height: 380rpx;
+}
+
+.planar__swiper {
+    padding: 24rpx 0;
+    overflow: hidden;
+}
+
+.planar__swiper .swiper__container {
+    width: 100%;
+    height: 254rpx;
+    overflow: hidden;
+}
+
+.planar__swiper .swiper__item {
+    height: 100%;
+    padding: 0 8rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.planar__swiper .swiper__title {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 28rpx 0 32rpx;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    height: 96rpx;
+    font-size: 36rpx;
+    line-height: 96rpx;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    border-radius: 4rpx 4rpx 0 0;
+}
+
+.planar__swiper .swiper__title::after {
+    position: absolute;
+    content: "";
+    left: 28rpx;
+    bottom: 0;
+    width: 570rpx;
+    height: 1rpx;
+    background: rgba(0,0,0,.07);
+}
+
+.planar__swiper .swiper__list {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 28rpx 0 32rpx;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 0 0 4rpx 4rpx;
+    height: 156rpx;
+    padding-top: 24rpx!important;
+}
+
+.planar__swiper .swiper__list-item {
+    display: flex;
+    float: left;
+    width: 328rpx;
+    height: 40rpx;
+    margin-bottom: 16rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.planar__swiper .swiper__list-item.swiper__list-item-left {
+    width: 242rpx;
+}
+
+.planar__swiper .swiper__list--label {
+    display: inline-block;
+    width: 140rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.planar__swiper .swiper__list--label::after {
+    width: 100%;
+    display: inline-block;
+    content: "";
+}
+
+.planar__swiper .swiper__list--value {
+    flex: 1;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.planar__swiper .swiper__list-item-left .swiper__list--label {
+    width: 84rpx;
+}
+
+.planar__swiper .swiper__empty {
+    width: 100vw;
+    margin-top: 80rpx;
+    font-size: 32rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.25);
+    line-height: 44rpx;
+    text-align: center;
+}
+
+.planar__huxing {
+    padding: 0 32rpx;
+    margin-bottom: 156rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.planar__huxing.planar__huxing-no-bottom {
+    margin-bottom: 0;
+}
+
+.planar__huxing .huxing__title {
+    padding-top: 40rpx;
+    height: 32rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: rgba(0,0,0,.85);
+    line-height: 32rpx;
+}
+
+.planar__huxing .huxing__container {
+    padding-bottom: 40rpx;
+    overflow: hidden;
+}
+
+.planar__huxing .huxing__empty {
+    width: 100%;
+    height: 652rpx;
+    background: #fff;
+    padding-top: 132rpx;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.25);
+    line-height: 44rpx;
+}
+
+.planar__footer {
+    background: #fff;
+    height: 132rpx;
+}
+
+.planar__footer .footer__left {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 152rpx;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.planar__footer .footer__left-icon {
+    margin-top: 20rpx;
+    font-size: 40rpx;
+    line-height: 48rpx;
+    color: rgba(0,0,0,.85);
+}
+
+.planar__footer .footer__left-text {
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    line-height: 36rpx;
+    margin-top: 6rpx;
+}
+
+.planar__footer .footer__right {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 152rpx;
+    padding: 16rpx 32rpx 0 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.planar__footer .footer__right-button {
+    width: 272rpx;
+    height: 100rpx;
+    color: #fff;
+    text-align: center;
+    border-radius: 8rpx;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    font-weight: 700;
+    overflow: hidden;
+}

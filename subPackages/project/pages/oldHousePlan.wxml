@@ -1,0 +1,108 @@
+<view class="{{[ 'house-plan__container',[loading&&initLoading?'skeletons':''] ]}}">
+    <image bindtap="__e" class="house-plan-brana _img" data-event-opts="{{[ [ 'tap',[ [ 'handleToStrategy',['$event'] ] ] ] ]}}" mode="aspectFit" src="https://imgcdn.huanjutang.com/assets/img/20213261732528081.png"></image>
+    <view class="house-plan-title">
+        <view class="house-plan-title-info">全部户型</view>
+        <view bindtap="__e" class="layout-wrap" data-event-opts="{{[ [ 'tap',[ [ 'handleToLayout',['$event'] ] ] ] ]}}" wx:if="{{showLayout}}">
+            <image class="layout-icon _img" src="https://imgcdn.huanjutang.com/assets/img/20213291337518081.png"></image>
+            <text>楼盘总平图</text>
+        </view>
+    </view>
+    <view bindtap="__e" class="opening" data-event-opts="{{[ [ 'tap',[ [ 'handleShowOpening',['$event'] ] ] ] ]}}" wx:if="{{showOpening}}">
+        <image class="opening__icon _img" src="https://imgcdn.huanjutang.com/assets/img/20213261748448081.png" wx:if="{{selOpening}}"></image>
+        <image class="opening__icon _img" src="https://imgcdn.huanjutang.com/assets/img/20213291059198081.png" wx:else></image>
+        <view>只查看本次开盘户型</view>
+    </view>
+    <view class="page swiper-1 mt-28">
+        <view class="top-bar">
+            <scroll-view class="tab-bar-item" scrollX="scroll-x">
+                <view bindtap="__e" class="{{[ 'skeletons-rect','tabBar-line '+( (selOpening?tabList.openingSel:tabList.allSel)==index?'actives2':'' ) ]}}" data-content="楼盘全部户型" data-event-opts="{{[ [ 'tap',[ [ 'switchTab',[index] ] ] ] ]}}" data-name="{{item.text}}" wx:for="{{selOpening?tabList.opening:tabList.all}}" wx:key="index">
+                    <text class="{{[ (selOpening?tabList.openingSel:tabList.allSel)==index?'blacka-color':'graycolor' ]}}">{{''+item.text+'('+item.count+')'}}</text>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="photos">
+            <view class="photos-list" wx:if="{{itemList.length>0}}">
+                <block wx:for="{{itemList}}" wx:key="id">
+                    <view class="photos-line">
+                        <view bindtap="__e" class="photos-line-top" data-content="查看户型图" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0',index],[ [ ['itemList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.name}}">
+                            <view class="left skeletons-rect">
+                                <view class="loader-container">
+                                    <image-loader bind:__l="__l" mode="aspectFill" source="{{item.image}}" styles="{{width:'284rpx',height:'284rpx'}}" vueId="{{'82fad09a-1-'+index}}"></image-loader>
+                                    <view class="loader-container-sellout-wrap" wx:if="{{item.sales_status===3}}">
+                                        <image class="img-bottom-tag-sellout" src="https://imgcdn.huanjutang.com/assets/img/20213251830268081.png"></image>
+                                    </view>
+                                    <image class="loader-container-opening _img" src="https://imgcdn.huanjutang.com/assets/img/20213251451528081.png" wx:if="{{item.is_this}}"></image>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <block wx:if="{{item.is_completed==1}}">
+                                    <view class="title">
+                                        <view class="title-left skeletons-rect">
+                                            <text class="names" wx:if="{{item.num_bed_room&&item.num_living_room&&item.num_rest_room}}">{{''+(item.num_bed_room||'0')+'室'+(item.num_living_room||'0')+'厅'+(item.num_rest_room||'0')+'卫'}}</text>
+                                            <text class="active1" wx:for="{{item.tags}}" wx:for-index="index2" wx:for-item="val" wx:key="index2">{{''+val+''}}</text>
+                                        </view>
+                                        <text class="more iconnew new-tongyong-gengduo"></text>
+                                    </view>
+                                    <view class="price skeletons-rect" wx:if="{{item.price}}">
+                                        <text>{{'约'+item.price+'元/套'}}</text>
+                                    </view>
+                                    <view class="info skeletons-rect">
+                                        <text>{{item.name+'户型'}}</text>
+                                        <text>{{''+(item.outer_square&&item.outer_square!='0'?'建面：'+item.outer_square+'㎡':'')+''}}</text>
+                                    </view>
+                                    <view class="tool-btns _div" wx:if="{{item.voice_url}}">
+                                        <view class="t-btn">
+                                            <image catchtap="__e" class="img shadow-1" data-content="语音讲解播放" data-event-opts="{{[ [ 'tap',[ [ 'handleShowPlayer',['$0'],[ [ ['itemList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.name}}" src="https://imgcdn.huanjutang.com/image/2020/07/29/6d03073b239d2cd05f178672ae0ac788.png" wx:if="{{item.paused}}"></image>
+                                            <image catchtap="__e" class="img shadow-1 playing" data-content="语音讲解暂停" data-event-opts="{{[ [ 'tap',[ [ 'handleStopPlayer',['$0'],[ [ ['itemList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.name}}" src="https://imgcdn.huanjutang.com/image/2020/07/31/f2bd6f8b2d120e3344c08fce44adddec.png" wx:if="{{!item.paused}}"></image>
+                                            <view class="txt">语音讲解</view>
+                                        </view>
+                                        <view catchtap="__e" class="t-btn skeletons-rect" data-content="vr看房" data-event-opts="{{[ [ 'tap',[ [ 'goVrPage',['$0'],[ [ ['itemList','id',item.id] ] ] ] ] ] ]}}" data-name="{{item.name}}" wx:if="{{item.vr_url}}">
+                                            <image class="img shadow-3" src="https://imgcdn.huanjutang.com/image/2020/07/29/1bc8f9a0d6bfe3134069cb8e1aeecee0.png"></image>
+                                            <view class="txt">VR看房</view>
+                                        </view>
+                                    </view>
+                                </block>
+                                <block wx:else>
+                                    <view catchtap="__e" class="fz-15 black-30 font-bold skeletons-rect" data-content="查看户型图" data-event-opts="{{[ [ 'tap',[ [ 'openPreviewImg',[index] ] ] ] ]}}" data-name="{{item.name}}">
+                                        <text class="names mr-14">数据采集中</text>
+                                    </view>
+                                    <view catchtap="__e" class="project skeletons-rect" data-content="查看户型图" data-event-opts="{{[ [ 'tap',[ [ 'openPreviewImg',[index] ] ] ] ]}}" data-name="{{item.name}}">
+                                        <view class="fz-13 gray-96 name">点击查看户型图</view>
+                                        <view class="square fz-13 gray-96"></view>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                        <view class="player-box" hidden="{{!(item.voice_url&&item.showPlayer)}}">
+                            <audio-player autoplay="{{true}}" bind:__l="__l" bind:audioPlayHandler="__e" bind:close="__e" bind:updateCurrent="__e" bind:updatePaused="__e" bind:updateShow="__e" class="vue-ref-in-for" current="{{item.current}}" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showPlayer','$event'],[ [ ['itemList','id',item.id,''] ] ] ] ] ],[ '^updatePaused',[ [ '__set_sync',['$0','paused','$event'],[ [ ['itemList','id',item.id,''] ] ] ] ] ],[ '^updateCurrent',[ [ '__set_sync',['$0','current','$event'],[ [ ['itemList','id',item.id,''] ] ] ] ] ],[ '^audioPlayHandler',[ ['playHandler'] ] ],[ '^close',[ ['closePlayer'] ] ] ]}}" data-ref="{{item.uniqueId}}" paused="{{item.paused}}" show="{{item.showPlayer}}" src="{{item.voice_url}}" title="{{item.name}}" uniqueId="{{item.uniqueId}}" vueId="{{'82fad09a-2-'+index}}"></audio-player>
+                        </view>
+                    </view>
+                    <view class="line"></view>
+                </block>
+            </view>
+            <block wx:else>
+                <view class="nothing-container fz-14 height-level-color" wx:if="{{!loading}}">暂无内容</view>
+                <view class="full-screen" wx:else>
+                    <view class="full-screen-small" id="spinner"></view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view bindtap="__e" class="statement" data-event-opts="{{[ [ 'tap',[ [ 'handleToStatement',['$event'] ] ] ] ]}}" wx:if="{{!initLoading}}">
+        <text>注：户型图、VR、总平图、周边配套等信息均是对本项目所做的示意表现，仅供参考示意，实际情况以商品房买卖合同为准。</text>
+        <view class="iconnew new-xianxing-shuoming statement-icon"></view>
+    </view>
+    <recommed-sales bind:__l="__l" projectId="{{project_id}}" vueId="82fad09a-3"></recommed-sales>
+    <view class="empty-box _div"></view>
+    <view class="photos-content">
+        <block wx:if="{{is_sales_man!=2}}">
+            <view bindtap="__e" class="photos-upfile-line" data-event-opts="{{[ [ 'tap',[ [ 'uploadProjectImg',['$event'] ] ] ] ]}}" data-name="置业顾问上传图片" wx:if="{{username}}">
+                <view class="photos-upfile fz-16">置业顾问上传图片</view>
+            </view>
+            <button bindgetuserinfo="__e" class="photos-upfile-line" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" wx:else>
+                <view class="photos-upfile fz-15">置业顾问上传图片</view>
+            </button>
+        </block>
+        <footer-btns bind:__l="__l" projectId="{{project_id}}" showCallBtn="{{showCallBtn}}" vueId="82fad09a-4" wx:else></footer-btns>
+    </view>
+</view>

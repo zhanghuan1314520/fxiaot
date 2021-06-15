@@ -1,0 +1,13 @@
+<view>
+    <view class="page">
+        <view class="article-list">
+            <navigator bindtap="__e" class="question-cont" data-event-opts="{{[ [ 'tap',[ [ 'sendAnalysisHandle',['热门推荐列表-文章详情'] ] ] ] ]}}" hoverClass="none" url="{{item.target_url}}" wx:for="{{articles}}" wx:key="index">
+                <image mode="aspectFill" src="{{item.img}}"></image>
+                <view class="cont">
+                    <view class="text-cont fz-14 black-30">{{''+item.title+''}}</view>
+                    <view class="text-des fz-12 gray-96">{{''+item.content+''}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

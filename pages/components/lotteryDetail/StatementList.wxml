@@ -1,0 +1,52 @@
+<view>
+    <view class="{{[ 'statement-item',[item[$orig].skeleton?'skeletons':'',key===list.length-1?'no-border':''] ]}}" wx:for="{{$root.l2}}" wx:for-index="key" wx:key="key">
+        <view catchtap="__e" class="statement-item_head" data-event-opts="{{[ [ 'tap',[ [ '$emit',['jump-to-statement-list'] ] ] ] ]}}">
+            <view class="time skeletons-rect">{{''+item[$orig].time+''}}</view>
+            <view class="statment-tag" wx:if="{{typeMap[item[$orig].type]}}">{{''+typeMap[item[$orig].type]+''}}</view>
+        </view>
+        <view catchtap="__e" class="statement-bodys" data-event-opts="{{[ [ 'tap',[ [ '$emit',['jump-to-statement-list'] ] ] ] ]}}">
+            <view class="statement-title skeletons-rect">
+                <text selectable="selectable">{{''+item[$orig].title+''}}</text>
+            </view>
+            <statement-over-flow-item bind:__l="__l" content="{{item[$orig].content}}" vueId="{{'f8a199e4-1-'+key}}" wx:if="{{!item[$orig].skeleton}}"></statement-over-flow-item>
+            <view class="statement-images" wx:if="{{item[$orig].thumbnails&&item[$orig].thumbnails.length>0}}">
+                <block wx:if="{{item[$orig].thumbnails.length===1}}">
+                    <view catchtap="__e" class="image-item-one" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',[key,index] ] ] ] ]}}" data-name="查看原图" wx:for="{{item.l0}}" wx:for-item="imgSrc" wx:key="index">
+                        <view class="image-item-one">
+                            <image-loader bind:__l="__l" mode="aspectFill" source="{{imgSrc[$orig]}}" styles="{{imgSrc.a0}}" vueId="{{'f8a199e4-2-'+key+'-'+index}}"></image-loader>
+                        </view>
+                    </view>
+                </block>
+                <block wx:if="{{item[$orig].thumbnails&&item[$orig].thumbnails.length>1}}">
+                    <view catchtap="__e" class="image-item" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',[key,index] ] ] ] ]}}" data-name="查看原图" wx:if="{{index<3}}" wx:for="{{item.l1}}" wx:for-item="imgSrc" wx:key="index">
+                        <view class="cover" wx:if="{{index===2&&item[$orig].thumbnails.length>3}}">
+                            <view class="rest-num">{{''+'+'+item[$orig].thumbnails.length-3+''}}</view>
+                        </view>
+                        <image-loader bind:__l="__l" mode="aspectFill" source="{{imgSrc[$orig]}}" styles="{{imgSrc.a1}}" vueId="{{'f8a199e4-3-'+key+'-'+index}}"></image-loader>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="statement-info">
+            <view bindtap="__e" class="authors" data-event-opts="{{[ [ 'tap',[ [ 'goUserPage',['$0','$1'],[ [ ['list','',key,'session_id'] ],[ ['list','',key,'sales_man_id'] ] ] ] ] ] ]}}" data-name="置业顾问主页">
+                <image-loader bind:__l="__l" class="avatar" mode="aspectFill" source="{{item.f0}}" styles="{{item.a2}}" vueId="{{'f8a199e4-4-'+key}}"></image-loader>
+                <view class="name skeletons-rect">
+                    <text wx:if="{{item[$orig].sales_man_id>0}}">置业顾问-</text>
+                    <text>{{item[$orig].sales_man_name}}</text>
+                </view>
+            </view>
+            <view class="icons">
+                <busi-auth-navigator bind:__l="__l" url="{{urls[key]}}" vueId="{{'f8a199e4-5-'+key}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].session_id>0}}">
+                    <view class="phone-cont">
+                        <text class="iconnew new-fabuwenda"></text>
+                    </view>
+                </busi-auth-navigator>
+                <base-call-phone bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ [ 'callSalesman',['$event','$0'],[ [ ['list','',key,'sales_man_id'] ] ] ] ] ] ]}}" vueId="{{'f8a199e4-6-'+key}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].sales_man_id>0}}">
+                    <view class="phone-cont">
+                        <text class="iconnew new-dianhua"></text>
+                    </view>
+                </base-call-phone>
+            </view>
+        </view>
+    </view>
+</view>

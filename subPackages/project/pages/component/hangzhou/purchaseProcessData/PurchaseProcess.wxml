@@ -1,0 +1,111 @@
+<view class="page">
+    <image lazyLoad="true" mode="widthFix" src="https://imgcdn.huanjutang.com/assert/img/15570434942728120.jpg"></image>
+    <view class="main-content">
+        <view bindtap="__e" class="title white-bg" data-event-opts="{{[ [ 'tap',[ [ 'changeToggle',[0] ] ] ] ]}}">
+            <text class="{{[ 'left fz-14 height-level-color '+(toggleData[0]?'font-bold':'') ]}}">一、确定是否有购房资格</text>
+            <view class="{{[ 'iconnew new-tongyong-gengduolansexiangxia fz-10 right gray-9-color '+(toggleData[0]?'rotate':'') ]}}"></view>
+        </view>
+        <view class="content" wx:if="{{toggleData[0]}}">
+            <view class="tip white-bg">
+                <view>如果您不确定自己是否具有购房资格请前往杭州房小团查询您在哪个区域有购房资格。<view bindtap="__e" class="underline" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}">点击查询购房资格</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="title white-bg" data-event-opts="{{[ [ 'tap',[ [ 'changeToggle',[1] ] ] ] ]}}">
+            <text class="{{[ 'left fz-14 height-level-color '+(toggleData[1]?'font-bold':'') ]}}">二、挑选适合自己的楼盘</text>
+            <text class="{{[ 'iconnew new-tongyong-gengduolansexiangxia fz-10 right gray-9-color '+(toggleData[1]?'rotate':'') ]}}"></text>
+        </view>
+        <view class="content" wx:if="{{toggleData[1]}}">
+            <view class="tip white-bg">1.当您具有购房资格以后，应该考虑所在区域的预售楼盘有哪些，您可以在即将预售中去挑选自己心仪的楼盘。<navigator hoverClass="none" url="/subPackages/project/pages/payProject?title=即将预售&type=1">点击查看杭州即将预售的楼盘</navigator>。在挑选楼盘的同时也要关注一些最基本的信息哦。比如：地理位置、交通、周边 、配套、交房时间、容积率等，您当然也可以关注下该区域未来的规划信息。</view>
+            <view class="tip white-bg">2.那么，在挑选好了楼盘之后，我相信您同时在考虑好几个楼盘，一时间也无法下决策，这时候您可以前往杭州房小团公众号查看楼盘评测哦。<navigator hoverClass="none" url="/subPackages/me/pages/publicNumber">点击这里关注公众号（跳转到关注公众号页面）</navigator>
+            </view>
+            <view class="tip white-bg">
+                <text>3.如果在公众号中没有获得想要的点评又怎么办呢？没关系，您可以进入杭州房小团的购房讨论群，看看大家对该楼盘的评价如何，您也可以在群里问大家购房过程中所遇到的问题，群里的小伙伴都非常热情的。</text>
+                <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'addService',['$event'] ] ] ] ]}}" style="color:#699bd1;border-bottom:1px solid #699bd1;line-height:1;">。点击复制微信号，添加客服 拉你入群(hzfxtxg)</text>
+                <view>
+                    <text style="color:#F6B157;">温馨提示：</text>复制了微信号之后退出小程序，点击微信右上角“+”，接着点击“添加朋友”，然后将复制的微信号粘贴到搜索框中并“添加到通讯录”</view>
+            </view>
+            <view class="tip white-bg">
+                <text>4. 确定准备要购买的楼盘
+                    相信到了这里，您已经确定了你要购买的楼盘了，接下来是不是应该考虑付款方
+                    式的问题了呢？</text>
+            </view>
+        </view>
+        <view bindtap="__e" class="title white-bg" data-event-opts="{{[ [ 'tap',[ [ 'changeToggle',[2] ] ] ] ]}}">
+            <text class="{{[ 'left fz-14 height-level-color '+(toggleData[2]?'font-bold':'') ]}}">三、考虑付款方式</text>
+            <text class="{{[ 'iconnew new-tongyong-gengduolansexiangxia fz-10 right gray-9-color '+(toggleData[2]?'rotate':'') ]}}"></text>
+        </view>
+        <view class="content" wx:if="{{toggleData[2]}}">
+            <view class="tip white-bg">
+                <text>1.全款
+                    选择全款我就没啥好说的啦，任性付款！</text>
+            </view>
+            <view class="tip white-bg">
+                <text>2.贷款
+                    如果您考虑贷款买房，那么，想必“能贷多少？”、“月供多少？”是您比较关 心的问题。
+                    您可以前往杭州房小团的“贷款计算器”去计算自己的月供，贷款计算器功能强大，将会给您展示贷款总额、贷款利率、还款方式等信息，并且有多种贷款方式可以计算，快去试试看吧！</text>
+                <navigator hoverClass="none" url="/subPackages/tools/pages/houseLoanHZ">点击查看自己能贷多少</navigator>
+            </view>
+        </view>
+        <view bindtap="__e" class="title white-bg" data-event-opts="{{[ [ 'tap',[ [ 'changeToggle',[3] ] ] ] ]}}">
+            <text class="{{[ 'left fz-14 height-level-color '+(toggleData[3]?'font-bold':'') ]}}">四、参与报名登记</text>
+            <text class="{{[ 'iconnew new-tongyong-gengduolansexiangxia fz-10 right gray-9-color '+(toggleData[3]?'rotate':'') ]}}"></text>
+        </view>
+        <view class="content" wx:if="{{toggleData[3]}}">
+            <view class="tip white-bg">
+                <text>1.登记分为在线登记和线下登记，具体登记方式请以开发商公示为准。</text>
+                <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',['https://imgcdn.huanjutang.com/assets/img/2021461455488081.jpg'] ] ] ] ]}}" style="color:#699bd1;border-bottom:1px solid #699bd1;line-height:1;">点击查看登记所需要准备的资料（仅供参考）</text>
+            </view>
+        </view>
+        <view bindtap="__e" class="title white-bg" data-event-opts="{{[ [ 'tap',[ [ 'changeToggle',[4] ] ] ] ]}}">
+            <text class="{{[ 'left fz-14 height-level-color '+(toggleData[4]?'font-bold':'') ]}}">五、摇号环节</text>
+            <text class="{{[ 'iconnew new-tongyong-gengduolansexiangxia fz-10 right gray-9-color '+(toggleData[4]?'rotate':'') ]}}"></text>
+        </view>
+        <view class="content" wx:if="{{toggleData[4]}}">
+            <view class="tip white-bg">
+                <text>1.核查意向登记汇总表（杭州房小团将会及时在楼盘详情页面释放登记表，您也可关注报名楼盘，第一时间接收通知。）</text>
+            </view>
+            <view class="tip white-bg">
+                <text>2.摇号方式
+                    公证处确定时间、地点，组织实施公证摇号。
+                    第一轮：摇出高层次人才中选家庭，但不确定选房顺序；
+                    第二轮：第一轮未中选的高层次人才家庭与其他经认定的“无房家庭”一起参加摇号，摇出第二轮中选家庭，也不确定选房顺序；
+                    第三轮摇号：第一、二轮未中选人才家庭、无房家庭与其他家庭一起参加摇号，房源数量为前二轮摇号后的剩余房源，摇出第三轮中选家庭和轮候选房顺序；
+                    第四轮摇号：前三轮摇出的入围家庭共同摇号，摇出选房顺序号；
+                    经公证的摇号结果将在规定场所进行公示。</text>
+            </view>
+            <view class="tip white-bg">
+                <text>3.查看摇号结果（建议在详情里面打开“<text style="color:#F6B157;">摇号提醒</text>”功能，这样就不会错漏通知了哦，也可以加入我们的购房群，我们将第一时间通知到您）</text>
+                <image class="image-attention" mode="widthFix" src="https://imgcdn.huanjutang.com/file/2020/11/30/4326d8c9ba1990d6421f2265db768911.png"></image>
+            </view>
+        </view>
+        <view bindtap="__e" class="title white-bg" data-event-opts="{{[ [ 'tap',[ [ 'changeToggle',[5] ] ] ] ]}}">
+            <text class="{{[ 'left fz-14 height-level-color '+(toggleData[5]?'font-bold':'') ]}}">六、选房环节</text>
+            <text class="{{[ 'iconnew new-tongyong-gengduolansexiangxia fz-10 right gray-9-color '+(toggleData[5]?'rotate':'') ]}}"></text>
+        </view>
+        <view class="content" wx:if="{{toggleData[5]}}">
+            <view class="tip white-bg">1.根据摇号顺序进行选房</view>
+            <view class="tip white-bg">2、选房需携带本人有效身份证和意向登记通过的回执单</view>
+            <view class="tip white-bg">3、开发商对选房家庭人员身份等信息进行校验</view>
+            <view class="tip white-bg">
+                <text>4.委托他人办理选房，须携带如下资料：
+                    (1)本人身份证原件
+                    (2)委托人身份证原件及复印件
+                    (3)公证委托书</text>
+            </view>
+            <view class="tip white-bg">
+                <text>5.放弃选房
+                    针对入围家庭，放弃两次，三个月不能参与摇号；放弃三次，六个月不能参与</text>
+            </view>
+            <view class="tip white-bg">
+                <text>6.签订合同
+                    具体签订合同的时间和形式根据开发商公示为准。</text>
+            </view>
+            <view class="tip white-bg">
+                <text>7.办理贷款
+                    .选完房就是办理贷款业务，一般来说选房的时候售楼处都有银行的工作人员来
+                    现场进行业务办理。</text>
+            </view>
+        </view>
+    </view>
+</view>

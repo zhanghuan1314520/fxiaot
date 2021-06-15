@@ -1,0 +1,113 @@
+.task-list__item {
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 36rpx;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1rpx solid rgba(48,55,64,.05);
+}
+
+.task-list__icon {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.task-list__item-right {
+    display: flex;
+    margin-left: 22rpx;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16rpx;
+}
+
+.task-list__detail .name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 400rpx;
+}
+
+.task-list__detail .fz-13.score {
+    color: #ee3f4d;
+    margin-top: 2rpx;
+}
+
+.task-list__detail .fz-13.desc,.task-list__detail .fz-13.last-time {
+    color: #96989e;
+    margin-top: 8rpx;
+    max-width: 400rpx;
+}
+
+.task-list__detail .fz-13.last-time {
+    display: inline-block;
+    padding: 3rpx 10rpx;
+    background: #f2f2f2;
+    border-radius: 4rpx;
+}
+
+.task-list__detail>text {
+    display: block;
+    color: #333;
+}
+
+.task-list__progress {
+    display: flex;
+    align-items: center;
+    margin-top: 12rpx;
+}
+
+.task-list__progress>view {
+    width: 210rpx;
+    height: 14rpx;
+    background: #f2f2f2;
+    border-radius: 7rpx;
+}
+
+.task-list__progress>view>view {
+    height: 14rpx;
+    background: #2f8cef;
+    border-radius: 7rpx;
+}
+
+.task-list__progress .fz-12 {
+    color: #96989e;
+    margin-left: 14rpx;
+}
+
+.task-list__button {
+    width: 148rpx;
+    height: 58rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2d8cf0;
+    box-shadow: 0 4rpx 8rpx 0 rgba(45,139,240,.15);
+    color: #fff;
+    border-radius: 29rpx;
+    position: absolute;
+    right: 24rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.task-list__button[data-done="true"] {
+    background: #f2f2f2;
+    color: #96989e;
+    box-shadow: none;
+}
+
+.task-list__button.no-shadow {
+    box-shadow: none;
+}
+
+.task-list__button.daishenhe {
+    background: #ccc;
+    box-shadow: 0 4rpx 8rpx 0 hsla(0,0%,80%,.15);
+}
+
+.auth-task-list__button {
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,25 @@
+.dern-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 25vw;
+}
+
+.dern-item__cover {
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 100%;
+    margin-bottom: 10rpx;
+}
+
+.dern-item__name {
+    width: 110rpx;
+    font-size: 20rpx;
+    height: 20rpx;
+    line-height: 20rpx;
+    color: #666;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

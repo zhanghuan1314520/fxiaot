@@ -1,0 +1,6 @@
+<view catchtap="__e" class="{{['dern-item',item.skeleton?'skeletons':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toDetailHandle',['$event'] ] ] ] ]}}">
+    <view class="skeletons-rect dern-item__cover">
+        <image-loader bind:__l="__l" mode="aspectFill" source="{{item.avatar_url||defaultAvatar}}" styles="{{$root.a0}}" vueId="7255fa09-1" wx:if="{{!item.skeleton}}"></image-loader>
+    </view>
+    <view class="dern-item__name skeletons-rect">{{''+(item.name||'')+''}}</view>
+</view>

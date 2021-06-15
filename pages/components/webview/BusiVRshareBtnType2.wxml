@@ -1,0 +1,5 @@
+<cover-view class="btn-vr-share-wrap" wx:if="{{isAerial||huxingId&&loaded}}">
+    <button bindtap="__e" class="btn-vr-share" data-content="{{isAerial?'航拍':'vr'}}" data-event-opts="{{[ [ 'tap',[ [ 'vrSharedEvent',['$event'] ] ] ] ]}}" data-name="分享" data-type="button" openType="share">
+        <cover-image class="share-image" mode="aspectFill" src="https://imgcdn.huanjutang.com/image/2020/08/27/0a870ae5defaebd1703a8017b2746c89.png"></cover-image>
+    </button>
+</cover-view>

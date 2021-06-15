@@ -1,0 +1,18 @@
+<view class="my-privilege">
+    <block wx:for="{{privilegeList}}" wx:for-index="__i0__" wx:for-item="privilege" wx:key="group_name">
+        <view class="title">{{''+(privilege.group_name||'')+''}}</view>
+        <view class="content">
+            <view class="item" wx:for="{{privilege.privilege}}" wx:for-index="__i1__" wx:key="name">
+                <view class="name-box">
+                    <image class="icon" src="{{item.icon}}"></image>
+                    <view class="name">{{''+item.name+''}}</view>
+                </view>
+                <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'goToPage',['$0'],[ [ ['privilegeList','group_name',privilege.group_name],['privilege','name',item.name,'button'] ] ] ] ] ] ]}}" data-name="{{item.name+'-'+(item.button?item.button.title:'')}}" data-type="link">{{''+(item.button?item.button.title:'')+''}}</view>
+            </view>
+            <view class="more">
+                <image class="icon" src="https://imgcdn.huanjutang.com/file/2021/03/22/c03009e13f7f3a961673b8caf107663f.png"></image>
+                <text class="text">更多特权筹划中，敬请期待…</text>
+            </view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,9 @@
+<view catchtap="__e" catchtouchmove="__e" class="application-from" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{visible}}">
+    <view catchtap="__e" class="modal" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+        <text bindtap="__e" class="modal-close iconnew new-quxiao" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"></text>
+        <view class="modal-title">充值金币</view>
+        <input bindinput="__e" class="input-item" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputMoney','$event',[] ] ],[ 'inputChange',['$event'] ] ] ] ]}}" placeholder="请输入金额" placeholderClass="placeholder" type="number" value="{{inputMoney}}"></input>
+        <view class="modal-tip">* 暂时只支持微信支付，请仔细确认金额并充值</view>
+        <comfirm-btn bind:__l="__l" bind:confirm="__e" data-event-opts="{{[ [ '^confirm',[ ['inputSubmit'] ] ] ]}}" vueId="2b24ef7e-1" vueSlots="{{['default']}}">确认充值</comfirm-btn>
+    </view>
+</view>

@@ -1,0 +1,77 @@
+<view>
+    <view class="list-box white-bg">
+        <view class="w-cell">
+            <view class="left-key">选择楼盘</view>
+            <view bindtap="__e" class="right-value" data-event-opts="{{[ [ 'tap',[ [ 'projectHandle',['$event'] ] ] ] ]}}">
+                <view bindtap="__e" class="right-btn iconnew new-tongyong-gengduo" data-event-opts="{{[ [ 'tap',[ [ 'projectHandle',['$event'] ] ] ] ]}}" wx:if="{{!ids}}"></view>
+                <input confirmType="next" disabled="{{true}}" placeholder="请选择楼盘" placeholderClass="place-style" type="text" value="{{projectName}}"></input>
+            </view>
+        </view>
+        <view class="w-cell">
+            <view class="left-key">摇号范围</view>
+            <view bindtap="__e" class="right-value" data-event-opts="{{[ [ 'tap',[ [ 'rangeHandle',['$event'] ] ] ] ]}}">
+                <view bindtap="__e" class="right-btn iconnew new-tongyong-gengduo" data-event-opts="{{[ [ 'tap',[ [ 'rangeHandle',['$event'] ] ] ] ]}}" wx:if="{{!ids}}"></view>
+                <input confirmType="next" disabled="{{true}}" placeholder="请选择摇号范围" placeholderClass="place-style" type="text" value="{{rangeName}}"></input>
+            </view>
+        </view>
+        <view class="w-cell">
+            <view class="left-key">姓名</view>
+            <view class="right-value">
+                <input bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputName','$event',[] ] ] ] ] ]}}" placeholder="请输入您的姓名" placeholderClass="place-style" type="text" value="{{inputName}}"></input>
+                <view class="{{[ 'error-tip '+(rules.name?'show':'') ]}}">姓名信息有误</view>
+            </view>
+        </view>
+        <view class="w-cell">
+            <view class="left-key">摇号编码</view>
+            <view class="right-value">
+                <input bindinput="__e" confirmType="next" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','inputCode','$event',[] ] ] ] ] ]}}" placeholder="请输入摇号编码如：B1234" placeholderClass="place-style" value="{{inputCode}}"></input>
+                <view class="{{[ 'error-tip '+(rules.code?'show':'') ]}}">摇号编码信息有误</view>
+            </view>
+        </view>
+    </view>
+    <authorization bind:__l="__l" bind:onSuccess="__e" data-event-opts="{{[ [ '^onSuccess',[ ['submit'] ] ] ]}}" isAuthPhone="{{true}}" vueId="0a348745-1" vueSlots="{{['default']}}">
+        <view class="save-btn">
+            <button class="weui-btn white-color fz-16">{{''+(ids?'确认修改':'确认添加')+''}}</button>
+        </view>
+    </authorization>
+    <view bindtap="__e" class="privacy-cont" data-event-opts="{{[ [ 'tap',[ [ 'checkboxClick',['$event'] ] ] ] ]}}">
+        <text class="{{[ 'checkbox '+(allow?'active':'') ]}}"></text>
+        <view class="text">同意并遵守<view catchtap="__e" class="url" data-event-opts="{{[ [ 'tap',[ [ 'gotoUrlHandle',['$event'] ] ] ] ]}}">用户隐私协议</view>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="projectDialog" type="bottom" vueId="0a348745-2" vueSlots="{{['default']}}">
+        <view class="dialog">
+            <view bindtap="__e" class="close-btn iconnew new-guanbi" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}"></view>
+            <view class="title">选择楼盘</view>
+            <view class="search-place">
+                <text class="iconnew new-sousuo"></text>
+                <input bindconfirm="__e" bindinput="__e" data-event-opts="{{[ [ 'confirm',[ [ 'projectSearch',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','searchValue','$event',[] ] ] ] ] ]}}" placeholder="请输入楼盘名称" type="text" value="{{searchValue}}"></input>
+            </view>
+            <view class="recomment-tips">推荐楼盘</view>
+            <scroll-view class="project-box" scrollY="{{true}}">
+                <view bindtap="__e" class="{{[projectIndex==index?'active li':'li']}}" data-event-opts="{{[ [ 'tap',[ [ 'projectChoose',[index] ] ] ] ]}}" wx:for="{{projectList}}" wx:key="index">
+                    <text class="iconnew choosed-icon new-yiguanzhugou"></text>
+                    <text class="project-name">{{''+item.name+''}}</text>
+                </view>
+            </scroll-view>
+        </view>
+    </uni-popup>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="rangeDialog" type="bottom" vueId="0a348745-3" vueSlots="{{['default']}}">
+        <view class="dialog">
+            <view bindtap="__e" class="close-btn iconnew new-guanbi" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}"></view>
+            <view class="title range-title">选择范围</view>
+            <view class="recomment-tips">楼栋范围</view>
+            <scroll-view class="project-box" scrollY="{{true}}" wx:if="{{rangeList.length>0}}">
+                <view bindtap="__e" class="{{[rangeIndex==index?'active li':'li']}}" data-event-opts="{{[ [ 'tap',[ [ 'rangeChoose',[index] ] ] ] ]}}" wx:if="{{item.name}}" wx:for="{{rangeList}}" wx:key="index">
+                    <text class="iconnew choosed-icon new-yiguanzhugou"></text>
+                    <text class="project-name">{{''+item.name+''}}</text>
+                </view>
+            </scroll-view>
+            <view class="no-content" wx:else>
+                <image mode="widthFix" src="https://imgcdn.huanjutang.com/assets/img/20200619/5eec6099d4669.png"></image>
+                <view class="no-result">该楼盘暂未开放添加编码服务</view>
+                <button class="add-user-tips" hoverClass="none" openType="contact">联系客服反馈</button>
+            </view>
+        </view>
+    </uni-popup>
+</view>

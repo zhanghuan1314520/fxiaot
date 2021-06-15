@@ -1,0 +1,77 @@
+<view class="leaderboard data-v-458dc46b">
+    <view class="{{['data-v-458dc46b','leaderboard-top']}}" style="{{'background-image:'+'url('+voteData.background_cover+')'+';'}}">
+        <view class="top-base data-v-458dc46b">
+            <view class="top-countdown data-v-458dc46b">
+                <countdown bind:__l="__l" class="data-v-458dc46b" end="{{voteData.end_time}}" start="{{voteData.start_time}}" vueId="dba594f8-1"></countdown>
+            </view>
+        </view>
+    </view>
+    <view class="leaderboard-middle data-v-458dc46b" data-show="{{active===1}}" id="tab1" style="{{'background:'+voteData.background_color+';'}}">
+        <view class="middle-hotnum data-v-458dc46b">
+            <overlapping bind:__l="__l" class="data-v-458dc46b" font="https://imgcdn.huanjutang.com/assets/img/20201291516408081.png" height="266rpx" vueId="dba594f8-2" vueSlots="{{['default']}}">
+                <view class="{{['data-v-458dc46b','hotnum-item',key]}}" wx:for="{{num}}" wx:for-index="key" wx:for-item="value" wx:key="key">
+                    <text class="value data-v-458dc46b">{{''+(voteData[key]||0)+''}}</text>
+                    <text class="text data-v-458dc46b">{{''+value+''}}</text>
+                </view>
+            </overlapping>
+        </view>
+        <view class="middle-search data-v-458dc46b">
+            <image class="search-icon data-v-458dc46b" src="https://imgcdn.huanjutang.com/assets/img/20201291525538081.png"></image>
+            <input bindconfirm="__e" bindinput="__e" bindtap="__e" class="search-input data-v-458dc46b" confirmType="search" cursorSpacing="{{100}}" data-content="输入框" data-event-opts="{{[ [ 'confirm',[ [ 'handleKeywordChange',['$event'] ] ] ],[ 'tap',[ [ 'handleInputClick',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '$0','keyword','$event',[] ],['searchParam'] ] ] ] ]}}" data-name="搜索" placeholder="请输入楼盘名称" value="{{searchParam.keyword}}"></input>
+            <view catchtap="__e" class="clear-box data-v-458dc46b" data-content="输入框" data-event-opts="{{[ [ 'tap',[ [ 'handleClear',['$event'] ] ] ] ]}}" data-name="清空" wx:if="{{searchParam.keyword}}">
+                <image class="clear-icon data-v-458dc46b" src="https://imgcdn.huanjutang.com/assets/img/2020271944438081.png"></image>
+            </view>
+        </view>
+        <tab bind:__l="__l" bind:change="__e" class="data-v-458dc46b vue-ref" data-event-opts="{{[ [ '^change',[ ['handleHomeLeaderboardClick'] ] ] ]}}" data-ref="tab1" groupId="{{homeGroupId}}" source="活动首页" tab="{{middleTab}}" vueId="dba594f8-3" wx:if="{{showHomeTab}}"></tab>
+        <view class="middle-project data-v-458dc46b">
+            <project bind:__l="__l" bind:vote="__e" class="data-v-458dc46b" data-event-opts="{{[ [ '^vote',[ ['handleVote'] ] ] ]}}" index="{{index}}" item="{{item}}" status="{{voteStatus}}" vueId="{{'dba594f8-4-'+index}}" wx:for="{{homeList}}" wx:key="id"></project>
+            <view class="project-empty data-v-458dc46b" wx:if="{{homeList.length===0}}">
+                <image class="empty-image data-v-458dc46b" src="https://imgcdn.huanjutang.com/assets/img/20201214111178081.png"></image>
+                <text class="empty-text data-v-458dc46b">暂无楼盘</text>
+            </view>
+        </view>
+    </view>
+    <view class="leaderboard-middle data-v-458dc46b" data-show="{{active===2}}" id="tab2" style="{{'background:'+voteData.background_color+';'}}">
+        <tab bind:__l="__l" bind:change="__e" class="data-v-458dc46b vue-ref" data-event-opts="{{[ [ '^change',[ ['handleProjectLeaderboardClick'] ] ] ]}}" data-ref="tab2" groupId="{{projectGroupId}}" source="楼盘排行" tab="{{middleTab}}" vueId="dba594f8-5"></tab>
+        <view class="middle-rank data-v-458dc46b">
+            <overlapping bind:__l="__l" class="data-v-458dc46b" font="https://imgcdn.huanjutang.com/assets/img/20201291855548081.png" vueId="dba594f8-6" vueSlots="{{['default']}}">
+                <view class="slot-box data-v-458dc46b">
+                    <order-project bind:__l="__l" class="data-v-458dc46b" index="{{index}}" item="{{item}}" status="{{voteStatus}}" vueId="{{'dba594f8-7-'+index+','+'dba594f8-6'}}" wx:for="{{projectList}}" wx:key="id"></order-project>
+                    <view class="project-empty data-v-458dc46b" wx:if="{{projectList.length===0}}">
+                        <image class="empty-image data-v-458dc46b" src="https://imgcdn.huanjutang.com/assets/img/20201214111178081.png"></image>
+                        <text class="empty-text data-v-458dc46b">暂无楼盘</text>
+                    </view>
+                </view>
+            </overlapping>
+        </view>
+    </view>
+    <view class="leaderboard-middle data-v-458dc46b" data-show="{{active===3}}" id="tab3" style="{{'background:'+voteData.background_color+';'}}">
+        <view class="middle-rule data-v-458dc46b">
+            <overlapping bind:__l="__l" class="data-v-458dc46b" font="https://imgcdn.huanjutang.com/assets/img/20201292031538081.png" vueId="dba594f8-8" vueSlots="{{['default']}}">
+                <view class="slot-box data-v-458dc46b">
+                    <view bindtap="__e" class="contact data-v-458dc46b" data-event-opts="{{[ [ 'tap',[ [ 'handleNext',['$event'] ] ] ] ]}}" data-name="联系我们" wx:if="{{buttonLink}}">联系我们</view>
+                    <rich-text class="rich-text data-v-458dc46b" nodes="{{nodes}}"></rich-text>
+                </view>
+            </overlapping>
+        </view>
+    </view>
+    <view class="leaderboard-logo data-v-458dc46b">
+        <image class="logo data-v-458dc46b" mode="widthFix" src="{{logoImage}}"></image>
+    </view>
+    <view class="leaderboard-tab data-v-458dc46b">
+        <view bindtap="__e" class="item data-v-458dc46b" data-active="{{item.f0}}" data-content="底部tab" data-event-opts="{{[ [ 'tap',[ [ 'handleTabChange',['$0'],[ [ ['tab','id',item[$orig].id,'id'] ] ] ] ] ] ]}}" data-name="{{item[$orig].font}}" wx:for="{{$root.l0}}" wx:for-index="__i0__" wx:key="id">
+            <view class="icon data-v-458dc46b" style="{{'background-image:'+'url('+(item[$orig].id===active?item[$orig].active:item[$orig].default)+')'+';'}}"></view>
+            <text class="text data-v-458dc46b">{{''+item[$orig].font+''}}</text>
+        </view>
+    </view>
+    <view class="leaderboard-backtop data-v-458dc46b" data-show="{{showBack}}">
+        <view bindtap="__e" class="circle data-v-458dc46b" data-event-opts="{{[ [ 'tap',[ [ 'backToTop',['$event'] ] ] ] ]}}" data-name="回到顶部">
+            <image class="image data-v-458dc46b" src="https://imgcdn.huanjutang.com/assets/img/20201291323168081.png"></image>
+            <text class="text data-v-458dc46b">顶部</text>
+        </view>
+    </view>
+    <modal bind:__l="__l" bind:confirm="__e" class="data-v-458dc46b vue-ref" data-event-opts="{{[ [ '^confirm',[ ['handleModalConfirm'] ] ] ]}}" data-ref="modal" rest="{{restCount}}" vueId="dba594f8-9"></modal>
+    <share-popup bind:__l="__l" class="data-v-458dc46b vue-ref" content="（可保存海报分享朋友圈拉票哦）" data-ref="popup" render="{{renderButtons}}" title="{{popupText}}" vueId="dba594f8-10"></share-popup>
+    <popup bind:__l="__l" class="data-v-458dc46b vue-ref" content="{{remark}}" data-ref="basePopup" maskClose="{{false}}" position="center" vueId="dba594f8-11"></popup>
+    <create-poster bind:__l="__l" class="data-v-458dc46b vue-ref" data-ref="canvasPoster" height="{{2250}}" vueId="dba594f8-12" width="{{1125}}"></create-poster>
+</view>

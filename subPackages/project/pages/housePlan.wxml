@@ -1,0 +1,93 @@
+<view>
+    <view style="position:relative;">
+        <button openType="share">
+            <text class="fz-14 iconnew  icon-fenxiang"></text>
+            <text class="fz-12 tab-text" style="margin-left:10rpx;">分享</text>
+        </button>
+        <view class="house-title" style="width:100%;">
+            <view style="display:flex;">
+                <view bindtap="__e" class="{{[ 'options-building options-building-yuan2 '+(tab==''?'actives':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changType',[''] ] ] ] ]}}" style="margin-left:80rpx;">
+                    <text class="{{[tab==''?'color-text':'']}}" style="font-size:32rpx;">楼盘全部户型</text>
+                </view>
+                <view bindtap="__e" class="{{[ 'options-building options-building-yuan '+(tab==1?'actives':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changType',[1] ] ] ] ]}}" style="margin-left:56rpx;">
+                    <text class="{{[tab==1?'color-text':'']}}" style="font-size:32rpx;">本次开盘</text>
+                </view>
+            </view>
+        </view>
+        <view class="page">
+            <block wx:if="{{tab==1}}">
+                <view class="top-bar" wx:if="{{typeListNow.length>1}}">
+                    <scroll-view scrollX="scroll-x">
+                        <view class="tabBar" style="{{'width: '+scrollWidthNow+'px'}}">
+                            <view bindtap="__e" class="{{[ 'tabBar-line '+(type==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchTab',[index] ] ] ] ]}}" wx:for="{{typeListNow}}" wx:key="index">
+                                <text class="fz-12">{{''+item.text+''}}</text>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+                <view class="photos">
+                    <view class="photos-content">
+                        <view bindtap="__e" class="photos-upfile-line" data-event-opts="{{[ [ 'tap',[ [ 'uploadProjectImg',['$event'] ] ] ] ]}}" wx:if="{{is_sales_man!=2}}">
+                            <view class="photos-upfile fz-15">置业顾问上传图片</view>
+                        </view>
+                        <view class="photos-upfile-line" wx:else>
+                            <view class="footer-content" wx:if="{{phone}}">
+                                <view bindtap="__e" class="footer-btn fz-15 color-left" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}">联系置业顾问</view>
+                                <view catchtap="__e" class="footer-btn fz-15 color-right" data-event-opts="{{[ [ 'tap',[ [ 'phoneCall',['$0'],['phone'] ] ] ] ]}}">电话咨询</view>
+                            </view>
+                            <view bindtap="__e" class="footer-btn2 fz-15 color-left" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}" wx:else>联系置业顾问</view>
+                        </view>
+                        <view class="nothing-container fz-14 height-level-color" style="width:100%;padding:60rpx 0;text-align:center;" wx:if="{{items.length<1&&loading}}">暂无内容</view>
+                        <view class="photos-list" wx:else>
+                            <view class="photos-line" wx:for="{{items}}" wx:key="index">
+                                <view class="border-line" style="overflow:hidden;padding-bottom:30rpx;">
+                                    <view class="left">
+                                        <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',[index] ] ] ] ]}}" mode="aspectFill" src="{{item.image}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{!tab}}">
+                <view class="top-bar" wx:if="{{typeListNow.length>1}}">
+                    <scroll-view scrollX="scroll-x">
+                        <view class="tabBar" style="{{'width: '+scrollWidthNow+'px'}}">
+                            <view bindtap="__e" class="{{[ 'tabBar-line '+(type==index?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'switchTab',[index] ] ] ] ]}}" wx:for="{{typeListNow}}" wx:key="index">
+                                <text class="fz-12">{{''+item.text+''}}</text>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+                <view class="page">
+                    <view class="photos">
+                        <view class="photos-content">
+                            <view bindtap="__e" class="photos-upfile-line" data-event-opts="{{[ [ 'tap',[ [ 'uploadProjectImg',['$event'] ] ] ] ]}}" wx:if="{{is_sales_man!=2}}">
+                                <view class="photos-upfile fz-15">置业顾问上传图片</view>
+                            </view>
+                            <view class="photos-upfile-line" wx:else>
+                                <view class="footer-content" wx:if="{{phone}}">
+                                    <view bindtap="__e" class="footer-btn fz-15 color-left" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}">联系置业顾问</view>
+                                    <view catchtap="__e" class="footer-btn fz-15 color-right" data-event-opts="{{[ [ 'tap',[ [ 'phoneCall',['$0'],['phone'] ] ] ] ]}}">电话咨询</view>
+                                </view>
+                                <view bindtap="__e" class="footer-btn2 fz-15 color-left" data-event-opts="{{[ [ 'tap',[ [ 'toUrl',['$event'] ] ] ] ]}}" wx:else>联系置业顾问</view>
+                            </view>
+                            <view class="nothing-container fz-14 height-level-color" style="width:100%;padding:60rpx 0;text-align:center;" wx:if="{{items.length<1&&loading}}">暂无内容</view>
+                            <view class="photos-list" wx:else>
+                                <view class="photos-line" wx:for="{{items}}" wx:key="index">
+                                    <view class="border-line" style="overflow:hidden;padding-bottom:30rpx;">
+                                        <view class="left">
+                                            <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview',[index] ] ] ] ]}}" mode="aspectFill" src="{{item.image}}"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <base-call-phone bind:__l="__l" bind:updatePhone="__e" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showCallPhone','$event'],[''] ] ] ],[ '^updatePhone',[ [ '__set_sync',['$0','phoneNumber','$event'],[''] ] ] ] ]}}" eventName="户型-免费电话咨询" phone="{{phoneNumber}}" show="{{showCallPhone}}" vueId="63a2de04-1"></base-call-phone>
+</view>

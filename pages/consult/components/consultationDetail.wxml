@@ -1,0 +1,69 @@
+<view>
+    <view class="article-top" wx:if="{{postBanners&&postBanners.length>0}}">
+        <view class="article-top-banner">
+            <swiper autoplay="true" class="swiper" duration="300" indicatorActiveColor="#ddd" indicatorDots="true" interval="4000">
+                <swiper-item style="position:relative;" wx:for="{{postBanners}}" wx:key="index">
+                    <navigator hoverClass="weui-cell_active" url="{{item.url}}">
+                        <image class="slide-image" mode="aspectFill" src="{{item.image}}"></image>
+                    </navigator>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <view class="top-search white-bg">
+        <view class="answer-search-bar top-search">
+            <base-search-comp articlePlaceHolder="{{articlePlaceHolder}}" bind:__l="__l" bind:updateArticlePlaceHolder="__e" data-event-opts="{{[ [ '^updateArticlePlaceHolder',[ [ '__set_sync',['$0','articlePlaceHolder','$event'],[''] ] ] ],[ '^updateArticlePlaceHolder',[ [ '__set_sync',['$0','articlePlaceHolder','$event'],[''] ] ] ] ]}}" navigatorUrl="/subPackages/news/pages/articleSearch" type="navigator" vueId="82f0dcc2-1"></base-search-comp>
+        </view>
+    </view>
+    <view class="posts-menu white-bg">
+        <navigator class="posts-menu-list black-color" hoverClass="none" url="{{'/subPackages/news/pages/dailyConsultation?&type='+article.type}}" wx:for="{{articleTypes}}" wx:for-item="article" wx:key="index">
+            <image class="icon" src="{{article.icon}}"></image>
+            <view class="text fz-13">{{''+article.text+''}}</view>
+        </navigator>
+    </view>
+    <view class="page-articles">
+        <view class="hot-articles" wx:if="{{hotResult.length>0}}">
+            <view class="common-box">
+                <view class="common-title font-bold">热门推荐</view>
+                <navigator class="more-text" hoverClass="none" url="/subPackages/news/pages/hotArticle">
+                    <text class="fz-12">查看更多</text>
+                    <text class="iconnew new-tongyong-gengduo fz-10"></text>
+                </navigator>
+            </view>
+            <scroll-view class="scroll-view" scrollWithAnimation="{{true}}" scrollX="scroll-x">
+                <view class="article-list" style="{{'width:'+hotArticlesWidth+';'}}">
+                    <hot-article-item bind:__l="__l" item="{{article}}" vueId="{{'82f0dcc2-2-'+articleIndex}}" wx:for="{{hotArticles}}" wx:for-index="articleIndex" wx:for-item="article" wx:key="articleIndex"></hot-article-item>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="dern white-bg" wx:if="{{dernResult.length>0}}">
+            <view class="common-box">
+                <view class="common-title font-bold">大咖推荐</view>
+                <navigator class="more-text" hoverClass="none" url="/subPackages/news/pages/bigShot">
+                    <text class="fz-12">查看更多</text>
+                    <text class="iconnew new-tongyong-gengduo fz-10"></text>
+                </navigator>
+            </view>
+            <view class="scroll-view">
+                <dern-item bind:__l="__l" item="{{dernData}}" vueId="{{'82f0dcc2-3-'+index}}" wx:for="{{dernResult}}" wx:for-item="dernData" wx:key="index"></dern-item>
+            </view>
+        </view>
+        <view class="news-articles" wx:if="{{articles.length>0}}">
+            <view class="common-box hot-article-title">
+                <view class="common-title font-bold">最新文章</view>
+            </view>
+            <article-style bind:__l="__l" item="{{article}}" titleData="发现-最新文章" vueId="{{'82f0dcc2-4-'+i}}" wx:for="{{articles}}" wx:for-index="i" wx:for-item="article" wx:key="i"></article-style>
+        </view>
+        <view class="loading-runing" wx:if="{{more}}">
+            <view class="loading-icon">
+                <text class="iconnew new-jiazai"></text>
+            </view>
+            <view class="left-font">
+                <text>加载中</text>
+            </view>
+        </view>
+        <view class="nothing" wx:if="{{hotResult.length<=0&&!more}}">
+            <view class="nothing-text fz-13 small-level-color">暂无内容</view>
+        </view>
+    </view>
+</view>

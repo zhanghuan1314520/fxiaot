@@ -1,0 +1,15 @@
+.share-timeline__wrap {
+    width: 100%;
+}
+
+.share-timeline__wrap.share-timeline__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-timeline__wrap .share-timeline__image {
+    display: block;
+    width: 600rpx;
+    overflow: hidden;
+}

@@ -1,0 +1,145 @@
+.photos-tabs {
+    top: 0;
+}
+
+.photos-tabs,.scroll-content {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+}
+
+.scroll-content {
+    top: 100rpx;
+    padding: 32rpx 0 32rpx 32rpx;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.scroll-content ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.scroll-content .scroll-item {
+    display: inline-block;
+    padding: 0 16rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    min-width: 130rpx;
+    text-align: center;
+    color: rgba(0,0,0,.85);
+    font-size: 24rpx;
+    border-radius: 4rpx;
+    background: #f5f5f5;
+    margin-right: 12rpx;
+    box-sizing: border-box;
+}
+
+.scroll-content .scroll-item.active {
+    color: #2d8cf0;
+    background: rgba(47,140,239,.15);
+    font-weight: 700;
+}
+
+.scroll-content .scroll-item:last-child {
+    margin-right: 32rpx;
+}
+
+.placeholder-view {
+    height: 232rpx;
+}
+
+.container {
+    margin: 0 32rpx;
+    padding-bottom: 180rpx;
+}
+
+.container .video {
+    width: 686rpx;
+    height: 396rpx;
+    margin-bottom: 32rpx;
+    border-radius: 8rpx;
+    position: relative;
+}
+
+.container .video .video-post {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 8rpx;
+}
+
+.container .video .main-content {
+    padding: 24rpx;
+    box-sizing: border-box;
+}
+
+.container .video .main-content .video-type {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    padding: 0 16rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    background: rgba(0,0,0,.3);
+    border-radius: 24rpx;
+    color: hsla(0,0%,100%,.85);
+    font-size: 24rpx;
+}
+
+.container .video .main-content .video-play-logo {
+    position: absolute;
+    top: 124rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 112rpx;
+}
+
+.container .pictures {
+    box-sizing: border-box;
+}
+
+.container .pictures .pictures-box {
+    margin-bottom: 36rpx;
+    font-size: 0;
+}
+
+.container .pictures .pictures-box .title {
+    margin-bottom: 28rpx;
+    color: rgba(0,0,0,.45);
+    font-size: 28rpx;
+}
+
+.container .pictures .pictures-box .images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-data-wrap {
+    overflow: hidden;
+}
+
+.no-data-wrap .no-data {
+    transform: translate(-50%,-50%);
+    margin-left: 50%;
+    margin-top: 40%;
+    text-align: center;
+}
+
+.no-data-wrap .no-data .image {
+    width: 358rpx;
+    height: 180rpx;
+    margin-bottom: 60rpx;
+}
+
+.no-data-wrap .no-data .text {
+    color: rgba(0,0,0,.45);
+    font-size: 32rpx;
+}

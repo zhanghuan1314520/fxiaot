@@ -1,0 +1,52 @@
+.loadding {
+    background: #fff;
+    margin-top: 10rpx;
+}
+
+.nothing {
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.nothing .image {
+    display: inline-block;
+    width: 276rpx;
+    height: 144rpx;
+}
+
+.nothing .image.article-nothing {
+    width: 276rpx;
+    height: 176rpx;
+}
+
+.nothing .text {
+    padding-bottom: 24rpx;
+}
+
+.nothing .content,.nothing .text {
+    margin-top: 48rpx;
+}
+
+.loading-runing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 90rpx;
+}
+
+.loading-icon {
+    font-size: 20rpx!important;
+    width: 30rpx;
+    height: 0;
+    line-height: 0;
+    transition: all .5s linear;
+    color: #999;
+}
+
+.left-font {
+    font-size: 30rpx!important;
+    margin-left: 10rpx;
+    color: #999;
+}

@@ -1,0 +1,15 @@
+<cover-view class="salesman-info" wx:if="{{isShowSalesmanInfo&&!isSalesMan}}">
+    <cover-view class="left">
+        <cover-image bindtap="__e" class="avatar" data-event-opts="{{[ [ 'tap',[ [ 'toSalesman',['$event'] ] ] ] ]}}" src="{{salesManInfo.user.avatar_url}}"></cover-image>
+        <cover-view class="name-project">
+            <cover-view class="name">{{''+salesManInfo.name+''}}</cover-view>
+            <cover-view class="project-name">{{''+salesManInfo.project.name+''}}</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="left">
+        <button bindtap="__e" class="item-button" data-event-opts="{{[ [ 'tap',[ [ 'navigatoHandle',['$event'] ] ] ] ]}}" hidden="{{!(userInfo.unionId&&userInfo.nickName&&userInfo.phone)}}">咨询</button>
+        <cover-view bindtap="__e" class="item-button phone" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}" hidden="{{!(userInfo.unionId&&userInfo.nickName&&userInfo.phone)}}">电话</cover-view>
+        <button bindgetuserinfo="__e" class="item-button" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['chat'] ] ] ] ]}}" hidden="{{!(!userInfo.unionId||!userInfo.nickName||!userInfo.phone)}}" lang="zh_CN" openType="getUserInfo">咨询</button>
+        <button bindgetuserinfo="__e" class="item-button phone" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getUserInfo',['phone'] ] ] ] ]}}" hidden="{{!(!userInfo.unionId||!userInfo.nickName||!userInfo.phone)}}" lang="zh_CN" openType="getUserInfo">电话</button>
+    </cover-view>
+</cover-view>

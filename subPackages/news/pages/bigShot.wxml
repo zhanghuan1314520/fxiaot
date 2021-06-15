@@ -1,0 +1,13 @@
+<view class="page">
+    <navigator class="human-col" url="{{'/subPackages/news/pages/bigCoffeeDetail?id='+item.id}}" wx:for="{{dataList}}" wx:key="index">
+        <image mode="aspectFill" src="{{item.avatar_url}}"></image>
+        <view class="left">
+            <view class="fz-16 title">{{''+item.name+''}}</view>
+            <view class="info">{{''+(item.intro||'暂无简介')+''}}</view>
+            <view class="bottom">
+                <view class="num fz-13">{{'共'+item.num+'篇文章'}}</view>
+                <view class="btn">查看主页</view>
+            </view>
+        </view>
+    </navigator>
+</view>

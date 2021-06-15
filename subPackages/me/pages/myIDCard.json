@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "用户信息管理",
+    "navigationBarBackgroundColor": "#fff",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "authorization": "/components/Authorization"
+    }
+}

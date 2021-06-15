@@ -1,0 +1,15 @@
+<view class="chat">
+    <view class="top">
+        <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="3371dd8c-1" vueSlots="{{['default']}}">{{''+projectName+'-微聊客户'}}</busi-nav-header>
+    </view>
+    <view class="main">
+        <total bind:__l="__l" bind:onChange="__e" data-event-opts="{{[ [ '^onChange',[ ['onChange'] ] ] ]}}" fixTop="{{scrolled}}" item="{{chatTotal}}" text="微聊总数" vueId="3371dd8c-2"></total>
+        <view class="chat-scroll">
+            <scroll-item bind:__l="__l" item="{{ele}}" vueId="{{'3371dd8c-3-'+index}}" wx:for="{{chatList}}" wx:for-item="ele" wx:key="index"></scroll-item>
+            <empty bind:__l="__l" image="https://imgcdn.huanjutang.com/file/2021/01/06/97aae0e212ae5fd8037d34b86f0d0625.png" text="无微聊" vueId="3371dd8c-4" wx:if="{{!loading&&!chatList.length}}"></empty>
+            <busi-bottom-line bind:__l="__l" vueId="3371dd8c-5" vueSlots="{{['default']}}" wx:if="{{chatList.length&&end&&!loading}}">未沟通完的客户记得回复哟 ~</busi-bottom-line>
+            <busi-loading bind:__l="__l" loading="{{!firstLoad&&loading}}" vueId="3371dd8c-6"></busi-loading>
+        </view>
+    </view>
+    <guide bind:__l="__l" bind:comfirm="__e" data-event-opts="{{[ [ '^comfirm',[ ['e0'] ] ] ]}}" vueId="3371dd8c-7" wx:if="{{guideVisible}}"></guide>
+</view>

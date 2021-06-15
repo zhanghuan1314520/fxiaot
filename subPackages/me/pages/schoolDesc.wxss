@@ -1,0 +1,83 @@
+page {
+    background-color: #fff;
+}
+
+.school-info {
+    padding: 56rpx;
+    height: auto;
+    width: auto;
+}
+
+.school-info .title {
+    width: auto;
+    height: 36rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 36rpx;
+    margin-bottom: 24rpx;
+}
+
+.school-info .info-text {
+    font-size: 34rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    line-height: 60rpx;
+}
+
+.footer,.school-info .info-text {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.footer {
+    position: absolute;
+    border-bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer .footer-info {
+    height: 40rpx;
+    width: auto;
+    position: relative;
+    text-align: center;
+}
+
+.footer .footer-info .line {
+    width: auto;
+    height: 2rpx;
+    background: rgba(0,0,0,.1);
+    margin: 20rpx 64rpx 0;
+}
+
+.footer .footer-info text {
+    position: absolute;
+    top: -18rpx;
+    background: #fff;
+    z-index: 1;
+    display: inline-block;
+    width: 420rpx;
+    left: 50%;
+    transform: translate(-50%);
+    height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0,0,0,.5);
+    line-height: 40rpx;
+}
+
+.footer .btn {
+    width: 208rpx;
+    height: 64rpx;
+    border-radius: 8rpx;
+    background: transparent;
+    border: 1px solid #2d8cf0;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #2d8cf0;
+    line-height: 64rpx;
+    margin: 30rpx auto 60rpx;
+}

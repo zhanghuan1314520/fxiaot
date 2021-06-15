@@ -1,0 +1,89 @@
+.task-info {
+    position: relative;
+    padding: 40rpx 32rpx 0;
+}
+
+.task-info .btn {
+    position: absolute;
+    right: 30rpx;
+    top: 38rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160rpx;
+    height: 48rpx;
+    border-radius: 34rpx;
+    border: 2rpx solid hsla(0,0%,100%,.3);
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: hsla(0,0%,100%,.85);
+    background: hsla(0,0%,100%,.1);
+}
+
+.today-point {
+    height: 40rpx;
+    display: flex;
+    align-items: flex-end;
+}
+
+.today-point .label {
+    height: 32rpx;
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: 700;
+    line-height: 32rpx;
+}
+
+.today-point .num {
+    margin-left: 6rpx;
+    height: 40rpx;
+    font-size: 48rpx;
+    font-family: DINAlternate-Bold,DINAlternate;
+    font-weight: 700;
+    color: #ffef7f;
+    line-height: 40rpx;
+}
+
+.today-point .iconnew {
+    margin-left: 2rpx;
+    color: #ffef7f;
+    font-size: 32rpx;
+}
+
+.today-activity {
+    position: relative;
+    margin-top: 36rpx;
+    height: 44rpx;
+}
+
+.today-activity .num-box {
+    position: absolute;
+    padding: 0 18rpx;
+    height: 44rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 27rpx;
+    background: hsla(0,0%,100%,.12);
+}
+
+.today-activity .num-box .label,.today-activity .num-box .num {
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 26rpx;
+}
+
+.today-activity .num-box .num {
+    margin-left: 6rpx;
+}
+
+.today-activity .num-box .iconnew {
+    color: #fff;
+    font-size: 20rpx;
+}
+
+.tip {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: hsla(0,0%,100%,.65);
+    line-height: 32rpx;
+}

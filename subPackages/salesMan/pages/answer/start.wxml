@@ -1,0 +1,25 @@
+<view class="box-answer-start">
+    <busi-nav-header bind:__l="__l" class="vue-ref" data-ref="busiNavHeader" vueId="9f54aa6e-1" vueSlots="{{['default']}}">{{''+projectName+'-答题闯关'}}</busi-nav-header>
+    <view class="box-content">
+        <view class="info">
+            <image class="log" src="{{imageSrcTitle}}"></image>
+            <view class="detail">
+                <view class="title">智取100积分</view>
+                <view class="time">
+                    <text class="time-title">参与答题截止日期</text>
+                    <text>{{''+(detail.theme.end_time||'--')+''}}</text>
+                </view>
+                <view class="box-user">
+                    <image class="avatar" src="{{detail.avatar_url}}"></image>
+                    <view class="nickname">{{''+(detail.name||'--')+''}}</view>
+                    <image bindtap="__e" class="icon-begin" data-event-opts="{{[ [ 'tap',[ [ 'begin',['$event'] ] ] ] ]}}" hoverClass="btn-active" src="{{imageSrcBegin}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="tips">
+            <view class="tips-context">1. 答题者必须入驻满3天或总积分达200分，方可作答<view class="_br"></view>2. 答题全对奖励100积分，截止日期内全对仅加分1次<view class="_br"></view>3. 平日多使用小程序，有助于答题闯关噢</view>
+        </view>
+    </view>
+    <image class="bg-left" src="https://imgcdn.huanjutang.com/assets/img/20213231851508081.png"></image>
+    <image class="bg-right" src="https://imgcdn.huanjutang.com/assets/img/20213231852228081.png"></image>
+</view>

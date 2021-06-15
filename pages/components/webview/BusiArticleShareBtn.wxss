@@ -1,0 +1,95 @@
+.bottom-btn-cont {
+    position: fixed;
+    bottom: 364rpx;
+    right: 0rpx;
+    z-index: 3;
+    width: 120rpx;
+    height: 120rpx;
+    visibility: visible;
+}
+
+.bottom-btn-cont.bottom-btn-share {
+    bottom: 252rpx;
+    visibility: visible;
+}
+
+.bottom-btn-cont .btn {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.sale-man__wrapper {
+    width: 100vw;
+    height: 144rpx;
+    background: #fff;
+    box-shadow: 0rpx -4rpx 12rpx 0rpx rgba(0,0,0,.03);
+    padding: 22rpx 32rpx 22rpx 40rpx;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+}
+
+.sale-man__wrapper .collect__wrapper {
+    width: 56rpx;
+}
+
+.sale-man__wrapper .collect__wrapper .txt {
+    color: rgba(0,0,0,.85);
+    font-weight: 700;
+}
+
+.sale-man__wrapper .collect__wrapper .icon-img-sale {
+    width: 38rpx;
+    height: 36rpx;
+}
+
+.sale-man__wrapper .mar-top-12 {
+    margin-top: 12rpx;
+}
+
+.sale-man__wrapper .mar-left-32 {
+    margin-left: 32rpx;
+}
+
+.sale-man__wrapper .btn__wrapper {
+    width: 590rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background: #2d8cf0;
+    border-radius: 8rpx;
+    color: #fff;
+}
+
+.collection-tips {
+    width: 312rpx;
+    height: 284rpx;
+    background: rgba(0,0,0,.74);
+    border-radius: 12rpx;
+    padding: 46rpx 0 26rpx;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    box-sizing: border-box;
+}
+
+.collection-tips .gougou {
+    width: 98rpx;
+    height: 86rpx;
+    padding-bottom: 40rpx;
+    display: inline-block;
+}
+
+.collection-tips .top-text {
+    padding-bottom: 6rpx;
+    line-height: 40rpx;
+    width: 100%;
+}
+
+.collection-tips .bottom-text {
+    line-height: 40rpx;
+}

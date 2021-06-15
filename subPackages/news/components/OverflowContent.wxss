@@ -1,0 +1,15 @@
+.overflow-content {
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-size: 32rpx;
+    line-height: 48rpx;
+    color: rgba(0,0,0,.85);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.content-topic {
+    color: #2d8cf0;
+    margin-right: 20rpx;
+}

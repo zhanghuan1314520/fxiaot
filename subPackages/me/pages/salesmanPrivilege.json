@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "活跃度特权",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "busi-nav-header": "/components/UILayout/BusiNavHeader",
+        "base-prompt": "/subPackages/me/pages/components/BasePrompt"
+    }
+}

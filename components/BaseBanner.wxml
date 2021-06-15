@@ -1,0 +1,20 @@
+<view>
+    <view class="init__banner-block" style="{{'height:'+height+'rpx'+';'}}" wx:if="{{dataApi.length>1}}">
+        <swiper autoplay="true" circular="{{swiperCircular}}" class="swiper" duration="300" indicatorActiveColor="#ffffff" indicatorColor="rgba(255,255,255,.4)" indicatorDots="{{dataApi.length>1&&swiperDots}}" interval="{{config.rotation_duration||4000}}" style="{{'height:'+height+'rpx'+';'}}" wx:if="{{dataApi.length>0}}">
+            <swiper-item bindtap="__e" class="swiperItem sk-hide" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{item[$orig].ad_code}}" data-custom-prop-ad_keyword="{{item[$orig].project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{item[$orig].ad_nike_name}}" data-custom-prop-ad_number="{{item[$orig].ad_number}}" data-custom-prop-ad_source="{{source}}" data-custom-prop-ad_type="banner" data-event-opts="{{[ [ 'tap',[ [ 'swiperNavHandle',['$0','$1',index],[ [ ['dataApi','',index,'url'] ],[ ['dataApi','',index,'id'] ] ] ] ] ] ]}}" id="{{item[$orig].ad_number}}" wx:for="{{$root.l0}}" wx:key="index">
+                <image-loader bind:__l="__l" mode="aspectFill" source="{{item[$orig].image}}" styles="{{item.a0}}" vueId="{{'61dbdce4-1-'+index}}"></image-loader>
+                <view class="white-color advert">广告</view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <block wx:else>
+        <view class="init__banner-block relative skeletons" style="{{'height:'+height+'rpx'+';'}}" wx:if="{{dataApi.length===1}}">
+            <view class="banner_worp" wx:if="{{dataApi[0].image}}">
+                <button bindtap="__e" class="top-banner-image" data-custom-event-name="AD_click" data-custom-prop-ad_code="{{dataApi[0].ad_code}}" data-custom-prop-ad_keyword="{{dataApi[0].project_name}}" data-custom-prop-ad_medium="小程序" data-custom-prop-ad_nike_name="{{dataApi[0].ad_nike_name}}" data-custom-prop-ad_number="{{dataApi[0].ad_number}}" data-custom-prop-ad_source="{{source}}" data-custom-prop-ad_type="banner" data-event-opts="{{[ [ 'tap',[ [ 'swiperNavHandle',['$0','$1',0],['dataApi.__$n0.url','dataApi.__$n0.id'] ] ] ] ]}}" id="{{dataApi[0].ad_number}}">
+                    <image-loader bind:__l="__l" mode="aspectFill" source="{{dataApi[0].image}}" styles="{{$root.a1}}" vueId="61dbdce4-2"></image-loader>
+                </button>
+            </view>
+            <view class="init__banner-block skeletons-rect" wx:else></view>
+        </view>
+    </block>
+</view>

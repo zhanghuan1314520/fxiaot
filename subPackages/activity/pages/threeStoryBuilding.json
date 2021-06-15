@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "杭州房小团",
+    "usingComponents": {
+        "project-box-item": "/subPackages/activity/components/ProjectBoxItem",
+        "issue-record": "/subPackages/activity/components/IssueRecord",
+        "nocontent-page": "/subPackages/activity/components/NocontentPage"
+    }
+}

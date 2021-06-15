@@ -1,0 +1,27 @@
+.busi-component__wrapper .item {
+    width: 100%;
+    height: 112rpx;
+    background: #fff;
+    border-bottom: 2rpx solid rgba(0,0,0,.07);
+}
+
+.busi-component__wrapper .item:first-of-type {
+    border-bottom: none;
+}
+
+.busi-component__wrapper .item .relation-cricle {
+    color: #bfbfbf;
+}
+
+.busi-component__wrapper .item .active,.busi-component__wrapper .item .icon-relation {
+    color: #2d8cf0;
+}
+
+.busi-component__wrapper .overflow-line-1 {
+    width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "杭州房小团-一房一价",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "custom-nav-header": "/subPackages/project/pages/component/customNavHeader",
+        "busi-share-icon": "/components/UILayout/BusiShareIcon",
+        "house-price-item": "/subPackages/project/pages/component/HousePricetem",
+        "base-call-phone": "/components/BaseCallPhone",
+        "house-price-filter": "/subPackages/project/pages/component/HousePriceFilter"
+    }
+}

@@ -1,0 +1,227 @@
+page {
+    padding-bottom: 0;
+}
+
+.btn-hover {
+    opacity: .6;
+}
+
+.box-answer-result {
+    width: 750rpx;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow-y: hidden;
+    background: url(https://imgcdn.huanjutang.com/assets/img/20213221515138081.png) top no-repeat,url(https://imgcdn.huanjutang.com/assets/img/20213231841488081.png) bottom no-repeat,linear-gradient(180deg,#187ef3,#1f90f7);
+    background-size: contain;
+    position: relative;
+}
+
+.box-answer-result .bg-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 167rpx;
+    height: 192rpx;
+}
+
+.box-answer-result .bg-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 225rpx;
+    height: 277rpx;
+    z-index: 1;
+}
+
+@media screen and (min-device-height:812px) {
+    .box-answer-result .bg-left {
+        width: 278rpx;
+        height: 320rpx;
+    }
+
+    .box-answer-result .bg-right {
+        width: 376rpx;
+        height: 462rpx;
+    }
+}
+
+.box-answer-result .box-content {
+    margin-top: 136rpx;
+}
+
+.box-answer-result .box-content .info {
+    width: 686rpx;
+    margin: 0 auto;
+    height: 658rpx;
+    background: #fff;
+    border-radius: 12rpx 12rpx 0rpx 0rpx;
+    position: relative;
+}
+
+.box-answer-result .box-content .info .log {
+    position: absolute;
+    width: 380rpx;
+    height: 102rpx;
+    left: 154rpx;
+    top: -50rpx;
+}
+
+.box-answer-result .box-content .info .detail {
+    border-radius: 12rpx;
+    padding-top: 58rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.box-answer-result .box-content .info .detail .title {
+    text-align: center;
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: rgba(0,0,0,.85);
+    line-height: 48rpx;
+}
+
+.box-answer-result .box-content .info .detail .time {
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(0,0,0,.45);
+    line-height: 44rpx;
+}
+
+.box-answer-result .box-content .info .detail .time .time-title {
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.box-answer-result .box-content .info .detail .box-user {
+    margin: 32rpx auto 0;
+    width: 622rpx;
+    height: 336rpx;
+    background: #eff7ff;
+    border-radius: 12rpx;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-answer-result .box-content .info .detail .box-user .avatar {
+    margin-top: 48rpx;
+    width: 172rpx;
+    height: 172rpx;
+    border: 8rpx solid rgba(0,0,0,.1);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.box-answer-result .box-content .info .detail .box-user .nickname {
+    margin-top: 24rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 700;
+    color: #323436;
+    line-height: 44rpx;
+}
+
+.box-answer-result .box-content .info .detail .box-operate {
+    display: flex;
+    padding: 0 32rpx;
+    justify-content: space-between;
+    position: relative;
+    top: 46rpx;
+}
+
+.box-answer-result .box-content .info .detail .box-operate.center {
+    justify-content: center;
+}
+
+.box-answer-result .box-content .info .detail .box-operate .btn-base {
+    position: relative;
+    line-height: 92rpx;
+    width: 288rpx;
+    height: 92rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,.2);
+    border-radius: 50rpx;
+    z-index: 2;
+}
+
+.box-answer-result .box-content .info .detail .box-operate .btn-share {
+    background: linear-gradient(180deg,#f7d81d,#f67502);
+    box-shadow: 0 8rpx 16rpx 0 rgba(246,150,7,.5);
+}
+
+.box-answer-result .box-content .info .detail .box-operate .btn-again {
+    background: linear-gradient(180deg,#89ebfc,#00d9ff);
+    box-shadow: 0 8px 16px 0 rgba(0,217,255,.36);
+}
+
+.box-answer-result .box-content .info .detail .box-result {
+    margin-top: 32rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box-answer-result .box-content .info .detail .box-result .box-text.right .iconnew {
+    color: #f79c0d;
+    font-size: 22rpx;
+}
+
+.box-answer-result .box-content .info .detail .box-result .box-text .text-normal {
+    height: 40rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,.65);
+    line-height: 40rpx;
+}
+
+.box-answer-result .box-content .info .detail .box-result .box-text .text-normal.light {
+    color: #2d8cf0;
+}
+
+.box-answer-result .box-content .info .detail .box-result .box-text .text-normal.link {
+    color: #f79c0d;
+}
+
+.box-answer-result .box-content .info .detail .box-award {
+    margin: 32rpx auto 0;
+    width: 622rpx;
+    height: 60rpx;
+    box-sizing: border-box;
+    background: #fffcf2;
+    padding: 18rpx 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-answer-result .box-content .info .detail .box-award .text-normal {
+    height: 24rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,.85);
+    line-height: 24rpx;
+}
+
+.box-answer-result .box-content .info .detail .box-award .text-normal.gray {
+    color: rgba(0,0,0,.35);
+}
+
+.box-answer-result .box-content .info .detail .box-award .right {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-answer-result .box-content .info .detail .box-award .right .image-award {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 8rpx;
+}

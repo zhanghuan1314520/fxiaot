@@ -1,0 +1,39 @@
+<view class="online data-v-31643c9a">
+    <view class="online-title data-v-31643c9a">
+        <image class="online-title__image data-v-31643c9a" mode="widthFix" src="{{homeImage.onlineTitle}}"></image>
+    </view>
+    <banner bind:__l="__l" class="data-v-31643c9a vue-ref" data-ref="banner" type="singleday_find_house" vueId="391faabe-1" wx:if="{{list.length}}"></banner>
+    <view class="online-list data-v-31643c9a" wx:if="{{list.length}}">
+        <view class="list-box data-v-31643c9a" wx:for="{{$root.l0}}" wx:key="id">
+            <view class="list-item data-v-31643c9a">
+                <view class="item-rank data-v-31643c9a">
+                    <image class="data-v-31643c9a" src="{{rankImage[index+1>4?4:index+1]}}"></image>
+                    <text class="data-v-31643c9a" data-text="{{index+1}}" wx:if="{{index<=9}}">{{''+index+1+''}}</text>
+                </view>
+                <view class="item-num data-v-31643c9a">
+                    <image class="data-v-31643c9a" src="{{homeImage.popularity}}"></image>
+                    <text class="data-v-31643c9a">{{item.f0}}</text>
+                </view>
+                <view class="item-top data-v-31643c9a">
+                    <view class="name data-v-31643c9a">{{''+item[$orig].name+''}}</view>
+                    <view bindtap="__e" class="more data-v-31643c9a" data-content="{{item[$orig].name}}" data-event-opts="{{[ [ 'tap',[ [ 'toVideoList',['$0'],[ [ ['list','id',item[$orig].id] ] ] ] ] ] ]}}" data-name="查看更多视频" data-type="link">查看更多>></view>
+                </view>
+                <view class="item-content data-v-31643c9a">
+                    <view bindtap="__e" class="item-project data-v-31643c9a" data-content="活动视频" data-event-opts="{{[ [ 'tap',[ [ 'toVideoDetail',['$0'],[ [ ['list','id',item[$orig].id],['videos','',pIndex,'id'] ] ] ] ] ] ]}}" data-name="{{item[$orig].name}}" data-type="link" wx:for="{{item[$orig].videos}}" wx:for-index="pIndex" wx:for-item="p" wx:key="pIndex">
+                        <image class="cover data-v-31643c9a" mode="aspectFill" src="{{p.video_url+'?vframe/jpg/offset/1'}}"></image>
+                        <image class="play data-v-31643c9a" src="{{homeImage.smallPlay}}"></image>
+                    </view>
+                    <view class="empty data-v-31643c9a" wx:if="{{item[$orig].videos.length===2}}"></view>
+                </view>
+            </view>
+            <view class="list-bridge data-v-31643c9a" wx:if="{{index!==list.length-1}}">
+                <view class="data-v-31643c9a"></view>
+                <view class="data-v-31643c9a"></view>
+            </view>
+        </view>
+    </view>
+    <block wx:else>
+        <no-data bind:__l="__l" class="data-v-31643c9a" vueId="391faabe-2" wx:if="{{!loading}}"></no-data>
+    </block>
+    <upload-btn bind:__l="__l" class="data-v-31643c9a vue-ref" data-ref="upload" vueId="391faabe-3"></upload-btn>
+</view>
